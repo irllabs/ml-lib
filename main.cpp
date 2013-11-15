@@ -16,8 +16,6 @@
 #include <string>
 #include <sstream>
 
-
-
 static const std::string weight_delimiter = ":";
 
 class svm : public flext_base
@@ -59,8 +57,6 @@ protected:
     static void setup(t_classid c)
     {
         post("setting up svm class");
-
-        FLEXT_CADDBANG(c, 0, bang);
         
         FLEXT_CADDATTR_SET(c, "type", set_type);
         FLEXT_CADDATTR_SET(c, "kernel", set_kernel);
@@ -90,18 +86,21 @@ protected:
         FLEXT_CADDATTR_GET(c, "weights", get_weights);
         FLEXT_CADDATTR_GET(c, "mode", get_mode);
         
-//        FLEXT_CADDMETHOD(c, 0, add);
+        FLEXT_CADDMETHOD(c, 0, add);
+        FLEXT_CADDMETHOD_(c, 0, "save", save);
+        FLEXT_CADDMETHOD_(c, 0, "load", load);
+        FLEXT_CADDMETHOD_I(c, 0, "normalisation", normalisation);
+        FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
+        FLEXT_CADDMETHOD_(c, 0, "train", train);
+        FLEXT_CADDMETHOD_(c, 0, "clear", clear);
+        FLEXT_CADDMETHOD_(c, 0, "predict", predict);
+        FLEXT_CADDMETHOD_(c, 0, "bang", usage);
     }
 
-    void bang()
-    {
-        post("svm: a support vector machine external for Max and Pd");
-    }
-    
     // Methods
     void add(int argc, const t_atom *argv);
-    void save(const t_symbol *&path) const;
-    void load(const t_symbol *&path);
+    void save(const t_symbol *path) const;
+    void load(const t_symbol *path);
     void normalisation(int on);
     void cross_validation();
     void train();
@@ -140,13 +139,17 @@ protected:
     void get_mode(int &mode) const;
     
 private:
-   
+    
     // Method wrappers
     FLEXT_CALLBACK_V(add);
-//    FLEXT_CALLBACK_S(save);
-//    FLEXT_CALLBACK_S(load);
-
-    FLEXT_CALLBACK(bang);
+    FLEXT_CALLBACK_S(save);
+    FLEXT_CALLBACK_S(load);
+    FLEXT_CALLBACK_I(normalisation);
+    FLEXT_CALLBACK(cross_validation);
+    FLEXT_CALLBACK(train);
+    FLEXT_CALLBACK(clear);
+    FLEXT_CALLBACK(predict);
+    FLEXT_CALLBACK(usage);
     
     // Attribute wrappers
     FLEXT_CALLVAR_I(get_type, set_type);
