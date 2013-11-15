@@ -14,6 +14,8 @@
 
 #include <vector>
 #include <string>
+#include <sstream>
+
 
 
 static const std::string weight_delimiter = ":";
@@ -71,7 +73,7 @@ protected:
         FLEXT_CADDATTR_SET(c, "cachesize", set_cachesize);
         FLEXT_CADDATTR_SET(c, "shrinking", set_shrinking);
         FLEXT_CADDATTR_SET(c, "estimates", set_estimates);
-        FLEXT_CADDATTR_SET(c, "weight", set_weights);
+        FLEXT_CADDATTR_SET(c, "weights", set_weights);
         FLEXT_CADDATTR_SET(c, "mode", set_mode);
         
         FLEXT_CADDATTR_GET(c, "type", get_type);
@@ -134,7 +136,7 @@ protected:
     void get_cachesize(int &cachesize) const;
     void get_shrinking(int &shrinking) const;
     void get_estimates(int &estimates) const;
-    void get_weights(AtomList &lst) const;
+    void get_weights(AtomList &weights) const;
     void get_mode(int &mode) const;
     
 private:
@@ -281,21 +283,28 @@ void svm::set_weights(const AtomList &weights)
     weight_labels.clear();
     weight_values.clear();
     
-    for (uint16_t count = 0; count < param.nr_weight; ++count)
+    for (int count = 0; count < param.nr_weight; ++count)
     {
         std::string weight = GetString(GetSymbol(weights[count]));
         std::string::size_type location = weight.find(weight_delimiter);
-        
+
         if (location == std::string::npos)
         {
             error("Error: no ':' found, weights must be a list of class:weight pairs");
             return;
         }
-        int label = atoi(weight.substr(0, location).c_str());
-        double value = atof(weight.substr(location, weight.length()).c_str());
+
+        std::string::size_type weight_length = weight.length();
+        std::string::size_type value_length = weight_length - location - 1;
         
-        weight_labels[count] = label;
-        weight_values[count] = value;
+        std::string value_s = weight.substr(location + 1, value_length);
+        std::string weight_s = weight.substr(0, location);
+
+        int label = atoi(weight_s.c_str());
+        double value = atof(value_s.c_str());
+
+        weight_labels.push_back(label);
+        weight_values.push_back(value);
     }
 }
 
@@ -311,43 +320,82 @@ void svm::set_mode(int mode)
 
 void svm::get_type(int &type) const
 {
-    
+    type = param.svm_type;
 }
-void svm::get_kernel(int &type) const
-{    
+
+void svm::get_kernel(int &kernel) const
+{
+    kernel = param.kernel_type;
 }
-void svm::get_degree(int &type) const    
-{    
+
+void svm::get_degree(int &degree) const
+{
+    degree = param.degree;
 }
+
 void svm::get_gamma(float &gamma) const    
-{    
+{
+    gamma = param.gamma;
 }
+
 void svm::get_coef0(float &coef0) const    
-{    
+{
+    coef0 = param.coef0;
 }
+
 void svm::get_cost(float &cost) const    
-{    
+{
+    cost = param.C;
 }
+
 void svm::get_nu(float &nu) const    
-{    
+{
+    nu = param.nu;
 }
+
 void svm::get_epsilon(float &epsilon) const    
-{    
+{
+    epsilon = param.eps;
 }
+
 void svm::get_cachesize(int &cachesize) const    
-{    
+{
+    cachesize = param.cache_size;
 }
+
 void svm::get_shrinking(int &shrinking) const    
-{    
+{
+    shrinking = param.shrinking;
 }
+
 void svm::get_estimates(int &estimates) const    
-{    
+{
+    estimates = param.probability;
 }
-void svm::get_weights(AtomList &lst) const
-{    
+
+void svm::get_weights(AtomList &weights) const
+{
+    uint32_t num_weights = weight_labels.size();
+    
+    for (uint32_t count = 0; count < num_weights; ++count)
+    {
+        int weight_label = weight_labels[count];
+        double weight_value = weight_values[count];
+        
+        std::stringstream weight;
+        weight << weight_label << ":" << weight_value;
+        const char *weight_c = weight.str().c_str();
+        const t_symbol *weight_s = MakeSymbol(weight_c);
+        t_atom weight_a;
+        SetSymbol(weight_a, weight_s);
+        
+        weights.Append(weight_a);
+    }
 }
+
 void svm::get_mode(int &mode) const    
 {    
+    mode = nr_fold;
 }
 
 
