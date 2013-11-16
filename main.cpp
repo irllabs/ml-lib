@@ -27,6 +27,7 @@ public:
     : model(NULL), x_space(NULL), weight_labels(1000, 0), weight_values(1000, 0)
     {
         post("creating svm object");
+        
         param.svm_type = C_SVC;
         param.kernel_type = RBF;
         param.degree = 3;
@@ -42,6 +43,10 @@ public:
         param.nr_weight = 0;
         param.weight_label = &weight_labels[0];
         param.weight = &weight_values[0];
+        
+        prob.l = 0;
+        prob.x = &prob_x[0];
+        prob.y = &prob_y[0];
     }
     
     ~svm()
@@ -49,6 +54,9 @@ public:
         post("destroying svm object");
         if (model != NULL)
         {
+            this->clear();
+            weight_labels.clear();
+            weight_values.clear();
             svm_free_and_destroy_model(&model);
         }
     }
@@ -86,10 +94,10 @@ protected:
         FLEXT_CADDATTR_GET(c, "weights", get_weights);
         FLEXT_CADDATTR_GET(c, "mode", get_mode);
         
-        FLEXT_CADDMETHOD(c, 0, add);
+        FLEXT_CADDMETHOD_(c, 0, "add", add);
         FLEXT_CADDMETHOD_(c, 0, "save", save);
         FLEXT_CADDMETHOD_(c, 0, "load", load);
-        FLEXT_CADDMETHOD_I(c, 0, "normalisation", normalisation);
+        FLEXT_CADDMETHOD_(c, 0, "normalise", normalise);
         FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
         FLEXT_CADDMETHOD_(c, 0, "train", train);
         FLEXT_CADDMETHOD_(c, 0, "clear", clear);
@@ -101,11 +109,11 @@ protected:
     void add(int argc, const t_atom *argv);
     void save(const t_symbol *path) const;
     void load(const t_symbol *path);
-    void normalisation(int on);
+    void normalise();
     void cross_validation();
     void train();
     void clear();
-    void predict();
+    void predict(int argc, const t_atom *argv);
     void usage();
 
     // Attribute Setters
@@ -144,11 +152,11 @@ private:
     FLEXT_CALLBACK_V(add);
     FLEXT_CALLBACK_S(save);
     FLEXT_CALLBACK_S(load);
-    FLEXT_CALLBACK_I(normalisation);
+    FLEXT_CALLBACK(normalise);
     FLEXT_CALLBACK(cross_validation);
     FLEXT_CALLBACK(train);
     FLEXT_CALLBACK(clear);
-    FLEXT_CALLBACK(predict);
+    FLEXT_CALLBACK_V(predict);
     FLEXT_CALLBACK(usage);
     
     // Attribute wrappers
@@ -177,8 +185,12 @@ private:
     std::vector<int> weight_labels;
     std::vector<double> weight_values;
     
+    std::vector<svm_node *> prob_x;
+    std::vector<double> prob_y;
+    
 };
 
+// Attribute setters
 void svm::set_type(int type)    
 {
     switch (type)
@@ -192,7 +204,7 @@ void svm::set_type(int type)
             break;
             
         default:
-            post("Error: invalid SVM type, send a 'bang' to the first inlet for available types");
+            post("invalid SVM type, send a 'bang' to the first inlet for available types");
             break;
     }
 }
@@ -210,7 +222,7 @@ void svm::set_kernel(int kernel)
             break;
             
         default:
-            post("Error: invalid kernel type, send a 'bang' to the first inlet for available types");
+            post("invalid kernel type, send a 'bang' to the first inlet for available types");
             break;
     }
 }
@@ -260,7 +272,7 @@ void svm::set_shrinking(int shrinking)
             break;
             
         default:
-            error("Error: shrinking must either be 0 (off) or 1 (on)");
+            error("shrinking must either be 0 (off) or 1 (on)");
             break;
     }
 }
@@ -275,7 +287,7 @@ void svm::set_estimates(int estimates)
             break;
             
         default:
-            error("Error: probability estimates must either be 0 (off) or 1 (on)");
+            error("probability estimates must either be 0 (off) or 1 (on)");
             break;
     }
 }
@@ -293,7 +305,7 @@ void svm::set_weights(const AtomList &weights)
 
         if (location == std::string::npos)
         {
-            error("Error: no ':' found, weights must be a list of class:weight pairs");
+            error("no ':' found, weights must be a list of class:weight pairs");
             return;
         }
 
@@ -315,12 +327,13 @@ void svm::set_mode(int mode)
 {
     if (mode < 2)
     {
-        error("Error: n-fold cross validation: n must >= 2");
+        error("n-fold cross validation: n must >= 2");
         return;
     }
     nr_fold = mode;
 }
 
+// Attribute getters
 void svm::get_type(int &type) const
 {
     type = param.svm_type;
@@ -400,6 +413,210 @@ void svm::get_mode(int &mode) const
 {    
     mode = nr_fold;
 }
+
+// Methods
+void svm::add(int argc, const t_atom *argv)
+{
+    prob_y.push_back(GetFloat(argv[0]));
+    prob.l = argc - 1;
+    
+    for (uint32_t index = 1; index < argc; ++index)
+    {
+        svm_node *node = (svm_node *)malloc(sizeof(node));
+        // TODO: currently we're assuming there's always a value for every feature
+        node->index = index - 1;
+        node->value = GetFloat(argv[index]);
+        prob_x.push_back(node);
+    }
+}
+
+void svm::save(const t_symbol *path) const
+{
+    const char *path_s = GetString(path);
+
+    int rv = svm_save_model(path_s, model);
+    
+    if (rv == -1)
+    {
+        error("an error occurred saving the model");
+    }
+}
+
+void svm::load(const t_symbol *path)
+{
+    const char *path_s = GetString(path);
+    model = svm_load_model(path_s);
+    
+    if (model == NULL)
+    {
+        error("unable to load model");
+    }
+}
+
+void svm::normalise()
+{
+    error("function not yet implemented");
+}
+
+void svm::cross_validation()
+{
+    int i;
+	int total_correct = 0;
+	double total_error = 0;
+	double sumv = 0, sumy = 0, sumvv = 0, sumyy = 0, sumvy = 0;
+	double *target = (double *)malloc(prob.l * sizeof(prob.l));
+    
+	svm_cross_validation(&prob, &param, nr_fold, target);
+	
+    if(param.svm_type == EPSILON_SVR ||
+	   param.svm_type == NU_SVR)
+	{
+		for(i=0;i<prob.l;i++)
+		{
+			double y = prob.y[i];
+			double v = target[i];
+			total_error += (v-y)*(v-y);
+			sumv += v;
+			sumy += y;
+			sumvv += v*v;
+			sumyy += y*y;
+			sumvy += v*y;
+		}
+		post("Cross Validation Mean squared error = %g\n",total_error/prob.l);
+		post("Cross Validation Squared correlation coefficient = %g\n",
+               ((prob.l * sumvy - sumv * sumy) * (prob.l * sumvy - sumv * sumy))/
+               ((prob.l * sumvv - sumv * sumv) * (prob.l * sumyy - sumy * sumy))
+               );
+	}
+	else
+	{
+		for(i = 0; i < prob.l; i++)
+        {
+			if(target[i] == prob.y[i])
+            {
+				++total_correct;
+            }
+        }
+		printf("Cross Validation Accuracy = %g%%\n", 100.0 * total_correct / prob.l);
+	}
+	free(target);
+}
+
+void svm::train()
+{
+    svm_free_and_destroy_model(&model);
+    size_t max_index = prob_x.size();
+    
+    if(param.gamma == 0 && max_index > 0)
+    {
+		param.gamma = 1.0 / (float)max_index;
+    }
+    
+	if(param.kernel_type == PRECOMPUTED)
+    {
+		for(uint32_t i = 0; i < prob.l; ++i)
+		{
+			if (prob.x[i][0].index != 0)
+			{
+				error("wrong input format: first column must be 0:sample_serial_number\n");
+                return;
+			}
+			if ((int)prob.x[i][0].value <= 0 || (int)prob.x[i][0].value > max_index)
+			{
+				error("wrong input format: sample_serial_number out of range\n");
+				return;
+			}
+		}
+    }
+    
+    model = svm_train(&prob, &param);
+    
+    if (model == NULL)
+    {
+        error("training model failed");
+    }
+}
+
+void svm::clear()
+{
+    prob.l = 0;
+    
+    for (uint32_t item = 0; item < prob_x.size(); ++item)
+    {
+        free(prob_x[item]);
+    }
+    
+    prob_x.clear();
+    prob_y.clear();
+}
+
+void svm::predict(int argc, const t_atom *argv)
+{
+    if (model == NULL)
+    {
+        error("no model");
+        return;
+    }
+    
+    svm_node *nodes = (svm_node *)malloc(argc * sizeof(svm_node));
+    
+    for (uint32_t index = 0; index < argc; ++index)
+    {
+        nodes[index].index = index;
+        nodes[index].value = GetFloat(argv[index]);
+    }
+    
+    double prediction = svm_predict(model, nodes);
+    free(nodes);
+    ToOutFloat(0, (float)prediction);
+}
+
+void svm::usage()
+{
+    post(
+         "Attributes:\n\n"
+         "type:\tset type of SVM (default 0)\n"
+         "	0 -- C-SVC		(multi-class classification)\n"
+         "	1 -- nu-SVC		(multi-class classification)\n"
+         "	2 -- one-class SVM\n"
+         "	3 -- epsilon-SVR	(regression)\n"
+         "	4 -- nu-SVR		(regression)\n"
+         "kernel:\tset type of kernel function (default 2)\n"
+         "	0 -- linear: u'*v\n"
+         "	1 -- polynomial: (gamma*u'*v + coef0)^degree\n"
+         "	2 -- radial basis function: exp(-gamma*|u-v|^2)\n"
+         "	3 -- sigmoid: tanh(gamma*u'*v + coef0)\n"
+         "	4 -- precomputed kernel (kernel values in training_set_file)\n"
+         "degree:\tset degree in kernel function (default 3)\n"
+         "gamma:\tset gamma in kernel function (default 1/num_features)\n"
+         "coef0:\tset coef0 in kernel function (default 0)\n"
+         "cost:\tset the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)\n"
+         "nu:\tset the parameter nu of nu-SVC, one-class SVM, and nu-SVR (default 0.5)\n"
+         "epsilon:\tset the epsilon in loss function of epsilon-SVR (default 0.1)\n"
+         "cachesize:\tset cache memory size in MB (default 100)"
+         );
+    post(
+         "epsilon:\tset tolerance of termination criterion (default 0.001)\n"
+         "shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)\n"
+         "estimates:\twhether to train a SVC or SVR model for probability estimates, 0 or 1 (default 0)\n"
+         "weights:\tlist of weight tuples 'class:weight' to set the parameter of class to weight*C, for C-SVC (default 1)\n"
+         "n:\tn-fold cross validation mode\n\n"
+         "Methods:\n\n"
+         "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc\n"
+         "save:\tsave a trained model, first argument gives path to save location\n"
+         "load:\tload a trained model, first argument gives path to the load location\n"
+         "normalise:\tnormalise the training data prior to trianing a model\n"
+         "cross_validation:\t\tperform cross-validation\n"
+         "train:\ttrain the SVM based on labelled vectors added with 'add'\n"
+         "clear:\tclear the stored training data\n"
+         "predict:\tpredict the class of the input feature vector provided as a list\n"
+         "usage:\tpost this usage statement to the console\n"
+         );
+}
+
+
+
+
 
 
 FLEXT_NEW_V("svm", svm)
