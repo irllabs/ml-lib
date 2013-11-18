@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "main.cpp"
-            timestampString = "406243051.722133"
+            timestampString = "406472188.930429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
             landmarkName = "svm::set_weights(const AtomList &amp;weights)"
             landmarkType = "5">
             <Locations>
@@ -52,17 +52,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "main.cpp"
-            timestampString = "406255006.168976"
+            timestampString = "406472188.930429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "568"
-            endingLineNumber = "568"
-            landmarkName = "svm::predict(int argc, const t_atom *argv)"
-            landmarkType = "5">
+            startingLineNumber = "672"
+            endingLineNumber = "672">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

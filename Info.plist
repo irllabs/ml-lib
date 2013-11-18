@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(PROJECT_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.grrrr.ext.$(PROJECT_NAME)</string>
+	<string>com.jamiebullock.$(PROJECT_NAME)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

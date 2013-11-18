@@ -17,6 +17,23 @@
 #include <sstream>
 
 static const std::string weight_delimiter = ":";
+void print_callback(const char *s);
+
+class Observation
+{
+public:
+    Observation()
+    {
+        
+    }
+    ~Observation()
+    {
+        
+    }
+    
+    double label;
+    std::vector<double> features;
+};
 
 class svm : public flext_base
 {
@@ -45,8 +62,12 @@ public:
         param.weight = &weight_values[0];
         
         prob.l = 0;
-        prob.x = &prob_x[0];
-        prob.y = &prob_y[0];
+        prob.x = NULL;
+        prob.y = NULL;
+        
+        svm_set_print_string_function(print_callback);
+        
+        AddOutAnything("general purpose outlet");
     }
     
     ~svm()
@@ -184,11 +205,34 @@ private:
     
     std::vector<int> weight_labels;
     std::vector<double> weight_values;
-    
-    std::vector<svm_node *> prob_x;
-    std::vector<double> prob_y;
+   
+    std::vector<Observation> observations;
     
 };
+
+// Utility functions
+void free_problem_data(svm_problem *prob)
+{
+    if (prob->x != NULL)
+    {
+        for (uint32_t line = 0; line < prob->l; ++line)
+        {
+            free(prob->x[line]);
+        }
+    }
+    free(prob->x);
+    free(prob->y);
+    
+    prob->x = NULL;
+    prob->y = NULL;
+    prob->l = 0;
+}
+
+// SVM print callback
+void print_callback(const char *s)
+{
+    post("libsvm: %s", s);
+}
 
 // Attribute setters
 void svm::set_type(int type)    
@@ -417,23 +461,25 @@ void svm::get_mode(int &mode) const
 // Methods
 void svm::add(int argc, const t_atom *argv)
 {
-    prob_y.push_back(GetFloat(argv[0]));
-    prob.l = argc - 1;
+    
+    Observation observation;
+    
+    observation.label = GetFloat(argv[0]);
     
     for (uint32_t index = 1; index < argc; ++index)
     {
-        svm_node *node = (svm_node *)malloc(sizeof(node));
         // TODO: currently we're assuming there's always a value for every feature
-        node->index = index - 1;
-        node->value = GetFloat(argv[index]);
-        prob_x.push_back(node);
+        float value = GetFloat(argv[index]);
+        observation.features.push_back(value);
     }
+    
+    observations.push_back(observation);
+   
 }
 
 void svm::save(const t_symbol *path) const
 {
     const char *path_s = GetString(path);
-
     int rv = svm_save_model(path_s, model);
     
     if (rv == -1)
@@ -504,8 +550,37 @@ void svm::cross_validation()
 
 void svm::train()
 {
+    free_problem_data(&prob);
     svm_free_and_destroy_model(&model);
-    size_t max_index = prob_x.size();
+    
+    prob.l = observations.size();
+
+    if (prob.l == 0)
+    {
+        error("no observations added, use 'add' to add labeled feature vectors");
+        return;
+    }
+    
+    size_t num_features = observations[0].features.size();
+    size_t max_index = num_features + 1;
+    
+    prob.x = (svm_node **)malloc(prob.l * sizeof(svm_node *));
+    prob.y = (double *)malloc(prob.l * sizeof(double));
+    
+    // Copy out the data, don't pass C++ structures into svm_train()
+    for (uint32_t line = 0; line < prob.l; ++line)
+    {
+        prob.y[line] = observations[line].label;
+        prob.x[line] = (svm_node *)malloc(max_index * sizeof(svm_node));
+        
+        for (uint32_t feature = 0; feature < num_features; ++feature)
+        {
+            prob.x[line][feature].index = (int)feature + 1;
+            prob.x[line][feature].value = observations[line].features[feature];
+        }
+        prob.x[line][num_features].index = -1;
+        prob.x[line][num_features].value = 0.0;
+    }
     
     if(param.gamma == 0 && max_index > 0)
     {
@@ -529,25 +604,58 @@ void svm::train()
 		}
     }
     
+    const char *error_message = svm_check_parameter(&prob, &param);
+    
+    if (error_message != NULL)
+    {
+        error("%s", error_message);
+    }
+    
     model = svm_train(&prob, &param);
+    
+    t_atom a_train;
+    t_atom a_num_sv;
+    t_atom a_num_classes;
+    
+    AtomList result;
+    
+    SetSymbol(a_train, MakeSymbol("train"));
+    SetInt(a_num_sv, -1);
+    SetInt(a_num_classes, -1);
+    
+    result.Append(a_train);
     
     if (model == NULL)
     {
         error("training model failed");
     }
+    else
+    {
+        SetInt(a_num_sv, svm_get_nr_sv(model));
+        SetInt(a_num_classes, svm_get_nr_class(model));
+    }
+    
+    result.Append(a_num_classes);
+    result.Append(a_num_sv);
+
+    ToOutList(1, result);
+
+    // NOTE: don't free problem here because "svm_model contains pointers to svm_problem"
 }
 
 void svm::clear()
 {
     prob.l = 0;
     
-    for (uint32_t item = 0; item < prob_x.size(); ++item)
+    for (uint32_t item = 0; item < observations.size(); ++item)
     {
-        free(prob_x[item]);
+        observations[item].features.clear();
     }
     
-    prob_x.clear();
-    prob_y.clear();
+    observations.clear();
+    
+    free_problem_data(&prob);
+    svm_free_and_destroy_model(&model);
 }
 
 void svm::predict(int argc, const t_atom *argv)
@@ -558,13 +666,19 @@ void svm::predict(int argc, const t_atom *argv)
         return;
     }
     
-    svm_node *nodes = (svm_node *)malloc(argc * sizeof(svm_node));
+    uint32_t num_features = argc;
+    uint32_t max_index = num_features + 1;
     
-    for (uint32_t index = 0; index < argc; ++index)
+    svm_node *nodes = (svm_node *)malloc(max_index * sizeof(svm_node));
+    
+    for (uint32_t index = 0; index < num_features; ++index)
     {
         nodes[index].index = index;
         nodes[index].value = GetFloat(argv[index]);
     }
+    
+    nodes[num_features].index = -1;
+    nodes[num_features].value = 0.0;
     
     double prediction = svm_predict(model, nodes);
     free(nodes);

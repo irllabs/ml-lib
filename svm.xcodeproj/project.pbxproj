@@ -11,10 +11,10 @@
 		7D4EAF9A1834C55F005B8615 /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D4EAF3A1834C55F005B8615 /* svm.cpp */; };
 		7D4EAF9B1834C55F005B8615 /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D4EAF3A1834C55F005B8615 /* svm.cpp */; };
 		7D4EAF9D1834C55F005B8615 /* svm.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D4EAF3C1834C55F005B8615 /* svm.h */; };
+		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
+		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
 		E98573570D9E52D300682171 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* main.cpp */; };
 		E98573580D9E52D300682171 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* main.cpp */; };
-		E9974E5B0770851500206F68 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9974DFA0770750400206F68 /* MaxAPI.framework */; };
-		E9974E5C0770851700206F68 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9974DFB0770750400206F68 /* MaxAudioAPI.framework */; };
 		E99A3B770D35508600E692EF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E99A3B760D35508600E692EF /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -34,10 +34,10 @@
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D4EAF3A1834C55F005B8615 /* svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = svm.cpp; sourceTree = "<group>"; };
 		7D4EAF3C1834C55F005B8615 /* svm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = svm.h; sourceTree = "<group>"; };
+		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
+		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* svm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = svm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98573560D9E52D300682171 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E9974DFA0770750400206F68 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = /Library/Frameworks/MaxAPI.framework; sourceTree = "<absolute>"; };
-		E9974DFB0770750400206F68 /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = /Library/Frameworks/MaxAudioAPI.framework; sourceTree = "<absolute>"; };
 		E9974E53077083C700206F68 /* svm.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = svm.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99A3B760D35508600E692EF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,8 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9974E5C0770851700206F68 /* MaxAudioAPI.framework in Frameworks */,
-				E9974E5B0770851500206F68 /* MaxAPI.framework in Frameworks */,
+				7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */,
+				7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,9 +86,9 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */,
+				7D635EB21838D10900E718CE /* MaxAPI.framework */,
 				7D4EAF0018343011005B8615 /* Accelerate.framework */,
-				E9974DFA0770750400206F68 /* MaxAPI.framework */,
-				E9974DFB0770750400206F68 /* MaxAudioAPI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -322,8 +322,17 @@
 		E9A5BC8F0A33819900AD9F03 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
+				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -338,12 +347,17 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "/Library/Application Support/Cycling 74/externals/flext";
-				LIBRARY_SEARCH_PATHS = "$(flext)/build";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"$(maxsdk)/max-includes",
+				);
 				LIBRARY_STYLE = DYNAMIC;
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = svm;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include/flext;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -351,13 +365,23 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
+				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
 			};
 			name = Development;
 		};
 		E9A5BC900A33819900AD9F03 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FLEXT_SYS=1",
@@ -371,11 +395,16 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "/Library/Application Support/Cycling 74/externals/flext";
-				LIBRARY_SEARCH_PATHS = "$(flext)/build";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"$(maxsdk)/max-includes",
+				);
 				LIBRARY_STYLE = DYNAMIC;
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include/flext;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -383,12 +412,22 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
+				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
 			};
 			name = Deployment;
 		};
 		E9A5BC910A33819900AD9F03 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = "FLEXT_SYS=1";
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -398,18 +437,25 @@
 				);
 				INFOPLIST_FILE = "source/xsample-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Cycling 74/externals/flext";
-				LIBRARY_SEARCH_PATHS = "$(flext)/build";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"$(maxsdk)/max-includes",
+				);
 				LIBRARY_STYLE = DYNAMIC;
 				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = xsample;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include/flext;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
+				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
 			};
 			name = Default;
 		};
@@ -429,6 +475,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				maxsdk = /Users/jamie/Library/Frameworks/c74support;
 			};
 			name = Development;
 		};
@@ -449,6 +496,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				maxsdk = /Users/jamie/Library/Frameworks/c74support;
 			};
 			name = Deployment;
 		};
@@ -460,6 +508,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				maxsdk = /Users/jamie/Library/Frameworks/c74support;
 			};
 			name = Default;
 		};
