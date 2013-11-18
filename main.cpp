@@ -35,15 +35,15 @@ public:
     std::vector<double> features;
 };
 
-class svm : public flext_base
+class ml_libsvm : public flext_base
 {
-    FLEXT_HEADER_S(svm,flext_base,setup);
+    FLEXT_HEADER_S(ml_libsvm,flext_base,setup);
     
 public:
-    svm(int argc,t_atom *argv)
-    : model(NULL), x_space(NULL), weight_labels(1000, 0), weight_values(1000, 0)
+    ml_libsvm(int argc,t_atom *argv)
+    : model(NULL), weight_labels(1000, 0), weight_values(1000, 0)
     {
-        post("creating svm object");
+        post("ml_svm: Copyright (c) 2013 Carnegie Melon University");
         
         param.svm_type = C_SVC;
         param.kernel_type = RBF;
@@ -70,9 +70,8 @@ public:
         AddOutAnything("general purpose outlet");
     }
     
-    ~svm()
+    ~ml_libsvm()
     {
-        post("destroying svm object");
         if (model != NULL)
         {
             this->clear();
@@ -85,8 +84,6 @@ public:
 protected:
     static void setup(t_classid c)
     {
-        post("setting up svm class");
-        
         FLEXT_CADDATTR_SET(c, "type", set_type);
         FLEXT_CADDATTR_SET(c, "kernel", set_kernel);
         FLEXT_CADDATTR_SET(c, "degree", set_degree);
@@ -199,7 +196,6 @@ private:
     svm_model *model;
     svm_parameter param;
     svm_problem prob;
-    svm_node *x_space;
     
     int nr_fold;
     
@@ -235,7 +231,7 @@ void print_callback(const char *s)
 }
 
 // Attribute setters
-void svm::set_type(int type)    
+void ml_libsvm::set_type(int type)    
 {
     switch (type)
     {
@@ -253,7 +249,7 @@ void svm::set_type(int type)
     }
 }
 
-void svm::set_kernel(int kernel)    
+void ml_libsvm::set_kernel(int kernel)    
 {
     switch (kernel)
     {
@@ -271,42 +267,42 @@ void svm::set_kernel(int kernel)
     }
 }
 
-void svm::set_degree(int degree)    
+void ml_libsvm::set_degree(int degree)    
 {
     param.degree = degree;
 }
 
-void svm::set_gamma(float gamma)    
+void ml_libsvm::set_gamma(float gamma)    
 {
     param.gamma = (double)gamma;
 }
 
-void svm::set_coef0(float coef0)    
+void ml_libsvm::set_coef0(float coef0)    
 {
     param.coef0 = (double)coef0;
 }
 
-void svm::set_cost(float cost)    
+void ml_libsvm::set_cost(float cost)    
 {
     param.C = (double)cost;
 }
 
-void svm::set_nu(float nu)    
+void ml_libsvm::set_nu(float nu)    
 {
     param.nu = (double)nu;
 }
 
-void svm::set_epsilon(float epsilon)    
+void ml_libsvm::set_epsilon(float epsilon)    
 {
     param.eps = (double)epsilon;
 }
 
-void svm::set_cachesize(int cachesize)    
+void ml_libsvm::set_cachesize(int cachesize)    
 {
     param.cache_size = cachesize;
 }
 
-void svm::set_shrinking(int shrinking)    
+void ml_libsvm::set_shrinking(int shrinking)    
 {
     switch (shrinking)
     {
@@ -321,7 +317,7 @@ void svm::set_shrinking(int shrinking)
     }
 }
 
-void svm::set_estimates(int estimates)    
+void ml_libsvm::set_estimates(int estimates)    
 {
     switch (estimates)
     {
@@ -336,7 +332,7 @@ void svm::set_estimates(int estimates)
     }
 }
 
-void svm::set_weights(const AtomList &weights)
+void ml_libsvm::set_weights(const AtomList &weights)
 {
     param.nr_weight = weights.Count();
     weight_labels.clear();
@@ -367,7 +363,7 @@ void svm::set_weights(const AtomList &weights)
     }
 }
 
-void svm::set_mode(int mode)
+void ml_libsvm::set_mode(int mode)
 {
     if (mode < 2)
     {
@@ -378,62 +374,62 @@ void svm::set_mode(int mode)
 }
 
 // Attribute getters
-void svm::get_type(int &type) const
+void ml_libsvm::get_type(int &type) const
 {
     type = param.svm_type;
 }
 
-void svm::get_kernel(int &kernel) const
+void ml_libsvm::get_kernel(int &kernel) const
 {
     kernel = param.kernel_type;
 }
 
-void svm::get_degree(int &degree) const
+void ml_libsvm::get_degree(int &degree) const
 {
     degree = param.degree;
 }
 
-void svm::get_gamma(float &gamma) const    
+void ml_libsvm::get_gamma(float &gamma) const    
 {
     gamma = param.gamma;
 }
 
-void svm::get_coef0(float &coef0) const    
+void ml_libsvm::get_coef0(float &coef0) const    
 {
     coef0 = param.coef0;
 }
 
-void svm::get_cost(float &cost) const    
+void ml_libsvm::get_cost(float &cost) const    
 {
     cost = param.C;
 }
 
-void svm::get_nu(float &nu) const    
+void ml_libsvm::get_nu(float &nu) const    
 {
     nu = param.nu;
 }
 
-void svm::get_epsilon(float &epsilon) const    
+void ml_libsvm::get_epsilon(float &epsilon) const    
 {
     epsilon = param.eps;
 }
 
-void svm::get_cachesize(int &cachesize) const    
+void ml_libsvm::get_cachesize(int &cachesize) const    
 {
     cachesize = param.cache_size;
 }
 
-void svm::get_shrinking(int &shrinking) const    
+void ml_libsvm::get_shrinking(int &shrinking) const    
 {
     shrinking = param.shrinking;
 }
 
-void svm::get_estimates(int &estimates) const    
+void ml_libsvm::get_estimates(int &estimates) const    
 {
     estimates = param.probability;
 }
 
-void svm::get_weights(AtomList &weights) const
+void ml_libsvm::get_weights(AtomList &weights) const
 {
     uint32_t num_weights = weight_labels.size();
     
@@ -453,13 +449,13 @@ void svm::get_weights(AtomList &weights) const
     }
 }
 
-void svm::get_mode(int &mode) const    
+void ml_libsvm::get_mode(int &mode) const    
 {    
     mode = nr_fold;
 }
 
 // Methods
-void svm::add(int argc, const t_atom *argv)
+void ml_libsvm::add(int argc, const t_atom *argv)
 {
     
     Observation observation;
@@ -477,7 +473,7 @@ void svm::add(int argc, const t_atom *argv)
    
 }
 
-void svm::save(const t_symbol *path) const
+void ml_libsvm::save(const t_symbol *path) const
 {
     const char *path_s = GetString(path);
     int rv = svm_save_model(path_s, model);
@@ -488,7 +484,7 @@ void svm::save(const t_symbol *path) const
     }
 }
 
-void svm::load(const t_symbol *path)
+void ml_libsvm::load(const t_symbol *path)
 {
     const char *path_s = GetString(path);
     model = svm_load_model(path_s);
@@ -499,12 +495,12 @@ void svm::load(const t_symbol *path)
     }
 }
 
-void svm::normalise()
+void ml_libsvm::normalise()
 {
     error("function not yet implemented");
 }
 
-void svm::cross_validation()
+void ml_libsvm::cross_validation()
 {
     int i;
 	int total_correct = 0;
@@ -548,7 +544,7 @@ void svm::cross_validation()
 	free(target);
 }
 
-void svm::train()
+void ml_libsvm::train()
 {
     free_problem_data(&prob);
     svm_free_and_destroy_model(&model);
@@ -643,7 +639,7 @@ void svm::train()
     // NOTE: don't free problem here because "svm_model contains pointers to svm_problem"
 }
 
-void svm::clear()
+void ml_libsvm::clear()
 {
     prob.l = 0;
     
@@ -658,7 +654,7 @@ void svm::clear()
     svm_free_and_destroy_model(&model);
 }
 
-void svm::predict(int argc, const t_atom *argv)
+void ml_libsvm::predict(int argc, const t_atom *argv)
 {
     if (model == NULL)
     {
@@ -685,7 +681,7 @@ void svm::predict(int argc, const t_atom *argv)
     ToOutFloat(0, (float)prediction);
 }
 
-void svm::usage()
+void ml_libsvm::usage()
 {
     post(
          "Attributes:\n\n"
@@ -728,9 +724,5 @@ void svm::usage()
          );
 }
 
+FLEXT_NEW_V("ml_libsvm", ml_libsvm)
 
-
-
-
-
-FLEXT_NEW_V("svm", svm)

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9974E52077083C700206F68"
-               BuildableName = "xsample.mxo"
-               BlueprintName = "max static"
-               ReferencedContainer = "container:svm.xcodeproj">
+               BlueprintIdentifier = "D2AAC09C05546B4700DB518D"
+               BuildableName = "xsample.pd_darwin"
+               BlueprintName = "pd static"
+               ReferencedContainer = "container:ml_libsvm.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
