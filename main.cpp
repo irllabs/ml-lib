@@ -664,6 +664,14 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     
     uint32_t num_features = argc;
     uint32_t max_index = num_features + 1;
+    int svm_type = svm_get_svm_type(model);
+	int nr_class = svm_get_nr_class(model);
+    double *prob_estimates=NULL;
+    std::vector<int> labels;
+    std::vector<double> probabilities;
+    AtomList estimates;
+
+    double prediction = 0.0;
     
     svm_node *nodes = (svm_node *)malloc(max_index * sizeof(svm_node));
     
@@ -676,9 +684,64 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     nodes[num_features].index = -1;
     nodes[num_features].value = 0.0;
     
-    double prediction = svm_predict(model, nodes);
+    if(param.probability)
+	{
+        if(svm_check_probability_model(model) == 0)
+        {
+            error("probability attribute set to 1, but model doesn't support probability");
+        }
+        else
+        {
+            if (svm_type == NU_SVR || svm_type == EPSILON_SVR)
+            {
+                post("Probability model for test data: target value = predicted value + z,\nz: Laplace distribution e^(-|z|/sigma)/(2sigma),sigma=%g\n", svm_get_svr_probability(model));
+            }
+            else
+            {
+                int *labels_ = (int *) malloc(nr_class * sizeof(int));
+                svm_get_labels(model, labels_);
+                prob_estimates = (double *) malloc(nr_class*sizeof(double));
+                
+                for(uint32_t j = 0; j < nr_class; ++j)
+                {
+                    post("prob_label %d %d", j, labels_[j]);
+                    labels.push_back(labels_[j]);
+                }
+                free(labels_);
+            }
+            
+            
+            if ((svm_type == C_SVC || svm_type == NU_SVC))
+            {
+                prediction = svm_predict_probability(model, nodes, prob_estimates);
+                
+                for(uint32_t j = 0; j < nr_class; ++j)
+                {
+                    post(" %g",prob_estimates[j]);
+                    probabilities.push_back(prob_estimates[j]);
+                }
+            }
+            
+            for (uint32_t j = 0; j < nr_class; ++j)
+            {
+                std::stringstream estimate;
+                estimate << labels[j] << ":" << probabilities[j];
+                const char *estimate_c = estimate.str().c_str();
+                const t_symbol *estimate_s = MakeSymbol(estimate_c);
+                t_atom estimate_a;
+                SetSymbol(estimate_a, estimate_s);
+                estimates.Append(estimate_a);
+            }
+        }
+    }
+    else
+    {
+        prediction = svm_predict(model, nodes);
+    }
+    
     free(nodes);
     ToOutFloat(0, (float)prediction);
+    ToOutList(1, estimates);
 }
 
 void ml_libsvm::usage()
