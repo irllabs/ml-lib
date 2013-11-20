@@ -45,7 +45,7 @@ class ml_libsvm : public flext_base
     typedef std::vector<Observation> observation_vector;
 public:
     ml_libsvm(int argc,t_atom *argv)
-    : model(NULL), weight_labels(1000, 0), weight_values(1000, 0)
+    : model(NULL), weight_labels(1000, 0), weight_values(1000, 0), normalised(false)
     {
         post("ml_svm: Copyright (c) 2013 Carnegie Melon University");
         
@@ -202,6 +202,9 @@ private:
     svm_problem prob;
     
     int nr_fold;
+    bool normalised;
+    double norm_range;
+    double norm_offset;
     
     std::vector<int> weight_labels;
     std::vector<double> weight_values;
@@ -224,6 +227,46 @@ void free_problem_data(svm_problem *prob)
     prob->x = NULL;
     prob->y = NULL;
     prob->l = 0;
+}
+
+void copy_observations_to_problem(svm_problem &prob, std::vector<Observation> &observations)
+{
+    prob.l = observations.size();
+    prob.x = (svm_node **)malloc(prob.l * sizeof(svm_node *));
+    prob.y = (double *)malloc(prob.l * sizeof(double));
+    feature_map::size_type num_nodes = 0;
+    
+    for (uint32_t line = 0; line < prob.l; ++line)
+    {
+        feature_map::iterator feature_iterator;
+        feature_map features = observations[line].features;
+        num_nodes = features.size() + 1; // add one for the "-1" termination node
+        
+        prob.y[line] = observations[line].label;
+        prob.x[line] = (svm_node *)malloc(num_nodes * sizeof(svm_node));
+        svm_node *node = prob.x[line];
+        
+        for (feature_iterator = features.begin(); feature_iterator != features.end(); ++feature_iterator, ++node)
+        {
+            node->index = feature_iterator->first;
+            node->value = feature_iterator->second;
+        }
+        node->index = -1;
+    }
+}
+
+feature_map::size_type get_observations_max_index(std::vector<Observation> &observations)
+{
+    feature_map::size_type max_index = 0;
+    
+    for (uint32_t n = 0; n < observations.size(); ++n)
+    {
+        feature_map features = observations[n].features;
+        feature_map::size_type last_index = features.rbegin()->first;
+        max_index = last_index > max_index ? last_index : max_index;
+    }
+    
+    return max_index;
 }
 
 // SVM print callback
@@ -530,16 +573,17 @@ void ml_libsvm::normalise()
         uint32_t index = index_iterator->first;
         std::vector<double> feature_list = index_iterator->second;
         std::sort(feature_list.begin(), feature_list.end());
-        double range = feature_list.back() - feature_list.front();
-        double offset = 0 - feature_list.front();
+        norm_range = feature_list.back() - feature_list.front();
+        norm_offset = 0 - feature_list.front();
         
         for (uint32_t count = 0; count < observations.size(); ++count)
         {
             double feature = observations[count].features[index];
-            double normalised = (feature + offset) / range;
+            double normalised = (feature + norm_offset) / norm_range;
             observations[count].features[index] = normalised;
         }
     }
+    normalised = true;
     
     ToOutString(1, "normalised");
 }
@@ -550,8 +594,17 @@ void ml_libsvm::cross_validation()
 	int total_correct = 0;
 	double total_error = 0;
 	double sumv = 0, sumy = 0, sumvv = 0, sumyy = 0, sumvy = 0;
-	double *target = (double *)malloc(prob.l * sizeof(prob.l));
+	double *target = NULL;
     
+    copy_observations_to_problem(prob, observations);
+    const char *error_message = svm_check_parameter(&prob, &param);
+    
+    if (error_message != NULL)
+    {
+        error("%s", error_message);
+    }
+    
+    target = (double *)malloc(prob.l * sizeof(prob.l));
 	svm_cross_validation(&prob, &param, nr_fold, target);
 	
     if(param.svm_type == EPSILON_SVR ||
@@ -586,6 +639,8 @@ void ml_libsvm::cross_validation()
 		post("Cross Validation Accuracy = %g%%\n", 100.0 * total_correct / prob.l);
 	}
 	free(target);
+    free_problem_data(&prob);
+
 }
 
 void ml_libsvm::train()
@@ -601,30 +656,8 @@ void ml_libsvm::train()
         return;
     }
     
-    prob.x = (svm_node **)malloc(prob.l * sizeof(svm_node *));
-    prob.y = (double *)malloc(prob.l * sizeof(double));
-    feature_map::size_type num_nodes = 0;
-    uint32_t max_index = 0;
-
-    // Copy out the data, don't pass C++ structures into svm_train()
-    for (uint32_t line = 0; line < prob.l; ++line)
-    {
-        feature_map::iterator feature_iterator;
-        feature_map features = observations[line].features;
-        num_nodes = features.size() + 1; // add one for the "-1" termination node
-        
-        prob.y[line] = observations[line].label;
-        prob.x[line] = (svm_node *)malloc(num_nodes * sizeof(svm_node));
-        svm_node *node = prob.x[line];
-        
-        for (feature_iterator = features.begin(); feature_iterator == features.end(); ++feature_iterator, ++node)
-        {
-            node->index = feature_iterator->first;
-            node->value = feature_iterator->second;
-            max_index = node->index > max_index ? node->index : max_index;
-        }
-        node->index = -1;
-    }
+    copy_observations_to_problem(prob, observations);
+    feature_map::size_type max_index = get_observations_max_index(observations);
     
     if(param.gamma == 0 && max_index > 0)
     {
@@ -690,6 +723,7 @@ void ml_libsvm::train()
 void ml_libsvm::clear()
 {
     prob.l = 0;
+    normalised = false;
     
     for (uint32_t item = 0; item < observations.size(); ++item)
     {
@@ -726,7 +760,13 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     for (uint32_t index = 0; index < num_features; ++index)
     {
         nodes[index].index = index;
-        nodes[index].value = GetFloat(argv[index]);
+        double value = GetFloat(argv[index]);
+        
+        if (normalised)
+        {
+            value = (value + norm_offset) / norm_range;
+        }
+        nodes[index].value = value;
     }
     
     nodes[num_features].index = -1;
