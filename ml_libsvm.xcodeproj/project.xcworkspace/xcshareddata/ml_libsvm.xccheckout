@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>74DD9B87-E1D0-42E9-AACF-1338A045DBEF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ml_libsvm</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3D3A3D03-8F27-42EC-954E-C6F7912D0862</key>
+		<string>https://github.com/jamiebullock/libsvm-flext-wrapper</string>
+		<key>E3A37B85-B642-454A-A924-5B58B3496983</key>
+		<string>https://github.com/cjlin1/libsvm</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ml_libsvm.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3D3A3D03-8F27-42EC-954E-C6F7912D0862</key>
+		<string>../..</string>
+		<key>E3A37B85-B642-454A-A924-5B58B3496983</key>
+		<string>../../libsvm</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jamiebullock/libsvm-flext-wrapper</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3D3A3D03-8F27-42EC-954E-C6F7912D0862</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E3A37B85-B642-454A-A924-5B58B3496983</string>
+			<key>IDESourceControlWCCName</key>
+			<string>libsvm</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3D3A3D03-8F27-42EC-954E-C6F7912D0862</string>
+			<key>IDESourceControlWCCName</key>
+			<string>libsvm-flext-wrapper</string>
+		</dict>
+	</array>
+</dict>
+</plist>

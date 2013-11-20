@@ -15,14 +15,18 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <map>
+#include <algorithm>
 
 static const std::string weight_delimiter = ":";
 void print_callback(const char *s);
+typedef std::map<int, double> feature_map;
 
 class Observation
 {
 public:
     Observation()
+    : label(0)
     {
         
     }
@@ -32,13 +36,13 @@ public:
     }
     
     double label;
-    std::vector<double> features;
+    feature_map features;
 };
 
 class ml_libsvm : public flext_base
 {
     FLEXT_HEADER_S(ml_libsvm,flext_base,setup);
-    
+    typedef std::vector<Observation> observation_vector;
 public:
     ml_libsvm(int argc,t_atom *argv)
     : model(NULL), weight_labels(1000, 0), weight_values(1000, 0)
@@ -201,9 +205,7 @@ private:
     
     std::vector<int> weight_labels;
     std::vector<double> weight_values;
-   
     std::vector<Observation> observations;
-    
 };
 
 // Utility functions
@@ -227,7 +229,9 @@ void free_problem_data(svm_problem *prob)
 // SVM print callback
 void print_callback(const char *s)
 {
+#ifdef ML_LIBSVM_DEBUG
     post("libsvm: %s", s);
+#endif
 }
 
 // Attribute setters
@@ -464,9 +468,8 @@ void ml_libsvm::add(int argc, const t_atom *argv)
     
     for (uint32_t index = 1; index < argc; ++index)
     {
-        // TODO: currently we're assuming there's always a value for every feature
         float value = GetFloat(argv[index]);
-        observation.features.push_back(value);
+        observation.features[index] = value;
     }
     
     observations.push_back(observation);
@@ -497,7 +500,48 @@ void ml_libsvm::load(const t_symbol *path)
 
 void ml_libsvm::normalise()
 {
-    error("function not yet implemented");
+    if (observations.size() == 0)
+    {
+        error("No observations added, use 'add' to add labeled feature vectors");
+        return;
+    }
+    typedef std::map<uint32_t, std::vector<double> > vector_map;
+    
+    observation_vector::iterator observation_iterator;
+    vector_map features_by_index;
+    vector_map::iterator index_iterator;
+    
+    for (observation_iterator = observations.begin(); observation_iterator != observations.end(); ++observation_iterator)
+    {
+        feature_map features = observation_iterator->features;
+        feature_map::iterator feature_iterator;
+        
+        for (feature_iterator = features.begin(); feature_iterator != features.end(); ++feature_iterator)
+        {
+            uint32_t index = feature_iterator->first;
+            double value = feature_iterator->second;
+            
+            features_by_index[index].push_back(value);
+        }
+    }
+    
+    for (index_iterator = features_by_index.begin(); index_iterator != features_by_index.end() ; ++index_iterator)
+    {
+        uint32_t index = index_iterator->first;
+        std::vector<double> feature_list = index_iterator->second;
+        std::sort(feature_list.begin(), feature_list.end());
+        double range = feature_list.back() - feature_list.front();
+        double offset = 0 - feature_list.front();
+        
+        for (uint32_t count = 0; count < observations.size(); ++count)
+        {
+            double feature = observations[count].features[index];
+            double normalised = (feature + offset) / range;
+            observations[count].features[index] = normalised;
+        }
+    }
+    
+    ToOutString(1, "normalised");
 }
 
 void ml_libsvm::cross_validation()
@@ -539,7 +583,7 @@ void ml_libsvm::cross_validation()
 				++total_correct;
             }
         }
-		printf("Cross Validation Accuracy = %g%%\n", 100.0 * total_correct / prob.l);
+		post("Cross Validation Accuracy = %g%%\n", 100.0 * total_correct / prob.l);
 	}
 	free(target);
 }
@@ -553,29 +597,33 @@ void ml_libsvm::train()
 
     if (prob.l == 0)
     {
-        error("no observations added, use 'add' to add labeled feature vectors");
+        error("No observations added, use 'add' to add labeled feature vectors");
         return;
     }
     
-    size_t num_features = observations[0].features.size();
-    size_t max_index = num_features + 1;
-    
     prob.x = (svm_node **)malloc(prob.l * sizeof(svm_node *));
     prob.y = (double *)malloc(prob.l * sizeof(double));
-    
+    feature_map::size_type num_nodes = 0;
+    uint32_t max_index = 0;
+
     // Copy out the data, don't pass C++ structures into svm_train()
     for (uint32_t line = 0; line < prob.l; ++line)
     {
-        prob.y[line] = observations[line].label;
-        prob.x[line] = (svm_node *)malloc(max_index * sizeof(svm_node));
+        feature_map::iterator feature_iterator;
+        feature_map features = observations[line].features;
+        num_nodes = features.size() + 1; // add one for the "-1" termination node
         
-        for (uint32_t feature = 0; feature < num_features; ++feature)
+        prob.y[line] = observations[line].label;
+        prob.x[line] = (svm_node *)malloc(num_nodes * sizeof(svm_node));
+        svm_node *node = prob.x[line];
+        
+        for (feature_iterator = features.begin(); feature_iterator == features.end(); ++feature_iterator, ++node)
         {
-            prob.x[line][feature].index = (int)feature + 1;
-            prob.x[line][feature].value = observations[line].features[feature];
+            node->index = feature_iterator->first;
+            node->value = feature_iterator->second;
+            max_index = node->index > max_index ? node->index : max_index;
         }
-        prob.x[line][num_features].index = -1;
-        prob.x[line][num_features].value = 0.0;
+        node->index = -1;
     }
     
     if(param.gamma == 0 && max_index > 0)
@@ -589,12 +637,12 @@ void ml_libsvm::train()
 		{
 			if (prob.x[i][0].index != 0)
 			{
-				error("wrong input format: first column must be 0:sample_serial_number\n");
+				error("Wrong input format: first column must be 0:sample_serial_number\n");
                 return;
 			}
 			if ((int)prob.x[i][0].value <= 0 || (int)prob.x[i][0].value > max_index)
 			{
-				error("wrong input format: sample_serial_number out of range\n");
+				error("Wrong input format: sample_serial_number out of range\n");
 				return;
 			}
 		}
@@ -623,7 +671,7 @@ void ml_libsvm::train()
     
     if (model == NULL)
     {
-        error("training model failed");
+        error("Training model failed");
     }
     else
     {
