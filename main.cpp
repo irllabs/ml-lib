@@ -45,7 +45,7 @@ class ml_libsvm : public flext_base
     typedef std::vector<Observation> observation_vector;
 public:
     ml_libsvm(int argc,t_atom *argv)
-    : model(NULL), weight_labels(1000, 0), weight_values(1000, 0), normalised(false)
+    : model(NULL), weight_labels(1000, 0), weight_values(1000, 0), normalized(false)
     {
         post("ml_svm: Copyright (c) 2013 Carnegie Melon University");
         
@@ -119,7 +119,7 @@ protected:
         FLEXT_CADDMETHOD_(c, 0, "add", add);
         FLEXT_CADDMETHOD_(c, 0, "save", save);
         FLEXT_CADDMETHOD_(c, 0, "load", load);
-        FLEXT_CADDMETHOD_(c, 0, "normalise", normalise);
+        FLEXT_CADDMETHOD_(c, 0, "normalize", normalize);
         FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
         FLEXT_CADDMETHOD_(c, 0, "train", train);
         FLEXT_CADDMETHOD_(c, 0, "clear", clear);
@@ -131,7 +131,7 @@ protected:
     void add(int argc, const t_atom *argv);
     void save(const t_symbol *path) const;
     void load(const t_symbol *path);
-    void normalise();
+    void normalize();
     void cross_validation();
     void train();
     void clear();
@@ -174,7 +174,7 @@ private:
     FLEXT_CALLBACK_V(add);
     FLEXT_CALLBACK_S(save);
     FLEXT_CALLBACK_S(load);
-    FLEXT_CALLBACK(normalise);
+    FLEXT_CALLBACK(normalize);
     FLEXT_CALLBACK(cross_validation);
     FLEXT_CALLBACK(train);
     FLEXT_CALLBACK(clear);
@@ -202,7 +202,7 @@ private:
     svm_problem prob;
     
     int nr_fold;
-    bool normalised;
+    bool normalized;
     double norm_range;
     double norm_offset;
     
@@ -541,7 +541,7 @@ void ml_libsvm::load(const t_symbol *path)
     }
 }
 
-void ml_libsvm::normalise()
+void ml_libsvm::normalize()
 {
     if (observations.size() == 0)
     {
@@ -579,13 +579,13 @@ void ml_libsvm::normalise()
         for (uint32_t count = 0; count < observations.size(); ++count)
         {
             double feature = observations[count].features[index];
-            double normalised = (feature + norm_offset) / norm_range;
-            observations[count].features[index] = normalised;
+            double normalized = (feature + norm_offset) / norm_range;
+            observations[count].features[index] = normalized;
         }
     }
-    normalised = true;
+    normalized = true;
     
-    ToOutString(1, "normalised");
+    ToOutString(1, "normalized");
 }
 
 void ml_libsvm::cross_validation()
@@ -723,7 +723,7 @@ void ml_libsvm::train()
 void ml_libsvm::clear()
 {
     prob.l = 0;
-    normalised = false;
+    normalized = false;
     
     for (uint32_t item = 0; item < observations.size(); ++item)
     {
@@ -762,7 +762,7 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
         nodes[index].index = index;
         double value = GetFloat(argv[index]);
         
-        if (normalised)
+        if (normalized)
         {
             value = (value + norm_offset) / norm_range;
         }
@@ -866,7 +866,7 @@ void ml_libsvm::usage()
          "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc\n"
          "save:\tsave a trained model, first argument gives path to save location\n"
          "load:\tload a trained model, first argument gives path to the load location\n"
-         "normalise:\tnormalise the training data prior to trianing a model\n"
+         "normalize:\tnormalize the training data prior to trianing a model\n"
          "cross_validation:\t\tperform cross-validation\n"
          "train:\ttrain the SVM based on labelled vectors added with 'add'\n"
          "clear:\tclear the stored training data\n"
