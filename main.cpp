@@ -552,7 +552,7 @@ void ml_libsvm::normalize()
     
     if (observations.size() == 0)
     {
-        error("No observations added, use 'add' to add labeled feature vectors");
+        error("no observations added, use 'add' to add labeled feature vectors");
         SetInt(flag_a, 0);
         outList.Append(flag_a);
         ToOutList(1, outList);
@@ -634,8 +634,8 @@ void ml_libsvm::cross_validation()
 			sumyy += y*y;
 			sumvy += v*y;
 		}
-		post("Cross Validation Mean squared error = %g\n",total_error/prob.l);
-		post("Cross Validation Squared correlation coefficient = %g\n",
+		post("cross validation mean squared error = %g\n",total_error/prob.l);
+		post("cross validation squared correlation coefficient = %g\n",
                ((prob.l * sumvy - sumv * sumy) * (prob.l * sumvy - sumv * sumy))/
                ((prob.l * sumvv - sumv * sumv) * (prob.l * sumyy - sumy * sumy))
                );
@@ -649,7 +649,7 @@ void ml_libsvm::cross_validation()
 				++total_correct;
             }
         }
-		post("Cross Validation Accuracy = %g%%\n", 100.0 * total_correct / prob.l);
+		post("cross validation accuracy = %g%%\n", 100.0 * total_correct / prob.l);
 	}
 	free(target);
     free_problem_data(&prob);
@@ -665,7 +665,7 @@ void ml_libsvm::train()
 
     if (prob.l == 0)
     {
-        error("No observations added, use 'add' to add labeled feature vectors");
+        error("no observations added, use 'add' to add labeled feature vectors");
         return;
     }
     
@@ -683,12 +683,12 @@ void ml_libsvm::train()
 		{
 			if (prob.x[i][0].index != 0)
 			{
-				error("Wrong input format: first column must be 0:sample_serial_number\n");
+				error("wrong input format: first column must be 0:sample_serial_number\n");
                 return;
 			}
 			if ((int)prob.x[i][0].value <= 0 || (int)prob.x[i][0].value > max_index)
 			{
-				error("Wrong input format: sample_serial_number out of range\n");
+				error("wrong input format: sample_serial_number out of range\n");
 				return;
 			}
 		}
@@ -717,7 +717,7 @@ void ml_libsvm::train()
     
     if (model == NULL)
     {
-        error("Training model failed");
+        error("training model failed");
     }
     else
     {
@@ -799,7 +799,7 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
             
             if (svm_type == NU_SVR || svm_type == EPSILON_SVR)
             {
-                post("Probability model for test data: target value = predicted value + z,\nz: Laplace distribution e^(-|z|/sigma)/(2sigma),sigma=%g\n", svm_get_svr_probability(model));
+                post("probability model for test data: target value = predicted value + z,\nz: Laplace distribution e^(-|z|/sigma)/(2sigma),sigma=%g\n", svm_get_svr_probability(model));
             }
             else
             {
@@ -809,12 +809,10 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
                 
                 for(uint32_t j = 0; j < nr_class; ++j)
                 {
-                    post("prob_label %d %d", j, labels_[j]);
                     labels.push_back(labels_[j]);
                 }
                 free(labels_);
             }
-            
             
             if ((svm_type == C_SVC || svm_type == NU_SVC))
             {
@@ -822,7 +820,6 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
                 
                 for(uint32_t j = 0; j < nr_class; ++j)
                 {
-                    post(" %g",prob_estimates[j]);
                     probabilities.push_back(prob_estimates[j]);
                 }
             }
