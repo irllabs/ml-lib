@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "main.cpp"
-            timestampString = "406671150.335364"
+            timestampString = "406811578.707187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
-            landmarkName = "ml_libsvm::set_weights(const AtomList &amp;weights)"
-            landmarkType = "5">
+            startingLineNumber = "385"
+            endingLineNumber = "385">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -56,11 +54,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "main.cpp"
-            timestampString = "406672591.609829"
+            timestampString = "406814864.86119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "751"
-            endingLineNumber = "751"
+            startingLineNumber = "768"
+            endingLineNumber = "768"
             landmarkName = "ml_libsvm::predict(int argc, const t_atom *argv)"
             landmarkType = "5">
          </BreakpointContent>
@@ -72,11 +70,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "main.cpp"
-            timestampString = "406672591.609829"
+            timestampString = "406814864.86119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "761"
-            endingLineNumber = "761"
+            startingLineNumber = "778"
+            endingLineNumber = "778"
             landmarkName = "ml_libsvm::predict(int argc, const t_atom *argv)"
             landmarkType = "5">
          </BreakpointContent>
@@ -88,12 +86,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "main.cpp"
-            timestampString = "406671150.335364"
+            timestampString = "406814864.86119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "553"
-            endingLineNumber = "553"
-            landmarkName = "ml_libsvm::normalise()"
+            startingLineNumber = "567"
+            endingLineNumber = "567"
+            landmarkName = "ml_libsvm::normalize()"
             landmarkType = "5">
             <Locations>
                <Location
@@ -134,12 +132,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "main.cpp"
-            timestampString = "406671150.335364"
+            timestampString = "406814864.86119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "567"
-            endingLineNumber = "567"
-            landmarkName = "ml_libsvm::normalise()"
+            startingLineNumber = "581"
+            endingLineNumber = "581"
+            landmarkName = "ml_libsvm::normalize()"
             landmarkType = "5">
             <Locations>
                <Location
@@ -180,12 +178,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "main.cpp"
-            timestampString = "406671150.335364"
+            timestampString = "406814864.86119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "580"
-            endingLineNumber = "580"
-            landmarkName = "ml_libsvm::normalise()"
+            startingLineNumber = "594"
+            endingLineNumber = "594"
+            landmarkName = "ml_libsvm::normalize()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "main.cpp"
+            timestampString = "406821275.027024"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "667"
+            endingLineNumber = "667"
+            landmarkName = "ml_libsvm::train()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "main.cpp"
+            timestampString = "406822227.892184"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "513"
+            endingLineNumber = "513"
+            landmarkName = "ml_libsvm::add(int argc, const t_atom *argv)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

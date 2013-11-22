@@ -6,7 +6,7 @@
 //
 //
 
-#define FLEXT_ATTRIBUTES 1
+#define ML_LIBSVM_VERSION 0.1
 
 #include "svm.h"
 
@@ -45,9 +45,9 @@ class ml_libsvm : public flext_base
     typedef std::vector<Observation> observation_vector;
 public:
     ml_libsvm(int argc,t_atom *argv)
-    : model(NULL), normalized(false), nr_fold(2)
+    : model(NULL), nr_fold(2), normalized(false)
     {
-        post("ml_svm: Copyright (c) 2013 Carnegie Melon University");
+        post("ml_svm %.1f: Copyright (c) 2013 Carnegie Melon University", ML_LIBSVM_VERSION);
         
         // Reserve vector elements for weights so we can cast directly to the C arrays below
         weight_labels.reserve(100);
