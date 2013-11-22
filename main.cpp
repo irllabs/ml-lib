@@ -511,11 +511,11 @@ void ml_libsvm::add(int argc, const t_atom *argv)
     
     Observation observation;
     
-    observation.label = GetFloat(argv[0]);
-    
+    observation.label = GetAFloat(argv[0]);
+
     for (uint32_t index = 1; index < argc; ++index)
     {
-        float value = GetFloat(argv[index]);
+        float value = GetAFloat(argv[index]);
         observation.features[index] = value;
     }
     
@@ -777,7 +777,7 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     for (uint32_t index = 0; index < num_features; ++index)
     {
         nodes[index].index = index + 1;
-        double value = GetFloat(argv[index]);
+        double value = GetAFloat(argv[index]);
         
         if (normalized)
         {
