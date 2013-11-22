@@ -543,9 +543,19 @@ void ml_libsvm::load(const t_symbol *path)
 
 void ml_libsvm::normalize()
 {
+    AtomList outList;
+    t_atom normalized_a;
+    t_atom flag_a;
+    
+    SetString(normalized_a, "normalized");
+    outList.Append(normalized_a);
+    
     if (observations.size() == 0)
     {
         error("No observations added, use 'add' to add labeled feature vectors");
+        SetInt(flag_a, 0);
+        outList.Append(flag_a);
+        ToOutList(1, outList);
         return;
     }
     typedef std::map<uint32_t, std::vector<double> > vector_map;
@@ -583,9 +593,12 @@ void ml_libsvm::normalize()
             observations[count].features[index] = normalized;
         }
     }
-    normalized = true;
     
-    ToOutString(1, "normalized");
+    normalized = true;
+
+    SetInt(flag_a, 1);
+    outList.Append(flag_a);
+    ToOutList(1, outList);
 }
 
 void ml_libsvm::cross_validation()
