@@ -776,7 +776,7 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     
     for (uint32_t index = 0; index < num_features; ++index)
     {
-        nodes[index].index = index;
+        nodes[index].index = index + 1;
         double value = GetFloat(argv[index]);
         
         if (normalized)
@@ -807,9 +807,8 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
             }
             else
             {
-                int *labels_ = (int *) malloc(nr_class * sizeof(int));
+                int *labels_ = (int *)malloc(nr_class * sizeof(int));
                 svm_get_labels(model, labels_);
-                prob_estimates = (double *) malloc(nr_class*sizeof(double));
                 
                 for(uint32_t j = 0; j < nr_class; ++j)
                 {
@@ -820,6 +819,7 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
             
             if ((svm_type == C_SVC || svm_type == NU_SVC))
             {
+                prob_estimates = (double *)malloc(nr_class * sizeof(double));
                 prediction = svm_predict_probability(model, nodes, prob_estimates);
                 
                 for(uint32_t j = 0; j < nr_class; ++j)
