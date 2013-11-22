@@ -793,6 +793,10 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
         }
         else
         {
+            t_atom estimates_a;
+            SetString(estimates_a, "estimates");
+            estimates.Append(estimates_a);
+            
             if (svm_type == NU_SVR || svm_type == EPSILON_SVR)
             {
                 post("Probability model for test data: target value = predicted value + z,\nz: Laplace distribution e^(-|z|/sigma)/(2sigma),sigma=%g\n", svm_get_svr_probability(model));
