@@ -45,9 +45,13 @@ class ml_libsvm : public flext_base
     typedef std::vector<Observation> observation_vector;
 public:
     ml_libsvm(int argc,t_atom *argv)
-    : model(NULL), weight_labels(1000, 0), weight_values(1000, 0), normalized(false), nr_fold(2)
+    : model(NULL), normalized(false), nr_fold(2)
     {
         post("ml_svm: Copyright (c) 2013 Carnegie Melon University");
+        
+        // Reserve vector elements for weights so we can cast directly to the C arrays below
+        weight_labels.reserve(100);
+        weight_values.reserve(100);
         
         param.svm_type = C_SVC;
         param.kernel_type = RBF;
