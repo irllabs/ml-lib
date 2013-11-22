@@ -45,7 +45,7 @@ class ml_libsvm : public flext_base
     typedef std::vector<Observation> observation_vector;
 public:
     ml_libsvm(int argc,t_atom *argv)
-    : model(NULL), weight_labels(1000, 0), weight_values(1000, 0), normalized(false)
+    : model(NULL), weight_labels(1000, 0), weight_values(1000, 0), normalized(false), nr_fold(2)
     {
         post("ml_svm: Copyright (c) 2013 Carnegie Melon University");
         
