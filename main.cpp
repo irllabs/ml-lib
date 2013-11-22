@@ -838,6 +838,8 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
                 SetSymbol(estimate_a, estimate_s);
                 estimates.Append(estimate_a);
             }
+            
+            ToOutList(1, estimates);
         }
     }
     else
@@ -847,7 +849,6 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     
     free(nodes);
     ToOutFloat(0, (float)prediction);
-    ToOutList(1, estimates);
 }
 
 void ml_libsvm::usage()
