@@ -17,7 +17,7 @@
                BlueprintIdentifier = "D2AAC09C05546B4700DB518D"
                BuildableName = "xsample.pd_darwin"
                BlueprintName = "pd static"
-               ReferencedContainer = "container:ml_libsvm.xcodeproj">
+               ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

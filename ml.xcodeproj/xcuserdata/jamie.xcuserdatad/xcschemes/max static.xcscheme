@@ -17,7 +17,7 @@
                BlueprintIdentifier = "E9974E52077083C700206F68"
                BuildableName = "xsample.mxo"
                BlueprintName = "max static"
-               ReferencedContainer = "container:ml_libsvm.xcodeproj">
+               ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

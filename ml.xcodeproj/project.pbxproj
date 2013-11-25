@@ -13,8 +13,10 @@
 		7D4EAF9D1834C55F005B8615 /* svm.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D4EAF3C1834C55F005B8615 /* svm.h */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
-		E98573570D9E52D300682171 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* main.cpp */; };
-		E98573580D9E52D300682171 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* main.cpp */; };
+		7DBFDE6018439DCC009ED61E /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDE5E18439DCC009ED61E /* ml_libsvm.cpp */; };
+		7DBFDE6118439DCC009ED61E /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDE5E18439DCC009ED61E /* ml_libsvm.cpp */; };
+		E98573570D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		E98573580D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
 		E99A3B770D35508600E692EF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E99A3B760D35508600E692EF /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +38,11 @@
 		7D4EAF3C1834C55F005B8615 /* svm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = svm.h; sourceTree = "<group>"; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
-		D2AAC09D05546B4700DB518D /* ml_libsvm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml_libsvm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
-		E98573560D9E52D300682171 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E9974E53077083C700206F68 /* ml_libsvm.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml_libsvm.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DBFDE5E18439DCC009ED61E /* ml_libsvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml_libsvm.cpp; sourceTree = "<group>"; };
+		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
+		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98573560D9E52D300682171 /* ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml.cpp; sourceTree = "<group>"; };
+		E9974E53077083C700206F68 /* ml.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99A3B760D35508600E692EF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,8 +70,8 @@
 		034768DDFF38A45A11DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC09D05546B4700DB518D /* ml_libsvm.pd_darwin */,
-				E9974E53077083C700206F68 /* ml_libsvm.mxo */,
+				D2AAC09D05546B4700DB518D /* ml.pd_darwin */,
+				E9974E53077083C700206F68 /* ml.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +100,9 @@
 		08FB77ACFE841707C02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E98573560D9E52D300682171 /* main.cpp */,
+				7DBFDE6318439E09009ED61E /* ml.h */,
+				E98573560D9E52D300682171 /* ml.cpp */,
+				7DBFDE5E18439DCC009ED61E /* ml_libsvm.cpp */,
 				E99A3B760D35508600E692EF /* Info.plist */,
 			);
 			name = Source;
@@ -147,7 +153,7 @@
 			);
 			name = "pd static";
 			productName = xsample;
-			productReference = D2AAC09D05546B4700DB518D /* ml_libsvm.pd_darwin */;
+			productReference = D2AAC09D05546B4700DB518D /* ml.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		E9974E52077083C700206F68 /* max static */ = {
@@ -165,7 +171,7 @@
 			);
 			name = "max static";
 			productName = "Max xsample static";
-			productReference = E9974E53077083C700206F68 /* ml_libsvm.mxo */;
+			productReference = E9974E53077083C700206F68 /* ml.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +181,7 @@
 			isa = PBXProject;
 			attributes = {
 			};
-			buildConfigurationList = E9A5BC920A33819900AD9F03 /* Build configuration list for PBXProject "ml_libsvm" */;
+			buildConfigurationList = E9A5BC920A33819900AD9F03 /* Build configuration list for PBXProject "ml" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -209,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E98573570D9E52D300682171 /* main.cpp in Sources */,
+				7DBFDE6018439DCC009ED61E /* ml_libsvm.cpp in Sources */,
+				E98573570D9E52D300682171 /* ml.cpp in Sources */,
 				7D4EAF9A1834C55F005B8615 /* svm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,7 +225,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E98573580D9E52D300682171 /* main.cpp in Sources */,
+				7DBFDE6118439DCC009ED61E /* ml_libsvm.cpp in Sources */,
+				E98573580D9E52D300682171 /* ml.cpp in Sources */,
 				7D4EAF9B1834C55F005B8615 /* svm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +263,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = ml_libsvm;
+				PRODUCT_NAME = ml;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 				ZERO_LINK = YES;
 			};
@@ -288,7 +296,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = ml_libsvm;
+				PRODUCT_NAME = ml;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 				ZERO_LINK = NO;
 			};
@@ -360,7 +368,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ml_libsvm;
+				PRODUCT_NAME = ml;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = /usr/local/include/flext;
@@ -409,7 +417,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ml_libsvm;
+				PRODUCT_NAME = ml;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = /usr/local/include/flext;
@@ -547,7 +555,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
 		};
-		E9A5BC920A33819900AD9F03 /* Build configuration list for PBXProject "ml_libsvm" */ = {
+		E9A5BC920A33819900AD9F03 /* Build configuration list for PBXProject "ml" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9A5BC930A33819900AD9F03 /* Development */,

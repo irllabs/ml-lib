@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ml_libsvm.xcodeproj">
+      location = "self:ml.xcodeproj">
    </FileRef>
 </Workspace>
