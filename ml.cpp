@@ -14,7 +14,7 @@ namespace ml
     {
     }
 
-    static void ml_setup()
+    static void main()
     {
         flext::post("---------------------------------------");
         flext::post("ml - machine learning objects");
@@ -24,6 +24,7 @@ namespace ml
         // call the objects' setup routines
         FLEXT_SETUP(ml_libsvm);
     }
+
 }
 
-FLEXT_LIB_SETUP(ml, ml::ml_setup)
+FLEXT_LIB_SETUP(ml, ml::main)

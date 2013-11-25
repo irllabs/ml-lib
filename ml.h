@@ -11,7 +11,7 @@
 
 #include <flext.h>
 
-#define ML_VERSION "0.2.0"
+#define ML_VERSION "0.2.1"
 
 namespace ml
 {
