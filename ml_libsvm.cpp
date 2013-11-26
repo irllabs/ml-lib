@@ -131,7 +131,7 @@ namespace ml
             FLEXT_CADDMETHOD_(c, 0, "train", train);
             FLEXT_CADDMETHOD_(c, 0, "clear", clear);
             FLEXT_CADDMETHOD_(c, 0, "predict", predict);
-            FLEXT_CADDMETHOD_(c, 0, "bang", usage);
+            FLEXT_CADDMETHOD_(c, 0, "help", usage);
         }
         
         // Methods
@@ -298,7 +298,7 @@ namespace ml
                 break;
                 
             default:
-                post("invalid SVM type, send a 'bang' to the first inlet for available types");
+                post("invalid SVM type, send a 'help' message to the first inlet for available types");
                 break;
         }
     }
@@ -316,7 +316,7 @@ namespace ml
                 break;
                 
             default:
-                post("invalid kernel type, send a 'bang' to the first inlet for available types");
+                post("invalid kernel type, send a 'help' message to the first inlet for available types");
                 break;
         }
     }
@@ -856,49 +856,50 @@ namespace ml
     
     void ml_libsvm::usage()
     {
-        post(
-             "Attributes:\n\n"
-             "type:\tset type of SVM (default 0)\n"
-             "	0 -- C-SVC		(multi-class classification)\n"
-             "	1 -- nu-SVC		(multi-class classification)\n"
-             "	2 -- one-class SVM\n"
-             "	3 -- epsilon-SVR	(regression)\n"
-             "	4 -- nu-SVR		(regression)\n"
-             "kernel:\tset type of kernel function (default 2)\n"
-             "	0 -- linear: u'*v\n"
-             "	1 -- polynomial: (gamma*u'*v + coef0)^degree\n"
-             "	2 -- radial basis function: exp(-gamma*|u-v|^2)\n"
-             "	3 -- sigmoid: tanh(gamma*u'*v + coef0)\n"
-             "	4 -- precomputed kernel (kernel values in training_set_file)\n"
-             "degree:\tset degree in kernel function (default 3)\n"
-             "gamma:\tset gamma in kernel function (default 1/num_features)\n"
-             "coef0:\tset coef0 in kernel function (default 0)\n"
-             "cost:\tset the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)\n"
-             "nu:\tset the parameter nu of nu-SVC, one-class SVM, and nu-SVR (default 0.5)\n"
-             "epsilon:\tset the epsilon in loss function of epsilon-SVR (default 0.1)\n"
-             "cachesize:\tset cache memory size in MB (default 100)"
-             );
-        post(
-             "epsilon:\tset tolerance of termination criterion (default 0.001)\n"
-             "shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)\n"
-             "estimates:\twhether to train a SVC or SVR model for probability estimates, 0 or 1 (default 0)\n"
-             "weights:\tlist of weight tuples 'class:weight' to set the parameter of class to weight*C, for C-SVC (default 1)\n"
-             "n:\tn-fold cross validation mode\n\n"
-             "Methods:\n\n"
-             "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc\n"
-             "save:\tsave a trained model, first argument gives path to save location\n"
-             "load:\tload a trained model, first argument gives path to the load location\n"
-             "normalize:\tnormalize the training data prior to trianing a model\n"
-             "cross_validation:\t\tperform cross-validation\n"
-             "train:\ttrain the SVM based on labelled vectors added with 'add'\n"
-             "clear:\tclear the stored training data\n"
-             "predict:\tpredict the class of the input feature vector provided as a list\n"
-             "usage:\tpost this usage statement to the console\n"
-             );
+        post("%s", ML_POST_SEP);
+        post("Attributes:");
+        post("%s", ML_POST_SEP);
+        post("type:\tset type of SVM (default 0)");
+        post("	0 -- C-SVC		(multi-class classification)");
+        post("	1 -- nu-SVC		(multi-class classification)");
+        post("	2 -- one-class SVM");
+        post("	3 -- epsilon-SVR	(regression)");
+        post("	4 -- nu-SVR		(regression)");
+        post("kernel:\tset type of kernel function (default 2)");
+        post("	0 -- linear: u'*v");
+        post("	1 -- polynomial: (gamma*u'*v + coef0)^degree");
+        post("	2 -- radial basis function: exp(-gamma*|u-v|^2)");
+        post("	3 -- sigmoid: tanh(gamma*u'*v + coef0)");
+        post("	4 -- precomputed kernel (kernel values in training_set_file)");
+        post("degree:\tset degree in kernel function (default 3)");
+        post("gamma:\tset gamma in kernel function (default 1/num_features)");
+        post("coef0:\tset coef0 in kernel function (default 0)");
+        post("cost:\tset the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)");
+        post("nu:\tset the parameter nu of nu-SVC, one-class SVM, and nu-SVR (default 0.5)");
+        post("epsilon:\tset the epsilon in loss function of epsilon-SVR (default 0.1)");
+        post("cachesize:\tset cache memory size in MB (default 100)");
+        post("epsilon:\tset tolerance of termination criterion (default 0.001)");
+        post("shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)");
+        post("estimates:\twhether to train a SVC or SVR model for probability estimates, 0 or 1 (default 0)");
+        post("weights:\tlist of weight tuples 'class:weight' to set the parameter of class to weight*C, for C-SVC (default 1)");
+        post("n:\tn-fold cross validation mode");
+        post("%s", ML_POST_SEP);
+        post("Methods:");
+        post("%s", ML_POST_SEP);
+        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
+        post("save:\tsave a trained model, first argument gives path to save location");
+        post("load:\tload a trained model, first argument gives path to the load location");
+        post("normalize:\tnormalize the training data prior to trianing a model");
+        post("cross_validation:\t\tperform cross-validation");
+        post("train:\ttrain the SVM based on labelled vectors added with 'add'");
+        post("clear:\tclear the stored training data");
+        post("predict:\tpredict the class of the input feature vector provided as a list");
+        post("help:\tpost this usage statement to the console");
+        post("%s", ML_POST_SEP);
+
     }
     
     FLEXT_LIB("ml.libsvm", ml_libsvm);
     
 }
-//FLEXT_NEW_V("ml_libsvm", ml_libsvm)
 

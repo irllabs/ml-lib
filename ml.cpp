@@ -16,15 +16,14 @@ namespace ml
 
     static void main()
     {
-        flext::post("---------------------------------------");
-        flext::post("ml - machine learning objects");
-        flext::post("version " ML_VERSION " (c)Carnegie Mellon University");
-        flext::post("---------------------------------------");
+        post("%s", ML_POST_SEP);
+        post("%s - machine learning library for Max and Pure Data", ML_NAME);
+        post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
+        post("%s", ML_POST_SEP);
         
         // call the objects' setup routines
         FLEXT_SETUP(ml_libsvm);
     }
-
 }
 
 FLEXT_LIB_SETUP(ml, ml::main)
