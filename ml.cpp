@@ -10,20 +10,23 @@
 
 namespace ml
 {    
-    ml_base::ml_base()
-    {
-    }
 
-    static void main()
-    {
-        post("%s", ML_POST_SEP);
-        post("%s - machine learning library for Max and Pure Data", ML_NAME);
-        post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
-        post("%s", ML_POST_SEP);
-        
-        // call the objects' setup routines
-        FLEXT_SETUP(ml_libsvm);
-    }
+ml_base::ml_base()
+{
 }
+
+static void main()
+{
+    post("%s", ML_POST_SEP);
+    post("%s - machine learning library for Max and Pure Data", ML_NAME);
+    post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
+    post("%s", ML_POST_SEP);
+    
+    // call the objects' setup routines
+    FLEXT_SETUP(ml_libsvm);
+}
+    
+} // namespace ml
+
 
 FLEXT_LIB_SETUP(ml, ml::main)

@@ -17,14 +17,17 @@
 
 namespace ml
 {
-    class ml_base:
-    public flext_base
-    {
-        FLEXT_HEADER(ml_base, flext_base);
-        
-    public:
-        ml_base();
-    };
-}
+    
+class ml_base:
+public flext_base
+{
+    FLEXT_HEADER(ml_base, flext_base);
+    
+public:
+    ml_base();
+};
+    
+} // namespace ml
+
 
 #endif
