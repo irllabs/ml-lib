@@ -50,7 +50,7 @@ namespace ml
         ml_libsvm()
         : model(NULL), nr_fold(2), normalized(false)
         {
-            post("ml.libsvm %s: Copyright (c) 2013 Carnegie Melon University", ML_VERSION);
+            post("ml.libsvm: Support Vector Machines using the libsvm library");
             
             // Reserve vector elements for weights so we can cast directly to the C arrays below
             weight_labels.reserve(100);
@@ -897,7 +897,7 @@ namespace ml
              );
     }
     
-    FLEXT_LIB("ml.libsvm, ml", ml_libsvm);
+    FLEXT_LIB("ml.libsvm", ml_libsvm);
     
 }
 //FLEXT_NEW_V("ml_libsvm", ml_libsvm)
