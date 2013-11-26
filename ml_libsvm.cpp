@@ -73,7 +73,7 @@ class ml_libsvm : ml_base
     typedef std::vector<observation> observation_vector;
 public:
     ml_libsvm()
-    : model(NULL), nr_fold(2)
+    : model(NULL), nr_fold(2), estimates(false)
     {
         post("ml.libsvm: Support Vector Machines using the libsvm library");
         
@@ -92,7 +92,7 @@ public:
         param.eps = 1e-3;
         param.p = 0.1;
         param.shrinking = 1;
-        param.probability = 0;
+        param.probability = 1;
         param.nr_weight = 0;
         param.weight_label = &weight_labels[0];
         param.weight = &weight_values[0];
@@ -181,7 +181,7 @@ protected:
     void set_epsilon(float epsilon);
     void set_cachesize(int cachesize);
     void set_shrinking(int shrinking);
-    void set_estimates(int estimates);
+    void set_estimates(bool estimates);
     void set_weights(const AtomList &weights);
     void set_mode(int mode); // cross validation mode
     
@@ -196,7 +196,7 @@ protected:
     void get_epsilon(float &epsilon) const;
     void get_cachesize(int &cachesize) const;
     void get_shrinking(int &shrinking) const;
-    void get_estimates(int &estimates) const;
+    void get_estimates(bool &estimates) const;
     void get_weights(AtomList &weights) const;
     void get_mode(int &mode) const;
     
@@ -224,7 +224,7 @@ private:
     FLEXT_CALLVAR_F(get_epsilon, set_epsilon);
     FLEXT_CALLVAR_I(get_cachesize, set_cachesize);
     FLEXT_CALLVAR_I(get_shrinking, set_shrinking);
-    FLEXT_CALLVAR_I(get_estimates, set_estimates);
+    FLEXT_CALLVAR_B(get_estimates, set_estimates);
     FLEXT_CALLVAR_V(get_weights, set_weights);
     FLEXT_CALLVAR_I(get_mode, set_mode);
     
@@ -234,6 +234,7 @@ private:
     svm_problem prob;
     
     int nr_fold;
+    bool estimates;
     
     std::map<uint32_t, normalizer> normalizers;
     std::vector<int> weight_labels;
@@ -394,19 +395,9 @@ void ml_libsvm::set_shrinking(int shrinking)
     }
 }
 
-void ml_libsvm::set_estimates(int estimates)
+void ml_libsvm::set_estimates(bool estimates)
 {
-    switch (estimates)
-    {
-        case 0:
-        case 1:
-            param.probability = estimates;
-            break;
-            
-        default:
-            error("probability estimates must either be 0 (off) or 1 (on)");
-            break;
-    }
+    this->estimates = estimates;
 }
 
 void ml_libsvm::set_weights(const AtomList &weights)
@@ -501,9 +492,9 @@ void ml_libsvm::get_shrinking(int &shrinking) const
     shrinking = param.shrinking;
 }
 
-void ml_libsvm::get_estimates(int &estimates) const
+void ml_libsvm::get_estimates(bool &estimates) const
 {
-    estimates = param.probability;
+    estimates = this->estimates;
 }
 
 void ml_libsvm::get_weights(AtomList &weights) const
@@ -806,15 +797,19 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     {
         nodes[index].index = index + 1;
         double value = GetAFloat(argv[index]);
-        auto normalization_iterator = normalizers.find(nodes[index].index);
         
-        if (normalization_iterator != normalizers.end())
+        if (!normalizers.empty())
         {
-            value = normalization_iterator->second.normalize(value);
-        }
-        else
-        {
-            error("invalid key %d. predict vector must have same number of features as train vectors");
+            auto normalization_iterator = normalizers.find(nodes[index].index);
+            
+            if (normalization_iterator != normalizers.end())
+            {
+                value = normalization_iterator->second.normalize(value);
+            }
+            else
+            {
+                error("invalid key %d, unable to normalize feature", nodes[index].index);
+            }
         }
         nodes[index].value = value;
     }
@@ -822,7 +817,7 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     nodes[num_features].index = -1;
     nodes[num_features].value = 0.0;
     
-    if(param.probability)
+    if(this->estimates)
     {
         if(svm_check_probability_model(model) == 0)
         {
