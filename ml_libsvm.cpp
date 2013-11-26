@@ -25,15 +25,39 @@ static const std::string weight_delimiter = ":";
 void print_callback(const char *s);
 typedef std::map<int, double> feature_map;
 
-class Observation
+class normalizer
 {
 public:
-    Observation()
+    normalizer()
+    : range(0), offset(0)
+    {
+        
+    }
+    
+    ~normalizer()
+    {
+        
+    }
+    
+    double normalize(double value)
+    {
+        return (value + offset) / range;
+    }
+    
+    double range;
+    double offset;
+};
+    
+class observation
+{
+public:
+    observation()
     : label(0)
     {
         
     }
-    ~Observation()
+    
+    ~observation()
     {
         
     }
@@ -42,13 +66,14 @@ public:
     feature_map features;
 };
 
+    
 class ml_libsvm : ml_base
 {
     FLEXT_HEADER_S(ml_libsvm, ml_base, setup);
-    typedef std::vector<Observation> observation_vector;
+    typedef std::vector<observation> observation_vector;
 public:
     ml_libsvm()
-    : model(NULL), nr_fold(2), normalized(false)
+    : model(NULL), nr_fold(2)
     {
         post("ml.libsvm: Support Vector Machines using the libsvm library");
         
@@ -209,13 +234,11 @@ private:
     svm_problem prob;
     
     int nr_fold;
-    bool normalized;
-    double norm_range;
-    double norm_offset;
     
+    std::map<uint32_t, normalizer> normalizers;
     std::vector<int> weight_labels;
     std::vector<double> weight_values;
-    std::vector<Observation> observations;
+    std::vector<observation> observations;
 };
 
 // Utility functions
@@ -236,7 +259,7 @@ void free_problem_data(svm_problem *prob)
     prob->l = 0;
 }
 
-void copy_observations_to_problem(svm_problem &prob, std::vector<Observation> &observations)
+void copy_observations_to_problem(svm_problem &prob, std::vector<observation> &observations)
 {
     prob.l = observations.size();
     prob.x = (svm_node **)malloc(prob.l * sizeof(svm_node *));
@@ -262,7 +285,7 @@ void copy_observations_to_problem(svm_problem &prob, std::vector<Observation> &o
     }
 }
 
-feature_map::size_type get_observations_max_index(std::vector<Observation> &observations)
+feature_map::size_type get_observations_max_index(std::vector<observation> &observations)
 {
     feature_map::size_type max_index = 0;
     
@@ -512,7 +535,7 @@ void ml_libsvm::get_mode(int &mode) const
 void ml_libsvm::add(int argc, const t_atom *argv)
 {
     
-    Observation observation;
+    observation observation;
     
     observation.label = GetAFloat(argv[0]);
     
@@ -590,18 +613,20 @@ void ml_libsvm::normalize()
         uint32_t index = index_iterator->first;
         std::vector<double> feature_list = index_iterator->second;
         std::sort(feature_list.begin(), feature_list.end());
-        norm_range = feature_list.back() - feature_list.front();
-        norm_offset = 0 - feature_list.front();
+        normalizer normalizer;
+        
+        normalizer.range = feature_list.back() - feature_list.front();
+        normalizer.offset = 0 - feature_list.front();
+        
+        normalizers[index] = normalizer;
         
         for (uint32_t count = 0; count < observations.size(); ++count)
         {
             double feature = observations[count].features[index];
-            double normalized = (feature + norm_offset) / norm_range;
+            double normalized = normalizer.normalize(feature);
             observations[count].features[index] = normalized;
         }
     }
-    
-    normalized = true;
     
     SetInt(flag_a, 1);
     outList.Append(flag_a);
@@ -743,7 +768,6 @@ void ml_libsvm::train()
 void ml_libsvm::clear()
 {
     prob.l = 0;
-    normalized = false;
     
     for (uint32_t item = 0; item < observations.size(); ++item)
     {
@@ -751,6 +775,7 @@ void ml_libsvm::clear()
     }
     
     observations.clear();
+    normalizers.clear();
     
     free_problem_data(&prob);
     svm_free_and_destroy_model(&model);
@@ -781,10 +806,15 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     {
         nodes[index].index = index + 1;
         double value = GetAFloat(argv[index]);
+        auto normalization_iterator = normalizers.find(nodes[index].index);
         
-        if (normalized)
+        if (normalization_iterator != normalizers.end())
         {
-            value = (value + norm_offset) / norm_range;
+            value = normalization_iterator->second.normalize(value);
+        }
+        else
+        {
+            error("invalid key %d. predict vector must have same number of features as train vectors");
         }
         nodes[index].value = value;
     }
