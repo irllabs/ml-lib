@@ -18,6 +18,8 @@
 #include <map>
 #include <algorithm>
 
+#include <stdint.h>
+
 namespace ml
 {
 
@@ -822,7 +824,7 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
         
         if (!normalizers.empty())
         {
-            auto normalization_iterator = normalizers.find(nodes[index].index);
+             std::map<uint32_t, normalizer>::iterator normalization_iterator = normalizers.find(nodes[index].index);
             
             if (normalization_iterator != normalizers.end())
             {
