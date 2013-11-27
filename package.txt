@@ -1,0 +1,3 @@
+NAME=ml
+SRCS=libsvm/svm.cpp ml.cpp ml_libsvm.cpp
+INCPATH+=-I./libsvm
