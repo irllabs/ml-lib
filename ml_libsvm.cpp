@@ -542,24 +542,41 @@ void ml_libsvm::add(int argc, const t_atom *argv)
 
 void ml_libsvm::save(const t_symbol *path) const
 {
+    t_atom status;
+    int rv = -1;
     const char *path_s = GetString(path);
-    int rv = svm_save_model(path_s, model);
+    
+    SetBool(status, true);
+    
+    if (model != NULL)
+    {
+        rv = svm_save_model(path_s, model);
+    }
     
     if (rv == -1)
     {
-        error("an error occurred saving the model");
+        error("an error occurred saving the model, ensure a model has been created with 'train'");
+        SetBool(status, false);
     }
+    
+    ToOutAnything(1, MakeSymbol("saved"), 1, &status);
 }
 
 void ml_libsvm::load(const t_symbol *path)
 {
+    t_atom status;
     const char *path_s = GetString(path);
     model = svm_load_model(path_s);
+    
+    SetBool(status, true);
     
     if (model == NULL)
     {
         error("unable to load model");
+        SetBool(status, false);
     }
+
+    ToOutAnything(1, MakeSymbol("loaded"), 1, &status);
 }
 
 void ml_libsvm::normalize()
@@ -758,7 +775,10 @@ void ml_libsvm::train()
 
 void ml_libsvm::clear()
 {
+    t_atom status;
     prob.l = 0;
+    
+    SetBool(status, true);
     
     for (uint32_t item = 0; item < observations.size(); ++item)
     {
@@ -770,6 +790,8 @@ void ml_libsvm::clear()
     
     free_problem_data(&prob);
     svm_free_and_destroy_model(&model);
+    
+    ToOutAnything(1, MakeSymbol("cleared"), 1, &status);
 }
 
 void ml_libsvm::predict(int argc, const t_atom *argv)
