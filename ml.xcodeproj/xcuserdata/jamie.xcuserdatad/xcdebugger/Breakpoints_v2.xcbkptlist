@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ml_libsvm.cpp"
-            timestampString = "407180118.570251"
+            timestampString = "407194378.058878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "583"
-            endingLineNumber = "583"
+            startingLineNumber = "574"
+            endingLineNumber = "574"
             landmarkName = "ml_libsvm::normalize()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,57 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ml_libsvm.cpp"
-            timestampString = "407180162.620557"
+            timestampString = "407194378.058878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "613"
-            endingLineNumber = "613"
-            landmarkName = "ml_libsvm::normalize()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ml::ml_libsvm::normalize()"
-                  moduleName = "ml.pd_darwin"
-                  urlString = "file:///Users/jamie/Documents/ml-lib/ml_libsvm.cpp"
-                  timestampString = "407180162.623054"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "614"
-                  endingLineNumber = "614"
-                  offsetFromSymbolStart = "966">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ml::ml_libsvm::normalize()"
-                  moduleName = "ml.pd_darwin"
-                  urlString = "file:///Users/jamie/Documents/ml-lib/ml_libsvm.cpp"
-                  timestampString = "407180162.623321"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "614"
-                  endingLineNumber = "614"
-                  offsetFromSymbolStart = "2011">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ml_libsvm.cpp"
-            timestampString = "407180274.239598"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "633"
-            endingLineNumber = "633"
+            startingLineNumber = "604"
+            endingLineNumber = "604"
             landmarkName = "ml_libsvm::normalize()"
             landmarkType = "5">
          </BreakpointContent>
@@ -88,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ml_libsvm.cpp"
-            timestampString = "407180311.779362"
+            timestampString = "407194378.058878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "806"
-            endingLineNumber = "806"
-            landmarkName = "ml_libsvm::predict(int argc, const t_atom *argv)"
+            startingLineNumber = "624"
+            endingLineNumber = "624"
+            landmarkName = "ml_libsvm::normalize()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

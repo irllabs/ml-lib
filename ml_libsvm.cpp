@@ -858,13 +858,15 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
             
             for (uint32_t j = 0; j < nr_class; ++j)
             {
-                std::stringstream estimate;
-                estimate << labels[j] << ":" << probabilities[j];
-                const char *estimate_c = estimate.str().c_str();
-                const t_symbol *estimate_s = MakeSymbol(estimate_c);
-                t_atom estimate_a;
-                SetSymbol(estimate_a, estimate_s);
-                estimates.Append(estimate_a);
+                t_atom label_a;
+                t_atom probability_a;
+                
+                // Need to call SetDouble() first or label_a gets corrupted. Bug in Flext?
+                SetDouble(&probability_a, probabilities[j]);
+                SetInt(label_a, labels[j]);
+                
+                estimates.Append(label_a);
+                estimates.Append(probability_a);
             }
             
             ToOutList(1, estimates);
