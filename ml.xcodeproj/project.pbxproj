@@ -327,7 +327,7 @@
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
 				);
-				PRODUCT_NAME = xsample;
+				PRODUCT_NAME = ml;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Default;
