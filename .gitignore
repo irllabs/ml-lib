@@ -1,5 +1,6 @@
-# Xcode VCS files
+# Xcode files
 *.xccheckout
+UserInterfaceState.xcuserstate
 
 # Compiled Object files
 *.slo
