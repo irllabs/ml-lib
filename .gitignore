@@ -1,3 +1,6 @@
+# Xcode VCS files
+*.xccheckout
+
 # Compiled Object files
 *.slo
 *.lo
