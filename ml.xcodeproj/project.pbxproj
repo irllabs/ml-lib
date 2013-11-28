@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
-		7D4EAF9A1834C55F005B8615 /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D4EAF3A1834C55F005B8615 /* svm.cpp */; };
-		7D4EAF9B1834C55F005B8615 /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D4EAF3A1834C55F005B8615 /* svm.cpp */; };
-		7D4EAF9D1834C55F005B8615 /* svm.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D4EAF3C1834C55F005B8615 /* svm.h */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
-		7DBFDE6018439DCC009ED61E /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDE5E18439DCC009ED61E /* ml_libsvm.cpp */; };
-		7DBFDE6118439DCC009ED61E /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDE5E18439DCC009ED61E /* ml_libsvm.cpp */; };
+		7DF077F51847570C00C55E3C /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
+		7DF077F61847570D00C55E3C /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
+		7DF077F81847577100C55E3C /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_libsvm.cpp */; };
+		7DF077F91847577100C55E3C /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_libsvm.cpp */; };
 		E98573570D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
 		E98573580D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
 /* End PBXBuildFile section */
@@ -33,16 +32,16 @@
 
 /* Begin PBXFileReference section */
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		7D4EAF3A1834C55F005B8615 /* svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = svm.cpp; sourceTree = "<group>"; };
-		7D4EAF3C1834C55F005B8615 /* svm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = svm.h; sourceTree = "<group>"; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
-		7DBFDE5E18439DCC009ED61E /* ml_libsvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml_libsvm.cpp; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
+		7DF077E2184756E000C55E3C /* svm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = svm.cpp; sourceTree = "<group>"; };
+		7DF077E4184756E000C55E3C /* svm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = svm.h; sourceTree = "<group>"; };
+		7DF077F71847577100C55E3C /* ml_libsvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_libsvm.cpp; path = ml.libsvm/ml_libsvm.cpp; sourceTree = "<group>"; };
+		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98573560D9E52D300682171 /* ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml.cpp; sourceTree = "<group>"; };
 		E9974E53077083C700206F68 /* ml.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		E99A3B760D35508600E692EF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +77,7 @@
 		0867D691FE84028FC02AAC07 /* xsample */ = {
 			isa = PBXGroup;
 			children = (
+				7DF077FA1847589B00C55E3C /* Supporting Files */,
 				7D4EAF021834C53F005B8615 /* External */,
 				08FB77ACFE841707C02AAC07 /* Source */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -101,8 +101,7 @@
 			children = (
 				7DBFDE6318439E09009ED61E /* ml.h */,
 				E98573560D9E52D300682171 /* ml.cpp */,
-				7DBFDE5E18439DCC009ED61E /* ml_libsvm.cpp */,
-				E99A3B760D35508600E692EF /* Info.plist */,
+				7DF077F71847577100C55E3C /* ml_libsvm.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -110,18 +109,27 @@
 		7D4EAF021834C53F005B8615 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				7D4EAF031834C55F005B8615 /* libsvm */,
+				7DF077AB184756E000C55E3C /* libsvm */,
 			);
 			name = External;
 			sourceTree = "<group>";
 		};
-		7D4EAF031834C55F005B8615 /* libsvm */ = {
+		7DF077AB184756E000C55E3C /* libsvm */ = {
 			isa = PBXGroup;
 			children = (
-				7D4EAF3A1834C55F005B8615 /* svm.cpp */,
-				7D4EAF3C1834C55F005B8615 /* svm.h */,
+				7DF077E2184756E000C55E3C /* svm.cpp */,
+				7DF077E4184756E000C55E3C /* svm.h */,
 			);
-			path = libsvm;
+			name = libsvm;
+			path = ml.libsvm/libsvm;
+			sourceTree = "<group>";
+		};
+		7DF077FA1847589B00C55E3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DF077FB184758C300C55E3C /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +139,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D4EAF9D1834C55F005B8615 /* svm.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,9 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DBFDE6018439DCC009ED61E /* ml_libsvm.cpp in Sources */,
+				7DF077F81847577100C55E3C /* ml_libsvm.cpp in Sources */,
+				7DF077F51847570C00C55E3C /* svm.cpp in Sources */,
 				E98573570D9E52D300682171 /* ml.cpp in Sources */,
-				7D4EAF9A1834C55F005B8615 /* svm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,9 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DBFDE6118439DCC009ED61E /* ml_libsvm.cpp in Sources */,
+				7DF077F91847577100C55E3C /* ml_libsvm.cpp in Sources */,
+				7DF077F61847570D00C55E3C /* svm.cpp in Sources */,
 				E98573580D9E52D300682171 /* ml.cpp in Sources */,
-				7D4EAF9B1834C55F005B8615 /* svm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

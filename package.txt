@@ -1,4 +1,4 @@
 NAME=ml
-SRCS=libsvm/svm.cpp ml.cpp ml_libsvm.cpp
-INCPATH+=-I./libsvm
+SRCS=ml.libsvm/libsvm/svm.cpp ml.cpp ml.libsvm/ml_libsvm.cpp
+INCPATH+=-I./ml.libsvm/libsvm
 CFLAGS+=-DFLEXT_SYS=2 -DFLEXT_ATTRIBUTES=1
