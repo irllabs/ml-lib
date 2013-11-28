@@ -83,6 +83,7 @@ class ml_libsvm : ml_base
 {
     FLEXT_HEADER_S(ml_libsvm, ml_base, setup);
     typedef std::vector<observation> observation_vector;
+    
 public:
     ml_libsvm()
     : model(NULL), nr_fold(2), estimates(false)
@@ -549,7 +550,6 @@ void ml_libsvm::add(int argc, const t_atom *argv)
     }
     
     observations.push_back(observation);
-    
 }
 
 void ml_libsvm::save(const t_symbol *path) const
@@ -593,19 +593,14 @@ void ml_libsvm::load(const t_symbol *path)
 
 void ml_libsvm::normalize()
 {
-    AtomList outList;
-    t_atom normalized_a;
-    t_atom flag_a;
-    
-    SetString(normalized_a, "normalized");
-    outList.Append(normalized_a);
+    t_atom status;
+    SetBool(status, true);
     
     if (observations.size() == 0)
     {
         error("no observations added, use 'add' to add labeled feature vectors");
-        SetInt(flag_a, 0);
-        outList.Append(flag_a);
-        ToOutList(1, outList);
+        SetBool(status, false);
+        ToOutAnything(1, MakeSymbol("normalized"), 1, &status);
         return;
     }
     typedef std::map<uint32_t, std::vector<double> > vector_map;
@@ -647,10 +642,7 @@ void ml_libsvm::normalize()
             observations[count].features[index] = normalized;
         }
     }
-    
-    SetInt(flag_a, 1);
-    outList.Append(flag_a);
-    ToOutList(1, outList);
+    ToOutAnything(1, MakeSymbol("normalized"), 1, &status);
 }
 
 void ml_libsvm::cross_validation()

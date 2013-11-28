@@ -21,7 +21,7 @@
 
 #include <flext.h>
 
-#define ML_VERSION "0.3.2"
+#define ML_VERSION "0.4.0"
 #define ML_NAME "ml-lib"
 #define ML_POST_SEP "---------------------------------------"
 
