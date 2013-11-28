@@ -1,0 +1,67 @@
+#N canvas 317 43 1038 1023 10;
+#X msg 396 128 type 1;
+#X msg 414 234 bang;
+#X msg 393 104 getattributes;
+#X msg 409 353 weights 1:.3 2:.5 3:4;
+#X msg 397 201 getweights;
+#X msg 392 75 bang;
+#X msg 412 305 normalise;
+#X msg 427 587 train;
+#X msg 505 721 save /tmp/model;
+#X msg 411 270 clear;
+#X msg 429 427 add 1 0 0 0 0;
+#X msg 483 695 load /tmp/model;
+#X msg 422 516 predict 10 10 10 10;
+#X msg 419 553 estimates 0;
+#X msg 420 635 cross_validation;
+#X msg 414 392 add -1 -10 -10 -10 -10;
+#X floatatom 203 814 5 0 0 0 - - -, f 5;
+#X msg 329 842 1:0.34876 0:0.353413 2:0.297827;
+#X obj 329 809 prepend set;
+#X text 570 426 add feature vecture "0 0 0 0" to category "1";
+#X text 568 391 is there something special about category "-1"?;
+#X text 440 75 what does this do?;
+#X text 473 197 this reports "weights" out of the right outlet but
+nothing else \, i.e. not the weights themselves?;
+#X msg 396 162 getkernel;
+#X text 470 588 what does this do?;
+#X text 482 305 this should report "normlise 1" instead of "normalized"
+;
+#X text 451 270 clear model;
+#X text 469 164 get present value of each attribute (works with all
+attributes), f 50;
+#X text 454 233 what does this do?;
+#X text 486 104 get a list of all available attributes;
+#X text 445 127 set value of an attribute (works with all attributes)
+;
+#X text 575 458 add feature vecture "1.5 3.6 2 6.2" to category "3"
+;
+#X text 551 517 predict category for new feature vector;
+#X text 569 350 what does this do?;
+#X text 525 635 what does this do?;
+#X text 157 840 predicted category;
+#X obj 102 503 p test;
+#X msg 444 459 add 2 1.5 3.6 2 6.2;
+#X obj 201 777 ml.libsvm;
+#X connect 0 0 38 0;
+#X connect 1 0 38 0;
+#X connect 2 0 38 0;
+#X connect 3 0 38 0;
+#X connect 4 0 38 0;
+#X connect 5 0 38 0;
+#X connect 6 0 38 0;
+#X connect 7 0 38 0;
+#X connect 8 0 38 0;
+#X connect 9 0 38 0;
+#X connect 10 0 38 0;
+#X connect 11 0 38 0;
+#X connect 12 0 38 0;
+#X connect 13 0 38 0;
+#X connect 14 0 38 0;
+#X connect 15 0 38 0;
+#X connect 18 0 17 0;
+#X connect 23 0 38 0;
+#X connect 36 0 38 0;
+#X connect 37 0 38 0;
+#X connect 38 0 16 0;
+#X connect 38 1 18 0;
