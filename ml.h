@@ -25,8 +25,15 @@
 #define ML_NAME "ml-lib"
 #define ML_POST_SEP "---------------------------------------"
 
+
 namespace ml
 {
+
+static const t_symbol *s_train;
+static const t_symbol *s_cleared;
+static const t_symbol *s_normalized;
+static const t_symbol *s_loaded;
+static const t_symbol *s_saved;
     
 class ml_base:
 public flext_base

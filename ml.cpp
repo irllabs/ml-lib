@@ -31,6 +31,12 @@ static void main()
     post("%s - machine learning library for Max and Pure Data", ML_NAME);
     post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
     post("%s", ML_POST_SEP);
+
+    s_train = flext::MakeSymbol("train");
+    s_cleared = flext::MakeSymbol("cleared");
+    s_normalized = flext::MakeSymbol("normalized");
+    s_loaded = flext::MakeSymbol("loaded");
+    s_saved = flext::MakeSymbol("saved");
     
     // call the objects' setup routines
     FLEXT_SETUP(ml_libsvm);

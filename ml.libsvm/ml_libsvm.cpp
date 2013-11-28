@@ -571,7 +571,7 @@ void ml_libsvm::save(const t_symbol *path) const
         SetBool(status, false);
     }
     
-    ToOutAnything(1, MakeSymbol("saved"), 1, &status);
+    ToOutAnything(1, s_saved, 1, &status);
 }
 
 void ml_libsvm::load(const t_symbol *path)
@@ -588,7 +588,7 @@ void ml_libsvm::load(const t_symbol *path)
         SetBool(status, false);
     }
 
-    ToOutAnything(1, MakeSymbol("loaded"), 1, &status);
+    ToOutAnything(1, s_loaded, 1, &status);
 }
 
 void ml_libsvm::normalize()
@@ -600,7 +600,7 @@ void ml_libsvm::normalize()
     {
         error("no observations added, use 'add' to add labeled feature vectors");
         SetBool(status, false);
-        ToOutAnything(1, MakeSymbol("normalized"), 1, &status);
+        ToOutAnything(1, s_normalized, 1, &status);
         return;
     }
     typedef std::map<uint32_t, std::vector<double> > vector_map;
@@ -642,7 +642,7 @@ void ml_libsvm::normalize()
             observations[count].features[index] = normalized;
         }
     }
-    ToOutAnything(1, MakeSymbol("normalized"), 1, &status);
+    ToOutAnything(1, s_normalized, 1, &status);
 }
 
 void ml_libsvm::cross_validation()
@@ -753,7 +753,7 @@ void ml_libsvm::train()
     
     AtomList result;
     
-    SetSymbol(a_train, MakeSymbol("train"));
+    SetSymbol(a_train, s_train);
     SetInt(a_num_sv, -1);
     SetInt(a_num_classes, -1);
     
@@ -795,7 +795,7 @@ void ml_libsvm::clear()
     free_problem_data(&prob);
     svm_free_and_destroy_model(&model);
     
-    ToOutAnything(1, MakeSymbol("cleared"), 1, &status);
+    ToOutAnything(1, s_cleared, 1, &status);
 }
 
 void ml_libsvm::predict(int argc, const t_atom *argv)
