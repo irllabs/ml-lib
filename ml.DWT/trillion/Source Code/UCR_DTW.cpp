@@ -1,7 +1,7 @@
 /***********************************************************************/
 /************************* DISCLAIMER **********************************/
 /***********************************************************************/
-/** This UCR Suite software is copyright protected © 2012 by          **/
+/** This UCR Suite software is copyright protected ï¿½ 2012 by          **/
 /** Thanawin Rakthanmanon, Bilson Campana, Abdullah Mueen,            **/
 /** Gustavo Batista and Eamonn Keogh.                                 **/
 /**                                                                   **/
@@ -54,7 +54,7 @@ struct deque
 int comp(const void *a, const void* b)
 {   Index* x = (Index*)a;
     Index* y = (Index*)b;
-    return abs(y->value) - abs(x->value);   // high to low
+    return fabs(y->value) - fabs(x->value);   // high to low
 }
 
 /// Initial the queue at the begining step of envelop calculation
