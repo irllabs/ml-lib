@@ -47,7 +47,6 @@ namespace ml
             FLEXT_CADDMETHOD_(c, 0, "save", save);
             FLEXT_CADDMETHOD_(c, 0, "load", load);
             FLEXT_CADDMETHOD_(c, 0, "normalize", normalize);
-            FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
             FLEXT_CADDMETHOD_(c, 0, "train", train);
             FLEXT_CADDMETHOD_(c, 0, "clear", clear);
             FLEXT_CADDMETHOD_(c, 0, "predict", predict);
@@ -72,7 +71,6 @@ namespace ml
         FLEXT_CALLBACK_S(save);
         FLEXT_CALLBACK_S(load);
         FLEXT_CALLBACK(normalize);
-        FLEXT_CALLBACK(cross_validation);
         FLEXT_CALLBACK(train);
         FLEXT_CALLBACK(clear);
         FLEXT_CALLBACK_V(predict);
@@ -83,7 +81,7 @@ namespace ml
     // Methods
     void ml_dtw::add(int argc, const t_atom *argv)
     {
-        error("function not implemented");
+        
     }
     
     void ml_dtw::save(const t_symbol *path) const
@@ -97,11 +95,6 @@ namespace ml
     }
     
     void ml_dtw::normalize()
-    {
-        error("function not implemented");
-    }
-    
-    void ml_dtw::cross_validation()
     {
         error("function not implemented");
     }
