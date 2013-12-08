@@ -20,6 +20,8 @@
 
 #include <flext.h>
 
+#include <vector>
+
 namespace ml
 {
     
@@ -76,12 +78,18 @@ namespace ml
         FLEXT_CALLBACK_V(predict);
         FLEXT_CALLBACK(usage);
         
+        std::vector<double> data;
+        
     };
     
     // Methods
     void ml_dtw::add(int argc, const t_atom *argv)
     {
-        
+        for (uint32_t index = 0; index < argc; ++index)
+        {
+            double value = (double)GetAFloat(argv[index]);
+            data.push_back(value);
+        }
     }
     
     void ml_dtw::save(const t_symbol *path) const
