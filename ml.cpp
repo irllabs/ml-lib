@@ -40,6 +40,7 @@ static void main()
     
     // call the objects' setup routines
     FLEXT_SETUP(ml_libsvm);
+    FLEXT_SETUP(ml_dtw);
 }
     
 } // namespace ml
