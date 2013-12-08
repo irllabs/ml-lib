@@ -82,7 +82,7 @@ void error(int id)
     exit(1);
 }
 
-
+#if 0
 
 int main(  int argc , char *argv[] )
 {
@@ -213,3 +213,5 @@ int main(  int argc , char *argv[] )
     cout << "Data Scanned : " << i << endl;
     cout << "Total Execution Time : " << (t2-t1)/CLOCKS_PER_SEC << " sec" << endl;
 }
+
+#endif

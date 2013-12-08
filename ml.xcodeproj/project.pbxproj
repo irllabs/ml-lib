@@ -14,8 +14,6 @@
 		7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
 		7D91D9A91855188F002C7555 /* UCR_DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D9A11855188F002C7555 /* UCR_DTW.cpp */; };
 		7D91D9AA1855188F002C7555 /* UCR_DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D9A11855188F002C7555 /* UCR_DTW.cpp */; };
-		7D91D9AB1855188F002C7555 /* UCR_ED.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D9A21855188F002C7555 /* UCR_ED.cpp */; };
-		7D91D9AC1855188F002C7555 /* UCR_ED.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D9A21855188F002C7555 /* UCR_ED.cpp */; };
 		7DF077F51847570C00C55E3C /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
 		7DF077F61847570D00C55E3C /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
 		7DF077F81847577100C55E3C /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_libsvm.cpp */; };
@@ -255,7 +253,6 @@
 				7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */,
 				7D91D9A91855188F002C7555 /* UCR_DTW.cpp in Sources */,
 				E98573570D9E52D300682171 /* ml.cpp in Sources */,
-				7D91D9AB1855188F002C7555 /* UCR_ED.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +265,6 @@
 				7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */,
 				7D91D9AA1855188F002C7555 /* UCR_DTW.cpp in Sources */,
 				E98573580D9E52D300682171 /* ml.cpp in Sources */,
-				7D91D9AC1855188F002C7555 /* UCR_ED.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

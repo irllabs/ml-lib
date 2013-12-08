@@ -377,6 +377,8 @@ void error(int id)
     exit(1);
 }
 
+#if 0
+
 /// Main Function
 int main(  int argc , char *argv[] )
 {
@@ -725,3 +727,5 @@ int main(  int argc , char *argv[] )
     printf("DTW Calculation     : %6.2f%%\n", 100-(((double)kim+keogh+keogh2)/i*100));
     return 0;
 }
+
+#endif
