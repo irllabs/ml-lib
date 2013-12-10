@@ -21,6 +21,10 @@
 
 #include <flext.h>
 
+#include <vector>
+#include <map>
+
+
 #define ML_VERSION "0.5.0"
 #define ML_NAME "ml-lib"
 #define ML_POST_SEP "---------------------------------------"
@@ -34,6 +38,27 @@ static const t_symbol *s_cleared;
 static const t_symbol *s_normalized;
 static const t_symbol *s_loaded;
 static const t_symbol *s_saved;
+        
+typedef std::map<int, double> feature_map;
+
+class observation
+{
+public:
+    observation()
+    : label(0)
+    {
+        
+    }
+    
+    ~observation()
+    {
+        
+    }
+    
+    double label;
+    feature_map features; // using a map gives potential for sparse vectors
+};
+    
     
 class ml_base:
 public flext_base
@@ -44,19 +69,20 @@ public:
     ml_base();
     
 protected:
-    // Methods
-    void add(int argc, const t_atom *argv);
-    void save(const t_symbol *path) const;
-    void load(const t_symbol *path);
-    void normalize();
-    void cross_validation();
-    void train();
-    void clear();
-    void classify(int argc, const t_atom *argv);
-    void usage();
-        
-private:
     static void setup(t_classid c);
+    
+    virtual void add(int argc, const t_atom *argv);
+    virtual void save(const t_symbol *path) const;
+    virtual void load(const t_symbol *path);
+    virtual void normalize();
+    virtual void train();
+    virtual void clear();
+    virtual void classify(int argc, const t_atom *argv);
+    virtual void usage();
+    
+    std::vector<observation> observations;
+    
+private:
     // Method wrappers
     FLEXT_CALLBACK_V(add);
     FLEXT_CALLBACK_S(save);
@@ -66,7 +92,6 @@ private:
     FLEXT_CALLBACK(clear);
     FLEXT_CALLBACK_V(classify);
     FLEXT_CALLBACK(usage);
-
 };
     
 } // namespace ml

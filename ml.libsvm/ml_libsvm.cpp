@@ -35,7 +35,6 @@ namespace ml
 
 static const std::string weight_delimiter = ":";
 void print_callback(const char *s);
-typedef std::map<int, double> feature_map;
 
 class normalizer
 {
@@ -59,25 +58,6 @@ public:
     double range;
     double offset;
 };
-    
-class observation
-{
-public:
-    observation()
-    : label(0)
-    {
-        
-    }
-    
-    ~observation()
-    {
-        
-    }
-    
-    double label;
-    feature_map features;
-};
-
     
 class ml_libsvm : ml_base
 {
@@ -132,7 +112,7 @@ public:
     
 protected:
     static void setup(t_classid c)
-    {
+    {        
         FLEXT_CADDATTR_SET(c, "type", set_type);
         FLEXT_CADDATTR_SET(c, "kernel", set_kernel);
         FLEXT_CADDATTR_SET(c, "degree", set_degree);
@@ -161,19 +141,10 @@ protected:
         FLEXT_CADDATTR_GET(c, "weights", get_weights);
         FLEXT_CADDATTR_GET(c, "mode", get_mode);
         
-        FLEXT_CADDMETHOD_(c, 0, "add", add);
-        FLEXT_CADDMETHOD_(c, 0, "save", save);
-        FLEXT_CADDMETHOD_(c, 0, "load", load);
-        FLEXT_CADDMETHOD_(c, 0, "normalize", normalize);
         FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
-        FLEXT_CADDMETHOD_(c, 0, "train", train);
-        FLEXT_CADDMETHOD_(c, 0, "clear", clear);
-        FLEXT_CADDMETHOD_(c, 0, "classify", classify);
-        FLEXT_CADDMETHOD_(c, 0, "help", usage);
     }
     
     // Methods
-    void add(int argc, const t_atom *argv);
     void save(const t_symbol *path) const;
     void load(const t_symbol *path);
     void normalize();
@@ -214,17 +185,8 @@ protected:
     void get_mode(int &mode) const;
     
 private:
-    
     // Method wrappers
-    FLEXT_CALLBACK_V(add);
-    FLEXT_CALLBACK_S(save);
-    FLEXT_CALLBACK_S(load);
-    FLEXT_CALLBACK(normalize);
     FLEXT_CALLBACK(cross_validation);
-    FLEXT_CALLBACK(train);
-    FLEXT_CALLBACK(clear);
-    FLEXT_CALLBACK_V(classify);
-    FLEXT_CALLBACK(usage);
     
     // Attribute wrappers
     FLEXT_CALLVAR_I(get_type, set_type);
@@ -252,7 +214,6 @@ private:
     std::map<uint32_t, normalizer> normalizers;
     std::vector<int> weight_labels;
     std::vector<double> weight_values;
-    std::vector<observation> observations;
 };
 
 // Utility functions
@@ -536,20 +497,6 @@ void ml_libsvm::get_mode(int &mode) const
 }
 
 // Methods
-void ml_libsvm::add(int argc, const t_atom *argv)
-{
-    observation observation;
-    
-    observation.label = GetAFloat(argv[0]);
-    
-    for (uint32_t index = 1; index < argc; ++index)
-    {
-        float value = GetAFloat(argv[index]);
-        observation.features[index] = value;
-    }
-    
-    observations.push_back(observation);
-}
 
 void ml_libsvm::save(const t_symbol *path) const
 {
@@ -771,6 +718,7 @@ void ml_libsvm::train()
     result.Append(a_num_classes);
     result.Append(a_num_sv);
     
+    // TODO: for some reason this crashes
     ToOutList(1, result);
     
     // NOTE: don't free problem here because "svm_model contains pointers to svm_problem"

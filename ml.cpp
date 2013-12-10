@@ -28,9 +28,19 @@ ml_base::ml_base()
 
 void ml_base::add(int argc, const t_atom *argv)
 {
-    error("function not implemented");
+    observation observation;
+    
+    observation.label = GetAFloat(argv[0]);
+    
+    for (uint32_t index = 1; index < argc; ++index)
+    {
+        float value = GetAFloat(argv[index]);
+        observation.features[index] = value;
+    }
+    
+    observations.push_back(observation);
 }
-
+    
 void ml_base::save(const t_symbol *path) const
 {
     error("function not implemented");
@@ -60,7 +70,7 @@ void ml_base::classify(int argc, const t_atom *argv)
 {
     error("function not implemented");
 }
-
+    
 void ml_base::usage()
 {
     error("function not implemented");
@@ -77,7 +87,6 @@ void ml_base::setup(t_classid c)
     FLEXT_CADDMETHOD_(c, 0, "classify", classify);
     FLEXT_CADDMETHOD_(c, 0, "help", usage);
 }
-
 
 static void main()
 {

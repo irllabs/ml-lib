@@ -20,11 +20,9 @@
 
 #include <flext.h>
 
-#include <vector>
-
 namespace ml
 {
-    
+
 class ml_dtw : ml_base
 {
     FLEXT_HEADER_S(ml_dtw, ml_base, setup);
@@ -43,31 +41,16 @@ public:
     }
     
 protected:
-    static void setup(t_classid c)
-    {
-        FLEXT_CADDMETHOD_(c, 0, "add", add);
-    }
-    
-    // Methods
     void add(int argc, const t_atom *argv);
-      
+    
 private:
-    FLEXT_CALLBACK_V(add);
-
-    std::vector<double> data;
     
 };
 
-// Methods
 void ml_dtw::add(int argc, const t_atom *argv)
 {
-    for (uint32_t index = 0; index < argc; ++index)
-    {
-        double value = (double)GetAFloat(argv[index]);
-        data.push_back(value);
-    }
+    post("foo");
 }
-
 
 FLEXT_LIB("ml.DTW", ml_dtw);
     
