@@ -52,7 +52,7 @@ protected:
     void cross_validation();
     void train();
     void clear();
-    void predict(int argc, const t_atom *argv);
+    void classify(int argc, const t_atom *argv);
     void usage();
         
 private:
@@ -64,7 +64,7 @@ private:
     FLEXT_CALLBACK(normalize);
     FLEXT_CALLBACK(train);
     FLEXT_CALLBACK(clear);
-    FLEXT_CALLBACK_V(predict);
+    FLEXT_CALLBACK_V(classify);
     FLEXT_CALLBACK(usage);
 
 };

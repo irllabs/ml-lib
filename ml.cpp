@@ -56,7 +56,7 @@ void ml_base::clear()
     error("function not implemented");
 }
 
-void ml_base::predict(int argc, const t_atom *argv)
+void ml_base::classify(int argc, const t_atom *argv)
 {
     error("function not implemented");
 }
@@ -74,7 +74,7 @@ void ml_base::setup(t_classid c)
     FLEXT_CADDMETHOD_(c, 0, "normalize", normalize);
     FLEXT_CADDMETHOD_(c, 0, "train", train);
     FLEXT_CADDMETHOD_(c, 0, "clear", clear);
-    FLEXT_CADDMETHOD_(c, 0, "predict", predict);
+    FLEXT_CADDMETHOD_(c, 0, "classify", classify);
     FLEXT_CADDMETHOD_(c, 0, "help", usage);
 }
 

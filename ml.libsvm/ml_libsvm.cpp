@@ -168,7 +168,7 @@ protected:
         FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
         FLEXT_CADDMETHOD_(c, 0, "train", train);
         FLEXT_CADDMETHOD_(c, 0, "clear", clear);
-        FLEXT_CADDMETHOD_(c, 0, "predict", predict);
+        FLEXT_CADDMETHOD_(c, 0, "classify", classify);
         FLEXT_CADDMETHOD_(c, 0, "help", usage);
     }
     
@@ -180,7 +180,7 @@ protected:
     void cross_validation();
     void train();
     void clear();
-    void predict(int argc, const t_atom *argv);
+    void classify(int argc, const t_atom *argv);
     void usage();
     
     // Attribute Setters
@@ -223,7 +223,7 @@ private:
     FLEXT_CALLBACK(cross_validation);
     FLEXT_CALLBACK(train);
     FLEXT_CALLBACK(clear);
-    FLEXT_CALLBACK_V(predict);
+    FLEXT_CALLBACK_V(classify);
     FLEXT_CALLBACK(usage);
     
     // Attribute wrappers
@@ -797,7 +797,7 @@ void ml_libsvm::clear()
     ToOutAnything(1, s_cleared, 1, &status);
 }
 
-void ml_libsvm::predict(int argc, const t_atom *argv)
+void ml_libsvm::classify(int argc, const t_atom *argv)
 {
     if (model == NULL)
     {
@@ -814,7 +814,7 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     std::vector<double> probabilities;
     AtomList estimates;
     
-    double prediction = 0.0;
+    double classification = 0.0;
     
     svm_node *nodes = (svm_node *)malloc(max_index * sizeof(svm_node));
     
@@ -873,7 +873,7 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
             if ((svm_type == C_SVC || svm_type == NU_SVC))
             {
                 prob_estimates = (double *)malloc(nr_class * sizeof(double));
-                prediction = svm_predict_probability(model, nodes, prob_estimates);
+                classification = svm_predict_probability(model, nodes, prob_estimates);
                 
                 for(uint32_t j = 0; j < nr_class; ++j)
                 {
@@ -899,11 +899,11 @@ void ml_libsvm::predict(int argc, const t_atom *argv)
     }
     else
     {
-        prediction = svm_predict(model, nodes);
+        classification = svm_predict(model, nodes);
     }
     
     free(nodes);
-    ToOutFloat(0, (float)prediction);
+    ToOutFloat(0, (float)classification);
 }
 
 void ml_libsvm::usage()
@@ -945,7 +945,7 @@ void ml_libsvm::usage()
     post("cross_validation:\t\tperform cross-validation");
     post("train:\ttrain the SVM based on labelled vectors added with 'add'");
     post("clear:\tclear the stored training data");
-    post("predict:\tpredict the class of the input feature vector provided as a list");
+    post("classify:\tgive the class of the input feature vector provided as a list");
     post("help:\tpost this usage statement to the console");
     post("%s", ML_POST_SEP);
     
