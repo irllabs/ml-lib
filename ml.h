@@ -38,10 +38,35 @@ static const t_symbol *s_saved;
 class ml_base:
 public flext_base
 {
-    FLEXT_HEADER(ml_base, flext_base);
+    FLEXT_HEADER_S(ml_base, flext_base, setup);
     
 public:
     ml_base();
+    
+protected:
+    // Methods
+    void add(int argc, const t_atom *argv);
+    void save(const t_symbol *path) const;
+    void load(const t_symbol *path);
+    void normalize();
+    void cross_validation();
+    void train();
+    void clear();
+    void predict(int argc, const t_atom *argv);
+    void usage();
+        
+private:
+    static void setup(t_classid c);
+    // Method wrappers
+    FLEXT_CALLBACK_V(add);
+    FLEXT_CALLBACK_S(save);
+    FLEXT_CALLBACK_S(load);
+    FLEXT_CALLBACK(normalize);
+    FLEXT_CALLBACK(train);
+    FLEXT_CALLBACK(clear);
+    FLEXT_CALLBACK_V(predict);
+    FLEXT_CALLBACK(usage);
+
 };
     
 } // namespace ml

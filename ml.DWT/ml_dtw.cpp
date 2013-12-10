@@ -25,108 +25,50 @@
 namespace ml
 {
     
-    class ml_dtw : ml_base
+class ml_dtw : ml_base
+{
+    FLEXT_HEADER_S(ml_dtw, ml_base, setup);
+    
+public:
+    ml_dtw()
     {
-        FLEXT_HEADER_S(ml_dtw, ml_base, setup);
+        post("ml.DTW: Dynamic Time Warping based on the UCR Suite");
         
-    public:
-        ml_dtw()
-        {
-            post("ml.DTW: Dynamic Time Warping based on the UCR Suite");
-            
-            AddOutAnything("general purpose outlet");
-        }
-        
-        ~ml_dtw()
-        {
-        
-        }
-        
-    protected:
-        static void setup(t_classid c)
-        {
-            FLEXT_CADDMETHOD_(c, 0, "add", add);
-            FLEXT_CADDMETHOD_(c, 0, "save", save);
-            FLEXT_CADDMETHOD_(c, 0, "load", load);
-            FLEXT_CADDMETHOD_(c, 0, "normalize", normalize);
-            FLEXT_CADDMETHOD_(c, 0, "train", train);
-            FLEXT_CADDMETHOD_(c, 0, "clear", clear);
-            FLEXT_CADDMETHOD_(c, 0, "predict", predict);
-            FLEXT_CADDMETHOD_(c, 0, "help", usage);
-        }
-        
-        // Methods
-        void add(int argc, const t_atom *argv);
-        void save(const t_symbol *path) const;
-        void load(const t_symbol *path);
-        void normalize();
-        void cross_validation();
-        void train();
-        void clear();
-        void predict(int argc, const t_atom *argv);
-        void usage();
-        
-    private:
-        
-        // Method wrappers
-        FLEXT_CALLBACK_V(add);
-        FLEXT_CALLBACK_S(save);
-        FLEXT_CALLBACK_S(load);
-        FLEXT_CALLBACK(normalize);
-        FLEXT_CALLBACK(train);
-        FLEXT_CALLBACK(clear);
-        FLEXT_CALLBACK_V(predict);
-        FLEXT_CALLBACK(usage);
-        
-        std::vector<double> data;
-        
-    };
+        AddOutAnything("general purpose outlet");
+    }
+    
+    ~ml_dtw()
+    {
+    
+    }
+    
+protected:
+    static void setup(t_classid c)
+    {
+        FLEXT_CADDMETHOD_(c, 0, "add", add);
+    }
     
     // Methods
-    void ml_dtw::add(int argc, const t_atom *argv)
-    {
-        for (uint32_t index = 0; index < argc; ++index)
-        {
-            double value = (double)GetAFloat(argv[index]);
-            data.push_back(value);
-        }
-    }
+    void add(int argc, const t_atom *argv);
+      
+private:
+    FLEXT_CALLBACK_V(add);
+
+    std::vector<double> data;
     
-    void ml_dtw::save(const t_symbol *path) const
+};
+
+// Methods
+void ml_dtw::add(int argc, const t_atom *argv)
+{
+    for (uint32_t index = 0; index < argc; ++index)
     {
-        error("function not implemented");
+        double value = (double)GetAFloat(argv[index]);
+        data.push_back(value);
     }
-    
-    void ml_dtw::load(const t_symbol *path)
-    {
-        error("function not implemented");
-    }
-    
-    void ml_dtw::normalize()
-    {
-        error("function not implemented");
-    }
-    
-    void ml_dtw::train()
-    {
-        error("function not implemented");
-    }
-    
-    void ml_dtw::clear()
-    {
-        error("function not implemented");
-    }
-    
-    void ml_dtw::predict(int argc, const t_atom *argv)
-    {
-        error("function not implemented");
-    }
-    
-    void ml_dtw::usage()
-    {
-        error("function not implemented");
-    }
-    
-    FLEXT_LIB("ml.DTW", ml_dtw);
+}
+
+
+FLEXT_LIB("ml.DTW", ml_dtw);
     
 } //namespace ml

@@ -23,7 +23,61 @@ namespace ml
 
 ml_base::ml_base()
 {
+  
 }
+
+void ml_base::add(int argc, const t_atom *argv)
+{
+    error("function not implemented");
+}
+
+void ml_base::save(const t_symbol *path) const
+{
+    error("function not implemented");
+}
+
+void ml_base::load(const t_symbol *path)
+{
+    error("function not implemented");
+}
+
+void ml_base::normalize()
+{
+    error("function not implemented");
+}
+
+void ml_base::train()
+{
+    error("function not implemented");
+}
+
+void ml_base::clear()
+{
+    error("function not implemented");
+}
+
+void ml_base::predict(int argc, const t_atom *argv)
+{
+    error("function not implemented");
+}
+
+void ml_base::usage()
+{
+    error("function not implemented");
+}
+    
+void ml_base::setup(t_classid c)
+{
+    FLEXT_CADDMETHOD_(c, 0, "add", add);
+    FLEXT_CADDMETHOD_(c, 0, "save", save);
+    FLEXT_CADDMETHOD_(c, 0, "load", load);
+    FLEXT_CADDMETHOD_(c, 0, "normalize", normalize);
+    FLEXT_CADDMETHOD_(c, 0, "train", train);
+    FLEXT_CADDMETHOD_(c, 0, "clear", clear);
+    FLEXT_CADDMETHOD_(c, 0, "predict", predict);
+    FLEXT_CADDMETHOD_(c, 0, "help", usage);
+}
+
 
 static void main()
 {

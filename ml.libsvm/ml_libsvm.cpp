@@ -538,7 +538,6 @@ void ml_libsvm::get_mode(int &mode) const
 // Methods
 void ml_libsvm::add(int argc, const t_atom *argv)
 {
-    
     observation observation;
     
     observation.label = GetAFloat(argv[0]);
