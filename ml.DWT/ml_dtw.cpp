@@ -19,9 +19,35 @@
 #include "ml.h"
 
 #include <flext.h>
+#include <math.h>
 
 namespace ml
 {
+ 
+// TODO: refactor this and normalizer into a standard interface that can be used by the normalize method
+class z_normalizer
+{
+public:
+    z_normalizer()
+    : mean(0), std_deviation(0)
+    {
+        
+    }
+    
+    ~z_normalizer()
+    {
+        
+    }
+    
+    double normalize(double value)
+    {
+        return (value - mean) / std_deviation;
+    }
+    
+    double mean;
+    double std_deviation;
+};
+
 
 class ml_dtw : ml_base
 {
@@ -29,6 +55,7 @@ class ml_dtw : ml_base
     
 public:
     ml_dtw()
+    : window_size(.05)
     {
         post("ml.DTW: Dynamic Time Warping based on the UCR Suite");
     }
@@ -39,16 +66,56 @@ public:
     }
     
 protected:
-    void add(int argc, const t_atom *argv);
+    static void setup(t_classid c)
+    {
+        FLEXT_CADDATTR_SET(c, "window_size", set_window_size);
+        
+        FLEXT_CADDATTR_GET(c, "window_size", get_window_size);
+
+    }
+    
+    // Methods
+    void classify(int argc, const t_atom *argv);
+    
+    // Attribute Setters
+    void set_window_size(float size);
+    
+    // Attribute Getters
+    void get_window_size(float &size) const;
     
 private:
+    // Attribute wrappers
+    FLEXT_CALLVAR_F(get_window_size, set_window_size);
     
+    // Instance variables
+    double window_size;
 };
+    
+// Utility functions
 
-void ml_dtw::add(int argc, const t_atom *argv)
+    
+// Attribute setters
+void ml_dtw::set_window_size(float size)
 {
-    post("foo");
+    if (size >= 0.0 && size <= 1.0)
+    {
+        window_size = (double)size;
+    }
 }
+    
+// Attribute getters
+void ml_dtw::get_window_size(float &size) const
+{
+    size = window_size;
+}
+    
+// Methods
+void ml_dtw::classify(int argc, const t_atom *argv)
+{
+ 
+}
+
+    
 
 FLEXT_LIB("ml.DTW", ml_dtw);
     
