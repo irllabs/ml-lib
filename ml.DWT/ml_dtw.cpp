@@ -31,8 +31,6 @@ public:
     ml_dtw()
     {
         post("ml.DTW: Dynamic Time Warping based on the UCR Suite");
-        
-        AddOutAnything("general purpose outlet");
     }
     
     ~ml_dtw()

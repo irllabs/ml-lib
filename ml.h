@@ -33,12 +33,6 @@
 namespace ml
 {
 
-static const t_symbol *s_train;
-static const t_symbol *s_cleared;
-static const t_symbol *s_normalized;
-static const t_symbol *s_loaded;
-static const t_symbol *s_saved;
-        
 typedef std::map<int, double> feature_map;
 
 class observation
@@ -71,6 +65,12 @@ public:
 protected:
     static void setup(t_classid c);
     
+    static const t_symbol *s_train;
+    static const t_symbol *s_cleared;
+    static const t_symbol *s_normalized;
+    static const t_symbol *s_loaded;
+    static const t_symbol *s_saved;
+    
     virtual void add(int argc, const t_atom *argv);
     virtual void save(const t_symbol *path) const;
     virtual void load(const t_symbol *path);
@@ -92,6 +92,7 @@ private:
     FLEXT_CALLBACK(clear);
     FLEXT_CALLBACK_V(classify);
     FLEXT_CALLBACK(usage);
+    
 };
     
 } // namespace ml

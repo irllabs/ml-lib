@@ -95,8 +95,6 @@ public:
         prob.y = NULL;
         
         svm_set_print_string_function(print_callback);
-        
-        AddOutAnything("general purpose outlet");
     }
     
     ~ml_libsvm()
@@ -693,17 +691,13 @@ void ml_libsvm::train()
     
     model = svm_train(&prob, &param);
     
-    t_atom a_train;
     t_atom a_num_sv;
     t_atom a_num_classes;
     
     AtomList result;
     
-    SetSymbol(a_train, s_train);
     SetInt(a_num_sv, -1);
     SetInt(a_num_classes, -1);
-    
-    result.Append(a_train);
     
     if (model == NULL)
     {
@@ -718,9 +712,7 @@ void ml_libsvm::train()
     result.Append(a_num_classes);
     result.Append(a_num_sv);
     
-    // TODO: for some reason this crashes
-    ToOutList(1, result);
-    
+    ToOutAnything(1, s_train, result);
     // NOTE: don't free problem here because "svm_model contains pointers to svm_problem"
 }
 

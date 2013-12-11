@@ -19,11 +19,11 @@
 #include "ml.h"
 
 namespace ml
-{    
-
+{
+    
 ml_base::ml_base()
 {
-  
+    AddOutAnything("general purpose outlet");
 }
 
 void ml_base::add(int argc, const t_atom *argv)
@@ -94,17 +94,17 @@ static void main()
     post("%s - machine learning library for Max and Pure Data", ML_NAME);
     post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
     post("%s", ML_POST_SEP);
-
-    s_train = flext::MakeSymbol("train");
-    s_cleared = flext::MakeSymbol("cleared");
-    s_normalized = flext::MakeSymbol("normalized");
-    s_loaded = flext::MakeSymbol("loaded");
-    s_saved = flext::MakeSymbol("saved");
     
     // call the objects' setup routines
     FLEXT_SETUP(ml_libsvm);
     FLEXT_SETUP(ml_dtw);
 }
+    
+const t_symbol *ml_base::s_train = flext::MakeSymbol("train");
+const t_symbol *ml_base::s_cleared = flext::MakeSymbol("cleared");
+const t_symbol *ml_base::s_normalized = flext::MakeSymbol("normalized");
+const t_symbol *ml_base::s_loaded = flext::MakeSymbol("loaded");
+const t_symbol *ml_base::s_saved = flext::MakeSymbol("saved");
     
 } // namespace ml
 
