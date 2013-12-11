@@ -21,6 +21,7 @@
 /***********************************************************************/
 /***********************************************************************/
 
+#include "UCR_DTW.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,11 +37,7 @@
 
 using namespace std;
 
-/// Data structure for sorting the query
-typedef struct Index
-    {   double value;
-        int    index;
-    } Index;
+
 
 /// Data structure (circular array) for finding minimum and maximum for LB_Keogh envolop
 struct deque
@@ -179,7 +176,7 @@ void lower_upper_lemire(double *t, int len, int r, double *l, double *u)
 /// However, because of z-normalization the top and bottom cannot give siginifant benefits.
 /// And using the first and last points can be computed in constant time.
 /// The prunning power of LB_Kim is non-trivial, especially when the query is not long, say in length 128.
-double lb_kim_hierarchy(double *t, double *q, int j, int len, double mean, double std, double bsf = INF)
+double lb_kim_hierarchy(double *t, double *q, int j, int len, double mean, double std, double bsf)
 {
     /// 1 point at front and back
     double d, lb;
@@ -231,7 +228,7 @@ double lb_kim_hierarchy(double *t, double *q, int j, int len, double mean, doubl
 /// t     : a circular array keeping the current data.
 /// j     : index of the starting location in t
 /// cb    : (output) current bound at each position. It will be used later for early abandoning in DTW.
-double lb_keogh_cumulative(int* order, double *t, double *uo, double *lo, double *cb, int j, int len, double mean, double std, double best_so_far = INF)
+double lb_keogh_cumulative(int* order, double *t, double *uo, double *lo, double *cb, int j, int len, double mean, double std, double best_so_far)
 {
     double lb = 0;
     double x, d;
@@ -258,7 +255,7 @@ double lb_keogh_cumulative(int* order, double *t, double *uo, double *lo, double
 /// qo: sorted query
 /// cb: (output) current bound at each position. Used later for early abandoning in DTW.
 /// l,u: lower and upper envelop of the current data
-double lb_keogh_data_cumulative(int* order, double *tz, double *qo, double *cb, double *l, double *u, int len, double mean, double std, double best_so_far = INF)
+double lb_keogh_data_cumulative(int* order, double *tz, double *qo, double *cb, double *l, double *u, int len, double mean, double std, double best_so_far)
 {
     double lb = 0;
     double uu,ll,d;
@@ -284,7 +281,7 @@ double lb_keogh_data_cumulative(int* order, double *tz, double *qo, double *cb, 
 /// A,B: data and query, respectively
 /// cb : cummulative bound used for early abandoning
 /// r  : size of Sakoe-Chiba warpping band
-double dtw(double* A, double* B, double *cb, int m, int r, double bsf = INF)
+double dtw(double* A, double* B, double *cb, int m, int r, double bsf)
 {
 
     double *cost;
