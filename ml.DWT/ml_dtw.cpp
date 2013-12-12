@@ -111,7 +111,6 @@ void ml_dtw::get_window_size(float &size) const
 }
     
 // Methods
-    
 void ml_dtw::classify(int argc, const t_atom *argv)
 {
     if (observations.size() == 0)
@@ -121,10 +120,9 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     }
     
     /// For every EPOCH points, all cummulative values, such as ex (sum), ex2 (sum square), will be restarted for reducing the floating point error.
-    int EPOCH = 100000;
+    uint32_t EPOCH = 100000;
     
     uint32_t num_values = argc;
-    uint32_t max_index = num_values + 1;
     std::vector<int> labels;
     std::vector<double> probabilities;
     AtomList estimates;
@@ -132,7 +130,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     double sum = 0.0;
     double sum_squared = 0.0;
     long long location = 0;
-    int query_length = argc;
+    uint32_t query_length = argc;
     uint32_t window_size_absolute = floor(window_size * query_length);
     int kim = 0;
     int keogh = 0;
@@ -158,10 +156,9 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     double *buffer = new double[EPOCH];
     double *upper_buffer = new double[EPOCH];
     double *lower_buff = new double[EPOCH];
+    double distance = INF;
     int *order = new int[query_length];
     Index *Q_tmp = new Index[query_length];
-    
-    double classification = 0.0;
     
     for (uint32_t index = 0; index < num_values; ++index)
     {
@@ -213,8 +210,8 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     sum = sum_squared = 0;
     bool done = false;
     int it = 0;
-    int epoch = 0;
-    int k  = 0;
+    uint32_t epoch = 0;
+    int32_t k = 0;
     long long I;    /// the starting index of the data in current chunk of size EPOCH
     double current = 0.0;
     // TODO: for now we just take the first observation
@@ -226,7 +223,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
         epoch = 0;
         if (it==0)
         {
-            for(k = 0; k < query_length-1; ++k)
+            for(k = 0; k < 0 ||  (uint32_t)k < query_length - 1; ++k)
             {
                 if (feature_iterator != observations[0].features.end())
                 {
@@ -238,7 +235,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
         }
         else
         {
-            for(k = 0; k < query_length-1; ++k)
+            for(k = 0; k < 0 || (uint32_t)k < query_length - 1; ++k)
             buffer[k] = buffer[EPOCH-query_length+1+k];
         }
         
@@ -313,7 +310,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
                         {
                             /// Take another linear time to compute z_normalization of t.
                             /// Note that for better optimization, this can merge to the previous function.
-                            for(k=0;k<query_length;k++)
+                            for(k = 0; k < 0 || (uint32_t)k < query_length; k++)
                             {
                                 z_normalized_time_series[k] = (time_series[(k+j)] - mean)/std_deviation;
                             }
@@ -329,7 +326,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
                                 if (lower_bound_keogh > lower_bound_keogh2)
                                 {
                                     cumulative_bound[query_length-1]=cumulative_bound1[query_length-1];
-                                    for(k=query_length-2; k>=0; k--)
+                                    for(k = query_length-2; k >= 0; k--)
                                         cumulative_bound[k] = cumulative_bound[k+1]+cumulative_bound1[k];
                                 }
                                 else
@@ -369,7 +366,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
         }
     }
     
-    i = (it)*(EPOCH-query_length+1) + epoch;
+    distance = sqrt(location);
     
     delete[] query;
     delete[] lower_envelope;
@@ -387,10 +384,6 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     delete[] upper_buffer;
     delete[] lower_buff;
     
-    //    classification = svm_predict(model, nodes);
-    
-    // TODO: loc is long long, we have a precision issue
-    ToOutInt(0, location);
 }
 
     

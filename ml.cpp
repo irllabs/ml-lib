@@ -32,7 +32,7 @@ void ml_base::add(int argc, const t_atom *argv)
     
     observation.label = GetAFloat(argv[0]);
     
-    for (uint32_t index = 1; index < argc; ++index)
+    for (int32_t index = 1; index < argc; ++index)
     {
         float value = GetAFloat(argv[index]);
         observation.features[index] = value;

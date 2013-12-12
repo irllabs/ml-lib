@@ -219,7 +219,7 @@ void free_problem_data(svm_problem *prob)
 {
     if (prob->x != NULL)
     {
-        for (uint32_t line = 0; line < prob->l; ++line)
+        for (int32_t line = 0; line < prob->l; ++line)
         {
             free(prob->x[line]);
         }
@@ -239,7 +239,7 @@ void copy_observations_to_problem(svm_problem &prob, std::vector<observation> &o
     prob.y = (double *)malloc(prob.l * sizeof(double));
     feature_map::size_type num_nodes = 0;
     
-    for (uint32_t line = 0; line < prob.l; ++line)
+    for (int32_t line = 0; line < prob.l; ++line)
     {
         feature_map::iterator feature_iterator;
         feature_map features = observations[line].features;
@@ -667,14 +667,14 @@ void ml_libsvm::train()
     
     if(param.kernel_type == PRECOMPUTED)
     {
-        for(uint32_t i = 0; i < prob.l; ++i)
+        for(int32_t i = 0; i < prob.l; ++i)
         {
             if (prob.x[i][0].index != 0)
             {
                 error("wrong input format: first column must be 0:sample_serial_number\n");
                 return;
             }
-            if ((int)prob.x[i][0].value <= 0 || (int)prob.x[i][0].value > max_index)
+            if ((int)prob.x[i][0].value <= 0 || (uint32_t)prob.x[i][0].value > max_index)
             {
                 error("wrong input format: sample_serial_number out of range\n");
                 return;
@@ -792,7 +792,7 @@ void ml_libsvm::classify(int argc, const t_atom *argv)
                 int *labels_ = (int *)malloc(nr_class * sizeof(int));
                 svm_get_labels(model, labels_);
                 
-                for(uint32_t j = 0; j < nr_class; ++j)
+                for(int32_t j = 0; j < nr_class; ++j)
                 {
                     labels.push_back(labels_[j]);
                 }
@@ -804,13 +804,13 @@ void ml_libsvm::classify(int argc, const t_atom *argv)
                 prob_estimates = (double *)malloc(nr_class * sizeof(double));
                 classification = svm_predict_probability(model, nodes, prob_estimates);
                 
-                for(uint32_t j = 0; j < nr_class; ++j)
+                for(int32_t j = 0; j < nr_class; ++j)
                 {
                     probabilities.push_back(prob_estimates[j]);
                 }
             }
             
-            for (uint32_t j = 0; j < nr_class; ++j)
+            for (int32_t j = 0; j < nr_class; ++j)
             {
                 t_atom label_a;
                 t_atom probability_a;
