@@ -24,7 +24,16 @@
 
 namespace ml
 {
-    
+ 
+typedef struct query_
+{
+    double *data;
+    uint32_t num_items;
+    double sum;
+    double sum_squared;
+}
+query;
+
 // TODO: refactor this and normalizer into a standard interface that can be used by the normalize method
 class z_normalizer
 {
@@ -88,6 +97,9 @@ private:
     // Attribute wrappers
     FLEXT_CALLVAR_F(get_window_size, set_window_size);
     
+    void dtw_(const query &query, const observation &observation, long long &location, double &distance);
+
+    
     // Instance variables
     double window_size;
 };
@@ -110,27 +122,22 @@ void ml_dtw::get_window_size(float &size) const
     size = window_size;
 }
     
-// Methods
-void ml_dtw::classify(int argc, const t_atom *argv)
+void ml_dtw::dtw_(const query &query, const observation &observation, long long &location, double &distance)
 {
-    if (observations.size() == 0)
+    
+    if (query.num_items == 0 || observation.features.size() == 0)
     {
-        error("no observations added, use 'add' to add labeled feature vectors");
         return;
     }
     
     /// For every EPOCH points, all cummulative values, such as ex (sum), ex2 (sum square), will be restarted for reducing the floating point error.
     uint32_t EPOCH = 100000;
     
-    uint32_t num_values = argc;
-    std::vector<int> labels;
-    std::vector<double> probabilities;
-    AtomList estimates;
     z_normalizer normalizer;
     double sum = 0.0;
     double sum_squared = 0.0;
-    long long location = 0;
-    uint32_t query_length = argc;
+    long long location_ = 0;
+    uint32_t query_length = query.num_items;
     uint32_t window_size_absolute = floor(window_size * query_length);
     int kim = 0;
     int keogh = 0;
@@ -142,7 +149,6 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     double mean = 0.0;
     double std_deviation = 0.0;
     double best_so_far = INF;
-    double *query = new double[query_length];
     double *lower_envelope = new double[query_length];
     double *upper_envelope = new double[query_length];
     double *query_ordered = new double[query_length];
@@ -156,34 +162,25 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     double *buffer = new double[EPOCH];
     double *upper_buffer = new double[EPOCH];
     double *lower_buff = new double[EPOCH];
-    double distance = INF;
     int *order = new int[query_length];
     Index *Q_tmp = new Index[query_length];
     
-    for (uint32_t index = 0; index < num_values; ++index)
-    {
-        double value = GetAFloat(argv[index]);
-        query[index] = value;
-        sum += value;
-        sum_squared += value * value;
-    }
-    
     /// Do z-normalize the query, keep in same array, q
-    normalizer.mean = sum / query_length;
-    normalizer.std_deviation = sqrt((sum_squared / query_length) - mean * mean);
+    normalizer.mean = query.sum / query_length;
+    normalizer.std_deviation = sqrt((query.sum_squared / query_length) - mean * mean);
     
     for(uint32_t i = 0 ; i < query_length ; ++i)
     {
-        query[i] = normalizer.normalize(query[i]);
+        query.data[i] = normalizer.normalize(query.data[i]);
     }
     
     /// Create envelop of the query: lower envelop, l, and upper envelop, u
-    lower_upper_lemire(query, query_length, window_size_absolute, lower_envelope, upper_envelope);
+    lower_upper_lemire(query.data, query_length, window_size_absolute, lower_envelope, upper_envelope);
     
     /// Sort the query one time by abs(z-norm(q[i]))
     for(uint32_t i = 0; i < query_length; ++i)
     {
-        Q_tmp[i].value = query[i];
+        Q_tmp[i].value = query.data[i];
         Q_tmp[i].index = i;
     }
     qsort(Q_tmp, query_length, sizeof(Index), comp);
@@ -193,7 +190,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     {
         int o = Q_tmp[i].index;
         order[i] = o;
-        query_ordered[i] = query[o];
+        query_ordered[i] = query.data[o];
         upper_ordered[i] = upper_envelope[o];
         lower_ordered[i] = lower_envelope[o];
     }
@@ -214,8 +211,8 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     int32_t k = 0;
     long long I;    /// the starting index of the data in current chunk of size EPOCH
     double current = 0.0;
-    // TODO: for now we just take the first observation
-    feature_map::iterator feature_iterator = observations[0].features.begin();
+
+    feature_map::const_iterator feature_iterator = observation.features.begin();
     
     while(!done)
     {
@@ -225,7 +222,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
         {
             for(k = 0; k < 0 ||  (uint32_t)k < query_length - 1; ++k)
             {
-                if (feature_iterator != observations[0].features.end())
+                if (feature_iterator != observation.features.end())
                 {
                     current = feature_iterator->second; // value
                     buffer[k] = current;
@@ -243,7 +240,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
         epoch = query_length - 1;
         while(epoch < EPOCH)
         {
-            if (feature_iterator == observations[0].features.end())
+            if (feature_iterator == observation.features.end())
             {
                 break;
             }
@@ -299,7 +296,7 @@ void ml_dtw::classify(int argc, const t_atom *argv)
                     I = i-(query_length-1);
                     
                     /// Use a constant lower bound to prune the obvious subsequence
-                    lower_bound_kim = lb_kim_hierarchy(time_series, query, j, query_length, mean, std_deviation, best_so_far);
+                    lower_bound_kim = lb_kim_hierarchy(time_series, query.data, j, query_length, mean, std_deviation, best_so_far);
                     
                     if (lower_bound_kim < best_so_far)
                     {
@@ -337,13 +334,13 @@ void ml_dtw::classify(int argc, const t_atom *argv)
                                 }
                                 
                                 /// Compute DTW and early abandoning if possible
-                                dist = dtw(z_normalized_time_series, query, cumulative_bound, query_length, window_size_absolute, best_so_far);
+                                dist = dtw(z_normalized_time_series, query.data, cumulative_bound, query_length, window_size_absolute, best_so_far);
                                 
                                 if( dist < best_so_far )
                                 {   /// Update bsf
                                     /// loc is the real starting location of the nearest neighbor in the file
                                     best_so_far = dist;
-                                    location = (it)*(EPOCH-query_length+1) + i-query_length+1;
+                                    location_ = (it)*(EPOCH-query_length+1) + i-query_length+1;
                                 }
                             } else
                                 keogh2++;
@@ -366,9 +363,9 @@ void ml_dtw::classify(int argc, const t_atom *argv)
         }
     }
     
-    distance = sqrt(location);
+    location = location_;
+    distance = sqrt(best_so_far);
     
-    delete[] query;
     delete[] lower_envelope;
     delete[] upper_envelope;
     delete[] query_ordered;
@@ -386,6 +383,51 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     
 }
 
+// Methods
+void ml_dtw::classify(int argc, const t_atom *argv)
+{
+    if (observations.size() == 0)
+    {
+        error("no observations added, use 'add' to add labeled feature vectors");
+        return;
+    }
+    
+    query query;
+    
+    query.num_items = argc;
+    query.data = new double[query.num_items];
+    query.sum = 0.0;
+    query.sum_squared = 0.0;
+    
+    long long location = 0;
+    double distance = 0;
+    
+    for (uint32_t index = 0; index < query.num_items; ++index)
+    {
+        double value = GetAFloat(argv[index]);
+        query.data[index] = value;
+        query.sum += value;
+        query.sum_squared += value * value;
+    }
+    
+    dtw_(query, observations[0], location, distance);
+    
+    delete [] query.data;
+    
+    AtomList result;
+    
+    t_atom location_a;
+    t_atom distance_a;
+    
+    // Need to call SetDouble() first or label_a gets corrupted. Bug in Flext?
+    SetDouble(&distance_a, distance);
+    SetInt(location_a, location);
+    
+    result.Append(location_a);
+    result.Append(distance_a);
+    
+    ToOutList(0, result);
+}
     
 
 FLEXT_LIB("ml.DTW", ml_dtw);
