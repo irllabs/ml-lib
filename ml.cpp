@@ -63,7 +63,17 @@ void ml_base::train()
 
 void ml_base::clear()
 {
-    error("function not implemented");
+    t_atom status;
+    SetBool(status, true);
+    
+    for (uint32_t item = 0; item < observations.size(); ++item)
+    {
+        observations[item].features.clear();
+    }
+    
+    observations.clear();
+     
+    ToOutAnything(1, s_cleared, 1, &status);
 }
 
 void ml_base::classify(int argc, const t_atom *argv)

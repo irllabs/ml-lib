@@ -718,23 +718,12 @@ void ml_libsvm::train()
 
 void ml_libsvm::clear()
 {
-    t_atom status;
     prob.l = 0;
-    
-    SetBool(status, true);
-    
-    for (uint32_t item = 0; item < observations.size(); ++item)
-    {
-        observations[item].features.clear();
-    }
-    
-    observations.clear();
-    normalizers.clear();
     
     free_problem_data(&prob);
     svm_free_and_destroy_model(&model);
     
-    ToOutAnything(1, s_cleared, 1, &status);
+    ml_base::clear();
 }
 
 void ml_libsvm::classify(int argc, const t_atom *argv)

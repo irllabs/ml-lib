@@ -111,6 +111,7 @@ void ml_dtw::get_window_size(float &size) const
 }
     
 // Methods
+    
 void ml_dtw::classify(int argc, const t_atom *argv)
 {
     if (observations.size() == 0)
