@@ -145,8 +145,6 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     double *qo = new double[m];
     double *uo = new double[m];
     double *lo = new double[m];
-    double *u = new double[m];
-    double *l = new double[m];
     double *cb = new double[m];
     double *cb1 = new double[m];
     double *cb2 = new double[m];
@@ -194,8 +192,8 @@ void ml_dtw::classify(int argc, const t_atom *argv)
         int o = Q_tmp[i].index;
         order[i] = o;
         qo[i] = query[o];
-        uo[i] = u[o];
-        lo[i] = l[o];
+        uo[i] = upper_envelope[o];
+        lo[i] = lower_envelope[o];
     }
     
     /// Initial the cummulative lower bound
@@ -374,8 +372,6 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     delete[] qo;
     delete[] uo;
     delete[] lo;
-    delete[] u;
-    delete[] l;
     delete[] cb;
     delete[] cb1;
     delete[] cb2;
