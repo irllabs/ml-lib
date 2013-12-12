@@ -18,6 +18,10 @@
 
 #include "ml.h"
 
+#include <fstream>
+#include <sstream>
+#include <iterator>
+
 namespace ml
 {
     
@@ -43,12 +47,67 @@ void ml_base::add(int argc, const t_atom *argv)
     
 void ml_base::save(const t_symbol *path) const
 {
-    error("function not implemented");
+    if (observations.size() == 0)
+    {
+        error("no observations added, use 'add' to add labeled feature vectors");
+        return;
+    }
+    
+    std::vector<observation>::const_iterator observation_iterator;
+    std::ofstream output_file(GetString(path));
+    std::ostream_iterator<std::string> output_iterator(output_file, "\n");
+    
+    for (observation_iterator = observations.begin(); observation_iterator != observations.end(); observation_iterator++)
+    {
+        output_file << observation_iterator->label << " ";
+        feature_map::const_iterator feature_map_iterator;
+        
+        for (feature_map_iterator = observation_iterator->features.begin(); feature_map_iterator != observation_iterator->features.end(); feature_map_iterator++)
+        {
+            output_file << feature_map_iterator->first << " " << feature_map_iterator->second << " ";
+        }
+        output_file << std::endl;
+    }
+    
+    output_file.close();
 }
 
 void ml_base::load(const t_symbol *path)
 {
-    error("function not implemented");
+    clear();
+    
+    std::ifstream infile(GetString(path));
+    std::string line;
+
+    while (std::getline(infile, line))
+    {
+        std::istringstream iss(line);
+        std::string item;
+        uint64_t count = 0;
+        observation observation;
+        
+        while (std::getline(iss, item, ' '))
+        {
+            char *end;
+            uint64_t key = 0;
+
+            if (count == 0)
+            {
+                observation.label = std::strtol(item.c_str(), &end, 10);
+            }
+            else if ((count - 1) % 2 == 0)
+            {
+                key = std::strtol(item.c_str(), &end, 10);
+            }
+            else if ((count - 1) % 2 == 1)
+            {
+                double value = std::strtod(item.c_str(), &end);
+                observation.features[key] = value;
+            }
+        }
+        observations.push_back(observation);
+    }
+    
 }
 
 void ml_base::normalize()

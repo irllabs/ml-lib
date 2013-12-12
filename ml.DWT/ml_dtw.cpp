@@ -108,6 +108,7 @@ protected:
     
     // Methods
     void classify(int argc, const t_atom *argv);
+    void usage();
     
     // Attribute Setters
     void set_window_size(float size);
@@ -456,6 +457,26 @@ void ml_dtw::classify(int argc, const t_atom *argv)
     
     ToOutList(0, result_);
     ToOutList(1, triples);
+}
+    
+    
+void ml_dtw::usage()
+{
+    post("%s", ML_POST_SEP);
+    post("Attributes:");
+    post("%s", ML_POST_SEP);
+    post("window_size:\tset size of warping windows, the value is in range 0-1, e.g., window_size=0.05 means windows of size +/-5%");
+    post("%s", ML_POST_SEP);
+    post("Methods:");
+    post("%s", ML_POST_SEP);
+    post("add:\tlist comprising a class id followed by n values; <class> <value 1> <value 2> etc");
+    post("save:\tsave input data to file given by an absolute path");
+    post("load:\tload input data to file given by an absolute path");
+    post("clear:\tclear the stored training data");
+    post("classify:\toutput a list giving the class of the input vector and the zero-indexed location of subsequence");
+    post("help:\tpost this usage statement to the console");
+    post("%s", ML_POST_SEP);
+    
 }
     
 
