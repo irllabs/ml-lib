@@ -85,11 +85,11 @@ void ml_base::load(const t_symbol *path)
         std::string item;
         uint64_t count = 0;
         observation observation;
+        uint64_t key = 0;
         
         while (std::getline(iss, item, ' '))
         {
             char *end;
-            uint64_t key = 0;
 
             if (count == 0)
             {
@@ -104,10 +104,10 @@ void ml_base::load(const t_symbol *path)
                 double value = std::strtod(item.c_str(), &end);
                 observation.features[key] = value;
             }
+            ++count;
         }
         observations.push_back(observation);
     }
-    
 }
 
 void ml_base::normalize()
