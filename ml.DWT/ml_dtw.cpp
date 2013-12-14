@@ -89,7 +89,7 @@ public:
     ml_dtw()
     : window_size(.05)
     {
-        post("ml.DTW: Dynamic Time Warping based on the UCR Suite");
+        post("ml.dtw: Dynamic Time Warping based on the UCR Suite");
     }
     
     ~ml_dtw()
@@ -480,6 +480,6 @@ void ml_dtw::usage()
 }
     
 
-FLEXT_LIB("ml.DTW", ml_dtw);
+FLEXT_LIB("ml.dtw", ml_dtw);
     
 } //namespace ml
