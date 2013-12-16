@@ -36,12 +36,12 @@
 
 /* Begin PBXFileReference section */
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		7D6171C31858D08400DD708F /* UCR_DTW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UCR_DTW.h; path = "ml.DWT/trillion/Source Code/UCR_DTW.h"; sourceTree = SOURCE_ROOT; };
+		7D6171C31858D08400DD708F /* UCR_DTW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UCR_DTW.h; path = "ml.dtw/trillion/Source Code/UCR_DTW.h"; sourceTree = SOURCE_ROOT; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
-		7D91D99318551285002C7555 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.DWT/ml_dtw.cpp; sourceTree = "<group>"; };
-		7D91D9A11855188F002C7555 /* UCR_DTW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCR_DTW.cpp; sourceTree = "<group>"; };
-		7D91D9A21855188F002C7555 /* UCR_ED.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCR_ED.cpp; sourceTree = "<group>"; };
+		7D91D99318551285002C7555 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
+		7D91D9A11855188F002C7555 /* UCR_DTW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_DTW.cpp; path = "../../../ml.dtw/trillion/Source Code/UCR_DTW.cpp"; sourceTree = "<group>"; };
+		7D91D9A21855188F002C7555 /* UCR_ED.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_ED.cpp; path = "../../../ml.dtw/trillion/Source Code/UCR_ED.cpp"; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		7DF077E2184756E000C55E3C /* svm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = svm.cpp; sourceTree = "<group>"; };
 		7DF077E4184756E000C55E3C /* svm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = svm.h; sourceTree = "<group>"; };
