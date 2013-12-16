@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D133C6C185FAA8A0020213F /* UCR_DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */; };
+		7D133C6D185FAA8A0020213F /* UCR_DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */; };
+		7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
+		7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
 		7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
 		7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
-		7D91D9A91855188F002C7555 /* UCR_DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D9A11855188F002C7555 /* UCR_DTW.cpp */; };
-		7D91D9AA1855188F002C7555 /* UCR_DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D9A11855188F002C7555 /* UCR_DTW.cpp */; };
+		7DCE122E185FA2500008AACF /* doublefann.c in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE1215185FA2500008AACF /* doublefann.c */; };
+		7DCE122F185FA2500008AACF /* doublefann.c in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE1215185FA2500008AACF /* doublefann.c */; };
+		7DCE1241185FA2500008AACF /* compat_time.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1220185FA2500008AACF /* compat_time.h */; };
+		7DCE1242185FA2500008AACF /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1221185FA2500008AACF /* config.h */; };
+		7DCE1243185FA2500008AACF /* doublefann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1222185FA2500008AACF /* doublefann.h */; };
+		7DCE1244185FA2500008AACF /* fann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1223185FA2500008AACF /* fann.h */; };
+		7DCE1245185FA2500008AACF /* fann_activation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1224185FA2500008AACF /* fann_activation.h */; };
+		7DCE1246185FA2500008AACF /* fann_cascade.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1225185FA2500008AACF /* fann_cascade.h */; };
+		7DCE1247185FA2500008AACF /* fann_cpp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1226185FA2500008AACF /* fann_cpp.h */; };
+		7DCE1248185FA2500008AACF /* fann_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1227185FA2500008AACF /* fann_data.h */; };
+		7DCE1249185FA2500008AACF /* fann_error.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1228185FA2500008AACF /* fann_error.h */; };
+		7DCE124A185FA2500008AACF /* fann_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1229185FA2500008AACF /* fann_internal.h */; };
+		7DCE124B185FA2500008AACF /* fann_io.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122A185FA2500008AACF /* fann_io.h */; };
+		7DCE124C185FA2500008AACF /* fann_train.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122B185FA2500008AACF /* fann_train.h */; };
+		7DCE124D185FA2500008AACF /* fixedfann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122C185FA2500008AACF /* fixedfann.h */; };
+		7DCE124E185FA2500008AACF /* floatfann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122D185FA2500008AACF /* floatfann.h */; };
 		7DF077F51847570C00C55E3C /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
 		7DF077F61847570D00C55E3C /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
 		7DF077F81847577100C55E3C /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_libsvm.cpp */; };
@@ -35,14 +53,38 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_DTW.cpp; path = "../../../ml.dtw/trillion/Source Code/UCR_DTW.cpp"; sourceTree = "<group>"; };
+		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ml.mlp/ml_mlp.cpp; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D6171C31858D08400DD708F /* UCR_DTW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UCR_DTW.h; path = "ml.dtw/trillion/Source Code/UCR_DTW.h"; sourceTree = SOURCE_ROOT; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7D91D99318551285002C7555 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
-		7D91D9A11855188F002C7555 /* UCR_DTW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_DTW.cpp; path = "../../../ml.dtw/trillion/Source Code/UCR_DTW.cpp"; sourceTree = "<group>"; };
-		7D91D9A21855188F002C7555 /* UCR_ED.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_ED.cpp; path = "../../../ml.dtw/trillion/Source Code/UCR_ED.cpp"; sourceTree = "<group>"; };
+		7D91D9A21855188F002C7555 /* UCR_ED.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_ED.cpp; path = "ml.dtw/trillion/Source Code/UCR_ED.cpp"; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
+		7DCE1215185FA2500008AACF /* doublefann.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = doublefann.c; sourceTree = "<group>"; };
+		7DCE1216185FA2500008AACF /* fann.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann.c; sourceTree = "<group>"; };
+		7DCE1217185FA2500008AACF /* fann_cascade.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_cascade.c; sourceTree = "<group>"; };
+		7DCE1218185FA2500008AACF /* fann_error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_error.c; sourceTree = "<group>"; };
+		7DCE1219185FA2500008AACF /* fann_io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_io.c; sourceTree = "<group>"; };
+		7DCE121A185FA2500008AACF /* fann_train.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_train.c; sourceTree = "<group>"; };
+		7DCE121B185FA2500008AACF /* fann_train_data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_train_data.c; sourceTree = "<group>"; };
+		7DCE121C185FA2500008AACF /* fixedfann.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fixedfann.c; sourceTree = "<group>"; };
+		7DCE121D185FA2500008AACF /* floatfann.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = floatfann.c; sourceTree = "<group>"; };
+		7DCE1220185FA2500008AACF /* compat_time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compat_time.h; sourceTree = "<group>"; };
+		7DCE1221185FA2500008AACF /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		7DCE1222185FA2500008AACF /* doublefann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doublefann.h; sourceTree = "<group>"; };
+		7DCE1223185FA2500008AACF /* fann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann.h; sourceTree = "<group>"; };
+		7DCE1224185FA2500008AACF /* fann_activation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_activation.h; sourceTree = "<group>"; };
+		7DCE1225185FA2500008AACF /* fann_cascade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_cascade.h; sourceTree = "<group>"; };
+		7DCE1226185FA2500008AACF /* fann_cpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_cpp.h; sourceTree = "<group>"; };
+		7DCE1227185FA2500008AACF /* fann_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_data.h; sourceTree = "<group>"; };
+		7DCE1228185FA2500008AACF /* fann_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_error.h; sourceTree = "<group>"; };
+		7DCE1229185FA2500008AACF /* fann_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_internal.h; sourceTree = "<group>"; };
+		7DCE122A185FA2500008AACF /* fann_io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_io.h; sourceTree = "<group>"; };
+		7DCE122B185FA2500008AACF /* fann_train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_train.h; sourceTree = "<group>"; };
+		7DCE122C185FA2500008AACF /* fixedfann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fixedfann.h; sourceTree = "<group>"; };
+		7DCE122D185FA2500008AACF /* floatfann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = floatfann.h; sourceTree = "<group>"; };
 		7DF077E2184756E000C55E3C /* svm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = svm.cpp; sourceTree = "<group>"; };
 		7DF077E4184756E000C55E3C /* svm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = svm.h; sourceTree = "<group>"; };
 		7DF077F71847577100C55E3C /* ml_libsvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_libsvm.cpp; path = ml.libsvm/ml_libsvm.cpp; sourceTree = "<group>"; };
@@ -111,6 +153,7 @@
 				E98573560D9E52D300682171 /* ml.cpp */,
 				7DF077F71847577100C55E3C /* ml_libsvm.cpp */,
 				7D91D99318551285002C7555 /* ml_dtw.cpp */,
+				7D133C6E185FAB0F0020213F /* ml_mlp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -118,6 +161,7 @@
 		7D4EAF021834C53F005B8615 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				7DCE1214185FA2500008AACF /* FANN */,
 				7D91D9981855188E002C7555 /* trillion */,
 				7DF077AB184756E000C55E3C /* libsvm */,
 			);
@@ -136,11 +180,49 @@
 		7D91D9A01855188F002C7555 /* Source Code */ = {
 			isa = PBXGroup;
 			children = (
-				7D91D9A11855188F002C7555 /* UCR_DTW.cpp */,
+				7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */,
 				7D6171C31858D08400DD708F /* UCR_DTW.h */,
 				7D91D9A21855188F002C7555 /* UCR_ED.cpp */,
 			);
 			path = "Source Code";
+			sourceTree = "<group>";
+		};
+		7DCE1214185FA2500008AACF /* FANN */ = {
+			isa = PBXGroup;
+			children = (
+				7DCE1215185FA2500008AACF /* doublefann.c */,
+				7DCE1216185FA2500008AACF /* fann.c */,
+				7DCE1217185FA2500008AACF /* fann_cascade.c */,
+				7DCE1218185FA2500008AACF /* fann_error.c */,
+				7DCE1219185FA2500008AACF /* fann_io.c */,
+				7DCE121A185FA2500008AACF /* fann_train.c */,
+				7DCE121B185FA2500008AACF /* fann_train_data.c */,
+				7DCE121C185FA2500008AACF /* fixedfann.c */,
+				7DCE121D185FA2500008AACF /* floatfann.c */,
+				7DCE121E185FA2500008AACF /* include */,
+			);
+			path = FANN;
+			sourceTree = "<group>";
+		};
+		7DCE121E185FA2500008AACF /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7DCE1220185FA2500008AACF /* compat_time.h */,
+				7DCE1221185FA2500008AACF /* config.h */,
+				7DCE1222185FA2500008AACF /* doublefann.h */,
+				7DCE1223185FA2500008AACF /* fann.h */,
+				7DCE1224185FA2500008AACF /* fann_activation.h */,
+				7DCE1225185FA2500008AACF /* fann_cascade.h */,
+				7DCE1226185FA2500008AACF /* fann_cpp.h */,
+				7DCE1227185FA2500008AACF /* fann_data.h */,
+				7DCE1228185FA2500008AACF /* fann_error.h */,
+				7DCE1229185FA2500008AACF /* fann_internal.h */,
+				7DCE122A185FA2500008AACF /* fann_io.h */,
+				7DCE122B185FA2500008AACF /* fann_train.h */,
+				7DCE122C185FA2500008AACF /* fixedfann.h */,
+				7DCE122D185FA2500008AACF /* floatfann.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 		7DF077AB184756E000C55E3C /* libsvm */ = {
@@ -168,6 +250,20 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DCE1246185FA2500008AACF /* fann_cascade.h in Headers */,
+				7DCE1247185FA2500008AACF /* fann_cpp.h in Headers */,
+				7DCE124E185FA2500008AACF /* floatfann.h in Headers */,
+				7DCE124C185FA2500008AACF /* fann_train.h in Headers */,
+				7DCE1242185FA2500008AACF /* config.h in Headers */,
+				7DCE1243185FA2500008AACF /* doublefann.h in Headers */,
+				7DCE1241185FA2500008AACF /* compat_time.h in Headers */,
+				7DCE1248185FA2500008AACF /* fann_data.h in Headers */,
+				7DCE124A185FA2500008AACF /* fann_internal.h in Headers */,
+				7DCE1245185FA2500008AACF /* fann_activation.h in Headers */,
+				7DCE124B185FA2500008AACF /* fann_io.h in Headers */,
+				7DCE1249185FA2500008AACF /* fann_error.h in Headers */,
+				7DCE124D185FA2500008AACF /* fixedfann.h in Headers */,
+				7DCE1244185FA2500008AACF /* fann.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,9 +348,11 @@
 			files = (
 				7DF077F81847577100C55E3C /* ml_libsvm.cpp in Sources */,
 				7DF077F51847570C00C55E3C /* svm.cpp in Sources */,
+				7D133C6C185FAA8A0020213F /* UCR_DTW.cpp in Sources */,
 				7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */,
-				7D91D9A91855188F002C7555 /* UCR_DTW.cpp in Sources */,
+				7DCE122E185FA2500008AACF /* doublefann.c in Sources */,
 				E98573570D9E52D300682171 /* ml.cpp in Sources */,
+				7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,9 +362,11 @@
 			files = (
 				7DF077F91847577100C55E3C /* ml_libsvm.cpp in Sources */,
 				7DF077F61847570D00C55E3C /* svm.cpp in Sources */,
+				7D133C6D185FAA8A0020213F /* UCR_DTW.cpp in Sources */,
 				7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */,
-				7D91D9AA1855188F002C7555 /* UCR_DTW.cpp in Sources */,
+				7DCE122F185FA2500008AACF /* doublefann.c in Sources */,
 				E98573580D9E52D300682171 /* ml.cpp in Sources */,
+				7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -167,6 +167,7 @@ static void main()
     // call the objects' setup routines
     FLEXT_SETUP(ml_libsvm);
     FLEXT_SETUP(ml_dtw);
+    FLEXT_SETUP(ml_mlp);
 }
     
 const t_symbol *ml_base::s_train = flext::MakeSymbol("train");
