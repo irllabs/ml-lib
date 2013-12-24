@@ -129,7 +129,7 @@
 #X restore 145 49 pd dtw;
 #X text 61 15 Patch to instantiate and test all externals within ml-lib
 ;
-#N canvas 983 206 660 407 mlp 0;
+#N canvas 983 206 660 407 mlp 1;
 #X obj 162 236 ml.mlp;
 #X obj 155 139 list prepend add;
 #X msg 290 39 train;
@@ -146,6 +146,13 @@
 #X msg 368 75 1.2 0.5;
 #X msg 402 112 0.1 0.3;
 #X msg 539 204 load /tmp/mlp.txt;
+#X msg 357 284 num_inputs 2;
+#X msg 485 285 num_outputs 2;
+#X msg 12 57 1 0 0 1;
+#X msg 20 114 0 1 1 0;
+#X msg 488 79 0 1;
+#X msg 501 100 1 0;
+#X msg 522 261 getnum_inputs;
 #X connect 0 0 5 0;
 #X connect 0 1 4 0;
 #X connect 1 0 8 0;
@@ -161,4 +168,11 @@
 #X connect 13 0 3 0;
 #X connect 14 0 3 0;
 #X connect 15 0 0 0;
+#X connect 16 0 0 0;
+#X connect 17 0 0 0;
+#X connect 18 0 1 0;
+#X connect 19 0 1 0;
+#X connect 20 0 3 0;
+#X connect 21 0 3 0;
+#X connect 22 0 0 0;
 #X restore 280 71 pd mlp;

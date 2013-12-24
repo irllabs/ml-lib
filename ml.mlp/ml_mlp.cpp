@@ -24,11 +24,12 @@
 namespace ml
 {
     
-    typedef struct result_
+    typedef enum mlp_mode_
     {
-        double label;
+        MLP_MODE_REGRESSION,
+        MLP_MODE_CLASSIFICATION
     }
-    result;
+    mlp_mode;
     
     class ml_mlp : ml_base
     {
@@ -65,7 +66,13 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
+            FLEXT_CADDATTR_SET(c, "mode", set_mode);
+            FLEXT_CADDATTR_SET(c, "num_inputs", set_num_inputs);
+            FLEXT_CADDATTR_SET(c, "num_outputs", set_num_outputs);
             
+            FLEXT_CADDATTR_GET(c, "mode", get_mode);
+            FLEXT_CADDATTR_GET(c, "num_inputs", get_num_inputs);
+            FLEXT_CADDATTR_GET(c, "num_outputs", get_num_outputs);
         }
         
         // Methods
@@ -79,17 +86,32 @@ namespace ml
         virtual void usage();
         
         // Attribute Setters
+        void set_mode(int mode);
+        void set_num_inputs(int num_inputs);
+        void set_num_outputs(int num_outputs);
+        
+        // Attribute Getters
+        void get_mode(int &mode) const;
+        void get_num_inputs(int &num_inputs) const;
+        void get_num_outputs(int &num_outputs) const;
         
         // TODO: set / get the stuff currently in the constructor
         
         // Attribute Getters
         
     private:
-        // Attribute wrappers
+        // Method wrappers
+
         
+        // Attribute wrappers
+        FLEXT_CALLVAR_I(get_mode, set_mode);
+        FLEXT_CALLVAR_I(get_num_inputs, set_num_inputs);
+        FLEXT_CALLVAR_I(get_num_outputs, set_num_outputs);
+
         // Instance variables
         GRT::MLP mlp;
         GRT::LabelledRegressionData trainingData;
+        mlp_mode mode;
     };
     
     // Utility functions
@@ -111,8 +133,87 @@ namespace ml
     }
     
     // Attribute setters
+    void ml_mlp::set_mode(int mode)
+    {
+        if (mode > 1)
+        {
+            error("mode must be either 0 for regression or 1 for classification");
+            return;
+        }
+        this->mode = (mlp_mode)mode;
+    }
     
+    void ml_mlp::set_num_inputs(int num_inputs)
+    {
+        if (num_inputs < 0)
+        {
+            error("number of inputs must be greater than zero");
+        }
+        
+        GRT::UINT numHiddenNeurons = mlp.getNumHiddenNeurons();
+        GRT::UINT numOutputNeurons = mlp.getNumOutputNeurons();
+        
+        trainingData.clear();
+        
+        bool success = trainingData.setInputAndTargetDimensions(num_inputs, numOutputNeurons);
+        
+        if (success == false)
+        {
+            error("unable to set input and target dimensions");
+            return;
+        }
+        
+        success = mlp.init(num_inputs, numHiddenNeurons, numOutputNeurons);
+
+        if (success == false)
+        {
+            error("unable to initialise MLP");
+        }
+    }
+    
+    void ml_mlp::set_num_outputs(int num_outputs)
+    {
+        if (num_outputs < 0)
+        {
+            error("number of outputs must be greater than zero");
+        }
+        
+        GRT::UINT numHiddenNeurons = mlp.getNumHiddenNeurons();
+        GRT::UINT numInputNeurons = mlp.getNumInputNeurons();
+        
+        trainingData.clear();
+        
+        bool success = trainingData.setInputAndTargetDimensions(numInputNeurons, num_outputs);
+        
+        if (success == false)
+        {
+            error("unable to set input and target dimensions");
+            return;
+        }
+        
+        success = mlp.init(numInputNeurons, numHiddenNeurons, num_outputs);
+        
+        if (success == false)
+        {
+            error("unable to initialise MLP");
+        }
+    }
+
     // Attribute getters
+    void ml_mlp::get_mode(int &mode) const
+    {
+        mode = this->mode;
+    }
+    
+    void ml_mlp::get_num_inputs(int &num_inputs) const
+    {
+        num_inputs = mlp.getNumInputNeurons();
+    }
+    
+    void ml_mlp::get_num_outputs(int &num_outputs) const
+    {
+        num_outputs = mlp.getNumOutputDimensions();
+    }
     
     // Methods
     void ml_mlp::add(int argc, const t_atom *argv)
@@ -286,7 +387,8 @@ namespace ml
         for (uint32_t index = 0; index < numOutputDimensions; ++index)
         {
             t_atom value_a;
-            SetDouble(&value_a, regressionData[index]);
+            double value = regressionData[index];
+            SetFloat(value_a, value);
             result.Append(value_a);
         }
         
