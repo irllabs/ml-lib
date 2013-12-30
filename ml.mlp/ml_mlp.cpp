@@ -255,14 +255,28 @@ namespace ml
     // Methods
     void ml_mlp::add(int argc, const t_atom *argv)
     {
+        if (argc < 2)
+        {
+            error("invalid input length, must contain at least 2 values");
+            return;
+        }
+        
         GRT::UINT numInputDimensions = mode == MLP_MODE_CLASSIFICATION ? classificationData.getNumDimensions() : regressionData.getNumInputDimensions();
         GRT::UINT numOutputDimensions = mode == MLP_MODE_CLASSIFICATION ? 1 : regressionData.getNumTargetDimensions();
         GRT::UINT combinedVectorSize = numInputDimensions + numOutputDimensions;
         
+        
         if (argc < 0 || (unsigned)argc != combinedVectorSize)
         {
-            error("invalid input length, expected %d, got %d", combinedVectorSize, argc);
-            return;
+            numInputDimensions = argc - numOutputDimensions;
+            
+            if (numInputDimensions < 1)
+            {
+                error("invalid input length, expected at least %d", numOutputDimensions + 1);
+                return;
+            }
+            post("new input vector size, adjusting num_inputs to %d", numInputDimensions);
+            set_num_inputs(numInputDimensions);
         }
         
         GRT::VectorDouble inputVector(numInputDimensions);
@@ -418,6 +432,7 @@ namespace ml
         
         regressionData.clear();
         classificationData.clear();
+        mlp.clear();
         
         ToOutAnything(1, s_cleared, 1, &status);
     }
