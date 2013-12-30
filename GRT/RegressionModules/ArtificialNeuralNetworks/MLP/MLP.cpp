@@ -153,6 +153,7 @@ bool MLP::predict(VectorDouble inputVector){
     
     //Set the mapped data as the classLikelihoods
     regressionData = feedforward( inputVector );
+    classLikelihoods = regressionData;
     
     if( classificationModeActive ){
         double bestValue = classLikelihoods[0];
