@@ -462,7 +462,33 @@ namespace ml
         
         if (mlp.getClassificationModeActive())
         {
+            GRT::VectorDouble likelihoods = mlp.getClassLikelihoods();
+            GRT::vector<GRT::UINT> labels = classificationData.getClassLabels();
             GRT::UINT classification = mlp.getPredictedClassLabel();
+            
+            if (likelihoods.size() != labels.size())
+            {
+                error("labels / likelihoods size mismatch");
+            }
+            else
+            {
+                AtomList estimates;
+
+                for (uid_t count = 0; count < labels.size(); ++count)
+                {
+                    t_atom label_a;
+                    t_atom likelihood_a;
+                    
+                    // Need to call SetDouble() first or label_a gets corrupted. Bug in Flext?
+                    SetDouble(&likelihood_a, likelihoods[count]);
+                    SetInt(label_a, labels[count]);
+                    
+                    estimates.Append(label_a);
+                    estimates.Append(likelihood_a);
+                }
+                ToOutAnything(1, MakeSymbol("estimates"), estimates);
+            }
+                 
             ToOutInt(0, classification);
         }
         else if (mlp.getRegressionModeActive())
