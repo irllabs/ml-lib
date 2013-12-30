@@ -486,7 +486,7 @@ namespace ml
                     estimates.Append(label_a);
                     estimates.Append(likelihood_a);
                 }
-                ToOutAnything(1, MakeSymbol("estimates"), estimates);
+                ToOutAnything(1, s_estimates, estimates);
             }
                  
             ToOutInt(0, classification);

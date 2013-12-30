@@ -70,6 +70,7 @@ protected:
     static const t_symbol *s_normalized;
     static const t_symbol *s_loaded;
     static const t_symbol *s_saved;
+    static const t_symbol *s_estimates;
     
     virtual void add(int argc, const t_atom *argv);
     virtual void save(const t_symbol *path) const;

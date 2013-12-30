@@ -175,6 +175,8 @@ const t_symbol *ml_base::s_cleared = flext::MakeSymbol("cleared");
 const t_symbol *ml_base::s_normalized = flext::MakeSymbol("normalized");
 const t_symbol *ml_base::s_loaded = flext::MakeSymbol("loaded");
 const t_symbol *ml_base::s_saved = flext::MakeSymbol("saved");
+const t_symbol *ml_base::s_estimates = flext::MakeSymbol("estimates");
+
     
 } // namespace ml
 

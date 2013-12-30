@@ -780,7 +780,7 @@ void ml_libsvm::classify(int argc, const t_atom *argv)
         else
         {
             t_atom estimates_a;
-            SetString(estimates_a, "estimates");
+            SetSymbol(estimates_a, s_estimates);
             estimates.Append(estimates_a);
             
             if (svm_type == NU_SVR || svm_type == EPSILON_SVR)
