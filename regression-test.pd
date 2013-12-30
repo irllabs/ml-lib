@@ -153,6 +153,9 @@
 #X msg 488 79 0 1;
 #X msg 501 100 1 0;
 #X msg 522 261 getnum_inputs;
+#X msg 300 359 mode 1;
+#X msg 528 238 getnum_outputs;
+#X msg 472 340 getmode;
 #X connect 0 0 5 0;
 #X connect 0 1 4 0;
 #X connect 1 0 8 0;
@@ -175,4 +178,7 @@
 #X connect 20 0 3 0;
 #X connect 21 0 3 0;
 #X connect 22 0 0 0;
+#X connect 23 0 0 0;
+#X connect 24 0 0 0;
+#X connect 25 0 0 0;
 #X restore 280 71 pd mlp;

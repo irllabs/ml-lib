@@ -31,22 +31,24 @@ namespace ml
     }
     mlp_mode;
     
+    const GRT::UINT defaultNumInputDimensions = 2;
+    const GRT::UINT defaultNumOutputDimensions = 1;
+    const GRT::UINT defaultNumHiddenNeurons = 2;
+    
     class ml_mlp : ml_base
     {
         FLEXT_HEADER_S(ml_mlp, ml_base, setup);
         
     public:
         ml_mlp()
+        : mode(MLP_MODE_REGRESSION)
         {
             post("ml.mlp: Multilayer Perceptron based on the GRT library");
             
-            trainingData.setInputAndTargetDimensions(2, 1);
+            regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
+            classificationData.setNumDimensions(defaultNumInputDimensions);
             
-            GRT::UINT numInputNeurons = trainingData.getNumInputDimensions();
-            GRT::UINT numHiddenNeurons = 2;
-            GRT::UINT numOutputNeurons = trainingData.getNumTargetDimensions();
-            
-            mlp.init(numInputNeurons, numHiddenNeurons, numOutputNeurons);
+            mlp.init(defaultNumInputDimensions, defaultNumHiddenNeurons, defaultNumOutputDimensions);
             
             mlp.setMaxNumEpochs( 100 );
             mlp.setMinChange( 1.0e-2 );
@@ -55,7 +57,6 @@ namespace ml
             mlp.setValidationSetSize( 20 );
             mlp.setRandomiseTrainingOrder( true );
             mlp.enableScaling( true );
-            
         }
         
         ~ml_mlp()
@@ -110,7 +111,9 @@ namespace ml
 
         // Instance variables
         GRT::MLP mlp;
-        GRT::LabelledRegressionData trainingData;
+        GRT::LabelledRegressionData regressionData;
+        GRT::LabelledClassificationData classificationData;
+        
         mlp_mode mode;
     };
     
@@ -135,11 +138,18 @@ namespace ml
     // Attribute setters
     void ml_mlp::set_mode(int mode)
     {
-        if (mode > 1)
+        if (mode != MLP_MODE_CLASSIFICATION && mode != MLP_MODE_CLASSIFICATION)
         {
-            error("mode must be either 0 for regression or 1 for classification");
+            error("mode must be either %d for classification or %d for regression",
+                  MLP_MODE_CLASSIFICATION, MLP_MODE_REGRESSION);
             return;
         }
+        
+        if (mode == MLP_MODE_CLASSIFICATION)
+        {
+            set_num_outputs(1);
+        }
+        
         this->mode = (mlp_mode)mode;
     }
     
@@ -153,13 +163,23 @@ namespace ml
         GRT::UINT numHiddenNeurons = mlp.getNumHiddenNeurons();
         GRT::UINT numOutputNeurons = mlp.getNumOutputNeurons();
         
-        trainingData.clear();
+        regressionData.clear();
+        classificationData.clear();
         
-        bool success = trainingData.setInputAndTargetDimensions(num_inputs, numOutputNeurons);
+        bool success = false;
+        
+        if (mode == MLP_MODE_CLASSIFICATION)
+        {
+            success = classificationData.setNumDimensions(num_inputs);
+        }
+        else if (mode == MLP_MODE_REGRESSION)
+        {
+            success = regressionData.setInputAndTargetDimensions(num_inputs, numOutputNeurons);
+        }
         
         if (success == false)
         {
-            error("unable to set input and target dimensions");
+            error("unable to set input or target dimensions");
             return;
         }
         
@@ -178,17 +198,28 @@ namespace ml
             error("number of outputs must be greater than zero");
         }
         
+        if (mode == MLP_MODE_CLASSIFICATION && num_outputs > 1)
+        {
+            error("for classification mode, number of outputs must be 1, for multidimensional output switch mode to %d", MLP_MODE_REGRESSION);
+            return;
+        }
+        
         GRT::UINT numHiddenNeurons = mlp.getNumHiddenNeurons();
         GRT::UINT numInputNeurons = mlp.getNumInputNeurons();
         
-        trainingData.clear();
+        regressionData.clear();
         
-        bool success = trainingData.setInputAndTargetDimensions(numInputNeurons, num_outputs);
+        bool success = false;
         
-        if (success == false)
+        if (mode == MLP_MODE_REGRESSION)
         {
-            error("unable to set input and target dimensions");
-            return;
+            success = regressionData.setInputAndTargetDimensions(numInputNeurons, num_outputs);
+           
+            if (success == false)
+            {
+                error("unable to set input and target dimensions");
+                return;
+            }
         }
         
         success = mlp.init(numInputNeurons, numHiddenNeurons, num_outputs);
@@ -212,7 +243,7 @@ namespace ml
     
     void ml_mlp::get_num_outputs(int &num_outputs) const
     {
-        num_outputs = mlp.getNumOutputDimensions();
+        num_outputs = mlp.getNumOutputNeurons();
     }
     
     // Methods
@@ -221,9 +252,10 @@ namespace ml
         
         GRT::UINT numInputNeurons = mlp.getNumInputNeurons();
         GRT::UINT numOutputNeurons = mlp.getNumOutputNeurons();
-        GRT::UINT combinedVectorSize = numInputNeurons + numOutputNeurons;
+        GRT::UINT numInputDimensions = mode == MLP_MODE_CLASSIFICATION ? classificationData.getNumDimensions() : regressionData.getNumInputDimensions();
+        GRT::UINT numOutputDimensions = mode == MLP_MODE_CLASSIFICATION ? 1 : regressionData.getNumTargetDimensions();
         
-        // TODO: also check if trainingData inputDimensions / outpuDimensions matches?
+        GRT::UINT combinedVectorSize = numInputNeurons + numOutputNeurons;
         
         if (argc < 0 || (unsigned)argc != combinedVectorSize)
         {
@@ -231,7 +263,7 @@ namespace ml
             return;
         }
         
-        if (numInputNeurons != trainingData.getNumInputDimensions() || numOutputNeurons != trainingData.getNumTargetDimensions())
+        if (numInputNeurons != numInputDimensions || numOutputNeurons != numOutputDimensions)
         {
             error("inconsistent MLP dimensions. To set, use attributes: num_input_neurons, num_output_neurons");
             return;
@@ -252,15 +284,34 @@ namespace ml
             {
                 inputVector[index - numOutputNeurons] = value;
             }
-        
         }
 
-        trainingData.addSample(inputVector, targetVector);
+        if (mode == MLP_MODE_CLASSIFICATION)
+        {
+            GRT::UINT label = (GRT::UINT)targetVector[0];
+            
+            if ((double)label != targetVector[0])
+            {
+                error("class label must be an integer");
+                return;
+            }
+            
+            if (label == 0)
+            {
+                error("class label must be non-zero");
+                return;
+            }
+            classificationData.addSample((GRT::UINT)targetVector[0], inputVector);
+        }
+        else if (mode == MLP_MODE_REGRESSION)
+        {
+            regressionData.addSample(inputVector, targetVector);   
+        }
     }
 
     void ml_mlp::save(const t_symbol *path) const
     {
-        if (trainingData.getNumSamples() == 0)
+        if (regressionData.getNumSamples() == 0 && regressionData.getNumSamples() == 0)
         {
             error("no observations added, use 'add' to add training data");
             return;
@@ -274,7 +325,16 @@ namespace ml
             return;
         }
         
-        bool success = trainingData.saveDatasetToFile(file_path);
+        bool success = false;
+        
+        if (mode == MLP_MODE_CLASSIFICATION)
+        {
+            success = classificationData.saveDatasetToFile(file_path);
+        }
+        else if (mode == MLP_MODE_REGRESSION)
+        {
+            success = regressionData.saveDatasetToFile(file_path);
+        }
         
         if (!success)
         {
@@ -292,7 +352,16 @@ namespace ml
             return;
         }
 
-        bool success = trainingData.loadDatasetFromFile(file_path);
+        bool success = false;
+        
+        if (mode == MLP_MODE_CLASSIFICATION)
+        {
+            success = classificationData.loadDatasetFromFile(file_path);
+        }
+        else if (mode == MLP_MODE_REGRESSION)
+        {
+            success = regressionData.loadDatasetFromFile(file_path);
+        }
         
         if (!success)
         {
@@ -307,17 +376,35 @@ namespace ml
     
     void ml_mlp::train()
     {
-        if (trainingData.getNumSamples() == 0)
+        GRT::UINT numSamples = mode == MLP_MODE_CLASSIFICATION ? classificationData.getNumSamples() : regressionData.getNumSamples();
+        
+        if (numSamples == 0)
         {
             error("no observations added, use 'add' to add training data");
             return;
         }
         
-        bool success = mlp.train(trainingData);
+        bool success = false;
         
+        if (mode == MLP_MODE_CLASSIFICATION)
+        {
+            mlp.init(mlp.getNumInputNeurons(), mlp.getNumHiddenNeurons(), classificationData.getNumClasses());
+            success = mlp.train(classificationData);
+        }
+        else if (mode == MLP_MODE_REGRESSION)
+        {
+            success = mlp.train(regressionData);
+        }
+
         if (!success)
         {
             error("training failed");
+            return;
+        }
+        
+        if ((mode == MLP_MODE_CLASSIFICATION && mlp.getClassificationModeActive() == false) || (mode == MLP_MODE_REGRESSION && mlp.getRegressionModeActive() == false))
+        {
+            error("mode mismatch");
             return;
         }
         
@@ -332,19 +419,22 @@ namespace ml
         t_atom status;
         SetBool(status, true);
         
-        trainingData.clear();
+        regressionData.clear();
+        classificationData.clear();
         
         ToOutAnything(1, s_cleared, 1, &status);
     }
     
     void ml_mlp::classify(int argc, const t_atom *argv)
     {
-        if (trainingData.getNumSamples() == 0)
+        GRT::UINT numSamples = mode == MLP_MODE_CLASSIFICATION ? classificationData.getNumSamples() : regressionData.getNumSamples();
+
+        if (numSamples == 0)
         {
             error("no observations added, use 'add' to add training data");
             return;
         }
-        
+
         if (mlp.getTrained() == false)
         {
             error("model has not been trained, use 'train' to train the model");
@@ -373,26 +463,34 @@ namespace ml
             return;
         }
         
-        GRT::VectorDouble regressionData = mlp.getRegressionData();
-        GRT::VectorDouble::size_type numOutputDimensions = regressionData.size();
-        
-        if (numOutputDimensions != mlp.getNumOutputNeurons())
+        if (mlp.getClassificationModeActive())
         {
-            error("invalid output dimensions: %d", numOutputDimensions);
-            return;
+            GRT::UINT classification = mlp.getPredictedClassLabel();
+            ToOutInt(0, classification);
         }
-        
-        AtomList result;
-        
-        for (uint32_t index = 0; index < numOutputDimensions; ++index)
+        else if (mlp.getRegressionModeActive())
         {
-            t_atom value_a;
-            double value = regressionData[index];
-            SetFloat(value_a, value);
-            result.Append(value_a);
+            GRT::VectorDouble regressionData = mlp.getRegressionData();
+            GRT::VectorDouble::size_type numOutputDimensions = regressionData.size();
+            
+            if (numOutputDimensions != mlp.getNumOutputNeurons())
+            {
+                error("invalid output dimensions: %d", numOutputDimensions);
+                return;
+            }
+            
+            AtomList result;
+            
+            for (uint32_t index = 0; index < numOutputDimensions; ++index)
+            {
+                t_atom value_a;
+                double value = regressionData[index];
+                SetFloat(value_a, value);
+                result.Append(value_a);
+            }
+            
+            ToOutList(0, result);
         }
-        
-        ToOutList(0, result);
         
     }
     
@@ -400,8 +498,6 @@ namespace ml
     {
         error("function not implemented");
     }
-
-    
     
     FLEXT_LIB("ml.mlp", ml_mlp);
     
