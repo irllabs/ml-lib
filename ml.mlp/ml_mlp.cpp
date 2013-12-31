@@ -44,6 +44,8 @@ namespace ml
     const GRT::UINT defaultNumInputDimensions = 2;
     const GRT::UINT defaultNumOutputDimensions = 1;
     const GRT::UINT defaultNumHiddenNeurons = 2;
+    const mlp_mode defaultMode = MLP_MODE_REGRESSION;
+    
     
     class ml_mlp : ml_base
     {
@@ -56,20 +58,14 @@ namespace ml
         inputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getInputLayerActivationFunction()),
         hiddenActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getHiddenLayerActivationFunction()),
         outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction()),
-        mode(MLP_MODE_REGRESSION)
+        mode(defaultMode)
         {
             post("ml.mlp: Multilayer Perceptron based on the GRT library");
             
             regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
             classificationData.setNumDimensions(defaultNumInputDimensions);
             
-            mlp.setMaxNumEpochs(100);
             mlp.setMinChange(1.0e-2);
-            mlp.setNumRandomTrainingIterations(5);
-            mlp.setUseValidationSet(true);
-            mlp.setValidationSetSize(20);
-            mlp.setRandomiseTrainingOrder(true);
-            mlp.enableScaling(true);
         }
         
         ~ml_mlp()
@@ -368,12 +364,13 @@ namespace ml
 
     void ml_mlp::set_multi_threaded_training(bool multi_threaded_training)
     {
-        bool success = mlp.setUseMultiThreadingTraining(multi_threaded_training);
-        
-        if (success == false)
-        {
-            error("unable to set multi_threaded_training");
-        }
+        error("function not implemented");
+//        bool success = mlp.setUseMultiThreadingTraining(multi_threaded_training);
+//        
+//        if (success == false)
+//        {
+//            error("unable to set multi_threaded_training");
+//        }
     }
 
     void ml_mlp::set_null_rejection(bool null_rejection)
@@ -904,7 +901,41 @@ namespace ml
     
     void ml_mlp::usage()
     {
-        error("function not implemented");
+        post("%s", ML_POST_SEP);
+        post("Attributes:");
+        post("%s", ML_POST_SEP);
+        post("mode:\tinteger setting mode of the MLP, %d for regression and %d for classification (default %d)",
+             MLP_MODE_REGRESSION, MLP_MODE_CLASSIFICATION, defaultMode);
+        post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default %d)", defaultNumInputDimensions);
+        post("num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default %d)", defaultNumOutputDimensions);
+        post("num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default %d)", defaultNumHiddenNeurons);
+        post("min_epochs:\tinteger setting the minimum number of training iterations (default 10)");
+        post("max_epochs:\tinteger setting the maximum number of training iterations (default 100)");
+        post("min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)");
+        post("training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)");
+        post("momentum:\tfloating point value setting the momentum of the MLP (default 0.5)");
+        post("gamma:\tfloating point value setting the gamma of the MLP (default 2.0)");
+        post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
+        post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
+        post("input_activation_function:\tinteger determining the activation function for the input layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)");
+        post("hidden_activation_function:\tinteger determining the activation function for the hidden layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)");
+        post("output_activation_function:\tinteger determining the activation function for the output layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)");
+        post("rand_training_iterations:\tinteger setting the number of random training iterations (default 10)");
+        post("use_validation_set:\tinteger (0 or 1) determining whether or not to use a validation training set (default 1)");
+        post("validation_set_size:\tinteger integer determining the size of the validation set (default 20)");
+        post("randomize_training_order:\tinteger (0 or 1) determining whether or not to randomize the training order (default 0)");
+        post("enable_scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
+        post("%s", ML_POST_SEP);
+        post("Methods:");
+        post("%s", ML_POST_SEP);
+        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode, where N is determined by the num_outputs attribute");
+        post("save:\tsave training examples, first argument gives path to save location");
+        post("load:\tload training examples, first argument gives path to the load location");
+        post("train:\ttrain the MLP based on vectors added with 'add'");
+        post("clear:\tclear the stored training data and model");
+        post("classify:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode");
+        post("help:\tpost this usage statement to the console");
+        post("%s", ML_POST_SEP);
     }
     
     FLEXT_LIB("ml.mlp", ml_mlp);
