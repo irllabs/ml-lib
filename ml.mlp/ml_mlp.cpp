@@ -27,9 +27,19 @@ namespace ml
     typedef enum mlp_mode_
     {
         MLP_MODE_REGRESSION,
-        MLP_MODE_CLASSIFICATION
+        MLP_MODE_CLASSIFICATION,
+        MLP_NUM_MODES
     }
     mlp_mode;
+    
+    typedef enum mlp_layer_
+    {
+        MLP_LAYER_INPUT,
+        MLP_LAYER_HIDDEN,
+        MLP_LAYER_OUTPUT,
+        MLP_NUM_LAYERS
+    }
+    mlp_layer;
     
     const GRT::UINT defaultNumInputDimensions = 2;
     const GRT::UINT defaultNumOutputDimensions = 1;
@@ -41,20 +51,25 @@ namespace ml
         
     public:
         ml_mlp()
-        : numHiddenNeurons(defaultNumHiddenNeurons), mode(MLP_MODE_REGRESSION)
+        :
+        numHiddenNeurons(defaultNumHiddenNeurons),
+        inputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getInputLayerActivationFunction()),
+        hiddenActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getHiddenLayerActivationFunction()),
+        outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction()),
+        mode(MLP_MODE_REGRESSION)
         {
             post("ml.mlp: Multilayer Perceptron based on the GRT library");
             
             regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
             classificationData.setNumDimensions(defaultNumInputDimensions);
             
-            mlp.setMaxNumEpochs( 100 );
-            mlp.setMinChange( 1.0e-2 );
-            mlp.setNumRandomTrainingIterations( 5 );
-            mlp.setUseValidationSet( true );
-            mlp.setValidationSetSize( 20 );
-            mlp.setRandomiseTrainingOrder( true );
-            mlp.enableScaling( true );
+            mlp.setMaxNumEpochs(100);
+            mlp.setMinChange(1.0e-2);
+            mlp.setNumRandomTrainingIterations(5);
+            mlp.setUseValidationSet(true);
+            mlp.setValidationSetSize(20);
+            mlp.setRandomiseTrainingOrder(true);
+            mlp.enableScaling(true);
         }
         
         ~ml_mlp()
@@ -69,12 +84,45 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "num_inputs", set_num_inputs);
             FLEXT_CADDATTR_SET(c, "num_outputs", set_num_outputs);
             FLEXT_CADDATTR_SET(c, "num_hidden", set_num_hidden);
-
+            FLEXT_CADDATTR_SET(c, "min_epochs", set_min_epochs);
+            FLEXT_CADDATTR_SET(c, "max_epochs", set_max_epochs);
+            FLEXT_CADDATTR_SET(c, "min_change", set_min_change);
+            FLEXT_CADDATTR_SET(c, "training_rate", set_training_rate);
+            FLEXT_CADDATTR_SET(c, "momentum", set_momentum);
+            FLEXT_CADDATTR_SET(c, "gamma", set_gamma);
+            FLEXT_CADDATTR_SET(c, "multi_threaded_training", set_multi_threaded_training);
+            FLEXT_CADDATTR_SET(c, "null_rejection", set_null_rejection);
+            FLEXT_CADDATTR_SET(c, "null_rejection_coeff", set_null_rejection_coeff);
+            FLEXT_CADDATTR_SET(c, "input_activation_function", set_input_activation_function);
+            FLEXT_CADDATTR_SET(c, "hidden_activation_function", set_hidden_activation_function);
+            FLEXT_CADDATTR_SET(c, "output_activation_function", set_output_activation_function);
+            FLEXT_CADDATTR_SET(c, "rand_training_iterations", set_rand_training_iterations);
+            FLEXT_CADDATTR_SET(c, "use_validation_set", set_use_validation_set);
+            FLEXT_CADDATTR_SET(c, "validation_set_size", set_validation_set_size);
+            FLEXT_CADDATTR_SET(c, "randomize_training_order", set_randomise_training_order);
+            FLEXT_CADDATTR_SET(c, "enable_scaling", set_enable_scaling);
             
             FLEXT_CADDATTR_GET(c, "mode", get_mode);
             FLEXT_CADDATTR_GET(c, "num_inputs", get_num_inputs);
             FLEXT_CADDATTR_GET(c, "num_outputs", get_num_outputs);
             FLEXT_CADDATTR_GET(c, "num_hidden", get_num_hidden);
+            FLEXT_CADDATTR_GET(c, "min_epochs", get_min_epochs);
+            FLEXT_CADDATTR_GET(c, "max_epochs", get_max_epochs);
+            FLEXT_CADDATTR_GET(c, "min_change", get_min_change);
+            FLEXT_CADDATTR_GET(c, "training_rate", get_training_rate);
+            FLEXT_CADDATTR_GET(c, "momentum", get_momentum);
+            FLEXT_CADDATTR_GET(c, "gamma", get_gamma);
+            FLEXT_CADDATTR_GET(c, "multi_threaded_training", get_multi_threaded_training);
+            FLEXT_CADDATTR_GET(c, "null_rejection", get_null_rejection);
+            FLEXT_CADDATTR_GET(c, "null_rejection_coeff", get_null_rejection_coeff);
+            FLEXT_CADDATTR_GET(c, "input_activation_function", get_input_activation_function);
+            FLEXT_CADDATTR_GET(c, "hidden_activation_function", get_hidden_activation_function);
+            FLEXT_CADDATTR_GET(c, "output_activation_function", get_output_activation_function);
+            FLEXT_CADDATTR_GET(c, "rand_training_iterations", get_rand_training_iterations);
+            FLEXT_CADDATTR_GET(c, "use_validation_set", get_use_validation_set);
+            FLEXT_CADDATTR_GET(c, "validation_set_size", get_validation_set_size);
+            FLEXT_CADDATTR_GET(c, "randomize_training_order", get_randomise_training_order);
+            FLEXT_CADDATTR_GET(c, "enable_scaling", get_enable_scaling);
         }
         
         // Methods
@@ -92,34 +140,83 @@ namespace ml
         void set_num_inputs(int num_inputs);
         void set_num_outputs(int num_outputs);
         void set_num_hidden(int num_hidden);
-
+        void set_min_epochs(int min_epochs);
+        void set_max_epochs(int max_epochs);
+        void set_min_change(float min_change);
+        void set_training_rate(float training_rate);
+        void set_momentum(float momentum); //
+        void set_gamma(float gamma);
+        void set_multi_threaded_training(bool multi_threaded_training);
+        void set_null_rejection(bool null_rejection);
+        void set_null_rejection_coeff(float null_rejection_coeff);
+        void set_input_activation_function(int activation_function);
+        void set_hidden_activation_function(int activation_function);
+        void set_output_activation_function(int activation_function);
+        void set_rand_training_iterations(int rand_training_iterations);
+        void set_use_validation_set(bool use_validation_set);
+        void set_validation_set_size(int validation_set_size);
+        void set_randomise_training_order(bool randomise_training_order);
+        void set_enable_scaling(bool enable_scaling);
         
         // Attribute Getters
         void get_mode(int &mode) const;
         void get_num_inputs(int &num_inputs) const;
         void get_num_outputs(int &num_outputs) const;
         void get_num_hidden(int &num_hidden) const;
-
-        
-        // TODO: set / get the stuff currently in the constructor
-        
-        // Attribute Getters
-        
+        void get_min_epochs(int &min_epochs) const;
+        void get_max_epochs(int &max_epochs) const;
+        void get_min_change(float &min_change) const;
+        void get_training_rate(float &training_rate) const;
+        void get_momentum(float &momentum) const; //
+        void get_gamma(float &gamma) const;
+        void get_multi_threaded_training(bool &multi_threaded_training) const;
+        void get_null_rejection(bool &null_rejection) const;
+        void get_null_rejection_coeff(float &null_rejection_coeff) const;
+        void get_input_activation_function(int &activation_function) const;
+        void get_hidden_activation_function(int &activation_function) const;
+        void get_output_activation_function(int &activation_function) const;
+        void get_rand_training_iterations(int &rand_training_iterations) const;
+        void get_use_validation_set(bool &use_validation_set) const;
+        void get_validation_set_size(int &validation_set_size) const;
+        void get_randomise_training_order(bool &randomise_training_order) const;
+        void get_enable_scaling(bool &enable_scaling) const;
+                
     private:
+        void set_activation_function(int activation_function, mlp_layer layer);
+        
         // Method wrappers
 
-        
         // Attribute wrappers
         FLEXT_CALLVAR_I(get_mode, set_mode);
         FLEXT_CALLVAR_I(get_num_inputs, set_num_inputs);
         FLEXT_CALLVAR_I(get_num_outputs, set_num_outputs);
         FLEXT_CALLVAR_I(get_num_hidden, set_num_hidden);
+        FLEXT_CALLVAR_I(get_min_epochs, set_min_epochs);
+        FLEXT_CALLVAR_I(get_max_epochs, set_max_epochs);
+        FLEXT_CALLVAR_F(get_min_change, set_min_change);
+        FLEXT_CALLVAR_F(get_training_rate, set_training_rate);
+        FLEXT_CALLVAR_F(get_momentum, set_momentum);
+        FLEXT_CALLVAR_F(get_gamma, set_gamma);
+        FLEXT_CALLVAR_B(get_multi_threaded_training, set_multi_threaded_training);
+        FLEXT_CALLVAR_B(get_null_rejection, set_null_rejection);
+        FLEXT_CALLVAR_F(get_null_rejection_coeff, set_null_rejection_coeff);
+        FLEXT_CALLVAR_I(get_input_activation_function, set_input_activation_function);
+        FLEXT_CALLVAR_I(get_hidden_activation_function, set_hidden_activation_function);
+        FLEXT_CALLVAR_I(get_output_activation_function, set_output_activation_function);
+        FLEXT_CALLVAR_I(get_rand_training_iterations, set_rand_training_iterations);
+        FLEXT_CALLVAR_B(get_use_validation_set, set_use_validation_set);
+        FLEXT_CALLVAR_I(get_validation_set_size, set_validation_set_size);
+        FLEXT_CALLVAR_B(get_randomise_training_order, set_randomise_training_order);
+        FLEXT_CALLVAR_B(get_enable_scaling, set_enable_scaling);
 
         // Instance variables
         GRT::MLP mlp;
         GRT::LabelledRegressionData regressionData;
         GRT::LabelledClassificationData classificationData;
         GRT::UINT numHiddenNeurons;
+        GRT::Neuron::ActivationFunctions inputActivationFunction;
+        GRT::Neuron::ActivationFunctions hiddenActivationFunction;
+        GRT::Neuron::ActivationFunctions outputActivationFunction;
         mlp_mode mode;
         
     };
@@ -145,10 +242,9 @@ namespace ml
     // Attribute setters
     void ml_mlp::set_mode(int mode)
     {
-        if (mode != MLP_MODE_CLASSIFICATION && mode != MLP_MODE_CLASSIFICATION)
+        if (mode > MLP_NUM_MODES)
         {
-            error("mode must be either %d for classification or %d for regression",
-                  MLP_MODE_CLASSIFICATION, MLP_MODE_REGRESSION);
+            error("mode must be between 0 and %d", MLP_NUM_MODES - 1);
             return;
         }
         
@@ -214,7 +310,184 @@ namespace ml
     {
         this->numHiddenNeurons = num_hidden;
     }
+    
+    void ml_mlp::set_min_epochs(int min_epochs)
+    {
+        bool success = mlp.setMinNumEpochs(min_epochs);
+        
+        if (success == false)
+        {
+            error("unable to set min_epochs, hint: should be greater than 0");
+        }
+    }
 
+    void ml_mlp::set_max_epochs(int max_epochs)
+    {
+        mlp.setMaxNumEpochs(max_epochs);
+    }
+    
+    void ml_mlp::set_min_change(float min_change)
+    {
+        bool success = mlp.setMinChange(min_change);
+        
+        if (success == false)
+        {
+            error("unable to set min_change, hint: should be greater than 0");
+        }
+    }
+    
+    void ml_mlp::set_training_rate(float training_rate)
+    {
+        bool success = mlp.setTrainingRate(training_rate);
+        
+        if (success == false)
+        {
+            error("unable to set training_rate, hint: should be between 0-1");
+        }
+    }
+    
+    void ml_mlp::set_momentum(float momentum)
+    {
+        bool success = mlp.setMomentum(momentum);
+        
+        if (success == false)
+        {
+            error("unable to set momentum, hint: should be between 0-1");
+        }
+    }
+    
+    void ml_mlp::set_gamma(float gamma)
+    {
+        bool success = mlp.setGamma(gamma);
+        
+        if (success == false)
+        {
+            error("unable to set gamma");
+        }
+    }
+
+    void ml_mlp::set_multi_threaded_training(bool multi_threaded_training)
+    {
+        bool success = mlp.setUseMultiThreadingTraining(multi_threaded_training);
+        
+        if (success == false)
+        {
+            error("unable to set multi_threaded_training");
+        }
+    }
+
+    void ml_mlp::set_null_rejection(bool null_rejection)
+    {
+        bool success = mlp.setNullRejection(null_rejection);
+        
+        if (success == false)
+        {
+            error("unable to set null_rejection");
+        }
+    }
+
+    void ml_mlp::set_null_rejection_coeff(float null_rejection_coeff)
+    {
+        bool success = mlp.setNullRejectionCoeff(null_rejection_coeff);
+        
+        if (success == false)
+        {
+            error("unable to set null_rejection_coeff, hint: should be greater than 0");
+        }
+    }
+    
+    void ml_mlp::set_activation_function(int activation_function, mlp_layer layer)
+    {
+        if (mlp.validateActivationFunction(activation_function) == false)
+        {
+            error("activation function %d is invalid, hint should be between 0-%d", activation_function, GRT::Neuron::NUMBER_OF_ACTIVATION_FUNCTIONS - 1);
+            return;
+        }
+        
+        GRT::Neuron::ActivationFunctions activation_function_ = (GRT::Neuron::ActivationFunctions)activation_function;
+        
+        switch (layer)
+        {
+            case MLP_LAYER_INPUT:
+                inputActivationFunction = activation_function_;
+                break;
+            case MLP_LAYER_HIDDEN:
+                hiddenActivationFunction = activation_function_;
+                break;
+            case MLP_LAYER_OUTPUT:
+                outputActivationFunction = activation_function_;
+                break;
+            default:
+                error("no activation function for layer: %d", layer);
+                return;
+        }
+        post("activation function set to %s", mlp.activationFunctionToString(activation_function_).c_str());
+    }
+    
+    void ml_mlp::set_input_activation_function(int activation_function)
+    {
+        set_activation_function(activation_function, MLP_LAYER_INPUT);
+    }
+    
+    void ml_mlp::set_hidden_activation_function(int activation_function)
+    {
+        set_activation_function(activation_function, MLP_LAYER_HIDDEN);
+    }
+    
+    void ml_mlp::set_output_activation_function(int activation_function)
+    {
+        set_activation_function(activation_function, MLP_LAYER_OUTPUT);
+    }
+    
+    void ml_mlp::set_rand_training_iterations(int rand_training_iterations)
+    {
+        bool success = mlp.setNumRandomTrainingIterations(rand_training_iterations);
+        
+        if (success == false)
+        {
+            error("unable to set rand_training_iterations, hint: should be greater than 0");
+        }
+    }
+    
+    void ml_mlp::set_use_validation_set(bool use_validation_set)
+    {
+        bool success = mlp.setUseValidationSet(use_validation_set);
+        
+        if (success == false)
+        {
+            error("unable to set use_validation_set, hint: should be 0 or 1");
+        }
+    }
+    
+    void ml_mlp::set_validation_set_size(int validation_set_size)
+    {
+        bool success = mlp.setValidationSetSize(validation_set_size);
+        
+        if (success == false)
+        {
+            error("unable to set validation_set_size, hint: should be between 0-100");
+        }
+    }
+
+    void ml_mlp::set_randomise_training_order(bool randomise_training_order)
+    {
+        bool success = mlp.setRandomiseTrainingOrder(randomise_training_order);
+        
+        if (success == false)
+        {
+            error("unable to set randomise_training_order, hint: should be 0 or 1");
+        }
+    }
+    
+    void ml_mlp::set_enable_scaling(bool enable_scaling)
+    {
+        bool success = mlp.enableScaling(enable_scaling);
+        
+        if (success == false)
+        {
+            error("unable to set randomise_training_order, hint: should be 0 or 1");
+        }
+    }
 
     // Attribute getters
     void ml_mlp::get_mode(int &mode) const
@@ -250,7 +523,91 @@ namespace ml
     {
         num_hidden = this->numHiddenNeurons;
     }
+    
+    void ml_mlp::get_min_epochs(int &min_epochs) const
+    {
+        min_epochs = mlp.getMinNumEpochs();
+    }
 
+    void ml_mlp::get_max_epochs(int &max_epochs) const
+    {
+        max_epochs = mlp.getMaxNumEpochs();
+    }
+
+    void ml_mlp::get_min_change(float &min_change) const
+    {
+        min_change = mlp.getMinChange();
+    }
+    
+    void ml_mlp::get_training_rate(float &training_rate) const
+    {
+        training_rate = mlp.getTrainingRate();
+    }
+    
+    void ml_mlp::get_momentum(float &momentum) const
+    {
+        momentum = mlp.getMomentum();
+    }
+    
+    void ml_mlp::get_gamma(float &gamma) const
+    {
+        gamma = mlp.getGamma();
+    }
+    
+    void ml_mlp::get_multi_threaded_training(bool &multi_threaded_training) const
+    {
+        error("function not implemented");
+    }
+    
+    void ml_mlp::get_null_rejection(bool &null_rejection) const
+    {
+        null_rejection = mlp.getNullRejectionEnabled();
+    }
+    
+    void ml_mlp::get_null_rejection_coeff(float &null_rejection_coeff) const
+    {
+        null_rejection_coeff = mlp.getNullRejectionCoeff();
+    }
+    
+    void ml_mlp::get_input_activation_function(int &activation_function) const
+    {
+        activation_function = inputActivationFunction;
+    }
+    
+    void ml_mlp::get_hidden_activation_function(int &activation_function) const
+    {
+        activation_function = hiddenActivationFunction;
+    }
+    
+    void ml_mlp::get_output_activation_function(int &activation_function) const
+    {
+        activation_function = outputActivationFunction;
+    }
+    
+    void ml_mlp::get_rand_training_iterations(int &rand_training_iterations) const
+    {
+        rand_training_iterations = mlp.getNumRandomTrainingIterations();
+    }
+
+    void ml_mlp::get_use_validation_set(bool &use_validation_set) const
+    {
+        use_validation_set = mlp.getUseValidationSet();
+    }
+    
+    void ml_mlp::get_validation_set_size(int &validation_set_size) const
+    {
+        validation_set_size = mlp.getValidationSetSize();
+    }
+    
+    void ml_mlp::get_randomise_training_order(bool &randomise_training_order) const
+    {
+        randomise_training_order = mlp.getRandomiseTrainingOrder();
+    }
+
+    void ml_mlp::get_enable_scaling(bool &enable_scaling) const
+    {
+        enable_scaling = mlp.getScalingEnabled();
+    }
     
     // Methods
     void ml_mlp::add(int argc, const t_atom *argv)
@@ -398,12 +755,26 @@ namespace ml
         
         if (mode == MLP_MODE_CLASSIFICATION)
         {
-            mlp.init(classificationData.getNumDimensions(), numHiddenNeurons, classificationData.getNumClasses());
+            mlp.init(
+                     classificationData.getNumDimensions(),
+                     numHiddenNeurons,
+                     classificationData.getNumClasses(),
+                     inputActivationFunction,
+                     hiddenActivationFunction,
+                     outputActivationFunction
+                     );
             success = mlp.train(classificationData);
         }
         else if (mode == MLP_MODE_REGRESSION)
         {
-            mlp.init(regressionData.getNumInputDimensions(), numHiddenNeurons, regressionData.getNumTargetDimensions());
+            mlp.init(
+                     regressionData.getNumInputDimensions(),
+                     numHiddenNeurons,
+                     regressionData.getNumTargetDimensions(),
+                     inputActivationFunction,
+                     hiddenActivationFunction,
+                     outputActivationFunction
+                     );
             success = mlp.train(regressionData);
         }
 
