@@ -33,28 +33,7 @@
 
 
 namespace ml
-{
-
-typedef std::map<int, double> feature_map;
-
-class observation
-{
-public:
-    observation()
-    : label(0)
-    {
-        
-    }
-    
-    ~observation()
-    {
-        
-    }
-    
-    double label;
-    feature_map features; // using a map gives potential for sparse vectors
-};
-    
+{    
     
 class ml_base:
 public flext_base
@@ -80,9 +59,7 @@ protected:
     virtual void clear();
     virtual void classify(int argc, const t_atom *argv);
     virtual void usage();
-    
-    std::vector<observation> observations;
-    
+        
 private:
     // Method wrappers
     FLEXT_CALLBACK_V(add);

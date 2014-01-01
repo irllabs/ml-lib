@@ -49,6 +49,27 @@ typedef struct result_
     }
 }
 result;
+    
+typedef std::map<int, double> feature_map;
+
+class observation
+{
+public:
+    observation()
+    : label(0)
+    {
+        
+    }
+    
+    ~observation()
+    {
+        
+    }
+    
+    double label;
+    feature_map features; // using a map gives potential for sparse vectors
+};
+
 
 bool compare_observation_label(observation ob1, observation ob2)
 {
@@ -107,6 +128,10 @@ protected:
     }
     
     // Methods
+    void add(int argc, const t_atom *argv);
+    void save(const t_symbol *path) const;
+    void load(const t_symbol *path);
+    void clear();
     void classify(int argc, const t_atom *argv);
     void usage();
     
@@ -117,12 +142,15 @@ protected:
     void get_window_size(float &size) const;
     
 private:
+    
+    
     // Attribute wrappers
     FLEXT_CALLVAR_F(get_window_size, set_window_size);
     
     void dtw_(std::vector<double> query, const observation &observation, long long &location, double &distance);
 
-    
+    std::vector<observation> observations;
+
     // Instance variables
     double window_size;
 };
@@ -393,6 +421,103 @@ void ml_dtw::dtw_(std::vector<double> query, const observation &observation, lon
 }
 
 // Methods
+    
+void ml_dtw::add(int argc, const t_atom *argv)
+{
+    observation observation;
+    
+    observation.label = GetAFloat(argv[0]);
+    
+    for (int32_t index = 1; index < argc; ++index)
+    {
+        float value = GetAFloat(argv[index]);
+        observation.features[index] = value;
+    }
+    
+    observations.push_back(observation);
+}
+
+void ml_dtw::save(const t_symbol *path) const
+{
+    if (observations.size() == 0)
+    {
+        error("no observations added, use 'add' to add labeled feature vectors");
+        return;
+    }
+    
+    std::vector<observation>::const_iterator observation_iterator;
+    std::ofstream output_file(GetString(path));
+    std::ostream_iterator<std::string> output_iterator(output_file, "\n");
+    
+    for (observation_iterator = observations.begin(); observation_iterator != observations.end(); observation_iterator++)
+    {
+        output_file << observation_iterator->label << " ";
+        feature_map::const_iterator feature_map_iterator;
+        
+        for (feature_map_iterator = observation_iterator->features.begin(); feature_map_iterator != observation_iterator->features.end(); feature_map_iterator++)
+        {
+            output_file << feature_map_iterator->first << " " << feature_map_iterator->second << " ";
+        }
+        output_file << std::endl;
+    }
+    
+    output_file.close();
+}
+
+void ml_dtw::load(const t_symbol *path)
+{
+    clear();
+    
+    std::ifstream infile(GetString(path));
+    std::string line;
+    
+    while (std::getline(infile, line))
+    {
+        std::istringstream iss(line);
+        std::string item;
+        uint64_t count = 0;
+        observation observation;
+        uint64_t key = 0;
+        
+        while (std::getline(iss, item, ' '))
+        {
+            char *end;
+            
+            if (count == 0)
+            {
+                observation.label = std::strtol(item.c_str(), &end, 10);
+            }
+            else if ((count - 1) % 2 == 0)
+            {
+                key = std::strtol(item.c_str(), &end, 10);
+            }
+            else if ((count - 1) % 2 == 1)
+            {
+                double value = std::strtod(item.c_str(), &end);
+                observation.features[key] = value;
+            }
+            ++count;
+        }
+        observations.push_back(observation);
+    }
+}
+
+void ml_dtw::clear()
+{
+    t_atom status;
+    SetBool(status, true);
+    
+    for (uint32_t item = 0; item < observations.size(); ++item)
+    {
+        observations[item].features.clear();
+    }
+    
+    observations.clear();
+    
+    ToOutAnything(1, s_cleared, 1, &status);
+}
+
+    
 void ml_dtw::classify(int argc, const t_atom *argv)
 {
     if (observations.size() == 0)
