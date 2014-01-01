@@ -280,8 +280,6 @@
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
-		7D6E7820186A11C300BC42BC /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
-		7D6E7821186A11C400BC42BC /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
 		7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
 		7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
 		7DCE122E185FA2500008AACF /* doublefann.c in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE1215185FA2500008AACF /* doublefann.c */; };
@@ -544,8 +542,6 @@
 		7DCE122B185FA2500008AACF /* fann_train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_train.h; sourceTree = "<group>"; };
 		7DCE122C185FA2500008AACF /* fixedfann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fixedfann.h; sourceTree = "<group>"; };
 		7DCE122D185FA2500008AACF /* floatfann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = floatfann.h; sourceTree = "<group>"; };
-		7DF077E2184756E000C55E3C /* svm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = svm.cpp; sourceTree = "<group>"; };
-		7DF077E4184756E000C55E3C /* svm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = svm.h; sourceTree = "<group>"; };
 		7DF077F71847577100C55E3C /* ml_libsvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_libsvm.cpp; path = ml.libsvm/ml_libsvm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1183,7 +1179,6 @@
 				7D12D169186081C7009D2059 /* GRT */,
 				7DCE1214185FA2500008AACF /* FANN */,
 				7D91D9981855188E002C7555 /* trillion */,
-				7DF077AB184756E000C55E3C /* libsvm */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -1243,16 +1238,6 @@
 				7DCE122D185FA2500008AACF /* floatfann.h */,
 			);
 			path = include;
-			sourceTree = "<group>";
-		};
-		7DF077AB184756E000C55E3C /* libsvm */ = {
-			isa = PBXGroup;
-			children = (
-				7DF077E2184756E000C55E3C /* svm.cpp */,
-				7DF077E4184756E000C55E3C /* svm.h */,
-			);
-			name = libsvm;
-			path = ml.libsvm/libsvm;
 			sourceTree = "<group>";
 		};
 		7DF077FA1847589B00C55E3C /* Supporting Files */ = {
@@ -1505,7 +1490,6 @@
 				7D12D325186081C7009D2059 /* LogisticRegression.cpp in Sources */,
 				7D12D331186081C7009D2059 /* DebugLog.cpp in Sources */,
 				7D12D2AA186081C7009D2059 /* LabelledClassificationData.cpp in Sources */,
-				7D6E7820186A11C300BC42BC /* svm.cpp in Sources */,
 				7D12D34B186081C7009D2059 /* Node.cpp in Sources */,
 				7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */,
 				7D12D2D2186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */,
@@ -1597,7 +1581,6 @@
 				7D12D326186081C7009D2059 /* LogisticRegression.cpp in Sources */,
 				7D12D332186081C7009D2059 /* DebugLog.cpp in Sources */,
 				7D12D2AB186081C7009D2059 /* LabelledClassificationData.cpp in Sources */,
-				7D6E7821186A11C400BC42BC /* svm.cpp in Sources */,
 				7D12D34C186081C7009D2059 /* Node.cpp in Sources */,
 				7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */,
 				7D12D2D3186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */,
