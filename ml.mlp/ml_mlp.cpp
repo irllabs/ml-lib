@@ -60,7 +60,8 @@ namespace ml
         outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction()),
         mode(defaultMode)
         {
-            post("ml.mlp: Multilayer Perceptron based on the GRT library");
+            std::string grt_version = mlp.getGRTVersion();
+            post("ml.mlp: Multilayer Perceptron based on the GRT library version %s", grt_version.c_str());
             
             regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
             classificationData.setNumDimensions(defaultNumInputDimensions);
@@ -125,7 +126,6 @@ namespace ml
         virtual void add(int argc, const t_atom *argv);
         virtual void save(const t_symbol *path) const;
         virtual void load(const t_symbol *path);
-        virtual void normalize();
         virtual void train();
         virtual void clear();
         virtual void classify(int argc, const t_atom *argv);
@@ -731,11 +731,6 @@ namespace ml
         {
             error("unable to load training data from path: %s", file_path.c_str());
         }
-    }
-    
-    void ml_mlp::normalize()
-    {
-        error("function not implemented");
     }
     
     void ml_mlp::train()

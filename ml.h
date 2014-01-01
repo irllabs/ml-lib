@@ -67,7 +67,6 @@ protected:
     
     static const t_symbol *s_train;
     static const t_symbol *s_cleared;
-    static const t_symbol *s_normalized;
     static const t_symbol *s_loaded;
     static const t_symbol *s_saved;
     static const t_symbol *s_estimates;
@@ -75,7 +74,6 @@ protected:
     virtual void add(int argc, const t_atom *argv);
     virtual void save(const t_symbol *path) const;
     virtual void load(const t_symbol *path);
-    virtual void normalize();
     virtual void train();
     virtual void clear();
     virtual void classify(int argc, const t_atom *argv);
@@ -88,7 +86,6 @@ private:
     FLEXT_CALLBACK_V(add);
     FLEXT_CALLBACK_S(save);
     FLEXT_CALLBACK_S(load);
-    FLEXT_CALLBACK(normalize);
     FLEXT_CALLBACK(train);
     FLEXT_CALLBACK(clear);
     FLEXT_CALLBACK_V(classify);

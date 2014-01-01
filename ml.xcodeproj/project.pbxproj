@@ -26,8 +26,6 @@
 		7D12D268186081C7009D2059 /* ANBC_Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D179186081C7009D2059 /* ANBC_Model.cpp */; };
 		7D12D269186081C7009D2059 /* ANBC_Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D179186081C7009D2059 /* ANBC_Model.cpp */; };
 		7D12D26A186081C7009D2059 /* ANBC_Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D17A186081C7009D2059 /* ANBC_Model.h */; };
-		7D12D26B186081C7009D2059 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17C186081C7009D2059 /* BAG.cpp */; };
-		7D12D26C186081C7009D2059 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17C186081C7009D2059 /* BAG.cpp */; };
 		7D12D26D186081C7009D2059 /* BAG.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D17D186081C7009D2059 /* BAG.h */; };
 		7D12D26E186081C7009D2059 /* DecisionTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17F186081C7009D2059 /* DecisionTree.cpp */; };
 		7D12D26F186081C7009D2059 /* DecisionTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17F186081C7009D2059 /* DecisionTree.cpp */; };
@@ -65,10 +63,6 @@
 		7D12D28F186081C7009D2059 /* Softmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D19D186081C7009D2059 /* Softmax.cpp */; };
 		7D12D290186081C7009D2059 /* Softmax.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D19E186081C7009D2059 /* Softmax.h */; };
 		7D12D291186081C7009D2059 /* SoftmaxModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D19F186081C7009D2059 /* SoftmaxModel.h */; };
-		7D12D294186081C7009D2059 /* libsvm.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1A3186081C7009D2059 /* libsvm.h */; };
-		7D12D295186081C7009D2059 /* SVM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A4186081C7009D2059 /* SVM.cpp */; };
-		7D12D296186081C7009D2059 /* SVM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A4186081C7009D2059 /* SVM.cpp */; };
-		7D12D297186081C7009D2059 /* SVM.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1A5186081C7009D2059 /* SVM.h */; };
 		7D12D298186081C7009D2059 /* GaussianMixtureModels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A8186081C7009D2059 /* GaussianMixtureModels.cpp */; };
 		7D12D299186081C7009D2059 /* GaussianMixtureModels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A8186081C7009D2059 /* GaussianMixtureModels.cpp */; };
 		7D12D29A186081C7009D2059 /* GaussianMixtureModels.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1A9186081C7009D2059 /* GaussianMixtureModels.h */; };
@@ -286,6 +280,8 @@
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
+		7D6E7820186A11C300BC42BC /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
+		7D6E7821186A11C400BC42BC /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
 		7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
 		7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
 		7DCE122E185FA2500008AACF /* doublefann.c in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE1215185FA2500008AACF /* doublefann.c */; };
@@ -304,8 +300,6 @@
 		7DCE124C185FA2500008AACF /* fann_train.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122B185FA2500008AACF /* fann_train.h */; };
 		7DCE124D185FA2500008AACF /* fixedfann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122C185FA2500008AACF /* fixedfann.h */; };
 		7DCE124E185FA2500008AACF /* floatfann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122D185FA2500008AACF /* floatfann.h */; };
-		7DF077F51847570C00C55E3C /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
-		7DF077F61847570D00C55E3C /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077E2184756E000C55E3C /* svm.cpp */; };
 		7DF077F81847577100C55E3C /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_libsvm.cpp */; };
 		7DF077F91847577100C55E3C /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_libsvm.cpp */; };
 		E98573570D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
@@ -368,7 +362,7 @@
 		7D12D1A2186081C7009D2059 /* libsvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libsvm.cpp; sourceTree = "<group>"; };
 		7D12D1A3186081C7009D2059 /* libsvm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libsvm.h; sourceTree = "<group>"; };
 		7D12D1A4186081C7009D2059 /* SVM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SVM.cpp; sourceTree = "<group>"; };
-		7D12D1A5186081C7009D2059 /* SVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVM.h; sourceTree = "<group>"; };
+		7D12D1A5186081C7009D2059 /* SVM_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVM_.h; sourceTree = "<group>"; };
 		7D12D1A8186081C7009D2059 /* GaussianMixtureModels.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GaussianMixtureModels.cpp; sourceTree = "<group>"; };
 		7D12D1A9186081C7009D2059 /* GaussianMixtureModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianMixtureModels.h; sourceTree = "<group>"; };
 		7D12D1AB186081C7009D2059 /* HierarchicalClustering.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HierarchicalClustering.cpp; sourceTree = "<group>"; };
@@ -799,7 +793,7 @@
 			children = (
 				7D12D1A1186081C7009D2059 /* LIBSVM */,
 				7D12D1A4186081C7009D2059 /* SVM.cpp */,
-				7D12D1A5186081C7009D2059 /* SVM.h */,
+				7D12D1A5186081C7009D2059 /* SVM_.h */,
 			);
 			path = SVM;
 			sourceTree = "<group>";
@@ -1349,7 +1343,6 @@
 				7D12D2E9186081C7009D2059 /* Context.h in Headers */,
 				7D12D32A186081C7009D2059 /* MultidimensionalRegression.h in Headers */,
 				7D12D2A9186081C7009D2059 /* PSOParticle.h in Headers */,
-				7D12D294186081C7009D2059 /* libsvm.h in Headers */,
 				7D12D25A186081C7009D2059 /* AdaBoost.h in Headers */,
 				7D12D300186081C7009D2059 /* ClassLabelChangeFilter.h in Headers */,
 				7D12D2F9186081C7009D2059 /* PreProcessing.h in Headers */,
@@ -1386,7 +1379,6 @@
 				7D12D33A186081C7009D2059 /* FileParser.h in Headers */,
 				7D12D284186081C7009D2059 /* LDA.h in Headers */,
 				7D12D2E6186081C7009D2059 /* Classifier.h in Headers */,
-				7D12D297186081C7009D2059 /* SVM.h in Headers */,
 				7D12D349186081C7009D2059 /* MatrixDouble.h in Headers */,
 				7D12D2AF186081C7009D2059 /* LabelledClassificationSample.h in Headers */,
 				7D12D28D186081C7009D2059 /* RandomForests.h in Headers */,
@@ -1489,7 +1481,6 @@
 				7D12D35D186081C7009D2059 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7D12D285186081C7009D2059 /* MinDist.cpp in Sources */,
 				7DF077F81847577100C55E3C /* ml_libsvm.cpp in Sources */,
-				7DF077F51847570C00C55E3C /* svm.cpp in Sources */,
 				7D12D2E1186081C7009D2059 /* ZeroCrossingCounter.cpp in Sources */,
 				7D12D367186081C7009D2059 /* WarningLog.cpp in Sources */,
 				7D12D2E7186081C7009D2059 /* Context.cpp in Sources */,
@@ -1514,6 +1505,7 @@
 				7D12D325186081C7009D2059 /* LogisticRegression.cpp in Sources */,
 				7D12D331186081C7009D2059 /* DebugLog.cpp in Sources */,
 				7D12D2AA186081C7009D2059 /* LabelledClassificationData.cpp in Sources */,
+				7D6E7820186A11C300BC42BC /* svm.cpp in Sources */,
 				7D12D34B186081C7009D2059 /* Node.cpp in Sources */,
 				7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */,
 				7D12D2D2186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */,
@@ -1547,9 +1539,7 @@
 				7D12D26E186081C7009D2059 /* DecisionTree.cpp in Sources */,
 				7D12D354186081C7009D2059 /* SVD.cpp in Sources */,
 				7D12D357186081C7009D2059 /* TestingLog.cpp in Sources */,
-				7D12D295186081C7009D2059 /* SVM.cpp in Sources */,
 				7D12D2FE186081C7009D2059 /* ClassLabelChangeFilter.cpp in Sources */,
-				7D12D26B186081C7009D2059 /* BAG.cpp in Sources */,
 				7D12D2B9186081C7009D2059 /* LabelledTimeSeriesClassificationData.cpp in Sources */,
 				7D12D307186081C7009D2059 /* DeadZone.cpp in Sources */,
 				7D12D2B0186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.cpp in Sources */,
@@ -1583,7 +1573,6 @@
 				7D12D35E186081C7009D2059 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7D12D286186081C7009D2059 /* MinDist.cpp in Sources */,
 				7DF077F91847577100C55E3C /* ml_libsvm.cpp in Sources */,
-				7DF077F61847570D00C55E3C /* svm.cpp in Sources */,
 				7D12D2E2186081C7009D2059 /* ZeroCrossingCounter.cpp in Sources */,
 				7D12D368186081C7009D2059 /* WarningLog.cpp in Sources */,
 				7D12D2E8186081C7009D2059 /* Context.cpp in Sources */,
@@ -1608,6 +1597,7 @@
 				7D12D326186081C7009D2059 /* LogisticRegression.cpp in Sources */,
 				7D12D332186081C7009D2059 /* DebugLog.cpp in Sources */,
 				7D12D2AB186081C7009D2059 /* LabelledClassificationData.cpp in Sources */,
+				7D6E7821186A11C400BC42BC /* svm.cpp in Sources */,
 				7D12D34C186081C7009D2059 /* Node.cpp in Sources */,
 				7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */,
 				7D12D2D3186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */,
@@ -1641,9 +1631,7 @@
 				7D12D26F186081C7009D2059 /* DecisionTree.cpp in Sources */,
 				7D12D355186081C7009D2059 /* SVD.cpp in Sources */,
 				7D12D358186081C7009D2059 /* TestingLog.cpp in Sources */,
-				7D12D296186081C7009D2059 /* SVM.cpp in Sources */,
 				7D12D2FF186081C7009D2059 /* ClassLabelChangeFilter.cpp in Sources */,
-				7D12D26C186081C7009D2059 /* BAG.cpp in Sources */,
 				7D12D2BA186081C7009D2059 /* LabelledTimeSeriesClassificationData.cpp in Sources */,
 				7D12D308186081C7009D2059 /* DeadZone.cpp in Sources */,
 				7D12D2B1186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.cpp in Sources */,

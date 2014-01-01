@@ -35,29 +35,6 @@ namespace ml
 
 static const std::string weight_delimiter = ":";
 void print_callback(const char *s);
-
-class normalizer
-{
-public:
-    normalizer()
-    : range(0), offset(0)
-    {
-        
-    }
-    
-    ~normalizer()
-    {
-        
-    }
-    
-    double normalize(double value)
-    {
-        return (value + offset) / range;
-    }
-    
-    double range;
-    double offset;
-};
     
 class ml_libsvm : ml_base
 {
@@ -145,7 +122,6 @@ protected:
     // Methods
     void save(const t_symbol *path) const;
     void load(const t_symbol *path);
-    void normalize();
     void cross_validation();
     void train();
     void clear();
@@ -209,7 +185,6 @@ private:
     int nr_fold;
     bool estimates;
     
-    std::map<uint32_t, normalizer> normalizers;
     std::vector<int> weight_labels;
     std::vector<double> weight_values;
 };
@@ -535,60 +510,6 @@ void ml_libsvm::load(const t_symbol *path)
     ToOutAnything(1, s_loaded, 1, &status);
 }
 
-void ml_libsvm::normalize()
-{
-    t_atom status;
-    SetBool(status, true);
-    
-    if (observations.size() == 0)
-    {
-        error("no observations added, use 'add' to add labeled feature vectors");
-        SetBool(status, false);
-        ToOutAnything(1, s_normalized, 1, &status);
-        return;
-    }
-    typedef std::map<uint32_t, std::vector<double> > vector_map;
-    
-    observation_vector::iterator observation_iterator;
-    vector_map features_by_index;
-    vector_map::iterator index_iterator;
-    
-    for (observation_iterator = observations.begin(); observation_iterator != observations.end(); ++observation_iterator)
-    {
-        feature_map features = observation_iterator->features;
-        feature_map::iterator feature_iterator;
-        
-        for (feature_iterator = features.begin(); feature_iterator != features.end(); ++feature_iterator)
-        {
-            uint32_t index = feature_iterator->first;
-            double value = feature_iterator->second;
-            
-            features_by_index[index].push_back(value);
-        }
-    }
-    
-    for (index_iterator = features_by_index.begin(); index_iterator != features_by_index.end() ; ++index_iterator)
-    {
-        uint32_t index = index_iterator->first;
-        std::vector<double> feature_list = index_iterator->second;
-        std::sort(feature_list.begin(), feature_list.end());
-        normalizer normalizer;
-        
-        normalizer.range = feature_list.back() - feature_list.front();
-        normalizer.offset = 0 - feature_list.front();
-        
-        normalizers[index] = normalizer;
-        
-        for (uint32_t count = 0; count < observations.size(); ++count)
-        {
-            double feature = observations[count].features[index];
-            double normalized = normalizer.normalize(feature);
-            observations[count].features[index] = normalized;
-        }
-    }
-    ToOutAnything(1, s_normalized, 1, &status);
-}
-
 void ml_libsvm::cross_validation()
 {
     int i;
@@ -752,19 +673,6 @@ void ml_libsvm::classify(int argc, const t_atom *argv)
         nodes[index].index = index + 1;
         double value = GetAFloat(argv[index]);
         
-        if (!normalizers.empty())
-        {
-             std::map<uint32_t, normalizer>::iterator normalization_iterator = normalizers.find(nodes[index].index);
-            
-            if (normalization_iterator != normalizers.end())
-            {
-                value = normalization_iterator->second.normalize(value);
-            }
-            else
-            {
-                error("invalid key %d, unable to normalize feature", nodes[index].index);
-            }
-        }
         nodes[index].value = value;
     }
     
@@ -870,7 +778,6 @@ void ml_libsvm::usage()
     post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
     post("save:\tsave a trained model, first argument gives path to save location");
     post("load:\tload a trained model, first argument gives path to the load location");
-    post("normalize:\tnormalize the training data prior to trianing a model");
     post("cross_validation:\t\tperform cross-validation");
     post("train:\ttrain the SVM based on labelled vectors added with 'add'");
     post("clear:\tclear the stored training data");

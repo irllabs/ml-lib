@@ -110,11 +110,6 @@ void ml_base::load(const t_symbol *path)
     }
 }
 
-void ml_base::normalize()
-{
-    error("function not implemented");
-}
-
 void ml_base::train()
 {
     error("function not implemented");
@@ -150,7 +145,6 @@ void ml_base::setup(t_classid c)
     FLEXT_CADDMETHOD_(c, 0, "add", add);
     FLEXT_CADDMETHOD_(c, 0, "save", save);
     FLEXT_CADDMETHOD_(c, 0, "load", load);
-    FLEXT_CADDMETHOD_(c, 0, "normalize", normalize);
     FLEXT_CADDMETHOD_(c, 0, "train", train);
     FLEXT_CADDMETHOD_(c, 0, "clear", clear);
     FLEXT_CADDMETHOD_(c, 0, "classify", classify);
@@ -172,7 +166,6 @@ static void main()
     
 const t_symbol *ml_base::s_train = flext::MakeSymbol("train");
 const t_symbol *ml_base::s_cleared = flext::MakeSymbol("cleared");
-const t_symbol *ml_base::s_normalized = flext::MakeSymbol("normalized");
 const t_symbol *ml_base::s_loaded = flext::MakeSymbol("loaded");
 const t_symbol *ml_base::s_saved = flext::MakeSymbol("saved");
 const t_symbol *ml_base::s_estimates = flext::MakeSymbol("estimates");
