@@ -67,6 +67,7 @@ void ml_base::set_num_inputs(uint8_t num_inputs)
 void ml_base::init()
 {
     AddOutAnything("general purpose outlet");
+    set_enable_scaling(true);
 }
 
 ml_base::ml_base()
