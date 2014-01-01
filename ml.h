@@ -16,8 +16,10 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ml_libsvm_ml_h
-#define ml_libsvm_ml_h
+#ifndef ml_svm_ml_h
+#define ml_svm_ml_h
+
+#include "GRT.h"
 
 #include <flext.h>
 

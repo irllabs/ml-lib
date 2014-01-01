@@ -17,7 +17,6 @@
  */
 
 #include "ml.h"
-#include "GRT.h"
 
 #include <flext.h>
 

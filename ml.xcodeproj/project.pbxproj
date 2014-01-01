@@ -282,24 +282,8 @@
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
 		7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
 		7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
-		7DCE122E185FA2500008AACF /* doublefann.c in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE1215185FA2500008AACF /* doublefann.c */; };
-		7DCE122F185FA2500008AACF /* doublefann.c in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE1215185FA2500008AACF /* doublefann.c */; };
-		7DCE1241185FA2500008AACF /* compat_time.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1220185FA2500008AACF /* compat_time.h */; };
-		7DCE1242185FA2500008AACF /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1221185FA2500008AACF /* config.h */; };
-		7DCE1243185FA2500008AACF /* doublefann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1222185FA2500008AACF /* doublefann.h */; };
-		7DCE1244185FA2500008AACF /* fann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1223185FA2500008AACF /* fann.h */; };
-		7DCE1245185FA2500008AACF /* fann_activation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1224185FA2500008AACF /* fann_activation.h */; };
-		7DCE1246185FA2500008AACF /* fann_cascade.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1225185FA2500008AACF /* fann_cascade.h */; };
-		7DCE1247185FA2500008AACF /* fann_cpp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1226185FA2500008AACF /* fann_cpp.h */; };
-		7DCE1248185FA2500008AACF /* fann_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1227185FA2500008AACF /* fann_data.h */; };
-		7DCE1249185FA2500008AACF /* fann_error.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1228185FA2500008AACF /* fann_error.h */; };
-		7DCE124A185FA2500008AACF /* fann_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE1229185FA2500008AACF /* fann_internal.h */; };
-		7DCE124B185FA2500008AACF /* fann_io.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122A185FA2500008AACF /* fann_io.h */; };
-		7DCE124C185FA2500008AACF /* fann_train.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122B185FA2500008AACF /* fann_train.h */; };
-		7DCE124D185FA2500008AACF /* fixedfann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122C185FA2500008AACF /* fixedfann.h */; };
-		7DCE124E185FA2500008AACF /* floatfann.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCE122D185FA2500008AACF /* floatfann.h */; };
-		7DF077F81847577100C55E3C /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_libsvm.cpp */; };
-		7DF077F91847577100C55E3C /* ml_libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_libsvm.cpp */; };
+		7DF077F81847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7DF077F91847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		E98573570D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
 		E98573580D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
 /* End PBXBuildFile section */
@@ -519,30 +503,7 @@
 		7D91D99318551285002C7555 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
 		7D91D9A21855188F002C7555 /* UCR_ED.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_ED.cpp; path = "ml.dtw/trillion/Source Code/UCR_ED.cpp"; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
-		7DCE1215185FA2500008AACF /* doublefann.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = doublefann.c; sourceTree = "<group>"; };
-		7DCE1216185FA2500008AACF /* fann.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann.c; sourceTree = "<group>"; };
-		7DCE1217185FA2500008AACF /* fann_cascade.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_cascade.c; sourceTree = "<group>"; };
-		7DCE1218185FA2500008AACF /* fann_error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_error.c; sourceTree = "<group>"; };
-		7DCE1219185FA2500008AACF /* fann_io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_io.c; sourceTree = "<group>"; };
-		7DCE121A185FA2500008AACF /* fann_train.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_train.c; sourceTree = "<group>"; };
-		7DCE121B185FA2500008AACF /* fann_train_data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fann_train_data.c; sourceTree = "<group>"; };
-		7DCE121C185FA2500008AACF /* fixedfann.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fixedfann.c; sourceTree = "<group>"; };
-		7DCE121D185FA2500008AACF /* floatfann.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = floatfann.c; sourceTree = "<group>"; };
-		7DCE1220185FA2500008AACF /* compat_time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compat_time.h; sourceTree = "<group>"; };
-		7DCE1221185FA2500008AACF /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		7DCE1222185FA2500008AACF /* doublefann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doublefann.h; sourceTree = "<group>"; };
-		7DCE1223185FA2500008AACF /* fann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann.h; sourceTree = "<group>"; };
-		7DCE1224185FA2500008AACF /* fann_activation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_activation.h; sourceTree = "<group>"; };
-		7DCE1225185FA2500008AACF /* fann_cascade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_cascade.h; sourceTree = "<group>"; };
-		7DCE1226185FA2500008AACF /* fann_cpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_cpp.h; sourceTree = "<group>"; };
-		7DCE1227185FA2500008AACF /* fann_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_data.h; sourceTree = "<group>"; };
-		7DCE1228185FA2500008AACF /* fann_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_error.h; sourceTree = "<group>"; };
-		7DCE1229185FA2500008AACF /* fann_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_internal.h; sourceTree = "<group>"; };
-		7DCE122A185FA2500008AACF /* fann_io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_io.h; sourceTree = "<group>"; };
-		7DCE122B185FA2500008AACF /* fann_train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fann_train.h; sourceTree = "<group>"; };
-		7DCE122C185FA2500008AACF /* fixedfann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fixedfann.h; sourceTree = "<group>"; };
-		7DCE122D185FA2500008AACF /* floatfann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = floatfann.h; sourceTree = "<group>"; };
-		7DF077F71847577100C55E3C /* ml_libsvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_libsvm.cpp; path = ml.libsvm/ml_libsvm.cpp; sourceTree = "<group>"; };
+		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ml.libsvm/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98573560D9E52D300682171 /* ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml.cpp; sourceTree = "<group>"; };
@@ -606,7 +567,7 @@
 			children = (
 				7DBFDE6318439E09009ED61E /* ml.h */,
 				E98573560D9E52D300682171 /* ml.cpp */,
-				7DF077F71847577100C55E3C /* ml_libsvm.cpp */,
+				7DF077F71847577100C55E3C /* ml_svm.cpp */,
 				7D91D99318551285002C7555 /* ml_dtw.cpp */,
 				7D133C6E185FAB0F0020213F /* ml_mlp.cpp */,
 			);
@@ -1177,7 +1138,6 @@
 			isa = PBXGroup;
 			children = (
 				7D12D169186081C7009D2059 /* GRT */,
-				7DCE1214185FA2500008AACF /* FANN */,
 				7D91D9981855188E002C7555 /* trillion */,
 			);
 			name = External;
@@ -1202,44 +1162,6 @@
 			path = "Source Code";
 			sourceTree = "<group>";
 		};
-		7DCE1214185FA2500008AACF /* FANN */ = {
-			isa = PBXGroup;
-			children = (
-				7DCE1215185FA2500008AACF /* doublefann.c */,
-				7DCE1216185FA2500008AACF /* fann.c */,
-				7DCE1217185FA2500008AACF /* fann_cascade.c */,
-				7DCE1218185FA2500008AACF /* fann_error.c */,
-				7DCE1219185FA2500008AACF /* fann_io.c */,
-				7DCE121A185FA2500008AACF /* fann_train.c */,
-				7DCE121B185FA2500008AACF /* fann_train_data.c */,
-				7DCE121C185FA2500008AACF /* fixedfann.c */,
-				7DCE121D185FA2500008AACF /* floatfann.c */,
-				7DCE121E185FA2500008AACF /* include */,
-			);
-			path = FANN;
-			sourceTree = "<group>";
-		};
-		7DCE121E185FA2500008AACF /* include */ = {
-			isa = PBXGroup;
-			children = (
-				7DCE1220185FA2500008AACF /* compat_time.h */,
-				7DCE1221185FA2500008AACF /* config.h */,
-				7DCE1222185FA2500008AACF /* doublefann.h */,
-				7DCE1223185FA2500008AACF /* fann.h */,
-				7DCE1224185FA2500008AACF /* fann_activation.h */,
-				7DCE1225185FA2500008AACF /* fann_cascade.h */,
-				7DCE1226185FA2500008AACF /* fann_cpp.h */,
-				7DCE1227185FA2500008AACF /* fann_data.h */,
-				7DCE1228185FA2500008AACF /* fann_error.h */,
-				7DCE1229185FA2500008AACF /* fann_internal.h */,
-				7DCE122A185FA2500008AACF /* fann_io.h */,
-				7DCE122B185FA2500008AACF /* fann_train.h */,
-				7DCE122C185FA2500008AACF /* fixedfann.h */,
-				7DCE122D185FA2500008AACF /* floatfann.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
 		7DF077FA1847589B00C55E3C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1258,17 +1180,13 @@
 				7D12D336186081C7009D2059 /* EigenvalueDecomposition.h in Headers */,
 				7D12D2D1186081C7009D2059 /* MovementIndex.h in Headers */,
 				7D12D267186081C7009D2059 /* ANBC.h in Headers */,
-				7DCE1246185FA2500008AACF /* fann_cascade.h in Headers */,
 				7D12D28A186081C7009D2059 /* MinDistModel.h in Headers */,
 				7D12D346186081C7009D2059 /* Matrix.h in Headers */,
 				7D12D274186081C7009D2059 /* DTW.h in Headers */,
 				7D12D2BF186081C7009D2059 /* TimeSeriesPositionTracker.h in Headers */,
-				7DCE1247185FA2500008AACF /* fann_cpp.h in Headers */,
 				7D12D2CB186081C7009D2059 /* FFTFeatures.h in Headers */,
 				7D12D362186081C7009D2059 /* TrainingLog.h in Headers */,
-				7DCE124E185FA2500008AACF /* floatfann.h in Headers */,
 				7D12D2F2186081C7009D2059 /* GRTBase.h in Headers */,
-				7DCE124C185FA2500008AACF /* fann_train.h in Headers */,
 				7D12D2A5186081C7009D2059 /* Individual.h in Headers */,
 				7D12D350186081C7009D2059 /* Random.h in Headers */,
 				7D12D2D7186081C7009D2059 /* PrincipalComponentAnalysis.h in Headers */,
@@ -1281,14 +1199,12 @@
 				7D12D281186081C7009D2059 /* KNN.h in Headers */,
 				7D12D30F186081C7009D2059 /* DoubleMovingAverageFilter.h in Headers */,
 				7D12D2B2186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.h in Headers */,
-				7DCE1242185FA2500008AACF /* config.h in Headers */,
 				7D12D33E186081C7009D2059 /* IndexedDouble.h in Headers */,
 				7D12D2C2186081C7009D2059 /* UnlabelledClassificationData.h in Headers */,
 				7D12D35A186081C7009D2059 /* TestInstanceResult.h in Headers */,
 				7D12D32F186081C7009D2059 /* ClassificationResult.h in Headers */,
 				7D12D2A3186081C7009D2059 /* Gate.h in Headers */,
 				7D12D35C186081C7009D2059 /* Timer.h in Headers */,
-				7DCE1243185FA2500008AACF /* doublefann.h in Headers */,
 				7D12D264186081C7009D2059 /* WeakClassifier.h in Headers */,
 				7D12D366186081C7009D2059 /* Util.h in Headers */,
 				7D12D339186081C7009D2059 /* ErrorLog.h in Headers */,
@@ -1298,12 +1214,9 @@
 				7D12D270186081C7009D2059 /* DecisionTree.h in Headers */,
 				7D12D290186081C7009D2059 /* Softmax.h in Headers */,
 				7D12D32E186081C7009D2059 /* CircularBuffer.h in Headers */,
-				7DCE1241185FA2500008AACF /* compat_time.h in Headers */,
 				7D12D2F3186081C7009D2059 /* MLBase.h in Headers */,
 				7D12D33D186081C7009D2059 /* GRTVersionInfo.h in Headers */,
 				7D12D2A8186081C7009D2059 /* ParticleSwarmOptimization.h in Headers */,
-				7DCE1248185FA2500008AACF /* fann_data.h in Headers */,
-				7DCE124A185FA2500008AACF /* fann_internal.h in Headers */,
 				7D12D356186081C7009D2059 /* SVD.h in Headers */,
 				7D12D27E186081C7009D2059 /* HMM.h in Headers */,
 				7D12D31B186081C7009D2059 /* SavitzkyGolayFilter.h in Headers */,
@@ -1332,7 +1245,6 @@
 				7D12D300186081C7009D2059 /* ClassLabelChangeFilter.h in Headers */,
 				7D12D2F9186081C7009D2059 /* PreProcessing.h in Headers */,
 				7D12D318186081C7009D2059 /* MovingAverageFilter.h in Headers */,
-				7DCE1245185FA2500008AACF /* fann_activation.h in Headers */,
 				7D12D32D186081C7009D2059 /* Cholesky.h in Headers */,
 				7D12D27B186081C7009D2059 /* HiddenMarkovModel.h in Headers */,
 				7D12D2C5186081C7009D2059 /* FastFourierTransform.h in Headers */,
@@ -1343,14 +1255,12 @@
 				7D12D306186081C7009D2059 /* ClassLabelTimeoutFilter.h in Headers */,
 				7D12D29A186081C7009D2059 /* GaussianMixtureModels.h in Headers */,
 				7D12D2EF186081C7009D2059 /* GestureRecognitionPipeline.h in Headers */,
-				7DCE124B185FA2500008AACF /* fann_io.h in Headers */,
 				7D12D369186081C7009D2059 /* WarningLog.h in Headers */,
 				7D12D2DD186081C7009D2059 /* TimeDomainFeatures.h in Headers */,
 				7D12D2BE186081C7009D2059 /* LabelledTimeSeriesClassificationSample.h in Headers */,
 				7D12D315186081C7009D2059 /* LowPassFilter.h in Headers */,
 				7D12D30C186081C7009D2059 /* Derivative.h in Headers */,
 				7D12D2EC186081C7009D2059 /* FeatureExtraction.h in Headers */,
-				7DCE1249185FA2500008AACF /* fann_error.h in Headers */,
 				7D12D2BB186081C7009D2059 /* LabelledTimeSeriesClassificationData.h in Headers */,
 				7D12D287186081C7009D2059 /* MinDist.h in Headers */,
 				7D12D2FC186081C7009D2059 /* Regressifier.h in Headers */,
@@ -1374,11 +1284,9 @@
 				7D12D353186081C7009D2059 /* RangeTracker.h in Headers */,
 				7D12D2E3186081C7009D2059 /* ZeroCrossingCounter.h in Headers */,
 				7D12D261186081C7009D2059 /* RadialBasisFunction.h in Headers */,
-				7DCE124D185FA2500008AACF /* fixedfann.h in Headers */,
 				7D12D345186081C7009D2059 /* LUDecomposition.h in Headers */,
 				7D12D25B186081C7009D2059 /* AdaBoostClassModel.h in Headers */,
 				7D12D35F186081C7009D2059 /* TrainingDataRecordingTimer.h in Headers */,
-				7DCE1244185FA2500008AACF /* fann.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1465,7 +1373,7 @@
 				7D12D33F186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7D12D35D186081C7009D2059 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7D12D285186081C7009D2059 /* MinDist.cpp in Sources */,
-				7DF077F81847577100C55E3C /* ml_libsvm.cpp in Sources */,
+				7DF077F81847577100C55E3C /* ml_svm.cpp in Sources */,
 				7D12D2E1186081C7009D2059 /* ZeroCrossingCounter.cpp in Sources */,
 				7D12D367186081C7009D2059 /* WarningLog.cpp in Sources */,
 				7D12D2E7186081C7009D2059 /* Context.cpp in Sources */,
@@ -1509,7 +1417,6 @@
 				7D12D2B3186081C7009D2059 /* LabelledRegressionData.cpp in Sources */,
 				7D12D27C186081C7009D2059 /* HMM.cpp in Sources */,
 				7D12D310186081C7009D2059 /* HighPassFilter.cpp in Sources */,
-				7DCE122E185FA2500008AACF /* doublefann.c in Sources */,
 				7D12D313186081C7009D2059 /* LowPassFilter.cpp in Sources */,
 				7D12D2B6186081C7009D2059 /* LabelledRegressionSample.cpp in Sources */,
 				7D12D28B186081C7009D2059 /* RandomForests.cpp in Sources */,
@@ -1556,7 +1463,7 @@
 				7D12D340186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7D12D35E186081C7009D2059 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7D12D286186081C7009D2059 /* MinDist.cpp in Sources */,
-				7DF077F91847577100C55E3C /* ml_libsvm.cpp in Sources */,
+				7DF077F91847577100C55E3C /* ml_svm.cpp in Sources */,
 				7D12D2E2186081C7009D2059 /* ZeroCrossingCounter.cpp in Sources */,
 				7D12D368186081C7009D2059 /* WarningLog.cpp in Sources */,
 				7D12D2E8186081C7009D2059 /* Context.cpp in Sources */,
@@ -1600,7 +1507,6 @@
 				7D12D2B4186081C7009D2059 /* LabelledRegressionData.cpp in Sources */,
 				7D12D27D186081C7009D2059 /* HMM.cpp in Sources */,
 				7D12D311186081C7009D2059 /* HighPassFilter.cpp in Sources */,
-				7DCE122F185FA2500008AACF /* doublefann.c in Sources */,
 				7D12D314186081C7009D2059 /* LowPassFilter.cpp in Sources */,
 				7D12D2B7186081C7009D2059 /* LabelledRegressionSample.cpp in Sources */,
 				7D12D28C186081C7009D2059 /* RandomForests.cpp in Sources */,
