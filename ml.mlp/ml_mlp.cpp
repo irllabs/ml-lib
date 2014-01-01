@@ -78,7 +78,6 @@ namespace ml
         static void setup(t_classid c)
         {
             FLEXT_CADDATTR_SET(c, "mode", set_mode);
-            FLEXT_CADDATTR_SET(c, "num_inputs", set_num_inputs);
             FLEXT_CADDATTR_SET(c, "num_outputs", set_num_outputs);
             FLEXT_CADDATTR_SET(c, "num_hidden", set_num_hidden);
             FLEXT_CADDATTR_SET(c, "min_epochs", set_min_epochs);
@@ -100,7 +99,6 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "enable_scaling", set_enable_scaling);
             
             FLEXT_CADDATTR_GET(c, "mode", get_mode);
-            FLEXT_CADDATTR_GET(c, "num_inputs", get_num_inputs);
             FLEXT_CADDATTR_GET(c, "num_outputs", get_num_outputs);
             FLEXT_CADDATTR_GET(c, "num_hidden", get_num_hidden);
             FLEXT_CADDATTR_GET(c, "min_epochs", get_min_epochs);
@@ -133,7 +131,6 @@ namespace ml
         
         // Attribute Setters
         void set_mode(int mode);
-        void set_num_inputs(int num_inputs);
         void set_num_outputs(int num_outputs);
         void set_num_hidden(int num_hidden);
         void set_min_epochs(int min_epochs);
@@ -156,7 +153,6 @@ namespace ml
         
         // Attribute Getters
         void get_mode(int &mode) const;
-        void get_num_inputs(int &num_inputs) const;
         void get_num_outputs(int &num_outputs) const;
         void get_num_hidden(int &num_hidden) const;
         void get_min_epochs(int &min_epochs) const;
@@ -178,13 +174,13 @@ namespace ml
         void get_enable_scaling(bool &enable_scaling) const;
                 
     private:
+        void set_num_inputs(uint8_t num_inputs);
         void set_activation_function(int activation_function, mlp_layer layer);
         
         // Method wrappers
 
         // Attribute wrappers
         FLEXT_CALLVAR_I(get_mode, set_mode);
-        FLEXT_CALLVAR_I(get_num_inputs, set_num_inputs);
         FLEXT_CALLVAR_I(get_num_outputs, set_num_outputs);
         FLEXT_CALLVAR_I(get_num_hidden, set_num_hidden);
         FLEXT_CALLVAR_I(get_min_epochs, set_min_epochs);
@@ -252,7 +248,7 @@ namespace ml
         this->mode = (mlp_mode)mode;
     }
     
-    void ml_mlp::set_num_inputs(int num_inputs)
+    void ml_mlp::set_num_inputs(uint8_t num_inputs)
     {
         if (num_inputs < 0)
         {
@@ -490,18 +486,6 @@ namespace ml
     void ml_mlp::get_mode(int &mode) const
     {
         mode = this->mode;
-    }
-    
-    void ml_mlp::get_num_inputs(int &num_inputs) const
-    {
-        if (mode == MLP_MODE_CLASSIFICATION)
-        {
-            num_inputs = classificationData.getNumDimensions();
-        }
-        else if (mode == MLP_MODE_REGRESSION)
-        {
-            num_inputs = regressionData.getNumInputDimensions();
-        }
     }
     
     void ml_mlp::get_num_outputs(int &num_outputs) const
