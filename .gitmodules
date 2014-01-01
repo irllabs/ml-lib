@@ -1,3 +1,0 @@
-[submodule "ml.libsvm/libsvm"]
-	path = ml.libsvm/libsvm
-	url = https://jamiebullock@github.com/cjlin1/libsvm.git
