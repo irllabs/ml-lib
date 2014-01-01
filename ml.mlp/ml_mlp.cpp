@@ -42,7 +42,7 @@ namespace ml
     public:
         ml_mlp()
         :
-//        ml_base(LABELLED_REGRESSION),
+        ml_base(&mlp),
         numHiddenNeurons(defaultNumHiddenNeurons),
         inputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getInputLayerActivationFunction()),
         hiddenActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getHiddenLayerActivationFunction()),
@@ -84,7 +84,6 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "use_validation_set", set_use_validation_set);
             FLEXT_CADDATTR_SET(c, "validation_set_size", set_validation_set_size);
             FLEXT_CADDATTR_SET(c, "randomize_training_order", set_randomise_training_order);
-            FLEXT_CADDATTR_SET(c, "enable_scaling", set_enable_scaling);
             
             FLEXT_CADDATTR_GET(c, "mode", get_mode);
             FLEXT_CADDATTR_GET(c, "num_outputs", get_num_outputs);
@@ -105,7 +104,6 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "use_validation_set", get_use_validation_set);
             FLEXT_CADDATTR_GET(c, "validation_set_size", get_validation_set_size);
             FLEXT_CADDATTR_GET(c, "randomize_training_order", get_randomise_training_order);
-            FLEXT_CADDATTR_GET(c, "enable_scaling", get_enable_scaling);
         }
         
         // Methods
@@ -134,7 +132,6 @@ namespace ml
         void set_use_validation_set(bool use_validation_set);
         void set_validation_set_size(int validation_set_size);
         void set_randomise_training_order(bool randomise_training_order);
-        void set_enable_scaling(bool enable_scaling);
         
         // Attribute Getters
         void get_mode(int &mode) const;
@@ -156,7 +153,6 @@ namespace ml
         void get_use_validation_set(bool &use_validation_set) const;
         void get_validation_set_size(int &validation_set_size) const;
         void get_randomise_training_order(bool &randomise_training_order) const;
-        void get_enable_scaling(bool &enable_scaling) const;
                 
     private:
         void set_activation_function(int activation_function, mlp_layer layer);
@@ -183,7 +179,6 @@ namespace ml
         FLEXT_CALLVAR_B(get_use_validation_set, set_use_validation_set);
         FLEXT_CALLVAR_I(get_validation_set_size, set_validation_set_size);
         FLEXT_CALLVAR_B(get_randomise_training_order, set_randomise_training_order);
-        FLEXT_CALLVAR_B(get_enable_scaling, set_enable_scaling);
 
         // Instance variables
         GRT::MLP mlp;
@@ -411,16 +406,6 @@ namespace ml
         }
     }
     
-    void ml_mlp::set_enable_scaling(bool enable_scaling)
-    {
-        bool success = mlp.enableScaling(enable_scaling);
-        
-        if (success == false)
-        {
-            error("unable to set randomise_training_order, hint: should be 0 or 1");
-        }
-    }
-
     // Attribute getters
     void ml_mlp::get_mode(int &mode) const
     {
@@ -524,11 +509,6 @@ namespace ml
         randomise_training_order = mlp.getRandomiseTrainingOrder();
     }
 
-    void ml_mlp::get_enable_scaling(bool &enable_scaling) const
-    {
-        enable_scaling = mlp.getScalingEnabled();
-    }
-    
     // Methods
     void ml_mlp::train()
     {

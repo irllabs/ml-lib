@@ -86,6 +86,8 @@
 #X msg 650 93 input_activation_function 0;
 #X msg 404 358 help;
 #X msg 562 358 mode 3;
+#X msg 720 183 enable_scaling 1;
+#X msg 692 146 getenable_scaling;
 #X connect 0 0 5 0;
 #X connect 0 1 4 0;
 #X connect 1 0 8 0;
@@ -117,6 +119,8 @@
 #X connect 29 0 0 0;
 #X connect 30 0 0 0;
 #X connect 31 0 0 0;
+#X connect 32 0 0 0;
+#X connect 33 0 0 0;
 #X restore 280 71 pd mlp;
 #N canvas 471 193 1047 594 svm 0;
 #X msg 72 47 type 1;

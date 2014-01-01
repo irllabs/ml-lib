@@ -72,14 +72,39 @@ void ml_base::init()
 ml_base::ml_base()
     : mode(defaultMode)
 {
+    mlBase = NULL;
     init();
 }
     
-ml_base::ml_base(mlp_data_type data_type)
-    : mode(data_type)
+ml_base::ml_base(GRT::MLBase *mlBase)
+    : mode(defaultMode)
 {
+    this->mlBase = mlBase;
     init();
 }
+    
+ml_base::ml_base(GRT::MLBase *mlBase, mlp_data_type data_type)
+    : mode(data_type)
+{
+    this->mlBase = mlBase;
+    init();
+}
+    
+void ml_base::set_enable_scaling(bool enable_scaling)
+{
+    bool success = mlBase->enableScaling(enable_scaling);
+    
+    if (success == false)
+    {
+        error("unable to set randomise_training_order, hint: should be 0 or 1");
+    }
+}
+
+void ml_base::get_enable_scaling(bool &enable_scaling) const
+{
+    enable_scaling = mlBase->getScalingEnabled();
+}
+
 
 void ml_base::add(int argc, const t_atom *argv)
 {
@@ -235,6 +260,9 @@ void ml_base::usage()
     
 void ml_base::setup(t_classid c)
 {
+    FLEXT_CADDATTR_SET(c, "enable_scaling", set_enable_scaling);
+    FLEXT_CADDATTR_GET(c, "enable_scaling", get_enable_scaling);
+    
     FLEXT_CADDMETHOD_(c, 0, "add", add);
     FLEXT_CADDMETHOD_(c, 0, "save", save);
     FLEXT_CADDMETHOD_(c, 0, "load", load);

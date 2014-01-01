@@ -277,6 +277,7 @@
 		7D133C6D185FAA8A0020213F /* UCR_DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */; };
 		7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
+		7D38405D1874A20600C3F139 /* SVM.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D38405C1874A20600C3F139 /* SVM.h */; };
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
@@ -344,7 +345,6 @@
 		7D12D1A2186081C7009D2059 /* libsvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libsvm.cpp; sourceTree = "<group>"; };
 		7D12D1A3186081C7009D2059 /* libsvm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libsvm.h; sourceTree = "<group>"; };
 		7D12D1A4186081C7009D2059 /* SVM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SVM.cpp; sourceTree = "<group>"; };
-		7D12D1A5186081C7009D2059 /* SVM_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVM_.h; sourceTree = "<group>"; };
 		7D12D1A8186081C7009D2059 /* GaussianMixtureModels.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GaussianMixtureModels.cpp; sourceTree = "<group>"; };
 		7D12D1A9186081C7009D2059 /* GaussianMixtureModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianMixtureModels.h; sourceTree = "<group>"; };
 		7D12D1AB186081C7009D2059 /* HierarchicalClustering.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HierarchicalClustering.cpp; sourceTree = "<group>"; };
@@ -496,6 +496,7 @@
 		7D12D257186081C7009D2059 /* WarningLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningLog.h; sourceTree = "<group>"; };
 		7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_DTW.cpp; path = "../../../ml.dtw/trillion/Source Code/UCR_DTW.cpp"; sourceTree = "<group>"; };
 		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ml.mlp/ml_mlp.cpp; sourceTree = "<group>"; };
+		7D38405C1874A20600C3F139 /* SVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVM.h; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D6171C31858D08400DD708F /* UCR_DTW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UCR_DTW.h; path = "ml.dtw/trillion/Source Code/UCR_DTW.h"; sourceTree = SOURCE_ROOT; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
@@ -750,7 +751,7 @@
 			children = (
 				7D12D1A1186081C7009D2059 /* LIBSVM */,
 				7D12D1A4186081C7009D2059 /* SVM.cpp */,
-				7D12D1A5186081C7009D2059 /* SVM_.h */,
+				7D38405C1874A20600C3F139 /* SVM.h */,
 			);
 			path = SVM;
 			sourceTree = "<group>";
@@ -1249,6 +1250,7 @@
 				7D12D27B186081C7009D2059 /* HiddenMarkovModel.h in Headers */,
 				7D12D2C5186081C7009D2059 /* FastFourierTransform.h in Headers */,
 				7D12D34A186081C7009D2059 /* MinMax.h in Headers */,
+				7D38405D1874A20600C3F139 /* SVM.h in Headers */,
 				7D12D2A6186081C7009D2059 /* Particle.h in Headers */,
 				7D12D291186081C7009D2059 /* SoftmaxModel.h in Headers */,
 				7D12D330186081C7009D2059 /* ClassTracker.h in Headers */,

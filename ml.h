@@ -54,7 +54,9 @@ public flext_base
     
 public:
     ml_base();
-    ml_base(mlp_data_type data_type);
+    ml_base(GRT::MLBase *mlBase);
+    ml_base(GRT::MLBase *mlBase, mlp_data_type data_type);
+
     void init();
     
 protected:
@@ -74,6 +76,15 @@ protected:
     virtual void classify(int argc, const t_atom *argv);
     virtual void usage();
     
+    // Attribute setters
+    void set_enable_scaling(bool enable_scaling);
+    
+    // Attribute getters
+    void get_enable_scaling(bool &enable_scaling) const;
+    
+
+    // Instance variables
+    GRT::MLBase *mlBase; // TODO: maybe switch to reference if all derived classes aggregate an MLBase derived class
     mlp_data_type mode;
     GRT::UnlabelledClassificationData unlabelledClassificationData;
     GRT::LabelledClassificationData labelledClassificationData;
@@ -91,7 +102,9 @@ private:
     FLEXT_CALLBACK(clear);
     FLEXT_CALLBACK_V(classify);
     FLEXT_CALLBACK(usage);
-    
+
+    // Attribute wrappers
+    FLEXT_CALLVAR_B(get_enable_scaling, set_enable_scaling);
 };
     
 } // namespace ml
