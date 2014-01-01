@@ -22,39 +22,205 @@
 namespace ml
 {
     
-ml_base::ml_base()
+std::string get_symbol_as_string(const t_symbol *symbol)
+{
+    const char *c_string = flext::GetAString(symbol);
+    std::string cpp_string;
+    
+    if (c_string == NULL)
+    {
+        error("symbol was NULL");
+    }
+    else
+    {
+        cpp_string.assign(c_string);
+    }
+    
+    return cpp_string;
+}
+
+void ml_base::set_num_inputs(uint8_t num_inputs)
+{
+    if (num_inputs < 0)
+    {
+        error("number of inputs must be greater than zero");
+    }
+    
+    bool success = false;
+    
+    if (mode == LABELLED_CLASSIFICATION)
+    {
+        success = labelledClassificationData.setNumDimensions(num_inputs);
+    }
+    else if (mode == LABELLED_REGRESSION)
+    {
+        success = labelledRegressionData.setInputAndTargetDimensions(num_inputs, labelledRegressionData.getNumTargetDimensions());
+    }
+    
+    if (success == false)
+    {
+        error("unable to set input or target dimensions");
+        return;
+    }
+}
+    
+void ml_base::init()
 {
     AddOutAnything("general purpose outlet");
 }
 
-void ml_base::add(int argc, const t_atom *argv)
+ml_base::ml_base()
+    : mode(defaultMode)
 {
-
+    init();
 }
     
+ml_base::ml_base(mlp_data_type data_type)
+    : mode(data_type)
+{
+    init();
+}
+
+void ml_base::add(int argc, const t_atom *argv)
+{
+    if (argc < 2)
+    {
+        error("invalid input length, must contain at least 2 values");
+        return;
+    }
+    
+    GRT::UINT numInputDimensions = mode == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumDimensions() : labelledRegressionData.getNumInputDimensions();
+    GRT::UINT numOutputDimensions = mode == LABELLED_CLASSIFICATION ? 1 : labelledRegressionData.getNumTargetDimensions();
+    GRT::UINT combinedVectorSize = numInputDimensions + numOutputDimensions;
+    
+    
+    if (argc < 0 || (unsigned)argc != combinedVectorSize)
+    {
+        numInputDimensions = argc - numOutputDimensions;
+        
+        if (numInputDimensions < 1)
+        {
+            error("invalid input length, expected at least %d", numOutputDimensions + 1);
+            return;
+        }
+        post("new input vector size, adjusting num_inputs to %d", numInputDimensions);
+        set_num_inputs(numInputDimensions);
+    }
+    
+    GRT::VectorDouble inputVector(numInputDimensions);
+    GRT::VectorDouble targetVector(numOutputDimensions);
+    
+    for (uint32_t index = 0; index < (unsigned)argc; ++index)
+    {
+        float value = GetAFloat(argv[index]);
+        
+        if (index < numOutputDimensions)
+        {
+            targetVector[index] = value;
+        }
+        else
+        {
+            inputVector[index - numOutputDimensions] = value;
+        }
+    }
+    
+    if (mode == LABELLED_CLASSIFICATION)
+    {
+        GRT::UINT label = (GRT::UINT)targetVector[0];
+        
+        if ((double)label != targetVector[0])
+        {
+            error("class label must be an integer");
+            return;
+        }
+        
+        if (label == 0)
+        {
+            error("class label must be non-zero");
+            return;
+        }
+        labelledClassificationData.addSample((GRT::UINT)targetVector[0], inputVector);
+    }
+    else if (mode == LABELLED_REGRESSION)
+    {
+        labelledRegressionData.addSample(inputVector, targetVector);
+    }
+}
+
 void ml_base::save(const t_symbol *path) const
 {
-
+    if (labelledRegressionData.getNumSamples() == 0 && labelledRegressionData.getNumSamples() == 0)
+    {
+        error("no observations added, use 'add' to add training data");
+        return;
+    }
+    
+    std::string file_path = get_symbol_as_string(path);
+    
+    if (file_path.empty())
+    {
+        error("path string is empty");
+        return;
+    }
+    
+    bool success = false;
+    
+    if (mode == LABELLED_CLASSIFICATION)
+    {
+        success = labelledClassificationData.saveDatasetToFile(file_path);
+    }
+    else if (mode == LABELLED_REGRESSION)
+    {
+        success = labelledRegressionData.saveDatasetToFile(file_path);
+    }
+    
+    if (!success)
+    {
+        error("unable to save training data to path: %s", file_path.c_str());
+    }
 }
 
 void ml_base::load(const t_symbol *path)
 {
+    std::string file_path = get_symbol_as_string(path);
     
+    if (file_path.empty())
+    {
+        error("path string is empty");
+        return;
+    }
+    
+    bool success = false;
+    
+    if (mode == LABELLED_CLASSIFICATION)
+    {
+        success = labelledClassificationData.loadDatasetFromFile(file_path);
+    }
+    else if (mode == LABELLED_REGRESSION)
+    {
+        success = labelledRegressionData.loadDatasetFromFile(file_path);
+    }
+    
+    if (!success)
+    {
+        error("unable to load training data from path: %s", file_path.c_str());
+    }
 }
-
-void ml_base::train()
-{
-    error("function not implemented");
-}
-
+    
 void ml_base::clear()
 {
     t_atom status;
     SetBool(status, true);
     
-    // clear training data
-         
+    labelledRegressionData.clear();
+    labelledClassificationData.clear();
+    
     ToOutAnything(1, s_cleared, 1, &status);
+}
+    
+void ml_base::train()
+{
+    error("function not implemented");
 }
 
 void ml_base::classify(int argc, const t_atom *argv)

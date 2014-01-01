@@ -22,17 +22,6 @@
 
 namespace ml
 {
-    
-    typedef enum mlp_data_type_
-    {
-        UNLABELLED_CLASSIFICATION,
-        LABELLED_CLASSIFICATION,
-        LABELLED_TIME_SERIES_CLASSIFICATION,
-        LABELLED_REGRESSION,
-        MLP_NUM_DATA_TYPES
-    }
-    mlp_data_type;
-    
     typedef enum mlp_layer_
     {
         LAYER_INPUT,
@@ -45,8 +34,6 @@ namespace ml
     const GRT::UINT defaultNumInputDimensions = 2;
     const GRT::UINT defaultNumOutputDimensions = 1;
     const GRT::UINT defaultNumHiddenNeurons = 2;
-    const mlp_data_type defaultMode = LABELLED_REGRESSION;
-    
     
     class ml_mlp : ml_base
     {
@@ -55,11 +42,11 @@ namespace ml
     public:
         ml_mlp()
         :
+//        ml_base(LABELLED_REGRESSION),
         numHiddenNeurons(defaultNumHiddenNeurons),
         inputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getInputLayerActivationFunction()),
         hiddenActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getHiddenLayerActivationFunction()),
-        outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction()),
-        mode(defaultMode)
+        outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction())
         {
             std::string grt_version = mlp.getGRTVersion();
             post("ml.mlp: Multilayer Perceptron based on the GRT library version %s", grt_version.c_str());
@@ -122,13 +109,10 @@ namespace ml
         }
         
         // Methods
-        virtual void add(int argc, const t_atom *argv);
-        virtual void save(const t_symbol *path) const;
-        virtual void load(const t_symbol *path);
-        virtual void train();
-        virtual void clear();
-        virtual void classify(int argc, const t_atom *argv);
-        virtual void usage();
+        void clear();
+        void train();
+        void classify(int argc, const t_atom *argv);
+        void usage();
         
         // Attribute Setters
         void set_mode(int mode);
@@ -175,7 +159,6 @@ namespace ml
         void get_enable_scaling(bool &enable_scaling) const;
                 
     private:
-        void set_num_inputs(uint8_t num_inputs);
         void set_activation_function(int activation_function, mlp_layer layer);
         
         // Method wrappers
@@ -204,34 +187,14 @@ namespace ml
 
         // Instance variables
         GRT::MLP mlp;
-        GRT::LabelledRegressionData labelledRegressionData;
-        GRT::LabelledClassificationData labelledClassificationData;
         GRT::UINT numHiddenNeurons;
         GRT::Neuron::ActivationFunctions inputActivationFunction;
         GRT::Neuron::ActivationFunctions hiddenActivationFunction;
-        GRT::Neuron::ActivationFunctions outputActivationFunction;
-        mlp_data_type mode;
-        
+        GRT::Neuron::ActivationFunctions outputActivationFunction;        
     };
     
     // Utility functions
-    std::string get_symbol_as_string(const t_symbol *symbol)
-    {
-        const char *c_string = flext::GetAString(symbol);
-        std::string cpp_string;
         
-        if (c_string == NULL)
-        {
-            error("symbol was NULL");
-        }
-        else
-        {
-            cpp_string.assign(c_string);
-        }
-        
-        return cpp_string;
-    }
-    
     // Attribute setters
     void ml_mlp::set_mode(int mode)
     {
@@ -247,31 +210,6 @@ namespace ml
         }
         
         this->mode = (mlp_data_type)mode;
-    }
-    
-    void ml_mlp::set_num_inputs(uint8_t num_inputs)
-    {
-        if (num_inputs < 0)
-        {
-            error("number of inputs must be greater than zero");
-        }
-        
-        bool success = false;
-        
-        if (mode == LABELLED_CLASSIFICATION)
-        {
-            success = labelledClassificationData.setNumDimensions(num_inputs);
-        }
-        else if (mode == LABELLED_REGRESSION)
-        {
-            success = labelledRegressionData.setInputAndTargetDimensions(num_inputs, labelledRegressionData.getNumTargetDimensions());
-        }
-        
-        if (success == false)
-        {
-            error("unable to set input or target dimensions");
-            return;
-        }
     }
     
     void ml_mlp::set_num_outputs(int num_outputs)
@@ -592,132 +530,6 @@ namespace ml
     }
     
     // Methods
-    void ml_mlp::add(int argc, const t_atom *argv)
-    {
-        if (argc < 2)
-        {
-            error("invalid input length, must contain at least 2 values");
-            return;
-        }
-        
-        GRT::UINT numInputDimensions = mode == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumDimensions() : labelledRegressionData.getNumInputDimensions();
-        GRT::UINT numOutputDimensions = mode == LABELLED_CLASSIFICATION ? 1 : labelledRegressionData.getNumTargetDimensions();
-        GRT::UINT combinedVectorSize = numInputDimensions + numOutputDimensions;
-        
-        
-        if (argc < 0 || (unsigned)argc != combinedVectorSize)
-        {
-            numInputDimensions = argc - numOutputDimensions;
-            
-            if (numInputDimensions < 1)
-            {
-                error("invalid input length, expected at least %d", numOutputDimensions + 1);
-                return;
-            }
-            post("new input vector size, adjusting num_inputs to %d", numInputDimensions);
-            set_num_inputs(numInputDimensions);
-        }
-        
-        GRT::VectorDouble inputVector(numInputDimensions);
-        GRT::VectorDouble targetVector(numOutputDimensions);
-        
-        for (uint32_t index = 0; index < (unsigned)argc; ++index)
-        {
-            float value = GetAFloat(argv[index]);
-
-            if (index < numOutputDimensions)
-            {
-                targetVector[index] = value;
-            }
-            else
-            {
-                inputVector[index - numOutputDimensions] = value;
-            }
-        }
-
-        if (mode == LABELLED_CLASSIFICATION)
-        {
-            GRT::UINT label = (GRT::UINT)targetVector[0];
-            
-            if ((double)label != targetVector[0])
-            {
-                error("class label must be an integer");
-                return;
-            }
-            
-            if (label == 0)
-            {
-                error("class label must be non-zero");
-                return;
-            }
-            labelledClassificationData.addSample((GRT::UINT)targetVector[0], inputVector);
-        }
-        else if (mode == LABELLED_REGRESSION)
-        {
-            labelledRegressionData.addSample(inputVector, targetVector);   
-        }
-    }
-
-    void ml_mlp::save(const t_symbol *path) const
-    {
-        if (labelledRegressionData.getNumSamples() == 0 && labelledRegressionData.getNumSamples() == 0)
-        {
-            error("no observations added, use 'add' to add training data");
-            return;
-        }
-        
-        std::string file_path = get_symbol_as_string(path);
-        
-        if (file_path.empty())
-        {
-            error("path string is empty");
-            return;
-        }
-        
-        bool success = false;
-        
-        if (mode == LABELLED_CLASSIFICATION)
-        {
-            success = labelledClassificationData.saveDatasetToFile(file_path);
-        }
-        else if (mode == LABELLED_REGRESSION)
-        {
-            success = labelledRegressionData.saveDatasetToFile(file_path);
-        }
-        
-        if (!success)
-        {
-            error("unable to save training data to path: %s", file_path.c_str());
-        }
-    }
-    
-    void ml_mlp::load(const t_symbol *path)
-    {
-        std::string file_path = get_symbol_as_string(path);
-        
-        if (file_path.empty())
-        {
-            error("path string is empty");
-            return;
-        }
-
-        bool success = false;
-        
-        if (mode == LABELLED_CLASSIFICATION)
-        {
-            success = labelledClassificationData.loadDatasetFromFile(file_path);
-        }
-        else if (mode == LABELLED_REGRESSION)
-        {
-            success = labelledRegressionData.loadDatasetFromFile(file_path);
-        }
-        
-        if (!success)
-        {
-            error("unable to load training data from path: %s", file_path.c_str());
-        }
-    }
-    
     void ml_mlp::train()
     {
         GRT::UINT numSamples = mode == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();
@@ -763,6 +575,7 @@ namespace ml
         
         if ((mode == LABELLED_CLASSIFICATION && mlp.getClassificationModeActive() == false) || (mode == LABELLED_REGRESSION && mlp.getRegressionModeActive() == false))
         {
+            // TODO: due a bug in GRT, this will occur if setting to regression mode after setting to classification mode (see: http://www.nickgillian.com/forum/index.php?topic=63.0)
             error("mode mismatch");
             return;
         }
@@ -775,16 +588,10 @@ namespace ml
     
     void ml_mlp::clear()
     {
-        t_atom status;
-        SetBool(status, true);
-        
-        labelledRegressionData.clear();
-        labelledClassificationData.clear();
         mlp.clear();
-        
-        ToOutAnything(1, s_cleared, 1, &status);
+        ml_base::clear();
     }
-    
+        
     void ml_mlp::classify(int argc, const t_atom *argv)
     {
         GRT::UINT numSamples = mode == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();

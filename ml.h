@@ -34,6 +34,18 @@
 
 namespace ml
 {    
+
+typedef enum mlp_data_type_
+{
+    LABELLED_CLASSIFICATION,
+    LABELLED_REGRESSION,
+    LABELLED_TIME_SERIES_CLASSIFICATION,
+    UNLABELLED_CLASSIFICATION,
+    MLP_NUM_DATA_TYPES
+}
+mlp_data_type;
+    
+const mlp_data_type defaultMode = LABELLED_CLASSIFICATION;
     
 class ml_base:
 public flext_base
@@ -42,6 +54,8 @@ public flext_base
     
 public:
     ml_base();
+    ml_base(mlp_data_type data_type);
+    void init();
     
 protected:
     static void setup(t_classid c);
@@ -59,8 +73,16 @@ protected:
     virtual void clear();
     virtual void classify(int argc, const t_atom *argv);
     virtual void usage();
-        
+    
+    mlp_data_type mode;
+    GRT::UnlabelledClassificationData unlabelledClassificationData;
+    GRT::LabelledClassificationData labelledClassificationData;
+    GRT::LabelledTimeSeriesClassificationData labelledTimeSeriesClassificationData;
+    GRT::LabelledRegressionData labelledRegressionData;
+
+    
 private:
+    void set_num_inputs(uint8_t num_inputs);
     // Method wrappers
     FLEXT_CALLBACK_V(add);
     FLEXT_CALLBACK_S(save);
