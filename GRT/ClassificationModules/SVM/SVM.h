@@ -198,7 +198,7 @@ public:
      
      @return returns the current SVM type as a string.
      */
-	string getSVMType();
+	string getSVMType() const;
     
     /**
      Gets the current kernel type as a string.
@@ -207,7 +207,7 @@ public:
      
      @return returns the current kernel type as a string.
      */
-    string getKernelType();
+    string getKernelType() const;
     
     /**
      Gets the current degree value.

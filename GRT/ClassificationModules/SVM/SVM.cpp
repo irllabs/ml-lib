@@ -988,9 +988,9 @@ bool SVM::clear(){
     return true;
 }
     
-string SVM::getSVMType(){
+string SVM::getSVMType() const{
 
-	struct svm_parameter *paramPtr = NULL;
+	const struct svm_parameter *paramPtr = NULL;
 	string modelName = "UNKNOWN";
 	if( trained ){
 		paramPtr = &model->param;
@@ -1019,8 +1019,8 @@ string SVM::getSVMType(){
 	return modelName;
 }
     
-string SVM::getKernelType(){
-    struct svm_parameter *paramPtr = NULL;
+string SVM::getKernelType() const{
+    const struct svm_parameter *paramPtr = NULL;
     string modelName = "UNKNOWN";
     if( trained ){
         paramPtr = &model->param;
