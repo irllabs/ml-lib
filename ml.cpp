@@ -93,17 +93,26 @@ ml_base::ml_base(GRT::MLBase *mlBase, mlp_data_type data_type)
     
 void ml_base::set_enable_scaling(bool enable_scaling)
 {
-    bool success = mlBase->enableScaling(enable_scaling);
+    bool success = false;
+    
+    // TODO: eventually mlBase should be a reference
+    if (mlBase != NULL)
+    {
+        success = mlBase->enableScaling(enable_scaling);
+    }
     
     if (success == false)
     {
-        error("unable to set randomise_training_order, hint: should be 0 or 1");
+        error("unable to set enable_scaling, hint: should be 0 or 1");
     }
 }
 
 void ml_base::get_enable_scaling(bool &enable_scaling) const
 {
-    enable_scaling = mlBase->getScalingEnabled();
+    if (mlBase != NULL)
+    {
+        enable_scaling = mlBase->getScalingEnabled();
+    }
 }
 
 
