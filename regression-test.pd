@@ -53,7 +53,7 @@
 #X restore 145 49 pd dtw;
 #X text 61 15 Patch to instantiate and test all externals within ml-lib
 ;
-#N canvas 518 323 895 410 mlp 1;
+#N canvas 518 323 895 410 mlp 0;
 #X obj 162 236 ml.mlp;
 #X obj 155 139 list prepend add;
 #X msg 290 39 train;

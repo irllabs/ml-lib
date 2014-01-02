@@ -278,6 +278,12 @@
 		7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D38405D1874A20600C3F139 /* SVM.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D38405C1874A20600C3F139 /* SVM.h */; };
+		7D38405E1874B3AF00C3F139 /* SVM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A4186081C7009D2059 /* SVM.cpp */; };
+		7D38405F1874B3B100C3F139 /* SVM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A4186081C7009D2059 /* SVM.cpp */; };
+		7D3840601874B3B800C3F139 /* libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A2186081C7009D2059 /* libsvm.cpp */; };
+		7D3840611874B3B800C3F139 /* libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A2186081C7009D2059 /* libsvm.cpp */; };
+		7D3840621874B3C300C3F139 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17C186081C7009D2059 /* BAG.cpp */; };
+		7D3840631874B3C400C3F139 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17C186081C7009D2059 /* BAG.cpp */; };
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
@@ -1371,6 +1377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3840621874B3C300C3F139 /* BAG.cpp in Sources */,
 				7D12D2C0186081C7009D2059 /* UnlabelledClassificationData.cpp in Sources */,
 				7D12D33F186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7D12D35D186081C7009D2059 /* TrainingDataRecordingTimer.cpp in Sources */,
@@ -1402,6 +1409,7 @@
 				7D12D2AA186081C7009D2059 /* LabelledClassificationData.cpp in Sources */,
 				7D12D34B186081C7009D2059 /* Node.cpp in Sources */,
 				7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */,
+				7D3840601874B3B800C3F139 /* libsvm.cpp in Sources */,
 				7D12D2D2186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */,
 				7D12D298186081C7009D2059 /* GaussianMixtureModels.cpp in Sources */,
 				7D12D343186081C7009D2059 /* LUDecomposition.cpp in Sources */,
@@ -1449,6 +1457,7 @@
 				7D12D31C186081C7009D2059 /* MLP.cpp in Sources */,
 				7D12D28E186081C7009D2059 /* Softmax.cpp in Sources */,
 				7D12D2ED186081C7009D2059 /* GestureRecognitionPipeline.cpp in Sources */,
+				7D38405E1874B3AF00C3F139 /* SVM.cpp in Sources */,
 				7D12D2C3186081C7009D2059 /* FastFourierTransform.cpp in Sources */,
 				7D12D2F4186081C7009D2059 /* PostProcessing.cpp in Sources */,
 				7D12D334186081C7009D2059 /* EigenvalueDecomposition.cpp in Sources */,
@@ -1461,6 +1470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3840631874B3C400C3F139 /* BAG.cpp in Sources */,
 				7D12D2C1186081C7009D2059 /* UnlabelledClassificationData.cpp in Sources */,
 				7D12D340186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7D12D35E186081C7009D2059 /* TrainingDataRecordingTimer.cpp in Sources */,
@@ -1492,6 +1502,7 @@
 				7D12D2AB186081C7009D2059 /* LabelledClassificationData.cpp in Sources */,
 				7D12D34C186081C7009D2059 /* Node.cpp in Sources */,
 				7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */,
+				7D3840611874B3B800C3F139 /* libsvm.cpp in Sources */,
 				7D12D2D3186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */,
 				7D12D299186081C7009D2059 /* GaussianMixtureModels.cpp in Sources */,
 				7D12D344186081C7009D2059 /* LUDecomposition.cpp in Sources */,
@@ -1539,6 +1550,7 @@
 				7D12D31D186081C7009D2059 /* MLP.cpp in Sources */,
 				7D12D28F186081C7009D2059 /* Softmax.cpp in Sources */,
 				7D12D2EE186081C7009D2059 /* GestureRecognitionPipeline.cpp in Sources */,
+				7D38405F1874B3B100C3F139 /* SVM.cpp in Sources */,
 				7D12D2C4186081C7009D2059 /* FastFourierTransform.cpp in Sources */,
 				7D12D2F5186081C7009D2059 /* PostProcessing.cpp in Sources */,
 				7D12D335186081C7009D2059 /* EigenvalueDecomposition.cpp in Sources */,
