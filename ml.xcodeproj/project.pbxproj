@@ -287,6 +287,8 @@
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D61B1031875CAF9000FD114 /* ml_regression_linear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */; };
 		7D61B1041875CAF9000FD114 /* ml_regression_linear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */; };
+		7D61B1081875F661000FD114 /* ml_regression_logistic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */; };
+		7D61B1091875F661000FD114 /* ml_regression_logistic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
 		7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
@@ -508,6 +510,7 @@
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D6171C31858D08400DD708F /* UCR_DTW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UCR_DTW.h; path = "ml.dtw/trillion/Source Code/UCR_DTW.h"; sourceTree = SOURCE_ROOT; };
 		7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression_linear.cpp; path = ml.regression.linear/ml_regression_linear.cpp; sourceTree = "<group>"; };
+		7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression_logistic.cpp; path = ml.regression.logistic/ml_regression_logistic.cpp; sourceTree = "<group>"; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7D91D99318551285002C7555 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
@@ -579,6 +582,7 @@
 				E98573560D9E52D300682171 /* ml.cpp */,
 				7DF077F71847577100C55E3C /* ml_svm.cpp */,
 				7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */,
+				7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */,
 				7D91D99318551285002C7555 /* ml_dtw.cpp */,
 				7D133C6E185FAB0F0020213F /* ml_mlp.cpp */,
 			);
@@ -1430,6 +1434,7 @@
 				7D12D32B186081C7009D2059 /* Cholesky.cpp in Sources */,
 				7D12D2B3186081C7009D2059 /* LabelledRegressionData.cpp in Sources */,
 				7D12D27C186081C7009D2059 /* HMM.cpp in Sources */,
+				7D61B1081875F661000FD114 /* ml_regression_logistic.cpp in Sources */,
 				7D12D310186081C7009D2059 /* HighPassFilter.cpp in Sources */,
 				7D12D313186081C7009D2059 /* LowPassFilter.cpp in Sources */,
 				7D12D2B6186081C7009D2059 /* LabelledRegressionSample.cpp in Sources */,
@@ -1524,6 +1529,7 @@
 				7D12D32C186081C7009D2059 /* Cholesky.cpp in Sources */,
 				7D12D2B4186081C7009D2059 /* LabelledRegressionData.cpp in Sources */,
 				7D12D27D186081C7009D2059 /* HMM.cpp in Sources */,
+				7D61B1091875F661000FD114 /* ml_regression_logistic.cpp in Sources */,
 				7D12D311186081C7009D2059 /* HighPassFilter.cpp in Sources */,
 				7D12D314186081C7009D2059 /* LowPassFilter.cpp in Sources */,
 				7D12D2B7186081C7009D2059 /* LabelledRegressionSample.cpp in Sources */,

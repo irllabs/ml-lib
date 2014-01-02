@@ -232,21 +232,19 @@ namespace ml
         post("Attributes:");
         post("%s", ML_POST_SEP);
         post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default %d)", defaultNumInputDimensions);
-//        post("min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)");
         post("training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)");
         post("enable_scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
         post("%s", ML_POST_SEP);
         post("Methods:");
         post("%s", ML_POST_SEP);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode, where N is determined by the num_outputs attribute");
+        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
         post("train:\ttrain the MLP based on vectors added with 'add'");
         post("clear:\tclear the stored training data and model");
-        post("classify:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode");
+        post("classify:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_POST_SEP);
-    }
+        post("%s", ML_POST_SEP);    }
     
     FLEXT_LIB("ml.regression.linear", ml_regression_linear);
     
