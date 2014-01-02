@@ -106,6 +106,9 @@ private:
     // Attribute wrappers
     FLEXT_CALLVAR_B(get_enable_scaling, set_enable_scaling);
 };
+  
+    
+    
     
 } // namespace ml
 

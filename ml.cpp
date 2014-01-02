@@ -294,6 +294,7 @@ static void main()
     FLEXT_SETUP(ml_dtw);
     FLEXT_SETUP(ml_mlp);
     FLEXT_SETUP(ml_regression_linear);
+    FLEXT_SETUP(ml_regression_logistic);
 }
     
 const t_symbol *ml_base::s_train = flext::MakeSymbol("train");
