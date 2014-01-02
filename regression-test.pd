@@ -161,6 +161,7 @@
 #X msg 532 232 classify 0 0 0 0;
 #X msg 486 278 classify -10 -10 -10 -10;
 #X obj 87 468 ml.svm;
+#X msg 815 232 enable_cross_validation 1;
 #X connect 0 0 36 0;
 #X connect 1 0 36 0;
 #X connect 2 0 36 0;
@@ -197,4 +198,9 @@
 #X connect 35 0 36 0;
 #X connect 36 0 13 0;
 #X connect 36 1 14 0;
+#X connect 37 0 36 0;
 #X restore 52 51 pd svm;
+#N canvas 973 236 450 300 regression.linear 0;
+#X obj 159 87 ml.regression.linear;
+#X restore 378 114 pd regression.linear;
+#X obj 189 136;

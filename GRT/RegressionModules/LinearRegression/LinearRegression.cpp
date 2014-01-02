@@ -398,7 +398,7 @@ bool LinearRegression::setMaxNumIterations(const UINT maxNumIterations){
     return setMaxNumEpochs( maxNumIterations );
 }
 
-UINT LinearRegression::getMaxNumIterations(){
+UINT LinearRegression::getMaxNumIterations() const{
     return getMaxNumEpochs();
 }
 

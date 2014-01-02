@@ -135,14 +135,14 @@ public:
      
      @return returns the current min change value
      */
-    double getMinChange();
+    double getMinChange()const;
     
     /**
      Gets the current maxNumIterations value, this is the maximum number of iterations that can be run during the training phase.
      
      @return returns the maxNumIterations value
      */
-    UINT getMaxNumIterations();
+    UINT getMaxNumIterations()const;
 
 private:
     double w0;
