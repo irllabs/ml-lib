@@ -510,7 +510,7 @@
 		7D91D99318551285002C7555 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
 		7D91D9A21855188F002C7555 /* UCR_ED.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_ED.cpp; path = "ml.dtw/trillion/Source Code/UCR_ED.cpp"; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
-		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ml.libsvm/ml_svm.cpp; sourceTree = "<group>"; };
+		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ml.svm/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98573560D9E52D300682171 /* ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml.cpp; sourceTree = "<group>"; };
