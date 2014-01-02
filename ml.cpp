@@ -282,6 +282,164 @@ void ml_base::setup(t_classid c)
     FLEXT_CADDMETHOD_(c, 0, "help", usage);
 }
 
+    
+// Attribute setters
+void ml_regression_base::set_max_iterations(int max_iterations)
+{
+    regressifier->setMaxNumEpochs(max_iterations);
+}
+
+void ml_regression_base::set_min_change(float min_change)
+{
+    bool success = regressifier->setMinChange(min_change);
+    
+    if (success == false)
+    {
+        error("unable to set min_change, hint: should be greater than 0");
+    }
+}
+
+void ml_regression_base::set_training_rate(float training_rate)
+{
+    bool success = regressifier->setLearningRate(training_rate);
+    
+    if (success == false)
+    {
+        error("unable to set training_rate, hint: should be between 0-1");
+    }
+}
+
+// Attribute getters
+void ml_regression_base::get_max_iterations(int &max_iterations) const
+{
+    max_iterations = regressifier->getMaxNumEpochs();
+}
+
+void ml_regression_base::get_min_change(float &min_change) const
+{
+    error("function not implemented");
+    //        min_change = regressifier->getMinChange();
+}
+
+void ml_regression_base::get_training_rate(float &training_rate) const
+{
+    training_rate = regressifier->getLearningRate();
+}
+
+// Methods
+void ml_regression_base::train()
+{
+    GRT::UINT numSamples = labelledRegressionData.getNumSamples();
+    
+    if (numSamples == 0)
+    {
+        error("no observations added, use 'add' to add training data");
+        return;
+    }
+    
+    bool success = false;
+    success = regressifier->train(labelledRegressionData);
+    
+    if (!success)
+    {
+        error("training failed");
+        return;
+    }
+    
+    t_atom a_num_classes;
+    
+    SetInt(a_num_classes, defaultNumOutputDimensions);
+    ToOutAnything(1, s_train, 1, &a_num_classes);
+}
+
+void ml_regression_base::clear()
+{
+    regressifier->clear();
+    ml_base::clear();
+}
+
+void ml_regression_base::classify(int argc, const t_atom *argv)
+{
+    GRT::UINT numSamples = labelledRegressionData.getNumSamples();
+    
+    if (numSamples == 0)
+    {
+        error("no observations added, use 'add' to add training data");
+        return;
+    }
+    
+    if (regressifier->getTrained() == false)
+    {
+        error("model has not been trained, use 'train' to train the model");
+        return;
+    }
+    
+    GRT::UINT numInputNeurons = regressifier->getNumInputFeatures();
+    GRT::VectorDouble query(numInputNeurons);
+    
+    if (argc < 0 || (unsigned)argc != numInputNeurons)
+    {
+        error("invalid input length, expected %d, got %d", numInputNeurons, argc);
+    }
+    
+    for (uint32_t index = 0; index < (uint32_t)argc; ++index)
+    {
+        double value = GetAFloat(argv[index]);
+        query[index] = value;
+    }
+    
+    bool success = regressifier->predict(query);
+    
+    if (success == false)
+    {
+        error("unable to classify input");
+        return;
+    }
+    
+    GRT::VectorDouble regressionData = regressifier->getRegressionData();
+    GRT::VectorDouble::size_type numOutputDimensions = regressionData.size();
+    
+    if (numOutputDimensions != regressifier->getNumOutputDimensions())
+    {
+        error("invalid output dimensions: %d", numOutputDimensions);
+        return;
+    }
+    
+    AtomList result;
+    
+    for (uint32_t index = 0; index < numOutputDimensions; ++index)
+    {
+        t_atom value_a;
+        double value = regressionData[index];
+        SetFloat(value_a, value);
+        result.Append(value_a);
+    }
+    
+    ToOutList(0, result);
+}
+
+void ml_regression_base::usage()
+{
+    post("%s", ML_POST_SEP);
+    post("Attributes:");
+    post("%s", ML_POST_SEP);
+    post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default %d)", defaultNumInputDimensions);
+    post("training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)");
+    post("enable_scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
+    post("%s", ML_POST_SEP);
+    post("Methods:");
+    post("%s", ML_POST_SEP);
+    post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
+    post("save:\tsave training examples, first argument gives path to save location");
+    post("load:\tload training examples, first argument gives path to the load location");
+    post("train:\ttrain the MLP based on vectors added with 'add'");
+    post("clear:\tclear the stored training data and model");
+    post("classify:\tgive the regression value for the input feature vector");
+    post("help:\tpost this usage statement to the console");
+    post("%s", ML_POST_SEP);
+}
+
+    
 static void main()
 {
     post("%s", ML_POST_SEP);

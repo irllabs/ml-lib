@@ -31,8 +31,6 @@ namespace ml
     }
     mlp_layer;
     
-    const GRT::UINT defaultNumInputDimensions = 2;
-    const GRT::UINT defaultNumOutputDimensions = 1;
     const GRT::UINT defaultNumHiddenNeurons = 2;
     
     class ml_mlp : ml_base

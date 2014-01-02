@@ -46,6 +46,8 @@ typedef enum mlp_data_type_
 mlp_data_type;
     
 const mlp_data_type defaultMode = LABELLED_CLASSIFICATION;
+const GRT::UINT defaultNumInputDimensions = 2;
+const GRT::UINT defaultNumOutputDimensions = 1;
     
 class ml_base:
 public flext_base
@@ -108,6 +110,68 @@ private:
 };
   
     
+class ml_regression_base : public ml_base
+{
+    FLEXT_HEADER_S(ml_regression_base, ml_base, setup);
+    
+public:
+    ml_regression_base(GRT::Regressifier *regressifier)
+    :
+    ml_base(regressifier, LABELLED_REGRESSION)
+    {
+        labelledRegressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
+        this->regressifier = regressifier;
+    }
+    
+    ~ml_regression_base()
+    {
+        
+    }
+    
+protected:
+    static void setup(t_classid c)
+    {
+        FLEXT_CADDATTR_SET(c, "max_iterations", set_max_iterations);
+        FLEXT_CADDATTR_SET(c, "min_change", set_min_change);
+        FLEXT_CADDATTR_SET(c, "training_rate", set_training_rate);
+        
+        FLEXT_CADDATTR_GET(c, "max_iterations", get_max_iterations);
+        FLEXT_CADDATTR_GET(c, "min_change", get_min_change);
+        FLEXT_CADDATTR_GET(c, "training_rate", get_training_rate);
+    }
+    
+    // Methods
+    void clear();
+    void train();
+    void classify(int argc, const t_atom *argv);
+    void usage();
+    
+    // Attribute Setters
+    void set_max_iterations(int max_iterations);
+    void set_min_change(float min_change);
+    void set_training_rate(float training_rate);
+    
+    
+    // Attribute Getters
+    void get_max_iterations(int &max_iterations) const;
+    void get_min_change(float &min_change) const;
+    void get_training_rate(float &training_rate) const;
+    
+    
+private:
+    
+    // Method wrappers
+    
+    // Attribute wrappers
+    FLEXT_CALLVAR_I(get_max_iterations, set_max_iterations);
+    FLEXT_CALLVAR_F(get_min_change, set_min_change);
+    FLEXT_CALLVAR_F(get_training_rate, set_training_rate);
+    
+    // Instance variables
+    GRT::Regressifier *regressifier;
+    
+};
+
     
     
 } // namespace ml
