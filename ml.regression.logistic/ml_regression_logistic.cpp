@@ -31,7 +31,6 @@ namespace ml
         :
         ml_regression_base(&regressifier)
         {
-            std::string grt_version = regressifier.getGRTVersion();
             post("ml.regressifier: Logistic Regression based on the GRT library version %s", grt_version.c_str());
         }
         

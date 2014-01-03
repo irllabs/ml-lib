@@ -103,7 +103,6 @@ namespace ml
         ml_base(&svm, LABELLED_CLASSIFICATION),
         estimates(false)
         {
-            std::string grt_version = svm.getGRTVersion();
             post("ml.svm: Support Vector Machines based on the GRT library version %s", grt_version.c_str());
         }
         

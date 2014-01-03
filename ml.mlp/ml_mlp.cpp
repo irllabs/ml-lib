@@ -46,7 +46,6 @@ namespace ml
         hiddenActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getHiddenLayerActivationFunction()),
         outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction())
         {
-            std::string grt_version = mlp.getGRTVersion();
             post("ml.mlp: Multilayer Perceptron based on the GRT library version %s", grt_version.c_str());
             
             labelledRegressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
