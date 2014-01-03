@@ -24,7 +24,7 @@ namespace ml
 {
     class ml_regression_logistic : ml_regression_base
     {
-        FLEXT_HEADER_S(ml_regression_logistic, ml_base, setup);
+        FLEXT_HEADER_S(ml_regression_logistic, ml_regression_base, setup);
         
     public:
         ml_regression_logistic()
