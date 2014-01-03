@@ -515,6 +515,12 @@ void ml_classification_base::classify(int argc, const t_atom *argv)
         return;
     }
     
+    if (recording && mode != LABELLED_TIME_SERIES_CLASSIFICATION)
+    {
+        error("recording classification only available for time series");
+        return;
+    }
+    
     GRT::UINT numInputFeatures = classifier->getNumInputFeatures();
     GRT::VectorDouble query(numInputFeatures);
     
@@ -529,7 +535,17 @@ void ml_classification_base::classify(int argc, const t_atom *argv)
         query[index] = value;
     }
     
-    bool success = classifier->predict(query);
+    bool success = false;
+    
+    if (recording)
+    {
+        timeSeriesData.push_back(query);
+        success = classifier->predict(timeSeriesData);
+    }
+    else
+    {
+        success = classifier->predict(query);
+    }
     
     if (success == false)
     {

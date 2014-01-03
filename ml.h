@@ -98,6 +98,8 @@ protected:
     GRT::UINT currentLabel;
     std::string grt_version;
     bool estimates;
+    bool recording;
+
     
 private:
     void set_num_inputs(uint8_t num_inputs);
@@ -116,7 +118,6 @@ private:
     FLEXT_CALLVAR_B(get_enable_estimates, set_enable_estimates);
     
     // Instance variables
-    bool recording;
 };
   
     
