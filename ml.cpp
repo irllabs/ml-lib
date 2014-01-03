@@ -18,10 +18,11 @@
 
 #include "ml.h"
 
-
 namespace ml
 {
-    
+
+#pragma mark - Utility methods
+
 std::string get_symbol_as_string(const t_symbol *symbol)
 {
     const char *c_string = flext::GetAString(symbol);
@@ -38,6 +39,8 @@ std::string get_symbol_as_string(const t_symbol *symbol)
     
     return cpp_string;
 }
+    
+#pragma mark - ml_base implementation
 
 void ml_base::set_num_inputs(uint8_t num_inputs)
 {
@@ -56,6 +59,14 @@ void ml_base::set_num_inputs(uint8_t num_inputs)
     {
         success = labelledRegressionData.setInputAndTargetDimensions(num_inputs, labelledRegressionData.getNumTargetDimensions());
     }
+    else if (mode == LABELLED_TIME_SERIES_CLASSIFICATION)
+    {
+        success = labelledTimeSeriesClassificationData.setNumDimensions(num_inputs);
+    }
+    else if (mode == UNLABELLED_CLASSIFICATION)
+    {
+        success = unlabelledClassificationData.setNumDimensions(num_inputs);
+    }
     
     if (success == false)
     {
@@ -66,6 +77,13 @@ void ml_base::set_num_inputs(uint8_t num_inputs)
     
 void ml_base::init()
 {
+    // TODO: eventually mlBase should be a reference
+    if (mlBase != NULL)
+    {
+        grt_version = mlBase->getGRTVersion();
+    }
+
+    currentLabel = 0;
     AddOutAnything("general purpose outlet");
     set_enable_scaling(true);
 }
@@ -115,7 +133,16 @@ void ml_base::get_enable_scaling(bool &enable_scaling) const
     }
 }
 
+void ml_base::set_enable_estimates(bool enable_estimates)
+{
+    estimates = enable_estimates;
+}
 
+void ml_base::get_enable_estimates(bool &enable_estimates) const
+{
+    enable_estimates = estimates;
+}
+    
 void ml_base::add(int argc, const t_atom *argv)
 {
     if (argc < 2)
@@ -124,10 +151,33 @@ void ml_base::add(int argc, const t_atom *argv)
         return;
     }
     
-    GRT::UINT numInputDimensions = mode == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumDimensions() : labelledRegressionData.getNumInputDimensions();
-    GRT::UINT numOutputDimensions = mode == LABELLED_CLASSIFICATION ? 1 : labelledRegressionData.getNumTargetDimensions();
-    GRT::UINT combinedVectorSize = numInputDimensions + numOutputDimensions;
+    GRT::UINT numInputDimensions = 0;
+    GRT::UINT numOutputDimensions = 1;
     
+    if (mode == LABELLED_CLASSIFICATION)
+    {
+        numInputDimensions = labelledClassificationData.getNumDimensions();
+    }
+    else if (mode == LABELLED_REGRESSION)
+    {
+        numInputDimensions = labelledRegressionData.getNumInputDimensions();
+        numOutputDimensions = labelledRegressionData.getNumTargetDimensions();
+    }
+    else if (mode == LABELLED_TIME_SERIES_CLASSIFICATION)
+    {
+        numInputDimensions = labelledTimeSeriesClassificationData.getNumDimensions();
+    }
+    else if (mode == UNLABELLED_CLASSIFICATION)
+    {
+        numInputDimensions = unlabelledClassificationData.getNumDimensions();
+    }
+    else
+    {
+        error("unhandled mode: %d", mode);
+        return;
+    }
+    
+    GRT::UINT combinedVectorSize = numInputDimensions + numOutputDimensions;
     
     if (argc < 0 || (unsigned)argc != combinedVectorSize)
     {
@@ -159,7 +209,7 @@ void ml_base::add(int argc, const t_atom *argv)
         }
     }
     
-    if (mode == LABELLED_CLASSIFICATION)
+    if (mode == LABELLED_CLASSIFICATION || mode == LABELLED_TIME_SERIES_CLASSIFICATION)
     {
         GRT::UINT label = (GRT::UINT)targetVector[0];
         
@@ -174,12 +224,48 @@ void ml_base::add(int argc, const t_atom *argv)
             error("class label must be non-zero");
             return;
         }
-        labelledClassificationData.addSample((GRT::UINT)targetVector[0], inputVector);
+        
+        if (mode == LABELLED_CLASSIFICATION)
+        {
+            labelledClassificationData.addSample((GRT::UINT)targetVector[0], inputVector);
+        }
+        else if (mode == LABELLED_TIME_SERIES_CLASSIFICATION)
+        {
+            if (recording)
+            {
+                currentLabel = label;
+                timeSeriesData.push_back(inputVector);
+            }
+            else
+            {
+                error("cannot add time series data if recording is off, send 'record 1' to start recording");
+            }
+        }
     }
     else if (mode == LABELLED_REGRESSION)
     {
         labelledRegressionData.addSample(inputVector, targetVector);
     }
+}
+    
+void ml_base::record(bool state)
+{
+    if (mode != LABELLED_TIME_SERIES_CLASSIFICATION)
+    {
+        error("record method only valid for time series data");
+        return;
+    }
+    
+    recording = state;
+    
+    if (recording == false && currentLabel != 0 && timeSeriesData.getNumRows() > 0)
+    {
+        labelledTimeSeriesClassificationData.addSample(currentLabel, timeSeriesData);
+    }
+    timeSeriesData.clear();
+    currentLabel = 0;
+    
+    post("recording: %s", state == 1 ? "on" : "off");
 }
 
 void ml_base::save(const t_symbol *path) const
@@ -208,6 +294,14 @@ void ml_base::save(const t_symbol *path) const
     {
         success = labelledRegressionData.saveDatasetToFile(file_path);
     }
+    else if (mode == LABELLED_TIME_SERIES_CLASSIFICATION)
+    {
+        success = labelledTimeSeriesClassificationData.saveDatasetToFile(file_path);
+    }
+    else if (mode == UNLABELLED_CLASSIFICATION)
+    {
+        success = unlabelledClassificationData.saveDatasetToFile(file_path);
+    }
     
     if (!success)
     {
@@ -235,6 +329,14 @@ void ml_base::load(const t_symbol *path)
     {
         success = labelledRegressionData.loadDatasetFromFile(file_path);
     }
+    else if (mode == LABELLED_TIME_SERIES_CLASSIFICATION)
+    {
+        success = labelledTimeSeriesClassificationData.loadDatasetFromFile(file_path);
+    }
+    else if (mode == UNLABELLED_CLASSIFICATION)
+    {
+        success = unlabelledClassificationData.loadDatasetFromFile(file_path);
+    }
     
     if (!success)
     {
@@ -249,6 +351,8 @@ void ml_base::clear()
     
     labelledRegressionData.clear();
     labelledClassificationData.clear();
+    labelledTimeSeriesClassificationData.clear();
+    unlabelledClassificationData.clear();
     
     ToOutAnything(1, s_cleared, 1, &status);
 }
@@ -271,9 +375,13 @@ void ml_base::usage()
 void ml_base::setup(t_classid c)
 {
     FLEXT_CADDATTR_SET(c, "enable_scaling", set_enable_scaling);
+    FLEXT_CADDATTR_SET(c, "enable_estimates", set_enable_estimates);
+    
     FLEXT_CADDATTR_GET(c, "enable_scaling", get_enable_scaling);
+    FLEXT_CADDATTR_GET(c, "enable_estimates", get_enable_estimates);
     
     FLEXT_CADDMETHOD_(c, 0, "add", add);
+    FLEXT_CADDMETHOD_(c, 0, "record", record);
     FLEXT_CADDMETHOD_(c, 0, "save", save);
     FLEXT_CADDMETHOD_(c, 0, "load", load);
     FLEXT_CADDMETHOD_(c, 0, "train", train);
@@ -281,7 +389,218 @@ void ml_base::setup(t_classid c)
     FLEXT_CADDMETHOD_(c, 0, "classify", classify);
     FLEXT_CADDMETHOD_(c, 0, "help", usage);
 }
+    
+#pragma mark - ml_classification_base implementation
+    
+// Attribute Setters
+void ml_classification_base::set_null_rejection(bool null_rejection)
+{
+    bool success = classifier->enableNullRejection(null_rejection);
+    
+    if (!success)
+    {
+        error("unable to enable NULL rejection");
+    }
+}
+    
+void ml_classification_base::set_null_rejection_coeff(float null_rejection_coeff)
+{
+    bool success = classifier->setNullRejectionCoeff(null_rejection_coeff);
+    
+    if (!success)
+    {
+        error("unable to set NULL rejection coefficient");
+    }
+}
 
+// Attribute Getters
+void ml_classification_base::get_null_rejection(bool &null_rejection) const
+{
+    error("function not implemented");
+}
+    
+void ml_classification_base::get_null_rejection_coeff(float &null_rejection_coeff) const
+{
+    null_rejection_coeff = classifier->getNullRejectionCoeff();
+}
+    
+// Methods
+    
+bool ml_classification_base::get_num_samples() const
+{
+    GRT::UINT numSamples = 0;
+    
+    if (mode == LABELLED_REGRESSION)
+    {
+        labelledRegressionData.getNumSamples();
+    }
+    else if (mode == LABELLED_CLASSIFICATION)
+    {
+        numSamples = labelledClassificationData.getNumSamples();
+    }
+    else if (mode == LABELLED_TIME_SERIES_CLASSIFICATION)
+    {
+        numSamples = labelledTimeSeriesClassificationData.getNumSamples();
+    }
+    else if (mode == UNLABELLED_CLASSIFICATION)
+    {
+        numSamples = unlabelledClassificationData.getNumSamples();
+    }
+    
+    return numSamples;
+}
+
+void ml_classification_base::train()
+{
+    GRT::UINT numSamples = get_num_samples();
+    
+    if (numSamples == 0)
+    {
+        error("no observations added, use 'add' to add training data");
+        return;
+    }
+    
+    bool success = false;
+    
+    if (mode == LABELLED_CLASSIFICATION)
+    {
+        success = classifier->train(labelledClassificationData);
+    }
+    else if (mode == LABELLED_TIME_SERIES_CLASSIFICATION)
+    {
+        success = classifier->train(labelledTimeSeriesClassificationData);
+    }
+    else if (mode == UNLABELLED_CLASSIFICATION)
+    {
+        success = classifier->train(unlabelledClassificationData);
+    }
+    
+    if (!success)
+    {
+        error("training failed");
+        return;
+    }
+    
+    t_atom a_num_classes;
+    
+    SetInt(a_num_classes, defaultNumOutputDimensions);
+    ToOutAnything(1, s_train, 1, &a_num_classes);
+}
+
+void ml_classification_base::clear()
+{
+    classifier->clear();
+    ml_base::clear();
+}
+
+void ml_classification_base::classify(int argc, const t_atom *argv)
+{
+    GRT::UINT numSamples = get_num_samples();
+    
+    if (numSamples == 0)
+    {
+        error("no observations added, use 'add' to add training data");
+        return;
+    }
+    
+    if (classifier->getTrained() == false)
+    {
+        error("model has not been trained, use 'train' to train the model");
+        return;
+    }
+    
+    if (classifier->getNumClasses() == 0)
+    {
+        error("no classes in the trained model, use 'add' to add more training data");
+        return;
+    }
+    
+    GRT::UINT numInputFeatures = classifier->getNumInputFeatures();
+    GRT::VectorDouble query(numInputFeatures);
+    
+    if (argc < 0 || (unsigned)argc != numInputFeatures)
+    {
+        error("invalid input length, expected %d, got %d", numInputFeatures, argc);
+    }
+    
+    for (uint32_t index = 0; index < (uint32_t)argc; ++index)
+    {
+        double value = GetAFloat(argv[index]);
+        query[index] = value;
+    }
+    
+    bool success = classifier->predict(query);
+    
+    if (success == false)
+    {
+        error("unable to classify input");
+        return;
+    }
+    
+    if (estimates)
+    {
+        GRT::VectorDouble likelihoods = classifier->getClassLikelihoods();
+        AtomList estimates_l;
+        
+        if (mode == LABELLED_CLASSIFICATION || mode == LABELLED_TIME_SERIES_CLASSIFICATION)
+        {
+            GRT::vector<GRT::UINT> labels;
+            
+            if (mode == LABELLED_CLASSIFICATION)
+            {
+                labels = labelledClassificationData.getClassLabels();
+            }
+            else if (mode == LABELLED_TIME_SERIES_CLASSIFICATION)
+            {
+                // For some reason getClassLabels() isn't implemented for LabelledTimeSeriesClassificationData so we do this manually
+                vector<GRT::ClassTracker> classTracker = labelledTimeSeriesClassificationData.getClassTracker();
+                for (uint16_t index = 0; index < classTracker.size(); ++index)
+                {
+                    labels.push_back(classTracker[index].classLabel);
+                }
+            }
+            
+            if (likelihoods.size() != labels.size())
+            {
+                error("labels / likelihoods size mismatch");
+            }
+            else
+            {
+                for (uint16_t count = 0; count < labels.size(); ++count)
+                {
+                    t_atom label_a;
+                    t_atom likelihood_a;
+                    
+                    // Need to call SetDouble() first or label_a gets corrupted. Bug in Flext?
+                    SetDouble(&likelihood_a, likelihoods[count]);
+                    SetInt(label_a, labels[count]);
+                    
+                    estimates_l.Append(label_a);
+                    estimates_l.Append(likelihood_a);
+                }
+            }
+            
+
+        }
+        else if (mode == UNLABELLED_CLASSIFICATION)
+        {
+            for (uint16_t count = 0; count < likelihoods.size(); ++count)
+            {
+                t_atom likelihood_a;
+                
+                SetDouble(&likelihood_a, likelihoods[count]);
+                estimates_l.Append(likelihood_a);
+            }
+        }
+        
+        ToOutAnything(1, s_estimates, estimates_l);
+    }
+    
+    GRT::UINT classification = classifier->getPredictedClassLabel();
+    ToOutInt(0, classification);
+}
+
+#pragma mark - ml_regression_base implementation
     
 // Attribute setters
 void ml_regression_base::set_max_iterations(int max_iterations)
@@ -439,6 +758,8 @@ void ml_regression_base::usage()
     post("%s", ML_POST_SEP);
 }
 
+
+#pragma mark - Main function
     
 static void main()
 {
@@ -454,7 +775,9 @@ static void main()
     FLEXT_SETUP(ml_regression_linear);
     FLEXT_SETUP(ml_regression_logistic);
 }
-    
+
+#pragma mark - Global constants
+
 const t_symbol *ml_base::s_train = flext::MakeSymbol("train");
 const t_symbol *ml_base::s_cleared = flext::MakeSymbol("cleared");
 const t_symbol *ml_base::s_loaded = flext::MakeSymbol("loaded");

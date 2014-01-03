@@ -273,8 +273,6 @@
 		7D12D367186081C7009D2059 /* WarningLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D256186081C7009D2059 /* WarningLog.cpp */; };
 		7D12D368186081C7009D2059 /* WarningLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D256186081C7009D2059 /* WarningLog.cpp */; };
 		7D12D369186081C7009D2059 /* WarningLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D257186081C7009D2059 /* WarningLog.h */; };
-		7D133C6C185FAA8A0020213F /* UCR_DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */; };
-		7D133C6D185FAA8A0020213F /* UCR_DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */; };
 		7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D38405D1874A20600C3F139 /* SVM.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D38405C1874A20600C3F139 /* SVM.h */; };
@@ -289,10 +287,10 @@
 		7D61B1041875CAF9000FD114 /* ml_regression_linear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */; };
 		7D61B1081875F661000FD114 /* ml_regression_logistic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */; };
 		7D61B1091875F661000FD114 /* ml_regression_logistic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */; };
+		7D61B1131876F334000FD114 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
+		7D61B1141876F334000FD114 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
-		7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
-		7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D91D99318551285002C7555 /* ml_dtw.cpp */; };
 		7DF077F81847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		7DF077F91847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		E98573570D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
@@ -504,17 +502,14 @@
 		7D12D255186081C7009D2059 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		7D12D256186081C7009D2059 /* WarningLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WarningLog.cpp; sourceTree = "<group>"; };
 		7D12D257186081C7009D2059 /* WarningLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningLog.h; sourceTree = "<group>"; };
-		7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_DTW.cpp; path = "../../../ml.dtw/trillion/Source Code/UCR_DTW.cpp"; sourceTree = "<group>"; };
 		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ml.mlp/ml_mlp.cpp; sourceTree = "<group>"; };
 		7D38405C1874A20600C3F139 /* SVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVM.h; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		7D6171C31858D08400DD708F /* UCR_DTW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UCR_DTW.h; path = "ml.dtw/trillion/Source Code/UCR_DTW.h"; sourceTree = SOURCE_ROOT; };
 		7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression_linear.cpp; path = ml.regression.linear/ml_regression_linear.cpp; sourceTree = "<group>"; };
 		7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression_logistic.cpp; path = ml.regression.logistic/ml_regression_logistic.cpp; sourceTree = "<group>"; };
+		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
-		7D91D99318551285002C7555 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
-		7D91D9A21855188F002C7555 /* UCR_ED.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UCR_ED.cpp; path = "ml.dtw/trillion/Source Code/UCR_ED.cpp"; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ml.svm/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -583,8 +578,8 @@
 				7DF077F71847577100C55E3C /* ml_svm.cpp */,
 				7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */,
 				7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */,
-				7D91D99318551285002C7555 /* ml_dtw.cpp */,
 				7D133C6E185FAB0F0020213F /* ml_mlp.cpp */,
+				7D61B1111876F334000FD114 /* ml_dtw.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -1153,28 +1148,8 @@
 			isa = PBXGroup;
 			children = (
 				7D12D169186081C7009D2059 /* GRT */,
-				7D91D9981855188E002C7555 /* trillion */,
 			);
 			name = External;
-			sourceTree = "<group>";
-		};
-		7D91D9981855188E002C7555 /* trillion */ = {
-			isa = PBXGroup;
-			children = (
-				7D91D9A01855188F002C7555 /* Source Code */,
-			);
-			name = trillion;
-			path = ml.DWT/trillion;
-			sourceTree = "<group>";
-		};
-		7D91D9A01855188F002C7555 /* Source Code */ = {
-			isa = PBXGroup;
-			children = (
-				7D133C6B185FAA8A0020213F /* UCR_DTW.cpp */,
-				7D6171C31858D08400DD708F /* UCR_DTW.h */,
-				7D91D9A21855188F002C7555 /* UCR_ED.cpp */,
-			);
-			path = "Source Code";
 			sourceTree = "<group>";
 		};
 		7DF077FA1847589B00C55E3C /* Supporting Files */ = {
@@ -1399,7 +1374,6 @@
 				7D12D25F186081C7009D2059 /* RadialBasisFunction.cpp in Sources */,
 				7D12D275186081C7009D2059 /* GMM.cpp in Sources */,
 				7D12D301186081C7009D2059 /* ClassLabelFilter.cpp in Sources */,
-				7D133C6C185FAA8A0020213F /* UCR_DTW.cpp in Sources */,
 				7D12D2AD186081C7009D2059 /* LabelledClassificationSample.cpp in Sources */,
 				7D12D364186081C7009D2059 /* Util.cpp in Sources */,
 				7D12D328186081C7009D2059 /* MultidimensionalRegression.cpp in Sources */,
@@ -1416,11 +1390,11 @@
 				7D12D331186081C7009D2059 /* DebugLog.cpp in Sources */,
 				7D12D2AA186081C7009D2059 /* LabelledClassificationData.cpp in Sources */,
 				7D12D34B186081C7009D2059 /* Node.cpp in Sources */,
-				7D91D99518551285002C7555 /* ml_dtw.cpp in Sources */,
 				7D3840601874B3B800C3F139 /* libsvm.cpp in Sources */,
 				7D12D2D2186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */,
 				7D12D298186081C7009D2059 /* GaussianMixtureModels.cpp in Sources */,
 				7D12D343186081C7009D2059 /* LUDecomposition.cpp in Sources */,
+				7D61B1131876F334000FD114 /* ml_dtw.cpp in Sources */,
 				7D12D304186081C7009D2059 /* ClassLabelTimeoutFilter.cpp in Sources */,
 				7D12D288186081C7009D2059 /* MinDistModel.cpp in Sources */,
 				7D12D347186081C7009D2059 /* MatrixDouble.cpp in Sources */,
@@ -1494,7 +1468,6 @@
 				7D12D260186081C7009D2059 /* RadialBasisFunction.cpp in Sources */,
 				7D12D276186081C7009D2059 /* GMM.cpp in Sources */,
 				7D12D302186081C7009D2059 /* ClassLabelFilter.cpp in Sources */,
-				7D133C6D185FAA8A0020213F /* UCR_DTW.cpp in Sources */,
 				7D12D2AE186081C7009D2059 /* LabelledClassificationSample.cpp in Sources */,
 				7D12D365186081C7009D2059 /* Util.cpp in Sources */,
 				7D12D329186081C7009D2059 /* MultidimensionalRegression.cpp in Sources */,
@@ -1511,11 +1484,11 @@
 				7D12D332186081C7009D2059 /* DebugLog.cpp in Sources */,
 				7D12D2AB186081C7009D2059 /* LabelledClassificationData.cpp in Sources */,
 				7D12D34C186081C7009D2059 /* Node.cpp in Sources */,
-				7D91D99618551285002C7555 /* ml_dtw.cpp in Sources */,
 				7D3840611874B3B800C3F139 /* libsvm.cpp in Sources */,
 				7D12D2D3186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */,
 				7D12D299186081C7009D2059 /* GaussianMixtureModels.cpp in Sources */,
 				7D12D344186081C7009D2059 /* LUDecomposition.cpp in Sources */,
+				7D61B1141876F334000FD114 /* ml_dtw.cpp in Sources */,
 				7D12D305186081C7009D2059 /* ClassLabelTimeoutFilter.cpp in Sources */,
 				7D12D289186081C7009D2059 /* MinDistModel.cpp in Sources */,
 				7D12D348186081C7009D2059 /* MatrixDouble.cpp in Sources */,

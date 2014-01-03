@@ -607,6 +607,7 @@ namespace ml
             return;
         }
         
+        // TODO: add estimates to attributes
         if (mlp.getClassificationModeActive())
         {
             GRT::VectorDouble likelihoods = mlp.getClassLikelihoods();

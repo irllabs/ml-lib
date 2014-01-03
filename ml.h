@@ -77,14 +77,16 @@ protected:
     virtual void clear();
     virtual void classify(int argc, const t_atom *argv);
     virtual void usage();
+    void record(bool state);
     
     // Attribute setters
     void set_enable_scaling(bool enable_scaling);
+    void set_enable_estimates(bool enable_estimates);
     
     // Attribute getters
     void get_enable_scaling(bool &enable_scaling) const;
+    void get_enable_estimates(bool &enable_estimates) const;
     
-
     // Instance variables
     GRT::MLBase *mlBase; // TODO: maybe switch to reference if all derived classes aggregate an MLBase derived class
     mlp_data_type mode;
@@ -92,12 +94,16 @@ protected:
     GRT::LabelledClassificationData labelledClassificationData;
     GRT::LabelledTimeSeriesClassificationData labelledTimeSeriesClassificationData;
     GRT::LabelledRegressionData labelledRegressionData;
-
+    GRT::MatrixDouble timeSeriesData;
+    GRT::UINT currentLabel;
+    std::string grt_version;
+    bool estimates;
     
 private:
     void set_num_inputs(uint8_t num_inputs);
     // Method wrappers
     FLEXT_CALLBACK_V(add);
+    FLEXT_CALLBACK_B(record);
     FLEXT_CALLBACK_S(save);
     FLEXT_CALLBACK_S(load);
     FLEXT_CALLBACK(train);
@@ -107,8 +113,68 @@ private:
 
     // Attribute wrappers
     FLEXT_CALLVAR_B(get_enable_scaling, set_enable_scaling);
+    FLEXT_CALLVAR_B(get_enable_estimates, set_enable_estimates);
+    
+    // Instance variables
+    bool recording;
 };
   
+    
+class ml_classification_base : public ml_base
+{
+    FLEXT_HEADER_S(ml_classification_base, ml_base, setup);
+    
+public:
+    ml_classification_base(GRT::Classifier *classifier, mlp_data_type data_type)
+    :
+    ml_base(classifier, data_type)
+    {
+        this->classifier = classifier;
+    }
+    
+    ~ml_classification_base()
+    {
+        
+    }
+    
+protected:
+    static void setup(t_classid c)
+    {
+        FLEXT_CADDATTR_SET(c, "null_rejection", set_null_rejection);
+        FLEXT_CADDATTR_SET(c, "null_rejection_coeff", set_null_rejection_coeff);
+        
+        FLEXT_CADDATTR_GET(c, "null_rejection", get_null_rejection);
+        FLEXT_CADDATTR_GET(c, "null_rejection_coeff", get_null_rejection_coeff);
+    }
+    
+    // Methods
+    void clear();
+    void train();
+    void classify(int argc, const t_atom *argv);
+//    void usage();
+    
+    // Attribute Setters
+    void set_null_rejection(bool null_rejection);
+    void set_null_rejection_coeff(float null_rejection_coeff);
+    
+    // Attribute Getters
+    void get_null_rejection(bool &null_rejection) const;
+    void get_null_rejection_coeff(float &null_rejection_coeff) const;
+    
+private:
+    bool get_num_samples() const;
+
+    // Method wrappers
+    
+    // Attribute wrappers
+    FLEXT_CALLVAR_B(get_null_rejection, set_null_rejection);
+    FLEXT_CALLVAR_F(get_null_rejection_coeff, set_null_rejection_coeff);
+    
+    // Instance variables
+    GRT::Classifier *classifier;
+    
+};
+
     
 class ml_regression_base : public ml_base
 {
