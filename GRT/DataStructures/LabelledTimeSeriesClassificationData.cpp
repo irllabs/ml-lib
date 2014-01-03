@@ -298,7 +298,7 @@ bool LabelledTimeSeriesClassificationData::scale(vector<MinMax> ranges,double mi
     return true;
 }
 
-bool LabelledTimeSeriesClassificationData::saveDatasetToFile(string fileName){
+bool LabelledTimeSeriesClassificationData::saveDatasetToFile(string fileName)const{
 
 	std::fstream file;
 	file.open(fileName.c_str(), std::ios::out);
