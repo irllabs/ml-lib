@@ -18,8 +18,6 @@
 
 #include "ml.h"
 
-#include <flext.h>
-
 namespace ml
 {
     class ml_regression_linear : ml_regression_base
@@ -31,7 +29,6 @@ namespace ml
         :
         ml_regression_base(&regressifier)
         {
-            std::string grt_version = regressifier.getGRTVersion();
             post("ml.regressifier: Linear Regression based on the GRT library version %s", grt_version.c_str());
         }
         

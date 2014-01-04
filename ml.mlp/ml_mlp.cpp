@@ -18,8 +18,6 @@
 
 #include "ml.h"
 
-#include <flext.h>
-
 namespace ml
 {
     typedef enum mlp_layer_

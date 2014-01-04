@@ -18,8 +18,6 @@
 
 #include "ml.h"
 
-#include <flext.h>
-
 namespace ml
 {
     class ml_regression_logistic : ml_regression_base

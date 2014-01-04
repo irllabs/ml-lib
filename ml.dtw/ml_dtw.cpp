@@ -18,8 +18,6 @@
 
 #include "ml.h"
 
-#include <flext.h>
-
 namespace ml
 {
     class ml_dtw : ml_classification_base
