@@ -507,6 +507,7 @@ namespace ml
     }
 
     // Methods
+    // NOTE: MLP is special since it supports both regression and classification, we therefore override these methods
     void ml_mlp::train()
     {
         GRT::UINT numSamples = mode == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();
