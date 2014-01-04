@@ -84,6 +84,7 @@ void ml_base::init()
     }
 
     currentLabel = 0;
+    estimates = false;
     AddOutAnything("general purpose outlet");
     set_enable_scaling(true);
 }
@@ -215,7 +216,7 @@ void ml_base::add(int argc, const t_atom *argv)
         
         if ((double)label != targetVector[0])
         {
-            error("class label must be an integer");
+            error("class label must be a positive integer");
             return;
         }
         

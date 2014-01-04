@@ -93,15 +93,14 @@ namespace ml
         return GRT::SVM::LINEAR_KERNEL;
     }
     
-    class ml_svm : ml_base
+    class ml_svm : ml_classification_base
     {
         FLEXT_HEADER_S(ml_svm, ml_base, setup);
         
     public:
         ml_svm()
         :
-        ml_base(&svm, LABELLED_CLASSIFICATION),
-        estimates(false)
+        ml_classification_base(&svm, LABELLED_CLASSIFICATION)
         {
             post("ml.svm: Support Vector Machines based on the GRT library version %s", grt_version.c_str());
         }
@@ -149,9 +148,6 @@ namespace ml
         
         // Methods
         void cross_validation();
-        void train();
-        void clear();
-        void classify(int argc, const t_atom *argv);
         void usage();
         
         // Attribute Setters
@@ -206,7 +202,6 @@ namespace ml
         FLEXT_CALLSET_B(set_enable_cross_validation);
         
         // Instance variables
-        bool estimates;
         GRT::SVM svm;
     };
     
@@ -384,110 +379,6 @@ namespace ml
     {
         double result = svm.getCrossValidationResult();
         ToOutDouble(0, result);
-    }
-    
-    void ml_svm::train()
-    {
-        GRT::UINT numSamples = labelledClassificationData.getNumSamples();
-        
-        if (numSamples == 0)
-        {
-            error("no observations added, use 'add' to add training data");
-            return;
-        }
-        
-        bool success = false;
-        success = svm.train(labelledClassificationData);
-        
-        if (!success)
-        {
-            error("training failed");
-            return;
-        }
-        
-        t_atom a_num_classes;
-        
-        SetInt(a_num_classes, svm.getNumClasses());
-        ToOutAnything(1, s_train, 1, &a_num_classes);
-    }
-    
-    void ml_svm::clear()
-    {
-        svm.clear();
-        ml_base::clear();
-    }
-    
-    void ml_svm::classify(int argc, const t_atom *argv)
-    {
-        
-        GRT::UINT numSamples = labelledClassificationData.getNumSamples();
-        GRT::UINT numInputs = labelledClassificationData.getNumDimensions();
-        
-        if (numSamples == 0)
-        {
-            error("no observations added, use 'add' to add training data");
-            return;
-        }
-        
-        if (svm.getTrained() == false)
-        {
-            error("model has not been trained, use 'train' to train the model");
-            return;
-        }
-        
-        GRT::VectorDouble query(numInputs);
-        
-        if (argc < 0 || (unsigned)argc != numInputs)
-        {
-            error("invalid input length, expected %d, got %d", numInputs, argc);
-        }
-        
-        for (uint32_t index = 0; index < (uint32_t)argc; ++index)
-        {
-            double value = GetAFloat(argv[index]);
-            query[index] = value;
-        }
-        
-        bool success = false;
-        success = svm.predict(query);
-        
-        if (success == false)
-        {
-            error("unable to classify input");
-            return;
-        }
-        
-        if (estimates)
-        {
-            GRT::VectorDouble likelihoods = svm.getClassLikelihoods();
-            GRT::vector<GRT::UINT> labels = labelledClassificationData.getClassLabels();
-            
-            if (likelihoods.size() != labels.size())
-            {
-                error("labels / likelihoods size mismatch");
-            }
-            else
-            {
-                AtomList estimates;
-                
-                for (uid_t count = 0; count < labels.size(); ++count)
-                {
-                    t_atom label_a;
-                    t_atom likelihood_a;
-                    
-                    // Need to call SetDouble() first or label_a gets corrupted. Bug in Flext?
-                    SetDouble(&likelihood_a, likelihoods[count]);
-                    SetInt(label_a, labels[count]);
-                    
-                    estimates.Append(label_a);
-                    estimates.Append(likelihood_a);
-                }
-                ToOutAnything(1, s_estimates, estimates);
-            }
-        }
-        
-        GRT::UINT classification = svm.getPredictedClassLabel();
-        ToOutInt(0, classification);
     }
     
     void ml_svm::usage()
