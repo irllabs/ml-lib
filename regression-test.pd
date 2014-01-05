@@ -1,5 +1,5 @@
 #N canvas 587 166 821 216 10;
-#N canvas 536 428 954 649 dtw 1;
+#N canvas 536 428 954 649 dtw 0;
 #X msg 35 36 help;
 #X obj 99 548 print info;
 #X msg 61 76 clear;
@@ -14,7 +14,7 @@
 #X obj 279 386 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 283 149 train;
-#X obj 257 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 257 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 426 205 - 100;
 #X obj 398 174 t a a;
@@ -277,3 +277,26 @@
 #X connect 11 0 4 0;
 #X connect 12 0 4 0;
 #X restore 601 87 pd regression.logistic;
+#N canvas 758 306 450 300 peak 0;
+#X obj 189 188 ml.peak;
+#X floatatom 229 105 5 0 0 0 - - -;
+#X obj 279 238 print info;
+#X obj 178 248 print peak;
+#X msg 189 42 help;
+#X msg 240 145 reset;
+#X msg 292 146 timeout;
+#X msg -16 91 threshold_crossing_mode 0;
+#X msg -10 59 negative_threshold -2;
+#X msg -17 23 positive_threshold 2;
+#X msg -32 155 low_pass_filter_size 8;
+#X connect 0 0 3 0;
+#X connect 0 1 2 0;
+#X connect 1 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X restore 84 158 pd peak;

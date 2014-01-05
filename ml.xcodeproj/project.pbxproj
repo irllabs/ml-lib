@@ -289,6 +289,8 @@
 		7D61B1091875F661000FD114 /* ml_regression_logistic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */; };
 		7D61B1131876F334000FD114 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
 		7D61B1141876F334000FD114 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
+		7D61B11818788BD6000FD114 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
+		7D61B11918788BD6000FD114 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
 		7DF077F81847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
@@ -508,6 +510,7 @@
 		7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression_linear.cpp; path = ml.regression.linear/ml_regression_linear.cpp; sourceTree = "<group>"; };
 		7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression_logistic.cpp; path = ml.regression.logistic/ml_regression_logistic.cpp; sourceTree = "<group>"; };
 		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
+		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ml.peak/ml_peak.cpp; sourceTree = "<group>"; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
@@ -580,6 +583,7 @@
 				7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */,
 				7D133C6E185FAB0F0020213F /* ml_mlp.cpp */,
 				7D61B1111876F334000FD114 /* ml_dtw.cpp */,
+				7D61B11618788BD6000FD114 /* ml_peak.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -1380,6 +1384,7 @@
 				7D12D262186081C7009D2059 /* WeakClassifier.cpp in Sources */,
 				7D12D2D5186081C7009D2059 /* PrincipalComponentAnalysis.cpp in Sources */,
 				7D12D2FA186081C7009D2059 /* Regressifier.cpp in Sources */,
+				7D61B11818788BD6000FD114 /* ml_peak.cpp in Sources */,
 				7D12D25C186081C7009D2059 /* DecisionStump.cpp in Sources */,
 				7D12D2C6186081C7009D2059 /* FFT.cpp in Sources */,
 				7D12D2DB186081C7009D2059 /* TimeDomainFeatures.cpp in Sources */,
@@ -1474,6 +1479,7 @@
 				7D12D263186081C7009D2059 /* WeakClassifier.cpp in Sources */,
 				7D12D2D6186081C7009D2059 /* PrincipalComponentAnalysis.cpp in Sources */,
 				7D12D2FB186081C7009D2059 /* Regressifier.cpp in Sources */,
+				7D61B11918788BD6000FD114 /* ml_peak.cpp in Sources */,
 				7D12D25D186081C7009D2059 /* DecisionStump.cpp in Sources */,
 				7D12D2C7186081C7009D2059 /* FFT.cpp in Sources */,
 				7D12D2DC186081C7009D2059 /* TimeDomainFeatures.cpp in Sources */,

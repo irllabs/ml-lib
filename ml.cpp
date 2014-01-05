@@ -791,6 +791,7 @@ static void main()
     FLEXT_SETUP(ml_mlp);
     FLEXT_SETUP(ml_regression_linear);
     FLEXT_SETUP(ml_regression_logistic);
+    FLEXT_SETUP(ml_peak);
 }
 
 #pragma mark - Global constants
