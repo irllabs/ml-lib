@@ -68,6 +68,15 @@ public:
     
     bool setLowPassFilterSize(UINT lowPassFilterSize);
     
+    UINT getThresholdCrossingMode() const;
+    
+    double getNegativeThreshold() const;
+    
+    double getPositiveThreshold() const;
+    
+    bool getLowPassFilterSize() const;
+    
+    
 protected:
     bool searchForMinimaAndMaxima();
     

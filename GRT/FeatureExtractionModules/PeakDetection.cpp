@@ -336,6 +336,26 @@ bool PeakDetection::setLowPassFilterSize(UINT lowPassFilterSize){
     return false; 
 }
     
+UINT PeakDetection::getThresholdCrossingMode() const
+{
+    return thresholdCrossingMode;
+}
+
+double PeakDetection::getNegativeThreshold() const
+{
+    return negativeThreshold;
+}
+
+double PeakDetection::getPositiveThreshold() const
+{
+    return positiveThreshold;
+}
+
+bool PeakDetection::getLowPassFilterSize() const
+{
+    return lowPassFilterSize;
+}
+    
 bool PeakDetection::searchForMinimaAndMaxima(){
     
     const unsigned int N = dataBufferSize;
