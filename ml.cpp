@@ -115,10 +115,12 @@ void ml_base::set_scaling(bool scaling)
     bool success = false;
     
     // TODO: eventually mlBase should be a reference
-    if (mlBase != NULL)
+    if (mlBase == NULL)
     {
-        success = mlBase->enableScaling(scaling);
+        return;
     }
+    
+    success = mlBase->enableScaling(scaling);
     
     if (success == false)
     {
