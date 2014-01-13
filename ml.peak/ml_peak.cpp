@@ -47,11 +47,6 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "positive_threshold", set_positive_threshold);
             FLEXT_CADDATTR_SET(c, "low_pass_filter_size", set_low_pass_filter_size);
 
-            FLEXT_CADDATTR_GET(c, "threshold_crossing_mode", get_threshold_crossing_mode);
-            FLEXT_CADDATTR_GET(c, "negative_threshold", get_negative_threshold);
-            FLEXT_CADDATTR_GET(c, "positive_threshold", get_positive_threshold);
-            FLEXT_CADDATTR_GET(c, "low_pass_filter_size", get_low_pass_filter_size);
-            
             FLEXT_CADDMETHOD_(c, 0, "reset", reset);
             FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
         }
@@ -70,11 +65,7 @@ namespace ml
         void set_low_pass_filter_size(int low_pass_filter_size);
         
         // Attribute Getters
-        void get_threshold_crossing_mode(int &threshold_crossing_mode) const;
-        void get_negative_threshold(float &negative_threshold) const;
-        void get_positive_threshold(float &positive_threshold) const;
-        void get_low_pass_filter_size(int &low_pass_filter_size) const;
-
+       
     private:
         
         // Method wrappers
@@ -83,10 +74,10 @@ namespace ml
         FLEXT_CALLBACK(timeout);
         
         // Attribute wrappers
-        FLEXT_CALLVAR_I(get_threshold_crossing_mode, set_threshold_crossing_mode);
-        FLEXT_CALLVAR_F(get_negative_threshold, set_negative_threshold);
-        FLEXT_CALLVAR_F(get_positive_threshold, set_positive_threshold);
-        FLEXT_CALLVAR_I(get_low_pass_filter_size, set_low_pass_filter_size);
+        FLEXT_CALLSET_I(set_threshold_crossing_mode);
+        FLEXT_CALLSET_F(set_negative_threshold);
+        FLEXT_CALLSET_F(set_positive_threshold);
+        FLEXT_CALLSET_I(set_low_pass_filter_size);
 
         // Instance variables
         GRT::PeakDetection peakDetection;
@@ -136,25 +127,6 @@ namespace ml
     
     
     // Attribute Getters
-    void ml_peak::get_threshold_crossing_mode(int &threshold_crossing_mode) const
-    {
-        threshold_crossing_mode = peakDetection.getThresholdCrossingMode();
-    }
-    
-    void ml_peak::get_negative_threshold(float &negative_threshold) const
-    {
-        negative_threshold = peakDetection.getNegativeThreshold();
-    }
-    
-    void ml_peak::get_positive_threshold(float &positive_threshold) const
-    {
-        positive_threshold = peakDetection.getPositiveThreshold();
-    }
-    
-    void ml_peak::get_low_pass_filter_size(int &low_pass_filter_size) const
-    {
-        peakDetection.getLowPassFilterSize();
-    }
     
     // Methods
     void ml_peak::update(float f)
