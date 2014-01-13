@@ -80,11 +80,11 @@ protected:
     void record(bool state);
     
     // Attribute setters
-    void set_enable_scaling(bool enable_scaling);
+    void set_scaling(bool scaling);
     void set_probs(bool probs);
     
     // Attribute getters
-    void get_enable_scaling(bool &enable_scaling) const;
+    void get_scaling(bool &scaling) const;
     void get_probs(bool &probs) const;
     
     // Instance variables
@@ -114,7 +114,7 @@ private:
     FLEXT_CALLBACK(usage);
 
     // Attribute wrappers
-    FLEXT_CALLVAR_B(get_enable_scaling, set_enable_scaling);
+    FLEXT_CALLVAR_B(get_scaling, set_scaling);
     FLEXT_CALLVAR_B(get_probs, set_probs);
     
     // Instance variables

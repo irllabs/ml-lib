@@ -86,7 +86,7 @@ void ml_base::init()
     currentLabel = 0;
     probs = false;
     AddOutAnything("general purpose outlet");
-    set_enable_scaling(true);
+    set_scaling(true);
 }
 
 ml_base::ml_base()
@@ -110,27 +110,27 @@ ml_base::ml_base(GRT::MLBase *mlBase, mlp_data_type data_type)
     init();
 }
     
-void ml_base::set_enable_scaling(bool enable_scaling)
+void ml_base::set_scaling(bool scaling)
 {
     bool success = false;
     
     // TODO: eventually mlBase should be a reference
     if (mlBase != NULL)
     {
-        success = mlBase->enableScaling(enable_scaling);
+        success = mlBase->enableScaling(scaling);
     }
     
     if (success == false)
     {
-        error("unable to set enable_scaling, hint: should be 0 or 1");
+        error("unable to set scaling, hint: should be 0 or 1");
     }
 }
 
-void ml_base::get_enable_scaling(bool &enable_scaling) const
+void ml_base::get_scaling(bool &scaling) const
 {
     if (mlBase != NULL)
     {
-        enable_scaling = mlBase->getScalingEnabled();
+        scaling = mlBase->getScalingEnabled();
     }
 }
 
@@ -375,10 +375,10 @@ void ml_base::usage()
     
 void ml_base::setup(t_classid c)
 {
-    FLEXT_CADDATTR_SET(c, "enable_scaling", set_enable_scaling);
+    FLEXT_CADDATTR_SET(c, "scaling", set_scaling);
     FLEXT_CADDATTR_SET(c, "probs", set_probs);
     
-    FLEXT_CADDATTR_GET(c, "enable_scaling", get_enable_scaling);
+    FLEXT_CADDATTR_GET(c, "scaling", get_scaling);
     FLEXT_CADDATTR_GET(c, "probs", get_probs);
     
     FLEXT_CADDMETHOD_(c, 0, "add", add);
@@ -759,7 +759,7 @@ void ml_regression_base::usage()
     post("%s", ML_POST_SEP);
     post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default %d)", defaultNumInputDimensions);
     post("training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)");
-    post("enable_scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
+    post("scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
     post("%s", ML_POST_SEP);
     post("Methods:");
     post("%s", ML_POST_SEP);
