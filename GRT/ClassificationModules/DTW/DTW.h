@@ -265,7 +265,7 @@ public:
      
      @return returns an unsigned integer representing the current rejection mode
      */
-    UINT getRejectionMode() const { return rejectionMode; }
+    UINT getRejectionMode(){ return rejectionMode; }
     
     /**
      Sets if z-normalization should be used for both training and realtime prediction.  This should be called before training the templates.

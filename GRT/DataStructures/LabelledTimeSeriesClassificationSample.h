@@ -47,19 +47,15 @@ public:
 		return *this;
 	}
 
-	inline const double* operator[] (const UINT &n) const {
-		return data[n];
-	}
-    
-    inline double* operator[] (const UINT &n) {
+	inline double* operator[] (const UINT &n){
 		return data[n];
 	}
 
 	void clear();
 	void setTrainingSample(UINT classLabel,const MatrixDouble &data);
-	inline UINT getLength() const { return data.getNumRows(); }
-    inline UINT getNumDimensions() const { return data.getNumCols(); }
-    inline UINT getClassLabel() const { return classLabel; }
+	inline UINT getLength(){ return data.getNumRows(); }
+    inline UINT getNumDimensions(){ return data.getNumCols(); }
+    inline UINT getClassLabel(){ return classLabel; }
     MatrixDouble &getData(){ return data; }
 
 private:

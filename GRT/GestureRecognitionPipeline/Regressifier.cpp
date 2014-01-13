@@ -54,9 +54,13 @@ Regressifier::Regressifier(void){
     baseType = MLBase::REGRESSIFIER;
     regressifierType = "NOT_SET";
     numOutputDimensions = 0;
+    minNumEpochs = 0;
     maxNumEpochs = 100;
+    validationSetSize = 20;
     minChange = 1.0e-5;
     learningRate = 0.1;
+    useValidationSet = false;
+    randomiseTrainingOrder = true;
     rootMeanSquaredTrainingError = 0;
     totalSquaredTrainingError = 0;
     numRegressifierInstances++;
@@ -81,11 +85,15 @@ bool Regressifier::copyBaseVariables(const Regressifier *regressifier){
     }
 
     this->regressifierType = regressifier->regressifierType;
+    this->minNumEpochs = regressifier->minNumEpochs;
     this->maxNumEpochs = regressifier->maxNumEpochs;
+    this->validationSetSize = regressifier->validationSetSize;
     this->minChange = regressifier->minChange;
     this->learningRate = regressifier->learningRate;
     this->rootMeanSquaredTrainingError = regressifier->rootMeanSquaredTrainingError;
     this->totalSquaredTrainingError = regressifier->totalSquaredTrainingError;
+    this->useValidationSet = regressifier->useValidationSet;
+    this->randomiseTrainingOrder = regressifier->randomiseTrainingOrder;
     this->regressionData = regressifier->regressionData;
     this->inputVectorRanges = regressifier->inputVectorRanges;
     this->targetVectorRanges = regressifier->targetVectorRanges;
@@ -126,6 +134,10 @@ UINT Regressifier::getMaxNumEpochs() const{
     return maxNumEpochs;
 }
 
+UINT Regressifier::getValidationSetSize() const{
+    return validationSetSize;
+}
+    
 VectorDouble Regressifier::getRegressionData() const{ 
     if( trained ){ 
         return regressionData; 
@@ -149,6 +161,14 @@ double Regressifier::getMinChange() const{
     return minChange;
 }
     
+bool Regressifier::getUseValidationSet() const{
+    return useValidationSet;
+}
+
+bool Regressifier::getRandomiseTrainingOrder() const{
+    return randomiseTrainingOrder;
+}
+    
 double Regressifier::getRootMeanSquaredTrainingError() const {
     return rootMeanSquaredTrainingError;
 }
@@ -160,6 +180,11 @@ double Regressifier::getTotalSquaredTrainingError() const {
 bool Regressifier::setMaxNumEpochs(const UINT maxNumEpochs){
     if( maxNumEpochs == 0 ) return false;
     this->maxNumEpochs = maxNumEpochs;
+    return true;
+}
+    
+bool Regressifier::setMinNumEpochs(const UINT minNumEpochs){
+    this->minNumEpochs = minNumEpochs;
     return true;
 }
     
@@ -175,6 +200,28 @@ bool Regressifier::setLearningRate(double learningRate){
         return true;
     }
     return false;
+}
+    
+bool Regressifier::setValidationSetSize(const UINT validationSetSize){
+    
+    if( validationSetSize > 0 && validationSetSize < 100 ){
+        this->validationSetSize = validationSetSize;
+        return true;
+    }
+    
+    warningLog << "setValidationSetSize(const UINT validationSetSize) - The validation size must be in the range [1 99]!" << endl;
+    
+    return false;
+}
+    
+bool Regressifier::setUseValidationSet(const bool useValidationSet){
+    this->useValidationSet = useValidationSet;
+    return true;
+}
+
+bool Regressifier::setRandomiseTrainingOrder(const bool randomiseTrainingOrder){
+    this->randomiseTrainingOrder = randomiseTrainingOrder;
+    return true;
 }
     
 const Regressifier& Regressifier::getBaseRegressifier() const{

@@ -91,14 +91,23 @@ public:
     string getRegressifierType() const;
     
     /**
-     Gets the maximum number of epochs. This value controls the maximum number of epochs that can be used during the MLP training routine.
+     Gets the maximum number of epochs. This value controls the maximum number of epochs that can be used by the training algorithm.
      
      @return returns the maximum number of epochs
      */
 	UINT getMaxNumEpochs() const;
     
     /**
-     Gets the minimum change value that controls when the MLP training routine should stop.
+     Gets the size (as a percentage) of the validation set (if one should be used). If this value returned 20 this would mean that
+     20% of the training data would be set aside to create a validation set and the other 80% would be used to actually train the regression model.
+     This will only happen if the useValidationSet parameter is set to true, otherwise 100% of the training data will be used to train the regression model.
+     
+     @return returns the size of the validation set
+     */
+	UINT getValidationSetSize() const;
+    
+    /**
+     Gets the minimum change value that controls when the training algorithm should stop.
      
      @return returns the minimum change value
      */
@@ -124,7 +133,26 @@ public:
      @return returns the total squared error (on the training data during the training phase)
      */
     double getTotalSquaredTrainingError() const;
-
+    
+    /**
+     Returns true if a validation set should be used for training. If true, then the training dataset will be partitioned into a smaller training dataset
+     and a validation set.  
+     
+     The size of the partition is controlled by the validationSetSize parameter, for example, if the validationSetSize parameter is 20 then 20% of the
+     training data will be used for a validation set leaving 80% of the original data to train the regression model.
+     
+     @return returns true if a validation set should be used for training, false otherwise
+     */
+	bool getUseValidationSet() const;
+    
+    /**
+     Returns true if the order of the training dataset should be randomized at each epoch of training. Randomizing the order of the training dataset stops
+     the regression learning algorithm from focusing too much on the first few examples in the dataset.
+     
+     @return returns true if the order of the training dataset should be randomized, false otherwise
+     */
+	bool getRandomiseTrainingOrder() const;
+    
     /**
      Gets a vector containing the regression data output by the regression algorithm, this will be an M-dimensional vector, where M is the number of output dimensions in the model.  
      
@@ -156,6 +184,14 @@ public:
     bool setMaxNumEpochs(const UINT maxNumEpochs);
     
     /**
+     Sets the minimum number of epochs (a complete iteration of all training samples) that can elapse with no change between two training epochs.
+     
+     @param UINT minNumEpochs: the minimum number of epochs that can elapse with no change between two training epochs
+     @return returns true if the value was updated successfully, false otherwise
+     */
+    bool setMinNumEpochs(const UINT minNumEpochs);
+    
+    /**
      Sets the minimum change that must be achieved between two training epochs for the training to continue.
      The minChange value must be greater than zero.
      
@@ -172,6 +208,10 @@ public:
      @return returns true if the value was updated successfully, false otherwise
      */
     bool setLearningRate(double learningRate);
+    
+    bool setUseValidationSet(const bool useValidationSet);
+    bool setValidationSetSize(const UINT validationSetSize);
+    bool setRandomiseTrainingOrder(const bool randomiseTrainingOrder);
     
     /**
      Defines a map between a string (which will contain the name of the regressifier, such as LinearRegression) and a function returns a new instance of that regressifier
@@ -218,11 +258,15 @@ public:
     
 protected:
     string regressifierType;
+    UINT minNumEpochs;
     UINT maxNumEpochs;
+    UINT validationSetSize;
     double learningRate;
     double minChange;
     double rootMeanSquaredTrainingError;
     double totalSquaredTrainingError;
+    bool useValidationSet;
+    bool randomiseTrainingOrder;
     VectorDouble regressionData;
     vector< MinMax > inputVectorRanges;
 	vector< MinMax > targetVectorRanges;

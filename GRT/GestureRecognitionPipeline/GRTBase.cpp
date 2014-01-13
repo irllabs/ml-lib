@@ -38,6 +38,7 @@ bool GRTBase::copyGRTBaseVariables(const GRTBase *base){
 
     this->debugLog = base->debugLog;
     this->errorLog = base->errorLog;
+    this->infoLog = base->infoLog;
     this->trainingLog = base->trainingLog;
     this->testingLog = base->testingLog;
     this->warningLog = base->warningLog;
@@ -51,6 +52,10 @@ string GRTBase::getLastWarningMessage() const {
 
 string GRTBase::getLastErrorMessage() const {
     return errorLog.getLastMessage();
+}
+    
+string GRTBase::getLastInfoMessage() const {
+    return infoLog.getLastMessage();
 }
     
 string GRTBase::getGRTVersion(bool returnRevision) const{

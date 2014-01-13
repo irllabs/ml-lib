@@ -394,12 +394,12 @@ bool LogisticRegression::loadModelFromFile(fstream &file){
     return true;
 }
 
-bool LogisticRegression::setMaxNumIterations(const UINT maxNumIterations){
-    return setMaxNumEpochs( maxNumIterations );
-}
-
 UINT LogisticRegression::getMaxNumIterations() const{
     return getMaxNumEpochs();
+}
+
+bool LogisticRegression::setMaxNumIterations(const UINT maxNumIterations){
+return setMaxNumEpochs( maxNumIterations );
 }
 
 double LogisticRegression::sigmoid(const double x) const{

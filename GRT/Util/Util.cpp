@@ -46,6 +46,7 @@ double Util::scale(const double x,const double minSource,const double maxSource,
         if( x <= minSource ) return minTarget;
         if( x >= maxSource ) return maxTarget;
     }
+    if( minSource == maxSource ) return minTarget;
     return (((x-minSource)*(maxTarget-minTarget))/(maxSource-minSource))+minTarget;
 }
     

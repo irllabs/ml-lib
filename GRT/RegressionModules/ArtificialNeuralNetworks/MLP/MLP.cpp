@@ -32,6 +32,7 @@ MLP::MLP(){
 	minNumEpochs = 10;
     numRandomTrainingIterations = 10;
     validationSetSize = 20;	//20% of the training data will be set aside for the validation set
+    trainingMode = ONLINE_GRADIENT_DESCENT;
 	momentum = 0.5;
 	gamma = 2.0;
     trainingError = 0;
@@ -65,14 +66,11 @@ MLP& MLP::operator=(const MLP &rhs){
         this->inputLayerActivationFunction = rhs.inputLayerActivationFunction;
         this->hiddenLayerActivationFunction = rhs.hiddenLayerActivationFunction;
         this->outputLayerActivationFunction = rhs.outputLayerActivationFunction;
-        this->minNumEpochs = rhs.minNumEpochs;
         this->numRandomTrainingIterations = rhs.numRandomTrainingIterations;
-        this->validationSetSize = rhs.validationSetSize;
+        this->trainingMode = rhs.trainingMode;
         this->momentum = rhs.momentum;
         this->trainingError = rhs.trainingError;
         this->gamma = rhs.gamma;
-        this->useValidationSet = rhs.useValidationSet;
-        this->randomiseTrainingOrder = rhs.randomiseTrainingOrder;
         this->initialized = rhs.initialized;
         this->inputLayer = rhs.inputLayer;
         this->hiddenLayer = rhs.hiddenLayer;
@@ -135,7 +133,15 @@ bool MLP::train(LabelledClassificationData trainingData){
     //Flag that the MLP is being used for classification, not regression
     classificationModeActive = true;
     
-    return train(regressionData);
+    return train_(regressionData);
+}
+    
+bool MLP::train(LabelledRegressionData trainingData){
+    
+    //Flag that the MLP is being used for regression, not classification
+    classificationModeActive = false;
+
+    return train_(trainingData);
 }
     
 //Classifier interface
@@ -153,12 +159,31 @@ bool MLP::predict(VectorDouble inputVector){
     
     //Set the mapped data as the classLikelihoods
     regressionData = feedforward( inputVector );
-    classLikelihoods = regressionData;
     
     if( classificationModeActive ){
+	
+		//Estimate the class likelihoods        
+        const UINT K = (UINT)regressionData.size();
+        classLikelihoods = regressionData;
+        
+        //Make sure all the values are greater than zero, we do this by finding the min value and adding this onto all the values
+        double minValue = Util::getMin( classLikelihoods );
+        for(UINT i=0; i<K; i++){
+            classLikelihoods[i] += minValue;
+        }
+        
+        //Normalize the likelihoods so they sum to 1
+        double sum = Util::sum(classLikelihoods);
+        if( sum > 0 ){
+            for(UINT i=0; i<K; i++){
+                classLikelihoods[i] /= sum;
+            }
+        }
+        
+        //Find the best value
         double bestValue = classLikelihoods[0];
         UINT bestIndex = 0;
-        for(UINT i=1; i<classLikelihoods.size(); i++){
+        for(UINT i=1; i<K; i++){
             if( classLikelihoods[i] > bestValue ){
                 bestValue = classLikelihoods[i];
                 bestIndex = i;
@@ -178,7 +203,11 @@ bool MLP::predict(VectorDouble inputVector){
     
     return true;
 }
-
+    
+bool MLP::init(const UINT numInputNeurons, const UINT numHiddenNeurons, const UINT numOutputNeurons){
+    return init(numInputNeurons, numHiddenNeurons, numOutputNeurons, inputLayerActivationFunction, hiddenLayerActivationFunction, outputLayerActivationFunction );
+}
+    
 bool MLP::init(const UINT numInputNeurons,
                const UINT numHiddenNeurons,
                const UINT numOutputNeurons,
@@ -269,7 +298,7 @@ bool MLP::print() const{
     return true;
 }
 
-bool MLP::train(LabelledRegressionData trainingData){
+bool MLP::train_(LabelledRegressionData &trainingData){
     
     trained = false;
     
@@ -289,10 +318,8 @@ bool MLP::train(LabelledRegressionData trainingData){
 		validationData = trainingData.partition( 100 - validationSetSize );
 	}
 
-    const UINT M = trainingData.getNumSamples();
     const UINT N = trainingData.getNumInputDimensions();
     const UINT T = trainingData.getNumTargetDimensions();
-	const UINT numTestingExamples = useValidationSet ? validationData.getNumSamples() : M;
 
     if( N != numInputNeurons ){
         errorLog << "train(LabelledRegressionData trainingData) - The number of input dimensions in the training data (" << N << ") does not match that of the MLP (" << numInputNeurons << ")" << endl;
@@ -327,6 +354,34 @@ bool MLP::train(LabelledRegressionData trainingData){
     bool tempScalingState = useScaling;
     useScaling = false;
     
+    //Setup the memory
+    trainingErrorLog.clear();
+    inputNeuronsOuput.resize(numInputNeurons);
+    hiddenNeuronsOutput.resize(numHiddenNeurons);
+    outputNeuronsOutput.resize(numOutputNeurons);
+    deltaO.resize(numOutputNeurons);
+    deltaH.resize(numHiddenNeurons);
+    
+    //Call the main training function
+    switch( trainingMode ){
+        case ONLINE_GRADIENT_DESCENT:
+            if( classificationModeActive ){
+                trained = trainOnlineGradientDescentClassification( trainingData, validationData );
+            }else{
+                trained = trainOnlineGradientDescentRegression( trainingData, validationData );
+            }
+            break;
+        default:
+            useScaling = tempScalingState;
+            errorLog << "train(LabelledRegressionData trainingData) - Uknown training mode!" << endl;
+            return false;
+            break;
+    }
+
+    
+    
+    /*
+    
     //Setup the training loop
     bool keepTraining = true;
     UINT epoch = 0;
@@ -349,14 +404,7 @@ bool MLP::train(LabelledRegressionData trainingData){
     double delta = 0;
 	vector< UINT > indexList(M);
 	vector< vector< double > > tempTrainingErrorLog;
-	trainingErrorLog.clear();
-    TrainingResult result;
-    trainingResults.reserve(M);
-    inputNeuronsOuput.resize(numInputNeurons);
-    hiddenNeuronsOutput.resize(numHiddenNeurons);
-    outputNeuronsOutput.resize(numOutputNeurons);
-    deltaO.resize(numOutputNeurons);
-    deltaH.resize(numHiddenNeurons);
+	
 
     //Reset the indexList, this is used to randomize the order of the training examples, if needed
 	for(UINT i=0; i<M; i++) indexList[i] = i;
@@ -619,20 +667,457 @@ bool MLP::train(LabelledRegressionData trainingData){
         
         nullRejectionThreshold = averageValue-(stdDev*nullRejectionCoeff);
     }
-    
-    //Flag that the model has been successfully trained
-	trained = true;
+    */
     
     //Reset the scaling state so the prediction data will be scaled if needed
     useScaling = tempScalingState;
 
     return true;
 }
+    
+bool MLP::trainOnlineGradientDescentClassification(const LabelledRegressionData &trainingData,const LabelledRegressionData &validationData){
+    
+    const UINT M = trainingData.getNumSamples();
+    const UINT T = trainingData.getNumTargetDimensions();
+	const UINT numTestingExamples = useValidationSet ? validationData.getNumSamples() : M;
+    
+    //Setup the training loop
+    bool keepTraining = true;
+    UINT epoch = 0;
+    double alpha = learningRate;
+	double beta = momentum;
+    UINT bestIter = 0;
+    MLP bestNetwork;
+    totalSquaredTrainingError = 0;
+    rootMeanSquaredTrainingError = 0;
+    trainingError = 0;
+    double error = 0;
+    double lastError = 0;
+    double accuracy = 0;
+    double trainingSetAccuracy = 0;
+    double trainingSetTotalSquaredError = 0;
+    double bestError = numeric_limits< double >::max();
+    double bestTSError = numeric_limits< double >::max();
+    double bestRMSError = numeric_limits< double >::max();
+    double bestAccuracy = 0;
+    double delta = 0;
+	vector< UINT > indexList(M);
+	vector< vector< double > > tempTrainingErrorLog;
+    TrainingResult result;
+    trainingResults.reserve(M);
+    
+    //Reset the indexList, this is used to randomize the order of the training examples, if needed
+	for(UINT i=0; i<M; i++) indexList[i] = i;
+	
+    for(UINT iter=0; iter<numRandomTrainingIterations; iter++){
+        
+        epoch = 0;
+        keepTraining = true;
+		tempTrainingErrorLog.clear();
+        
+		//Randomise the start values of the neurons
+        init(numInputNeurons,numHiddenNeurons,numOutputNeurons,inputLayerActivationFunction,hiddenLayerActivationFunction,outputLayerActivationFunction);
+        
+        if( randomiseTrainingOrder ){
+            for(UINT i=0; i<M; i++){
+                SWAP(indexList[ i ], indexList[ random.getRandomNumberInt(0, M) ]);
+            }
+        }
+        
+        while( keepTraining ){
+            
+            //Perform one training epoch
+            accuracy = 0;
+            totalSquaredTrainingError = 0;
+            
+            for(UINT i=0; i<M; i++){
+                //Get the i'th training and target vectors
+                const VectorDouble &trainingExample = trainingData[ indexList[i] ].getInputVector();
+                const VectorDouble &targetVector = trainingData[ indexList[i] ].getTargetVector();
+                
+                //Perform the back propagation
+                double backPropError = back_prop(trainingExample,targetVector,alpha,beta);
+                
+                //debugLog << "i: " << i << " backPropError: " << backPropError << endl;
+                
+                if( isNAN(backPropError) ){
+                    keepTraining = false;
+                    errorLog << "train(LabelledRegressionData trainingData) - NaN found!" << endl;
+                }
+                
+                //Compute the error for the i'th example
+				if( classificationModeActive ){
+                    VectorDouble y = feedforward(trainingExample);
+                    
+                    //Get the class label
+                    double bestValue = targetVector[0];
+                    UINT bestIndex = 0;
+                    for(UINT i=1; i<targetVector.size(); i++){
+                        if( targetVector[i] > bestValue ){
+                            bestValue = targetVector[i];
+                            bestIndex = i;
+                        }
+                    }
+                    UINT classLabel = bestIndex + 1;
+                    
+                    //Get the predicted class label
+                    bestValue = y[0];
+                    bestIndex = 0;
+                    for(UINT i=1; i<numOutputNeurons; i++){
+                        if( y[i] > bestValue ){
+                            bestValue = y[i];
+                            bestIndex = i;
+                        }
+                    }
+                    predictedClassLabel = bestIndex+1;
+                    
+                    if( classLabel == predictedClassLabel ){
+                        accuracy++;
+                    }
+                    
+                }else{
+                    totalSquaredTrainingError += backPropError; //The backPropError is already squared
+                }
+            }
+            
+            if( checkForNAN() ){
+                keepTraining = false;
+                errorLog << "train(LabelledRegressionData trainingData) - NaN found!" << endl;
+                break;
+            }
+            
+            //Compute the error over all the training/validation examples
+			if( useValidationSet ){
+                trainingSetAccuracy = accuracy;
+                trainingSetTotalSquaredError = totalSquaredTrainingError;
+				accuracy = 0;
+                totalSquaredTrainingError = 0;
+                
+                //Iterate over the validation samples
+                UINT numValidationSamples = validationData.getNumSamples();
+				for(UINT i=0; i<numValidationSamples; i++){
+					const VectorDouble &trainingExample = validationData[i].getInputVector();
+					const VectorDouble &targetVector = validationData[i].getTargetVector();
+                    
+                    VectorDouble y = feedforward(trainingExample);
+                    
+                    if( classificationModeActive ){
+                        //Get the class label
+                        double bestValue = targetVector[0];
+                        UINT bestIndex = 0;
+                        for(UINT i=1; i<numInputNeurons; i++){
+                            if( targetVector[i] > bestValue ){
+                                bestValue = targetVector[i];
+                                bestIndex = i;
+                            }
+                        }
+                        UINT classLabel = bestIndex + 1;
+                        
+                        //Get the predicted class label
+                        bestValue = y[0];
+                        bestIndex = 0;
+                        for(UINT i=1; i<numOutputNeurons; i++){
+                            if( y[i] > bestValue ){
+                                bestValue = y[i];
+                                bestIndex = i;
+                            }
+                        }
+                        predictedClassLabel = bestIndex+1;
+                        
+                        if( classLabel == predictedClassLabel ){
+                            accuracy++;
+                        }
+                        
+                    }else{
+                        //Update the total squared error
+                        for(UINT j=0; j<T; j++){
+                            totalSquaredTrainingError += SQR( targetVector[j]-y[j] );
+                        }
+                    }
+				}
+                
+                accuracy = (accuracy/double(numValidationSamples))*double(numValidationSamples);
+                rootMeanSquaredTrainingError = sqrt( totalSquaredTrainingError / double(numValidationSamples) );
+                
+			}else{//We are not using a validation set
+                accuracy = (accuracy/double(M))*double(M);
+                rootMeanSquaredTrainingError = sqrt( totalSquaredTrainingError / double(M) );
+            }
+            
+            //Store the errors
+            VectorDouble temp(2);
+            temp[0] = 100.0 - trainingSetAccuracy;
+            temp[1] = 100.0 - accuracy;
+            tempTrainingErrorLog.push_back( temp );
+            
+            error = 100.0 - accuracy;
+            
+            //Store the training results
+            result.setClassificationResult(iter,accuracy);
+            trainingResults.push_back( result );
 
+            delta = fabs( error - lastError );
+            
+            trainingLog << "Random Training Iteration: " << iter+1 << " Epoch: " << epoch << " Error: " << error << " Delta: " << delta << endl;
+            
+            //Check to see if we should stop training
+            if( ++epoch >= maxNumEpochs ){
+                keepTraining = false;
+            }
+            if( delta <= minChange && epoch >= minNumEpochs ){
+                keepTraining = false;
+            }
+            
+            //Update the last error
+            lastError = error;
+            
+            //Notify any observers of the new training data
+            trainingResultsObserverManager.notifyObservers( result );
+            
+        }//End of While( keepTraining )
+        
+        if( lastError < bestError ){
+            bestIter = iter;
+            bestError = lastError;
+            bestTSError = totalSquaredTrainingError;
+            bestRMSError = rootMeanSquaredTrainingError;
+            bestAccuracy = accuracy;
+            bestNetwork = *this;
+			trainingErrorLog = tempTrainingErrorLog;
+        }
+        
+    }//End of For( numRandomTrainingIterations )
+    
+    trainingLog << "Best Accuracy: " << bestAccuracy << " in Random Training Iteration: " << bestIter+1 << endl;
+    
+	//Check to make sure the best network has not got any NaNs in it
+	if( checkForNAN() ){
+        errorLog << "train(LabelledRegressionData trainingData) - NAN Found!" << endl;
+		return false;
+	}
+    
+    //Set the MLP model to the model that best during training
+    *this = bestNetwork;
+    trainingError = bestAccuracy;
+    
+    //Compute the rejection threshold
+    double averageValue = 0;
+    VectorDouble classificationPredictions;
+    
+    for(UINT i=0; i<numTestingExamples; i++){
+        VectorDouble inputVector = useValidationSet ? validationData[i].getInputVector() : trainingData[i].getInputVector();
+        VectorDouble targetVector = useValidationSet ? validationData[i].getTargetVector() : trainingData[i].getTargetVector();
+        
+        //Make the prediction
+        VectorDouble y = feedforward(inputVector);
+        
+        //Get the class label
+        double bestValue = targetVector[0];
+        UINT bestIndex = 0;
+        for(UINT i=1; i<targetVector.size(); i++){
+            if( targetVector[i] > bestValue ){
+                bestValue = targetVector[i];
+                bestIndex = i;
+            }
+        }
+        UINT classLabel = bestIndex + 1;
+        
+        //Get the predicted class label
+        bestValue = y[0];
+        bestIndex = 0;
+        for(UINT i=1; i<y.size(); i++){
+            if( y[i] > bestValue ){
+                bestValue = y[i];
+                bestIndex = i;
+            }
+        }
+        predictedClassLabel = bestIndex+1;
+        
+        //Only add the max value if the prediction is correct
+        if( classLabel == predictedClassLabel ){
+            classificationPredictions.push_back( bestValue );
+            averageValue += bestValue;
+        }
+    }
+    
+    averageValue /= double(classificationPredictions.size());
+    double stdDev = 0;
+    for(UINT i=0; i<classificationPredictions.size(); i++){
+        stdDev += SQR(classificationPredictions[i]-averageValue);
+    }
+    stdDev = sqrt( stdDev / double(classificationPredictions.size()-1) );
+    
+    nullRejectionThreshold = averageValue-(stdDev*nullRejectionCoeff);
+    
+    //Return true to flag that the model was trained OK
+    return true;
+}
+    
+bool MLP::trainOnlineGradientDescentRegression(const LabelledRegressionData &trainingData,const LabelledRegressionData &validationData){
+    
+    const UINT M = trainingData.getNumSamples();
+    const UINT T = trainingData.getNumTargetDimensions();
+	const UINT numValidationSamples = useValidationSet ? validationData.getNumSamples() : M;
+    
+    //Setup the training loop
+    bool keepTraining = true;
+    UINT epoch = 0;
+    double alpha = learningRate;
+    double beta = momentum;
+    UINT bestIter = 0;
+    MLP bestNetwork;
+    totalSquaredTrainingError = 0;
+    rootMeanSquaredTrainingError = 0;
+    trainingError = 0;
+    double error = 0;
+    double lastError = 0;
+    double trainingSetTotalSquaredError = 0;
+    double bestError = numeric_limits< double >::max();
+    double bestTSError = numeric_limits< double >::max();
+    double bestRMSError = numeric_limits< double >::max();
+    double delta = 0;
+    vector< UINT > indexList(M);
+    vector< vector< double > > tempTrainingErrorLog;
+    TrainingResult result;
+    trainingResults.reserve(M);
+    
+    //Reset the indexList, this is used to randomize the order of the training examples, if needed
+    for(UINT i=0; i<M; i++) indexList[i] = i;
+    
+    for(UINT iter=0; iter<numRandomTrainingIterations; iter++){
+        
+        epoch = 0;
+        keepTraining = true;
+        tempTrainingErrorLog.clear();
+        
+        //Randomise the start values of the neurons
+        init(numInputNeurons,numHiddenNeurons,numOutputNeurons,inputLayerActivationFunction,hiddenLayerActivationFunction,outputLayerActivationFunction);
+        
+        if( randomiseTrainingOrder ){
+            for(UINT i=0; i<M; i++){
+                SWAP(indexList[ i ], indexList[ random.getRandomNumberInt(0, M) ]);
+            }
+        }
+        
+        while( keepTraining ){
+            
+            //Perform one training epoch
+            totalSquaredTrainingError = 0;
+            
+            for(UINT i=0; i<M; i++){
+                //Get the i'th training and target vectors
+                const VectorDouble &trainingExample = trainingData[ indexList[i] ].getInputVector();
+                const VectorDouble &targetVector = trainingData[ indexList[i] ].getTargetVector();
+                
+                //Perform the back propagation
+                double backPropError = back_prop(trainingExample,targetVector,alpha,beta);
+                
+                //debugLog << "i: " << i << " backPropError: " << backPropError << endl;
+                
+                if( isNAN(backPropError) ){
+                    keepTraining = false;
+                    errorLog << "train(LabelledRegressionData trainingData) - NaN found!" << endl;
+                }
+                
+                //Compute the error for the i'th example
+                totalSquaredTrainingError += backPropError; //The backPropError is already squared
+            }
+            
+            if( checkForNAN() ){
+                keepTraining = false;
+                errorLog << "train(LabelledRegressionData trainingData) - NaN found!" << endl;
+                break;
+            }
+            
+            //Compute the error over all the training/validation examples
+            if( useValidationSet ){
+                trainingSetTotalSquaredError = totalSquaredTrainingError;
+                totalSquaredTrainingError = 0;
+                
+                //Iterate over the validation samples
+                for(UINT i=0; i<numValidationSamples; i++){
+                    const VectorDouble &trainingExample = validationData[i].getInputVector();
+                    const VectorDouble &targetVector = validationData[i].getTargetVector();
+                    
+                    VectorDouble y = feedforward(trainingExample);
+                    
+                    //Update the total squared error
+                    for(UINT j=0; j<T; j++){
+                        totalSquaredTrainingError += SQR( targetVector[j]-y[j] );
+                    }
+                    
+                }
+            
+                rootMeanSquaredTrainingError = sqrt( totalSquaredTrainingError / double(numValidationSamples) );
+                
+            }else{//We are not using a validation set
+                rootMeanSquaredTrainingError = sqrt( totalSquaredTrainingError / double(M) );
+            }
+            
+            //Store the errors
+            VectorDouble temp(2);
+            temp[0] = trainingSetTotalSquaredError;
+            temp[1] = rootMeanSquaredTrainingError;
+            tempTrainingErrorLog.push_back( temp );
+            
+            error = rootMeanSquaredTrainingError;
+            
+            //Store the training results
+            result.setRegressionResult(iter,totalSquaredTrainingError,rootMeanSquaredTrainingError);
+            trainingResults.push_back( result );
+            
+            delta = fabs( error - lastError );
+            
+            trainingLog << "Random Training Iteration: " << iter+1 << " Epoch: " << epoch << " Error: " << error << " Delta: " << delta << endl;
+            
+            //Check to see if we should stop training
+            if( ++epoch >= maxNumEpochs ){
+                keepTraining = false;
+            }
+            if( delta <= minChange && epoch >= minNumEpochs ){
+                keepTraining = false;
+            }
+            
+            //Update the last error
+            lastError = error;
+            
+            //Notify any observers of the new training data
+            trainingResultsObserverManager.notifyObservers( result );
+            
+        }//End of While( keepTraining )
+        
+        //Check to see if this is the best model so far
+        if( lastError < bestError ){
+            bestIter = iter;
+            bestError = lastError;
+            bestTSError = totalSquaredTrainingError;
+            bestRMSError = rootMeanSquaredTrainingError;
+            bestNetwork = *this;
+            trainingErrorLog = tempTrainingErrorLog;
+        }
+        
+    }//End of For( numRandomTrainingIterations )
+    
+    trainingLog << "Best RMSError: " << bestRMSError << " in Random Training Iteration: " << bestIter+1 << endl;
+    
+    //Check to make sure the best network has not got any NaNs in it
+    if( checkForNAN() ){
+        errorLog << "train(LabelledRegressionData trainingData) - NAN Found!" << endl;
+        return false;
+    }
+    
+    //Set the MLP model to the model that best during training
+    *this = bestNetwork;
+    trainingError = bestRMSError;
+    
+    //Return true to flag that the model was trained OK
+    return true;
+}
+    
 double MLP::back_prop(const VectorDouble &trainingExample,const VectorDouble &targetVector,const double alpha,const double beta){
-    
+        
     double update = 0;
-    
+        
     //Forward propagation
     feedforward(trainingExample,inputNeuronsOuput,hiddenNeuronsOutput,outputNeuronsOutput);
     
@@ -1408,16 +1893,8 @@ UINT MLP::getOutputLayerActivationFunction() const{
     return outputLayerActivationFunction;
 }
     
-UINT MLP::getMinNumEpochs() const{
-    return minNumEpochs;
-}
-    
 UINT MLP::getNumRandomTrainingIterations() const{
     return numRandomTrainingIterations;
-}
-    
-UINT MLP::getValidationSetSize() const{
-    return validationSetSize;
 }
     
 double MLP::getTrainingRate() const{
@@ -1434,14 +1911,6 @@ double MLP::getGamma() const{
     
 double MLP::getTrainingError() const{
     return trainingError;
-}
-    
-bool MLP::getUseValidationSet() const{
-    return useValidationSet;
-}
-    
-bool MLP::getRandomiseTrainingOrder() const{
-    return randomiseTrainingOrder;
 }
     
 bool MLP::getClassificationModeActive() const{
@@ -1487,6 +1956,12 @@ double MLP::getMaximumLikelihood() const{
 
 VectorDouble MLP::getClassLikelihoods() const{
     if( trained && classificationModeActive ) return classLikelihoods;
+    return VectorDouble();
+}
+    
+VectorDouble MLP::getClassDistances() const{
+    //The class distances is simply the regression data
+    if( trained && classificationModeActive ) return regressionData;
     return VectorDouble();
 }
 
@@ -1539,12 +2014,55 @@ bool MLP::validateActivationFunction(const UINT actvationFunction) const{
 	return false;
 }
 
+bool MLP::setInputLayerActivationFunction(const UINT activationFunction){
+    
+    if( !validateActivationFunction(activationFunction) ){
+        warningLog << "setInputLayerActivationFunction(const UINT activationFunction) - The activation function is not valid. It should be one of the Neuron ActivationFunctions enums." << endl;
+    }
+    
+    this->inputLayerActivationFunction = activationFunction;
+    
+    if( initialized ){
+        return init(numInputNeurons,numHiddenNeurons,numOutputNeurons);
+    }
+    
+    return true;
+}
+
+
+bool MLP::setHiddenLayerActivationFunction(const UINT activationFunction){
+    
+    if( !validateActivationFunction(activationFunction) ){
+        warningLog << "setHiddenLayerActivationFunction(const UINT activationFunction) - The activation function is not valid. It should be one of the Neuron ActivationFunctions enums." << endl;
+    }
+    
+    this->hiddenLayerActivationFunction = activationFunction;
+    
+    if( initialized ){
+        return init(numInputNeurons,numHiddenNeurons,numOutputNeurons);
+    }
+    
+    return true;
+}
+    
+
+bool MLP::setOutputLayerActivationFunction(const UINT activationFunction){
+    
+    if( !validateActivationFunction(activationFunction) ){
+        warningLog << "setOutputLayerActivationFunction(const UINT activationFunction) - The activation function is not valid. It should be one of the Neuron ActivationFunctions enums." << endl;
+    }
+    
+    this->outputLayerActivationFunction = activationFunction;
+    
+    if( initialized ){
+        return init(numInputNeurons,numHiddenNeurons,numOutputNeurons);
+    }
+    
+    return true;
+}
+    
 bool MLP::setTrainingRate(const double trainingRate){
-	if( trainingRate >= 0 && trainingRate <= 1.0 ){
-		this->learningRate = trainingRate;
-		return true;
-	}
-	return false;
+    return setLearningRate( trainingRate );
 }
 
 bool MLP::setMomentum(const double momentum){
@@ -1556,38 +2074,23 @@ bool MLP::setMomentum(const double momentum){
 }
 
 bool MLP::setGamma(const double gamma){
-	this->gamma = gamma;
-	return true;
-}
-
-bool MLP::setUseValidationSet(const bool useValidationSet){
-	this->useValidationSet = useValidationSet;
-	return true;
-}
-
-bool MLP::setRandomiseTrainingOrder(const bool randomiseTrainingOrder){
-	this->randomiseTrainingOrder = randomiseTrainingOrder;
-	return true;
-}
-    
-bool MLP::setMinNumEpochs(const UINT minNumEpochs){
-    if( minNumEpochs > 0 ){
-        this->minNumEpochs = minNumEpochs;
-        return true;
+	
+    if( gamma < 0 ){
+        warningLog << "setGamma(const double gamma) - Gamma must be greater than zero!" << endl;
     }
-    return false;
+    
+    this->gamma = gamma;
+    
+    if( initialized ){
+        return init(numInputNeurons,numHiddenNeurons,numOutputNeurons);
+    }
+    
+	return true;
 }
     
 bool MLP::setNumRandomTrainingIterations(const UINT numRandomTrainingIterations){
     if( numRandomTrainingIterations > 0 ){
         this->numRandomTrainingIterations = numRandomTrainingIterations;
-        return true;
-    }
-    return false;
-}
-bool MLP::setValidationSetSize(const UINT validationSetSize){
-    if( validationSetSize > 0 && validationSetSize < 100 ){
-        this->validationSetSize = validationSetSize;
         return true;
     }
     return false;

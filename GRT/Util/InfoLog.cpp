@@ -18,37 +18,15 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef GRT_NEURON_HEADER
-#define GRT_NEURON_HEADER
-
-#include "../../../Util/GRTCommon.h"
+#include "InfoLog.h"
 
 namespace GRT{
 
-class Neuron{
-public:
-    Neuron();
-    ~Neuron();
+bool InfoLog::infoLoggingEnabled = true;
     
-    bool init(const UINT numInputs,const UINT actvationFunction);
-    void clear();
-    double fire(const VectorDouble &x);
-	double getDerivative(const double &y);
-    static bool validateActivationFunction(const UINT actvationFunction);
-    
-	double gamma;
-    double bias;
-    double previousBiasUpdate;
-    VectorDouble weights;
-	VectorDouble previousUpdate;
-    UINT numInputs;
-    UINT activationFunction;
-    
-    enum ActivationFunctions{LINEAR=0,SIGMOID,BIPOLAR_SIGMOID,NUMBER_OF_ACTIVATION_FUNCTIONS};
-};
+bool InfoLog::enableLogging(bool loggingEnabled){
+    infoLoggingEnabled = loggingEnabled;
+    return infoLoggingEnabled;
+}
 
-}//End of namespace GRT
-
-#endif //GRT_NEURON_HEADER
-
-
+}; //End of namespace GRT

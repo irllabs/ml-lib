@@ -66,6 +66,13 @@ public:
     string getLastErrorMessage() const;
     
     /**
+	 This function returns the last info message as a string. If no info have occured, the string will be empty.
+     
+     @return returns the last info message as a string.
+     */
+    string getLastInfoMessage() const;
+    
+    /**
 	 This functions the GRT version number and revision as a string. If you do not want the revision number then set the returnRevision
      parameter to false.
      
@@ -86,6 +93,7 @@ protected:
 
     DebugLog debugLog;
     ErrorLog errorLog;
+    InfoLog infoLog;
     TrainingLog trainingLog;
     TestingLog testingLog;
     WarningLog warningLog;

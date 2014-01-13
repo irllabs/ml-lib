@@ -606,7 +606,6 @@ protected:
         sort(weights.begin(),weights.end(),IndexedDouble::sortIndexedDoubleByValueAscending);
         const unsigned int numWeights = (unsigned int)weights.size();
         unsigned int randIndex = 0;
-        unsigned int subsetStartIndex = 0;
         
         //If there are no valid weights then we just pick N random particles
         if( numWeights == 0 ){

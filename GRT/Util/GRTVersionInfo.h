@@ -34,7 +34,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #endif
 
 #if defined(__linux__)
-#define __GRT_LINUX_BUILD__
+    #define __GRT_LINUX_BUILD__
 #endif
 
 #endif //GRT_VERSION_INFO_HEADER

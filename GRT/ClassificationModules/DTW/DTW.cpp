@@ -198,16 +198,19 @@ bool DTW::train(LabelledTimeSeriesClassificationData labelledTrainingData){
         trainingLog << "Training Template: " << k << " Class: " << classLabel << endl;
 
 		//Check to make sure we actually have some training examples
-		if(numExamples<1){
-            errorLog << "_train(LabelledTimeSeriesClassificationData &labelledTrainingData) - Can not train model: Num of Example is < 1! Class: " << classLabel << endl;
+		if( numExamples < 1 ){
+            errorLog << "_train(LabelledTimeSeriesClassificationData &labelledTrainingData) - Can not train model: Num of Example is < 1! Class: " << classLabel << ". Turn off null rejection if you want to use DTW with only 1 training sample per class." << endl;
+			return false;
+		}
+        
+        if( numExamples == 1 && useNullRejection ){
+            errorLog << "_train(LabelledTimeSeriesClassificationData &labelledTrainingData) - Can not train model as there is only 1 example in class: " << classLabel << ". Turn off null rejection if you want to use DTW with only 1 training sample per class." << endl;
 			return false;
 		}
 
-		if(numExamples==1){//If we have just one training example then we have to use it as the template
+		if( numExamples == 1 ){//If we have just one training example then we have to use it as the template
             bestIndex = 0;
-
             nullRejectionThresholds[k] = 0.0;//TODO-We need a better way of calculating this!
-            warningLog << "_train(LabelledTimeSeriesClassificationData &labelledTrainingData) - Can't compute reject thresholds for class " << classLabel << " as there is only 1 training example" << endl;
 		}else{
             //Search for the best training example for this class
 			if( !train_NDDTW(classData,templatesBuffer[k],bestIndex) ){

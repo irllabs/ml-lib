@@ -181,7 +181,7 @@ public:
      
      @return returns true if cross validation is enabled, false otherwise
      */
-    bool getIsCrossValidationTrainingEnabled(){ return useCrossValidation; }
+    bool getIsCrossValidationTrainingEnabled() const;
     
     /**
      Gets if the gamma parameter will be automatically computed from the training data. 
@@ -189,7 +189,7 @@ public:
      
      @return returns true if the gamma parameter will be automatically computed, false otherwise
      */
-    bool getIsAutoGammaEnabled(){ return useAutoGamma; }
+    bool getIsAutoGammaEnabled() const;
     
     /**
      Gets the current SVM type as a string.
@@ -258,93 +258,93 @@ public:
      
      @return returns the last cross validation result.
      */
-    double getCrossValidationResult(){ return crossValidationResult; }
+    double getCrossValidationResult() const;
     
     /**
      Sets the SVM type.
      This should be one of the SVMTypes enumeration types.
      
-     @param UINT svmType: the new SVM type, options are C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR 
+     @param const UINT svmType: the new SVM type, options are C_SVC, NU_SVC, ONE_CLASS, EPSILON_SVR, NU_SVR 
      @return returns true if the SVM type was set correctly, false otherwise
      */
-    bool setSVMType(UINT svmType);
+    bool setSVMType(const UINT svmType);
     
     /**
      Sets the kernel type.
      This should be one of the SVMKernelTypes enumeration types.
      
-     @param UINT kernelType: the new kernel, options are LINEAR_KERNEL, POLY_KERNEL, RBF_KERNEL, SIGMOID_KERNEL, PRECOMPUTED_KERNEL 
+     @param const UINT kernelType: the new kernel, options are LINEAR_KERNEL, POLY_KERNEL, RBF_KERNEL, SIGMOID_KERNEL, PRECOMPUTED_KERNEL 
      @return returns true if the kernel type was set correctly, false otherwise
      */
-    bool setKernelType(UINT kernelType);
+    bool setKernelType(const UINT kernelType);
     
     /**
      Sets the SVM gamma parameter.  The user should only try and set this value manually if the useAutoGamma parameter has been set to false.
      
-     @param double gamma: the new gamma value
+     @param const double gamma: the new gamma value
      @return returns true if the gamma parameter was updated, false otherwise
      */
-    bool setGamma(double gamma);
+    bool setGamma(const double gamma);
     
     /**
      Sets the SVM degree parameter.
      This is only used if the SVM kernel parameter is set to POLY_KERNEL.
      
-     @param UINT degree: the new degree value
+     @param const UINT degree: the new degree value
      @return returns true if the degree parameter was updated, false otherwise
      */
-    bool setDegree(UINT degree);
+    bool setDegree(const UINT degree);
     
     /**
      Sets the SVM nu parameter.
      This is only used if the SVM type parameter is set to NU_SVC, ONE_CLASS, or NU_SVR.
      
-     @param double nu: the new nu value
+     @param const double nu: the new nu value
      @return returns true if the nu parameter was updated, false otherwise
      */
-    bool setNu(double nu);
+    bool setNu(const double nu);
     
     /**
      Sets the SVM coef0 parameter.  
      This is only used if the SVM kernel type parameter is set to POLY_KERNEL or SIGMOID_KERNEL.
      
-     @param double coef0: the new coef0 value
+     @param const double coef0: the new coef0 value
      @return returns true if the gamcoef0ma parameter was updated, false otherwise
      */
-    bool setCoef0(double coef0);
+    bool setCoef0(const double coef0);
     
     /**
      Sets the SVM C parameter.  
      This is only used if the SVM type parameter is set to C_SVC, EPSILON_SVR or NU_SVR.
      
-     @param double C: the new C value
+     @param const double C: the new C value
      @return returns true if the C parameter was updated, false otherwise
      */
-    bool setC(double C);
+    bool setC(const double C);
     
     /**
      Sets the kFold cross validation value.
      
-     @param UINT kFoldValue: the new kFoldValue, must be greater than 0
+     @param const UINT kFoldValue: the new kFoldValue, must be greater than 0
      return returns true if the kFoldValue was set, false otherwise
      */
-    bool setKFoldCrossValidationValue(UINT kFoldValue);
+    bool setKFoldCrossValidationValue(const UINT kFoldValue);
     
     /**
      Sets if the gamma parameter will be automatically computed from the training data.
      
-     @param bool useAutoGamma: the new useAutoGamma setting
+     @param const bool useAutoGamma: the new useAutoGamma setting
      return returns true if the useAutoGamma was set, false otherwise
      */
-    bool enableAutoGamma(bool useAutoGamma);
+    bool enableAutoGamma(const bool useAutoGamma);
     
     /**
      Sets if cross validation should be used during the training phase.
      
-     @param bool useCrossValidation: the new useCrossValidation setting
+     @param const bool useCrossValidation: the new useCrossValidation setting
      return returns true if the useCrossValidation was set, false otherwise
      */
-    bool enableCrossValidationTraining(bool useCrossValidation);
+    bool enableCrossValidationTraining(const bool useCrossValidation);
 
 protected:
     void deleteProblemSet();

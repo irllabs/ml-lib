@@ -46,7 +46,7 @@ namespace GRT{
 
 //Declare any common definitions
 #ifndef PI
-    #define PI 3.14159265358979323846
+    #define PI 3.14159265358979323846264338327950288
 #endif
     
 #ifndef TWO_PI
@@ -111,6 +111,7 @@ inline double antilog(const double &x){ return exp( x ); }
 #include "IndexedDouble.h"
 #include "DebugLog.h"
 #include "ErrorLog.h"
+#include "InfoLog.h"
 #include "TrainingLog.h"
 #include "TestingLog.h"
 #include "WarningLog.h"
@@ -119,6 +120,7 @@ inline double antilog(const double &x){ return exp( x ); }
 #include "TestResult.h"
 #include "CircularBuffer.h"
 #include "Timer.h"
+#include "TimeStamp.h"
 #include "Random.h"
 #include "Util.h"
 #include "EigenvalueDecomposition.h"

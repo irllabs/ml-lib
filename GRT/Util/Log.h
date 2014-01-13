@@ -224,8 +224,7 @@ public:
     
     //Setters
     void setProceedingText(const std::string &proceedingText){
-        this->proceedingText = proceedingText;
-        this->proceedingText+=": ";
+        this->proceedingText = proceedingText + ": ";
     }
 
 protected:

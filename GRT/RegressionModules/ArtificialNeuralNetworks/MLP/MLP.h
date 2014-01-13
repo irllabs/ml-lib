@@ -146,23 +146,36 @@ public:
      The number of output neurons should match the number of target dimensions in your training data.
      The number of hidden units should be chosen by the user, a common rule of thumb is to set this as
      a value somewhere between the number of input neurons and the number of output neurons.
+     Initializaling the MLP will clear any previous model or settings.
+     
+     This function calls the other init function below, passing in the layer activation functions.
+     
+     @param const UINT numInputNeurons: the number of input neurons (should match the number of input dimensions in your training data)
+     @param const UINT numHiddenNeurons: the number of hidden neurons
+     @param const UINT numOutputNeurons: the number of output neurons (should match the number of target dimensions in your training data)
+     @return returns true if the MLP was initialized, false otherwise
+     */
+    bool init(const UINT numInputNeurons, const UINT numHiddenNeurons, const UINT numOutputNeurons);
+    
+    /**
+     Initializes the MLP for training. This should be called before the MLP is trained.
+     The number of input neurons should match the number of input dimensions in your training data.
+     The number of output neurons should match the number of target dimensions in your training data.
+     The number of hidden units should be chosen by the user, a common rule of thumb is to set this as
+     a value somewhere between the number of input neurons and the number of output neurons.
      The activation functions should be one of the Neuron ActivationFunctions enums.
      Initializaling the MLP will clear any previous model or settings.
      
      @param const UINT numInputNeurons: the number of input neurons (should match the number of input dimensions in your training data)
      @param const UINT numHiddenNeurons: the number of hidden neurons
      @param const UINT numOutputNeurons: the number of output neurons (should match the number of target dimensions in your training data)
-     @param const UINT inputLayerActivationFunction: the activation function to use for the input layer. Default = Neuron::LINEAR
-     @param const UINT hiddenLayerActivationFunction: the activation function to use for the input layer. Default = Neuron::LINEAR
-     @param const UINT outputLayerActivationFunction: the activation function to use for the input layer. Default = Neuron::LINEAR
+     @param const UINT inputLayerActivationFunction: the activation function to use for the input layer
+     @param const UINT hiddenLayerActivationFunction: the activation function to use for the input layer
+     @param const UINT outputLayerActivationFunction: the activation function to use for the input layer
      @return returns true if the MLP was initialized, false otherwise
      */
-    bool init(const UINT numInputNeurons,const UINT numHiddenNeurons,const UINT numOutputNeurons,
-              const UINT inputLayerActivationFunction = Neuron::LINEAR,
-              const UINT hiddenLayerActivationFunction = Neuron::LINEAR,
-              const UINT outputLayerActivationFunction = Neuron::LINEAR);
-    
-    
+    bool init(const UINT numInputNeurons, const UINT numHiddenNeurons, const UINT numOutputNeurons, const UINT inputLayerActivationFunction,
+              const UINT hiddenLayerActivationFunction, const UINT outputLayerActivationFunction);
     
     /**
      Prints the current MLP weights and coefficents to std out.
@@ -243,13 +256,6 @@ public:
 	UINT getOutputLayerActivationFunction() const;
     
     /**
-     Gets the minimum number of epochs. This value controls how many epochs must be completed before the MLP training routine can stop.
-     
-     @return returns the minimum number of epochs
-     */
-	UINT getMinNumEpochs() const;
-    
-    /**
      Gets the number of random training iterations that should be performed during the training phase.
      The MLP back propagation algorithm starts with random values, and the accuracy of a trained model can depend on which random values
      the algorithm started with.  The GRT MLP algorithm therefore trains a number of models and picks the best one.  This value therefore
@@ -258,14 +264,6 @@ public:
      @return returns the number of random training iterations that should be performed during the training phase
      */
 	UINT getNumRandomTrainingIterations() const;
-    
-    /**
-     Gets the size (as a percentage) of the validation set (if one should be used). If this value returned 20 this would mean that
-     20% of the training data would be set aside to create a validation set and the other 80% would be used to actually train the MLP.
-     
-     @return returns the size of the validation set
-     */
-	UINT getValidationSetSize() const;
     
     /**
      Gets the training rate. This should be a value between [0 1]
@@ -295,22 +293,6 @@ public:
      @return returns the training error from the last round of training
      */
 	double getTrainingError() const;
-    
-    /**
-     Returns true if a validation set should be used for training. If true, then the training dataset will be partitioned into a smaller training dataset
-     and a validation set.  The size of the partition is controlled by the validationSetSize parameter.
-     
-     @return returns true if a validation set should be used for training, false otherwise
-     */
-	bool getUseValidationSet() const;
-    
-    /**
-     Returns true if the order of the training dataset should be randomized at each epoch of training. Randomizing the order of the training dataset stops
-     the MLP algorithm from focusing too much on the first few examples in the dataset.
-     
-     @return returns true if the order of the training dataset should be randomized, false otherwise
-     */
-	bool getRandomiseTrainingOrder() const;
 
     /**
      Returns true if the MLP is in classification mode.
@@ -392,11 +374,17 @@ public:
     
     /**
      Gets a vector of the class likelihoods from the last prediction, this will be an N-dimensional vector, where N is the number of classes in the model.
-     This value will return 0 if a prediction has not been made.
      
      @return returns a vector of the class likelihoods from the last prediction, an empty vector will be returned if the model has not been trained
      */
     VectorDouble getClassLikelihoods() const;
+    
+    /**
+     Gets a vector of the class distances from the last prediction, this will be an N-dimensional vector, where N is the number of classes in the model.
+     
+     @return returns a vector of the class distances from the last prediction, an empty vector will be returned if the model has not been trained
+     */
+    VectorDouble getClassDistances() const;
     
     /**
      Gets the predicted class label from the last prediction. This is only relevant if the MLP is in classification mode.
@@ -405,23 +393,106 @@ public:
      */
     UINT getPredictedClassLabel() const;
 
-	//Setters
-	bool setTrainingRate(const double trainingRate);
-	bool setMomentum(const double momentum);
-	bool setGamma(const double gamma);
-	bool setUseValidationSet(const bool useValidationSet);
-	bool setRandomiseTrainingOrder(const bool randomiseTrainingOrder);
-    bool setUseMultiThreadingTraining(const bool useMultiThreadingTraining);
-    bool setMinNumEpochs(const UINT minNumEpochs);
-    bool setNumRandomTrainingIterations(const UINT numRandomTrainingIterations);
-    bool setValidationSetSize(const UINT validationSetSize);
+    /**
+     This function sets the activation function for all the Neurons in the input layer.  If the MLP instance has been initialized 
+     then this function will also call the init function to reinitialize the instance.
+     
+     @param const UINT activationFunction: the activation function for the input layer, this should be one of the Neuron ActivationFunctions enums
+     @return returns true if the input layer activation function was set successfully, false otherwise
+     */
+	bool setInputLayerActivationFunction(const UINT activationFunction);
     
-    //Classifier Setters
+    /**
+     This function sets the activation function for all the Neurons in the hidden layer.  If the MLP instance has been initialized
+     then this function will also call the init function to reinitialize the instance.
+     
+     @param const UINT activationFunction: the activation function for the hidden layer, this should be one of the Neuron ActivationFunctions enums
+     @return returns true if the hidden layer activation function was set successfully, false otherwise
+     */
+	bool setHiddenLayerActivationFunction(const UINT activationFunction);
+    
+    /**
+     This function sets the activation function for all the Neurons in the output layer.  If the MLP instance has been initialized
+     then this function will also call the init function to reinitialize the instance.
+     
+     @param const UINT activationFunction: the activation function for the output layer, this should be one of the Neuron ActivationFunctions enums
+     @return returns true if the output layer activation function was set successfully, false otherwise
+     */
+	bool setOutputLayerActivationFunction(const UINT activationFunction);
+	
+    /**
+     Sets the training rate, which controls the learning rate parameter. This is used to update the weights at each step of the stochastic gradient descent.
+     The learningRate value must be greater than zero, a value of 0.1 normally works well. If you find the MLP fails to train with this value then try 
+     setting the learning rate to a smaller value (for example 0.01).
+     
+     @param const double trainingRate: the learningRate value used during the training phase, must be greater than zero
+     @return returns true if the value was updated successfully, false otherwise
+     */
+    bool setTrainingRate(const double trainingRate);
+    
+    /**
+     Sets the momentum parameter. This is used to update the weights at each step of the stochastic gradient descent.
+     The momentum parameter is normally set between [0.1 0.9], with 0.5 being a common value.
+     
+     @param const double momentum: the momentum value used during the training phase, must be greater than zero
+     @return returns true if the value was updated successfully, false otherwise
+     */
+	bool setMomentum(const double momentum);
+    
+    /**
+     Sets the gamma parameter for the Neurons. Gamma must be greater than zero.
+     If the MLP instance has been initialized then this function will also call the init function to reinitialize the instance.
+     
+     @param const double gamma: the gamma value for each Neuron, gamma must be greater than zero
+     @return returns true if the value was updated successfully, false otherwise
+     */
+	bool setGamma(const double gamma);
+	
+	/**
+     Sets number of times the MLP model should be trained to find the best model.  This value must be greater than zero.
+     
+     Setting this value to a high number (i.e. 100) will most likely give you a better model, however it will take much longer to train 
+     the overall model.  Setting this value to a low number (i.e. 5) will make the training process much faster, but you might not get the 
+     best model.
+     
+     @param const UINT numRandomTrainingIterations: the number of times you want to randomly train the MLP model to search for the best results
+     @return returns true if the value was updated successfully, false otherwise
+     */
+    bool setNumRandomTrainingIterations(const UINT numRandomTrainingIterations);
+    
+    /**
+     Sets if null rejection should be used for the real-time prediction.  This is only used if the MLP is in classificationMode.
+     
+     @param const bool useNullRejection: if true then null rejection will be used
+     @return returns true if the value was updated successfully, false otherwise
+     */
     bool setNullRejection(const bool useNullRejection);
+    
+    /**
+     This function lets you manually control the null rejection threshold. Any class with a prediction value less than the null rejection threshold
+     will be rejected, setting the predicted class label to 0.
+     
+     This is only used if the MLP is in classificationMode.
+     
+     @param const double nullRejectionCoeff: the new null rejection threshold
+     @return returns true if the value was updated successfully, false otherwise
+     */
     bool setNullRejectionCoeff(const double nullRejectionCoeff);
     
 protected:
     bool inline isNAN(const double v) const;
+    
+    /**
+     This is the main training function for both regression and classification.
+     
+     @param LabelledRegressionData &trainingData: the data that will be used to train the model
+     @return returns true if the model was trained, false otherwise
+     */
+    bool train_(LabelledRegressionData &trainingData);
+    
+    bool trainOnlineGradientDescentClassification(const LabelledRegressionData &trainingData,const LabelledRegressionData &validationData);
+    
+    bool trainOnlineGradientDescentRegression(const LabelledRegressionData &trainingData,const LabelledRegressionData &validationData);
     
     /**
      Performs one round of back propagation, using the training example and target vector
@@ -458,15 +529,12 @@ protected:
     UINT inputLayerActivationFunction;
     UINT hiddenLayerActivationFunction;
     UINT outputLayerActivationFunction;
-	UINT minNumEpochs;
     UINT numRandomTrainingIterations;
-	UINT validationSetSize;
+    UINT trainingMode;
 	double momentum;
 	double gamma;
     double trainingError;
     bool initialized;
-	bool useValidationSet;
-	bool randomiseTrainingOrder;
     Random random;
     
     vector< Neuron > inputLayer;
@@ -491,6 +559,9 @@ protected:
     VectorDouble outputNeuronsOutput;
     VectorDouble deltaO;
     VectorDouble deltaH;
+    
+public:
+    enum TrainingModes{ONLINE_GRADIENT_DESCENT};
     
 };
 

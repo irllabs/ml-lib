@@ -121,6 +121,13 @@ public:
     virtual bool loadModelFromFile(fstream &file);
     
     /**
+     Gets the current maxNumIterations value, this is the maximum number of iterations that can be run during the training phase.
+     
+     @return returns the maxNumIterations value
+     */
+    UINT getMaxNumIterations() const;
+    
+    /**
      Sets the maximum number of iterations that can be run during the training phase.
      The maxNumIterations value must be greater than zero.
      
@@ -128,13 +135,6 @@ public:
      @return returns true if the value was updated successfully, false otherwise
      */
     bool setMaxNumIterations(UINT maxNumIterations);
-    
-    /**
-     Gets the current maxNumIterations value, this is the maximum number of iterations that can be run during the training phase.
-     
-     @return returns the maxNumIterations value
-     */
-    UINT getMaxNumIterations() const;
 
 private:
 	inline double sigmoid(const double x) const;

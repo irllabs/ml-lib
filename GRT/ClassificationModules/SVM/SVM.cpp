@@ -988,6 +988,14 @@ bool SVM::clear(){
     return true;
 }
     
+bool SVM::getIsCrossValidationTrainingEnabled() const{
+    return useCrossValidation;
+}
+    
+bool SVM::getIsAutoGammaEnabled() const{
+    return useAutoGamma;
+}
+    
 string SVM::getSVMType() const{
 
 	const struct svm_parameter *paramPtr = NULL;
@@ -1087,8 +1095,10 @@ double SVM::getC() const{
     }
     return param.gamma;
 }
+    
+double SVM::getCrossValidationResult() const{ return crossValidationResult; }
 
-bool SVM::setSVMType(UINT svmType){
+bool SVM::setSVMType(const UINT svmType){
     if( validateSVMType(svmType) ){
         param.svm_type = (int)svmType;
         return true;
@@ -1096,7 +1106,7 @@ bool SVM::setSVMType(UINT svmType){
     return false;
 }
     
-bool SVM::setKernelType(UINT kernelType){
+bool SVM::setKernelType(const UINT kernelType){
     if( validateKernelType(kernelType) ){
         param.kernel_type = (int)kernelType;
         return true;
@@ -1105,7 +1115,7 @@ bool SVM::setKernelType(UINT kernelType){
     return false;
 }
     
-bool SVM::setGamma(double gamma){
+bool SVM::setGamma(const double gamma){
     if( !useAutoGamma ){
         this->param.gamma = gamma;
         return true;
@@ -1114,46 +1124,46 @@ bool SVM::setGamma(double gamma){
     return false;
 }
     
-bool SVM::setDegree(UINT degree){
+bool SVM::setDegree(const UINT degree){
     this->param.degree = (int)degree;
     return true;
 }
     
-bool SVM::setNu(double nu){
+bool SVM::setNu(const double nu){
     this->param.nu = nu;
     return true;
 }
 
-bool SVM::setCoef0(double coef0){
+bool SVM::setCoef0(const double coef0){
     this->param.coef0 = coef0;
     return true;
 }
 
-bool SVM::setC(double C){
+bool SVM::setC(const double C){
     this->param.C = C;
     return true;
 }
     
-bool SVM::setKFoldCrossValidationValue(UINT kFoldValue){
+bool SVM::setKFoldCrossValidationValue(const UINT kFoldValue){
     if( kFoldValue > 0 ){
         this->kFoldValue = kFoldValue;
         return true;
     }
-    warningLog << "setKFoldCrossValidationValue(UINT kFoldValue) - Failed to set kFoldValue, the kFoldValue must be greater than 0!" << endl;
+    warningLog << "setKFoldCrossValidationValue(const UINT kFoldValue) - Failed to set kFoldValue, the kFoldValue must be greater than 0!" << endl;
     return false;
 }
     
-bool SVM::enableAutoGamma(bool useAutoGamma){
+bool SVM::enableAutoGamma(const bool useAutoGamma){
     this->useAutoGamma = useAutoGamma;
     return true;
 }
 
-bool SVM::enableCrossValidationTraining(bool useCrossValidation){
+bool SVM::enableCrossValidationTraining(const bool useCrossValidation){
     this->useCrossValidation = useCrossValidation;
     return true;
 }
     
-bool SVM::validateSVMType(UINT svmType){
+bool SVM::validateSVMType(const UINT svmType){
     if( svmType == C_SVC ){
         return true;
     }
@@ -1172,7 +1182,7 @@ bool SVM::validateSVMType(UINT svmType){
     return false;
 }
     
-bool SVM::validateKernelType(UINT kernelType){
+bool SVM::validateKernelType(const UINT kernelType){
     if( kernelType == LINEAR_KERNEL ){
         return true;
     }

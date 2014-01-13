@@ -32,7 +32,11 @@ Neuron::Neuron(){
 
 Neuron::~Neuron(){}
 
-void Neuron::init(unsigned int numInputs,unsigned int activationFunction){
+bool Neuron::init(const UINT numInputs,const UINT activationFunction){
+    
+    if( !validateActivationFunction(activationFunction) ){
+        return false;
+    }
     
     this->numInputs = numInputs;
     this->activationFunction = activationFunction;
@@ -41,6 +45,7 @@ void Neuron::init(unsigned int numInputs,unsigned int activationFunction){
 	previousUpdate.resize(numInputs);
     
     //Set the random seed
+    Random random;
     random.setSeed( (unsigned long long)time(NULL) );
     
     //Randomise the weights between [-0.1 0.1]
@@ -50,8 +55,10 @@ void Neuron::init(unsigned int numInputs,unsigned int activationFunction){
 		previousUpdate[i] = 0;
     }
 
-	//Randomise the bias between [-0.1 1.0]
-	 bias = random.getRandomNumberUniform(-0.1,0.1);
+	//Randomise the bias between [-0.1 0.1]
+    bias = random.getRandomNumberUniform(-0.1,0.1);
+    
+    return true;
 }
 
 void Neuron::clear(){
@@ -64,16 +71,22 @@ void Neuron::clear(){
 
 double Neuron::fire(const VectorDouble &x){
     
-    double y = bias;
-    for(UINT i=0; i<numInputs; i++){
-        y += x[i] * weights[i];
-    }
+    double y = 0;
     
     switch( activationFunction ){
         case(LINEAR):
+            y = bias;
+            for(UINT i=0; i<numInputs; i++){
+                y += x[i] * weights[i];
+            }
             break;
         case(SIGMOID):
-			//Trick for stopping overflow
+            y = bias;
+            for(UINT i=0; i<numInputs; i++){
+                y += x[i] * weights[i];
+            }
+	
+            //Trick for stopping overflow
 			if( y < -45.0 ){ y = 0; }
 			else if( y > 45.0 ){ y = 1.0; }
 			else{
@@ -81,7 +94,12 @@ double Neuron::fire(const VectorDouble &x){
 			}
             break;
         case(BIPOLAR_SIGMOID):
-			if( y < -45.0 ){ y = 0; }
+            y = bias;
+            for(UINT i=0; i<numInputs; i++){
+                y += x[i] * weights[i];
+            }
+	
+            if( y < -45.0 ){ y = 0; }
 			else if( y > 45.0 ){ y = 1.0; }
 			else{
 				y = (2.0 / (1.0 + exp(-gamma * y))) - 1.0;
@@ -92,7 +110,7 @@ double Neuron::fire(const VectorDouble &x){
     
 }
 
-double Neuron::getDerivative(double y){
+double Neuron::getDerivative(const double &y){
 
 	double yy = 0;
 	switch( activationFunction ){

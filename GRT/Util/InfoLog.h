@@ -18,37 +18,39 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef GRT_NEURON_HEADER
-#define GRT_NEURON_HEADER
+#ifndef GRT_INFO_LOG_HEADER
+#define GRT_INFO_LOG_HEADER
 
-#include "../../../Util/GRTCommon.h"
+#include "Log.h"
 
 namespace GRT{
 
-class Neuron{
+class InfoLog : public Log{
 public:
-    Neuron();
-    ~Neuron();
+    InfoLog(std::string proceedingText = ""){ setProceedingText(proceedingText); Log::loggingEnabledPtr = &infoLoggingEnabled; }
+
+    virtual ~InfoLog(){}
+
+    InfoLog& operator=(const InfoLog &rhs){
+        if( this != &rhs ){
+            this->proceedingText = rhs.proceedingText;
+            this->writeProceedingText = rhs.writeProceedingText;
+            this->loggingEnabledPtr = &infoLoggingEnabled;
+            this->writeProceedingTextPtr = &writeProceedingText;
+        }
+        return *this;
+    }
+
+    //Getters
+    virtual bool loggingEnabled(){ return infoLoggingEnabled; }
     
-    bool init(const UINT numInputs,const UINT actvationFunction);
-    void clear();
-    double fire(const VectorDouble &x);
-	double getDerivative(const double &y);
-    static bool validateActivationFunction(const UINT actvationFunction);
-    
-	double gamma;
-    double bias;
-    double previousBiasUpdate;
-    VectorDouble weights;
-	VectorDouble previousUpdate;
-    UINT numInputs;
-    UINT activationFunction;
-    
-    enum ActivationFunctions{LINEAR=0,SIGMOID,BIPOLAR_SIGMOID,NUMBER_OF_ACTIVATION_FUNCTIONS};
+    //Setters
+    static bool enableLogging(bool loggingEnabled);
+
+protected:
+    static bool infoLoggingEnabled;
 };
 
-}//End of namespace GRT
+}; //End of namespace GRT
 
-#endif //GRT_NEURON_HEADER
-
-
+#endif //GRT_INFO_LOG_HEADER
