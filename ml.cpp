@@ -84,7 +84,7 @@ void ml_base::init()
     }
 
     currentLabel = 0;
-    estimates = false;
+    probs = false;
     AddOutAnything("general purpose outlet");
     set_enable_scaling(true);
 }
@@ -134,14 +134,14 @@ void ml_base::get_enable_scaling(bool &enable_scaling) const
     }
 }
 
-void ml_base::set_enable_estimates(bool enable_estimates)
+void ml_base::set_probs(bool probs)
 {
-    estimates = enable_estimates;
+    this->probs = probs;
 }
 
-void ml_base::get_enable_estimates(bool &enable_estimates) const
+void ml_base::get_probs(bool &probs) const
 {
-    enable_estimates = estimates;
+    probs = this->probs;
 }
     
 void ml_base::add(int argc, const t_atom *argv)
@@ -376,10 +376,10 @@ void ml_base::usage()
 void ml_base::setup(t_classid c)
 {
     FLEXT_CADDATTR_SET(c, "enable_scaling", set_enable_scaling);
-    FLEXT_CADDATTR_SET(c, "enable_estimates", set_enable_estimates);
+    FLEXT_CADDATTR_SET(c, "probs", set_probs);
     
     FLEXT_CADDATTR_GET(c, "enable_scaling", get_enable_scaling);
-    FLEXT_CADDATTR_GET(c, "enable_estimates", get_enable_estimates);
+    FLEXT_CADDATTR_GET(c, "probs", get_probs);
     
     FLEXT_CADDMETHOD_(c, 0, "add", add);
     FLEXT_CADDMETHOD_(c, 0, "record", record);
@@ -553,10 +553,10 @@ void ml_classification_base::classify(int argc, const t_atom *argv)
         return;
     }
     
-    if (estimates)
+    if (probs)
     {
         GRT::VectorDouble likelihoods = classifier->getClassLikelihoods();
-        AtomList estimates_l;
+        AtomList probs_l;
         
         if (mode == LABELLED_CLASSIFICATION || mode == LABELLED_TIME_SERIES_CLASSIFICATION)
         {
@@ -591,8 +591,8 @@ void ml_classification_base::classify(int argc, const t_atom *argv)
                     SetDouble(&likelihood_a, likelihoods[count]);
                     SetInt(label_a, labels[count]);
                     
-                    estimates_l.Append(label_a);
-                    estimates_l.Append(likelihood_a);
+                    probs_l.Append(label_a);
+                    probs_l.Append(likelihood_a);
                 }
             }
             
@@ -605,11 +605,11 @@ void ml_classification_base::classify(int argc, const t_atom *argv)
                 t_atom likelihood_a;
                 
                 SetDouble(&likelihood_a, likelihoods[count]);
-                estimates_l.Append(likelihood_a);
+                probs_l.Append(likelihood_a);
             }
         }
         
-        ToOutAnything(1, s_estimates, estimates_l);
+        ToOutAnything(1, s_probs, probs_l);
     }
     
     GRT::UINT classification = classifier->getPredictedClassLabel();
@@ -798,7 +798,7 @@ const t_symbol *ml_base::s_train = flext::MakeSymbol("train");
 const t_symbol *ml_base::s_cleared = flext::MakeSymbol("cleared");
 const t_symbol *ml_base::s_loaded = flext::MakeSymbol("loaded");
 const t_symbol *ml_base::s_saved = flext::MakeSymbol("saved");
-const t_symbol *ml_base::s_estimates = flext::MakeSymbol("estimates");
+const t_symbol *ml_base::s_probs = flext::MakeSymbol("probs");
 
     
 } // namespace ml

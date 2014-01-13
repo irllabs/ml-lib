@@ -121,7 +121,7 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "epsilon", set_epsilon);
             FLEXT_CADDATTR_SET(c, "cachesize", set_cachesize);
             FLEXT_CADDATTR_SET(c, "shrinking", set_shrinking);
-            FLEXT_CADDATTR_SET(c, "estimates", set_estimates);
+            FLEXT_CADDATTR_SET(c, "probs", set_probs);
             FLEXT_CADDATTR_SET(c, "weights", set_weights);
             FLEXT_CADDATTR_SET(c, "mode", set_kfold_value);
             FLEXT_CADDATTR_SET(c, "enable_cross_validation", set_enable_cross_validation);
@@ -137,7 +137,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "epsilon", get_epsilon);
             FLEXT_CADDATTR_GET(c, "cachesize", get_cachesize);
             FLEXT_CADDATTR_GET(c, "shrinking", get_shrinking);
-            FLEXT_CADDATTR_GET(c, "estimates", get_estimates);
+            FLEXT_CADDATTR_GET(c, "probs", get_probs);
             FLEXT_CADDATTR_GET(c, "weights", get_weights);
             FLEXT_CADDATTR_GET(c, "mode", get_kfold_value);
             
@@ -159,7 +159,7 @@ namespace ml
         void set_epsilon(float epsilon);
         void set_cachesize(int cachesize);
         void set_shrinking(int shrinking);
-        void set_estimates(bool estimates);
+        void set_probs(bool probs);
         void set_weights(const AtomList &weights);
         void set_kfold_value(int mode);
         void set_enable_cross_validation(bool enable_cross_validation);
@@ -175,7 +175,7 @@ namespace ml
         void get_epsilon(float &epsilon) const;
         void get_cachesize(int &cachesize) const;
         void get_shrinking(int &shrinking) const;
-        void get_estimates(bool &estimates) const;
+        void get_probs(bool &probs) const;
         void get_weights(AtomList &weights) const;
         void get_kfold_value(int &mode) const;
         
@@ -194,7 +194,7 @@ namespace ml
         FLEXT_CALLVAR_F(get_epsilon, set_epsilon);
         FLEXT_CALLVAR_I(get_cachesize, set_cachesize);
         FLEXT_CALLVAR_I(get_shrinking, set_shrinking);
-        FLEXT_CALLVAR_B(get_estimates, set_estimates);
+        FLEXT_CALLVAR_B(get_probs, set_probs);
         FLEXT_CALLVAR_V(get_weights, set_weights);
         FLEXT_CALLVAR_I(get_kfold_value, set_kfold_value);
         FLEXT_CALLSET_B(set_enable_cross_validation);
@@ -283,9 +283,9 @@ namespace ml
         error("function not implemented");
     }
     
-    void ml_svm::set_estimates(bool estimates)
+    void ml_svm::set_probs(bool probs)
     {
-        this->estimates = estimates;
+        this->probs = probs;
     }
     
     void ml_svm::set_weights(const AtomList &weights)
@@ -357,9 +357,9 @@ namespace ml
         error("function not implemented");
     }
     
-    void ml_svm::get_estimates(bool &estimates) const
+    void ml_svm::get_probs(bool &probs) const
     {
-        estimates = this->estimates;
+        probs = this->probs;
     }
     
     void ml_svm::get_weights(AtomList &weights) const
@@ -405,7 +405,7 @@ namespace ml
         post("cachesize:\tset cache memory size in MB (default 100)");
         post("epsilon:\tset tolerance of termination criterion (default 0.001)");
         post("shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)");
-        post("estimates:\twhether to train a SVC or SVR model for probability estimates, 0 or 1 (default 0)");
+        post("probs:\twhether to train a SVC or SVR model for probability probs, 0 or 1 (default 0)");
         post("weights:\tlist of weight tuples 'class:weight' to set the parameter of class to weight*C, for C-SVC (default 1)");
         post("n:\tn-fold cross validation mode");
         post("%s", ML_POST_SEP);

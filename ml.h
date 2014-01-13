@@ -68,7 +68,7 @@ protected:
     static const t_symbol *s_cleared;
     static const t_symbol *s_loaded;
     static const t_symbol *s_saved;
-    static const t_symbol *s_estimates;
+    static const t_symbol *s_probs;
     
     virtual void add(int argc, const t_atom *argv);
     virtual void save(const t_symbol *path) const;
@@ -81,11 +81,11 @@ protected:
     
     // Attribute setters
     void set_enable_scaling(bool enable_scaling);
-    void set_enable_estimates(bool enable_estimates);
+    void set_probs(bool probs);
     
     // Attribute getters
     void get_enable_scaling(bool &enable_scaling) const;
-    void get_enable_estimates(bool &enable_estimates) const;
+    void get_probs(bool &probs) const;
     
     // Instance variables
     GRT::MLBase *mlBase; // TODO: maybe switch to reference if all derived classes aggregate an MLBase derived class
@@ -97,7 +97,7 @@ protected:
     GRT::MatrixDouble timeSeriesData;
     GRT::UINT currentLabel;
     std::string grt_version;
-    bool estimates;
+    bool probs;
     bool recording;
 
     
@@ -115,7 +115,7 @@ private:
 
     // Attribute wrappers
     FLEXT_CALLVAR_B(get_enable_scaling, set_enable_scaling);
-    FLEXT_CALLVAR_B(get_enable_estimates, set_enable_estimates);
+    FLEXT_CALLVAR_B(get_probs, set_probs);
     
     // Instance variables
 };

@@ -598,7 +598,7 @@ namespace ml
             return;
         }
         
-        // TODO: add estimates to attributes
+        // TODO: add probs to attributes
         if (mlp.getClassificationModeActive())
         {
             GRT::VectorDouble likelihoods = mlp.getClassLikelihoods();
@@ -611,7 +611,7 @@ namespace ml
             }
             else
             {
-                AtomList estimates;
+                AtomList probs;
 
                 for (uid_t count = 0; count < labels.size(); ++count)
                 {
@@ -622,10 +622,10 @@ namespace ml
                     SetDouble(&likelihood_a, likelihoods[count]);
                     SetInt(label_a, labels[count]);
                     
-                    estimates.Append(label_a);
-                    estimates.Append(likelihood_a);
+                    probs.Append(label_a);
+                    probs.Append(likelihood_a);
                 }
-                ToOutAnything(1, s_estimates, estimates);
+                ToOutAnything(1, s_probs, probs);
             }
                  
             ToOutInt(0, classification);
