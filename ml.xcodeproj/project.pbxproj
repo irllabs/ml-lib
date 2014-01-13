@@ -293,6 +293,8 @@
 		7D61B11918788BD6000FD114 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
+		7DA8B7F2188489B50066EAB0 /* InfoLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */; };
+		7DA8B7F3188489B50066EAB0 /* InfoLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */; };
 		7DF077F81847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		7DF077F91847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		E98573570D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
@@ -513,6 +515,9 @@
 		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ml.peak/ml_peak.cpp; sourceTree = "<group>"; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
+		7DA8B7EF1884894D0066EAB0 /* TimeStamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeStamp.h; sourceTree = "<group>"; };
+		7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InfoLog.cpp; sourceTree = "<group>"; };
+		7DA8B7F1188489B50066EAB0 /* InfoLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoLog.h; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ml.svm/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1096,6 +1101,9 @@
 		7D12D227186081C7009D2059 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7DA8B7F1188489B50066EAB0 /* InfoLog.h */,
+				7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */,
+				7DA8B7EF1884894D0066EAB0 /* TimeStamp.h */,
 				7D12D228186081C7009D2059 /* Cholesky.cpp */,
 				7D12D229186081C7009D2059 /* Cholesky.h */,
 				7D12D22A186081C7009D2059 /* CircularBuffer.h */,
@@ -1403,6 +1411,7 @@
 				7D12D304186081C7009D2059 /* ClassLabelTimeoutFilter.cpp in Sources */,
 				7D12D288186081C7009D2059 /* MinDistModel.cpp in Sources */,
 				7D12D347186081C7009D2059 /* MatrixDouble.cpp in Sources */,
+				7DA8B7F2188489B50066EAB0 /* InfoLog.cpp in Sources */,
 				7D12D2E4186081C7009D2059 /* Classifier.cpp in Sources */,
 				7D12D2CC186081C7009D2059 /* KMeansQuantizer.cpp in Sources */,
 				7D12D2D8186081C7009D2059 /* PeakDetection.cpp in Sources */,
@@ -1498,6 +1507,7 @@
 				7D12D305186081C7009D2059 /* ClassLabelTimeoutFilter.cpp in Sources */,
 				7D12D289186081C7009D2059 /* MinDistModel.cpp in Sources */,
 				7D12D348186081C7009D2059 /* MatrixDouble.cpp in Sources */,
+				7DA8B7F3188489B50066EAB0 /* InfoLog.cpp in Sources */,
 				7D12D2E5186081C7009D2059 /* Classifier.cpp in Sources */,
 				7D12D2CD186081C7009D2059 /* KMeansQuantizer.cpp in Sources */,
 				7D12D2D9186081C7009D2059 /* PeakDetection.cpp in Sources */,

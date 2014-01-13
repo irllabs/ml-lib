@@ -539,20 +539,19 @@ namespace ml
         if (!success)
         {
             error("training failed");
-            return;
         }
         
-        if ((mode == LABELLED_CLASSIFICATION && mlp.getClassificationModeActive() == false) || (mode == LABELLED_REGRESSION && mlp.getRegressionModeActive() == false))
-        {
-            // TODO: due a bug in GRT, this will occur if setting to regression mode after setting to classification mode (see: http://www.nickgillian.com/forum/index.php?topic=63.0)
-            error("mode mismatch");
-            return;
-        }
+//        if ((mode == LABELLED_CLASSIFICATION && mlp.getClassificationModeActive() == false) || (mode == LABELLED_REGRESSION && mlp.getRegressionModeActive() == false))
+//        {
+//            // TODO: due a bug in GRT, this will occur if setting to regression mode after setting to classification mode (see: http://www.nickgillian.com/forum/index.php?topic=63.0)
+//            error("mode mismatch");
+//            return;
+//        }
         
-        t_atom a_num_classes;
+        t_atom a_success;
         
-        SetInt(a_num_classes, mlp.getNumClasses());
-        ToOutAnything(1, s_train, 1, &a_num_classes);
+        SetInt(a_success, success);
+        ToOutAnything(1, s_train, 1, &a_success);
     }
     
     void ml_mlp::clear()

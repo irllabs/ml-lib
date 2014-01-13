@@ -479,13 +479,12 @@ void ml_classification_base::train()
     if (!success)
     {
         error("training failed");
-        return;
     }
     
-    t_atom a_num_classes;
+    t_atom a_success;
     
-    SetInt(a_num_classes, defaultNumOutputDimensions);
-    ToOutAnything(1, s_train, 1, &a_num_classes);
+    SetInt(a_success, success);
+    ToOutAnything(1, s_train, 1, &a_success);
 }
 
 void ml_classification_base::clear()
@@ -679,13 +678,12 @@ void ml_regression_base::train()
     if (!success)
     {
         error("training failed");
-        return;
     }
     
-    t_atom a_num_classes;
+    t_atom a_success;
     
-    SetInt(a_num_classes, defaultNumOutputDimensions);
-    ToOutAnything(1, s_train, 1, &a_num_classes);
+    SetInt(a_success, success);
+    ToOutAnything(1, s_train, 1, &a_success);
 }
 
 void ml_regression_base::clear()
