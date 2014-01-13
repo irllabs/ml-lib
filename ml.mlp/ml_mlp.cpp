@@ -103,7 +103,7 @@ namespace ml
         // Methods
         void clear();
         void train();
-        void classify(int argc, const t_atom *argv);
+        void map(int argc, const t_atom *argv);
         void usage();
         
         // Attribute Setters
@@ -560,7 +560,7 @@ namespace ml
         ml_base::clear();
     }
         
-    void ml_mlp::classify(int argc, const t_atom *argv)
+    void ml_mlp::map(int argc, const t_atom *argv)
     {
         GRT::UINT numSamples = mode == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();
 
@@ -594,7 +594,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to classify input");
+            error("unable to map input");
             return;
         }
         
@@ -689,7 +689,7 @@ namespace ml
         post("load:\tload training examples, first argument gives path to the load location");
         post("train:\ttrain the MLP based on vectors added with 'add'");
         post("clear:\tclear the stored training data and model");
-        post("classify:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode");
+        post("map:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode");
         post("help:\tpost this usage statement to the console");
         post("%s", ML_POST_SEP);
     }

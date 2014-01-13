@@ -417,7 +417,7 @@ namespace ml
         post("cross_validation:\t\tperform cross-validation");
         post("train:\ttrain the SVM based on labelled vectors added with 'add'");
         post("clear:\tclear the stored training data");
-        post("classify:\tgive the class of the input feature vector provided as a list");
+        post("map:\tgive the class of the input feature vector provided as a list");
         post("help:\tpost this usage statement to the console");
         post("%s", ML_POST_SEP);
         

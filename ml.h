@@ -75,7 +75,7 @@ protected:
     virtual void load(const t_symbol *path);
     virtual void train();
     virtual void clear();
-    virtual void classify(int argc, const t_atom *argv);
+    virtual void map(int argc, const t_atom *argv);
     virtual void usage();
     void record(bool state);
     
@@ -110,7 +110,7 @@ private:
     FLEXT_CALLBACK_S(load);
     FLEXT_CALLBACK(train);
     FLEXT_CALLBACK(clear);
-    FLEXT_CALLBACK_V(classify);
+    FLEXT_CALLBACK_V(map);
     FLEXT_CALLBACK(usage);
 
     // Attribute wrappers
@@ -151,7 +151,7 @@ protected:
     // Methods
     void clear();
     void train();
-    void classify(int argc, const t_atom *argv);
+    void map(int argc, const t_atom *argv);
 //    void usage();
     
     // Attribute Setters
@@ -210,7 +210,7 @@ protected:
     // Methods
     void clear();
     void train();
-    void classify(int argc, const t_atom *argv);
+    void map(int argc, const t_atom *argv);
     void usage();
     
     // Attribute Setters

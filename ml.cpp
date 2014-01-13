@@ -363,7 +363,7 @@ void ml_base::train()
     error("function not implemented");
 }
 
-void ml_base::classify(int argc, const t_atom *argv)
+void ml_base::map(int argc, const t_atom *argv)
 {
     error("function not implemented");
 }
@@ -387,7 +387,7 @@ void ml_base::setup(t_classid c)
     FLEXT_CADDMETHOD_(c, 0, "load", load);
     FLEXT_CADDMETHOD_(c, 0, "train", train);
     FLEXT_CADDMETHOD_(c, 0, "clear", clear);
-    FLEXT_CADDMETHOD_(c, 0, "classify", classify);
+    FLEXT_CADDMETHOD_(c, 0, "map", map);
     FLEXT_CADDMETHOD_(c, 0, "help", usage);
 }
     
@@ -493,7 +493,7 @@ void ml_classification_base::clear()
     ml_base::clear();
 }
 
-void ml_classification_base::classify(int argc, const t_atom *argv)
+void ml_classification_base::map(int argc, const t_atom *argv)
 {
     GRT::UINT numSamples = get_num_samples();
     
@@ -549,7 +549,7 @@ void ml_classification_base::classify(int argc, const t_atom *argv)
     
     if (success == false)
     {
-        error("unable to classify input");
+        error("unable to map input");
         return;
     }
     
@@ -692,7 +692,7 @@ void ml_regression_base::clear()
     ml_base::clear();
 }
 
-void ml_regression_base::classify(int argc, const t_atom *argv)
+void ml_regression_base::map(int argc, const t_atom *argv)
 {
     GRT::UINT numSamples = labelledRegressionData.getNumSamples();
     
@@ -726,7 +726,7 @@ void ml_regression_base::classify(int argc, const t_atom *argv)
     
     if (success == false)
     {
-        error("unable to classify input");
+        error("unable to map input");
         return;
     }
     
@@ -768,7 +768,7 @@ void ml_regression_base::usage()
     post("load:\tload training examples, first argument gives path to the load location");
     post("train:\ttrain the MLP based on vectors added with 'add'");
     post("clear:\tclear the stored training data and model");
-    post("classify:\tgive the regression value for the input feature vector");
+    post("map:\tgive the regression value for the input feature vector");
     post("help:\tpost this usage statement to the console");
     post("%s", ML_POST_SEP);
 }

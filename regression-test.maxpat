@@ -1293,7 +1293,7 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "message",
-									"text" : "classify 1 0",
+									"text" : "map 1 0",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"fontsize" : 12.0,
@@ -1320,7 +1320,7 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "newobj",
-									"text" : "print classify",
+									"text" : "print map",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"fontsize" : 12.0,
@@ -1375,7 +1375,7 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "message",
-									"text" : "classify 0 1",
+									"text" : "map 0 1",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"fontsize" : 12.0,
