@@ -207,7 +207,7 @@ public:
 	 @param string filename: the name of the file the data will be saved to
 	 @return true if the data was saved successfully, false otherwise
      */
-	bool saveDatasetToFile(string filename);
+	bool saveDatasetToFile(string filename) const;
 	
 	/**
      Loads the labelled timeseries classification data from a custom file format.
@@ -315,7 +315,7 @@ public:
      
 	 @return an unsigned int representing the total number of samples in the classification data
      */
-	UINT inline getNumSamples(){ return totalNumSamples; }
+	UINT inline getNumSamples() const { return totalNumSamples; }
 	
 	/**
      Gets the number of classes.
