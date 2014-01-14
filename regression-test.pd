@@ -78,7 +78,7 @@
 #X restore 145 49 pd dtw;
 #X text 61 15 Patch to instantiate and test all externals within ml-lib
 ;
-#N canvas 518 323 895 410 mlp 0;
+#N canvas 518 323 895 410 mlp 1;
 #X obj 162 236 ml.mlp;
 #X obj 155 139 list prepend add;
 #X msg 290 39 train;
@@ -115,6 +115,7 @@
 #X msg 692 146 getscaling;
 #X msg 588 35 load /Users/jamie/Desktop/ali_testdata.txt;
 #X msg 417 181 probs 1;
+#X msg 26 15 0.0083313 0.0143127 -1.00932;
 #X connect 0 0 5 0;
 #X connect 0 1 4 0;
 #X connect 1 0 8 0;
@@ -150,6 +151,7 @@
 #X connect 33 0 0 0;
 #X connect 34 0 0 0;
 #X connect 35 0 0 0;
+#X connect 36 0 3 0;
 #X restore 280 71 pd mlp;
 #N canvas 471 193 1047 594 svm 0;
 #X msg 72 47 type 1;

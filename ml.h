@@ -79,6 +79,8 @@ protected:
     virtual void usage();
     void record(bool state);
     
+    virtual void set_mode(mlp_data_type mode);
+    
     // Attribute setters
     void set_scaling(bool scaling);
     void set_probs(bool probs);
@@ -99,7 +101,6 @@ protected:
     std::string grt_version;
     bool probs;
     bool recording;
-
     
 private:
     void set_num_inputs(uint8_t num_inputs);
@@ -224,7 +225,6 @@ protected:
     void get_min_change(float &min_change) const;
     void get_training_rate(float &training_rate) const;
     
-    
 private:
     
     // Method wrappers
@@ -238,8 +238,6 @@ private:
     GRT::Regressifier *regressifier;
     
 };
-
-    
     
 } // namespace ml
 

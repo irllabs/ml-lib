@@ -324,27 +324,40 @@ void ml_base::load(const t_symbol *path)
     
     bool success = false;
     
-    if (mode == LABELLED_CLASSIFICATION)
+    success = labelledClassificationData.loadDatasetFromFile(file_path);
+
+    if (success)
     {
-        success = labelledClassificationData.loadDatasetFromFile(file_path);
-    }
-    else if (mode == LABELLED_REGRESSION)
-    {
-        success = labelledRegressionData.loadDatasetFromFile(file_path);
-    }
-    else if (mode == LABELLED_TIME_SERIES_CLASSIFICATION)
-    {
-        success = labelledTimeSeriesClassificationData.loadDatasetFromFile(file_path);
-    }
-    else if (mode == UNLABELLED_CLASSIFICATION)
-    {
-        success = unlabelledClassificationData.loadDatasetFromFile(file_path);
+        set_mode(LABELLED_CLASSIFICATION);
+        return;
     }
     
-    if (!success)
+    success = labelledRegressionData.loadDatasetFromFile(file_path);
+
+    if (success)
     {
-        error("unable to load training data from path: %s", file_path.c_str());
+        set_mode(LABELLED_REGRESSION);
+        return;
     }
+
+    success = labelledTimeSeriesClassificationData.loadDatasetFromFile(file_path);
+
+    if (success)
+    {
+        set_mode(LABELLED_TIME_SERIES_CLASSIFICATION);
+        return;
+    }
+    
+    success = unlabelledClassificationData.loadDatasetFromFile(file_path);
+    
+    if (success)
+    {
+        set_mode(UNLABELLED_CLASSIFICATION);
+        return;
+    }
+  
+    error("unable to load training data from path: %s", file_path.c_str());
+    
 }
     
 void ml_base::clear()
@@ -373,6 +386,11 @@ void ml_base::map(int argc, const t_atom *argv)
 void ml_base::usage()
 {
     error("function not implemented");
+}
+    
+void ml_base::set_mode(mlp_data_type mode)
+{
+    this->mode = mode;
 }
     
 void ml_base::setup(t_classid c)

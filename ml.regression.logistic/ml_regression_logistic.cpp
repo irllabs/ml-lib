@@ -38,7 +38,7 @@ namespace ml
         }
         
     protected:
-        
+
     private:
         
         // Instance variables

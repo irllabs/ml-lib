@@ -146,6 +146,9 @@ namespace ml
         void get_use_validation_set(bool &use_validation_set) const;
         void get_validation_set_size(int &validation_set_size) const;
         void get_randomise_training_order(bool &randomise_training_order) const;
+        
+        // Override virtual function
+        void set_mode(mlp_data_type mode);
                 
     private:
         void set_activation_function(int activation_function, mlp_layer layer);
@@ -653,6 +656,11 @@ namespace ml
             
             ToOutList(0, result);
         }
+    }
+    
+    void ml_mlp::set_mode(mlp_data_type mode)
+    {
+        set_mode((int)mode);
     }
     
     void ml_mlp::usage()
