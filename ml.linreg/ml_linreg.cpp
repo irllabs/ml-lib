@@ -20,19 +20,19 @@
 
 namespace ml
 {
-    class ml_regression_linear : ml_regression_base
+    class ml_linreg : ml_regression_base
     {
-        FLEXT_HEADER_S(ml_regression_linear, ml_regression_base, setup);
+        FLEXT_HEADER_S(ml_linreg, ml_regression_base, setup);
         
     public:
-        ml_regression_linear()
+        ml_linreg()
         :
         ml_regression_base(&regressifier)
         {
             post("ml.regressifier: Linear Regression based on the GRT library version %s", grt_version.c_str());
         }
         
-        ~ml_regression_linear()
+        ~ml_linreg()
         {
             
         }
@@ -46,7 +46,7 @@ namespace ml
         
     };
     
-    FLEXT_LIB("ml.regression.linear", ml_regression_linear);
+    FLEXT_LIB("ml.linreg", ml_linreg);
     
 } //namespace ml
 

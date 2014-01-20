@@ -807,8 +807,8 @@ static void main()
     FLEXT_SETUP(ml_svm);
     FLEXT_SETUP(ml_dtw);
     FLEXT_SETUP(ml_mlp);
-    FLEXT_SETUP(ml_regression_linear);
-    FLEXT_SETUP(ml_regression_logistic);
+    FLEXT_SETUP(ml_linreg);
+    FLEXT_SETUP(ml_logreg);
     FLEXT_SETUP(ml_peak);
 }
 
