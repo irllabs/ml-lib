@@ -1,5 +1,5 @@
 #N canvas 550 63 821 216 10;
-#N canvas 465 149 954 649 dtw 0;
+#N canvas 465 149 954 649 dtw 1;
 #X msg 35 36 help;
 #X obj 99 548 print info;
 #X msg 61 76 clear;
@@ -11,7 +11,7 @@
 #X obj 133 401 list prepend add;
 #X obj 66 515 ml.dtw;
 #X msg 282 408 record \$1;
-#X obj 279 386 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 279 386 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 283 149 train;
 #X obj 257 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -38,6 +38,7 @@
 #X msg 741 88 200 1000;
 #X obj 66 581 print label;
 #X msg 247 89 probs \$1;
+#X msg 721 49 100 0;
 #X connect 0 0 9 0;
 #X connect 2 0 9 0;
 #X connect 3 0 9 0;
@@ -75,6 +76,7 @@
 #X connect 32 0 16 0;
 #X connect 33 0 26 0;
 #X connect 35 0 9 0;
+#X connect 36 0 26 0;
 #X restore 145 49 pd dtw;
 #X text 61 15 Patch to instantiate and test all externals within ml-lib
 ;
