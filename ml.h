@@ -65,9 +65,9 @@ protected:
     static void setup(t_classid c);
     
     static const t_symbol *s_train;
-    static const t_symbol *s_cleared;
-    static const t_symbol *s_loaded;
-    static const t_symbol *s_saved;
+    static const t_symbol *s_clear;
+    static const t_symbol *s_load;
+    static const t_symbol *s_save;
     static const t_symbol *s_probs;
     
     virtual void add(int argc, const t_atom *argv);

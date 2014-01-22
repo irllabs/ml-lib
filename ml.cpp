@@ -380,7 +380,7 @@ void ml_base::clear()
     labelledTimeSeriesClassificationData.clear();
     unlabelledClassificationData.clear();
     
-    ToOutAnything(1, s_cleared, 1, &status);
+    ToOutAnything(1, s_clear, 1, &status);
 }
     
 void ml_base::train()
@@ -832,9 +832,9 @@ static void main()
 #pragma mark - Global constants
 
 const t_symbol *ml_base::s_train = flext::MakeSymbol("train");
-const t_symbol *ml_base::s_cleared = flext::MakeSymbol("cleared");
-const t_symbol *ml_base::s_loaded = flext::MakeSymbol("loaded");
-const t_symbol *ml_base::s_saved = flext::MakeSymbol("saved");
+const t_symbol *ml_base::s_clear = flext::MakeSymbol("clear");
+const t_symbol *ml_base::s_load = flext::MakeSymbol("load");
+const t_symbol *ml_base::s_save = flext::MakeSymbol("save");
 const t_symbol *ml_base::s_probs = flext::MakeSymbol("probs");
 
     
