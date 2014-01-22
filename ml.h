@@ -104,6 +104,7 @@ protected:
     bool recording;
     
 private:
+    void record_(bool state);
     void set_num_inputs(uint8_t num_inputs);
     // Method wrappers
     FLEXT_CALLBACK_A(any);

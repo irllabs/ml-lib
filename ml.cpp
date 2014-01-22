@@ -236,6 +236,12 @@ void ml_base::add(int argc, const t_atom *argv)
         {
             if (recording)
             {
+                // allow label to be changed on-the-fly without explicitly toggling "record"
+                if (label != currentLabel)
+                {
+                    record_(false);
+                    record_(true);
+                }
                 currentLabel = label;
                 timeSeriesData.push_back(inputVector);
             }
@@ -250,8 +256,8 @@ void ml_base::add(int argc, const t_atom *argv)
         labelledRegressionData.addSample(inputVector, targetVector);
     }
 }
-    
-void ml_base::record(bool state)
+   
+void ml_base::record_(bool state)
 {
     if (mode != LABELLED_TIME_SERIES_CLASSIFICATION)
     {
@@ -267,7 +273,11 @@ void ml_base::record(bool state)
     }
     timeSeriesData.clear();
     currentLabel = 0;
+}
     
+void ml_base::record(bool state)
+{
+    record_(state);
     post("recording: %s", state == 1 ? "on" : "off");
 }
 
