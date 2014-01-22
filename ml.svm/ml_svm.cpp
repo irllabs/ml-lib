@@ -405,9 +405,7 @@ namespace ml
         post("cachesize:\tset cache memory size in MB (default 100)");
         post("epsilon:\tset tolerance of termination criterion (default 0.001)");
         post("shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)");
-        post("probs:\twhether to train a SVC or SVR model for probability probs, 0 or 1 (default 0)");
-        post("weights:\tlist of weight tuples 'class:weight' to set the parameter of class to weight*C, for C-SVC (default 1)");
-        post("n:\tn-fold cross validation mode");
+        post("probs:\twhether to display classification probabilities, 0 or 1 (default 0)");
         post("%s", ML_POST_SEP);
         post("Methods:");
         post("%s", ML_POST_SEP);
