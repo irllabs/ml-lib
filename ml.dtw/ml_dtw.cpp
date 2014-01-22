@@ -57,6 +57,8 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "enable_trim_training_data", get_enable_trim_training_data);
 
         }
+        
+        // Methods
 
         // Attribute Setters
         void set_rejection_mode(int rejection_mode);
@@ -76,6 +78,8 @@ namespace ml
         void get_enable_trim_training_data(bool &enable_trim_training_data) const;
         
     private:
+        // Method wrappers
+        
         // Attribute wrappers
         FLEXT_CALLVAR_I(get_rejection_mode, set_rejection_mode);
         FLEXT_CALLVAR_F(get_warping_radius, set_warping_radius);
@@ -96,7 +100,7 @@ namespace ml
         
         if (!success)
         {
-            error("unable to set rejection mode");
+            flext::error("unable to set rejection mode");
         }
     }
     
@@ -106,7 +110,7 @@ namespace ml
         
         if (!success)
         {
-            error("unable to set warping radius");
+            flext::error("unable to set warping radius");
         }
     }
     
@@ -116,7 +120,7 @@ namespace ml
         
         if (!success)
         {
-            error("unable to set offset time series using first sample");
+            flext::error("unable to set offset time series using first sample");
         }
     }
     
@@ -127,7 +131,7 @@ namespace ml
         
         if (!succes)
         {
-            error("unable to set constrain warping path");
+            flext::error("unable to set constrain warping path");
         }
     }
     
@@ -138,7 +142,7 @@ namespace ml
         
         if (!success)
         {
-            error("unable to set z-normalization");
+            flext::error("unable to set z-normalization");
         }
     }
     
@@ -150,46 +154,43 @@ namespace ml
         
         if (!success)
         {
-            error("unable to enable trim training data");
+            flext::error("unable to enable trim training data");
         }
     }
     
     // Attribute getters
     void ml_dtw::get_rejection_mode(int &rejection_mode) const
     {
-//        rejection_mode = classifier.getRejectionMode();
-        error("function not implemented");
+        flext::error("function not implemented");
     }
 
     void ml_dtw::get_warping_radius(float &warping_radius) const
     {
-//        warping_radius = classifier.getW
-        error("function not implemented");
+        flext::error("function not implemented");
     }
     
 
     void ml_dtw::get_offget_time_series(bool &offget_time_series) const
     {
-//        offget_time_series = classifier.getO
-        error("function not implemented");
+        flext::error("function not implemented");
     }
     
 
     void ml_dtw::get_constrain_warping_path(bool &constrain_warping_path) const
     {
-        error("function not implement");
+        flext::error("function not implement");
     }
     
 
     void ml_dtw::get_enable_z_normalization(bool &enable_z_normalization) const
     {
-        error("function not implemented");
+        flext::error("function not implemented");
     }
     
 
     void ml_dtw::get_enable_trim_training_data(bool &enable_trim_training_data) const
     {
-        error("function not implemented");
+        flext::error("function not implemented");
     }
     
     FLEXT_LIB("ml.dtw", ml_dtw);
