@@ -78,6 +78,7 @@ protected:
     virtual void map(int argc, const t_atom *argv);
     virtual void usage();
     void record(bool state);
+    void any(const t_symbol *s, int argc, const t_atom *argv);
     
     virtual void set_mode(mlp_data_type mode);
     
@@ -105,6 +106,7 @@ protected:
 private:
     void set_num_inputs(uint8_t num_inputs);
     // Method wrappers
+    FLEXT_CALLBACK_A(any);
     FLEXT_CALLBACK_V(add);
     FLEXT_CALLBACK_B(record);
     FLEXT_CALLBACK_S(save);

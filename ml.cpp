@@ -388,6 +388,12 @@ void ml_base::usage()
     error("function not implemented");
 }
     
+void ml_base::any(const t_symbol *s, int argc, const t_atom *argv)
+{
+    error("messages with the selector '%s' are not supported", GetString(s));
+}
+
+    
 void ml_base::set_mode(mlp_data_type mode)
 {
     this->mode = mode;
@@ -401,6 +407,7 @@ void ml_base::setup(t_classid c)
     FLEXT_CADDATTR_GET(c, "scaling", get_scaling);
     FLEXT_CADDATTR_GET(c, "probs", get_probs);
     
+    FLEXT_CADDMETHOD(c, 0, any);
     FLEXT_CADDMETHOD_(c, 0, "add", add);
     FLEXT_CADDMETHOD_(c, 0, "record", record);
     FLEXT_CADDMETHOD_(c, 0, "save", save);

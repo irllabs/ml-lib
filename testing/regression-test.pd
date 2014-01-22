@@ -169,7 +169,7 @@
 #X connect 42 0 0 0;
 #X connect 43 0 0 0;
 #X restore 280 71 pd mlp;
-#N canvas 679 78 1056 671 svm 0;
+#N canvas 679 78 1056 671 svm 1;
 #X msg 72 47 type 1;
 #X msg 320 71 bang;
 #X msg 200 96 gettype;
@@ -188,7 +188,7 @@
 #X msg 586 515 cross_validation;
 #X msg 498 74 add -1 -10 -10 -10 -10;
 #X msg 409 36 normalize;
-#X obj 711 263 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 711 263 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 666 99 add 0 1 1 1 1;
 #X msg 648 231 predict 1 1 1 1;
@@ -215,6 +215,7 @@
 #X msg 596 627;
 #X obj 227 585 prepend set;
 #X msg 227 621 probs 1 0.0624113 2 0.937589;
+#X msg 465 458 an invalid message;
 #X connect 0 0 32 0;
 #X connect 1 0 32 0;
 #X connect 2 0 32 0;
@@ -258,6 +259,7 @@
 #X connect 38 0 39 0;
 #X connect 40 0 41 0;
 #X connect 42 0 43 0;
+#X connect 44 0 32 0;
 #X restore 52 51 pd svm;
 #N canvas 758 306 450 300 peak 0;
 #X obj 189 188 ml.peak;
