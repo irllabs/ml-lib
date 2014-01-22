@@ -60,6 +60,8 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
+            FLEXT_CADDMETHOD_(c, 0, "error", error);
+            
             FLEXT_CADDATTR_SET(c, "mode", set_mode);
             FLEXT_CADDATTR_SET(c, "num_outputs", set_num_outputs);
             FLEXT_CADDATTR_SET(c, "num_hidden", set_num_hidden);
@@ -105,6 +107,7 @@ namespace ml
         void train();
         void map(int argc, const t_atom *argv);
         void usage();
+        void error();
         
         // Attribute Setters
         void set_mode(int mode);
@@ -154,6 +157,7 @@ namespace ml
         void set_activation_function(int activation_function, mlp_layer layer);
         
         // Method wrappers
+        FLEXT_CALLBACK(error);
 
         // Attribute wrappers
         FLEXT_CALLVAR_I(get_mode, set_mode);
@@ -191,7 +195,7 @@ namespace ml
     {
         if (mode > MLP_NUM_DATA_TYPES)
         {
-            error("mode must be between 0 and %d", MLP_NUM_DATA_TYPES - 1);
+            flext::error("mode must be between 0 and %d", MLP_NUM_DATA_TYPES - 1);
             return;
         }
         
@@ -207,12 +211,12 @@ namespace ml
     {
         if (num_outputs < 0)
         {
-            error("number of outputs must be greater than zero");
+            flext::error("number of outputs must be greater than zero");
         }
         
         if (mode == LABELLED_CLASSIFICATION && num_outputs > 1)
         {
-            error("for classification mode, number of outputs must be 1, for multidimensional output switch mode to %d", LABELLED_REGRESSION);
+            flext::error("for classification mode, number of outputs must be 1, for multidimensional output switch mode to %d", LABELLED_REGRESSION);
             return;
         }
         
@@ -222,7 +226,7 @@ namespace ml
            
             if (success == false)
             {
-                error("unable to set input and target dimensions");
+                flext::error("unable to set input and target dimensions");
                 return;
             }
         }
@@ -239,7 +243,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set min_epochs, hint: should be greater than 0");
+            flext::error("unable to set min_epochs, hint: should be greater than 0");
         }
     }
 
@@ -254,7 +258,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set min_change, hint: should be greater than 0");
+            flext::error("unable to set min_change, hint: should be greater than 0");
         }
     }
     
@@ -264,7 +268,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set training_rate, hint: should be between 0-1");
+            flext::error("unable to set training_rate, hint: should be between 0-1");
         }
     }
     
@@ -274,7 +278,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set momentum, hint: should be between 0-1");
+            flext::error("unable to set momentum, hint: should be between 0-1");
         }
     }
     
@@ -284,19 +288,13 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set gamma");
+            flext::error("unable to set gamma");
         }
     }
 
     void ml_mlp::set_multi_threaded_training(bool multi_threaded_training)
     {
-        error("function not implemented");
-//        bool success = mlp.setUseMultiThreadingTraining(multi_threaded_training);
-//        
-//        if (success == false)
-//        {
-//            error("unable to set multi_threaded_training");
-//        }
+        flext::error("function not implemented");
     }
 
     void ml_mlp::set_null_rejection(bool null_rejection)
@@ -305,7 +303,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set null_rejection");
+            flext::error("unable to set null_rejection");
         }
     }
 
@@ -315,7 +313,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set null_rejection_coeff, hint: should be greater than 0");
+            flext::error("unable to set null_rejection_coeff, hint: should be greater than 0");
         }
     }
     
@@ -323,7 +321,7 @@ namespace ml
     {
         if (mlp.validateActivationFunction(activation_function) == false)
         {
-            error("activation function %d is invalid, hint should be between 0-%d", activation_function, GRT::Neuron::NUMBER_OF_ACTIVATION_FUNCTIONS - 1);
+            flext::error("activation function %d is invalid, hint should be between 0-%d", activation_function, GRT::Neuron::NUMBER_OF_ACTIVATION_FUNCTIONS - 1);
             return;
         }
         
@@ -341,7 +339,7 @@ namespace ml
                 outputActivationFunction = activation_function_;
                 break;
             default:
-                error("no activation function for layer: %d", layer);
+                flext::error("no activation function for layer: %d", layer);
                 return;
         }
         post("activation function set to %s", mlp.activationFunctionToString(activation_function_).c_str());
@@ -368,7 +366,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set rand_training_iterations, hint: should be greater than 0");
+            flext::error("unable to set rand_training_iterations, hint: should be greater than 0");
         }
     }
     
@@ -378,7 +376,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set use_validation_set, hint: should be 0 or 1");
+            flext::error("unable to set use_validation_set, hint: should be 0 or 1");
         }
     }
     
@@ -388,7 +386,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set validation_set_size, hint: should be between 0-100");
+            flext::error("unable to set validation_set_size, hint: should be between 0-100");
         }
     }
 
@@ -398,7 +396,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set randomise_training_order, hint: should be 0 or 1");
+            flext::error("unable to set randomise_training_order, hint: should be 0 or 1");
         }
     }
     
@@ -452,7 +450,7 @@ namespace ml
     
     void ml_mlp::get_multi_threaded_training(bool &multi_threaded_training) const
     {
-        error("function not implemented");
+        flext::error("function not implemented");
     }
     
     void ml_mlp::get_null_rejection(bool &null_rejection) const
@@ -508,7 +506,7 @@ namespace ml
         
         if (numSamples == 0)
         {
-            error("no observations added, use 'add' to add training data");
+            flext::error("no observations added, use 'add' to add training data");
             return;
         }
         
@@ -541,15 +539,8 @@ namespace ml
 
         if (!success)
         {
-            error("training failed");
+            flext::error("training failed");
         }
-        
-//        if ((mode == LABELLED_CLASSIFICATION && mlp.getClassificationModeActive() == false) || (mode == LABELLED_REGRESSION && mlp.getRegressionModeActive() == false))
-//        {
-//            // TODO: due a bug in GRT, this will occur if setting to regression mode after setting to classification mode (see: http://www.nickgillian.com/forum/index.php?topic=63.0)
-//            error("mode mismatch");
-//            return;
-//        }
         
         t_atom a_success;
         
@@ -569,13 +560,13 @@ namespace ml
 
         if (numSamples == 0)
         {
-            error("no observations added, use 'add' to add training data");
+            flext::error("no observations added, use 'add' to add training data");
             return;
         }
 
         if (mlp.getTrained() == false)
         {
-            error("model has not been trained, use 'train' to train the model");
+            flext::error("model has not been trained, use 'train' to train the model");
             return;
         }
         
@@ -584,7 +575,7 @@ namespace ml
         
         if (argc < 0 || (unsigned)argc != numInputNeurons)
         {
-            error("invalid input length, expected %d, got %d", numInputNeurons, argc);
+            flext::error("invalid input length, expected %d, got %d", numInputNeurons, argc);
         }
 
         for (uint32_t index = 0; index < (uint32_t)argc; ++index)
@@ -597,7 +588,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to map input");
+            flext::error("unable to map input");
             return;
         }
         
@@ -610,7 +601,7 @@ namespace ml
             
             if (likelihoods.size() != labels.size())
             {
-                error("labels / likelihoods size mismatch");
+                flext::error("labels / likelihoods size mismatch");
             }
             else
             {
@@ -640,7 +631,7 @@ namespace ml
             
             if (numOutputDimensions != mlp.getNumOutputNeurons())
             {
-                error("invalid output dimensions: %d", numOutputDimensions);
+                flext::error("invalid output dimensions: %d", numOutputDimensions);
                 return;
             }
             
@@ -663,6 +654,25 @@ namespace ml
         set_mode((int)mode);
     }
     
+    // Methods
+    
+    void ml_mlp::error()
+    {
+        if (!mlp.getTrained())
+        {
+            flext::error("model not yet trained, send the \"train\" message to train");
+            return;
+        }
+                
+        float error_f = mlp.getTrainingError();
+        t_atom error_a;
+        
+        SetFloat(error_a, error_f);
+        
+        ToOutAnything(0, s_error, 1, &error_a);
+                      
+    }
+    
     void ml_mlp::usage()
     {
         post("%s", ML_POST_SEP);
@@ -670,7 +680,6 @@ namespace ml
         post("%s", ML_POST_SEP);
         post("mode:\tinteger setting mode of the MLP, %d for regression and %d for classification (default %d)",
              LABELLED_REGRESSION, LABELLED_CLASSIFICATION, defaultMode);
-        post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default %d)", defaultNumInputDimensions);
         post("num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default %d)", defaultNumOutputDimensions);
         post("num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default %d)", defaultNumHiddenNeurons);
         post("min_epochs:\tinteger setting the minimum number of training iterations (default 10)");

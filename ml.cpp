@@ -836,7 +836,7 @@ const t_symbol *ml_base::s_clear = flext::MakeSymbol("clear");
 const t_symbol *ml_base::s_load = flext::MakeSymbol("load");
 const t_symbol *ml_base::s_save = flext::MakeSymbol("save");
 const t_symbol *ml_base::s_probs = flext::MakeSymbol("probs");
-
+const t_symbol *ml_base::s_error = flext::MakeSymbol("error");
     
 } // namespace ml
 

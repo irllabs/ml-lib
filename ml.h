@@ -69,6 +69,7 @@ protected:
     static const t_symbol *s_load;
     static const t_symbol *s_save;
     static const t_symbol *s_probs;
+    static const t_symbol *s_error;
     
     virtual void add(int argc, const t_atom *argv);
     virtual void save(const t_symbol *path) const;
