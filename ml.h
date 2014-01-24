@@ -27,7 +27,7 @@
 #include <map>
 
 
-#define ML_VERSION "0.9.1"
+#define ML_VERSION "0.9.2"
 #define ML_NAME "ml-lib"
 #define ML_POST_SEP "---------------------------------------"
 

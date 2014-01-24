@@ -283,9 +283,14 @@ void ml_base::record(bool state)
 
 void ml_base::save(const t_symbol *path) const
 {
+    bool success = false;
+    t_atom a_success;
+    SetInt(a_success, success);
+    
     if (labelledRegressionData.getNumSamples() == 0 && labelledRegressionData.getNumSamples() == 0)
     {
         error("no observations added, use 'add' to add training data");
+        ToOutAnything(1, s_save, 1, &a_success);
         return;
     }
     
@@ -294,10 +299,9 @@ void ml_base::save(const t_symbol *path) const
     if (file_path.empty())
     {
         error("path string is empty");
+        ToOutAnything(1, s_save, 1, &a_success);
         return;
     }
-    
-    bool success = false;
     
     if (mode == LABELLED_CLASSIFICATION)
     {
@@ -320,54 +324,68 @@ void ml_base::save(const t_symbol *path) const
     {
         error("unable to save training data to path: %s", file_path.c_str());
     }
+    
+    SetInt(a_success, success);
+    ToOutAnything(1, s_save, 1, &a_success);
 }
 
 void ml_base::load(const t_symbol *path)
 {
     std::string file_path = get_symbol_as_string(path);
     
+    bool success = false;
+    t_atom a_success;
+    SetInt(a_success, success);
+    
     if (file_path.empty())
     {
         error("path string is empty");
+        ToOutAnything(1, s_load, 1, &a_success);
         return;
     }
     
-    bool success = false;
-    
     success = labelledClassificationData.loadDatasetFromFile(file_path);
-
+    SetInt(a_success, success);
+    
     if (success)
     {
         set_mode(LABELLED_CLASSIFICATION);
+        ToOutAnything(1, s_load, 1, &a_success);
         return;
     }
     
     success = labelledRegressionData.loadDatasetFromFile(file_path);
+    SetInt(a_success, success);
 
     if (success)
     {
         set_mode(LABELLED_REGRESSION);
+        ToOutAnything(1, s_load, 1, &a_success);
         return;
     }
 
     success = labelledTimeSeriesClassificationData.loadDatasetFromFile(file_path);
+    SetInt(a_success, success);
 
     if (success)
     {
         set_mode(LABELLED_TIME_SERIES_CLASSIFICATION);
+        ToOutAnything(1, s_load, 1, &a_success);
         return;
     }
     
     success = unlabelledClassificationData.loadDatasetFromFile(file_path);
+    SetInt(a_success, success);
     
     if (success)
     {
         set_mode(UNLABELLED_CLASSIFICATION);
+        ToOutAnything(1, s_load, 1, &a_success);
         return;
     }
   
+    ToOutAnything(1, s_load, 1, &a_success);
     error("unable to load training data from path: %s", file_path.c_str());
-    
 }
     
 void ml_base::clear()
