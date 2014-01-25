@@ -59,7 +59,8 @@ namespace ml
         }
         
         // Methods
-
+        void usage();
+        
         // Attribute Setters
         void set_rejection_mode(int rejection_mode);
         void set_warping_radius(float warping_radius);
@@ -191,6 +192,36 @@ namespace ml
     void ml_dtw::get_enable_trim_training_data(bool &enable_trim_training_data) const
     {
         flext::error("function not implemented");
+    }
+    
+    // methods
+    void ml_dtw::usage()
+    {
+        post("%s", ML_POST_SEP);
+        post("Attributes:");
+        post("%s", ML_POST_SEP);
+        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
+        post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
+        post("null_rejection:\tinteger (0 or 1) sets NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
+        post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
+        post("rejection_mode:\tinteger sets the method used for null rejection. (0 = TEMPLATE_THRESHOLDS, 1 = CLASS_LIKELIHOODS, 2 = THRESHOLDS_AND_LIKELIHOODS, default 0)");
+        post("warping_radius:\tfloat (0..1)  sets the radius of the warping path, which is used if the constrain_warping_path is set to 1. (default 0.2)");
+        post("offset_time_series:\tinteger (0 or 1) sets if each timeseries should be offset by the first sample in the timeseries (default 0)");
+        post("constrain_warping_path:\tinteger (0 or 1) sets the warping path should be constrained to within a specific radius from the main diagonal of the cost matrix (default 1)");
+        post("enable_z_normalization:\tinteger (0 or 1) turning z-normalization on or off for training and prediction (default 0)");
+        post("enable_trim_training_data:\tinteger (0 or 1) enabling data trimming prior to training (default 0)");        
+        post("%s", ML_POST_SEP);
+        post("Methods:");
+        post("%s", ML_POST_SEP);
+        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
+        post("save:\tsave training examples, first argument gives path to save location");
+        post("load:\tload training examples, first argument gives path to the load location");
+        post("train:\ttrain the MLP based on vectors added with 'add'");
+        post("clear:\tclear the stored training data and model");
+        post("map:\tgive the regression value for the input feature vector");
+        post("help:\tpost this usage statement to the console");
+        post("%s", ML_POST_SEP);
+
     }
     
     FLEXT_LIB("ml.dtw", ml_dtw);
