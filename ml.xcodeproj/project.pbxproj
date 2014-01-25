@@ -283,10 +283,10 @@
 		7D3840621874B3C300C3F139 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17C186081C7009D2059 /* BAG.cpp */; };
 		7D3840631874B3C400C3F139 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17C186081C7009D2059 /* BAG.cpp */; };
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
-		7D61B1031875CAF9000FD114 /* ml_regression_linear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */; };
-		7D61B1041875CAF9000FD114 /* ml_regression_linear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */; };
-		7D61B1081875F661000FD114 /* ml_regression_logistic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */; };
-		7D61B1091875F661000FD114 /* ml_regression_logistic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */; };
+		7D61B1031875CAF9000FD114 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
+		7D61B1041875CAF9000FD114 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
+		7D61B1081875F661000FD114 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
+		7D61B1091875F661000FD114 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
 		7D61B1131876F334000FD114 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
 		7D61B1141876F334000FD114 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
 		7D61B11818788BD6000FD114 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
@@ -509,8 +509,8 @@
 		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ml.mlp/ml_mlp.cpp; sourceTree = "<group>"; };
 		7D38405C1874A20600C3F139 /* SVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVM.h; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression_linear.cpp; path = ml.regression.linear/ml_regression_linear.cpp; sourceTree = "<group>"; };
-		7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression_logistic.cpp; path = ml.regression.logistic/ml_regression_logistic.cpp; sourceTree = "<group>"; };
+		7D61B1011875CAF9000FD114 /* ml_linreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_linreg.cpp; path = ml.linreg/ml_linreg.cpp; sourceTree = "<group>"; };
+		7D61B1061875F661000FD114 /* ml_logreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_logreg.cpp; path = ml.logreg/ml_logreg.cpp; sourceTree = "<group>"; };
 		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
 		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ml.peak/ml_peak.cpp; sourceTree = "<group>"; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
@@ -584,8 +584,8 @@
 				7DBFDE6318439E09009ED61E /* ml.h */,
 				E98573560D9E52D300682171 /* ml.cpp */,
 				7DF077F71847577100C55E3C /* ml_svm.cpp */,
-				7D61B1011875CAF9000FD114 /* ml_regression_linear.cpp */,
-				7D61B1061875F661000FD114 /* ml_regression_logistic.cpp */,
+				7D61B1011875CAF9000FD114 /* ml_linreg.cpp */,
+				7D61B1061875F661000FD114 /* ml_logreg.cpp */,
 				7D133C6E185FAB0F0020213F /* ml_mlp.cpp */,
 				7D61B1111876F334000FD114 /* ml_dtw.cpp */,
 				7D61B11618788BD6000FD114 /* ml_peak.cpp */,
@@ -1422,7 +1422,7 @@
 				7D12D32B186081C7009D2059 /* Cholesky.cpp in Sources */,
 				7D12D2B3186081C7009D2059 /* LabelledRegressionData.cpp in Sources */,
 				7D12D27C186081C7009D2059 /* HMM.cpp in Sources */,
-				7D61B1081875F661000FD114 /* ml_regression_logistic.cpp in Sources */,
+				7D61B1081875F661000FD114 /* ml_logreg.cpp in Sources */,
 				7D12D310186081C7009D2059 /* HighPassFilter.cpp in Sources */,
 				7D12D313186081C7009D2059 /* LowPassFilter.cpp in Sources */,
 				7D12D2B6186081C7009D2059 /* LabelledRegressionSample.cpp in Sources */,
@@ -1445,7 +1445,7 @@
 				7D12D2CF186081C7009D2059 /* MovementIndex.cpp in Sources */,
 				7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */,
 				7D12D31F186081C7009D2059 /* Neuron.cpp in Sources */,
-				7D61B1031875CAF9000FD114 /* ml_regression_linear.cpp in Sources */,
+				7D61B1031875CAF9000FD114 /* ml_linreg.cpp in Sources */,
 				7D12D322186081C7009D2059 /* LinearRegression.cpp in Sources */,
 				7D12D2F7186081C7009D2059 /* PreProcessing.cpp in Sources */,
 				7D12D316186081C7009D2059 /* MovingAverageFilter.cpp in Sources */,
@@ -1518,7 +1518,7 @@
 				7D12D32C186081C7009D2059 /* Cholesky.cpp in Sources */,
 				7D12D2B4186081C7009D2059 /* LabelledRegressionData.cpp in Sources */,
 				7D12D27D186081C7009D2059 /* HMM.cpp in Sources */,
-				7D61B1091875F661000FD114 /* ml_regression_logistic.cpp in Sources */,
+				7D61B1091875F661000FD114 /* ml_logreg.cpp in Sources */,
 				7D12D311186081C7009D2059 /* HighPassFilter.cpp in Sources */,
 				7D12D314186081C7009D2059 /* LowPassFilter.cpp in Sources */,
 				7D12D2B7186081C7009D2059 /* LabelledRegressionSample.cpp in Sources */,
@@ -1541,7 +1541,7 @@
 				7D12D2D0186081C7009D2059 /* MovementIndex.cpp in Sources */,
 				7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */,
 				7D12D320186081C7009D2059 /* Neuron.cpp in Sources */,
-				7D61B1041875CAF9000FD114 /* ml_regression_linear.cpp in Sources */,
+				7D61B1041875CAF9000FD114 /* ml_linreg.cpp in Sources */,
 				7D12D323186081C7009D2059 /* LinearRegression.cpp in Sources */,
 				7D12D2F8186081C7009D2059 /* PreProcessing.cpp in Sources */,
 				7D12D317186081C7009D2059 /* MovingAverageFilter.cpp in Sources */,
