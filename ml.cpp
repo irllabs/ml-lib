@@ -413,7 +413,22 @@ void ml_base::map(int argc, const t_atom *argv)
     
 void ml_base::usage()
 {
-    error("function not implemented");
+    post("%s", ML_POST_SEP);
+    post("Attributes:");
+    post("%s", ML_POST_SEP);
+    post("scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
+    post("probs:\tinteger (0 or 1) determing whether or not probabilities are sent from the right outlet");
+    post("%s", ML_POST_SEP);
+    post("Methods:");
+    post("%s", ML_POST_SEP);
+    post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
+    post("save:\tsave training examples, first argument gives path to save location");
+    post("load:\tload training examples, first argument gives path to the load location");
+    post("train:\ttrain the MLP based on vectors added with 'add'");
+    post("clear:\tclear the stored training data and model");
+    post("map:\tgive the regression value for the input feature vector");
+    post("help:\tpost this usage statement to the console");
+    post("%s", ML_POST_SEP);
 }
     
 void ml_base::any(const t_symbol *s, int argc, const t_atom *argv)
@@ -670,6 +685,29 @@ void ml_classification_base::map(int argc, const t_atom *argv)
     GRT::UINT classification = classifier->getPredictedClassLabel();
     ToOutInt(0, classification);
 }
+    
+void ml_classification_base::usage()
+{
+    post("%s", ML_POST_SEP);
+    post("Attributes:");
+    post("%s", ML_POST_SEP);
+    post("scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
+    post("probs:\tinteger (0 or 1) determing whether or not probabilities are sent from the right outlet");
+    post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
+    post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
+    post("%s", ML_POST_SEP);
+    post("Methods:");
+    post("%s", ML_POST_SEP);
+    post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
+    post("save:\tsave training examples, first argument gives path to save location");
+    post("load:\tload training examples, first argument gives path to the load location");
+    post("train:\ttrain the MLP based on vectors added with 'add'");
+    post("clear:\tclear the stored training data and model");
+    post("map:\tgive the regression value for the input feature vector");
+    post("help:\tpost this usage statement to the console");
+    post("%s", ML_POST_SEP);
+}
+
 
 #pragma mark - ml_regression_base implementation
     
@@ -815,6 +853,7 @@ void ml_regression_base::usage()
     post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default %d)", defaultNumInputDimensions);
     post("training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)");
     post("scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
+    post("probs:\tinteger (0 or 1) determing whether or not probabilities are sent from the right outlet");
     post("%s", ML_POST_SEP);
     post("Methods:");
     post("%s", ML_POST_SEP);

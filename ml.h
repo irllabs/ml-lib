@@ -157,7 +157,7 @@ protected:
     void clear();
     void train();
     void map(int argc, const t_atom *argv);
-//    void usage();
+    void usage();
     
     // Attribute Setters
     void set_null_rejection(bool null_rejection);
