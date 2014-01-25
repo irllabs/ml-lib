@@ -416,8 +416,8 @@ void ml_base::usage()
     post("%s", ML_POST_SEP);
     post("Attributes:");
     post("%s", ML_POST_SEP);
-    post("scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
-    post("probs:\tinteger (0 or 1) determing whether or not probabilities are sent from the right outlet");
+    post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
+    post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
     post("%s", ML_POST_SEP);
     post("Methods:");
     post("%s", ML_POST_SEP);
@@ -691,8 +691,8 @@ void ml_classification_base::usage()
     post("%s", ML_POST_SEP);
     post("Attributes:");
     post("%s", ML_POST_SEP);
-    post("scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
-    post("probs:\tinteger (0 or 1) determing whether or not probabilities are sent from the right outlet");
+    post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
+    post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
     post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
     post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
     post("%s", ML_POST_SEP);
@@ -852,8 +852,8 @@ void ml_regression_base::usage()
     post("%s", ML_POST_SEP);
     post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default %d)", defaultNumInputDimensions);
     post("training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)");
-    post("scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
-    post("probs:\tinteger (0 or 1) determing whether or not probabilities are sent from the right outlet");
+    post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
+    post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
     post("%s", ML_POST_SEP);
     post("Methods:");
     post("%s", ML_POST_SEP);

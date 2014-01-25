@@ -694,10 +694,10 @@ namespace ml
         post("hidden_activation_function:\tinteger determining the activation function for the hidden layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)");
         post("output_activation_function:\tinteger determining the activation function for the output layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)");
         post("rand_training_iterations:\tinteger setting the number of random training iterations (default 10)");
-        post("use_validation_set:\tinteger (0 or 1) determining whether or not to use a validation training set (default 1)");
+        post("use_validation_set:\tinteger (0 or 1) sets whether to use a validation training set (default 1)");
         post("validation_set_size:\tinteger integer determining the size of the validation set (default 20)");
-        post("randomize_training_order:\tinteger (0 or 1) determining whether or not to randomize the training order (default 0)");
-        post("scaling:\tinteger (0 or 1) determining whether or not values are automatically scaled (default 1)");
+        post("randomize_training_order:\tinteger (0 or 1) sets whether to randomize the training order (default 0)");
+        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("%s", ML_POST_SEP);
         post("Methods:");
         post("%s", ML_POST_SEP);
