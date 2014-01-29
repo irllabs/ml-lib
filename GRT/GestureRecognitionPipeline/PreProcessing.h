@@ -39,7 +39,34 @@ public:
 
     //Training methods
     virtual bool process(const VectorDouble &inputVector){ return false; }
-    virtual bool reset(){ return true; }
+    
+    /**
+     This is the main reset interface for all the GRT preprocessing modules. This should be overwritten by the derived class.
+     
+     @return returns true if the derived class was reset succesfully, false otherwise (the base class always returns true)
+     */
+    virtual bool reset(){
+        
+        //Reset the processed data vector
+        if( processedData.size() > 0 )
+            fill(processedData.begin(),processedData.end(),0);
+        
+        return true;
+    }
+    
+    /**
+     This is the main clear interface for all the GRT preprocessing modules. This should be overwritten by the derived class.
+     It will completely clear the module, removing any IO values setting and all the base variables to their default values.
+     
+     @return returns true if the derived class was cleared succesfully, false otherwise
+     */
+    virtual bool clear(){
+        initialized = false;
+        numInputDimensions = 0;
+        numOutputDimensions = 0;
+        processedData.clear();
+        return true;
+    }
     
     virtual bool saveSettingsToFile(string filename){ return false; }
     virtual bool saveSettingsToFile(fstream &file){ return false; }
@@ -60,6 +87,10 @@ public:
     PreProcessing* createNewInstance() const;
     
 protected:
+    bool init();
+    bool savePreProcessingSettingsToFile(fstream &file) const;
+    bool loadPreProcessingSettingsFromFile(fstream &file);
+    
     string preProcessingType;
     bool initialized;
     UINT numInputDimensions;

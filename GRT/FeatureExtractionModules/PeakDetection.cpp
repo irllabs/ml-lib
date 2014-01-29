@@ -42,6 +42,7 @@ PeakDetection::PeakDetection(UINT thresholdCrossingMode,UINT lowPassFilterSize,U
     gateCounter = 0;
     dataBufferSize = searchWindowSize*4;
     windowCounter = 0;
+    peakLocationIndex = 0;
     currentSearchState = SEARCHING_FOR_FIRST_THRESHOLD_CROSSING;
     lpf.init(lowPassFilterSize, 1);
     hpf.init(0.2, 1.0, 1);
@@ -68,6 +69,7 @@ PeakDetection::PeakDetection(const PeakDetection &rhs){
     this->windowCounter = rhs.windowCounter;
     this->thresholdCrossingMode = rhs.thresholdCrossingMode;
     this->currentSearchState = rhs.currentSearchState;
+    this->peakLocationIndex = rhs.peakLocationIndex;
     this->lpf = rhs.lpf;
     this->hpf = rhs.hpf;
     this->deadZone = rhs.deadZone;
@@ -97,6 +99,7 @@ PeakDetection& PeakDetection::operator=(const PeakDetection &rhs){
         this->windowCounter = rhs.windowCounter;
         this->thresholdCrossingMode = rhs.thresholdCrossingMode;
         this->currentSearchState = rhs.currentSearchState;
+        this->peakLocationIndex = rhs.peakLocationIndex;
         this->lpf = rhs.lpf;
         this->hpf = rhs.hpf;
         this->deadZone = rhs.deadZone;
@@ -130,6 +133,7 @@ bool PeakDetection::init(UINT thresholdCrossingMode,UINT lowPassFilterSize,UINT 
     peakDetected = false;
     windowCounter = 0;
     gateCounter = 0;
+    peakLocationIndex = 0;
     initialized = true;
     
     return true;
@@ -162,6 +166,9 @@ bool PeakDetection::update(double x){
     newData[2] = deriv2;
     dataBuffer.push_back( newData );
     
+    //Update the peak location index
+    peakLocationIndex++;
+    
     //printf("PeakDetection - diriv: %f LowerThreshold: %f UpperThreshold: %f SearchState: %i gateCounter: %i\n",diriv,negativeThreshold,positiveThreshold,currentSearchState,gateCounter);
     
     //If the search is disabled then we stop here
@@ -188,6 +195,7 @@ bool PeakDetection::update(double x){
                     peakDetected = true;
                     currentSearchState = NO_SEARCH_GATE_TIME_OUT;
                     gateCounter = 0;
+                    peakLocationIndex = 0;
                 }
                 break;
             case NEGATIVE_THRESHOLD_CROSSING:
@@ -196,6 +204,7 @@ bool PeakDetection::update(double x){
                     peakDetected = true;
                     currentSearchState = NO_SEARCH_GATE_TIME_OUT;
                     gateCounter = 0;
+                    peakLocationIndex = 0;
                 }
                 break;
             default:
@@ -282,6 +291,7 @@ bool PeakDetection::reset(){
         peakDetected = false;
         windowCounter = 0;
         gateCounter = 0;
+        peakLocationIndex = 0;
         
         return true;
         
@@ -304,11 +314,19 @@ bool PeakDetection::getPeakDetected(){
     return false;
 }
     
-bool PeakDetection::getPeakFound(){ 
+bool PeakDetection::getPeakFound() const{ 
     return (currentSearchState==NO_SEARCH_GATE_TIME_OUT || currentSearchState == FOUND_CROSSING_SEARCHING_FOR_MINIMA_AND_MAXIMA ); 
 }
+    
+UINT PeakDetection::getPeakLocation() const{
+    return peakLocationIndex;
+}
+    
+UINT PeakDetection::getSearchWindowSize() const{
+    return searchWindowSize;
+}
 
-double PeakDetection::getDerivative(){ return deriv; }
+double PeakDetection::getDerivative() const{ return deriv; }
     
 bool PeakDetection::setThresholdCrossingMode(UINT thresholdCrossingMode){ 
     this->thresholdCrossingMode = thresholdCrossingMode; 

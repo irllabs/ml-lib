@@ -72,6 +72,81 @@ bool PreProcessing::copyBaseVariables(const PreProcessing *preProcessingModule){
     return true;
 }
     
+bool PreProcessing::init(){
+    
+    if( numOutputDimensions == 0 ){
+        errorLog << "init() - Failed to init module, the number of output dimensions is zero!" << endl;
+        initialized = false;
+        return false;
+    }
+    
+    //Setup the output vector
+    processedData.resize( numOutputDimensions );
+    
+    //Flag the module has been initialized
+    initialized = true;
+    
+    return true;
+}
+    
+bool PreProcessing::savePreProcessingSettingsToFile(fstream &file) const{
+    
+    if( !file.is_open() ){
+        errorLog << "savePreProcessingSettingsToFile(fstream &file) - The file is not open!" << endl;
+        return false;
+    }
+    
+    file << "Initialized: " << initialized << endl;
+    file << "NumInputDimensions: " << numInputDimensions << endl;
+    file << "NumOutputDimensions: " << numOutputDimensions << endl;
+    
+    return true;
+}
+    
+bool PreProcessing::loadPreProcessingSettingsFromFile(fstream &file){
+    
+    if( !file.is_open() ){
+        errorLog << "loadPreProcessingSettingsFromFile(fstream &file) - The file is not open!" << endl;
+        return false;
+    }
+    
+    string word;
+    
+    //Load if the filter has been initialized
+    file >> word;
+    if( word != "Initialized:" ){
+        errorLog << "loadPreProcessingSettingsFromFile(fstream &file) - Failed to read Initialized header!" << endl;
+        clear();
+        return false;
+    }
+    file >> initialized;
+    
+    //Load the number of input dimensions
+    file >> word;
+    if( word != "NumInputDimensions:" ){
+        errorLog << "loadPreProcessingSettingsFromFile(fstream &file) - Failed to read NumInputDimensions header!" << endl;
+        clear();
+        return false;
+    }
+    file >> numInputDimensions;
+    
+    //Load the number of output dimensions
+    file >> word;
+    if( word != "NumOutputDimensions:" ){
+        errorLog << "loadPreProcessingSettingsFromFile(fstream &file) - Failed to read NumOutputDimensions header!" << endl;
+        clear();
+        return false;
+    }
+    file >> numOutputDimensions;
+    
+    //If the module has been initalized then call the init function to setup the processed data vector
+    if( initialized ){
+        return init();
+    }
+    
+    return true;
+}
+    
 PreProcessing* PreProcessing::createNewInstance() const{
     return createInstanceFromString(preProcessingType);
 }

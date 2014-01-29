@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #define GRT_VERSION_INFO_HEADER
 
 #define GRT_VERSION "0.1"
-#define GRT_REVISION "288"
+#define GRT_REVISION "301"
 
 //Workout which platform we are using
 #if defined( __WIN32__ ) || defined( _WIN32 ) || defined(WIN32)

@@ -56,9 +56,13 @@ public:
     
     bool getPeakDetected();
     
-    bool getPeakFound();
+    bool getPeakFound() const;
     
-    double getDerivative();
+    UINT getPeakLocation() const;
+    
+    UINT getSearchWindowSize() const;
+    
+    double getDerivative() const;
     
     bool setThresholdCrossingMode(UINT thresholdCrossingMode);
     
@@ -89,6 +93,7 @@ protected:
     unsigned int windowCounter;
     unsigned int thresholdCrossingMode;
     unsigned int currentSearchState;
+    unsigned int peakLocationIndex;
     MovingAverageFilter lpf;
     HighPassFilter hpf;
     DeadZone deadZone;
