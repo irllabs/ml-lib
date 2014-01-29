@@ -20,6 +20,7 @@
 
 namespace ml
 {
+    // TODO: ml_peak shouldn't inherit from ml_base, need a new base class
     class ml_peak : ml_base
     {
         FLEXT_HEADER_S(ml_peak, ml_base, setup);
@@ -31,6 +32,7 @@ namespace ml
         {
             post("ml.peak: Peak Detection based on the GRT library version %s", grt_version.c_str());
             FLEXT_ADDMETHOD(0, update);
+            FLEXT_ADDMETHOD(0, peaks);
         }
         
         ~ml_peak()
@@ -46,17 +48,18 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "negative_threshold", set_negative_threshold);
             FLEXT_CADDATTR_SET(c, "positive_threshold", set_positive_threshold);
             FLEXT_CADDATTR_SET(c, "low_pass_filter_size", set_low_pass_filter_size);
-
+            
             FLEXT_CADDMETHOD_(c, 0, "reset", reset);
             FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
+//            FLEXT_CADDMETHOD_(c, 0, "peaks", peaks);
         }
         
         // Methods
         void update(float f);
+        void peaks(int argc, t_atom *argv);
         void reset();
         void timeout();
         void usage();
-
   
         // Attribute setters
         void set_threshold_crossing_mode(int threshold_crossing_mode);
@@ -65,11 +68,12 @@ namespace ml
         void set_low_pass_filter_size(int low_pass_filter_size);
         
         // Attribute Getters
-       
+        
     private:
         
         // Method wrappers
         FLEXT_CALLBACK_F(update);
+        FLEXT_CALLBACK_V(peaks);
         FLEXT_CALLBACK(reset);
         FLEXT_CALLBACK(timeout);
         
@@ -129,6 +133,45 @@ namespace ml
     // Attribute Getters
     
     // Methods
+    void ml_peak::peaks(int argc, t_atom *argv)
+    {
+        AtomList peaks;
+        bool peakFound = false;
+        
+        for (uint32_t index = 0; index < (unsigned)argc; ++index)
+        {
+            float value = GetAFloat(argv[index]);
+        
+            peakFound = peakDetection.update(value);
+
+            if (peakFound)
+            {
+                t_atom location_a;
+                t_atom value_a;
+                
+                uint32_t rel_index = peakDetection.getPeakLocation();
+                uint32_t abs_index = index - rel_index;
+                
+                if (rel_index > index)
+                {
+                    error("peak reported is in previous block");
+                    continue;
+                }
+                
+                SetInt(location_a, abs_index);
+                SetFloat(value_a, GetAFloat(argv[abs_index]));
+                
+                peaks.Append(location_a);
+                peaks.Append(value_a);
+            }
+        }
+        
+        if (peakFound)
+        {
+            ToOutList(0, peaks);
+        }
+    }
+    
     void ml_peak::update(float f)
     {
         bool peakFound = peakDetection.update(f);
