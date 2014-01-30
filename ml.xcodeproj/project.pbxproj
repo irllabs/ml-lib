@@ -275,6 +275,8 @@
 		7D12D369186081C7009D2059 /* WarningLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D257186081C7009D2059 /* WarningLog.h */; };
 		7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
+		7D2C59AF189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
+		7D2C59B0189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
 		7D38405D1874A20600C3F139 /* SVM.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D38405C1874A20600C3F139 /* SVM.h */; };
 		7D38405E1874B3AF00C3F139 /* SVM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A4186081C7009D2059 /* SVM.cpp */; };
 		7D38405F1874B3B100C3F139 /* SVM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A4186081C7009D2059 /* SVM.cpp */; };
@@ -507,6 +509,7 @@
 		7D12D256186081C7009D2059 /* WarningLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WarningLog.cpp; sourceTree = "<group>"; };
 		7D12D257186081C7009D2059 /* WarningLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningLog.h; sourceTree = "<group>"; };
 		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ml.mlp/ml_mlp.cpp; sourceTree = "<group>"; };
+		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ml.hmm/ml_hmm.cpp; sourceTree = "<group>"; };
 		7D38405C1874A20600C3F139 /* SVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVM.h; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D61B1011875CAF9000FD114 /* ml_linreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_linreg.cpp; path = ml.linreg/ml_linreg.cpp; sourceTree = "<group>"; };
@@ -588,6 +591,7 @@
 				7D61B1061875F661000FD114 /* ml_logreg.cpp */,
 				7D133C6E185FAB0F0020213F /* ml_mlp.cpp */,
 				7D61B1111876F334000FD114 /* ml_dtw.cpp */,
+				7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */,
 				7D61B11618788BD6000FD114 /* ml_peak.cpp */,
 			);
 			name = Source;
@@ -1409,6 +1413,7 @@
 				7D12D343186081C7009D2059 /* LUDecomposition.cpp in Sources */,
 				7D61B1131876F334000FD114 /* ml_dtw.cpp in Sources */,
 				7D12D304186081C7009D2059 /* ClassLabelTimeoutFilter.cpp in Sources */,
+				7D2C59AF189AF5EA001A78C9 /* ml_hmm.cpp in Sources */,
 				7D12D288186081C7009D2059 /* MinDistModel.cpp in Sources */,
 				7D12D347186081C7009D2059 /* MatrixDouble.cpp in Sources */,
 				7DA8B7F2188489B50066EAB0 /* InfoLog.cpp in Sources */,
@@ -1505,6 +1510,7 @@
 				7D12D344186081C7009D2059 /* LUDecomposition.cpp in Sources */,
 				7D61B1141876F334000FD114 /* ml_dtw.cpp in Sources */,
 				7D12D305186081C7009D2059 /* ClassLabelTimeoutFilter.cpp in Sources */,
+				7D2C59B0189AF5EA001A78C9 /* ml_hmm.cpp in Sources */,
 				7D12D289186081C7009D2059 /* MinDistModel.cpp in Sources */,
 				7D12D348186081C7009D2059 /* MatrixDouble.cpp in Sources */,
 				7DA8B7F3188489B50066EAB0 /* InfoLog.cpp in Sources */,
