@@ -42,28 +42,167 @@ namespace ml
         {
             ml_classification_base::setup(c);
             
+            FLEXT_CADDATTR_SET(c, "num_states", set_num_states);
+            FLEXT_CADDATTR_SET(c, "num_symbols", set_num_symbols);
+            FLEXT_CADDATTR_SET(c, "num_model_type", set_model_type);
+            FLEXT_CADDATTR_SET(c, "delta", set_delta);
+            FLEXT_CADDATTR_SET(c, "max_num_iterations", set_max_num_iterations);
+            FLEXT_CADDATTR_SET(c, "num_random_training_iterations", set_num_random_training_iterations);
+            FLEXT_CADDATTR_SET(c, "min_improvement", set_min_improvement);
+
+            FLEXT_CADDATTR_GET(c, "num_states", get_num_states);
+            FLEXT_CADDATTR_GET(c, "num_symbols", get_num_symbols);
+            FLEXT_CADDATTR_GET(c, "num_symbols", get_model_type);
+            FLEXT_CADDATTR_GET(c, "delta", get_delta);
+            FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
+            FLEXT_CADDATTR_GET(c, "min_improvement", get_min_improvement);
         }
         
         // Methods
         void usage();
         
         // Attribute Setters
+        void set_num_states(int num_states);
+        void set_num_symbols(int num_symbols);
+        void set_model_type(int model_type);
+        void set_delta(int delta);
+        void set_max_num_iterations(int max_num_iterations);
+        void set_num_random_training_iterations(int num_random_training_iterations);
+        void set_min_improvement(float min_improvement);
         
         
         // Attribute Getters
-        
+        void get_num_states(int &num_states) const;
+        void get_num_symbols(int &num_symbols) const;
+        void get_model_type(int &model_type) const;
+        void get_delta(int &delta) const;
+        void get_max_num_iterations(int &max_num_iterations) const;
+        void get_num_random_training_iterations(int &num_random_training_iterations) const;
+        void get_min_improvement(float &min_improvement) const;
         
     private:
         // Method wrappers
         
         // Attribute wrappers
-               
+        FLEXT_CALLVAR_I(get_num_states, set_num_states);
+        FLEXT_CALLVAR_I(get_num_symbols, set_num_symbols);
+        FLEXT_CALLVAR_I(get_model_type, set_model_type);
+        FLEXT_CALLVAR_I(get_delta, set_delta);
+        FLEXT_CALLVAR_I(get_max_num_iterations, set_max_num_iterations);
+        FLEXT_CALLVAR_I(get_num_random_training_iterations, set_num_random_training_iterations);
+        FLEXT_CALLVAR_F(get_min_improvement, set_min_improvement);
+        
         // Instance variables
         GRT::HMM classifier;
         
     };
     
     // Attribute setters
+    void ml_hmm::set_num_states(int num_states)
+    {
+        bool success = classifier.setNumStates(num_states);
+
+        if (!success)
+        {
+            flext::error("unable to set number of states");
+        }
+    }
+    
+    void ml_hmm::set_num_symbols(int num_symbols)
+    {
+        bool success = classifier.setNumSymbols(num_symbols);
+        
+        if (!success)
+        {
+            flext::error("unable to set number of symbols");
+        }
+    }
+    
+    void ml_hmm::set_model_type(int model_type)
+    {
+        bool success = classifier.setModelType(model_type);
+        
+        if (!success)
+        {
+            flext::error("unable to set model type");
+        }
+    }
+    
+    void ml_hmm::set_delta(int delta)
+    {
+        bool success = classifier.setDelta(delta);
+        
+        if (!success)
+        {
+            flext::error("unable to set delta");
+        }
+    }
+    
+    void ml_hmm::set_max_num_iterations(int max_num_iterations)
+    {
+        bool success = classifier.setMaxNumIterations(max_num_iterations);
+        
+        if (!success)
+        {
+            flext::error("unable to set max number of iterations");
+        }
+    }
+    
+    void ml_hmm::set_num_random_training_iterations(int num_random_training_iterations)
+    {
+        bool success = classifier.setNumRandomTrainingIterations(num_random_training_iterations);
+        
+        if (!success)
+        {
+            flext::error("unable to set number of random training iterations");
+        }
+    }
+    
+    void ml_hmm::set_min_improvement(float min_improvement)
+    {
+        bool success = classifier.setMinImprovement(min_improvement);
+        
+        if (!success)
+        {
+            flext::error("unable to set min improvement");
+        }
+    }
+    
+    // Attribute getters
+    void ml_hmm::get_num_states(int &num_states) const
+    {
+        num_states = classifier.getNumStates();
+    }
+    
+    void ml_hmm::get_num_symbols(int &num_symbols) const
+    {
+        num_symbols = classifier.getNumSymbols();
+    }
+    
+    void ml_hmm::get_model_type(int &model_type) const
+    {
+        model_type = classifier.getModelType();
+    }
+    
+    void ml_hmm::get_delta(int &delta) const
+    {
+        delta = classifier.getDelta();
+    }
+    
+    void ml_hmm::get_max_num_iterations(int &max_num_iterations) const
+    {
+        max_num_iterations = classifier.getMaxNumIterations();
+    }
+    
+    void ml_hmm::get_num_random_training_iterations(int &num_random_training_iterations) const
+    {
+        num_random_training_iterations = classifier.getNumRandomTrainingIterations();
+    }
+    
+    void ml_hmm::get_min_improvement(float &min_improvement) const
+    {
+        min_improvement = classifier.getMinImprovement();
+    }
     
     // methods
     void ml_hmm::usage()
