@@ -100,6 +100,8 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "use_validation_set", get_use_validation_set);
             FLEXT_CADDATTR_GET(c, "validation_set_size", get_validation_set_size);
             FLEXT_CADDATTR_GET(c, "randomize_training_order", get_randomise_training_order);
+       
+            DefineHelp(c,"ml.mlp");
         }
         
         // Methods

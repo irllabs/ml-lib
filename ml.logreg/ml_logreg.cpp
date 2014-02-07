@@ -38,7 +38,11 @@ namespace ml
         }
         
     protected:
-
+        static void setup(t_classid c)
+        {
+            DefineHelp(c,"ml.logreg");
+        }
+        
     private:
         
         // Instance variables

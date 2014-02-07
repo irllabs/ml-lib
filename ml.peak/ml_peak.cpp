@@ -52,6 +52,8 @@ namespace ml
             FLEXT_CADDMETHOD_(c, 0, "reset", reset);
             FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
 //            FLEXT_CADDMETHOD_(c, 0, "peaks", peaks);
+            
+            DefineHelp(c,"ml.peak");
         }
         
         // Methods

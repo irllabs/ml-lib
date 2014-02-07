@@ -56,6 +56,8 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
             FLEXT_CADDATTR_GET(c, "min_improvement", get_min_improvement);
+            
+            DefineHelp(c,"ml.hmm");
         }
         
         // Methods

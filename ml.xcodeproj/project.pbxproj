@@ -9,275 +9,164 @@
 /* Begin PBXBuildFile section */
 		7D12D258186081C7009D2059 /* AdaBoost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D16C186081C7009D2059 /* AdaBoost.cpp */; };
 		7D12D259186081C7009D2059 /* AdaBoost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D16C186081C7009D2059 /* AdaBoost.cpp */; };
-		7D12D25A186081C7009D2059 /* AdaBoost.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D16D186081C7009D2059 /* AdaBoost.h */; };
-		7D12D25B186081C7009D2059 /* AdaBoostClassModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D16E186081C7009D2059 /* AdaBoostClassModel.h */; };
 		7D12D25C186081C7009D2059 /* DecisionStump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D170186081C7009D2059 /* DecisionStump.cpp */; };
 		7D12D25D186081C7009D2059 /* DecisionStump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D170186081C7009D2059 /* DecisionStump.cpp */; };
-		7D12D25E186081C7009D2059 /* DecisionStump.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D171186081C7009D2059 /* DecisionStump.h */; };
 		7D12D25F186081C7009D2059 /* RadialBasisFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D172186081C7009D2059 /* RadialBasisFunction.cpp */; };
 		7D12D260186081C7009D2059 /* RadialBasisFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D172186081C7009D2059 /* RadialBasisFunction.cpp */; };
-		7D12D261186081C7009D2059 /* RadialBasisFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D173186081C7009D2059 /* RadialBasisFunction.h */; };
 		7D12D262186081C7009D2059 /* WeakClassifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D174186081C7009D2059 /* WeakClassifier.cpp */; };
 		7D12D263186081C7009D2059 /* WeakClassifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D174186081C7009D2059 /* WeakClassifier.cpp */; };
-		7D12D264186081C7009D2059 /* WeakClassifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D175186081C7009D2059 /* WeakClassifier.h */; };
 		7D12D265186081C7009D2059 /* ANBC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D177186081C7009D2059 /* ANBC.cpp */; };
 		7D12D266186081C7009D2059 /* ANBC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D177186081C7009D2059 /* ANBC.cpp */; };
-		7D12D267186081C7009D2059 /* ANBC.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D178186081C7009D2059 /* ANBC.h */; };
 		7D12D268186081C7009D2059 /* ANBC_Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D179186081C7009D2059 /* ANBC_Model.cpp */; };
 		7D12D269186081C7009D2059 /* ANBC_Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D179186081C7009D2059 /* ANBC_Model.cpp */; };
-		7D12D26A186081C7009D2059 /* ANBC_Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D17A186081C7009D2059 /* ANBC_Model.h */; };
-		7D12D26D186081C7009D2059 /* BAG.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D17D186081C7009D2059 /* BAG.h */; };
 		7D12D26E186081C7009D2059 /* DecisionTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17F186081C7009D2059 /* DecisionTree.cpp */; };
 		7D12D26F186081C7009D2059 /* DecisionTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17F186081C7009D2059 /* DecisionTree.cpp */; };
-		7D12D270186081C7009D2059 /* DecisionTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D180186081C7009D2059 /* DecisionTree.h */; };
-		7D12D271186081C7009D2059 /* DecisionTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D181186081C7009D2059 /* DecisionTreeNode.h */; };
 		7D12D272186081C7009D2059 /* DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D183186081C7009D2059 /* DTW.cpp */; };
 		7D12D273186081C7009D2059 /* DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D183186081C7009D2059 /* DTW.cpp */; };
-		7D12D274186081C7009D2059 /* DTW.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D184186081C7009D2059 /* DTW.h */; };
 		7D12D275186081C7009D2059 /* GMM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D186186081C7009D2059 /* GMM.cpp */; };
 		7D12D276186081C7009D2059 /* GMM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D186186081C7009D2059 /* GMM.cpp */; };
-		7D12D277186081C7009D2059 /* GMM.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D187186081C7009D2059 /* GMM.h */; };
-		7D12D278186081C7009D2059 /* MixtureModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D188186081C7009D2059 /* MixtureModel.h */; };
 		7D12D279186081C7009D2059 /* HiddenMarkovModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D18A186081C7009D2059 /* HiddenMarkovModel.cpp */; };
 		7D12D27A186081C7009D2059 /* HiddenMarkovModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D18A186081C7009D2059 /* HiddenMarkovModel.cpp */; };
-		7D12D27B186081C7009D2059 /* HiddenMarkovModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D18B186081C7009D2059 /* HiddenMarkovModel.h */; };
 		7D12D27C186081C7009D2059 /* HMM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D18C186081C7009D2059 /* HMM.cpp */; };
 		7D12D27D186081C7009D2059 /* HMM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D18C186081C7009D2059 /* HMM.cpp */; };
-		7D12D27E186081C7009D2059 /* HMM.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D18D186081C7009D2059 /* HMM.h */; };
 		7D12D27F186081C7009D2059 /* KNN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D18F186081C7009D2059 /* KNN.cpp */; };
 		7D12D280186081C7009D2059 /* KNN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D18F186081C7009D2059 /* KNN.cpp */; };
-		7D12D281186081C7009D2059 /* KNN.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D190186081C7009D2059 /* KNN.h */; };
 		7D12D282186081C7009D2059 /* LDA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D192186081C7009D2059 /* LDA.cpp */; };
 		7D12D283186081C7009D2059 /* LDA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D192186081C7009D2059 /* LDA.cpp */; };
-		7D12D284186081C7009D2059 /* LDA.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D193186081C7009D2059 /* LDA.h */; };
 		7D12D285186081C7009D2059 /* MinDist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D195186081C7009D2059 /* MinDist.cpp */; };
 		7D12D286186081C7009D2059 /* MinDist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D195186081C7009D2059 /* MinDist.cpp */; };
-		7D12D287186081C7009D2059 /* MinDist.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D196186081C7009D2059 /* MinDist.h */; };
 		7D12D288186081C7009D2059 /* MinDistModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D197186081C7009D2059 /* MinDistModel.cpp */; };
 		7D12D289186081C7009D2059 /* MinDistModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D197186081C7009D2059 /* MinDistModel.cpp */; };
-		7D12D28A186081C7009D2059 /* MinDistModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D198186081C7009D2059 /* MinDistModel.h */; };
 		7D12D28B186081C7009D2059 /* RandomForests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D19A186081C7009D2059 /* RandomForests.cpp */; };
 		7D12D28C186081C7009D2059 /* RandomForests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D19A186081C7009D2059 /* RandomForests.cpp */; };
-		7D12D28D186081C7009D2059 /* RandomForests.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D19B186081C7009D2059 /* RandomForests.h */; };
 		7D12D28E186081C7009D2059 /* Softmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D19D186081C7009D2059 /* Softmax.cpp */; };
 		7D12D28F186081C7009D2059 /* Softmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D19D186081C7009D2059 /* Softmax.cpp */; };
-		7D12D290186081C7009D2059 /* Softmax.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D19E186081C7009D2059 /* Softmax.h */; };
-		7D12D291186081C7009D2059 /* SoftmaxModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D19F186081C7009D2059 /* SoftmaxModel.h */; };
 		7D12D298186081C7009D2059 /* GaussianMixtureModels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A8186081C7009D2059 /* GaussianMixtureModels.cpp */; };
 		7D12D299186081C7009D2059 /* GaussianMixtureModels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A8186081C7009D2059 /* GaussianMixtureModels.cpp */; };
-		7D12D29A186081C7009D2059 /* GaussianMixtureModels.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1A9186081C7009D2059 /* GaussianMixtureModels.h */; };
 		7D12D29B186081C7009D2059 /* HierarchicalClustering.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1AB186081C7009D2059 /* HierarchicalClustering.cpp */; };
 		7D12D29C186081C7009D2059 /* HierarchicalClustering.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1AB186081C7009D2059 /* HierarchicalClustering.cpp */; };
-		7D12D29D186081C7009D2059 /* HierarchicalClustering.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1AC186081C7009D2059 /* HierarchicalClustering.h */; };
 		7D12D29E186081C7009D2059 /* KMeans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1AE186081C7009D2059 /* KMeans.cpp */; };
 		7D12D29F186081C7009D2059 /* KMeans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1AE186081C7009D2059 /* KMeans.cpp */; };
-		7D12D2A0186081C7009D2059 /* KMeans.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1AF186081C7009D2059 /* KMeans.h */; };
 		7D12D2A1186081C7009D2059 /* Gate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1B1186081C7009D2059 /* Gate.cpp */; };
 		7D12D2A2186081C7009D2059 /* Gate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1B1186081C7009D2059 /* Gate.cpp */; };
-		7D12D2A3186081C7009D2059 /* Gate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1B2186081C7009D2059 /* Gate.h */; };
-		7D12D2A4186081C7009D2059 /* EvolutionaryAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1B5186081C7009D2059 /* EvolutionaryAlgorithm.h */; };
-		7D12D2A5186081C7009D2059 /* Individual.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1B6186081C7009D2059 /* Individual.h */; };
-		7D12D2A6186081C7009D2059 /* Particle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1B8186081C7009D2059 /* Particle.h */; };
-		7D12D2A7186081C7009D2059 /* ParticleFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1B9186081C7009D2059 /* ParticleFilter.h */; };
-		7D12D2A8186081C7009D2059 /* ParticleSwarmOptimization.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1BB186081C7009D2059 /* ParticleSwarmOptimization.h */; };
-		7D12D2A9186081C7009D2059 /* PSOParticle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1BC186081C7009D2059 /* PSOParticle.h */; };
 		7D12D2AA186081C7009D2059 /* LabelledClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1BE186081C7009D2059 /* LabelledClassificationData.cpp */; };
 		7D12D2AB186081C7009D2059 /* LabelledClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1BE186081C7009D2059 /* LabelledClassificationData.cpp */; };
-		7D12D2AC186081C7009D2059 /* LabelledClassificationData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1BF186081C7009D2059 /* LabelledClassificationData.h */; };
 		7D12D2AD186081C7009D2059 /* LabelledClassificationSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C0186081C7009D2059 /* LabelledClassificationSample.cpp */; };
 		7D12D2AE186081C7009D2059 /* LabelledClassificationSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C0186081C7009D2059 /* LabelledClassificationSample.cpp */; };
-		7D12D2AF186081C7009D2059 /* LabelledClassificationSample.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1C1186081C7009D2059 /* LabelledClassificationSample.h */; };
 		7D12D2B0186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C2186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.cpp */; };
 		7D12D2B1186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C2186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.cpp */; };
-		7D12D2B2186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1C3186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.h */; };
 		7D12D2B3186081C7009D2059 /* LabelledRegressionData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C4186081C7009D2059 /* LabelledRegressionData.cpp */; };
 		7D12D2B4186081C7009D2059 /* LabelledRegressionData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C4186081C7009D2059 /* LabelledRegressionData.cpp */; };
-		7D12D2B5186081C7009D2059 /* LabelledRegressionData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1C5186081C7009D2059 /* LabelledRegressionData.h */; };
 		7D12D2B6186081C7009D2059 /* LabelledRegressionSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C6186081C7009D2059 /* LabelledRegressionSample.cpp */; };
 		7D12D2B7186081C7009D2059 /* LabelledRegressionSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C6186081C7009D2059 /* LabelledRegressionSample.cpp */; };
-		7D12D2B8186081C7009D2059 /* LabelledRegressionSample.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1C7186081C7009D2059 /* LabelledRegressionSample.h */; };
 		7D12D2B9186081C7009D2059 /* LabelledTimeSeriesClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C8186081C7009D2059 /* LabelledTimeSeriesClassificationData.cpp */; };
 		7D12D2BA186081C7009D2059 /* LabelledTimeSeriesClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1C8186081C7009D2059 /* LabelledTimeSeriesClassificationData.cpp */; };
-		7D12D2BB186081C7009D2059 /* LabelledTimeSeriesClassificationData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1C9186081C7009D2059 /* LabelledTimeSeriesClassificationData.h */; };
 		7D12D2BC186081C7009D2059 /* LabelledTimeSeriesClassificationSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1CA186081C7009D2059 /* LabelledTimeSeriesClassificationSample.cpp */; };
 		7D12D2BD186081C7009D2059 /* LabelledTimeSeriesClassificationSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1CA186081C7009D2059 /* LabelledTimeSeriesClassificationSample.cpp */; };
-		7D12D2BE186081C7009D2059 /* LabelledTimeSeriesClassificationSample.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1CB186081C7009D2059 /* LabelledTimeSeriesClassificationSample.h */; };
-		7D12D2BF186081C7009D2059 /* TimeSeriesPositionTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1CC186081C7009D2059 /* TimeSeriesPositionTracker.h */; };
 		7D12D2C0186081C7009D2059 /* UnlabelledClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1CD186081C7009D2059 /* UnlabelledClassificationData.cpp */; };
 		7D12D2C1186081C7009D2059 /* UnlabelledClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1CD186081C7009D2059 /* UnlabelledClassificationData.cpp */; };
-		7D12D2C2186081C7009D2059 /* UnlabelledClassificationData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1CE186081C7009D2059 /* UnlabelledClassificationData.h */; };
 		7D12D2C3186081C7009D2059 /* FastFourierTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1D1186081C7009D2059 /* FastFourierTransform.cpp */; };
 		7D12D2C4186081C7009D2059 /* FastFourierTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1D1186081C7009D2059 /* FastFourierTransform.cpp */; };
-		7D12D2C5186081C7009D2059 /* FastFourierTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1D2186081C7009D2059 /* FastFourierTransform.h */; };
 		7D12D2C6186081C7009D2059 /* FFT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1D3186081C7009D2059 /* FFT.cpp */; };
 		7D12D2C7186081C7009D2059 /* FFT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1D3186081C7009D2059 /* FFT.cpp */; };
-		7D12D2C8186081C7009D2059 /* FFT.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1D4186081C7009D2059 /* FFT.h */; };
 		7D12D2C9186081C7009D2059 /* FFTFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1D5186081C7009D2059 /* FFTFeatures.cpp */; };
 		7D12D2CA186081C7009D2059 /* FFTFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1D5186081C7009D2059 /* FFTFeatures.cpp */; };
-		7D12D2CB186081C7009D2059 /* FFTFeatures.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1D6186081C7009D2059 /* FFTFeatures.h */; };
 		7D12D2CC186081C7009D2059 /* KMeansQuantizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1D8186081C7009D2059 /* KMeansQuantizer.cpp */; };
 		7D12D2CD186081C7009D2059 /* KMeansQuantizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1D8186081C7009D2059 /* KMeansQuantizer.cpp */; };
-		7D12D2CE186081C7009D2059 /* KMeansQuantizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1D9186081C7009D2059 /* KMeansQuantizer.h */; };
 		7D12D2CF186081C7009D2059 /* MovementIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1DB186081C7009D2059 /* MovementIndex.cpp */; };
 		7D12D2D0186081C7009D2059 /* MovementIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1DB186081C7009D2059 /* MovementIndex.cpp */; };
-		7D12D2D1186081C7009D2059 /* MovementIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1DC186081C7009D2059 /* MovementIndex.h */; };
 		7D12D2D2186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1DE186081C7009D2059 /* MovementTrajectoryFeatures.cpp */; };
 		7D12D2D3186081C7009D2059 /* MovementTrajectoryFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1DE186081C7009D2059 /* MovementTrajectoryFeatures.cpp */; };
-		7D12D2D4186081C7009D2059 /* MovementTrajectoryFeatures.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1DF186081C7009D2059 /* MovementTrajectoryFeatures.h */; };
 		7D12D2D5186081C7009D2059 /* PrincipalComponentAnalysis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1E1186081C7009D2059 /* PrincipalComponentAnalysis.cpp */; };
 		7D12D2D6186081C7009D2059 /* PrincipalComponentAnalysis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1E1186081C7009D2059 /* PrincipalComponentAnalysis.cpp */; };
-		7D12D2D7186081C7009D2059 /* PrincipalComponentAnalysis.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1E2186081C7009D2059 /* PrincipalComponentAnalysis.h */; };
 		7D12D2D8186081C7009D2059 /* PeakDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1E3186081C7009D2059 /* PeakDetection.cpp */; };
 		7D12D2D9186081C7009D2059 /* PeakDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1E3186081C7009D2059 /* PeakDetection.cpp */; };
-		7D12D2DA186081C7009D2059 /* PeakDetection.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1E4186081C7009D2059 /* PeakDetection.h */; };
 		7D12D2DB186081C7009D2059 /* TimeDomainFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1E6186081C7009D2059 /* TimeDomainFeatures.cpp */; };
 		7D12D2DC186081C7009D2059 /* TimeDomainFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1E6186081C7009D2059 /* TimeDomainFeatures.cpp */; };
-		7D12D2DD186081C7009D2059 /* TimeDomainFeatures.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1E7186081C7009D2059 /* TimeDomainFeatures.h */; };
 		7D12D2DE186081C7009D2059 /* TimeseriesBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1E9186081C7009D2059 /* TimeseriesBuffer.cpp */; };
 		7D12D2DF186081C7009D2059 /* TimeseriesBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1E9186081C7009D2059 /* TimeseriesBuffer.cpp */; };
-		7D12D2E0186081C7009D2059 /* TimeseriesBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1EA186081C7009D2059 /* TimeseriesBuffer.h */; };
 		7D12D2E1186081C7009D2059 /* ZeroCrossingCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1EC186081C7009D2059 /* ZeroCrossingCounter.cpp */; };
 		7D12D2E2186081C7009D2059 /* ZeroCrossingCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1EC186081C7009D2059 /* ZeroCrossingCounter.cpp */; };
-		7D12D2E3186081C7009D2059 /* ZeroCrossingCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1ED186081C7009D2059 /* ZeroCrossingCounter.h */; };
 		7D12D2E4186081C7009D2059 /* Classifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1EF186081C7009D2059 /* Classifier.cpp */; };
 		7D12D2E5186081C7009D2059 /* Classifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1EF186081C7009D2059 /* Classifier.cpp */; };
-		7D12D2E6186081C7009D2059 /* Classifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1F0186081C7009D2059 /* Classifier.h */; };
 		7D12D2E7186081C7009D2059 /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1F1186081C7009D2059 /* Context.cpp */; };
 		7D12D2E8186081C7009D2059 /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1F1186081C7009D2059 /* Context.cpp */; };
-		7D12D2E9186081C7009D2059 /* Context.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1F2186081C7009D2059 /* Context.h */; };
 		7D12D2EA186081C7009D2059 /* FeatureExtraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1F3186081C7009D2059 /* FeatureExtraction.cpp */; };
 		7D12D2EB186081C7009D2059 /* FeatureExtraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1F3186081C7009D2059 /* FeatureExtraction.cpp */; };
-		7D12D2EC186081C7009D2059 /* FeatureExtraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1F4186081C7009D2059 /* FeatureExtraction.h */; };
 		7D12D2ED186081C7009D2059 /* GestureRecognitionPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1F5186081C7009D2059 /* GestureRecognitionPipeline.cpp */; };
 		7D12D2EE186081C7009D2059 /* GestureRecognitionPipeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1F5186081C7009D2059 /* GestureRecognitionPipeline.cpp */; };
-		7D12D2EF186081C7009D2059 /* GestureRecognitionPipeline.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1F6186081C7009D2059 /* GestureRecognitionPipeline.h */; };
 		7D12D2F0186081C7009D2059 /* GRTBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1F7186081C7009D2059 /* GRTBase.cpp */; };
 		7D12D2F1186081C7009D2059 /* GRTBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1F7186081C7009D2059 /* GRTBase.cpp */; };
-		7D12D2F2186081C7009D2059 /* GRTBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1F8186081C7009D2059 /* GRTBase.h */; };
-		7D12D2F3186081C7009D2059 /* MLBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1F9186081C7009D2059 /* MLBase.h */; };
 		7D12D2F4186081C7009D2059 /* PostProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1FA186081C7009D2059 /* PostProcessing.cpp */; };
 		7D12D2F5186081C7009D2059 /* PostProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1FA186081C7009D2059 /* PostProcessing.cpp */; };
-		7D12D2F6186081C7009D2059 /* PostProcessing.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1FB186081C7009D2059 /* PostProcessing.h */; };
 		7D12D2F7186081C7009D2059 /* PreProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1FC186081C7009D2059 /* PreProcessing.cpp */; };
 		7D12D2F8186081C7009D2059 /* PreProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1FC186081C7009D2059 /* PreProcessing.cpp */; };
-		7D12D2F9186081C7009D2059 /* PreProcessing.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1FD186081C7009D2059 /* PreProcessing.h */; };
 		7D12D2FA186081C7009D2059 /* Regressifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1FE186081C7009D2059 /* Regressifier.cpp */; };
 		7D12D2FB186081C7009D2059 /* Regressifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1FE186081C7009D2059 /* Regressifier.cpp */; };
-		7D12D2FC186081C7009D2059 /* Regressifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D1FF186081C7009D2059 /* Regressifier.h */; };
-		7D12D2FD186081C7009D2059 /* GRT.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D200186081C7009D2059 /* GRT.h */; };
 		7D12D2FE186081C7009D2059 /* ClassLabelChangeFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D202186081C7009D2059 /* ClassLabelChangeFilter.cpp */; };
 		7D12D2FF186081C7009D2059 /* ClassLabelChangeFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D202186081C7009D2059 /* ClassLabelChangeFilter.cpp */; };
-		7D12D300186081C7009D2059 /* ClassLabelChangeFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D203186081C7009D2059 /* ClassLabelChangeFilter.h */; };
 		7D12D301186081C7009D2059 /* ClassLabelFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D204186081C7009D2059 /* ClassLabelFilter.cpp */; };
 		7D12D302186081C7009D2059 /* ClassLabelFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D204186081C7009D2059 /* ClassLabelFilter.cpp */; };
-		7D12D303186081C7009D2059 /* ClassLabelFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D205186081C7009D2059 /* ClassLabelFilter.h */; };
 		7D12D304186081C7009D2059 /* ClassLabelTimeoutFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D206186081C7009D2059 /* ClassLabelTimeoutFilter.cpp */; };
 		7D12D305186081C7009D2059 /* ClassLabelTimeoutFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D206186081C7009D2059 /* ClassLabelTimeoutFilter.cpp */; };
-		7D12D306186081C7009D2059 /* ClassLabelTimeoutFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D207186081C7009D2059 /* ClassLabelTimeoutFilter.h */; };
 		7D12D307186081C7009D2059 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D209186081C7009D2059 /* DeadZone.cpp */; };
 		7D12D308186081C7009D2059 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D209186081C7009D2059 /* DeadZone.cpp */; };
-		7D12D309186081C7009D2059 /* DeadZone.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D20A186081C7009D2059 /* DeadZone.h */; };
 		7D12D30A186081C7009D2059 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D20B186081C7009D2059 /* Derivative.cpp */; };
 		7D12D30B186081C7009D2059 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D20B186081C7009D2059 /* Derivative.cpp */; };
-		7D12D30C186081C7009D2059 /* Derivative.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D20C186081C7009D2059 /* Derivative.h */; };
 		7D12D30D186081C7009D2059 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D20D186081C7009D2059 /* DoubleMovingAverageFilter.cpp */; };
 		7D12D30E186081C7009D2059 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D20D186081C7009D2059 /* DoubleMovingAverageFilter.cpp */; };
-		7D12D30F186081C7009D2059 /* DoubleMovingAverageFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D20E186081C7009D2059 /* DoubleMovingAverageFilter.h */; };
 		7D12D310186081C7009D2059 /* HighPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D20F186081C7009D2059 /* HighPassFilter.cpp */; };
 		7D12D311186081C7009D2059 /* HighPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D20F186081C7009D2059 /* HighPassFilter.cpp */; };
-		7D12D312186081C7009D2059 /* HighPassFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D210186081C7009D2059 /* HighPassFilter.h */; };
 		7D12D313186081C7009D2059 /* LowPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D211186081C7009D2059 /* LowPassFilter.cpp */; };
 		7D12D314186081C7009D2059 /* LowPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D211186081C7009D2059 /* LowPassFilter.cpp */; };
-		7D12D315186081C7009D2059 /* LowPassFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D212186081C7009D2059 /* LowPassFilter.h */; };
 		7D12D316186081C7009D2059 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D213186081C7009D2059 /* MovingAverageFilter.cpp */; };
 		7D12D317186081C7009D2059 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D213186081C7009D2059 /* MovingAverageFilter.cpp */; };
-		7D12D318186081C7009D2059 /* MovingAverageFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D214186081C7009D2059 /* MovingAverageFilter.h */; };
 		7D12D319186081C7009D2059 /* SavitzkyGolayFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D215186081C7009D2059 /* SavitzkyGolayFilter.cpp */; };
 		7D12D31A186081C7009D2059 /* SavitzkyGolayFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D215186081C7009D2059 /* SavitzkyGolayFilter.cpp */; };
-		7D12D31B186081C7009D2059 /* SavitzkyGolayFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D216186081C7009D2059 /* SavitzkyGolayFilter.h */; };
 		7D12D31C186081C7009D2059 /* MLP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D21A186081C7009D2059 /* MLP.cpp */; };
 		7D12D31D186081C7009D2059 /* MLP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D21A186081C7009D2059 /* MLP.cpp */; };
-		7D12D31E186081C7009D2059 /* MLP.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D21B186081C7009D2059 /* MLP.h */; };
 		7D12D31F186081C7009D2059 /* Neuron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D21C186081C7009D2059 /* Neuron.cpp */; };
 		7D12D320186081C7009D2059 /* Neuron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D21C186081C7009D2059 /* Neuron.cpp */; };
-		7D12D321186081C7009D2059 /* Neuron.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D21D186081C7009D2059 /* Neuron.h */; };
 		7D12D322186081C7009D2059 /* LinearRegression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D21F186081C7009D2059 /* LinearRegression.cpp */; };
 		7D12D323186081C7009D2059 /* LinearRegression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D21F186081C7009D2059 /* LinearRegression.cpp */; };
-		7D12D324186081C7009D2059 /* LinearRegression.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D220186081C7009D2059 /* LinearRegression.h */; };
 		7D12D325186081C7009D2059 /* LogisticRegression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D222186081C7009D2059 /* LogisticRegression.cpp */; };
 		7D12D326186081C7009D2059 /* LogisticRegression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D222186081C7009D2059 /* LogisticRegression.cpp */; };
-		7D12D327186081C7009D2059 /* LogisticRegression.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D223186081C7009D2059 /* LogisticRegression.h */; };
 		7D12D328186081C7009D2059 /* MultidimensionalRegression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D225186081C7009D2059 /* MultidimensionalRegression.cpp */; };
 		7D12D329186081C7009D2059 /* MultidimensionalRegression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D225186081C7009D2059 /* MultidimensionalRegression.cpp */; };
-		7D12D32A186081C7009D2059 /* MultidimensionalRegression.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D226186081C7009D2059 /* MultidimensionalRegression.h */; };
 		7D12D32B186081C7009D2059 /* Cholesky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D228186081C7009D2059 /* Cholesky.cpp */; };
 		7D12D32C186081C7009D2059 /* Cholesky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D228186081C7009D2059 /* Cholesky.cpp */; };
-		7D12D32D186081C7009D2059 /* Cholesky.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D229186081C7009D2059 /* Cholesky.h */; };
-		7D12D32E186081C7009D2059 /* CircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D22A186081C7009D2059 /* CircularBuffer.h */; };
-		7D12D32F186081C7009D2059 /* ClassificationResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D22B186081C7009D2059 /* ClassificationResult.h */; };
-		7D12D330186081C7009D2059 /* ClassTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D22C186081C7009D2059 /* ClassTracker.h */; };
 		7D12D331186081C7009D2059 /* DebugLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D22D186081C7009D2059 /* DebugLog.cpp */; };
 		7D12D332186081C7009D2059 /* DebugLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D22D186081C7009D2059 /* DebugLog.cpp */; };
-		7D12D333186081C7009D2059 /* DebugLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D22E186081C7009D2059 /* DebugLog.h */; };
 		7D12D334186081C7009D2059 /* EigenvalueDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D22F186081C7009D2059 /* EigenvalueDecomposition.cpp */; };
 		7D12D335186081C7009D2059 /* EigenvalueDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D22F186081C7009D2059 /* EigenvalueDecomposition.cpp */; };
-		7D12D336186081C7009D2059 /* EigenvalueDecomposition.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D230186081C7009D2059 /* EigenvalueDecomposition.h */; };
 		7D12D337186081C7009D2059 /* ErrorLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D231186081C7009D2059 /* ErrorLog.cpp */; };
 		7D12D338186081C7009D2059 /* ErrorLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D231186081C7009D2059 /* ErrorLog.cpp */; };
-		7D12D339186081C7009D2059 /* ErrorLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D232186081C7009D2059 /* ErrorLog.h */; };
-		7D12D33A186081C7009D2059 /* FileParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D233186081C7009D2059 /* FileParser.h */; };
-		7D12D33B186081C7009D2059 /* GRTCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D234186081C7009D2059 /* GRTCommon.h */; };
-		7D12D33C186081C7009D2059 /* GRTTypedefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D235186081C7009D2059 /* GRTTypedefs.h */; };
-		7D12D33D186081C7009D2059 /* GRTVersionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D236186081C7009D2059 /* GRTVersionInfo.h */; };
-		7D12D33E186081C7009D2059 /* IndexedDouble.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D237186081C7009D2059 /* IndexedDouble.h */; };
 		7D12D33F186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D238186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.cpp */; };
 		7D12D340186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D238186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.cpp */; };
-		7D12D341186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D239186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.h */; };
-		7D12D342186081C7009D2059 /* Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D23A186081C7009D2059 /* Log.h */; };
 		7D12D343186081C7009D2059 /* LUDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D23B186081C7009D2059 /* LUDecomposition.cpp */; };
 		7D12D344186081C7009D2059 /* LUDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D23B186081C7009D2059 /* LUDecomposition.cpp */; };
-		7D12D345186081C7009D2059 /* LUDecomposition.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D23C186081C7009D2059 /* LUDecomposition.h */; };
-		7D12D346186081C7009D2059 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D23D186081C7009D2059 /* Matrix.h */; };
 		7D12D347186081C7009D2059 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D23E186081C7009D2059 /* MatrixDouble.cpp */; };
 		7D12D348186081C7009D2059 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D23E186081C7009D2059 /* MatrixDouble.cpp */; };
-		7D12D349186081C7009D2059 /* MatrixDouble.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D23F186081C7009D2059 /* MatrixDouble.h */; };
-		7D12D34A186081C7009D2059 /* MinMax.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D240186081C7009D2059 /* MinMax.h */; };
 		7D12D34B186081C7009D2059 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D241186081C7009D2059 /* Node.cpp */; };
 		7D12D34C186081C7009D2059 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D241186081C7009D2059 /* Node.cpp */; };
-		7D12D34D186081C7009D2059 /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D242186081C7009D2059 /* Node.h */; };
-		7D12D34E186081C7009D2059 /* Observer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D243186081C7009D2059 /* Observer.h */; };
-		7D12D34F186081C7009D2059 /* ObserverManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D244186081C7009D2059 /* ObserverManager.h */; };
-		7D12D350186081C7009D2059 /* Random.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D245186081C7009D2059 /* Random.h */; };
 		7D12D351186081C7009D2059 /* RangeTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D246186081C7009D2059 /* RangeTracker.cpp */; };
 		7D12D352186081C7009D2059 /* RangeTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D246186081C7009D2059 /* RangeTracker.cpp */; };
-		7D12D353186081C7009D2059 /* RangeTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D247186081C7009D2059 /* RangeTracker.h */; };
 		7D12D354186081C7009D2059 /* SVD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D248186081C7009D2059 /* SVD.cpp */; };
 		7D12D355186081C7009D2059 /* SVD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D248186081C7009D2059 /* SVD.cpp */; };
-		7D12D356186081C7009D2059 /* SVD.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D249186081C7009D2059 /* SVD.h */; };
 		7D12D357186081C7009D2059 /* TestingLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D24A186081C7009D2059 /* TestingLog.cpp */; };
 		7D12D358186081C7009D2059 /* TestingLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D24A186081C7009D2059 /* TestingLog.cpp */; };
-		7D12D359186081C7009D2059 /* TestingLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D24B186081C7009D2059 /* TestingLog.h */; };
-		7D12D35A186081C7009D2059 /* TestInstanceResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D24C186081C7009D2059 /* TestInstanceResult.h */; };
-		7D12D35B186081C7009D2059 /* TestResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D24D186081C7009D2059 /* TestResult.h */; };
-		7D12D35C186081C7009D2059 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D24E186081C7009D2059 /* Timer.h */; };
 		7D12D35D186081C7009D2059 /* TrainingDataRecordingTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D24F186081C7009D2059 /* TrainingDataRecordingTimer.cpp */; };
 		7D12D35E186081C7009D2059 /* TrainingDataRecordingTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D24F186081C7009D2059 /* TrainingDataRecordingTimer.cpp */; };
-		7D12D35F186081C7009D2059 /* TrainingDataRecordingTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D250186081C7009D2059 /* TrainingDataRecordingTimer.h */; };
 		7D12D360186081C7009D2059 /* TrainingLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D251186081C7009D2059 /* TrainingLog.cpp */; };
 		7D12D361186081C7009D2059 /* TrainingLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D251186081C7009D2059 /* TrainingLog.cpp */; };
-		7D12D362186081C7009D2059 /* TrainingLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D252186081C7009D2059 /* TrainingLog.h */; };
-		7D12D363186081C7009D2059 /* TrainingResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D253186081C7009D2059 /* TrainingResult.h */; };
 		7D12D364186081C7009D2059 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D254186081C7009D2059 /* Util.cpp */; };
 		7D12D365186081C7009D2059 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D254186081C7009D2059 /* Util.cpp */; };
-		7D12D366186081C7009D2059 /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D255186081C7009D2059 /* Util.h */; };
 		7D12D367186081C7009D2059 /* WarningLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D256186081C7009D2059 /* WarningLog.cpp */; };
 		7D12D368186081C7009D2059 /* WarningLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D256186081C7009D2059 /* WarningLog.cpp */; };
-		7D12D369186081C7009D2059 /* WarningLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D12D257186081C7009D2059 /* WarningLog.h */; };
 		7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D2C59AF189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
 		7D2C59B0189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
-		7D38405D1874A20600C3F139 /* SVM.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D38405C1874A20600C3F139 /* SVM.h */; };
 		7D38405E1874B3AF00C3F139 /* SVM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A4186081C7009D2059 /* SVM.cpp */; };
 		7D38405F1874B3B100C3F139 /* SVM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A4186081C7009D2059 /* SVM.cpp */; };
 		7D3840601874B3B800C3F139 /* libsvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D1A2186081C7009D2059 /* libsvm.cpp */; };
@@ -301,6 +190,7 @@
 		7D61B11918788BD6000FD114 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
+		7D93C43018A530270083CB07 /* ml.svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D93C42D18A52E860083CB07 /* ml.svm-help.pd */; };
 		7DA8B7F2188489B50066EAB0 /* InfoLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */; };
 		7DA8B7F3188489B50066EAB0 /* InfoLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */; };
 		7DF077F81847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
@@ -310,6 +200,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7D93C42F18A530140083CB07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				7D93C43018A530270083CB07 /* ml.svm-help.pd in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E9974EC207708C9300206F68 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -537,6 +437,7 @@
 		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ml.peak/ml_peak.cpp; sourceTree = "<group>"; };
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
+		7D93C42D18A52E860083CB07 /* ml.svm-help.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml.svm-help.pd"; path = "ml.svm/ml.svm-help.pd"; sourceTree = "<group>"; };
 		7DA8B7EF1884894D0066EAB0 /* TimeStamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeStamp.h; sourceTree = "<group>"; };
 		7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InfoLog.cpp; sourceTree = "<group>"; };
 		7DA8B7F1188489B50066EAB0 /* InfoLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoLog.h; sourceTree = "<group>"; };
@@ -1190,6 +1091,7 @@
 		7D580B7B18A4F6AE004ADEFF /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				7D93C42D18A52E860083CB07 /* ml.svm-help.pd */,
 				7D580B7918A4F0A8004ADEFF /* ml.dtw.maxhelp */,
 				7D580B7E18A4F930004ADEFF /* ml.linreg.maxhelp */,
 				7D580B7F18A4F947004ADEFF /* ml.logreg.maxhelp */,
@@ -1211,135 +1113,14 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		D2AAC09905546B4700DB518D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7D12D336186081C7009D2059 /* EigenvalueDecomposition.h in Headers */,
-				7D12D2D1186081C7009D2059 /* MovementIndex.h in Headers */,
-				7D12D267186081C7009D2059 /* ANBC.h in Headers */,
-				7D12D28A186081C7009D2059 /* MinDistModel.h in Headers */,
-				7D12D346186081C7009D2059 /* Matrix.h in Headers */,
-				7D12D274186081C7009D2059 /* DTW.h in Headers */,
-				7D12D2BF186081C7009D2059 /* TimeSeriesPositionTracker.h in Headers */,
-				7D12D2CB186081C7009D2059 /* FFTFeatures.h in Headers */,
-				7D12D362186081C7009D2059 /* TrainingLog.h in Headers */,
-				7D12D2F2186081C7009D2059 /* GRTBase.h in Headers */,
-				7D12D2A5186081C7009D2059 /* Individual.h in Headers */,
-				7D12D350186081C7009D2059 /* Random.h in Headers */,
-				7D12D2D7186081C7009D2059 /* PrincipalComponentAnalysis.h in Headers */,
-				7D12D31E186081C7009D2059 /* MLP.h in Headers */,
-				7D12D2F6186081C7009D2059 /* PostProcessing.h in Headers */,
-				7D12D309186081C7009D2059 /* DeadZone.h in Headers */,
-				7D12D2CE186081C7009D2059 /* KMeansQuantizer.h in Headers */,
-				7D12D321186081C7009D2059 /* Neuron.h in Headers */,
-				7D12D33B186081C7009D2059 /* GRTCommon.h in Headers */,
-				7D12D281186081C7009D2059 /* KNN.h in Headers */,
-				7D12D30F186081C7009D2059 /* DoubleMovingAverageFilter.h in Headers */,
-				7D12D2B2186081C7009D2059 /* LabelledContinuousTimeSeriesClassificationData.h in Headers */,
-				7D12D33E186081C7009D2059 /* IndexedDouble.h in Headers */,
-				7D12D2C2186081C7009D2059 /* UnlabelledClassificationData.h in Headers */,
-				7D12D35A186081C7009D2059 /* TestInstanceResult.h in Headers */,
-				7D12D32F186081C7009D2059 /* ClassificationResult.h in Headers */,
-				7D12D2A3186081C7009D2059 /* Gate.h in Headers */,
-				7D12D35C186081C7009D2059 /* Timer.h in Headers */,
-				7D12D264186081C7009D2059 /* WeakClassifier.h in Headers */,
-				7D12D366186081C7009D2059 /* Util.h in Headers */,
-				7D12D339186081C7009D2059 /* ErrorLog.h in Headers */,
-				7D12D2AC186081C7009D2059 /* LabelledClassificationData.h in Headers */,
-				7D12D2A4186081C7009D2059 /* EvolutionaryAlgorithm.h in Headers */,
-				7D12D34D186081C7009D2059 /* Node.h in Headers */,
-				7D12D270186081C7009D2059 /* DecisionTree.h in Headers */,
-				7D12D290186081C7009D2059 /* Softmax.h in Headers */,
-				7D12D32E186081C7009D2059 /* CircularBuffer.h in Headers */,
-				7D12D2F3186081C7009D2059 /* MLBase.h in Headers */,
-				7D12D33D186081C7009D2059 /* GRTVersionInfo.h in Headers */,
-				7D12D2A8186081C7009D2059 /* ParticleSwarmOptimization.h in Headers */,
-				7D12D356186081C7009D2059 /* SVD.h in Headers */,
-				7D12D27E186081C7009D2059 /* HMM.h in Headers */,
-				7D12D31B186081C7009D2059 /* SavitzkyGolayFilter.h in Headers */,
-				7D12D359186081C7009D2059 /* TestingLog.h in Headers */,
-				7D12D271186081C7009D2059 /* DecisionTreeNode.h in Headers */,
-				7D12D2A0186081C7009D2059 /* KMeans.h in Headers */,
-				7D12D2D4186081C7009D2059 /* MovementTrajectoryFeatures.h in Headers */,
-				7D12D2B8186081C7009D2059 /* LabelledRegressionSample.h in Headers */,
-				7D12D324186081C7009D2059 /* LinearRegression.h in Headers */,
-				7D12D342186081C7009D2059 /* Log.h in Headers */,
-				7D12D303186081C7009D2059 /* ClassLabelFilter.h in Headers */,
-				7D12D2FD186081C7009D2059 /* GRT.h in Headers */,
-				7D12D33C186081C7009D2059 /* GRTTypedefs.h in Headers */,
-				7D12D26D186081C7009D2059 /* BAG.h in Headers */,
-				7D12D34F186081C7009D2059 /* ObserverManager.h in Headers */,
-				7D12D2B5186081C7009D2059 /* LabelledRegressionData.h in Headers */,
-				7D12D34E186081C7009D2059 /* Observer.h in Headers */,
-				7D12D2C8186081C7009D2059 /* FFT.h in Headers */,
-				7D12D278186081C7009D2059 /* MixtureModel.h in Headers */,
-				7D12D35B186081C7009D2059 /* TestResult.h in Headers */,
-				7D12D2DA186081C7009D2059 /* PeakDetection.h in Headers */,
-				7D12D2E9186081C7009D2059 /* Context.h in Headers */,
-				7D12D32A186081C7009D2059 /* MultidimensionalRegression.h in Headers */,
-				7D12D2A9186081C7009D2059 /* PSOParticle.h in Headers */,
-				7D12D25A186081C7009D2059 /* AdaBoost.h in Headers */,
-				7D12D300186081C7009D2059 /* ClassLabelChangeFilter.h in Headers */,
-				7D12D2F9186081C7009D2059 /* PreProcessing.h in Headers */,
-				7D12D318186081C7009D2059 /* MovingAverageFilter.h in Headers */,
-				7D12D32D186081C7009D2059 /* Cholesky.h in Headers */,
-				7D12D27B186081C7009D2059 /* HiddenMarkovModel.h in Headers */,
-				7D12D2C5186081C7009D2059 /* FastFourierTransform.h in Headers */,
-				7D12D34A186081C7009D2059 /* MinMax.h in Headers */,
-				7D38405D1874A20600C3F139 /* SVM.h in Headers */,
-				7D12D2A6186081C7009D2059 /* Particle.h in Headers */,
-				7D12D291186081C7009D2059 /* SoftmaxModel.h in Headers */,
-				7D12D330186081C7009D2059 /* ClassTracker.h in Headers */,
-				7D12D306186081C7009D2059 /* ClassLabelTimeoutFilter.h in Headers */,
-				7D12D29A186081C7009D2059 /* GaussianMixtureModels.h in Headers */,
-				7D12D2EF186081C7009D2059 /* GestureRecognitionPipeline.h in Headers */,
-				7D12D369186081C7009D2059 /* WarningLog.h in Headers */,
-				7D12D2DD186081C7009D2059 /* TimeDomainFeatures.h in Headers */,
-				7D12D2BE186081C7009D2059 /* LabelledTimeSeriesClassificationSample.h in Headers */,
-				7D12D315186081C7009D2059 /* LowPassFilter.h in Headers */,
-				7D12D30C186081C7009D2059 /* Derivative.h in Headers */,
-				7D12D2EC186081C7009D2059 /* FeatureExtraction.h in Headers */,
-				7D12D2BB186081C7009D2059 /* LabelledTimeSeriesClassificationData.h in Headers */,
-				7D12D287186081C7009D2059 /* MinDist.h in Headers */,
-				7D12D2FC186081C7009D2059 /* Regressifier.h in Headers */,
-				7D12D312186081C7009D2059 /* HighPassFilter.h in Headers */,
-				7D12D29D186081C7009D2059 /* HierarchicalClustering.h in Headers */,
-				7D12D333186081C7009D2059 /* DebugLog.h in Headers */,
-				7D12D26A186081C7009D2059 /* ANBC_Model.h in Headers */,
-				7D12D327186081C7009D2059 /* LogisticRegression.h in Headers */,
-				7D12D2A7186081C7009D2059 /* ParticleFilter.h in Headers */,
-				7D12D277186081C7009D2059 /* GMM.h in Headers */,
-				7D12D33A186081C7009D2059 /* FileParser.h in Headers */,
-				7D12D284186081C7009D2059 /* LDA.h in Headers */,
-				7D12D2E6186081C7009D2059 /* Classifier.h in Headers */,
-				7D12D349186081C7009D2059 /* MatrixDouble.h in Headers */,
-				7D12D2AF186081C7009D2059 /* LabelledClassificationSample.h in Headers */,
-				7D12D28D186081C7009D2059 /* RandomForests.h in Headers */,
-				7D12D341186081C7009D2059 /* LabelledTimeSeriesClassificationSampleTrimmer.h in Headers */,
-				7D12D363186081C7009D2059 /* TrainingResult.h in Headers */,
-				7D12D25E186081C7009D2059 /* DecisionStump.h in Headers */,
-				7D12D2E0186081C7009D2059 /* TimeseriesBuffer.h in Headers */,
-				7D12D353186081C7009D2059 /* RangeTracker.h in Headers */,
-				7D12D2E3186081C7009D2059 /* ZeroCrossingCounter.h in Headers */,
-				7D12D261186081C7009D2059 /* RadialBasisFunction.h in Headers */,
-				7D12D345186081C7009D2059 /* LUDecomposition.h in Headers */,
-				7D12D25B186081C7009D2059 /* AdaBoostClassModel.h in Headers */,
-				7D12D35F186081C7009D2059 /* TrainingDataRecordingTimer.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		D2AAC09C05546B4700DB518D /* pd static */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9A5BC8A0A33819900AD9F03 /* Build configuration list for PBXNativeTarget "pd static" */;
 			buildPhases = (
-				D2AAC09905546B4700DB518D /* Headers */,
 				D2AAC09B05546B4700DB518D /* Frameworks */,
 				D2AAC09A05546B4700DB518D /* Sources */,
+				7D93C42F18A530140083CB07 /* CopyFiles */,
 			);
 			buildRules = (
 			);

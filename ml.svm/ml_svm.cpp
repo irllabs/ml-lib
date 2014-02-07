@@ -142,6 +142,9 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "mode", get_kfold_value);
             
             FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
+            
+            DefineHelp(c,"ml.svm");
+
         }
         
         // Methods

@@ -55,7 +55,8 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "constrain_warping_path", get_constrain_warping_path);
             FLEXT_CADDATTR_GET(c, "enable_z_normalization", get_enable_z_normalization);
             FLEXT_CADDATTR_GET(c, "enable_trim_training_data", get_enable_trim_training_data);
-
+            
+            DefineHelp(c,"ml.dtw");
         }
         
         // Methods
