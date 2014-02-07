@@ -285,6 +285,12 @@
 		7D3840621874B3C300C3F139 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17C186081C7009D2059 /* BAG.cpp */; };
 		7D3840631874B3C400C3F139 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D17C186081C7009D2059 /* BAG.cpp */; };
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D580B7D18A4F8BB004ADEFF /* ml.dtw.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B7918A4F0A8004ADEFF /* ml.dtw.maxhelp */; };
+		7D580B8318A4F99A004ADEFF /* ml.linreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B7E18A4F930004ADEFF /* ml.linreg.maxhelp */; };
+		7D580B8418A4F99D004ADEFF /* ml.logreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B7F18A4F947004ADEFF /* ml.logreg.maxhelp */; };
+		7D580B8518A4F9A0004ADEFF /* ml.mlp.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B8018A4F950004ADEFF /* ml.mlp.maxhelp */; };
+		7D580B8618A4F9A6004ADEFF /* ml.peak.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B8118A4F959004ADEFF /* ml.peak.maxhelp */; };
+		7D580B8718A4F9AA004ADEFF /* ml.svm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B8218A4F992004ADEFF /* ml.svm.maxhelp */; };
 		7D61B1031875CAF9000FD114 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7D61B1041875CAF9000FD114 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7D61B1081875F661000FD114 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
@@ -304,14 +310,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E9974EC207708C9300206F68 /* CopyFiles */ = {
+		E9974EC207708C9300206F68 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "/Library/Application Support/Cycling '74/init";
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				7D580B7D18A4F8BB004ADEFF /* ml.dtw.maxhelp in Copy Files */,
+				7D580B8318A4F99A004ADEFF /* ml.linreg.maxhelp in Copy Files */,
+				7D580B8418A4F99D004ADEFF /* ml.logreg.maxhelp in Copy Files */,
+				7D580B8518A4F9A0004ADEFF /* ml.mlp.maxhelp in Copy Files */,
+				7D580B8618A4F9A6004ADEFF /* ml.peak.maxhelp in Copy Files */,
+				7D580B8718A4F9AA004ADEFF /* ml.svm.maxhelp in Copy Files */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -512,6 +525,12 @@
 		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ml.hmm/ml_hmm.cpp; sourceTree = "<group>"; };
 		7D38405C1874A20600C3F139 /* SVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVM.h; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		7D580B7918A4F0A8004ADEFF /* ml.dtw.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.dtw.maxhelp; path = ml.dtw/ml.dtw.maxhelp; sourceTree = "<group>"; };
+		7D580B7E18A4F930004ADEFF /* ml.linreg.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.linreg.maxhelp; path = ml.linreg/ml.linreg.maxhelp; sourceTree = "<group>"; };
+		7D580B7F18A4F947004ADEFF /* ml.logreg.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = ml.logreg.maxhelp; path = ml.logreg/ml.logreg.maxhelp; sourceTree = "<group>"; };
+		7D580B8018A4F950004ADEFF /* ml.mlp.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = ml.mlp.maxhelp; path = ml.mlp/ml.mlp.maxhelp; sourceTree = "<group>"; };
+		7D580B8118A4F959004ADEFF /* ml.peak.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = ml.peak.maxhelp; path = ml.peak/ml.peak.maxhelp; sourceTree = "<group>"; };
+		7D580B8218A4F992004ADEFF /* ml.svm.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = ml.svm.maxhelp; path = ml.svm/ml.svm.maxhelp; sourceTree = "<group>"; };
 		7D61B1011875CAF9000FD114 /* ml_linreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_linreg.cpp; path = ml.linreg/ml_linreg.cpp; sourceTree = "<group>"; };
 		7D61B1061875F661000FD114 /* ml_logreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_logreg.cpp; path = ml.logreg/ml_logreg.cpp; sourceTree = "<group>"; };
 		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
@@ -562,7 +581,7 @@
 		0867D691FE84028FC02AAC07 /* xsample */ = {
 			isa = PBXGroup;
 			children = (
-				7DF077FA1847589B00C55E3C /* Supporting Files */,
+				7DF077FA1847589B00C55E3C /* Resources */,
 				7D4EAF021834C53F005B8615 /* External */,
 				08FB77ACFE841707C02AAC07 /* Source */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -1168,12 +1187,26 @@
 			name = External;
 			sourceTree = "<group>";
 		};
-		7DF077FA1847589B00C55E3C /* Supporting Files */ = {
+		7D580B7B18A4F6AE004ADEFF /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				7D580B7918A4F0A8004ADEFF /* ml.dtw.maxhelp */,
+				7D580B7E18A4F930004ADEFF /* ml.linreg.maxhelp */,
+				7D580B7F18A4F947004ADEFF /* ml.logreg.maxhelp */,
+				7D580B8018A4F950004ADEFF /* ml.mlp.maxhelp */,
+				7D580B8118A4F959004ADEFF /* ml.peak.maxhelp */,
+				7D580B8218A4F992004ADEFF /* ml.svm.maxhelp */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
+		7DF077FA1847589B00C55E3C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7D580B7B18A4F6AE004ADEFF /* Help */,
 				7DF077FB184758C300C55E3C /* Info.plist */,
 			);
-			name = "Supporting Files";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1321,10 +1354,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9A5BC8E0A33819900AD9F03 /* Build configuration list for PBXNativeTarget "max static" */;
 			buildPhases = (
-				E9974E4F077083C700206F68 /* Resources */,
 				E9974E50077083C700206F68 /* Sources */,
 				E9974E51077083C700206F68 /* Frameworks */,
-				E9974EC207708C9300206F68 /* CopyFiles */,
+				E9974EC207708C9300206F68 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -1360,16 +1392,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		E9974E4F077083C700206F68 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2AAC09A05546B4700DB518D /* Sources */ = {
@@ -1674,6 +1696,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -1696,7 +1719,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
-				INSTALL_PATH = "/Library/Application Support/Cycling 74/externals/flext";
+				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
 					"$(maxsdk)/max-includes",
@@ -1725,6 +1748,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = NO;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -1746,17 +1771,19 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
-				INSTALL_PATH = "/Library/Application Support/Cycling 74/externals/flext";
+				INSTALL_PATH = "";
+				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
 					"$(maxsdk)/max-includes",
 				);
 				LIBRARY_STYLE = DYNAMIC;
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include/flext;
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1774,6 +1801,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -1792,8 +1820,8 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "source/xsample-Info.plist";
-				INSTALL_PATH = "/Library/Application Support/Cycling 74/externals/flext";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
 					"$(maxsdk)/max-includes",
@@ -1802,7 +1830,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = xsample;
+				PRODUCT_NAME = ml;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = /usr/local/include/flext;
@@ -1832,6 +1860,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SKIP_INSTALL = YES;
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
@@ -1858,6 +1887,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SKIP_INSTALL = YES;
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
@@ -1875,6 +1905,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SKIP_INSTALL = YES;
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
