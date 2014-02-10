@@ -29,7 +29,7 @@ namespace ml
         :
         ml_classification_base(&classifier, LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            post("ml.hmm: Dynamic Time Warping based on the GRT library version %s", grt_version.c_str());
+            post("ml.hmm: Hidden Markov Model based on the GRT library version %s", grt_version.c_str());
         }
         
         ~ml_hmm()
