@@ -214,6 +214,13 @@ namespace ml
         post("%s", ML_POST_SEP);
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
+        post("num_states:\tinteger ( > 0) sets the number of states in the model (default 5)");
+        post("num_symbols:\tinteger ( > 0) sets the number of symbols in the model (default 10)");
+        post("model_type:\tinteger (0 = ERGODIC, 1 = LEFTRIGHT) sets the model type used for the HMM (default LEFTRIGHT)");
+        post("delta:\tinteger ( > 0) controls how many states a model can transition to if the LEFTRIGHT model type is used (default 1)");
+        post("max_num_iterations:\tinteger ( > 0) set the maximum number of training iterations (default 100)");
+        post("num_random_training_iterations:\tinteger setting the number of random training iterations (default 10)");
+        post("min_improvement:\tfloat sets the minimum improvement parameter which controls when the HMM training algorithm should stop (default 1.0e-2)");
         post("%s", ML_POST_SEP);
         post("Methods:");
         post("%s", ML_POST_SEP);
