@@ -26,10 +26,8 @@ namespace ml
         
     public:
         ml_dtw()
-        :
-        ml_classification_base(&classifier, LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            post("ml.dtw: Dynamic Time Warping based on the GRT library version %s", grt_version.c_str());
+            post("ml.dtw: Dynamic Time Warping based on the GRT library version %s", get_grt_version().c_str());
         }
         
         ~ml_dtw()
@@ -78,6 +76,10 @@ namespace ml
         void get_constrain_warping_path(bool &constrain_warping_path) const;
         void get_enable_z_normalization(bool &enable_z_normalization) const;
         void get_enable_trim_training_data(bool &enable_trim_training_data) const;
+        
+        // Implement pure virtual methods
+        GRT::Classifier &get_Classifier_instance();
+        const GRT::Classifier &get_Classifier_instance() const;
         
     private:
         // Method wrappers
@@ -223,6 +225,17 @@ namespace ml
         post("help:\tpost this usage statement to the console");
         post("%s", ML_POST_SEP);
 
+    }
+    
+    // Implement pure virtual methods
+    GRT::Classifier &ml_dtw::get_Classifier_instance()
+    {
+        return classifier;
+    }
+    
+    const GRT::Classifier &ml_dtw::get_Classifier_instance() const
+    {
+        return classifier;
     }
     
     FLEXT_LIB("ml.dtw", ml_dtw);

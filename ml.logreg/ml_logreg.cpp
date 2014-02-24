@@ -26,10 +26,8 @@ namespace ml
         
     public:
         ml_logreg()
-        :
-        ml_regression_base(&regressifier)
         {
-            post("ml.regressifier: Logistic Regression based on the GRT library version %s", grt_version.c_str());
+            post("ml.regressifier: Logistic Regression based on the GRT library version %s", get_grt_version().c_str());
         }
         
         ~ml_logreg()
@@ -43,12 +41,26 @@ namespace ml
             DefineHelp(c,"ml.logreg");
         }
         
-    private:
+        // Implement pure virtual methods
+        GRT::Regressifier &get_Regressifier_instance();
+        const GRT::Regressifier &get_Regressifier_instance() const;
         
+    private:
         // Instance variables
         GRT::LogisticRegression regressifier;
         
     };
+    
+    // Implement pure virtual methods
+    GRT::Regressifier &ml_logreg::get_Regressifier_instance()
+    {
+        return regressifier;
+    }
+    
+    const GRT::Regressifier &ml_logreg::get_Regressifier_instance() const
+    {
+        return regressifier;
+    }
     
     FLEXT_LIB("ml.logreg", ml_logreg);
     

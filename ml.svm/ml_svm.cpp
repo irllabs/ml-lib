@@ -97,10 +97,8 @@ namespace ml
         
     public:
         ml_svm()
-        :
-        ml_classification_base(&svm, LABELLED_CLASSIFICATION)
         {
-            post("ml.svm: Support Vector Machines based on the GRT library version %s", grt_version.c_str());
+            post("ml.svm: Support Vector Machines based on the GRT library version %s", get_grt_version().c_str());
         }
         
         ~ml_svm()
@@ -144,7 +142,6 @@ namespace ml
             FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
             
             DefineHelp(c,"ml.svm");
-
         }
         
         // Methods
@@ -181,6 +178,10 @@ namespace ml
         void get_probs(bool &probs) const;
         void get_weights(AtomList &weights) const;
         void get_kfold_value(int &mode) const;
+        
+        // Pure virtual method implementations
+        GRT::Classifier &get_Classifier_instance();
+        const GRT::Classifier &get_Classifier_instance() const;
         
     private:
         // Method wrappers
@@ -422,6 +423,17 @@ namespace ml
         post("help:\tpost this usage statement to the console");
         post("%s", ML_POST_SEP);
         
+    }
+    
+    // Implement pure virtual methods
+    GRT::Classifier &ml_svm::get_Classifier_instance()
+    {
+        return svm;
+    }
+    
+    const GRT::Classifier &ml_svm::get_Classifier_instance() const
+    {
+        return svm;
     }
     
     FLEXT_LIB("ml.svm", ml_svm);

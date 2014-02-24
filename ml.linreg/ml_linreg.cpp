@@ -26,10 +26,8 @@ namespace ml
         
     public:
         ml_linreg()
-        :
-        ml_regression_base(&regressifier)
         {
-            post("ml.regressifier: Linear Regression based on the GRT library version %s", grt_version.c_str());
+            post("ml.regressifier: Linear Regression based on the GRT library version %s", get_grt_version().c_str());
         }
         
         ~ml_linreg()
@@ -43,12 +41,27 @@ namespace ml
             DefineHelp(c,"ml.linreg");
         }
         
+        // Implement pure virtual methods
+        GRT::Regressifier &get_Regressifier_instance();
+        const GRT::Regressifier &get_Regressifier_instance() const;
+
     private:
-        
         // Instance variables
         GRT::LinearRegression regressifier;
         
     };
+    
+    // Implement pure virtual methods
+    GRT::Regressifier &ml_linreg::get_Regressifier_instance()
+    {
+        return regressifier;
+    }
+    
+    const GRT::Regressifier &ml_linreg::get_Regressifier_instance() const
+    {
+        return regressifier;
+    }
+
     
     FLEXT_LIB("ml.linreg", ml_linreg);
     

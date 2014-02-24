@@ -27,7 +27,7 @@
 #include <map>
 
 
-#define ML_VERSION "0.9.3"
+#define ML_VERSION "0.9.4"
 #define ML_NAME "ml-lib"
 #define ML_POST_SEP "---------------------------------------"
 
@@ -35,7 +35,7 @@
 namespace ml
 {    
 
-typedef enum mlp_data_type_
+typedef enum ml_data_type_
 {
     LABELLED_CLASSIFICATION,
     LABELLED_REGRESSION,
@@ -43,9 +43,9 @@ typedef enum mlp_data_type_
     UNLABELLED_CLASSIFICATION,
     MLP_NUM_DATA_TYPES
 }
-mlp_data_type;
+ml_data_type;
     
-const mlp_data_type defaultMode = LABELLED_CLASSIFICATION;
+const ml_data_type default_data_type = LABELLED_CLASSIFICATION;
 const GRT::UINT defaultNumInputDimensions = 2;
 const GRT::UINT defaultNumOutputDimensions = 1;
     
@@ -56,10 +56,6 @@ public flext_base
     
 public:
     ml_base();
-    ml_base(GRT::MLBase *mlBase);
-    ml_base(GRT::MLBase *mlBase, mlp_data_type data_type);
-
-    void init();
     
 protected:
     static void setup(t_classid c);
@@ -81,7 +77,13 @@ protected:
     void record(bool state);
     void any(const t_symbol *s, int argc, const t_atom *argv);
     
-    virtual void set_mode(mlp_data_type mode);
+    ml_data_type get_data_type() const;
+    void set_data_type(ml_data_type data_type);
+    virtual GRT::MLBase &get_MLBase_instance() = 0;
+    virtual const GRT::MLBase &get_MLBase_instance() const = 0;
+
+
+    std::string get_grt_version();
     
     // Attribute setters
     void set_scaling(bool scaling);
@@ -92,15 +94,12 @@ protected:
     void get_probs(bool &probs) const;
     
     // Instance variables
-    GRT::MLBase *mlBase; // TODO: maybe switch to reference if all derived classes aggregate an MLBase derived class
-    mlp_data_type mode;
     GRT::UnlabelledClassificationData unlabelledClassificationData;
     GRT::LabelledClassificationData labelledClassificationData;
     GRT::LabelledTimeSeriesClassificationData labelledTimeSeriesClassificationData;
     GRT::LabelledRegressionData labelledRegressionData;
     GRT::MatrixDouble timeSeriesData;
     GRT::UINT currentLabel;
-    std::string grt_version;
     bool probs;
     bool recording;
     
@@ -122,7 +121,7 @@ private:
     FLEXT_CALLVAR_B(get_scaling, set_scaling);
     FLEXT_CALLVAR_B(get_probs, set_probs);
     
-    // Instance variables
+    ml_data_type data_type;
 };
   
     
@@ -131,11 +130,9 @@ class ml_classification_base : public ml_base
     FLEXT_HEADER_S(ml_classification_base, ml_base, setup);
     
 public:
-    ml_classification_base(GRT::Classifier *classifier, mlp_data_type data_type)
-    :
-    ml_base(classifier, data_type)
+    ml_classification_base()
     {
-        this->classifier = classifier;
+        set_data_type(LABELLED_CLASSIFICATION);
     }
     
     ~ml_classification_base()
@@ -154,7 +151,6 @@ protected:
     }
     
     // Methods
-    void clear();
     void train();
     void map(int argc, const t_atom *argv);
     void usage();
@@ -167,6 +163,13 @@ protected:
     void get_null_rejection(bool &null_rejection) const;
     void get_null_rejection_coeff(float &null_rejection_coeff) const;
     
+    virtual GRT::MLBase &get_MLBase_instance() final;
+    virtual const GRT::MLBase &get_MLBase_instance() const final;
+
+    virtual GRT::Classifier &get_Classifier_instance() = 0;
+    virtual const GRT::Classifier &get_Classifier_instance() const = 0;
+
+    
 private:
     bool get_num_samples() const;
 
@@ -176,9 +179,6 @@ private:
     FLEXT_CALLVAR_B(get_null_rejection, set_null_rejection);
     FLEXT_CALLVAR_F(get_null_rejection_coeff, set_null_rejection_coeff);
     
-    // Instance variables
-    GRT::Classifier *classifier;
-    
 };
 
     
@@ -187,12 +187,10 @@ class ml_regression_base : public ml_base
     FLEXT_HEADER_S(ml_regression_base, ml_base, setup);
     
 public:
-    ml_regression_base(GRT::Regressifier *regressifier)
-    :
-    ml_base(regressifier, LABELLED_REGRESSION)
+    ml_regression_base()
     {
         labelledRegressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
-        this->regressifier = regressifier;
+        set_data_type(LABELLED_REGRESSION);
     }
     
     ~ml_regression_base()
@@ -213,7 +211,6 @@ protected:
     }
     
     // Methods
-    void clear();
     void train();
     void map(int argc, const t_atom *argv);
     void usage();
@@ -229,6 +226,12 @@ protected:
     void get_min_change(float &min_change) const;
     void get_training_rate(float &training_rate) const;
     
+    virtual GRT::MLBase &get_MLBase_instance() final;
+    virtual const GRT::MLBase &get_MLBase_instance() const final;
+    
+    virtual GRT::Regressifier &get_Regressifier_instance() = 0;
+    virtual const GRT::Regressifier &get_Regressifier_instance() const = 0;
+    
 private:
     
     // Method wrappers
@@ -237,10 +240,6 @@ private:
     FLEXT_CALLVAR_I(get_max_iterations, set_max_iterations);
     FLEXT_CALLVAR_F(get_min_change, set_min_change);
     FLEXT_CALLVAR_F(get_training_rate, set_training_rate);
-    
-    // Instance variables
-    GRT::Regressifier *regressifier;
-    
 };
     
 } // namespace ml

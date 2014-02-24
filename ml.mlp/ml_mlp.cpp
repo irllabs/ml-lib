@@ -38,13 +38,12 @@ namespace ml
     public:
         ml_mlp()
         :
-        ml_base(&mlp),
         numHiddenNeurons(defaultNumHiddenNeurons),
         inputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getInputLayerActivationFunction()),
         hiddenActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getHiddenLayerActivationFunction()),
         outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction())
         {
-            post("ml.mlp: Multilayer Perceptron based on the GRT library version %s", grt_version.c_str());
+            post("ml.mlp: Multilayer Perceptron based on the GRT library version %s", get_grt_version().c_str());
             
             labelledRegressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
             labelledClassificationData.setNumDimensions(defaultNumInputDimensions);
@@ -152,9 +151,10 @@ namespace ml
         void get_validation_set_size(int &validation_set_size) const;
         void get_randomise_training_order(bool &randomise_training_order) const;
         
-        // Override virtual function
-        void set_mode(mlp_data_type mode);
-                
+        // Implement pure virtual methods
+        GRT::MLBase &get_MLBase_instance();
+        const GRT::MLBase &get_MLBase_instance() const;
+        
     private:
         void set_activation_function(int activation_function, mlp_layer layer);
         
@@ -187,7 +187,7 @@ namespace ml
         GRT::UINT numHiddenNeurons;
         GRT::Neuron::ActivationFunctions inputActivationFunction;
         GRT::Neuron::ActivationFunctions hiddenActivationFunction;
-        GRT::Neuron::ActivationFunctions outputActivationFunction;        
+        GRT::Neuron::ActivationFunctions outputActivationFunction;
     };
     
     // Utility functions
@@ -206,23 +206,25 @@ namespace ml
             set_num_outputs(1);
         }
         
-        this->mode = (mlp_data_type)mode;
+        set_data_type((ml_data_type)mode);
     }
     
     void ml_mlp::set_num_outputs(int num_outputs)
     {
+        const ml_data_type data_type = get_data_type();
+        
         if (num_outputs < 0)
         {
             flext::error("number of outputs must be greater than zero");
         }
         
-        if (mode == LABELLED_CLASSIFICATION && num_outputs > 1)
+        if (data_type == LABELLED_CLASSIFICATION && num_outputs > 1)
         {
             flext::error("for classification mode, number of outputs must be 1, for multidimensional output switch mode to %d", LABELLED_REGRESSION);
             return;
         }
         
-        if (mode == LABELLED_REGRESSION)
+        if (data_type == LABELLED_REGRESSION)
         {
             bool success = labelledRegressionData.setInputAndTargetDimensions(labelledRegressionData.getNumInputDimensions(), num_outputs);
            
@@ -405,16 +407,18 @@ namespace ml
     // Attribute getters
     void ml_mlp::get_mode(int &mode) const
     {
-        mode = this->mode;
+        mode = get_data_type();
     }
     
     void ml_mlp::get_num_outputs(int &num_outputs) const
     {
-        if (mode == LABELLED_CLASSIFICATION)
+        const ml_data_type data_type = get_data_type();
+        
+        if (data_type == LABELLED_CLASSIFICATION)
         {
             num_outputs = defaultNumOutputDimensions;
         }
-        else if (mode == LABELLED_REGRESSION)
+        else if (data_type == LABELLED_REGRESSION)
         {
             num_outputs = labelledRegressionData.getNumTargetDimensions();
         }
@@ -499,12 +503,14 @@ namespace ml
     {
         randomise_training_order = mlp.getRandomiseTrainingOrder();
     }
-
+    
     // Methods
     // NOTE: MLP is special since it supports both regression and classification, we therefore override these methods
     void ml_mlp::train()
     {
-        GRT::UINT numSamples = mode == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();
+        const ml_data_type data_type = get_data_type();
+        
+        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();
         
         if (numSamples == 0)
         {
@@ -514,7 +520,7 @@ namespace ml
         
         bool success = false;
         
-        if (mode == LABELLED_CLASSIFICATION)
+        if (data_type == LABELLED_CLASSIFICATION)
         {
             mlp.init(
                      labelledClassificationData.getNumDimensions(),
@@ -526,7 +532,7 @@ namespace ml
                      );
             success = mlp.train(labelledClassificationData);
         }
-        else if (mode == LABELLED_REGRESSION)
+        else if (data_type == LABELLED_REGRESSION)
         {
             mlp.init(
                      labelledRegressionData.getNumInputDimensions(),
@@ -558,7 +564,9 @@ namespace ml
         
     void ml_mlp::map(int argc, const t_atom *argv)
     {
-        GRT::UINT numSamples = mode == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();
+        const ml_data_type data_type = get_data_type();
+
+        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();
 
         if (numSamples == 0)
         {
@@ -651,11 +659,6 @@ namespace ml
         }
     }
     
-    void ml_mlp::set_mode(mlp_data_type mode)
-    {
-        set_mode((int)mode);
-    }
-    
     // Methods
     
     void ml_mlp::error()
@@ -681,7 +684,7 @@ namespace ml
         post("Attributes:");
         post("%s", ML_POST_SEP);
         post("mode:\tinteger setting mode of the MLP, %d for regression and %d for classification (default %d)",
-             LABELLED_REGRESSION, LABELLED_CLASSIFICATION, defaultMode);
+             LABELLED_REGRESSION, LABELLED_CLASSIFICATION, default_data_type);
         post("num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default %d)", defaultNumOutputDimensions);
         post("num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default %d)", defaultNumHiddenNeurons);
         post("min_epochs:\tinteger setting the minimum number of training iterations (default 10)");
@@ -711,6 +714,17 @@ namespace ml
         post("map:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode");
         post("help:\tpost this usage statement to the console");
         post("%s", ML_POST_SEP);
+    }
+    
+    // Implement pure virtual methods
+    GRT::MLBase &ml_mlp::get_MLBase_instance()
+    {
+        return mlp;
+    }
+    
+    const GRT::MLBase &ml_mlp::get_MLBase_instance() const
+    {
+        return mlp;
     }
     
     FLEXT_LIB("ml.mlp", ml_mlp);

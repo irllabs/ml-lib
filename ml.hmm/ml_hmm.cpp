@@ -26,10 +26,8 @@ namespace ml
         
     public:
         ml_hmm()
-        :
-        ml_classification_base(&classifier, LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            post("ml.hmm: Hidden Markov Model based on the GRT library version %s", grt_version.c_str());
+            post("ml.hmm: Hidden Markov Model based on the GRT library version %s", get_grt_version().c_str());
         }
         
         ~ml_hmm()
@@ -81,6 +79,10 @@ namespace ml
         void get_max_num_iterations(int &max_num_iterations) const;
         void get_num_random_training_iterations(int &num_random_training_iterations) const;
         void get_min_improvement(float &min_improvement) const;
+        
+        // Implement pure virtual methods
+        GRT::Classifier &get_Classifier_instance();
+        const GRT::Classifier &get_Classifier_instance() const;
         
     private:
         // Method wrappers
@@ -233,6 +235,17 @@ namespace ml
         post("help:\tpost this usage statement to the console");
         post("%s", ML_POST_SEP);
         
+    }
+    
+    // Implement pure virtual methods
+    GRT::Classifier &ml_hmm::get_Classifier_instance()
+    {
+        return classifier;
+    }
+    
+    const GRT::Classifier &ml_hmm::get_Classifier_instance() const
+    {
+        return classifier;
     }
     
     FLEXT_LIB("ml.hmm", ml_hmm);
