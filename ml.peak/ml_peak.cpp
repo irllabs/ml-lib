@@ -20,17 +20,14 @@
 
 namespace ml
 {
-    // TODO: ml_peak shouldn't inherit from ml_base, need a new base class
-    class ml_peak : ml_base
+    class ml_peak : flext_base
     {
-        FLEXT_HEADER_S(ml_peak, ml_base, setup);
+        FLEXT_HEADER_S(ml_peak, flext_base, setup);
         
     public:
         ml_peak()
-        :
-        ml_base()
         {
-            post("ml.peak: Peak Detection based on the GRT library version %s", get_grt_version().c_str());
+            post("ml.peak: Peak Detection based on the GRT library version %s", GRT::GRTBase::getGRTRevison().c_str());
             FLEXT_ADDMETHOD(0, update);
             FLEXT_ADDMETHOD(0, peaks);
         }
@@ -230,18 +227,6 @@ namespace ml
         post("help:\tpost this usage statement to the console");
         post("%s", ML_POST_SEP);
     }
-    
-    // TODO: this definitely shouldn't be here!
-    GRT::MLBase &ml_peak::get_MLBase_instance()
-    {
-        return;
-    }
-    
-    const GRT::MLBase &ml_peak::get_MLBase_instance() const
-    {
-        return;
-    }
-    
     
     FLEXT_LIB("ml.peak", ml_peak);
     
