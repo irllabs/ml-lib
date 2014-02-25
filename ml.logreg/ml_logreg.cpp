@@ -28,6 +28,7 @@ namespace ml
         ml_logreg()
         {
             post("ml.regressifier: Logistic Regression based on the GRT library version %s", get_grt_version().c_str());
+            set_scaling(default_scaling);
         }
         
         ~ml_logreg()

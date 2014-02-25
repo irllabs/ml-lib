@@ -99,11 +99,12 @@ namespace ml
         ml_svm()
         {
             post("ml.svm: Support Vector Machines based on the GRT library version %s", get_grt_version().c_str());
+            set_scaling(default_scaling);
         }
         
         ~ml_svm()
         {
-            
+
         }
         
     protected:

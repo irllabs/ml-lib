@@ -28,6 +28,7 @@ namespace ml
         ml_linreg()
         {
             post("ml.regressifier: Linear Regression based on the GRT library version %s", get_grt_version().c_str());
+            set_scaling(default_scaling);
         }
         
         ~ml_linreg()

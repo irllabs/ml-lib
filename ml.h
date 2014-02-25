@@ -43,6 +43,7 @@ namespace ml
     ml_data_type;
     
     const ml_data_type default_data_type = LABELLED_CLASSIFICATION;
+    const bool default_scaling = true;
     const GRT::UINT defaultNumInputDimensions = 2;
     const GRT::UINT defaultNumOutputDimensions = 1;
     
@@ -63,7 +64,7 @@ namespace ml
         static const t_symbol *s_save;
         static const t_symbol *s_probs;
         static const t_symbol *s_error;
-        
+                
         virtual void add(int argc, const t_atom *argv);
         virtual void save(const t_symbol *path) const;
         virtual void load(const t_symbol *path);

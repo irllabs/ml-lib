@@ -28,6 +28,7 @@ namespace ml
         ml_dtw()
         {
             post("ml.dtw: Dynamic Time Warping based on the GRT library version %s", get_grt_version().c_str());
+            set_scaling(default_scaling);
         }
         
         ~ml_dtw()

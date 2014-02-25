@@ -49,6 +49,7 @@ namespace ml
             labelledClassificationData.setNumDimensions(defaultNumInputDimensions);
             
             mlp.setMinChange(1.0e-2);
+            set_scaling(default_scaling);
         }
         
         ~ml_mlp()

@@ -77,12 +77,10 @@ namespace ml
     }
     
     ml::ml()
+    : currentLabel(0), probs(false)
     {
-        currentLabel = 0;
-        probs = false;
-        AddOutAnything("general purpose outlet");
-        set_scaling(true);
         set_data_type(default_data_type);
+        AddOutAnything("general purpose outlet");
     }
     
     void ml::set_scaling(bool scaling)
@@ -229,7 +227,6 @@ namespace ml
     
     void ml::record_(bool state)
     {
-        
         const ml_data_type data_type = get_data_type();
         
         if (data_type != LABELLED_TIME_SERIES_CLASSIFICATION)
@@ -435,7 +432,6 @@ namespace ml
         FLEXT_CADDMETHOD_(c, 0, "help", usage);
     }
     
-    // Implement pure virtual methods
     void ml::set_data_type(ml_data_type data_type)
     {
         if (data_type > MLP_NUM_DATA_TYPES)
