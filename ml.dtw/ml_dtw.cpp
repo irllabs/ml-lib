@@ -16,13 +16,13 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ml.h"
+#include "ml_classification.h"
 
 namespace ml
 {
-    class ml_dtw : ml_classification_base
+    class ml_dtw : ml_classification
     {
-        FLEXT_HEADER_S(ml_dtw, ml_classification_base, setup);
+        FLEXT_HEADER_S(ml_dtw, ml_classification, setup);
         
     public:
         ml_dtw()
@@ -38,7 +38,7 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
-            ml_classification_base::setup(c);
+            ml_classification::setup(c);
             
             FLEXT_CADDATTR_SET(c, "rejection_mode", set_rejection_mode);
             FLEXT_CADDATTR_SET(c, "warping_radius", set_warping_radius);

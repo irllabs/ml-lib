@@ -79,14 +79,14 @@ public:
      @param bool returnRevision: sets if the revision number should be added to the string that is returned. Default value is true.
      @return returns the GRT version number and revision as a string.
      */
-    string getGRTVersion(bool returnRevision = true) const;
+    static string getGRTVersion(bool returnRevision = true);
     
     /**
 	 This functions returns the current GRT revision as a string.
      
      @return returns the current GRT revision as a string.
      */
-    string getGRTRevison() const;
+    static string getGRTRevison();
 
 protected:
     inline double SQR(const double &x) const{ return x*x; }

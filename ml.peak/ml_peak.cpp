@@ -68,7 +68,7 @@ namespace ml
         
         // Attribute Getters
         
-        // TODO: this shoudn't be here because we shouldn't be inheriting ml_base!
+        // TODO: this shoudn't be here because we shouldn't be inheriting ml!
         // Implement pure virtual methods
         GRT::MLBase &get_MLBase_instance();
         const GRT::MLBase &get_MLBase_instance() const;

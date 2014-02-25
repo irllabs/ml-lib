@@ -31,9 +31,9 @@ namespace ml
     
     const GRT::UINT defaultNumHiddenNeurons = 2;
     
-    class ml_mlp : ml_base
+    class ml_mlp : ml
     {
-        FLEXT_HEADER_S(ml_mlp, ml_base, setup);
+        FLEXT_HEADER_S(ml_mlp, ml, setup);
         
     public:
         ml_mlp()
@@ -559,7 +559,7 @@ namespace ml
     void ml_mlp::clear()
     {
         mlp.clear();
-        ml_base::clear();
+        ml::clear();
     }
         
     void ml_mlp::map(int argc, const t_atom *argv)

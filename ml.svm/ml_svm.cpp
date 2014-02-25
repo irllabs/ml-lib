@@ -16,7 +16,7 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ml.h"
+#include "ml_classification.h"
 
 #include <vector>
 #include <string>
@@ -91,9 +91,9 @@ namespace ml
         return GRT::SVM::LINEAR_KERNEL;
     }
     
-    class ml_svm : ml_classification_base
+    class ml_svm : ml_classification
     {
-        FLEXT_HEADER_S(ml_svm, ml_base, setup);
+        FLEXT_HEADER_S(ml_svm, ml, setup);
         
     public:
         ml_svm()

@@ -193,6 +193,10 @@
 		7D93C43018A530270083CB07 /* ml.svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D93C42D18A52E860083CB07 /* ml.svm-help.pd */; };
 		7DA8B7F2188489B50066EAB0 /* InfoLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */; };
 		7DA8B7F3188489B50066EAB0 /* InfoLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */; };
+		7DEE4F5718BD3AA4001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
 		7DF077F81847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		7DF077F91847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		E98573570D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
@@ -442,6 +446,10 @@
 		7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InfoLog.cpp; sourceTree = "<group>"; };
 		7DA8B7F1188489B50066EAB0 /* InfoLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoLog.h; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
+		7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ml_classification.cpp; sourceTree = "<group>"; };
+		7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml_regression.cpp; sourceTree = "<group>"; };
+		7DEE4F5D18BD3F28001A1294 /* ml_regression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml_regression.h; sourceTree = "<group>"; };
+		7DEE4F5E18BD3F38001A1294 /* ml_classification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml_classification.h; sourceTree = "<group>"; };
 		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ml.svm/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -505,6 +513,10 @@
 			isa = PBXGroup;
 			children = (
 				7DBFDE6318439E09009ED61E /* ml.h */,
+				7DEE4F5D18BD3F28001A1294 /* ml_regression.h */,
+				7DEE4F5E18BD3F38001A1294 /* ml_classification.h */,
+				7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */,
+				7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */,
 				E98573560D9E52D300682171 /* ml.cpp */,
 				7DF077F71847577100C55E3C /* ml_svm.cpp */,
 				7D61B1011875CAF9000FD114 /* ml_linreg.cpp */,
@@ -1204,6 +1216,7 @@
 				7D12D2C6186081C7009D2059 /* FFT.cpp in Sources */,
 				7D12D2DB186081C7009D2059 /* TimeDomainFeatures.cpp in Sources */,
 				7D12D2BC186081C7009D2059 /* LabelledTimeSeriesClassificationSample.cpp in Sources */,
+				7DEE4F5718BD3AA4001A1294 /* ml_classification.cpp in Sources */,
 				7D12D272186081C7009D2059 /* DTW.cpp in Sources */,
 				7D12D2DE186081C7009D2059 /* TimeseriesBuffer.cpp in Sources */,
 				7D12D325186081C7009D2059 /* LogisticRegression.cpp in Sources */,
@@ -1221,6 +1234,7 @@
 				7D12D347186081C7009D2059 /* MatrixDouble.cpp in Sources */,
 				7DA8B7F2188489B50066EAB0 /* InfoLog.cpp in Sources */,
 				7D12D2E4186081C7009D2059 /* Classifier.cpp in Sources */,
+				7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */,
 				7D12D2CC186081C7009D2059 /* KMeansQuantizer.cpp in Sources */,
 				7D12D2D8186081C7009D2059 /* PeakDetection.cpp in Sources */,
 				7D12D2F0186081C7009D2059 /* GRTBase.cpp in Sources */,
@@ -1301,6 +1315,7 @@
 				7D12D2C7186081C7009D2059 /* FFT.cpp in Sources */,
 				7D12D2DC186081C7009D2059 /* TimeDomainFeatures.cpp in Sources */,
 				7D12D2BD186081C7009D2059 /* LabelledTimeSeriesClassificationSample.cpp in Sources */,
+				7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */,
 				7D12D273186081C7009D2059 /* DTW.cpp in Sources */,
 				7D12D2DF186081C7009D2059 /* TimeseriesBuffer.cpp in Sources */,
 				7D12D326186081C7009D2059 /* LogisticRegression.cpp in Sources */,
@@ -1318,6 +1333,7 @@
 				7D12D348186081C7009D2059 /* MatrixDouble.cpp in Sources */,
 				7DA8B7F3188489B50066EAB0 /* InfoLog.cpp in Sources */,
 				7D12D2E5186081C7009D2059 /* Classifier.cpp in Sources */,
+				7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */,
 				7D12D2CD186081C7009D2059 /* KMeansQuantizer.cpp in Sources */,
 				7D12D2D9186081C7009D2059 /* PeakDetection.cpp in Sources */,
 				7D12D2F1186081C7009D2059 /* GRTBase.cpp in Sources */,

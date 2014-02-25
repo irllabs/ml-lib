@@ -16,13 +16,13 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ml.h"
+#include "ml_regression.h"
 
 namespace ml
 {
-    class ml_logreg : ml_regression_base
+    class ml_logreg : ml_regression
     {
-        FLEXT_HEADER_S(ml_logreg, ml_regression_base, setup);
+        FLEXT_HEADER_S(ml_logreg, ml_regression, setup);
         
     public:
         ml_logreg()

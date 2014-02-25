@@ -58,13 +58,13 @@ string GRTBase::getLastInfoMessage() const {
     return infoLog.getLastMessage();
 }
     
-string GRTBase::getGRTVersion(bool returnRevision) const{
+string GRTBase::getGRTVersion(bool returnRevision) {
     string version = GRT_VERSION;
     if( returnRevision ) version += " revision: " + getGRTRevison();
     return version;
 }
 
-string GRTBase::getGRTRevison() const{
+string GRTBase::getGRTRevison() {
     return GRT_REVISION;
 }
 
