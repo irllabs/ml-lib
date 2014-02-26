@@ -267,4 +267,9 @@ namespace ml
         return get_Classifier_instance();
     }
     
+    bool ml_classification::load_specialised_data(std::string &path)
+    {
+        return labelledClassificationData.loadDatasetFromFile(path);
+    }
+    
 }

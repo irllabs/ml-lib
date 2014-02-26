@@ -155,6 +155,7 @@ namespace ml
         // Implement pure virtual methods
         GRT::MLBase &get_MLBase_instance();
         const GRT::MLBase &get_MLBase_instance() const;
+        bool load_specialised_data(std::string &path);
         
     private:
         void set_activation_function(int activation_function, mlp_layer layer);
@@ -726,6 +727,29 @@ namespace ml
     const GRT::MLBase &ml_mlp::get_MLBase_instance() const
     {
         return mlp;
+    }
+    
+    bool ml_mlp::load_specialised_data(std::string &path)
+    {
+        bool success = false;
+        
+        success = labelledClassificationData.loadDatasetFromFile(path);
+        
+        if (success)
+        {
+            set_data_type(LABELLED_CLASSIFICATION);
+            return success;
+        }
+        
+        success = labelledRegressionData.loadDatasetFromFile(path);
+        
+        if (success)
+        {
+            set_data_type(LABELLED_REGRESSION);
+        }
+        
+        return success;
+        
     }
     
     FLEXT_LIB("ml.mlp", ml_mlp);

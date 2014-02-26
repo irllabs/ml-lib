@@ -293,61 +293,24 @@ namespace ml
     
     void ml::load(const t_symbol *path)
     {
-        std::string file_path = get_symbol_as_string(path);
-        
         bool success = false;
         t_atom a_success;
         SetInt(a_success, success);
+
+        std::string file_path = get_symbol_as_string(path);
         
-        if (file_path.empty())
+        if (!check_empty_with_error(file_path))
         {
-            error("path string is empty");
-            ToOutAnything(1, s_load, 1, &a_success);
-            return;
+            success = load_specialised_data(file_path);
         }
         
-        success = labelledClassificationData.loadDatasetFromFile(file_path);
+        if (!success)
+        {
+            error("unable to load training data from: %s, incorrect format?", file_path.c_str());
+        }
+        
         SetInt(a_success, success);
-        
-        if (success)
-        {
-            set_data_type(LABELLED_CLASSIFICATION);
-            ToOutAnything(1, s_load, 1, &a_success);
-            return;
-        }
-        
-        success = labelledRegressionData.loadDatasetFromFile(file_path);
-        SetInt(a_success, success);
-        
-        if (success)
-        {
-            set_data_type(LABELLED_REGRESSION);
-            ToOutAnything(1, s_load, 1, &a_success);
-            return;
-        }
-        
-        success = labelledTimeSeriesClassificationData.loadDatasetFromFile(file_path);
-        SetInt(a_success, success);
-        
-        if (success)
-        {
-            set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
-            ToOutAnything(1, s_load, 1, &a_success);
-            return;
-        }
-        
-        success = unlabelledClassificationData.loadDatasetFromFile(file_path);
-        SetInt(a_success, success);
-        
-        if (success)
-        {
-            set_data_type(UNLABELLED_CLASSIFICATION);
-            ToOutAnything(1, s_load, 1, &a_success);
-            return;
-        }
-        
         ToOutAnything(1, s_load, 1, &a_success);
-        error("unable to load training data from path: %s", file_path.c_str());
     }
     
     void ml::clear()
@@ -436,6 +399,16 @@ namespace ml
     ml_data_type ml::get_data_type() const
     {
         return data_type;
+    }
+    
+    bool ml::check_empty_with_error(std::string &string) const
+    {
+        if (string.empty())
+        {
+            error("path string is empty");
+            return true;
+        }
+        return false;
     }
     
 #pragma mark - Main function

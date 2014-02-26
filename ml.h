@@ -42,10 +42,14 @@ namespace ml
     }
     ml_data_type;
     
+    // Constants
     const ml_data_type default_data_type = LABELLED_CLASSIFICATION;
     const bool default_scaling = true;
     const GRT::UINT defaultNumInputDimensions = 2;
     const GRT::UINT defaultNumOutputDimensions = 1;
+    
+    // Utility functions
+    std::string get_symbol_as_string(const t_symbol *symbol);
     
     class ml:
     public flext_base
@@ -81,6 +85,9 @@ namespace ml
         
         virtual GRT::MLBase &get_MLBase_instance() = 0;
         virtual const GRT::MLBase &get_MLBase_instance() const = 0;
+        virtual bool load_specialised_data(std::string &path) = 0;
+        
+        bool check_empty_with_error(std::string &string) const;
         
         std::string get_grt_version();
         

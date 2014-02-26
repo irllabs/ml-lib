@@ -29,6 +29,7 @@ namespace ml
         {
             post("ml.hmm: Hidden Markov Model based on the GRT library version %s", get_grt_version().c_str());
             set_scaling(default_scaling);
+            set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
         }
         
         ~ml_hmm()
@@ -84,6 +85,7 @@ namespace ml
         // Implement pure virtual methods
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
+        bool load_specialised_data(std::string &path);
         
     private:
         // Method wrappers
@@ -248,6 +250,12 @@ namespace ml
     {
         return classifier;
     }
+    
+    bool ml_hmm::load_specialised_data(std::string &path)
+    {
+        return labelledTimeSeriesClassificationData.loadDatasetFromFile(path);
+    }
+
     
     FLEXT_LIB("ml.hmm", ml_hmm);
     

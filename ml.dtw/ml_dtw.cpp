@@ -29,6 +29,7 @@ namespace ml
         {
             post("ml.dtw: Dynamic Time Warping based on the GRT library version %s", get_grt_version().c_str());
             set_scaling(default_scaling);
+            set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
         }
         
         ~ml_dtw()
@@ -81,6 +82,7 @@ namespace ml
         // Implement pure virtual methods
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
+        bool load_specialised_data(std::string &path);
         
     private:
         // Method wrappers
@@ -237,6 +239,11 @@ namespace ml
     const GRT::Classifier &ml_dtw::get_Classifier_instance() const
     {
         return classifier;
+    }
+    
+    bool ml_dtw::load_specialised_data(std::string &path)
+    {
+        return labelledTimeSeriesClassificationData.loadDatasetFromFile(path);
     }
     
     FLEXT_LIB("ml.dtw", ml_dtw);

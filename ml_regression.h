@@ -63,6 +63,8 @@ namespace ml
         virtual GRT::Regressifier &get_Regressifier_instance() = 0;
         virtual const GRT::Regressifier &get_Regressifier_instance() const = 0;
         
+        bool load_specialised_data(std::string &path);
+        
     private:
         
         // Method wrappers

@@ -83,7 +83,7 @@ namespace ml
         SetInt(a_success, success);
         ToOutAnything(1, s_train, 1, &a_success);
     }
-    
+
     void ml_regression::map(int argc, const t_atom *argv)
     {
         GRT::UINT numSamples = labelledRegressionData.getNumSamples();
@@ -176,5 +176,10 @@ namespace ml
     const GRT::MLBase &ml_regression::get_MLBase_instance() const
     {
         return get_Regressifier_instance();
+    }
+    
+    bool ml_regression::load_specialised_data(std::string &path)
+    {
+        return labelledRegressionData.loadDatasetFromFile(path);
     }
 }
