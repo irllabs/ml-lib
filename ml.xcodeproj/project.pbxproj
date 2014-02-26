@@ -442,6 +442,7 @@
 		7D635EB21838D10900E718CE /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7D93C42D18A52E860083CB07 /* ml.svm-help.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml.svm-help.pd"; path = "ml.svm/ml.svm-help.pd"; sourceTree = "<group>"; };
+		7D959D3818BE136100774E57 /* ml.hmm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.hmm.maxhelp; path = ml.hmm/ml.hmm.maxhelp; sourceTree = "<group>"; };
 		7DA8B7EF1884894D0066EAB0 /* TimeStamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeStamp.h; sourceTree = "<group>"; };
 		7DA8B7F0188489B50066EAB0 /* InfoLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InfoLog.cpp; sourceTree = "<group>"; };
 		7DA8B7F1188489B50066EAB0 /* InfoLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoLog.h; sourceTree = "<group>"; };
@@ -1108,6 +1109,7 @@
 				7D580B7E18A4F930004ADEFF /* ml.linreg.maxhelp */,
 				7D580B7F18A4F947004ADEFF /* ml.logreg.maxhelp */,
 				7D580B8018A4F950004ADEFF /* ml.mlp.maxhelp */,
+				7D959D3818BE136100774E57 /* ml.hmm.maxhelp */,
 				7D580B8118A4F959004ADEFF /* ml.peak.maxhelp */,
 				7D580B8218A4F992004ADEFF /* ml.svm.maxhelp */,
 			);
