@@ -26,16 +26,7 @@ namespace ml
     std::string get_symbol_as_string(const t_symbol *symbol)
     {
         const char *c_string = flext::GetAString(symbol);
-        std::string cpp_string;
-        
-        if (c_string == NULL)
-        {
-            error("symbol was NULL");
-        }
-        else
-        {
-            cpp_string.assign(c_string);
-        }
+        std::string cpp_string = c_string != NULL ? c_string : "";
         
         return cpp_string;
     }
