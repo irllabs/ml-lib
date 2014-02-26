@@ -156,6 +156,7 @@ namespace ml
         GRT::MLBase &get_MLBase_instance();
         const GRT::MLBase &get_MLBase_instance() const;
         bool load_specialised_data(std::string &path);
+        bool save_specialised_data(std::string &path) const;
         
     private:
         void set_activation_function(int activation_function, mlp_layer layer);
@@ -750,6 +751,24 @@ namespace ml
         
         return success;
         
+    }
+    
+    bool ml_mlp::save_specialised_data(std::string &path) const
+    {
+        const ml_data_type data_type = get_data_type();
+
+        if (data_type == LABELLED_CLASSIFICATION)
+        {
+            return labelledClassificationData.saveDatasetToFile(path);
+        }
+        else if (data_type == LABELLED_REGRESSION)
+        {
+            return labelledRegressionData.saveDatasetToFile(path);
+        }
+        
+        flext::error("unable to save dataset, invalid data type: %d", data_type);
+        
+        return false;
     }
     
     FLEXT_LIB("ml.mlp", ml_mlp);

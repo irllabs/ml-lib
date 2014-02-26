@@ -272,4 +272,9 @@ namespace ml
         return labelledClassificationData.loadDatasetFromFile(path);
     }
     
+    bool ml_classification::save_specialised_data(std::string &path) const
+    {
+        return labelledClassificationData.saveDatasetToFile(path);
+    }
+    
 }

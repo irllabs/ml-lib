@@ -86,6 +86,7 @@ namespace ml
         virtual GRT::MLBase &get_MLBase_instance() = 0;
         virtual const GRT::MLBase &get_MLBase_instance() const = 0;
         virtual bool load_specialised_data(std::string &path) = 0;
+        virtual bool save_specialised_data(std::string &path) const = 0;
         
         bool check_empty_with_error(std::string &string) const;
         

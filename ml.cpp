@@ -248,38 +248,23 @@ namespace ml
         t_atom a_success;
         SetInt(a_success, success);
         const ml_data_type data_type = get_data_type();
+        std::string file_path = get_symbol_as_string(path);
         
-        if (labelledRegressionData.getNumSamples() == 0 && labelledRegressionData.getNumSamples() == 0)
+        if (
+            (data_type == LABELLED_REGRESSION && labelledRegressionData.getNumSamples() == 0) ||
+            (data_type == LABELLED_CLASSIFICATION && labelledClassificationData.getNumSamples() == 0) ||
+            (data_type == LABELLED_TIME_SERIES_CLASSIFICATION && labelledTimeSeriesClassificationData.getNumSamples() == 0) ||
+            (data_type == UNLABELLED_CLASSIFICATION && unlabelledClassificationData.getNumSamples() == 0)
+            )
         {
             error("no observations added, use 'add' to add training data");
             ToOutAnything(1, s_save, 1, &a_success);
             return;
         }
         
-        std::string file_path = get_symbol_as_string(path);
-        
-        if (file_path.empty())
+        if (!check_empty_with_error(file_path))
         {
-            error("path string is empty");
-            ToOutAnything(1, s_save, 1, &a_success);
-            return;
-        }
-        
-        if (data_type == LABELLED_CLASSIFICATION)
-        {
-            success = labelledClassificationData.saveDatasetToFile(file_path);
-        }
-        else if (data_type == LABELLED_REGRESSION)
-        {
-            success = labelledRegressionData.saveDatasetToFile(file_path);
-        }
-        else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
-        {
-            success = labelledTimeSeriesClassificationData.saveDatasetToFile(file_path);
-        }
-        else if (data_type == UNLABELLED_CLASSIFICATION)
-        {
-            success = unlabelledClassificationData.saveDatasetToFile(file_path);
+            success = save_specialised_data(file_path);
         }
         
         if (!success)

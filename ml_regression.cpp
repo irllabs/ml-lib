@@ -182,4 +182,9 @@ namespace ml
     {
         return labelledRegressionData.loadDatasetFromFile(path);
     }
+    
+    bool ml_regression::save_specialised_data(std::string &path) const
+    {
+        return labelledRegressionData.saveDatasetToFile(path);
+    }
 }

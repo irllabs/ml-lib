@@ -86,6 +86,7 @@ namespace ml
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
         bool load_specialised_data(std::string &path);
+        bool save_specialised_data(std::string &path) const;
         
     private:
         // Method wrappers
@@ -256,6 +257,10 @@ namespace ml
         return labelledTimeSeriesClassificationData.loadDatasetFromFile(path);
     }
 
+    bool ml_hmm::save_specialised_data(std::string &path) const
+    {
+        return labelledTimeSeriesClassificationData.saveDatasetToFile(path);
+    }
     
     FLEXT_LIB("ml.hmm", ml_hmm);
     
