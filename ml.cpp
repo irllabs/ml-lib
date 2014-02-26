@@ -68,7 +68,7 @@ namespace ml
     }
     
     ml::ml()
-    : currentLabel(0), probs(false)
+    : currentLabel(0), probs(false), recording(false)
     {
         set_data_type(default_data_type);
         AddOutAnything("general purpose outlet");
@@ -239,7 +239,7 @@ namespace ml
     void ml::record(bool state)
     {
         record_(state);
-        post("recording: %s", state == 1 ? "on" : "off");
+        post("recording: %s", recording ? "on" : "off");
     }
     
     void ml::save(const t_symbol *path) const
