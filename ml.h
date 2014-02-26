@@ -26,7 +26,7 @@
 #include <vector>
 #include <map>
 
-#define ML_VERSION "0.9.4"
+#define ML_VERSION "0.10.0"
 #define ML_NAME "ml-lib"
 #define ML_POST_SEP "---------------------------------------"
 
