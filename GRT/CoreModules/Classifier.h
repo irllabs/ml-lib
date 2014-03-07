@@ -3,29 +3,29 @@
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
  
- @section LICENSE
+ @brief This is the main base class that all GRT Classification algorithms should inherit from.
+ 
+ A large number of the functions in this class are virtual and simply return false as these functions must be overwridden by the inheriting class.
+ */
+
+/**
  GRT MIT License
  Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
  
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
  subject to the following conditions:
  
- The above copyright notice and this permission notice shall be included in all copies or substantial 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
  portions of the Software.
  
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
- This is the main base class that all GRT Classification algorithms should inherit from.  A large number of the
- functions in this class are virtual and simply return false as these functions must be overwridden by the inheriting
- class.
  */
 
 #ifndef GRT_CLASSIFIER_HEADER
@@ -272,8 +272,25 @@ public:
      @return vector< string >: a vector containing the names of the classifiers that have been registered with the base classifier
     */
 	static vector< string > getRegisteredClassifiers();
+	
+	//Tell the compiler we are explicitly using the following classes from the base class (this stops hidden overloaded virtual function warnings)
+    using MLBase::train;
     
 protected:
+    /**
+     Saves the core base settings to a file.
+     
+     @return returns true if the base settings were saved, false otherwise
+     */
+    bool saveBaseSettingsToFile(fstream &file) const;
+    
+    /**
+     Loads the core base settings from a file.
+     
+     @return returns true if the base settings were loaded, false otherwise
+     */
+    bool loadBaseSettingsFromFile(fstream &file);
+
     string classifierType;
     bool useNullRejection;
     UINT numClasses;
@@ -305,7 +322,7 @@ private:
 template< typename T >  Classifier* getNewClassificationModuleInstance() { return new T; }
 
 template< typename T >
-class RegisterClassifierModule : Classifier { 
+class RegisterClassifierModule : public Classifier {
 public:
     RegisterClassifierModule(string const &newClassificationModuleName) { 
         getMap()->insert( std::pair<string, Classifier*(*)()>(newClassificationModuleName, &getNewClassificationModuleInstance< T > ) );

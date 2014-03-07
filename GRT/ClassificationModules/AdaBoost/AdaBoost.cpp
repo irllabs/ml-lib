@@ -25,8 +25,9 @@ namespace GRT{
 //Register the AdaBoost module with the Classifier base class
 RegisterClassifierModule< AdaBoost > AdaBoost::registerModule("AdaBoost");
 
-AdaBoost::AdaBoost(bool useScaling,bool useNullRejection,double nullRejectionCoeff,UINT numBoostingIterations,UINT predictionMethod)
+AdaBoost::AdaBoost(const WeakClassifier weakClassifier,bool useScaling,bool useNullRejection,double nullRejectionCoeff,UINT numBoostingIterations,UINT predictionMethod)
 {
+    setWeakClassifier( weakClassifier );
     this->useScaling = useScaling;
     this->useNullRejection = useNullRejection;
     this->nullRejectionCoeff = nullRejectionCoeff;
@@ -111,7 +112,7 @@ bool AdaBoost::train(LabelledClassificationData trainingData){
     //Clear any previous model
     clear();
     
-    numFeatures = trainingData.getNumDimensions();
+    numInputDimensions = trainingData.getNumDimensions();
     numClasses = trainingData.getNumClasses();
     const UINT M = trainingData.getNumSamples();
     const UINT POSITIVE_LABEL = WEAK_CLASSIFIER_POSITIVE_CLASS_LABEL;
@@ -153,7 +154,7 @@ bool AdaBoost::train(LabelledClassificationData trainingData){
             VectorDouble trainingSample = trainingData[i].getSample();
             
             if( useScaling ){
-                for(UINT n=0; n<numFeatures; n++){
+                for(UINT n=0; n<numInputDimensions; n++){
                     trainingSample[n] = scale(trainingSample[n], ranges[n].minValue, ranges[n].maxValue, 0, 1);
                 }
             }
@@ -278,13 +279,13 @@ bool AdaBoost::predict(VectorDouble inputVector){
         return false;
     }
     
-    if( inputVector.size() != numFeatures ){
-        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numFeatures << endl;
+    if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numInputDimensions << endl;
         return false;
     }
     
     if( useScaling ){
-        for(UINT n=0; n<numFeatures; n++){
+        for(UINT n=0; n<numInputDimensions; n++){
             inputVector[n] = scale(inputVector[n], ranges[n].minValue, ranges[n].maxValue, 0, 1);
         }
     }
@@ -402,8 +403,8 @@ bool AdaBoost::saveModelToFile(fstream &file) const{
     
 	//Write the header info
 	file<<"GRT_ADABOOST_MODEL_FILE_V1.0\n";
-    file<<"NumFeatures: "<<numFeatures<<endl;
-	file<<"NumClasses: "<<numClasses<<endl;
+    file<<"NumFeatures: " << numInputDimensions << endl;
+	file<<"NumClasses: " << numClasses << endl;
     file<<"UseScaling: " << useScaling << endl;
     file<<"UseNullRejection: " << useNullRejection << endl;
 	
@@ -476,7 +477,7 @@ bool AdaBoost::loadModelFromFile(fstream &file){
         errorLog <<"loadModelFromFile(fstream &file) - Failed to read NumFeatures header!" << endl;
 		return false;
     }
-    file >> numFeatures;
+    file >> numInputDimensions;
     
     file >> word;
     if( word != "NumClasses:" ){
@@ -505,7 +506,7 @@ bool AdaBoost::loadModelFromFile(fstream &file){
             errorLog <<"loadModelFromFile(fstream &file) - Failed to read Ranges header!" << endl;
             return false;
         }
-        ranges.resize( numFeatures );
+        ranges.resize( numInputDimensions );
         
         for(UINT n=0; n<ranges.size(); n++){
             file >> ranges[n].minValue;
@@ -623,8 +624,8 @@ bool AdaBoost::setPredictionMethod(UINT predictionMethod){
 void AdaBoost::printModel(){
     
     cout <<"AdaBoostModel: \n";
-    cout<<"NumFeatures: "<<numFeatures<<endl;
-    cout<<"NumClasses: "<<numClasses<<endl;
+    cout<<"NumFeatures: " << numInputDimensions << endl;
+    cout<<"NumClasses: " << numClasses << endl;
     cout <<"UseScaling: " << useScaling << endl;
     cout<<"UseNullRejection: " << useNullRejection << endl;
     

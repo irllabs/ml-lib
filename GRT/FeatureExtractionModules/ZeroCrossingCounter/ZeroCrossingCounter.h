@@ -41,7 +41,7 @@
 #ifndef GRT_ZERO_CROSSING_COUNTER_HEADER
 #define GRT_ZERO_CROSSING_COUNTER_HEADER
 
-#include "../../GestureRecognitionPipeline/FeatureExtraction.h"
+#include "../../CoreModules/FeatureExtraction.h"
 #include "../../PreProcessingModules/Derivative.h"
 #include "../../PreProcessingModules/DeadZone.h"
 

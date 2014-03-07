@@ -3,34 +3,35 @@
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
  
- @section LICENSE
+ @brief The class implements a double moving average filter.
+ 
+ @example PreprocessingModulesExamples/DoubleMovingAverageFilterExample/DoubleMovingAverageFilterExample.cpp
+ */
+
+/**
  GRT MIT License
  Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
  
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
  subject to the following conditions:
  
- The above copyright notice and this permission notice shall be included in all copies or substantial 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
  portions of the Software.
  
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
- The DoubleMovingAverageFilter implements a low pass double moving average filter.
- 
  */
 
 #ifndef GRT_DOUBLE_MOVING_AVERAGE_FILTER_HEADER
 #define GRT_DOUBLE_MOVING_AVERAGE_FILTER_HEADER
 
-#include "../GestureRecognitionPipeline/PreProcessing.h"
+#include "../CoreModules/PreProcessing.h"
 #include "MovingAverageFilter.h"
 
 namespace GRT{
@@ -80,10 +81,10 @@ public:
      This function is called by the GestureRecognitionPipeline when any new input data needs to be processed (during the prediction phase for example).
      This function calls the DoubleMovingAverageFilter's filter function.
      
-	 @param const vector< double > &inputVector: the inputVector that should be processed.  Must have the same dimensionality as the PreProcessing module
+	 @param const VectorDouble &inputVector: the inputVector that should be processed.  Must have the same dimensionality as the PreProcessing module
 	 @return true if the data was processed, false otherwise
      */
-    virtual bool process(const vector< double > &inputVector);
+    virtual bool process(const VectorDouble &inputVector);
     
     /**
      Sets the PreProcessing reset function, overwriting the base PreProcessing function.
@@ -101,7 +102,7 @@ public:
      @param string filename: the name of the file to save the settings to
      @return returns true if the model was saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(string filename);
+    virtual bool saveSettingsToFile(string filename) const;
     
     /**
      This saves the current settings of the DoubleMovingAverageFilter to a file.
@@ -110,7 +111,7 @@ public:
      @param fstream &file: a reference to the file the settings will be saved to
      @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(fstream &file);
+    virtual bool saveSettingsToFile(fstream &file) const;
     
     /**
      This loads the DoubleMovingAverageFilter settings from a file.
@@ -143,18 +144,18 @@ public:
     /**
      Filters the input, this should only be called if the dimensionality of the filter was set to 1.
      
-     @param double x: the value to filter, this should only be called if the dimensionality of the filter was set to 1
+     @param const double x: the value to filter, this should only be called if the dimensionality of the filter was set to 1
 	 @return the filtered value.  Zero will be returned if the value was not filtered
      */
-    double filter(double x);
+    double filter(const double x);
     
     /**
      Filters the input, the dimensionality of the input vector should match that of the filter.
      
-     @param const vector< double > &x: the values to filter, the dimensionality of the input vector should match that of the filter
+     @param const VectorDouble &x: the values to filter, the dimensionality of the input vector should match that of the filter
 	 @return the filtered values.  An empty vector will be returned if the values were not filtered
      */
-    vector< double > filter(const vector< double > &x);
+    VectorDouble filter(const VectorDouble &x);
     
     /**
      Returns the last value(s) that were filtered.

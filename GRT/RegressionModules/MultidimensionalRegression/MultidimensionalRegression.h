@@ -2,43 +2,42 @@
  @file
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
- 
- @section LICENSE
- GRT MIT License
- Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
- subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all copies or substantial 
- portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
- SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
- This is the Multidimensional Regression class. It acts as a meta-algorithm for regression that allows
- several one-dimensional regression algorithms (such as Linear Regression), to be combined together to
- allow an M-dimensional signal to be mapped to an N-dimensional signal. This works by training N seperate
- regression algorithms (one for each dimension), each with an M-dimensional input.
+
+ @brief This class implements the Multidimensional Regression meta algorithm. Multidimensional Regressionacts as a meta-algorithm for regression that allows several one-dimensional regression algorithms (such as Linear Regression), to be combined together to allow an M-dimensional signal to be mapped to an N-dimensional signal. This works by training N seperate regression algorithms (one for each dimension), each with an M-dimensional input.
 
  In addition to enabling one-dimensional regression algorithms (such as Linear Regression) to be used for
  mapping N-dimensional output signals, Multidimensional Regression can also be useful for multi-dimensional
  regression algorithms (such as Multi Layer Perceptrons), as it enables you to train N seperate MLP algorithms
  (one for each output signal), which might provide better mapping results than trying to train one MLP algorithm
  that can successfully map all N-dimensions at once.
+ 
+ @example RegressionModulesExamples/MultidimensionalRegressionExample/MultidimensionalRegressionExample.cpp
+ */
+
+/**
+ GRT MIT License
+ Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
+ portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 #ifndef GRT_MULTIDIMENSIONAL_REGRESSION_HEADER
 #define GRT_MULTIDIMENSIONAL_REGRESSION_HEADER
 
-#include "../../GestureRecognitionPipeline/Regressifier.h"
+#include "../../CoreModules/Regressifier.h"
 #include "../LinearRegression/LinearRegression.h"
 
 namespace GRT{

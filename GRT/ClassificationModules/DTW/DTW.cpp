@@ -167,7 +167,7 @@ bool DTW::train(LabelledTimeSeriesClassificationData labelledTrainingData){
 	//Assign
     numClasses = labelledTrainingData.getNumClasses();
 	numTemplates = labelledTrainingData.getNumClasses();
-    numFeatures = labelledTrainingData.getNumDimensions();
+    numInputDimensions = labelledTrainingData.getNumDimensions();
 	templatesBuffer.resize( numClasses );
     classLabels.resize( numClasses );
 	nullRejectionThresholds.resize( numClasses );
@@ -254,7 +254,7 @@ bool DTW::train(LabelledTimeSeriesClassificationData labelledTrainingData){
 
     //Resize the prediction results to make sure it is setup for realtime prediction
     continuousInputDataBuffer.clear();
-    continuousInputDataBuffer.resize(averageTemplateLength,vector<double>(numFeatures,0));
+    continuousInputDataBuffer.resize(averageTemplateLength,vector<double>(numInputDimensions,0));
     classLikelihoods.resize(numTemplates,DEFAULT_NULL_LIKELIHOOD_VALUE);
     classDistances.resize(numTemplates,0);
     predictedClassLabel = GRT_DEFAULT_NULL_CLASS_LABEL;
@@ -365,8 +365,8 @@ bool DTW::predict(MatrixDouble inputTimeSeries){
         classDistances[k] = DEFAULT_NULL_LIKELIHOOD_VALUE;
     }
 
-	if( numFeatures != inputTimeSeries.getNumCols() ){
-        errorLog << "predict(Matrix<double> &inputTimeSeries) - The number of features in the model (" << numFeatures << ") do not match that of the input time series (" << inputTimeSeries.getNumCols() << ")" << endl;
+	if( numInputDimensions != inputTimeSeries.getNumCols() ){
+        errorLog << "predict(Matrix<double> &inputTimeSeries) - The number of features in the model (" << numInputDimensions << ") do not match that of the input time series (" << inputTimeSeries.getNumCols() << ")" << endl;
         return false;
     }
 
@@ -469,8 +469,8 @@ bool DTW::predict(VectorDouble inputVector){
         classLikelihoods[c] = DEFAULT_NULL_LIKELIHOOD_VALUE;
     }
 
-	if( numFeatures != inputVector.size() ){
-        errorLog << "predict(vector<double> inputVector) - The number of features in the model " << numFeatures << " does not match that of the input vector " << inputVector.size() << endl;
+	if( numInputDimensions != inputVector.size() ){
+        errorLog << "predict(vector<double> inputVector) - The number of features in the model " << numInputDimensions << " does not match that of the input vector " << inputVector.size() << endl;
         return false;
     }
 
@@ -483,7 +483,7 @@ bool DTW::predict(VectorDouble inputVector){
     }
 
     //Copy the data into a temporary matrix
-    MatrixDouble predictionTimeSeries(continuousInputDataBuffer.getSize(),numFeatures);
+    MatrixDouble predictionTimeSeries(continuousInputDataBuffer.getSize(),numInputDimensions);
     for(UINT i=0; i<predictionTimeSeries.getNumRows(); i++){
         for(UINT j=0; j<predictionTimeSeries.getNumCols(); j++){
             predictionTimeSeries[i][j] = continuousInputDataBuffer[i][j];
@@ -498,7 +498,7 @@ bool DTW::predict(VectorDouble inputVector){
 bool DTW::reset(){
     continuousInputDataBuffer.clear();
     if( trained ){
-        continuousInputDataBuffer.resize(averageTemplateLength,vector<double>(numFeatures,0));
+        continuousInputDataBuffer.resize(averageTemplateLength,vector<double>(numInputDimensions,0));
         recomputeNullRejectionThresholds();
     }
     return true;
@@ -949,7 +949,7 @@ bool DTW::saveModelToFile( fstream &file ) const{
     }
     
     file << "GRT_DTW_Model_File_V1.0" <<endl;
-    file << "NumberOfDimensions: " << numFeatures <<endl;
+    file << "NumberOfDimensions: " << numInputDimensions <<endl;
     file << "NumberOfClasses: " << numClasses << endl;
     file << "NumberOfTemplates: " << numTemplates <<endl;
     file << "DistanceMethod: ";
@@ -1038,7 +1038,7 @@ bool DTW::loadModelFromFile( fstream &file ){
         errorLog << "loadDTWModelFromFile( string fileName ) - Failed to find NumberOfDimensions!" << endl;
         return false;
     }
-    file >> numFeatures;
+    file >> numInputDimensions;
     
     //Check and load the Number of Classes
     file >> word;
@@ -1196,7 +1196,7 @@ bool DTW::loadModelFromFile( fstream &file ){
         file >> timeSeriesLength;
         
         //Resize the buffers
-        templatesBuffer[i].timeSeries.resize(timeSeriesLength,numFeatures);
+        templatesBuffer[i].timeSeries.resize(timeSeriesLength,numInputDimensions);
         
         //Get the template threshold
         file >> word;
@@ -1247,7 +1247,7 @@ bool DTW::loadModelFromFile( fstream &file ){
             return false;
         }
         for(UINT k=0; k<timeSeriesLength; k++)
-            for(UINT j=0; j<numFeatures; j++)
+            for(UINT j=0; j<numInputDimensions; j++)
                 file >> templatesBuffer[i].timeSeries[k][j];
         
         //Check for the footer
@@ -1255,7 +1255,7 @@ bool DTW::loadModelFromFile( fstream &file ){
         if(word != "***************************"){
             numTemplates=0;
             numClasses = 0;
-            numFeatures=0;
+            numInputDimensions=0;
             trained = false;
             errorLog << "loadDTWModelFromFile( string fileName ) - Failed to find template footer!" << endl;
             return false;
@@ -1264,7 +1264,7 @@ bool DTW::loadModelFromFile( fstream &file ){
     
     //Resize the prediction results to make sure it is setup for realtime prediction
     continuousInputDataBuffer.clear();
-    continuousInputDataBuffer.resize(averageTemplateLength,vector<double>(numFeatures,0));
+    continuousInputDataBuffer.resize(averageTemplateLength,vector<double>(numInputDimensions,0));
     maxLikelihood = DEFAULT_NULL_LIKELIHOOD_VALUE;
     bestDistance = DEFAULT_NULL_DISTANCE_VALUE;
     classLikelihoods.resize(numClasses,DEFAULT_NULL_LIKELIHOOD_VALUE);

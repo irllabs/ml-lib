@@ -104,13 +104,13 @@ bool ANBC::predict(VectorDouble inputVector){
     
     if( !trained ) return false;
     
-	if( inputVector.size() != numFeatures ){
-        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numFeatures << endl;
+	if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numInputDimensions << endl;
 		return false;
 	}
     
     if( useScaling ){
-        for(UINT n=0; n<numFeatures; n++){
+        for(UINT n=0; n<numInputDimensions; n++){
             inputVector[n] = scale(inputVector[n], ranges[n].minValue, ranges[n].maxValue, MIN_SCALE_VALUE, MAX_SCALE_VALUE);
         }
     }
@@ -177,7 +177,7 @@ bool ANBC::train(LabelledClassificationData &labelledTrainingData,double gamma){
         }    
     }
 
-    numFeatures = N;
+    numInputDimensions = N;
     numClasses = K;
     models.resize(K);
     classLabels.resize(K);
@@ -199,7 +199,7 @@ bool ANBC::train(LabelledClassificationData &labelledTrainingData,double gamma){
         classLabels[k] = classLabel;
         
         //Get the weights for this class
-		VectorDouble weights(numFeatures);
+		VectorDouble weights(numInputDimensions);
         if( weightsDataSet ){
             bool weightsFound = false;
             for(UINT i=0; i<weightsData.getNumSamples(); i++){
@@ -216,7 +216,7 @@ bool ANBC::train(LabelledClassificationData &labelledTrainingData,double gamma){
             }
         }else{
             //If the weights data has not been set then all the weights are 1
-            for(UINT j=0; j<numFeatures; j++) weights[j] = 1.0;
+            for(UINT j=0; j<numInputDimensions; j++) weights[j] = 1.0;
         }
         
         //Get all the training data for this class
@@ -241,7 +241,7 @@ bool ANBC::train(LabelledClassificationData &labelledTrainingData,double gamma){
                 models.clear();
                 return false;
             }
-            for(UINT j=0; j<numFeatures; j++){
+            for(UINT j=0; j<numInputDimensions; j++){
                 if( models[k].mu[j] == 0 ){
                     errorLog << "train(LabelledClassificationData &labelledTrainingData,double gamma) - The mean of column " << j+1 << " is zero! Check the training data" << endl;
                     models.clear();
@@ -322,7 +322,7 @@ bool ANBC::saveModelToFile(fstream &file) const{
     
 	//Write the header info
 	file<<"GRT_ANBC_MODEL_FILE_V1.0\n";
-    file<<"NumFeatures: "<<numFeatures<<endl;
+    file<<"NumFeatures: "<<numInputDimensions<<endl;
 	file<<"NumClasses: "<<numClasses<<endl;
     file <<"UseScaling: " << useScaling << endl;
     file<<"UseNullRejection: " << useNullRejection << endl;
@@ -385,7 +385,7 @@ bool ANBC::loadModelFromFile(string filename){
 bool ANBC::loadModelFromFile(fstream &file){
     
     trained = false;
-    numFeatures = 0;
+    numInputDimensions = 0;
     numClasses = 0;
     models.clear();
     classLabels.clear();
@@ -410,7 +410,7 @@ bool ANBC::loadModelFromFile(fstream &file){
         errorLog << "loadANBCModelFromFile(string filename) - Could not find NumFeatures " << endl;
         return false;
     }
-    file >> numFeatures;
+    file >> numInputDimensions;
     
     file >> word;
     if(word != "NumClasses:"){
@@ -436,7 +436,7 @@ bool ANBC::loadModelFromFile(fstream &file){
     ///Read the ranges if needed
     if( useScaling ){
         //Resize the ranges buffer
-        ranges.resize(numFeatures);
+        ranges.resize(numInputDimensions);
         
         file >> word;
         if(word != "Ranges:"){
@@ -518,9 +518,9 @@ bool ANBC::loadModelFromFile(fstream &file){
         file >> models[k].trainingSigma;
         
         //Resize the buffers
-        models[k].mu.resize(numFeatures);
-        models[k].sigma.resize(numFeatures);
-        models[k].weights.resize(numFeatures);
+        models[k].mu.resize(numInputDimensions);
+        models[k].sigma.resize(numInputDimensions);
+        models[k].weights.resize(numInputDimensions);
         
         //Load Mu, Sigma and Weights
         file >> word;

@@ -130,6 +130,10 @@ string Regressifier::getRegressifierType() const{
     return regressifierType; 
 }
     
+UINT Regressifier::getMinNumEpochs() const{
+    return minNumEpochs;
+}
+    
 UINT Regressifier::getMaxNumEpochs() const{
     return maxNumEpochs;
 }

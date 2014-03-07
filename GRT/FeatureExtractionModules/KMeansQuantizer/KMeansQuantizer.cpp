@@ -87,7 +87,7 @@ bool KMeansQuantizer::reset(){
     return true;
 }
     
-bool KMeansQuantizer::saveSettingsToFile(string filename){
+bool KMeansQuantizer::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The feature extraction module has not been initialized" << endl;
@@ -123,7 +123,7 @@ bool KMeansQuantizer::loadSettingsFromFile(string filename){
     return true;
 }
 
-bool KMeansQuantizer::saveSettingsToFile(fstream &file){
+bool KMeansQuantizer::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;
@@ -273,12 +273,13 @@ bool KMeansQuantizer::train(MatrixDouble &trainingData){
     
     //Train the KMeans model
     KMeans kmeans;
+    kmeans.setNumClusters(numClusters);
     kmeans.setComputeTheta( true );
     kmeans.setMinChange( 1.0e-10 );
     kmeans.setMinNumEpochs( 10 );
 	kmeans.setMaxNumEpochs( 10000 );
     
-    if( !kmeans.train(numClusters, trainingData) ){
+    if( !kmeans.trainInplace(trainingData) ){
         errorLog << "train(MatrixDouble &trainingData) - Failed to train quantizer!" << endl;
         return false;
     }

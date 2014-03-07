@@ -27,10 +27,11 @@
 #define GRT_FAST_FOURIER_TRANSFORM_HEADER
 
 #include "../../Util/GRTCommon.h"
+#include "../../CoreModules/GRTBase.h"
 
 namespace GRT{
 
-class FastFourierTransform{
+class FastFourierTransform : public GRTBase{
 	
 public:
 		
@@ -38,13 +39,13 @@ public:
     
     FastFourierTransform(const FastFourierTransform &rhs);
     
-    ~FastFourierTransform();
+    virtual ~FastFourierTransform();
     
     FastFourierTransform& operator=(const FastFourierTransform &rhs);
     
-    bool init(unsigned int windowSize,unsigned int windowFunction = RECTANGULAR_WINDOW,bool computeMagnitude = true,bool computePhase = true);
+    bool init(const unsigned int windowSize,const unsigned int windowFunction = RECTANGULAR_WINDOW,const bool computeMagnitude = true,const bool computePhase = true);
     
-    bool computeFFT(double *data);
+    bool computeFFT( VectorDouble &data );
     
     VectorDouble getMagnitudeData();
     VectorDouble getPhaseData();
@@ -57,14 +58,14 @@ public:
     UINT getFFTSize(){ return windowSize; }
     
 protected:
-    bool windowData(double *data);
-    bool realFFT(double *RealIn, double *RealOut, double *ImagOut);
-    bool FFT(int NumSamples,bool InverseTransform,double *RealIn, double *ImagIn, double *RealOut, double *ImagOut);
+    bool windowData( VectorDouble &data );
+    bool realFFT( const VectorDouble &realIn, double *realOut, double *imagOut );
+    bool FFT(int NumSamples,bool InverseTransform,double *realIn, double *imagIn, double *realOut, double *imagOut);
     int numberOfBitsNeeded(int PowerOfTwo);
     int reverseBits(int index, int NumBits);
     void initFFT();
-    inline int fastReverseBits(int i, int NumBits);
-    inline bool isPowerOfTwo(unsigned int x);
+    inline int fastReverseBits(const int i, const int NumBits);
+    inline bool isPowerOfTwo(const unsigned int x);
     
     unsigned int windowSize;
     unsigned int windowFunction;

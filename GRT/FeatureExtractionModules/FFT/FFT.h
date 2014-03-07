@@ -2,28 +2,9 @@
  @file
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
+
+ @brief The FFT class computes the Fourier transform of an N dimensional signal using a Fast Fourier Transform algorithm.
  
- @section LICENSE
- GRT MIT License
- Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
- subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all copies or substantial 
- portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
- SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
- The FFT class computes the Fourier transform of an N dimensional signal using a Fast Fourier Transform algorithm. 
  The FFT class computes N independent FFTs, one for each dimension in the input signal. 
  The FFT is computed using the previous M samples input to the FFT instance, where M is equal to the FFT Window Size parameter, 
  which is set by the user when they initialize the FFT.
@@ -40,12 +21,34 @@
  and 2 represents the magnitude and phase vectors. If you only really need the magnitude or phase of a signal, as opposed to both, then you can turn off the computation 
  and concatenation of the element you do not need to save unnecessary computations and memory copies, this can either be done in the FFT's constructor or by using the 
  setComputeMagnitude(bool computeMagnitude) and setComputePhase(bool computePhase) functions.
+ 
+ @example FeatureExtractionModules/FFTExample/FFTExample.cpp
+ */
+
+/**
+ GRT MIT License
+ Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
+ portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 #ifndef GRT_FFT_HEADER
 #define GRT_FFT_HEADER
 
-#include "../../GestureRecognitionPipeline/FeatureExtraction.h"
+#include "../../CoreModules/FeatureExtraction.h"
 #include "FastFourierTransform.h"
 
 namespace GRT{
@@ -103,10 +106,10 @@ public:
      This function is called by the GestureRecognitionPipeline when any new input data needs to be processed (during the prediction phase for example).
      This function calls the FFT's computeFFT(...) function.
      
-	 @param VectorDouble inputVector: the inputVector that should be processed.  Must have the same dimensionality as the FeatureExtraction module
+	 @param const VectorDouble &inputVector: the inputVector that should be processed.  Must have the same dimensionality as the FeatureExtraction module
 	 @return true if the data was processed, false otherwise
      */
-    virtual bool computeFeatures(VectorDouble inputVector);
+    virtual bool computeFeatures(const VectorDouble &inputVector);
     
     /**
      Sets the FeatureExtraction reset function, overwriting the base FeatureExtraction function.
@@ -124,7 +127,7 @@ public:
      @param string filename: the name of the file to save the settings to
      @return returns true if the settings were saved successfully, false otherwise (the base class always returns false)
      */
-    virtual bool saveSettingsToFile(string filename);
+    virtual bool saveSettingsToFile(string filename) const;
     
     /**
      This loads the feature extraction settings from a file.
@@ -142,7 +145,7 @@ public:
      @param fstream &file: a reference to the file to save the settings to
      @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(fstream &file);
+    virtual bool saveSettingsToFile(fstream &file) const;
     
     /**
      This loads the feature extraction settings from a file.
@@ -175,10 +178,10 @@ public:
      The FFT of the input will only be computed if the current hop counter value matches the hopSize.
      This function should only be used if the dimensionality of the FFT has been set to 1.
      
-     @param double x: the new sample, this will be added to a buffer and the FFT will be computed for the data in the buffer
+     @param const double x: the new sample, this will be added to a buffer and the FFT will be computed for the data in the buffer
 	 @return true if the FTT was updated successfully, false otherwise
      */   
-    bool update(double x);
+    bool update(const double x);
     
     /**
      Computes the FFT of the previous M input samples, where M is the size of the fft window set by the constructor.
@@ -253,6 +256,8 @@ public:
      */
     vector< FastFourierTransform >& getFFTResultsPtr(){ return fft; }
     
+    VectorDouble getFrequencyBins(const unsigned int sampleRate);
+    
     /**
      Sets the hopSize parameter, this sets how often the fft should be computed. 
      If the hopSize parameter is set to 1 then the FFT will be computed everytime the classes' computeFeatures(...) or computeFFT(...) functions are called. 
@@ -309,10 +314,10 @@ protected:
     UINT hopCounter;                                            ///< Keeps track of how many input samples the FFT has seen
     bool computeMagnitude;                                      ///< Tracks if the magnitude (and power) of the FFT need to be computed
     bool computePhase;                                          ///< Tracks if the phase of the FFT needs to be computed
-    double *tempBuffer;                                         ///< A temporary buffer used to store the input data for the FFT
+    GRT::VectorDouble tempBuffer;                               ///< A temporary buffer used to store the input data for the FFT
     CircularBuffer< VectorDouble > dataBuffer;                  ///< A circular buffer used to store the previous M inputs
     vector< FastFourierTransform > fft;                         ///< A buffer used to store the FFT results
-    std::map< unsigned int, unsigned int > windowSizeMap;            ///< A map to relate the FFTWindowSize enumerations to actual values
+    std::map< unsigned int, unsigned int > windowSizeMap;       ///< A map to relate the FFTWindowSize enumerations to actual values
     
     static RegisterFeatureExtractionModule< FFT > registerModule;
     

@@ -240,7 +240,7 @@ bool MLP::init(const UINT numInputNeurons,
     this->numOutputNeurons = numOutputNeurons;
     
     //Set the regression IO
-    this->numFeatures = numInputNeurons;
+    this->numInputDimensions = numInputNeurons;
     this->numOutputDimensions = numOutputNeurons;
        
     //Set the validation layers
@@ -331,7 +331,7 @@ bool MLP::train_(LabelledRegressionData &trainingData){
     }
     
     //Set the Regressifier input and output dimensions
-    numFeatures = numInputNeurons;
+    numInputDimensions = numInputNeurons;
     numOutputDimensions = numOutputNeurons;
 
     //Scale the training and validation data, if needed
@@ -1474,7 +1474,7 @@ bool MLP::loadModelFromFile(fstream &file){
 		return false;
 	}
 	file >> numInputNeurons;
-    numFeatures = numInputNeurons;
+    numInputDimensions = numInputNeurons;
 
 	file >> word;
 	if(word != "NumHiddenNeurons:"){

@@ -1,3 +1,12 @@
+/**
+ @file
+ @author  Nicholas Gillian <ngillian@media.mit.edu>
+ @version 1.0
+ 
+ @brief This code is based on the LU Decomposition code from Numerical Recipes (3rd Edition)
+ */
+
+
 /*
  GRT MIT License
  Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
@@ -16,11 +25,8 @@
  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
- This code is based on the LU Decomposition code from Numerical Recipes (3rd Edition)
- 
  */
+
 #ifndef GRT_CHOLESKY_HEADER
 #define GRT_CHOLESKY_HEADER
 #include "GRTCommon.h"

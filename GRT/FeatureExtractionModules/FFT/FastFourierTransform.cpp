@@ -36,10 +36,15 @@ FastFourierTransform::FastFourierTransform(){
     windowFunction = RECTANGULAR_WINDOW;
     averagePower = 0;
     
+    infoLog.setProceedingText("[FastFourierTransform]");
+    warningLog.setProceedingText("[WARNING FastFourierTransform]");
+    errorLog.setProceedingText("[ERROR FastFourierTransform]");
+    
     initFFT();
 }
     
 FastFourierTransform::FastFourierTransform(const FastFourierTransform &rhs){
+
     this->initialized = rhs.initialized;
     this->computeMagnitude = rhs.computeMagnitude;
     this->computePhase = rhs.computePhase;
@@ -47,6 +52,9 @@ FastFourierTransform::FastFourierTransform(const FastFourierTransform &rhs){
     this->windowFunction = rhs.windowFunction;
     this->averagePower = 0;
     this->initFFT();
+    this->infoLog = rhs.infoLog;
+    this->warningLog = rhs.warningLog;
+    this->errorLog = rhs.errorLog;
     
     if( rhs.initialized ){
         this->init(rhs.windowSize,rhs.windowFunction,rhs.computeMagnitude,rhs.computePhase);
@@ -93,7 +101,7 @@ FastFourierTransform& FastFourierTransform::operator=(const FastFourierTransform
     return *this;
 }
     
-bool FastFourierTransform::init(unsigned int windowSize,unsigned int windowFunction,bool computeMagnitude,bool computePhase){
+bool FastFourierTransform::init(const unsigned int windowSize,const unsigned int windowFunction,const bool computeMagnitude,const bool computePhase){
     
     initialized = false;
     averagePower = 0;
@@ -144,14 +152,14 @@ bool FastFourierTransform::init(unsigned int windowSize,unsigned int windowFunct
     return true;
 }
 
-bool FastFourierTransform::computeFFT(double *data){
+bool FastFourierTransform::computeFFT( VectorDouble &data ){
     
-    if( !initialized || data == NULL ){
+    if( !initialized ){
         return false;
     }
     
     //Window the input data
-    if( !windowData(data) ){
+    if( !windowData( data ) ){
         return false;
     }
     
@@ -179,7 +187,12 @@ bool FastFourierTransform::computeFFT(double *data){
     return true;
 }
     
-bool FastFourierTransform::windowData(double *data){
+bool FastFourierTransform::windowData( VectorDouble &data ){
+    
+    if( data.size() < windowSize ){
+        errorLog << "" << endl;
+        return false;
+    }
     
     switch( windowFunction ){
         case RECTANGULAR_WINDOW:
@@ -278,7 +291,7 @@ double* FastFourierTransform::getPowerDataPtr(){
  * i4  <->  imag[n/2-i]
  */
 
-bool FastFourierTransform::realFFT(double *RealIn, double *RealOut, double *ImagOut){
+bool FastFourierTransform::realFFT( const VectorDouble &realIn, double *realOut, double *imagOut ){
     int NumSamples = (int)windowSize;
     int Half = NumSamples / 2;
     int i;
@@ -286,11 +299,11 @@ bool FastFourierTransform::realFFT(double *RealIn, double *RealOut, double *Imag
     double theta = PI / Half;
     
     for (i = 0; i < Half; i++) {
-        tmpReal[i] = RealIn[2 * i];
-        tmpImag[i] = RealIn[2 * i + 1];
+        tmpReal[i] = realIn[2 * i];
+        tmpImag[i] = realIn[2 * i + 1];
     }
     
-    if( !FFT(Half, 0, &tmpReal[0], &tmpImag[0], RealOut, ImagOut) ){
+    if( !FFT(Half, 0, &tmpReal[0], &tmpImag[0], realOut, imagOut) ){
         return false;
     }
     
@@ -309,27 +322,27 @@ bool FastFourierTransform::realFFT(double *RealIn, double *RealOut, double *Imag
         
         i3 = Half - i;
         
-        h1r = 0.5 * (RealOut[i] + RealOut[i3]);
-        h1i = 0.5 * (ImagOut[i] - ImagOut[i3]);
-        h2r = 0.5 * (ImagOut[i] + ImagOut[i3]);
-        h2i = -0.5 * (RealOut[i] - RealOut[i3]);
+        h1r = 0.5 * (realOut[i] + realOut[i3]);
+        h1i = 0.5 * (imagOut[i] - imagOut[i3]);
+        h2r = 0.5 * (imagOut[i] + imagOut[i3]);
+        h2i = -0.5 * (realOut[i] - realOut[i3]);
         
-        RealOut[i] = h1r + wr * h2r - wi * h2i;
-        ImagOut[i] = h1i + wr * h2i + wi * h2r;
-        RealOut[i3] = h1r - wr * h2r + wi * h2i;
-        ImagOut[i3] = -h1i + wr * h2i + wi * h2r;
+        realOut[i] = h1r + wr * h2r - wi * h2i;
+        imagOut[i] = h1i + wr * h2i + wi * h2r;
+        realOut[i3] = h1r - wr * h2r + wi * h2i;
+        imagOut[i3] = -h1i + wr * h2i + wi * h2r;
         
         wr = (wtemp = wr) * wpr - wi * wpi + wr;
         wi = wi * wpr + wtemp * wpi + wi;
     }
     
-    RealOut[0] = (h1r = RealOut[0]) + ImagOut[0];
-    ImagOut[0] = h1r - ImagOut[0];
+    realOut[0] = (h1r = realOut[0]) + imagOut[0];
+    imagOut[0] = h1r - imagOut[0];
     
     return true;
 }
 
-bool FastFourierTransform::FFT(int numSamples,bool inverseTransform,double *RealIn, double *ImagIn, double *RealOut, double *ImagOut){
+bool FastFourierTransform::FFT(int numSamples,bool inverseTransform,double *realIn, double *imagIn, double *realOut, double *imagOut){
     int NumBits;                 /* Number of bits needed to store indices */
     int i, j, k, n;
     int BlockSize, BlockEnd;
@@ -351,8 +364,8 @@ bool FastFourierTransform::FFT(int numSamples,bool inverseTransform,double *Real
     //Simultaneously data copy and bit-reversal ordering into outputs...
     for(i = 0; i < numSamples; i++) {
         j = fastReverseBits(i, NumBits);
-        RealOut[j] = RealIn[i];
-        ImagOut[j] = (ImagIn == NULL) ? 0.0 : ImagIn[i];
+        realOut[j] = realIn[i];
+        imagOut[j] = (imagIn == NULL) ? 0.0 : imagIn[i];
     }
     
     //Do the FFT
@@ -385,14 +398,14 @@ bool FastFourierTransform::FFT(int numSamples,bool inverseTransform,double *Real
                 ai1 = ai0;
                 
                 k = j + BlockEnd;
-                tr = ar0 * RealOut[k] - ai0 * ImagOut[k];
-                ti = ar0 * ImagOut[k] + ai0 * RealOut[k];
+                tr = ar0 * realOut[k] - ai0 * imagOut[k];
+                ti = ar0 * imagOut[k] + ai0 * realOut[k];
                 
-                RealOut[k] = RealOut[j] - tr;
-                ImagOut[k] = ImagOut[j] - ti;
+                realOut[k] = realOut[j] - tr;
+                imagOut[k] = imagOut[j] - ti;
                 
-                RealOut[j] += tr;
-                ImagOut[j] += ti;
+                realOut[j] += tr;
+                imagOut[j] += ti;
             }
         }
         
@@ -404,8 +417,8 @@ bool FastFourierTransform::FFT(int numSamples,bool inverseTransform,double *Real
         double denom = (double) numSamples;
         
         for(i = 0; i < numSamples; i++) {
-            RealOut[i] /= denom;
-            ImagOut[i] /= denom;
+            realOut[i] /= denom;
+            imagOut[i] /= denom;
         }
     }
     
@@ -450,7 +463,7 @@ void FastFourierTransform::initFFT()
     }
 }
 
-inline int FastFourierTransform::fastReverseBits(int i, int numBits)
+inline int FastFourierTransform::fastReverseBits(const int i, const int numBits)
 {
     if (numBits <= MAX_FAST_BITS)
         return bitTable[numBits - 1][i];
@@ -458,7 +471,7 @@ inline int FastFourierTransform::fastReverseBits(int i, int numBits)
         return reverseBits(i, numBits);
 }
     
-inline bool FastFourierTransform::isPowerOfTwo(unsigned int x){
+inline bool FastFourierTransform::isPowerOfTwo(const unsigned int x){
     if (x < 2) return false;
     if (x & (x - 1)) return false;
     return true;

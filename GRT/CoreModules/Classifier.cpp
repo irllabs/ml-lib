@@ -65,7 +65,7 @@ Classifier::Classifier(void){
     classifierMode = STANDARD_CLASSIFIER_MODE;
     classifierType = "NOT_SET";
     useNullRejection = true;
-    numFeatures = 0;
+    numInputDimensions = 0;
     numOutputDimensions = 1;
     numClasses = 0;
     predictedClassLabel = 0;

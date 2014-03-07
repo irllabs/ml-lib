@@ -1,22 +1,28 @@
-/*
-GRT MIT License
-Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software
-and associated documentation files (the "Software"), to deal in the Software without restriction,
-including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial
-portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/**
+ @file
+ @author  Nicholas Gillian <ngillian@media.mit.edu>
+ @version 1.0
+ 
+ GRT MIT License
+ Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
+ portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ @brief This is the main GRT header. You should include this to access all the GRT classes in your project.
+ */
 
 /*! \mainpage Gesture Recognition Toolkit
 
@@ -53,6 +59,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "Util/EigenvalueDecomposition.h"
 #include "Util/TestResult.h"
 #include "Util/ClassificationResult.h"
+#include "Util/PeakDetection.h"
+#include "Util/ThresholdCrossingDetector.h"
 
 //Include the data structures
 #include "DataStructures/LabelledClassificationData.h"
@@ -69,6 +77,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //Include the PreProcessing Modules
 #include "PreProcessingModules/Derivative.h"
 #include "PreProcessingModules/LowPassFilter.h"
+#include "PreProcessingModules/FIRFilter.h"
 #include "PreProcessingModules/HighPassFilter.h"
 #include "PreProcessingModules/MovingAverageFilter.h"
 #include "PreProcessingModules/DoubleMovingAverageFilter.h"
@@ -76,7 +85,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "PreProcessingModules/DeadZone.h"
 
 //Include the FeatureExtraction Modules
-#include "FeatureExtractionModules/PeakDetection.h"
 #include "FeatureExtractionModules/ZeroCrossingCounter/ZeroCrossingCounter.h"
 #include "FeatureExtractionModules/FFT/FFT.h"
 #include "FeatureExtractionModules/FFT/FFTFeatures.h"
@@ -122,6 +130,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "ContextModules/Gate.h"
 
 //Include the Recognition Pipeline
-#include "GestureRecognitionPipeline/GestureRecognitionPipeline.h"
+#include "CoreModules/GestureRecognitionPipeline.h"
 
 #endif //GRT_MAIN_HEADER

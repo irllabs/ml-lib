@@ -45,7 +45,7 @@ bool LDA::train(LabelledClassificationData trainingData){
     return false;
     
     //Reset any previous model
-    numFeatures = 0;
+    numInputDimensions = 0;
     numClasses = 0;
     models.clear();
     classLabels.clear();
@@ -56,7 +56,7 @@ bool LDA::train(LabelledClassificationData trainingData){
         return false;
     }
     
-    numFeatures = trainingData.getNumDimensions();
+    numInputDimensions = trainingData.getNumDimensions();
     numClasses = trainingData.getNumClasses();
 
 	//Calculate the between scatter matrix
@@ -207,8 +207,8 @@ bool LDA::predict(VectorDouble inputVector){
     
     if( !trained ) return false;
     
-	if( inputVector.size() != numFeatures ){
-        errorLog << "predict(vector< double > inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numFeatures << endl;
+	if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(vector< double > inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numInputDimensions << endl;
 		return false;
 	}
     
@@ -225,7 +225,7 @@ bool LDA::predict(VectorDouble inputVector){
     double sum = 0;
     for(UINT k=0; k<numClasses; k++){
         
-        for(UINT j=0; j<numFeatures+1; j++){
+        for(UINT j=0; j<numInputDimensions+1; j++){
             if( j==0 ) classDistances[k] = models[k].weights[j];
             else classDistances[k] += inputVector[j-1] * models[k].weights[j];
         }
@@ -277,7 +277,7 @@ bool LDA::saveModelToFile(fstream &file) const{
     
     //Write the header info
     file<<"GRT_LDA_MODEL_FILE_V1.0\n";
-    file<<"NumFeatures: "<<numFeatures<<endl;
+    file<<"NumFeatures: "<<numInputDimensions<<endl;
     file<<"NumClasses: "<<numClasses<<endl;
     file <<"UseScaling: " << useScaling << endl;
     file<<"UseNullRejection: " << useNullRejection << endl;
@@ -323,7 +323,7 @@ bool LDA::loadModelFromFile(string filename){
 bool LDA::loadModelFromFile(fstream &file){
     
     trained = false;
-    numFeatures = 0;
+    numInputDimensions = 0;
     numClasses = 0;
     models.clear();
     classLabels.clear();
@@ -348,7 +348,7 @@ bool LDA::loadModelFromFile(fstream &file){
         errorLog << "loadModelFromFile(fstream &file) - Could not find NumFeatures " << endl;
         return false;
     }
-    file >> numFeatures;
+    file >> numInputDimensions;
     
     file >> word;
     if(word != "NumClasses:"){
@@ -374,7 +374,7 @@ bool LDA::loadModelFromFile(fstream &file){
     ///Read the ranges if needed
     if( useScaling ){
         //Resize the ranges buffer
-        ranges.resize(numFeatures);
+        ranges.resize(numInputDimensions);
         
         file >> word;
         if(word != "Ranges:"){
@@ -408,7 +408,7 @@ bool LDA::loadModelFromFile(fstream &file){
         }
         file >> models[k].priorProb;
         
-        models[k].weights.resize(numFeatures+1);
+        models[k].weights.resize(numInputDimensions+1);
         
         //Load the weights
         file >> word;
@@ -418,7 +418,7 @@ bool LDA::loadModelFromFile(fstream &file){
         }
         
         //Load Weights
-        for(UINT j=0; j<numFeatures+1; j++){
+        for(UINT j=0; j<numInputDimensions+1; j++){
             double value;
             file >> value;
             models[k].weights[j] = value;
@@ -439,7 +439,7 @@ bool LDA::loadModelFromFile(fstream &file){
 
 MatrixDouble LDA::computeBetweenClassScatterMatrix( LabelledClassificationData &data ){
 	
-	MatrixDouble sb(numFeatures,numFeatures);
+	MatrixDouble sb(numInputDimensions,numInputDimensions);
 	MatrixDouble classMean = data.getClassMean();
 	VectorDouble totalMean = data.getMean();
 	sb.setAllValues( 0 );
@@ -448,8 +448,8 @@ MatrixDouble LDA::computeBetweenClassScatterMatrix( LabelledClassificationData &
 		
 		UINT numSamplesInClass = data.getClassTracker()[k].counter;
 	
-		for(UINT m=0; m<numFeatures; m++){
-			for(UINT n=0; n<numFeatures; n++){
+		for(UINT m=0; m<numInputDimensions; m++){
+			for(UINT n=0; n<numInputDimensions; n++){
 				sb[m][n] += (classMean[k][m]-totalMean[m]) * (classMean[k][n]-totalMean[n]) * double(numSamplesInClass);
 			}
 		}
@@ -460,7 +460,7 @@ MatrixDouble LDA::computeBetweenClassScatterMatrix( LabelledClassificationData &
 
 MatrixDouble LDA::computeWithinClassScatterMatrix( LabelledClassificationData &data ){
 	
-	MatrixDouble sw(numFeatures,numFeatures);
+	MatrixDouble sw(numInputDimensions,numInputDimensions);
 	sw.setAllValues( 0 );
 	
 	for(UINT k=0; k<numClasses; k++){
@@ -470,8 +470,8 @@ MatrixDouble LDA::computeWithinClassScatterMatrix( LabelledClassificationData &d
 		MatrixDouble scatterMatrix = classData.getCovarianceMatrix();
 		
 		//Add this to the main scatter matrix
-		for(UINT m=0; m<numFeatures; m++){
-			for(UINT n=0; n<numFeatures; n++){
+		for(UINT m=0; m<numInputDimensions; m++){
+			for(UINT n=0; n<numInputDimensions; n++){
 				sw[m][n] += scatterMatrix[m][n];
 			}
 		}

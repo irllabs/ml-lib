@@ -3,27 +3,7 @@
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
  
- @section LICENSE
- GRT MIT License
- Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
- subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all copies or substantial 
- portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
- SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
- The KMeansQuantizer module quantizes the N-dimensional input vector to a 1-dimensional discrete value. 
+ @brief The KMeansQuantizer module quantizes the N-dimensional input vector to a 1-dimensional discrete value. 
  This value will be between [0 K-1], where K is the number of clusters used to create the quantization model. 
  Before you use the KMeansQuantizer, you need to train a quantization model. To do this, you select the number 
  of clusters you want your quantizer to have and then give it any training data in the following formats:
@@ -34,11 +14,31 @@
  - MatrixDouble
  */
 
+/**
+ GRT MIT License
+ Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
+ portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 #ifndef GRT_KMEANS_QUANTIZER_HEADER
 #define GRT_KMEANS_QUANTIZER_HEADER
 
 //Include the main GRT header to get access to the FeatureExtraction base class
-#include "../../GestureRecognitionPipeline/FeatureExtraction.h"
+#include "../../CoreModules/FeatureExtraction.h"
 #include "../../ClusteringModules/KMeans/KMeans.h"
 #include "../../DataStructures/LabelledTimeSeriesClassificationData.h"
 #include "../../DataStructures/LabelledContinuousTimeSeriesClassificationData.h"
@@ -112,7 +112,7 @@ public:
      @param string filename: the name of the file to save the settings to
      @return returns true if the settings were saved successfully, false otherwise (the base class always returns false)
      */
-    virtual bool saveSettingsToFile(string filename);
+    virtual bool saveSettingsToFile(string filename) const;
     
     /**
      This loads the feature extraction settings from a file.
@@ -131,7 +131,7 @@ public:
      @param fstream &file: a reference to the file to save the settings to
      @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(fstream &file);
+    virtual bool saveSettingsToFile(fstream &file) const;
     
     /**
      This loads the feature extraction settings from a file.
@@ -219,7 +219,7 @@ public:
      
      @return returns the most recent quantized value
      */
-	UINT getQuantizedValue(){ return (quantizerTrained ? featureVector[0] : 0); }
+	UINT getQuantizedValue(){ return (quantizerTrained ? (UINT)featureVector[0] : 0); }
 	
 	/**
      Gets the quantization distances from the most recent quantization.

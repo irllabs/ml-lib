@@ -3,30 +3,31 @@
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
  
- @section LICENSE
- GRT MIT License
- Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
- subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all copies or substantial 
- portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
- SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
  @brief This class implements a Radial Basis Function Weak Classifier. The Radial Basis Function (RBF) class
  fits an RBF to the weighted training data so as to maximize the number of positive training samples that are
  inside a specific region of the RBF (this region is set by the GRT::RadialBasisFunction::positiveClassificationThreshold
  parameter).  After the RBF has been trained, it will output 1 if the input data is inside the RBF positive classification
  region, otherwise it will output 0.
+ */
+
+/**
+ GRT MIT License
+ Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
+ portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 #ifndef GRT_RADIAL_BASIC_FUNCTION_HEADER
@@ -73,7 +74,7 @@ public:
      @param WeakClassifier *weakClassifer: a pointer to the Classifier Base Class, this should be pointing to another GRT::RadialBasisFunction instance
      @return returns true if the clone was successfull, false otherwise
      */
-    virtual bool clone(const WeakClassifier *weakClassifer);
+    virtual bool deepCopyFrom(const WeakClassifier *weakClassifer);
     
     /**
      This function trains the RBF, using the weighted labelled training data.
@@ -100,7 +101,7 @@ public:
      fstream &file: a reference to the file you want to save the RBF model to
      @return returns true if the RBF was saved successfull, false otherwise
      */
-    virtual bool saveModelToFile(fstream &file);
+    virtual bool saveModelToFile(fstream &file) const;
     
     /**
      This function loads an RBF model from a file.
@@ -120,7 +121,7 @@ public:
      
      @return returns an UINT representing the numSteps parameter
      */
-    UINT getNumSteps();
+    UINT getNumSteps() const;
     
     /**
      This function gets the positiveClassificationThreshold, if the output of the RBF function is greater than or equal to the
@@ -129,35 +130,35 @@ public:
      
      @return returns the positiveClassificationThreshold
      */
-    double getPositiveClassificationThreshold();
+    double getPositiveClassificationThreshold() const;
     
     /**
      Gets the current alpha value, this is used in the RBF. You can compute the RBF gamma parameter by: -1.0/(2.0*SQR(alpha)).
      
      @return returns the alpha value
      */
-    double getAlpha();
+    double getAlpha() const;
     
     /**
      Gets the minAlphaSearchRange value, this is the minimum value used to search for the best alpha value.
      
      @return returns the minAlphaSearchRange value
      */
-    double getMinAlphaSearchRange();
+    double getMinAlphaSearchRange() const;
     
     /**
      Gets the maxAlphaSearchRange value, this is the maximum value used to search for the best alpha value.
      
      @return returns the maxAlphaSearchRange value
      */
-    double getMaxAlphaSearchRange();
+    double getMaxAlphaSearchRange() const;
     
     /**
      Gets the RBF center.
      
      @return returns the RBF centre.
      */
-    VectorDouble getRBFCentre();
+    VectorDouble getRBFCentre() const;
     
 protected:
     double rbf(const VectorDouble &a,const VectorDouble &b);
@@ -170,7 +171,7 @@ protected:
     double maxAlphaSearchRange;
     VectorDouble rbfCentre;
     
-    static RegisterWeakClassifierModule< RadialBasisFunction > registerModule;
+    static RegisterWeakClassifierModule< RadialBasisFunction > registerModule; ///< This is used to register the DecisionStump with the WeakClassifier base class
 };
 
 } //End of namespace GRT

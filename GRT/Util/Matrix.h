@@ -2,28 +2,28 @@
  @file
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
- 
- @section LICENSE
+
+ @brief The Matrix class is a basic class for storing any type of data.  This class is a template and can therefore be used with any generic data type.
+ */
+
+/*
  GRT MIT License
  Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
  
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
  subject to the following conditions:
  
- The above copyright notice and this permission notice shall be included in all copies or substantial 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
  portions of the Software.
  
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
- The Matrix class is a basic class for storing any type of data.  This class is a template and can therefore be used with any generic data type.
  */
 
 #ifndef GRT_MATRIX_HEADER
@@ -40,10 +40,10 @@ public:
      Default Constructor
     */
 	Matrix(){
-	 rows = 0;
-	 cols = 0;
-	 capacity = 0;
-     dataPtr = NULL;
+        rows = 0;
+        cols = 0;
+        capacity = 0;
+        dataPtr = NULL;
 	}
     
     /**
@@ -53,8 +53,8 @@ public:
      @param const UINT cols: sets the number of columns in the matrix, must be a value greater than zero
     */
 	Matrix(const unsigned int rows,const unsigned int cols){
-      dataPtr = NULL;
-      resize(rows,cols);
+        dataPtr = NULL;
+        resize(rows,cols);
 	}
     
     /**
@@ -63,8 +63,12 @@ public:
      @param const Matrix &rhs: the Matrix from which the values will be copied
     */
 	Matrix(const Matrix &rhs){
+        this->dataPtr = NULL;
+        this->rows = 0;
+        this->cols = 0;
+        this->capacity = 0;
+        
 		if(this!=&rhs){
-			 this->dataPtr = NULL;
 			 this->rows = rhs.rows;
 			 this->cols = rhs.cols;
 			 this->capacity = rhs.rows;
@@ -85,10 +89,10 @@ public:
      @param const vector< vector< T > > &data: the input data which will be copied to this Matrix instance
      */
 	Matrix(const std::vector< std::vector< T > > &data){
-		dataPtr = NULL;
-		rows = 0;
-		cols = 0;
-		capacity = 0;
+		this->dataPtr = NULL;
+		this->rows = 0;
+		this->cols = 0;
+		this->capacity = 0;
         
 		unsigned int tempRows = (unsigned int)data.size();
 		unsigned int tempCols = 0;
@@ -425,7 +429,7 @@ public:
      Cleans up any dynamic memory and sets the number of rows and columns in the matrix to zero
     */
 	void clear(){
-		if(dataPtr!=NULL){
+		if( dataPtr != NULL ){
 			for(unsigned int i=0; i<rows; i++){
                 delete[] dataPtr[i];
                 dataPtr[i] = NULL;

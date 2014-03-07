@@ -40,7 +40,8 @@ LabelledClassificationData::LabelledClassificationData(const LabelledClassificat
     *this = rhs;
 }
 
-LabelledClassificationData::~LabelledClassificationData(){}
+LabelledClassificationData::~LabelledClassificationData(){
+}
     
 LabelledClassificationData& LabelledClassificationData::operator=(const LabelledClassificationData &rhs){
     if( this != &rhs){
@@ -351,7 +352,7 @@ bool LabelledClassificationData::saveDatasetToFile(const string &filename) const
     file << "DatasetName: " << datasetName << endl;
     file << "InfoText: " << infoText << endl;
 	file << "NumDimensions: " << numDimensions << endl;
-	file << "TotalNumTrainingExamples: " << totalNumSamples << endl;
+	file << "TotalNumExamples: " << totalNumSamples << endl;
 	file << "NumberOfClasses: " << classTracker.size() << endl;
 	file << "ClassIDsAndCounters: " << endl;
 
@@ -367,7 +368,7 @@ bool LabelledClassificationData::saveDatasetToFile(const string &filename) const
         }
     }
 
-	file << "LabelledTrainingData:\n";
+	file << "Data:\n";
 
 	for(UINT i=0; i<totalNumSamples; i++){
 		file << data[i].getClassLabel();
@@ -406,7 +407,8 @@ bool LabelledClassificationData::loadDatasetFromFile(const string &filename){
     //Get the name of the dataset
 	file >> word;
 	if(word != "DatasetName:"){
-        errorLog << "loadDatasetFromFile(const string &filename) - failed to find DatasetName!" << endl;
+        errorLog << "loadDatasetFromFile(const string &filename) - failed to find DatasetName header!" << endl;
+        errorLog << word << endl;
 		file.close();
 		return false;
 	}
@@ -414,7 +416,7 @@ bool LabelledClassificationData::loadDatasetFromFile(const string &filename){
 
     file >> word;
 	if(word != "InfoText:"){
-        errorLog << "loadDatasetFromFile(const string &filename) - failed to find InfoText!" << endl;
+        errorLog << "loadDatasetFromFile(const string &filename) - failed to find InfoText header!" << endl;
 		file.close();
 		return false;
 	}
@@ -428,8 +430,8 @@ bool LabelledClassificationData::loadDatasetFromFile(const string &filename){
     }
 
 	//Get the number of dimensions in the training data
-	if(word != "NumDimensions:"){
-        errorLog << "loadDatasetFromFile(const string &filename) - failed to find DatasetName!" << endl;
+	if( word != "NumDimensions:" ){
+        errorLog << "loadDatasetFromFile(const string &filename) - failed to find NumDimensions header!" << endl;
 		file.close();
 		return false;
 	}
@@ -437,8 +439,8 @@ bool LabelledClassificationData::loadDatasetFromFile(const string &filename){
 
 	//Get the total number of training examples in the training data
 	file >> word;
-	if(word != "TotalNumTrainingExamples:"){
-        errorLog << "loadDatasetFromFile(const string &filename) - failed to find DatasetName!" << endl;
+	if( word != "TotalNumTrainingExamples:" && word != "TotalNumExamples:" ){
+        errorLog << "loadDatasetFromFile(const string &filename) - failed to find TotalNumTrainingExamples header!" << endl;
 		file.close();
 		return false;
 	}
@@ -447,7 +449,7 @@ bool LabelledClassificationData::loadDatasetFromFile(const string &filename){
 	//Get the total number of classes in the training data
 	file >> word;
 	if(word != "NumberOfClasses:"){
-        errorLog << "loadDatasetFromFile(string filename) - failed to find DatasetName!" << endl;
+        errorLog << "loadDatasetFromFile(string filename) - failed to find NumberOfClasses header!" << endl;
 		file.close();
 		return false;
 	}
@@ -459,7 +461,7 @@ bool LabelledClassificationData::loadDatasetFromFile(const string &filename){
 	//Get the total number of classes in the training data
 	file >> word;
 	if(word != "ClassIDsAndCounters:"){
-        errorLog << "loadDatasetFromFile(const string &filename) - failed to find DatasetName!" << endl;
+        errorLog << "loadDatasetFromFile(const string &filename) - failed to find ClassIDsAndCounters header!" << endl;
 		file.close();
 		return false;
 	}
@@ -473,7 +475,7 @@ bool LabelledClassificationData::loadDatasetFromFile(const string &filename){
     //Check if the dataset should be scaled using external ranges
 	file >> word;
 	if(word != "UseExternalRanges:"){
-        errorLog << "loadDatasetFromFile(const string &filename) - failed to find DatasetName!" << endl;
+        errorLog << "loadDatasetFromFile(const string &filename) - failed to find UseExternalRanges header!" << endl;
 		file.close();
 		return false;
 	}
@@ -490,8 +492,8 @@ bool LabelledClassificationData::loadDatasetFromFile(const string &filename){
 
 	//Get the main training data
 	file >> word;
-	if(word != "LabelledTrainingData:"){
-        errorLog << "loadDatasetFromFile(const string &filename) - failed to find DatasetName!" << endl;
+	if( word != "LabelledTrainingData:" && word != "Data:"){
+        errorLog << "loadDatasetFromFile(const string &filename) - failed to find LabelledTrainingData header!" << endl;
 		file.close();
 		return false;
 	}

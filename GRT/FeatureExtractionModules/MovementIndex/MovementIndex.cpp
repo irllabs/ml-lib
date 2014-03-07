@@ -96,7 +96,7 @@ bool MovementIndex::reset(){
     return false;
 }
     
-bool MovementIndex::saveSettingsToFile(string filename){
+bool MovementIndex::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The feature extraction module has not been initialized" << endl;
@@ -132,7 +132,7 @@ bool MovementIndex::loadSettingsFromFile(string filename){
     return true;
 }
 
-bool MovementIndex::saveSettingsToFile(fstream &file){
+bool MovementIndex::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;

@@ -2,8 +2,16 @@
  @file
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
+
+ @brief The CircularBuffer class provides a data structure for creating a dynamic circular buffer (also known as a 
+ cyclic buffer or a ring buffer).  The main advantage of a circular buffer is that it does not need to have
+ its elements shuffled around each time a new element is added.  The circular buffer therefore works well
+ for FIFO (first in first out) buffers.
  
- @section LICENSE
+ @example UtilExamples/CircularBufferExample/CircularBufferExample.cpp
+ */
+
+/*
  GRT MIT License
  Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
  
@@ -21,14 +29,6 @@
  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
- The CircularBuffer class provides a data structure for creating a dynamic circular buffer (also known as a 
- cyclic buffer or a ring buffer).  The main advantage of a circular buffer is that it does not need to have
- its elements shuffled around each time a new element is added.  The circular buffer therefore works well
- for FIFO (first in first out) buffers.
- 
- @example UtilExamples/CircularBufferExample/CircularBufferExample.cpp
  */
 
 #ifndef GRT_CIRCULAR_BUFFER_HEADER
@@ -251,6 +251,17 @@ class CircularBuffer{
     }
     
     /**
+     Resets the numValuesInBuffer, read and write pointers to 0.
+     @return returns true if the buffer was reset, false otherwise
+     */
+    bool reset(){
+		numValuesInBuffer = 0;
+		readPtr = 0;
+		writePtr = 0;
+        return true;
+    }
+    
+    /**
      Clears the buffer, setting the size to 0.
      */
     void clear(){
@@ -318,6 +329,11 @@ class CircularBuffer{
      @return returns the current position of the write pointer
      */
     unsigned int getWritePointerPosition() const { return bufferInit ? writePtr : 0; }
+    
+    T getBack() const {
+        if( !bufferInit ) return T();
+        return buffer[ (readPtr + numValuesInBuffer - 1) % bufferSize ];
+    }
     
 protected:
     unsigned int bufferSize;

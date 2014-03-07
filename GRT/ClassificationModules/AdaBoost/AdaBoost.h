@@ -3,55 +3,54 @@
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
  
- @section LICENSE
- GRT MIT License
- Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
+ @brief This class contains the AdaBoost classifier. AdaBoost (Adaptive Boosting) is a powerful classifier that works well on both basic and more complex 
+ recognition problems. 
  
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
- subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all copies or substantial 
- portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
- SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
- @brief This class contains the AdaBoost classifier. AdaBoost (Adaptive Boosting) is a powerful classifier that 
- works well on both basic and more complex recognition problems. AdaBoost works by creating a highly accurate
- classifier by combining many relatively weak and inaccurate classifiers. AdaBoost therefore acts as a meta 
- algorithm, which allows you to use it as a wrapper for other classifiers. In the GRT, these classifiers
- are called Weak Classifiers such as a GRT::DecisionStump (which is just one node of a DecisionTree). AdaBoost is 
- adaptive in the sense that subsequent classifiers added at each round of boosting are tweaked in favor of those 
+ AdaBoost works by creating a highly accurate classifier by combining many relatively weak and inaccurate
+ classifiers. AdaBoost therefore acts as a meta algorithm, which allows you to use it as a wrapper for other classifiers. 
+ In the GRT, these classifiers are called Weak Classifiers such as a GRT::DecisionStump (which is just one node of a DecisionTree). 
+ AdaBoost is adaptive in the sense that subsequent classifiers added at each round of boosting are tweaked in favor of those 
  instances misclassified by previous classifiers. The default number of boosting rounds for AdaBoost is 20, however 
  this can easily be set using the GRT::AdaBoost::setNumBoostingIterations(UINT numBoostingIterations) function or 
  via the AdaBoost constructor.
  
- @pre       You need to add at least 1 GRT::WeakClassifier to the GRT::AdaBoost ensemble before you can train a model.
-            You can do this by calling the GRT::AdaBoost::addWeakClassifier(const WeakClassifier &weakClassifer) function.
  @note   There are two classification modes, GRT::AdaBoost::PredictionMethods (MAX_POSITIVE_VALE and MAX_VALUE), which can give
-            different classification results so you should experiment with each mode to achieve the best results for your classification
-            task.
+         different classification results so you should experiment with each mode to achieve the best results for your classification task.
  
  @example ClassificationModulesExamples/AdaBoostExample/AdaBoostExample.cpp
+ */
+
+/**
+ GRT MIT License
+ Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
+ portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 #ifndef GRT_ADABOOST_HEADER
 #define GRT_ADABOOST_HEADER
 
-#include "../../GestureRecognitionPipeline/Classifier.h"
+#include "../../CoreModules/Classifier.h"
 #include "AdaBoostClassModel.h"
 #include "WeakClassifiers/DecisionStump.h"
 #include "WeakClassifiers/RadialBasisFunction.h"
 
 namespace GRT{
     
-typedef DecisionStump AdaBoostWeakClassifier;
+//typedef DecisionStump AdaBoostWeakClassifier;
 
 class AdaBoost : public Classifier
 {
@@ -65,7 +64,7 @@ public:
      @param UINT numBoostingIterations: sets the number of boosting iterations to use during training. Default value = 20
      @param UINT predictionMethod: sets the prediction method for AdaBoost, this should be one of the PredictionMethods. Default value = MAX_VALUE
      */
-    AdaBoost(bool useScaling=false,bool useNullRejection=false,double nullRejectionCoeff=10.0,UINT numBoostingIterations=20,UINT predictionMethod=MAX_VALUE);
+    AdaBoost(const WeakClassifier = DecisionStump(),bool useScaling=false,bool useNullRejection=false,double nullRejectionCoeff=10.0,UINT numBoostingIterations=20,UINT predictionMethod=MAX_VALUE);
     
     /**
      Defines the copy constructor.

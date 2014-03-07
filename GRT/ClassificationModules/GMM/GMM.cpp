@@ -106,13 +106,13 @@ bool GMM::predict(VectorDouble x){
         return false;
     }
     
-    if( x.size() != numFeatures ){
-        errorLog << "predict(VectorDouble x) - The size of the input vector (" << x.size() << ") does not match that of the number of features the model was trained with (" << numFeatures << ")." << endl;
+    if( x.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble x) - The size of the input vector (" << x.size() << ") does not match that of the number of features the model was trained with (" << numInputDimensions << ")." << endl;
         return false;
     }
     
     if( useScaling ){
-        for(UINT i=0; i<numFeatures; i++){
+        for(UINT i=0; i<numInputDimensions; i++){
             x[i] = scale(x[i], ranges[i].minValue, ranges[i].maxValue, GMM_MIN_SCALE_VALUE, GMM_MAX_SCALE_VALUE);
         }
     }
@@ -167,12 +167,12 @@ bool GMM::train(LabelledClassificationData trainingData){
     }
     
     //Set the number of features and number of classes and resize the models buffer
-    numFeatures = trainingData.getNumDimensions();
+    numInputDimensions = trainingData.getNumDimensions();
     numClasses = trainingData.getNumClasses();
     models.resize(numClasses);
     
-    if( numFeatures >= 6 ){
-        warningLog << "train(LabelledClassificationData trainingData) - The number of features in your training data is high (" << numFeatures << ").  The GMMClassifier does not work well with high dimensional data, you might get better results from one of the other classifiers." << endl;
+    if( numInputDimensions >= 6 ){
+        warningLog << "train(LabelledClassificationData trainingData) - The number of features in your training data is high (" << numInputDimensions << ").  The GMMClassifier does not work well with high dimensional data, you might get better results from one of the other classifiers." << endl;
     }
     
     //Get the ranges of the training data if the training data is going to be scaled
@@ -189,10 +189,11 @@ bool GMM::train(LabelledClassificationData trainingData){
         
         //Train the Mixture Model for this class
         GaussianMixtureModels gaussianMixtureModel;
+        gaussianMixtureModel.setNumClusters( numMixtureModels );
         gaussianMixtureModel.setMinChange( minChange );
-        gaussianMixtureModel.setMaxIter( maxIter );
+        gaussianMixtureModel.setMaxNumEpochs( maxIter );
         
-        if( !gaussianMixtureModel.train( classData.getDataAsMatrixDouble() , numMixtureModels) ){
+        if( !gaussianMixtureModel.train( classData.getDataAsMatrixDouble() ) ){
             errorLog << "train(LabelledClassificationData trainingData) - Failed to train Mixture Model for class " << classLabel << endl;
             return false;
         }
@@ -304,7 +305,7 @@ bool GMM::saveModelToFile(fstream &file) const{
     
     //Write the header info
     file << "GRT_GMM_MODEL_FILE_V1.0\n";
-    file << "NumFeatures: " << numFeatures << endl;
+    file << "NumFeatures: " << numInputDimensions << endl;
     file << "NumClasses: " << numClasses << endl;
     file << "NumMixtureModels: " << numMixtureModels << endl;
     file << "MaxIter: " << maxIter << endl;
@@ -381,7 +382,7 @@ bool GMM::loadModelFromFile(string filename){
 bool GMM::loadModelFromFile(fstream &file){
     
     trained = false;
-    numFeatures = 0;
+    numInputDimensions = 0;
     numClasses = 0;
     models.clear();
     classLabels.clear();
@@ -406,7 +407,7 @@ bool GMM::loadModelFromFile(fstream &file){
         errorLog << "loadModelFromFile(fstream &file) - Could not find NumFeatures " << endl;
         return false;
     }
-    file >> numFeatures;
+    file >> numInputDimensions;
     
     file >> word;
     if(word != "NumClasses:"){
@@ -460,7 +461,7 @@ bool GMM::loadModelFromFile(fstream &file){
     ///Read the ranges if needed
     if( useScaling ){
         //Resize the ranges buffer
-        ranges.resize(numFeatures);
+        ranges.resize(numInputDimensions);
         
         file >> word;
         if(word != "Ranges:"){
@@ -551,9 +552,9 @@ bool GMM::loadModelFromFile(fstream &file){
         for(UINT index=0; index<models[k].getK(); index++){
             
             //Resize the memory for the current mixture model
-            models[k][index].mu.resize( numFeatures );
-            models[k][index].sigma.resize( numFeatures, numFeatures );
-            models[k][index].invSigma.resize( numFeatures, numFeatures );
+            models[k][index].mu.resize( numInputDimensions );
+            models[k][index].sigma.resize( numInputDimensions, numInputDimensions );
+            models[k][index].invSigma.resize( numInputDimensions, numInputDimensions );
             
             file >> word;
             if(word != "Determinant:"){

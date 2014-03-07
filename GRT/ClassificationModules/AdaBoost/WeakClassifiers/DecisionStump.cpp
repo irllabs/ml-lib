@@ -64,7 +64,7 @@ DecisionStump& DecisionStump::operator=(const DecisionStump &rhs){
     return *this;
 }
 
-bool DecisionStump::clone(const WeakClassifier *weakClassifer){
+bool DecisionStump::deepCopyFrom(const WeakClassifier *weakClassifer){
     if( weakClassifer == NULL ) return false;
     
     if( this->getWeakClassifierType() == weakClassifer->getWeakClassifierType() ){
@@ -155,7 +155,7 @@ double DecisionStump::predict(const VectorDouble &x){
     return -1;
 }
     
-bool DecisionStump::saveModelToFile(fstream &file){
+bool DecisionStump::saveModelToFile(fstream &file) const{
     
     if(!file.is_open())
 	{
@@ -253,19 +253,19 @@ void DecisionStump::print() const{
     cout << "\tDirection: " << direction << endl;
 }
     
-UINT DecisionStump::getDecisionFeatureIndex(){
+UINT DecisionStump::getDecisionFeatureIndex() const{
     return decisionFeatureIndex;
 }
 
-UINT DecisionStump::getDirection(){
+UINT DecisionStump::getDirection() const{
     return direction;
 }
 
-UINT DecisionStump::getNumSteps(){
+UINT DecisionStump::getNumSteps() const{
     return numSteps;
 }
 
-double DecisionStump::getDecisionValue(){
+double DecisionStump::getDecisionValue() const{
     return decisionValue;
 }
 

@@ -59,10 +59,11 @@ bool MinDistModel::train(UINT classLabel,MatrixDouble &trainingData,UINT numClus
 	
 	//Find the clusters
 	KMeans kmeans;
+    kmeans.setNumClusters(numClusters);
 	kmeans.setMinChange( 1.0e-5 );
 	kmeans.setMaxNumEpochs( 1000 );
 	
-	if( !kmeans.train(numClusters,trainingData) ){
+	if( !kmeans.trainInplace(trainingData) ){
 		return false;
 	}
 	

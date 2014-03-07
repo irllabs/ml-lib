@@ -52,7 +52,7 @@ public:
     }
     
     double w;
-    vector<double> x;
+    VectorDouble x;
 };
 
 }

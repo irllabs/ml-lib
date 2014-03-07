@@ -98,7 +98,7 @@ bool Softmax::train(LabelledClassificationData trainingData){
         return false;
     }
     
-    numFeatures = N;
+    numInputDimensions = N;
     numClasses = K;
     models.resize(K);
     classLabels.resize(K);
@@ -140,13 +140,13 @@ bool Softmax::predict(VectorDouble inputVector){
     
     if( !trained ) return false;
     
-	if( inputVector.size() != numFeatures ){
-        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numFeatures << endl;
+	if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numInputDimensions << endl;
 		return false;
 	}
     
     if( useScaling ){
-        for(UINT n=0; n<numFeatures; n++){
+        for(UINT n=0; n<numInputDimensions; n++){
             inputVector[n] = scale(inputVector[n], ranges[n].minValue, ranges[n].maxValue, 0, 1);
         }
     }
@@ -294,7 +294,7 @@ bool Softmax::saveModelToFile(fstream &file) const{
     
 	//Write the header info
 	file<<"GRT_SOFTMAX_MODEL_FILE_V1.0\n";
-    file<<"NumFeatures: "<<numFeatures<<endl;
+    file<<"NumFeatures: "<<numInputDimensions<<endl;
 	file<<"NumClasses: "<<numClasses<<endl;
     file <<"UseScaling: " << useScaling << endl;
     file<<"UseNullRejection: " << useNullRejection << endl;
@@ -311,7 +311,7 @@ bool Softmax::saveModelToFile(fstream &file) const{
     for(UINT k=0; k<numClasses; k++){
         file << "ClassLabel: " << models[k].classLabel << endl;
         file << "Weights: " << models[k].w0;
-        for(UINT n=0; n<numFeatures; n++){
+        for(UINT n=0; n<numInputDimensions; n++){
             file << " " << models[k].w[n];
         }
         file << endl;
@@ -338,7 +338,7 @@ bool Softmax::loadModelFromFile(string filename){
 bool Softmax::loadModelFromFile(fstream &file){
     
     trained = false;
-    numFeatures = 0;
+    numInputDimensions = 0;
     numClasses = 0;
     models.clear();
     classLabels.clear();
@@ -363,7 +363,7 @@ bool Softmax::loadModelFromFile(fstream &file){
         errorLog << "loadModelFromFile(string filename) - Could not find NumFeatures!" << endl;
         return false;
     }
-    file >> numFeatures;
+    file >> numInputDimensions;
     
     file >> word;
     if(word != "NumClasses:"){
@@ -389,7 +389,7 @@ bool Softmax::loadModelFromFile(fstream &file){
     ///Read the ranges if needed
     if( useScaling ){
         //Resize the ranges buffer
-        ranges.resize(numFeatures);
+        ranges.resize(numInputDimensions);
         
         file >> word;
         if(word != "Ranges:"){
@@ -429,9 +429,9 @@ bool Softmax::loadModelFromFile(fstream &file){
         }
         file >>  models[k].w0;
         
-		models[k].N = numFeatures;
-        models[k].w.resize( numFeatures );
-        for(UINT n=0; n<numFeatures; n++){
+		models[k].N = numInputDimensions;
+        models[k].w.resize( numInputDimensions );
+        for(UINT n=0; n<numInputDimensions; n++){
             file >> models[k].w[n];
         }
     }

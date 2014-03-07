@@ -90,16 +90,16 @@ bool DoubleMovingAverageFilter::deepCopyFrom(const PreProcessing *preProcessing)
 }
 
     
-bool DoubleMovingAverageFilter::process(const vector< double > &inputVector){
+bool DoubleMovingAverageFilter::process(const VectorDouble &inputVector){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "process(const vector< double > &inputVector) - The filter has not been initialized!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - The filter has not been initialized!" << endl;
         return false;
     }
 
     if( inputVector.size() != numInputDimensions ){
-        errorLog << "process(const vector< double > &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
         return false;
     }
 #endif
@@ -115,7 +115,7 @@ bool DoubleMovingAverageFilter::reset(){
     return false;
 }
     
-bool DoubleMovingAverageFilter::saveSettingsToFile(string filename){
+bool DoubleMovingAverageFilter::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The DoubleMovingAverageFilter has not been initialized" << endl;
@@ -135,7 +135,7 @@ bool DoubleMovingAverageFilter::saveSettingsToFile(string filename){
     return true;
 }
     
-bool DoubleMovingAverageFilter::saveSettingsToFile(fstream &file){
+bool DoubleMovingAverageFilter::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;
@@ -250,44 +250,44 @@ bool DoubleMovingAverageFilter::init(UINT filterSize,UINT numDimensions){
     return true;
 }
 
-double DoubleMovingAverageFilter::filter(double x){
+double DoubleMovingAverageFilter::filter(const double x){
     
 #ifdef GRT_SAFE_CHECKING
     //If the filter has not been initialised then return 0, otherwise filter x and return y
     if( !initialized ){
-        errorLog << "filter(double x) - The filter has not been initialized!" << endl;
+        errorLog << "filter(const double x) - The filter has not been initialized!" << endl;
         return 0;
     }
 #endif
     
-    vector< double > y = filter(vector< double >(1,x));
+    VectorDouble y = filter(VectorDouble(1,x));
     
     if( y.size() == 0 ) return 0;
     return y[0];
 }
     
-vector< double > DoubleMovingAverageFilter::filter(const vector< double > &x){
+vector< double > DoubleMovingAverageFilter::filter(const VectorDouble &x){
     
 #ifdef GRT_SAFE_CHECKING
     //If the filter has not been initialised then return 0, otherwise filter x and return y
     if( !initialized ){
-        errorLog << "filter(const vector< double > &x) - The filter has not been initialized!" << endl;
-        return vector<double>();
+        errorLog << "filter(const VectorDouble &x) - The filter has not been initialized!" << endl;
+        return VectorDouble();
     }
     
     if( x.size() != numInputDimensions ){
-        errorLog << "filter(const vector< double > &x) - The size of the input vector (" << x.size() << ") does not match that of the number of dimensions of the filter (" << numInputDimensions << ")!" << endl;
-        return vector<double>();
+        errorLog << "filter(const VectorDouble &x) - The size of the input vector (" << x.size() << ") does not match that of the number of dimensions of the filter (" << numInputDimensions << ")!" << endl;
+        return VectorDouble();
     }
 #endif
     
     //Perform the first filter
-    vector< double > y = filter1.filter( x );
+    VectorDouble y = filter1.filter( x );
     
     if( y.size() == 0 ) return y;
     
     //Perform the second filter
-    vector< double > yy = filter2.filter( y );
+    VectorDouble yy = filter2.filter( y );
     
     if( yy.size() == 0 ) return y;
     

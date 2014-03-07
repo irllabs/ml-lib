@@ -1,20 +1,34 @@
-/*
+/**
+ @file
+ @author  Nicholas Gillian <ngillian@media.mit.edu>
+ @version 1.0
+ 
+ @brief The Class Label Timeout Filter is a useful post-processing module which debounces a gesture (i.e. it stops a single gesture from being recognized multiple times over a short time frame). For instance, it is normally the case that whenever a user performs a gesture, such as a swipe gesture for example, that the recognition system may recognize this single gesture several times because the user's movements are being sensed at a high sample rate (i.e. 100Hz). The Class Label Timeout Filter can be used to ensure that a gesture, such as the previous swipe gesture example, is only recognize once within any given timespan.
+ 
+ The Class Label Timeout Filter module is controlled through two parameters: the timeoutDuration parameter and filterMode parameter. The timeoutDuration sets how long (in milliseconds) the Class Label Timeout Filter will debounce valid predicted class labels for, after it has viewed the first valid predicted class label which triggers the debounce mode to be activated. A valid predicted class label is simply a predicted class label that is not the default null rejection class label (i.e. a label with the class value of 0). The filterMode parameter sets how the Class Label Timeout Filter reacts to different predicted class labels (different from the predicted class label that triggers the debounce mode to be activated). There are two options for the filterMode: ALL_CLASS_LABELS and INDEPENDENT_CLASS_LABELS
+ 
+ In the ALL_CLASS_LABELS filterMode, after the debounce mode has been activated, all class labels will be ignored until the current timeoutDuration period has elapsed, regardless of which class actually triggered the timeout. Alternatively, in the INDEPENDENT_CLASS_LABELS mode, the debounce mode will be reset if a different predicted class label is detected that is different from the predicted class label that initially triggered the debounce mode to be activated. For instance, if the debounce mode was activated with the class label of 1, and then class 2 was input into the class label filter, then the debounce mode would be reset to class 2, even if the timeoutDuration for class 1 had not expired.
+ 
+ The timeoutDuration and filterMode parameters can be set using the setTimeoutDuration(double timeoutDuration) and setFilterMode(UINT filterMode) methods.
+ */
+
+/**
  GRT MIT License
  Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
  
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
  subject to the following conditions:
  
- The above copyright notice and this permission notice shall be included in all copies or substantial 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
  portions of the Software.
  
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
@@ -22,7 +36,7 @@
 #define GRT_CLASS_LABEL_TIMEOUT_FILTER_HEADER
 
 #include "../Util/GRTCommon.h"
-#include "../GestureRecognitionPipeline/PostProcessing.h"
+#include "../CoreModules/PostProcessing.h"
 
 namespace GRT{
     
@@ -119,10 +133,10 @@ public:
      This function is called by the GestureRecognitionPipeline when any new input data needs to be processed (during the prediction phase for example).
      This function calls the ClassLabelTimeoutFilter's filter(...) function.
      
-     @param const vector< double > &inputVector: the inputVector that should be processed.  This should be a 1-dimensional vector containing a predicted class label
+     @param const VectorDouble &inputVector: the inputVector that should be processed.  This should be a 1-dimensional vector containing a predicted class label
 	 @return true if the data was processed, false otherwise
      */
-    virtual bool process(const vector< double > &inputVector);
+    virtual bool process(const VectorDouble &inputVector);
     
     /**
      Sets the PostProcessing reset function, overwriting the base PostProcessing function.
@@ -140,7 +154,7 @@ public:
      @param string filename: the name of the file to save the settings to
      @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(string filename);
+    virtual bool saveSettingsToFile(string filename) const;
     
     /**
      This saves the post processing settings to a file.
@@ -149,7 +163,7 @@ public:
      @param string filename: the name of the file to save the settings to
      @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(fstream &file);
+    virtual bool saveSettingsToFile(fstream &file) const;
     
     /**
      This loads the post processing  settings from a file.

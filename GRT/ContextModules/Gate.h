@@ -22,7 +22,7 @@
 #define GRT_GATE_HEADER
 
 #include "../Util/GRTCommon.h"
-#include "../GestureRecognitionPipeline/Context.h"
+#include "../CoreModules/Context.h"
 
 namespace GRT{
 

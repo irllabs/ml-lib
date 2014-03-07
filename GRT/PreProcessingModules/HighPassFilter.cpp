@@ -109,7 +109,7 @@ bool HighPassFilter::reset(){
     return false;
 }
     
-bool HighPassFilter::saveSettingsToFile(string filename){
+bool HighPassFilter::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The HighPassFilter has not been initialized" << endl;
@@ -129,7 +129,7 @@ bool HighPassFilter::saveSettingsToFile(string filename){
     return true;
 }
     
-bool HighPassFilter::saveSettingsToFile(fstream &file){
+bool HighPassFilter::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;
@@ -251,34 +251,34 @@ bool HighPassFilter::init(double filterFactor,double gain,UINT numDimensions){
     return true;
 }
 
-double HighPassFilter::filter(double x){
+double HighPassFilter::filter(const double x){
     
 #ifdef GRT_SAFE_CHECKING
     //If the filter has not been initialised then return 0, otherwise filter x and return y
     if( !initialized ){
-        errorLog << "filter(double x) - The filter has not been initialized!" << endl;
+        errorLog << "filter(const double x) - The filter has not been initialized!" << endl;
         return 0;
     }
 #endif
     
-    vector< double > y = filter(vector< double >(1,x));
+    VectorDouble y = filter(VectorDouble(1,x));
     
     if( y.size() == 0 ) return 0;
     return y[0];
 
 }
     
-vector< double > HighPassFilter::filter(const vector< double > &x){
+VectorDouble HighPassFilter::filter(const VectorDouble &x){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "filter(const vector< double > &x) - Not Initialized!" << endl;
-        return vector<double>();
+        errorLog << "filter(const VectorDouble &x) - Not Initialized!" << endl;
+        return VectorDouble();
     }
     
     if( x.size() != numInputDimensions ){
-        errorLog << "filter(const vector< double > &x) - The Number Of Input Dimensions (" << numInputDimensions << ") does not match the size of the input vector (" << x.size() << ")!" << endl;
-        return vector<double>();
+        errorLog << "filter(const VectorDouble &x) - The Number Of Input Dimensions (" << numInputDimensions << ") does not match the size of the input vector (" << x.size() << ")!" << endl;
+        return VectorDouble();
     }
 #endif
     

@@ -3,26 +3,27 @@
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
  
- @section LICENSE
+ @brief This is the main base class for all GRT WeakClassifiers.
+ */
+
+/**
  GRT MIT License
  Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
  
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
  subject to the following conditions:
  
- The above copyright notice and this permission notice shall be included in all copies or substantial 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
  portions of the Software.
  
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
  */
 
 #ifndef GRT_WEAK_CLASSIFIER_HEADER
@@ -38,61 +39,126 @@ namespace GRT{
     
 class WeakClassifier{
 public:
+    /**
+     Default Constructor.
+     */
     WeakClassifier();
+    
+    /**
+     Default Destructor.
+     */
     virtual ~WeakClassifier();
     
+    /**
+     Copy Constructor. Defines how the data from the rhs instance are copied to this instance.
+     
+     @param const WeakClassifier &rhs: the rhs instance from which the data will be copied to this instance
+     */
     WeakClassifier(const WeakClassifier &rhs){
         *this = rhs;
     }
     
-    WeakClassifier& operator=(const WeakClassifier &rhs){
-        if( this != &rhs ){
-            this->weakClassifierType = rhs.weakClassifierType;
-            this->trained = rhs.trained;
-            this->numInputDimensions = rhs.numInputDimensions;
-        }
-        return *this;
-    }
+    /**
+     Equals Operator. Defines how the data from the rhs instance are copied to this instance.
+     
+     @param const WeakClassifier &rhs: the rhs instance from which the data will be copied to this instance
+     @return returns a reference to this WeakClassifier instance
+     */
+    WeakClassifier& operator=(const WeakClassifier &rhs);
     
-    bool copyBaseVariables(const WeakClassifier *weakClassifer){
-        if( weakClassifer == NULL ){
-            errorLog << "copyBaseVariables(const WeakClassifier *rhs) rhs is NULL!" << endl;
-            return false;
-        }
-        this->weakClassifierType = weakClassifer->weakClassifierType;
-        this->trained = weakClassifer->trained;
-        this->numInputDimensions = weakClassifer->numInputDimensions;
-        return true;
-    }
+    /**
+     This function copies the WeakClassifier base variables from the weakClassifer pointer to this instance.
+     
+     @param const WeakClassifier *weakClassifer: the instance from which the data will be copied to this instance
+     @return returns true if the base variables were copied, false otherwise
+     */
+    bool copyBaseVariables(const WeakClassifier *weakClassifer);
     
-    virtual bool clone(const WeakClassifier *weakClassifer){
+    /**
+     This function performs a deep copy of the inherited classes variables from the weakClassifer pointer instance to this instance.
+     This function should be overwritten in the inheriting class.
+     
+     @param const WeakClassifier *weakClassifer: the instance from which the data will be deep copied to this instance
+     @return returns true if the deep copy was successful, false otherwise
+     */
+    virtual bool deepCopyFrom(const WeakClassifier *weakClassifer){
         return false;
     }
     
+    /**
+     This function is the main training interface for all the WeakClassifiers.
+     This function should be overwritten in the inheriting class.
+     
+     @param LabelledClassificationData &trainingData: a reference to the training data that will be used to train the weak classifier model
+     @param VectorDouble &weights: the weight for each training sample, there should be as many weights as there are training samples
+     @return returns true if the weak classifier model was trained successful, false otherwise
+     */
     virtual bool train(LabelledClassificationData &trainingData, VectorDouble &weights){
         return false;
     }
     
+    /**
+     This function is the main predict interface for all the WeakClassifiers.
+     This function should be overwritten in the inheriting class.
+     
+     @param const VectorDouble &x: the input vector to be classified, should have the same dimensionality as the data used to train the model
+     @return returns a double value representing the prediction, which is normally -1 or +1
+     */
     virtual double predict(const VectorDouble &x){
         return 0;
     }
     
-    virtual bool saveModelToFile(fstream &file){ return false; }
+    /**
+     This function can be used to save the WeakClassifier model and settings.
+     This function should be overwritten in the inheriting class.
+     
+     @param fstream &file: a reference to the file that the model will be saved to
+     @return returns true if the data was saved, false otherwise
+     */
+    virtual bool saveModelToFile(fstream &file) const{ return false; }
+    
+    /**
+     This function can be used to load the WeakClassifier model and settings.
+     This function should be overwritten in the inheriting class.
+     
+     @param fstream &file: a reference to the file that the model will be saved to
+     @return returns true if the data was loaded, false otherwise
+     */
     virtual bool loadModelFromFile(fstream &file){ return false; }
     
+    /**
+     This function can be used to print the WeakClassifier model and settings.
+     This function should be overwritten in the inheriting class.
+     */
     virtual void print() const{}
     
-    double getPositiveClassLabel() const{ return 1; }
-    double getNegativeClassLabel() const{ return -1; }
+    /**
+     @return returns the positive class label for this WeakClassifier
+     */
+    virtual double getPositiveClassLabel() const{ return 1; }
     
+    /**
+     @return returns the negative class label for this WeakClassifier
+     */
+    virtual double getNegativeClassLabel() const{ return -1; }
+    
+    /**
+     @return returns the weak classifier type as a string, e.g. DecisionStump
+     */
     string getWeakClassifierType() const{
         return weakClassifierType;
     }
     
+    /**
+     @return returns true if the WeakClassifier model has been trained, false otherwise
+     */
     bool getTrained() const{
         return trained;
     }
     
+    /**
+     @return returns the number of input dimensions expected by the WeakClassifier
+     */
     UINT getNumInputDimensions() const{
         return numInputDimensions;
     }
@@ -118,18 +184,17 @@ public:
     WeakClassifier* createNewInstance() const;
     
 protected:
-    string weakClassifierType;
-    bool trained;
-    UINT numInputDimensions;
+    string weakClassifierType;  ///<A string that represents the weak classifier type, e.g. DecisionStump
+    bool trained;               ///<A flag to show if the weak classifier model has been trained
+    UINT numInputDimensions;    ///<The number of input dimensions to the weak classifier
+    TrainingLog trainingLog;
+    ErrorLog errorLog;
+    WarningLog warningLog;
     
     static StringWeakClassifierMap *getMap() {
         if( !stringWeakClassifierMap ){ stringWeakClassifierMap = new StringWeakClassifierMap; }
         return stringWeakClassifierMap;
     }
-    
-    TrainingLog trainingLog;
-    ErrorLog errorLog;
-    WarningLog warningLog;
     
 private:
     static StringWeakClassifierMap *stringWeakClassifierMap;

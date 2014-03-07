@@ -103,7 +103,7 @@ bool TimeDomainFeatures::reset(){
     return false;
 }
     
-bool TimeDomainFeatures::saveSettingsToFile(string filename){
+bool TimeDomainFeatures::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The feature extraction module has not been initialized" << endl;
@@ -130,7 +130,6 @@ bool TimeDomainFeatures::loadSettingsFromFile(string filename){
     
     if( !loadSettingsFromFile( file ) ){
         file.close();
-        initialized = false;
         return false;
     }
     
@@ -139,7 +138,7 @@ bool TimeDomainFeatures::loadSettingsFromFile(string filename){
     return true;
 }
 
-bool TimeDomainFeatures::saveSettingsToFile(fstream &file){
+bool TimeDomainFeatures::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;

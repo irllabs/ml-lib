@@ -87,7 +87,7 @@ bool LogisticRegression::train(LabelledRegressionData trainingData){
         return false;
     }
     
-    numFeatures = N;
+    numInputDimensions = N;
     numOutputDimensions = 1; //Logistic Regression will have 1 output
     inputVectorRanges.clear();
     targetVectorRanges.clear();
@@ -201,19 +201,19 @@ bool LogisticRegression::predict(VectorDouble inputVector){
     
     if( !trained ) return false;
     
-	if( inputVector.size() != numFeatures ){
-        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << int(inputVector.size()) << ") does not match the num features in the model (" << numFeatures << endl;
+	if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << int(inputVector.size()) << ") does not match the num features in the model (" << numInputDimensions << endl;
 		return false;
 	}
     
     if( useScaling ){
-        for(UINT n=0; n<numFeatures; n++){
+        for(UINT n=0; n<numInputDimensions; n++){
             inputVector[n] = scale(inputVector[n], inputVectorRanges[n].minValue, inputVectorRanges[n].maxValue, 0, 1);
         }
     }
     
     regressionData[0] =  w0;
-    for(UINT j=0; j<numFeatures; j++){
+    for(UINT j=0; j<numInputDimensions; j++){
         regressionData[0] += inputVector[j] * w[j];
     }
 	regressionData[0] = sigmoid( regressionData[0] );
@@ -253,14 +253,14 @@ bool LogisticRegression::saveModelToFile(fstream &file) const{
     
 	//Write the header info
 	file<<"GRT_LOGISTIC_REGRESSION_MODEL_FILE_V1.0\n";
-    file<<"NumFeatures: "<<numFeatures<<endl;
+    file<<"NumFeatures: "<<numInputDimensions<<endl;
 	file<<"NumOutputDimensions: "<<numOutputDimensions<<endl;
     file <<"UseScaling: " << useScaling << endl;
 	
     ///Write the ranges if needed
     if( useScaling ){
 		file << "InputVectorRanges: \n";
-		for(UINT j=0; j<numFeatures; j++){
+		for(UINT j=0; j<numInputDimensions; j++){
 			file << inputVectorRanges[j].minValue << "\t" << inputVectorRanges[j].maxValue << endl;
 		}
 		file << endl;
@@ -274,7 +274,7 @@ bool LogisticRegression::saveModelToFile(fstream &file) const{
     
     file << "Weights: ";
     file << w0;
-    for(UINT j=0; j<numFeatures; j++){
+    for(UINT j=0; j<numInputDimensions; j++){
         file << " " << w[j];
     }
     file << endl;
@@ -300,7 +300,7 @@ bool LogisticRegression::loadModelFromFile(string filename){
 bool LogisticRegression::loadModelFromFile(fstream &file){
     
     trained = false;
-    numFeatures = 0;
+    numInputDimensions = 0;
     w0 = 0;
     w.clear();
     
@@ -324,7 +324,7 @@ bool LogisticRegression::loadModelFromFile(fstream &file){
         errorLog << "loadModelFromFile(string filename) - Could not find NumFeatures!" << endl;
         return false;
     }
-    file >> numFeatures;
+    file >> numInputDimensions;
     
     file >> word;
     if(word != "NumOutputDimensions:"){
@@ -343,7 +343,7 @@ bool LogisticRegression::loadModelFromFile(fstream &file){
     ///Read the ranges if needed
     if( useScaling ){
         //Resize the ranges buffer
-        inputVectorRanges.resize(numFeatures);
+        inputVectorRanges.resize(numInputDimensions);
         targetVectorRanges.resize(numOutputDimensions);
         
         //Load the ranges
@@ -371,7 +371,7 @@ bool LogisticRegression::loadModelFromFile(fstream &file){
     }
     
     //Resize the weights
-    w.resize(numFeatures);
+    w.resize(numInputDimensions);
     
     //Load the weights
     file >> word;
@@ -381,7 +381,7 @@ bool LogisticRegression::loadModelFromFile(fstream &file){
     }
     
     file >> w0;
-    for(UINT j=0; j<numFeatures; j++){
+    for(UINT j=0; j<numInputDimensions; j++){
         file >> w[j];
     }
     

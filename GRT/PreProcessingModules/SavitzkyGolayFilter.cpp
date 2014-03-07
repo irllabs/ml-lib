@@ -91,16 +91,16 @@ bool SavitzkyGolayFilter::deepCopyFrom(const PreProcessing *preProcessing){
     return false;
 }
     
-bool SavitzkyGolayFilter::process(const vector< double > &inputVector){
+bool SavitzkyGolayFilter::process(const VectorDouble &inputVector){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "process(const vector< double > &inputVector) - Not initialized!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - Not initialized!" << endl;
         return false;
     }
     
     if( inputVector.size() != numInputDimensions ){
-        errorLog << "process(const vector< double > &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
         return false;
     }
 #endif
@@ -114,7 +114,7 @@ bool SavitzkyGolayFilter::process(const vector< double > &inputVector){
 
 bool SavitzkyGolayFilter::reset(){
     if( initialized ){
-        data.setAllValues(vector<double>(numInputDimensions,0));
+        data.setAllValues(VectorDouble(numInputDimensions,0));
         yy.clear();
         yy.resize(numInputDimensions,0);
         processedData.clear();
@@ -124,7 +124,7 @@ bool SavitzkyGolayFilter::reset(){
     return false;
 }
     
-bool SavitzkyGolayFilter::saveSettingsToFile(string filename){
+bool SavitzkyGolayFilter::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The HighPassFilter has not been initialized" << endl;
@@ -144,7 +144,7 @@ bool SavitzkyGolayFilter::saveSettingsToFile(string filename){
     return true;
 }
 
-bool SavitzkyGolayFilter::saveSettingsToFile(fstream &file){
+bool SavitzkyGolayFilter::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;
@@ -293,23 +293,32 @@ bool SavitzkyGolayFilter::init(UINT numLeftHandPoints,UINT numRightHandPoints,UI
     return true;
 }
 
-double SavitzkyGolayFilter::filter(double x){
-    vector< double > y = filter(vector<double>(1,x));
+double SavitzkyGolayFilter::filter(const double x){
+    
+#ifdef GRT_SAFE_CHECKING
+    //If the filter has not been initialised then return 0, otherwise filter x and return y
+    if( !initialized ){
+        errorLog << "filter(double x) - The filter has not been initialized!" << endl;
+        return 0;
+    }
+#endif
+    
+    VectorDouble y = filter(VectorDouble(1,x));
     
     if( y.size() > 0 ) return y[0];
 	return 0;
 }
     
-vector< double > SavitzkyGolayFilter::filter(const vector< double > &x){
+VectorDouble SavitzkyGolayFilter::filter(const VectorDouble &x){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "filter(const vector< double > &x) - Not Initialized!" << endl;
+        errorLog << "filter(const VectorDouble &x) - Not Initialized!" << endl;
         return vector<double>();
     }
     
     if( x.size() != numInputDimensions ){
-        errorLog << "filter(const vector< double > &x) - The Number Of Input Dimensions (" << numInputDimensions << ") does not match the size of the input vector (" << x.size() << ")!" << endl;
+        errorLog << "filter(const VectorDouble &x) - The Number Of Input Dimensions (" << numInputDimensions << ") does not match the size of the input vector (" << x.size() << ")!" << endl;
         return vector<double>();
     }
 #endif
@@ -336,10 +345,10 @@ bool SavitzkyGolayFilter::calCoeff(){
     int m = (int)smoothingPolynomialOrder;
     int i,j,k,imj,ipj,kk,mm,pos;
     double fac,sum;
-    vector<double> indx(m+1);
+    VectorDouble indx(m+1);
     Matrix<double> a(m+1,m+1);
-    vector<double> b(m+1);
-    vector<double> c(np);
+    VectorDouble b(m+1);
+    VectorDouble c(np);
     
     for (ipj=0; ipj<=(m << 1); ipj++) {
         sum=(ipj ? 0.0 : 1.0);

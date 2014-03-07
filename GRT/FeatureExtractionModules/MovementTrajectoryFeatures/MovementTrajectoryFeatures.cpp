@@ -103,7 +103,7 @@ bool MovementTrajectoryFeatures::reset(){
     return false;
 }
     
-bool MovementTrajectoryFeatures::saveSettingsToFile(string filename){
+bool MovementTrajectoryFeatures::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The feature extraction module has not been initialized" << endl;
@@ -139,7 +139,7 @@ bool MovementTrajectoryFeatures::loadSettingsFromFile(string filename){
     return true;
 }
 
-bool MovementTrajectoryFeatures::saveSettingsToFile(fstream &file){
+bool MovementTrajectoryFeatures::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;

@@ -114,7 +114,7 @@ bool MovingAverageFilter::reset(){
     return false;
 }
     
-bool MovingAverageFilter::saveSettingsToFile(string filename){
+bool MovingAverageFilter::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The MovingAverageFilter has not been initialized" << endl;
@@ -134,7 +134,7 @@ bool MovingAverageFilter::saveSettingsToFile(string filename){
     return true;
 }
 
-bool MovingAverageFilter::saveSettingsToFile(fstream &file){
+bool MovingAverageFilter::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;
@@ -242,17 +242,17 @@ bool MovingAverageFilter::init(UINT filterSize,UINT numDimensions){
     return initialized;
 }
 
-double MovingAverageFilter::filter(double x){
+double MovingAverageFilter::filter(const double x){
     
 #ifdef GRT_SAFE_CHECKING
     //If the filter has not been initialised then return 0, otherwise filter x and return y
     if( !initialized ){
-        errorLog << "filter(double x) - The filter has not been initialized!" << endl;
+        errorLog << "filter(const double x) - The filter has not been initialized!" << endl;
         return 0;
     }
 #endif
     
-    vector< double > y = filter(VectorDouble(1,x));
+    VectorDouble y = filter(VectorDouble(1,x));
     
     if( y.size() == 0 ) return 0;
     return y[0];
@@ -264,12 +264,12 @@ VectorDouble MovingAverageFilter::filter(const VectorDouble &x){
     //If the filter has not been initialised then return 0, otherwise filter x and return y
     if( !initialized ){
         errorLog << "filter(const VectorDouble &x) - The filter has not been initialized!" << endl;
-        return vector<double>();
+        return VectorDouble();
     }
     
     if( x.size() != numInputDimensions ){
         errorLog << "filter(const VectorDouble &x) - The size of the input vector (" << x.size() << ") does not match that of the number of dimensions of the filter (" << numInputDimensions << ")!" << endl;
-        return vector<double>();
+        return VectorDouble();
     }
 #endif
     

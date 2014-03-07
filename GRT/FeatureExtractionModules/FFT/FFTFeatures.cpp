@@ -83,7 +83,7 @@ bool FFTFeatures::deepCopyFrom(const FeatureExtraction *featureExtraction){
     return false;
 }
     
-bool FFTFeatures::saveSettingsToFile(string filename){
+bool FFTFeatures::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The feature extraction module has not been initialized" << endl;
@@ -119,7 +119,7 @@ bool FFTFeatures::loadSettingsFromFile(string filename){
     return true;
 }
 
-bool FFTFeatures::saveSettingsToFile(fstream &file){
+bool FFTFeatures::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;

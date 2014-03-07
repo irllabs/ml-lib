@@ -21,50 +21,142 @@
 #include "KMeans.h"
 
 namespace GRT{
+    
+//Register the KMeans class with the Clusterer base class
+RegisterClustererModule< KMeans > KMeans::registerModule("KMeans");
 
 //Constructor,destructor
-KMeans::KMeans(){
-    M = N = K = nchg = 0;
-    minNumEpochs = 10;
-    maxNumEpochs = 1000;
-    minChange = 1.0e-10;
+KMeans::KMeans(const UINT numClusters,const UINT minNumEpochs,const UINT maxNumEpochs,const double minChange,const bool computeTheta){
+    
+    this->numClusters = numClusters;
+    this->minNumEpochs = minNumEpochs;
+    this->maxNumEpochs = maxNumEpochs;
+    this->minChange = minChange;
+    this->computeTheta = computeTheta;
+    
+    numTrainingSamples = 0;
+    nchg = 0;
     finalTheta = 0;
-    numTrainingIterations = 0;
-    computeTheta = true;
+    numTrainingIterationsToConverge = 0;
     trained = false;
+    
+    clustererType = "KMeans";
+    debugLog.setProceedingText("[DEBUG KMeans]");
+    errorLog.setProceedingText("[ERROR KMeans]");
+    trainingLog.setProceedingText("[TRAINING KMeans]");
+    warningLog.setProceedingText("[WARNING KMeans]");
+}
+    
+KMeans::KMeans(const KMeans &rhs){
+    
+    clustererType = "KMeans";
+    debugLog.setProceedingText("[DEBUG KMeans]");
+    errorLog.setProceedingText("[ERROR KMeans]");
+    trainingLog.setProceedingText("[TRAINING KMeans]");
+    warningLog.setProceedingText("[WARNING KMeans]");
+    
+    if( this != &rhs ){
+        
+        this->numTrainingSamples = rhs.numTrainingSamples;
+        this->nchg = rhs.nchg;
+        this->computeTheta = rhs.computeTheta;
+        this->estimateClassLabels = rhs.estimateClassLabels;
+        this->finalTheta = rhs.finalTheta;
+        this->clusterLabels = rhs.clusterLabels;
+        this->clusters = rhs.clusters;
+        this->assign = rhs.assign;
+        this->count = rhs.count;
+        this->thetaTracker = rhs.thetaTracker;
+        
+        //Clone the Clusterer variables
+        copyBaseVariables( (Clusterer*)&rhs );
+    }
+    
 }
 
 KMeans::~KMeans(){
-
+}
+    
+KMeans& KMeans::operator=(const KMeans &rhs){
+    
+    if( this != &rhs ){
+        
+        this->numTrainingSamples = rhs.numTrainingSamples;
+        this->nchg = rhs.nchg;
+        this->computeTheta = rhs.computeTheta;
+        this->estimateClassLabels = rhs.estimateClassLabels;
+        this->finalTheta = rhs.finalTheta;
+        this->clusterLabels = rhs.clusterLabels;
+        this->clusters = rhs.clusters;
+        this->assign = rhs.assign;
+        this->count = rhs.count;
+        this->thetaTracker = rhs.thetaTracker;
+        
+        //Clone the Clusterer variables
+        copyBaseVariables( (Clusterer*)&rhs );
+    }
+    
+    return *this;
 }
 
-bool KMeans::predict(VectorDouble inputVector,UINT &predictedClassLabel,double &maxLikelihood,VectorDouble &classLikelihoods){
+bool KMeans::deepCopyFrom(const Clusterer *clusterer){
+    
+    if( clusterer == NULL ) return false;
+    
+    if( this->getClustererType() == clusterer->getClustererType() ){
+        //Clone the KMeans values
+        KMeans *ptr = (KMeans*)clusterer;
+        
+        this->numTrainingSamples = ptr->numTrainingSamples;
+        this->nchg = ptr->nchg;
+        this->computeTheta = ptr->computeTheta;
+        this->estimateClassLabels = ptr->estimateClassLabels;
+        this->finalTheta = ptr->finalTheta;
+        this->clusterLabels = ptr->clusterLabels;
+        this->clusters = ptr->clusters;
+        this->assign = ptr->assign;
+        this->count = ptr->count;
+        this->thetaTracker = ptr->thetaTracker;
+        
+        //Clone the Clusterer variables
+        return copyBaseVariables( clusterer );
+    }
+    return false;
+}
+
+bool KMeans::predict(VectorDouble inputVector,UINT &predictedClusterLabel,double &maxLikelihood,VectorDouble &clusterLikelihoods){
 	
 	if( !trained ){
 		 return false;
 	}
 	
-	if( inputVector.size() != clusters.getNumCols() ){
+	if( inputVector.size() != numInputDimensions ){
 		return false;
 	}
+    
+    if( useScaling ){
+        for(UINT n=0; n<numInputDimensions; n++){
+            inputVector[n] = scale(inputVector[n], ranges[n].minValue, ranges[n].maxValue, 0, 1);
+        }
+    }
 	
 	double minDist = numeric_limits<double>::max();
 	double sum = 0;
 	UINT minIndex = 0;
-	predictedClassLabel = 0;
+	predictedClusterLabel = 0;
 	maxLikelihood = 0;
-	classLikelihoods.clear();
-	classLikelihoods.resize( clusters.getNumCols() );
+	if( clusterLikelihoods.size() != numClusters )
+        clusterLikelihoods.resize( numClusters );
 	
-	for(UINT i=0; i<clusters.getNumRows(); i++){
+	for(UINT i=0; i<numClusters; i++){
 		
 		double dist = 0;
-		for(UINT j=0; j<clusters.getNumCols(); j++){
+		for(UINT j=0; j<numInputDimensions; j++){
 			dist += SQR( inputVector[j]-clusters[i][j] );
 		}
+        
         //We don't need to compute the sqrt as it works without it and is faster
-		
-		classLikelihoods[i] = dist;
+		clusterLikelihoods[i] = dist;
 		sum += dist;
 				
 		if( dist < minDist ){
@@ -74,32 +166,29 @@ bool KMeans::predict(VectorDouble inputVector,UINT &predictedClassLabel,double &
 	}
 	
 	//Normalize the likelihood
-	for(UINT i=0; i<clusters.getNumRows(); i++){
-		classLikelihoods[i] /= sum;
+	for(UINT i=0; i<numClusters; i++){
+		clusterLikelihoods[i] /= sum;
 	}
 	
-	predictedClassLabel = classLabels[ minIndex ];
-	maxLikelihood = 1.0 - classLikelihoods[ minIndex ];
+	predictedClusterLabel = clusterLabels[ minIndex ];
+	maxLikelihood = 1.0 - clusterLikelihoods[ minIndex ];
 	
 	return true;
 }
 
-bool KMeans::train(LabelledClassificationData &trainingData,bool estimateClassLabels){
-	
-	//Clear any previous class labels
-	classLabels.clear();
+bool KMeans::trainInplace(LabelledClassificationData &trainingData){
 	
 	if( trainingData.getNumSamples() == 0 ){
+        errorLog << "trainInplace(LabelledClassificationData &trainingData) - The training data is empty!" << endl;
 		return false;
 	}
 	
-	//Set K as the number of classes in the training data
-	UINT K = trainingData.getNumClasses();
+	//Set the numClusters as the number of classes in the training data
+	numClusters = trainingData.getNumClasses();
 
     //Convert the labelled training data to a training matrix
 	UINT M = trainingData.getNumSamples();
     UINT N = trainingData.getNumDimensions();
-
     MatrixDouble data(M,N);
     for(UINT i=0; i<M; i++){
         for(UINT j=0; j<N; j++){
@@ -107,11 +196,12 @@ bool KMeans::train(LabelledClassificationData &trainingData,bool estimateClassLa
         }
     }
 
-    if( train(K, data) ){
+    //Run the K-Means algorithm
+    if( trainInplace( data ) ){
 	
 		if( estimateClassLabels ){
-            for(UINT i=0; i<K; i++){
-				classLabels[i] = i;
+            for(UINT i=0; i<numClusters; i++){
+				clusterLabels[i] = i;
 			}
             /*
 			//Estimate the class labels
@@ -171,24 +261,22 @@ bool KMeans::train(LabelledClassificationData &trainingData,bool estimateClassLa
 			}
              */
 		}else{
-            for(UINT i=0; i<K; i++){
-				classLabels[i] = i;
+            for(UINT i=0; i<numClusters; i++){
+				clusterLabels[i] = i;
 			}
         }
 		return true;
 	}
+    
+    //If we get this far then the training failed so return false
 	return false;
 }
 
-bool KMeans::train(UINT K,UnlabelledClassificationData &trainingData){
-	
-	//Clear any previous class labels
-	classLabels.clear();
+bool KMeans::trainInplace(UnlabelledClassificationData &trainingData){
 
     //Convert the training data into one matrix
 	UINT M = trainingData.getNumSamples();
     UINT N = trainingData.getNumDimensions();
-
     MatrixDouble data(M,N);
     for(UINT i=0; i<M; i++){
         for(UINT j=0; j<N; j++){
@@ -196,88 +284,113 @@ bool KMeans::train(UINT K,UnlabelledClassificationData &trainingData){
         }
     }
 	
-	return train(K,data);
+	return trainInplace(data);
+}
+    
+bool KMeans::train(MatrixDouble data){
+    return trainInplace(data);
 }
 
-bool KMeans::train(UINT K,MatrixDouble &data){
+bool KMeans::trainInplace(MatrixDouble &data){
 	
 	trained = false;
 	
-	if( K == 0 || data.getNumRows() == 0 || data.getNumCols() == 0 ){
+	if( numClusters == 0 ){
+        errorLog << "trainInplace(MatrixDouble &data) - Failed to train model. NumClusters is zero!" << endl;
 		return false;
 	}
-	
-    this->K = K;
-	M = data.getNumRows();
-	N = data.getNumCols();
+    
+    if( data.getNumRows() == 0 || data.getNumCols() == 0 ){
+        errorLog << "trainInplace(MatrixDouble &data) - The number of rows or columns in the data is zero!" << endl;
+		return false;
+	}
+    
+	numTrainingSamples = data.getNumRows();
+	numInputDimensions = data.getNumCols();
 
-	clusters.resize(K,N);
-	assign.resize(M);
-	count.resize(K);
+	clusters.resize(numClusters,numInputDimensions);
+	assign.resize(numTrainingSamples);
+	count.resize(numClusters);
 
 	//Randomly pick k data points as the starting clusters
 	Random random;
 	UINT indexA, indexB, tempIndex;
-	vector< UINT > randIndexs(M);
-	for(UINT i=0; i<M; i++) randIndexs[i] = i;
-	for(UINT i=0; i<M; i++){
-		indexA = random.getRandomNumberInt(0,M);
-		indexB = random.getRandomNumberInt(0,M);
+	vector< UINT > randIndexs(numTrainingSamples);
+	for(UINT i=0; i<numTrainingSamples; i++) randIndexs[i] = i;
+	for(UINT i=0; i<numClusters; i++){
+		indexA = i;
+		indexB = random.getRandomNumberInt(0,numTrainingSamples);
 		tempIndex = randIndexs[ indexA ];
 		randIndexs[ indexA ] = randIndexs[ indexB ];
 		randIndexs[ indexB ] = tempIndex;
 	}
 
-	for(UINT k=0; k<K; k++){
-		for(UINT j=0; j<N; j++){
+    //Copy the clusters
+	for(UINT k=0; k<numClusters; k++){
+		for(UINT j=0; j<numInputDimensions; j++){
             clusters[k][j] = data[ randIndexs[k] ][j];
 		}
 	}
 
-	return train( data );
-}
-bool KMeans::train(MatrixDouble &data,MatrixDouble &clusters){
-	this->clusters = clusters;
-	M = data.getNumRows();
-	N = data.getNumCols();
-	K = clusters.getNumRows();
-	assign.resize( M );
-	count.resize( K );
-
-	return train( data );
+	return trainModel( data );
 }
 
-bool KMeans::train(MatrixDouble &data){
+bool KMeans::trainModel(MatrixDouble &data){
+    
+    if( numClusters == 0 ){
+        errorLog << "trainModel(MatrixDouble &data) - Failed to train model. NumClusters is zero!" << endl;
+		return false;
+	}
+    
+    if( clusters.getNumRows() != numClusters ){
+        errorLog << "trainModel(MatrixDouble &data) - Failed to train model. The number of rows in the cluster matrix does not match the number of clusters! You should need to initalize the clusters matrix first before calling this function!" << endl;
+		return false;
+	}
+    
+    if( clusters.getNumCols() != numInputDimensions ){
+        errorLog << "trainModel(MatrixDouble &data) - Failed to train model. The number of columns in the cluster matrix does not match the number of input dimensions! You should need to initalize the clusters matrix first before calling this function!" << endl;
+		return false;
+	}
 
 	UINT currentIter = 0;
     UINT numChanged = 0;
 	bool keepTraining = true;
-    bool converged = false;
     double theta = 0;
     thetaTracker.clear();
     finalTheta = 0;
-    numTrainingIterations = 0;
+    numTrainingIterationsToConverge = 0;
     trained = false;
+    converged = false;
 
 	//Set the class labels to the default values - these will be updated later if the training data is labelled
-	classLabels.resize(K);
-	for(UINT i=0; i<K; i++){
-		classLabels[i] = i;
+	clusterLabels.resize( numClusters );
+	for(UINT i=0; i<numClusters; i++){
+		clusterLabels[i] = i;
 	}
+    
+    //Scale the data if needed
+    ranges = data.getRanges();
+    if( useScaling ){
+        for(UINT i=0; i<numTrainingSamples; i++){
+            for(UINT j=0; j<numInputDimensions; j++){
+                data[i][j] = scale(data[i][j],ranges[j].minValue,ranges[j].maxValue,0,1);
+            }
+        }
+    }
 
     //Init the assign and count vectors
     //Assign is set to K+1 so that the nChanged values in the eStep at the first iteration will be updated correctly
-    for(UINT m=0; m<M; m++) assign[m] = K+1;
-	for(UINT k=0; k<K; k++) count[k] = 0;
+    for(UINT m=0; m<numTrainingSamples; m++) assign[m] = numClusters+1;
+	for(UINT k=0; k<numClusters; k++) count[k] = 0;
 
     //Run the training loop
 	while( keepTraining ){
 
 		//Compute the E step
-		numChanged = estep(data);
+		numChanged = estep( data );
 
         //Compute the M step
-        mstep(data);
+        mstep( data );
 
         //Update the iteration counter
 		currentIter++;
@@ -286,15 +399,15 @@ bool KMeans::train(MatrixDouble &data){
 		if( computeTheta ) theta = calculateTheta(data);
 		if( numChanged == 0 && currentIter > minNumEpochs ){ converged = true; keepTraining = false; }
 		if( currentIter >= maxNumEpochs ){ keepTraining = false; }
-		if( fabs( finalTheta - theta ) < minChange && computeTheta && currentIter > minNumEpochs && numChanged < M/100.0*5.0 ){ converged = true; keepTraining = false; }
+		if( fabs( finalTheta - theta ) < minChange && computeTheta && currentIter > minNumEpochs ){ converged = true; keepTraining = false; }
         if( computeTheta )  thetaTracker.push_back( theta );
 	}
 
     finalTheta = theta;
-    numTrainingIterations = currentIter;
+    numTrainingIterationsToConverge = currentIter;
 	trained = true;
 	
-	return converged;
+	return true;
 }
 
 UINT KMeans::estep(const MatrixDouble &data) {
@@ -304,14 +417,14 @@ UINT KMeans::estep(const MatrixDouble &data) {
 		kmin = 0;
 
 		//Reset Count
-		for (k=0;k<K;k++) count[k] = 0;
+		for (k=0; k < numClusters; k++) count[k] = 0;
 
 		//Search for the closest center and reasign if needed
-		for (m=0; m<M; m++) {
-			dmin = 9.99e+99;
-			for (k=0; k<K; k++) {
+		for (m=0; m < numTrainingSamples; m++) {
+			dmin = 9.99e+99; //Set dmin to a really big value
+			for (k=0; k < numClusters; k++) {
 				d = 0.0;
-				for (n=0; n<N; n++)
+				for (n=0; n < numInputDimensions; n++)
 					d += SQR( data[m][n]-clusters[k][n] );
 				if (d <= dmin){ dmin = d; kmin = k; }
 			}
@@ -328,18 +441,18 @@ void KMeans::mstep(const MatrixDouble &data) {
     UINT n,k,m;
 
     //Reset means to zero
-    for (k=0;k<K;k++)
-        for (n=0;n<N;n++)
+    for (k=0; k<numClusters; k++)
+        for (n=0;n<numInputDimensions;n++)
             clusters[k][n] = 0.;
 
     //Get new mean by adding assigned data points and dividing by the number of values in each cluster
-    for(m=0; m<M; m++)
-        for(n=0; n<N; n++)
+    for(m=0; m < numTrainingSamples; m++)
+        for(n=0; n < numInputDimensions; n++)
             clusters[ assign[m] ][n] += data[m][n];
 
-    for (k=0; k<K; k++) {
+    for (k=0; k < numClusters; k++) {
         if (count[k] > 0){
-            for (n=0; n<N; n++){
+            for (n=0; n < numInputDimensions; n++){
                 clusters[k][n] /= double(count[k]);
             }
         }
@@ -350,10 +463,10 @@ double KMeans::calculateTheta(const MatrixDouble &data){
 
 	double theta = 0;
 
-	for(UINT m=0; m<M; m++){
+	for(UINT m=0; m < numTrainingSamples; m++){
 		UINT k = assign[m];
 		double sum = 0;
-		for(UINT n=0;n<N;n++){
+		for(UINT n=0; n < numInputDimensions; n++){
 				sum += SQR(clusters[k][n] - data[m][n]);
 		}
 		theta += sum;
@@ -362,109 +475,124 @@ double KMeans::calculateTheta(const MatrixDouble &data){
 	return theta;
 
 }
+    
+bool KMeans::saveModelToFile(string filename) const{
+    
+    std::fstream file;
+    file.open(filename.c_str(), std::ios::out);
+    
+    if( !file.is_open() ){
+        errorLog << "saveModelToFile(string filename) - Failed to open file!" << endl;
+        return false;
+    }
+    
+    if( !saveModelToFile( file ) ){
+        file.close();
+        return false;
+    }
+    
+    file.close();
+    
+    return true;
+}
 
-
-bool KMeans::saveModelToFile(string fileName){
+bool KMeans::saveModelToFile(fstream &file) const{
 
     if( !trained ){
+        errorLog << "saveModelToFile(fstream &file) - Can't save model to file, the model has not been trained!" << endl;
         return false;
     }
 
-   std::fstream file;
-   file.open(fileName.c_str(), std::ios::out);
-
-   if( !file.is_open() ){
-       return false;
-   }
-
    file << "GRT_KMEANS_MODEL_FILE_V1.0\n";
-   file << "K: " << K << endl;
-   file << "N: " << N <<endl;
+   file << "K: " << numClusters << endl;
+   file << "N: " << numInputDimensions <<endl;
    file << "Clusters:\n";
 
-   for(UINT k=0; k<K; k++){
-       for(UINT n=0; n<N; n++){
+   for(UINT k=0; k<numClusters; k++){
+       for(UINT n=0; n<numInputDimensions; n++){
             file << clusters[k][n] << "\t";
        }file << endl;
    }
 
-	file << "ClassLabels:\n";
-	for(UINT k=0; k<K; k++){
-		file << classLabels[k] << "\t";
+	file << "ClusterLabels:\n";
+	for(UINT k=0; k<numClusters; k++){
+		file << clusterLabels[k] << "\t";
 	}
 	file << endl;
-
-   file.close();
 
    return true;
 
 }
-
-
+    
 bool KMeans::loadModelFromFile(string fileName){
+    
+    std::fstream file;
+    string word;
+    file.open(fileName.c_str(), std::ios::in);
+    
+    if(!file.is_open()){
+        errorLog << "loadModelFromFile(string filename) - Failed to open file!" << endl;
+        return false;
+    }
+    
+    if( !loadModelFromFile( file ) ){
+        file.close();
+        return false;
+    }
+    
+    file.close();
+    
+    return true;
+    
+}
 
-	clusters.clear();
-	K = 0;
-	N = 0;
-	M = 0;
+bool KMeans::loadModelFromFile(fstream &file){
 
-   std::fstream file;
-   string word;
-   file.open(fileName.c_str(), std::ios::in);
+    //Clear any previous model
+    clear();
 
-   if(!file.is_open()){
-	   return false;
-   }
-
+    string word;
    file >> word;
    if( word != "GRT_KMEANS_MODEL_FILE_V1.0" ){
-	   file.close();
 	   return false;
    }
 
    file >> word;
    if( word != "K:" ){
-	   file.close();
 	   return false;
    }
-   file >> K;
+   file >> numClusters;
 
    file >> word;
    if( word != "N:" ){
-	   file.close();
 	   return false;
    }
-   file >> N;
+   file >> numInputDimensions;
 
    file >> word;
    if( word != "Clusters:" ){
-	   file.close();
 	   return false;
    }
 
    //Resize the buffers
-   	clusters.resize(K,N);
-	classLabels.resize(K);
+   	clusters.resize(numClusters,numInputDimensions);
+	clusterLabels.resize(numClusters);
 
    //Load the data
-   for(UINT k=0; k<K; k++){
-	   for(UINT n=0; n<N; n++){
+   for(UINT k=0; k<numClusters; k++){
+	   for(UINT n=0; n<numInputDimensions; n++){
 	      file >> clusters[k][n];
 	   }
    }
 
 	//Load the class labels
-	if( word != "Clusters:" ){
-		file.close();
+	if( word != "ClusterLabels:" ){
 		return false;
 	}
 	
-	for(UINT k=0; k<K; k++){
-		file >> classLabels[k];
+	for(UINT k=0; k<numClusters; k++){
+		file >> clusterLabels[k];
 	}
-	
-	//Close the file
-   	file.close();
 
 	//Flag that the model is trained
     trained = true;
@@ -472,33 +600,47 @@ bool KMeans::loadModelFromFile(string fileName){
    return true;
 }
 
-bool KMeans::setComputeTheta(bool computeTheta){
-    this->computeTheta = computeTheta;
+    
+bool KMeans::reset(){
+    Clusterer::reset();
+    
+    numTrainingSamples = 0;
+    nchg = 0;
+    finalTheta = 0;
+    thetaTracker.clear();
+    assign.clear();
+    count.clear();
+    
     return true;
 }
 
-bool KMeans::setMinChange(double minChange){
-    if( minChange > 0 ){
-        this->minChange = minChange;
-        return true;
-    }
-    return false;
+bool KMeans::clear(){
+    Clusterer::clear();
+    
+    numTrainingSamples = 0;
+    nchg = 0;
+    finalTheta = 0;
+    thetaTracker.clear();
+    assign.clear();
+    count.clear();
+    clusterLabels.clear();
+    clusters.clear();
+    
+    return true;
+}
+    
+bool KMeans::setComputeTheta(const bool computeTheta){
+    this->computeTheta = computeTheta;
+    return true;
+}
+    
+bool KMeans::setClusters(const MatrixDouble &clusters){
+    clear();
+    numClusters = clusters.getNumRows();
+    numInputDimensions = clusters.getNumCols();
+    this->clusters = clusters;
+    return true;
 }
 
-bool KMeans::setMinNumEpochs(UINT minNumEpochs){
-    if( minNumEpochs > 0 ){
-        this->minNumEpochs = minNumEpochs;
-        return true;
-    }
-    return false;
-}
-
-bool KMeans::setMaxNumEpochs(UINT maxNumEpochs){
-    if( maxNumEpochs > 0 ){
-        this->maxNumEpochs = maxNumEpochs;
-        return true;
-    }
-    return false;
-}
 
 }//End of namespace GRT

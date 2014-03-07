@@ -93,7 +93,7 @@ SVM& SVM::operator=(const SVM &rhs){
         this->model = rhs.deepCopyModel();
         this->param = rhs.param;
         this->prob = rhs.prob;
-        this->numFeatures = rhs.numFeatures;
+        this->numInputDimensions = rhs.numInputDimensions;
         this->kFoldValue = rhs.kFoldValue;
         this->classificationThreshold = rhs.classificationThreshold;
         this->crossValidationResult = rhs.crossValidationResult;
@@ -120,7 +120,7 @@ bool SVM::deepCopyFrom(const Classifier *classifier){
         this->model = ptr->deepCopyModel();
         this->param = ptr->param;
         this->prob = ptr->prob;
-        this->numFeatures = ptr->numFeatures;
+        this->numInputDimensions = ptr->numInputDimensions;
         this->kFoldValue = ptr->kFoldValue;
         this->classificationThreshold = ptr->classificationThreshold;
         this->crossValidationResult = ptr->crossValidationResult;
@@ -152,7 +152,7 @@ bool SVM::train(LabelledClassificationData trainingData){
         return false;
     }
     
-    if( useAutoGamma ) param.gamma = 1.0/numFeatures;
+    if( useAutoGamma ) param.gamma = 1.0/numInputDimensions;
     
 	//Train the model
 	bool trainingResult = trainSVM();
@@ -172,8 +172,8 @@ bool SVM::predict(VectorDouble inputVector){
         return false;
     }
     
-    if( inputVector.size() != numFeatures ){
-        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the number of features of the model (" << numFeatures << ")" << endl;
+    if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the number of features of the model (" << numInputDimensions << ")" << endl;
         return false;
     }
     
@@ -308,7 +308,7 @@ bool SVM::trainSVM(){
     //Scale the training data if needed
     if( useScaling ){
         for(int i=0; i<prob.l; i++)
-            for(UINT j=0; j<numFeatures; j++)
+            for(UINT j=0; j<numInputDimensions; j++)
                 prob.x[i][j].value = scale(prob.x[i][j].value,ranges[j].minValue,ranges[j].maxValue,SVM_MIN_SCALE_RANGE,SVM_MAX_SCALE_RANGE);
     }
 
@@ -369,23 +369,23 @@ bool SVM::trainSVM(){
     
 bool SVM::predict_(VectorDouble &inputVector){
 
-		if( !trained || inputVector.size() != numFeatures ) return false;
+		if( !trained || inputVector.size() != numInputDimensions ) return false;
 
 		svm_node *x = NULL;
 
 		//Copy the input data into the SVM format
-		x = new svm_node[numFeatures+1];
-		for(UINT j=0; j<numFeatures; j++){
+		x = new svm_node[numInputDimensions+1];
+		for(UINT j=0; j<numInputDimensions; j++){
 			x[j].index = (int)j+1;
 			x[j].value = inputVector[j];
 		}
 		//The last value in the input vector must be set to -1
-		x[numFeatures].index = -1;
-		x[numFeatures].value = 0;
+		x[numInputDimensions].index = -1;
+		x[numInputDimensions].value = 0;
 
 		//Scale the input data if required
 		if( useScaling ){
-			for(UINT i=0; i<numFeatures; i++)
+			for(UINT i=0; i<numInputDimensions; i++)
 				x[i].value = scale(x[i].value,ranges[i].minValue,ranges[i].maxValue,SVM_MIN_SCALE_RANGE,SVM_MAX_SCALE_RANGE);
 		}
 
@@ -403,7 +403,7 @@ bool SVM::predict_(VectorDouble &inputVector){
 
 bool SVM::predict_(VectorDouble &inputVector,double &maxProbability, vector<double> &probabilites){
 
-		if( !trained || param.probability == 0 || inputVector.size() != numFeatures ) return false;
+		if( !trained || param.probability == 0 || inputVector.size() != numInputDimensions ) return false;
 
 		double *prob_estimates = NULL;
 		svm_node *x = NULL;
@@ -412,18 +412,18 @@ bool SVM::predict_(VectorDouble &inputVector,double &maxProbability, vector<doub
 		prob_estimates = new double[ model->nr_class ];
 
 		//Copy the input data into the SVM format
-		x = new svm_node[numFeatures+1];
-		for(UINT j=0; j<numFeatures; j++){
+		x = new svm_node[numInputDimensions+1];
+		for(UINT j=0; j<numInputDimensions; j++){
 			x[j].index = (int)j+1;
 			x[j].value = inputVector[j];
 		}
 		//The last value in the input vector must be set to -1
-		x[numFeatures].index = -1;
-		x[numFeatures].value = 0;
+		x[numInputDimensions].index = -1;
+		x[numInputDimensions].value = 0;
 
 		//Scale the input data if required
 		if( useScaling ){
-			for(UINT j=0; j<numFeatures; j++)
+			for(UINT j=0; j<numInputDimensions; j++)
 				x[j].value = scale(x[j].value,ranges[j].minValue,ranges[j].maxValue,SVM_MIN_SCALE_RANGE,SVM_MAX_SCALE_RANGE);
 		}
 
@@ -462,7 +462,7 @@ bool SVM::convertLabelledClassificationDataToLIBSVMFormat(LabelledClassification
     deleteProblemSet();
     
     const UINT numTrainingExamples = trainingData.getNumSamples();
-    numFeatures = trainingData.getNumDimensions();
+    numInputDimensions = trainingData.getNumDimensions();
     
     //Compute the ranges encase the data should be scaled
     ranges = trainingData.getRanges();
@@ -478,13 +478,13 @@ bool SVM::convertLabelledClassificationDataToLIBSVMFormat(LabelledClassification
         prob.y[i] = trainingData[i].getClassLabel();
         
         //Assign the memory for this training example, note that a dummy node is needed at the end of the vector
-        prob.x[i] = new svm_node[numFeatures+1];
-        for(UINT j=0; j<numFeatures; j++){
+        prob.x[i] = new svm_node[numInputDimensions+1];
+        for(UINT j=0; j<numInputDimensions; j++){
             prob.x[i][j].index = j+1;
             prob.x[i][j].value = trainingData[i].getSample()[j];
         }
-        prob.x[i][numFeatures].index = -1; //Assign the final node value
-        prob.x[i][numFeatures].value = 0;
+        prob.x[i][numInputDimensions].index = -1; //Assign the final node value
+        prob.x[i][numInputDimensions].value = 0;
     }
     
     return true;
@@ -574,7 +574,7 @@ bool SVM::saveModelToFile(fstream &file) const{
     file << "Coef0: " << param.coef0 << endl;
     file << "NumberOfClasses: " << numClasses << endl;
     file << "NumberOfSupportVectors: " << numSV << endl;
-    file << "NumberOfFeatures: " << numFeatures << endl;
+    file << "NumberOfFeatures: " << numInputDimensions << endl;
     file << "UseShrinking: " << param.shrinking << endl;
     file << "UseProbability: " << param.probability << endl;
     file << "UseScaling: " << useScaling << endl;
@@ -657,7 +657,7 @@ bool SVM::loadModelFromFile(fstream &file){
         UINT numClasses = 0;
         UINT numSV = 0;
         UINT halfNumClasses = 0;
-        numFeatures = 0;
+        numInputDimensions = 0;
         
         //Clear any previous models, parameters or problems
         clear();
@@ -823,7 +823,7 @@ bool SVM::loadModelFromFile(fstream &file){
             clear();
             return false;
         }
-        file >> numFeatures;
+        file >> numInputDimensions;
         
         //Load the UseShrinking
         file >> word;
@@ -861,7 +861,7 @@ bool SVM::loadModelFromFile(fstream &file){
         }
         //Setup the memory for the ranges
         ranges.clear();
-        ranges.resize(numFeatures);
+        ranges.resize(numInputDimensions);
         
         ///Load the ranges
         for(UINT i=0; i<ranges.size(); i++){
@@ -946,16 +946,16 @@ bool SVM::loadModelFromFile(fstream &file){
                 file >> model->sv_coef[j][i];
             }
             
-            model->SV[i] = new svm_node[numFeatures+1];
+            model->SV[i] = new svm_node[numInputDimensions+1];
             
             if(model->param.kernel_type == PRECOMPUTED) file >> model->SV[i][0].value;
             else{
-                for(UINT j=0; j<numFeatures; j++){
+                for(UINT j=0; j<numInputDimensions; j++){
                     file >> model->SV[i][j].index;
                     file >> model->SV[i][j].value;
                 }
-                model->SV[i][numFeatures].index = -1; //Assign the final node value
-                model->SV[i][numFeatures].value = 0;
+                model->SV[i][numInputDimensions].index = -1; //Assign the final node value
+                model->SV[i][numInputDimensions].value = 0;
             }
         }
         
@@ -1287,16 +1287,16 @@ struct svm_model* SVM::deepCopyModel() const{
             m->sv_coef[j][i] = model->sv_coef[j][i];
         }
         
-        m->SV[i] = new svm_node[numFeatures+1];
+        m->SV[i] = new svm_node[numInputDimensions+1];
         
         if(model->param.kernel_type == PRECOMPUTED) m->SV[i][0].value = model->SV[i][0].value;
         else{
-            for(UINT j=0; j<numFeatures; j++){
+            for(UINT j=0; j<numInputDimensions; j++){
                 m->SV[i][j].index =  model->SV[i][j].index;
                 m->SV[i][j].value = model->SV[i][j].value;
             }
-            m->SV[i][numFeatures].index = -1; //Assign the final node value
-            m->SV[i][numFeatures].value = 0;
+            m->SV[i][numInputDimensions].index = -1; //Assign the final node value
+            m->SV[i][numInputDimensions].value = 0;
         }
     }
     

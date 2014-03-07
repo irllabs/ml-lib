@@ -25,11 +25,15 @@ namespace GRT{
 MatrixDouble::MatrixDouble(){
     warningLog.setProceedingText("[WARNING MatrixDouble]");
     errorLog.setProceedingText("[ERROR MatrixDouble]");
+    this->dataPtr = NULL;
+    this->rows = 0;
+    this->cols = 0;
 }
     
 MatrixDouble::MatrixDouble(const unsigned int rows,const unsigned int cols){
     warningLog.setProceedingText("[WARNING MatrixDouble]");
     errorLog.setProceedingText("[ERROR MatrixDouble]");
+    this->dataPtr = NULL;
     if( rows > 0 && cols > 0 ){
         resize(rows, cols);
     }
@@ -306,7 +310,7 @@ bool MatrixDouble::saveToCSVFile(const string &filename){
     
 	for(UINT i=0; i<rows; i++){
 		for(UINT j=0; j<cols; j++){
-			file << dataPtr[i][j] << (j-cols-1 ? "," : "\n");
+			file << dataPtr[i][j] << (j<cols-1 ? "," : "\n");
 		}
 	}
     

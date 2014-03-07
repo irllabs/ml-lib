@@ -86,16 +86,16 @@ bool ClassLabelTimeoutFilter::deepCopyFrom(const PostProcessing *postProcessing)
     return false;
 }
     
-bool ClassLabelTimeoutFilter::process(const vector< double > &inputVector){
+bool ClassLabelTimeoutFilter::process(const VectorDouble &inputVector){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "process(const vector< double > &inputVector) - Not initialized!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - Not initialized!" << endl;
         return false;
     }
     
     if( inputVector.size() != numInputDimensions ){
-        errorLog << "process(const vector< double > &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
         return false;
     }
 #endif
@@ -226,7 +226,7 @@ bool ClassLabelTimeoutFilter::isTimeoutActive(){
     return false;
 }
     
-bool ClassLabelTimeoutFilter::saveSettingsToFile(string filename){
+bool ClassLabelTimeoutFilter::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The ClassLabelTimeoutFilter has not been initialized" << endl;
@@ -246,7 +246,7 @@ bool ClassLabelTimeoutFilter::saveSettingsToFile(string filename){
     return true;
 }
 
-bool ClassLabelTimeoutFilter::saveSettingsToFile(fstream &file){
+bool ClassLabelTimeoutFilter::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;

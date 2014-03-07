@@ -1,31 +1,41 @@
-/*
-GRT MIT License
-Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
+/**
+ @file
+ @author  Nicholas Gillian <ngillian@media.mit.edu>
+ @version 1.0
+ 
+ @brief This is the main base class that all GRT Feature Extraction algorithms should inherit from.
+ 
+ A large number of the functions in this class are virtual and simply return false as these functions must be overwridden by the inheriting class.
+ */
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
-and associated documentation files (the "Software"), to deal in the Software without restriction, 
-including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial 
-portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
-LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/**
+ GRT MIT License
+ Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
+ portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #ifndef GRT_CONTEXT_HEADER
 #define GRT_CONTEXT_HEADER
 
-#include "GRTBase.h"
+#include "MLBase.h"
 
 namespace GRT{
 
-class Context : public GRTBase
+class Context : public MLBase
 {
 public:
 	Context(void){ 
@@ -36,6 +46,7 @@ public:
         numOutputDimensions = 0;
         numContextInstances++;
     }
+    
 	virtual ~Context(void){
 		if( --numContextInstances == 0 ){
 	        delete stringContextMap;
@@ -105,15 +116,31 @@ public:
     Context* createNewInstance() const;
     
 protected:
+    /**
+     Initializes the base context module, this will resize the data vector and get the instance ready for processing new data.
+
+     @return returns true if the module was initialized, false otherwise
+     */
+    bool init();
+    
+    /**
+     Saves the core context settings to a file.
+     
+     @return returns true if the base settings were saved, false otherwise
+     */
+    bool saveContextSettingsToFile(fstream &file) const;
+    
+    /**
+     Loads the core context settings from a file.
+     
+     @return returns true if the base settings were loaded, false otherwise
+     */
+    bool loadContextSettingsFromFile(fstream &file);
+
     string contextType;
     bool initialized;
     bool okToContinue;
-    UINT numInputDimensions;
-    UINT numOutputDimensions;
     VectorDouble data;
-    DebugLog debugLog;
-    ErrorLog errorLog;
-    WarningLog warningLog;
 
 	static StringContextMap *getMap(){
         if( !stringContextMap ){ stringContextMap = new StringContextMap; }

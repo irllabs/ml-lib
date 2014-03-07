@@ -118,7 +118,7 @@ bool KNN::train(LabelledClassificationData trainingData){
     }
     
     //Store the number of features, classes and the training data
-    this->numFeatures = trainingData.getNumDimensions();
+    this->numInputDimensions = trainingData.getNumDimensions();
     this->numClasses = trainingData.getNumClasses();
     
     //TODO: In the future need to build a kdtree from the training data to allow better realtime prediction
@@ -316,8 +316,8 @@ bool KNN::predict(VectorDouble inputVector){
         return false;
     }
 
-    if( inputVector.size() != numFeatures ){
-        errorLog << "predict(VectorDouble inputVector) - the size of the input vector " << inputVector.size() << " does not match the number of features " << numFeatures <<  endl;
+    if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble inputVector) - the size of the input vector " << inputVector.size() << " does not match the number of features " << numInputDimensions <<  endl;
         return false;
     }
     
@@ -339,8 +339,8 @@ bool KNN::predict(const VectorDouble &inputVector,const UINT K){
         return false;
     }
 
-    if( inputVector.size() != numFeatures ){
-        errorLog << "predict(VectorDouble inputVector) - the size of the input vector " << inputVector.size() << " does not match the number of features " << numFeatures <<  endl;
+    if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble inputVector) - the size of the input vector " << inputVector.size() << " does not match the number of features " << numInputDimensions <<  endl;
         return false;
     }
 
@@ -497,7 +497,7 @@ bool KNN::saveModelToFile(fstream &file) const{
     
     //Write the header info
     file<<"GRT_KNN_MODEL_FILE_V1.0\n";
-    file<<"NumFeatures: " << numFeatures << endl;
+    file<<"NumFeatures: " << numInputDimensions << endl;
     file<<"NumClasses: " << numClasses << endl;
     file<<"K: "<<K<<endl;
     file<<"DistanceMethod: "<<distanceMethod<<endl;
@@ -532,7 +532,7 @@ bool KNN::saveModelToFile(fstream &file) const{
     for(UINT i=0; i<trainingData.getNumSamples(); i++){
         file<< trainingData[i].getClassLabel() << "\t";
         
-        for(UINT j=0; j<numFeatures; j++){
+        for(UINT j=0; j<numInputDimensions; j++){
             file << trainingData[i][j] << "\t";
         }
         file << endl;
@@ -581,7 +581,7 @@ bool KNN::loadModelFromFile(fstream &file){
         errorLog << "loadModelFromFile(fstream &file) - Could not find NumFeatures!" << endl;
         return false;
     }
-    file >> numFeatures;
+    file >> numInputDimensions;
     
     file >> word;
     if(word != "NumClasses:"){
@@ -649,7 +649,7 @@ bool KNN::loadModelFromFile(fstream &file){
     ///Read the ranges if needed
     if( useScaling ){
         //Resize the ranges buffer
-        ranges.resize( numFeatures );
+        ranges.resize( numInputDimensions );
         
         file >> word;
         if(word != "Ranges:"){
@@ -704,15 +704,15 @@ bool KNN::loadModelFromFile(fstream &file){
     }
     
     //Load the training data
-    trainingData.setNumDimensions(numFeatures);
+    trainingData.setNumDimensions(numInputDimensions);
     unsigned int classLabel = 0;
-    vector< double > sample(numFeatures,0);
+    vector< double > sample(numInputDimensions,0);
     for(UINT i=0; i<numTrainingSamples; i++){
         //Read the class label
         file >> classLabel;
         
         //Read the feature vector
-        for(UINT j=0; j<numFeatures; j++){
+        for(UINT j=0; j<numInputDimensions; j++){
             file >> sample[j];
         }
         
@@ -786,7 +786,7 @@ bool KNN::setDistanceMethod(UINT distanceMethod){
 
 double KNN::computeEuclideanDistance(const VectorDouble &a,const VectorDouble &b){
     double dist = 0;
-    for(UINT j=0; j<numFeatures; j++){
+    for(UINT j=0; j<numInputDimensions; j++){
         dist += SQR( a[j] - b[j] );
     }
     return sqrt( dist );
@@ -799,7 +799,7 @@ double KNN::computeCosineDistance(const VectorDouble &a,const VectorDouble &b){
     double magA = 0;
     double magB = 0;
 
-    for(UINT j=0; j<numFeatures; j++){
+    for(UINT j=0; j<numInputDimensions; j++){
         dotAB += a[j] * b[j];
         magA += SQR(a[j]);
         magB += SQR(b[j]);
@@ -813,7 +813,7 @@ double KNN::computeCosineDistance(const VectorDouble &a,const VectorDouble &b){
 double KNN::computeManhattanDistance(const VectorDouble &a,const VectorDouble &b){
     double dist = 0;
 
-    for(UINT j=0; j<numFeatures; j++){
+    for(UINT j=0; j<numInputDimensions; j++){
         dist += fabs( a[j] - b[j] );
     }
 

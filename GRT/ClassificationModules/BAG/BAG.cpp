@@ -107,7 +107,7 @@ bool BAG::train(LabelledClassificationData trainingData){
         return false;
     }
     
-    numFeatures = N;
+    numInputDimensions = N;
     numClasses = K;
     classLabels.resize(K);
     ranges = trainingData.getRanges();
@@ -163,13 +163,13 @@ bool BAG::predict(VectorDouble inputVector){
     
     if( !trained ) return false;
     
-	if( inputVector.size() != numFeatures ){
-        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numFeatures << endl;
+	if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numInputDimensions << endl;
 		return false;
 	}
     
     if( useScaling ){
-        for(UINT n=0; n<numFeatures; n++){
+        for(UINT n=0; n<numInputDimensions; n++){
             inputVector[n] = scale(inputVector[n], ranges[n].minValue, ranges[n].maxValue, 0, 1);
         }
     }
@@ -273,7 +273,7 @@ bool BAG::saveModelToFile(fstream &file) const{
 	//Write the header info
 	file << "GRT_BAG_MODEL_FILE_V1.0\n";
     file << "Trained: " << trained << endl;
-    file << "NumFeatures: " << numFeatures << endl;
+    file << "NumFeatures: " << numInputDimensions << endl;
 	file << "NumClasses: " << numClasses << endl;
     file << "UseScaling: " << useScaling << endl;
     file << "UseNullRejection: " << useNullRejection << endl;
@@ -374,7 +374,7 @@ bool BAG::loadModelFromFile(fstream &file){
         errorLog << "loadModelFromFile(string filename) - Could not find NumFeatures!" << endl;
         return false;
     }
-    file >> numFeatures;
+    file >> numInputDimensions;
     
     file >> word;
     if(word != "NumClasses:"){
@@ -400,7 +400,7 @@ bool BAG::loadModelFromFile(fstream &file){
     ///Read the ranges if needed
     if( useScaling ){
         //Resize the ranges buffer
-        ranges.resize(numFeatures);
+        ranges.resize(numInputDimensions);
         
         file >> word;
         if(word != "Ranges:"){

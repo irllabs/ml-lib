@@ -55,6 +55,29 @@ WeakClassifier::~WeakClassifier(){
     }
 }
     
+WeakClassifier& WeakClassifier::operator=(const WeakClassifier &rhs){
+    if( this != &rhs ){
+        this->weakClassifierType = rhs.weakClassifierType;
+        this->trained = rhs.trained;
+        this->numInputDimensions = rhs.numInputDimensions;
+        this->trainingLog = rhs.trainingLog;
+        this->errorLog = rhs.errorLog;
+        this->warningLog = rhs.warningLog;
+    }
+    return *this;
+}
+    
+bool WeakClassifier::copyBaseVariables(const WeakClassifier *weakClassifer){
+    if( weakClassifer == NULL ){
+        errorLog << "copyBaseVariables(const WeakClassifier *rhs) rhs is NULL!" << endl;
+        return false;
+    }
+    this->weakClassifierType = weakClassifer->weakClassifierType;
+    this->trained = weakClassifer->trained;
+    this->numInputDimensions = weakClassifer->numInputDimensions;
+    return true;
+}
+    
 WeakClassifier* WeakClassifier::createNewInstance() const{
     return createInstanceFromString( weakClassifierType );
 }

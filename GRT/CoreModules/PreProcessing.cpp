@@ -72,6 +72,23 @@ bool PreProcessing::copyBaseVariables(const PreProcessing *preProcessingModule){
     return true;
 }
     
+bool PreProcessing::reset(){
+    
+    //Reset the processed data vector
+    if( processedData.size() > 0 )
+        fill(processedData.begin(),processedData.end(),0);
+    
+    return true;
+}
+    
+bool PreProcessing::clear(){
+    initialized = false;
+    numInputDimensions = 0;
+    numOutputDimensions = 0;
+    processedData.clear();
+    return true;
+}
+    
 bool PreProcessing::init(){
     
     if( numOutputDimensions == 0 ){
@@ -96,9 +113,9 @@ bool PreProcessing::savePreProcessingSettingsToFile(fstream &file) const{
         return false;
     }
     
+    if( !MLBase::saveBaseSettingsToFile( file ) ) return false;
+    
     file << "Initialized: " << initialized << endl;
-    file << "NumInputDimensions: " << numInputDimensions << endl;
-    file << "NumOutputDimensions: " << numOutputDimensions << endl;
     
     return true;
 }
@@ -107,6 +124,11 @@ bool PreProcessing::loadPreProcessingSettingsFromFile(fstream &file){
     
     if( !file.is_open() ){
         errorLog << "loadPreProcessingSettingsFromFile(fstream &file) - The file is not open!" << endl;
+        return false;
+    }
+    
+    //Try and load the base settings from the file
+    if( !MLBase::loadBaseSettingsFromFile( file ) ){
         return false;
     }
     
@@ -120,24 +142,6 @@ bool PreProcessing::loadPreProcessingSettingsFromFile(fstream &file){
         return false;
     }
     file >> initialized;
-    
-    //Load the number of input dimensions
-    file >> word;
-    if( word != "NumInputDimensions:" ){
-        errorLog << "loadPreProcessingSettingsFromFile(fstream &file) - Failed to read NumInputDimensions header!" << endl;
-        clear();
-        return false;
-    }
-    file >> numInputDimensions;
-    
-    //Load the number of output dimensions
-    file >> word;
-    if( word != "NumOutputDimensions:" ){
-        errorLog << "loadPreProcessingSettingsFromFile(fstream &file) - Failed to read NumOutputDimensions header!" << endl;
-        clear();
-        return false;
-    }
-    file >> numOutputDimensions;
     
     //If the module has been initalized then call the init function to setup the processed data vector
     if( initialized ){

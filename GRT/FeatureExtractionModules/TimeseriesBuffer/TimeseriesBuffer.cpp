@@ -96,7 +96,7 @@ bool TimeseriesBuffer::reset(){
     return false;
 }
     
-bool TimeseriesBuffer::saveSettingsToFile(string filename){
+bool TimeseriesBuffer::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The feature extraction module has not been initialized" << endl;
@@ -132,7 +132,7 @@ bool TimeseriesBuffer::loadSettingsFromFile(string filename){
     return true;
 }
 
-bool TimeseriesBuffer::saveSettingsToFile(fstream &file){
+bool TimeseriesBuffer::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;

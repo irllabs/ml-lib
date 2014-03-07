@@ -90,16 +90,16 @@ bool Derivative::deepCopyFrom(const PreProcessing *preProcessing){
     return false;
 }
     
-bool Derivative::process(const vector< double > &inputVector){
+bool Derivative::process(const VectorDouble &inputVector){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "process(const vector< double > &inputVector) - Not initialized!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - Not initialized!" << endl;
         return false;
     }
     
     if( inputVector.size() != numInputDimensions ){
-        errorLog << "process(const vector< double > &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
         return false;
     }
 #endif
@@ -115,7 +115,7 @@ bool Derivative::reset(){
     return false;
 }
     
-bool Derivative::saveSettingsToFile(string filename){
+bool Derivative::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The DeadZone has not been initialized" << endl;
@@ -135,7 +135,7 @@ bool Derivative::saveSettingsToFile(string filename){
     return true;
 }
 
-bool Derivative::saveSettingsToFile(fstream &file){
+bool Derivative::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;
@@ -282,43 +282,43 @@ bool Derivative::init(UINT derivativeOrder,double delta,UINT numDimensions,bool 
     return true;
 }
 
-double Derivative::computeDerivative(double x){
+double Derivative::computeDerivative(const double x){
     
 #ifdef GRT_SAFE_CHECKING
     if( numInputDimensions != 1 ){
-        errorLog << "computeDerivative(double x) - The Number Of Input Dimensions is not 1! NumInputDimensions: " << numInputDimensions << endl;
+        errorLog << "computeDerivative(const double x) - The Number Of Input Dimensions is not 1! NumInputDimensions: " << numInputDimensions << endl;
         return 0;
     }
 #endif
     
-    vector< double > y = computeDerivative( vector< double >(1,x) );
+    vector< double > y = computeDerivative( VectorDouble(1,x) );
     
     if( y.size() == 0 ) return 0 ;
     
 	return y[0];
 }
     
-vector< double > Derivative::computeDerivative(vector< double > x){
+VectorDouble Derivative::computeDerivative(const VectorDouble &x){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "computeDerivative(vector< double > x) - Not Initialized!" << endl;
+        errorLog << "computeDerivative(const VectorDouble &x) - Not Initialized!" << endl;
         return vector<double>();
     }
     
     if( x.size() != numInputDimensions ){
-        errorLog << "computeDerivative(vector< double > x) - The Number Of Input Dimensions (" << numInputDimensions << ") does not match the size of the input vector (" << x.size() << ")!" << endl;
+        errorLog << "computeDerivative(const VectorDouble &x) - The Number Of Input Dimensions (" << numInputDimensions << ") does not match the size of the input vector (" << x.size() << ")!" << endl;
         return vector<double>();
     }
 #endif
-    
+    VectorDouble y;
     if( filterData ){
-        x = filter.filter( x );
-    }
+        y = filter.filter( x );
+    }else y = x;
     
     for(UINT n=0; n<numInputDimensions; n++){
-        processedData[n] = (x[n]-yy[n])/delta;
-        yy[n] = x[n];
+        processedData[n] = (y[n]-yy[n])/delta;
+        yy[n] = y[n];
     }
     
     if( derivativeOrder == SECOND_DERIVATIVE ){

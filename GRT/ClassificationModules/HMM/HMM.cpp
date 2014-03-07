@@ -116,7 +116,7 @@ bool HMM::train(LabelledTimeSeriesClassificationData trainingData){
     }
 
 	//Reset the HMM
-    numFeatures = trainingData.getNumDimensions();
+    numInputDimensions = trainingData.getNumDimensions();
 	numClasses = trainingData.getNumClasses();
 	models.resize( numClasses );
     classLabels.resize( numClasses );
@@ -189,8 +189,8 @@ bool HMM::predict(VectorDouble inputVector){
         return false;
     }
     
-	if( inputVector.size() != numFeatures ){
-        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numFeatures << endl;
+	if( inputVector.size() != numInputDimensions ){
+        errorLog << "predict(VectorDouble inputVector) - The size of the input vector (" << inputVector.size() << ") does not match the num features in the model (" << numInputDimensions << endl;
 		return false;
 	}
     

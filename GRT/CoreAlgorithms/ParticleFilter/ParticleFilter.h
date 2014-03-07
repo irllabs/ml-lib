@@ -121,11 +121,6 @@ public:
         
         const unsigned int N = initModel.size();
         
-        if( N != processNoise.size() || N != measurementNoise.size() ){
-            errorLog << "ERROR: Input Dimensions do not match!" << endl;
-            return false;
-        }
-        
         for(unsigned int i=0; i<N; i++){
             if( initModel[i].size() != 2 ){
                 errorLog << "ERROR: The " << i << " dimension of the initModel does not have 2 dimensions!" << endl;
@@ -665,13 +660,13 @@ protected:
      For speed, this function does not check to make sure the size of x and mu are the same. The user
      must therefore ensure that mu has the same size as x before they call this function.
      
-     @param const vector<double> &x: the x value for the RBF function
-     @param const vector<double> &mu: the center of the RBF function
+     @param const VectorDouble &x: the x value for the RBF function
+     @param const VectorDouble &mu: the center of the RBF function
      @param double sigma: the sigma value for the RBF function
      @param double weight: the weight for this RBF function. Default value=1.0
      @return returns the RBF function output for input x, given mu, alpha and the weight
      */
-    double rbf(const vector<double> &x,const vector<double> &mu,double sigma,double weight=1.0){
+    double rbf(const VectorDouble &x,const VectorDouble &mu,double sigma,double weight=1.0){
         double sum = 0;
         const unsigned int N = x.size();
         for(UINT i=0; i<N; i++){
@@ -683,10 +678,10 @@ protected:
     /**
      Computes the square of the input.
      
-     @param double x: the value you want to compute the square of
+     @param const double x: the value you want to compute the square of
      @return returns the square of the input
      */
-    double SQR(double x){ return x*x; }
+    double SQR(const double x){ return x*x; }
     
     bool initialized;                           ///<A flag that indicates if the filter has been initialized
     bool verbose;                               ///<A flag that indicates if warning and info messages should be printed
@@ -697,14 +692,14 @@ protected:
     double minimumWeightThreshold;              ///<Any weight below this value will not be resampled
     double robustMeanWeightDistance;            ///<The distance parameter used in the ROBUST_MEAN estimation mode
     double estimationLikelihood;                ///<The likelihood of the estimated state
-    vector< double > x;                         ///<The state estimation
-    vector< vector< double > > initModel;       ///<The noise model for the initial starting guess
-    vector< double > processNoise;              ///<The noise covariance in the system
-    vector< double > measurementNoise;          ///<The noise covariance in the measurement
+    VectorDouble x;                             ///<The state estimation
+    vector< VectorDouble > initModel;           ///<The noise model for the initial starting guess
+    VectorDouble processNoise;                  ///<The noise covariance in the system
+    VectorDouble measurementNoise;              ///<The noise covariance in the measurement
     vector< PARTICLE > &particles;              ///<A reference to the current active particle vector
     vector< PARTICLE > particleDistributionA;   ///<A vector of particles, this will either hold the particles before or after a resample
     vector< PARTICLE > particleDistributionB;   ///<A vector of particles, this will either hold the particles before or after a resample
-    vector< double > cumsum;                    ///<The cumulative sum vector used for resampling the particles
+    VectorDouble cumsum;                        ///<The cumulative sum vector used for resampling the particles
     Random rand;                                ///<A random number generator
     WarningLog warningLog;
     ErrorLog errorLog;

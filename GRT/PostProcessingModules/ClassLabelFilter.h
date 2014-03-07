@@ -1,20 +1,32 @@
-/*
+/**
+ @file
+ @author  Nicholas Gillian <ngillian@media.mit.edu>
+ @version 1.0
+ 
+ @brief The Class Label Filter is a useful post-processing module which can remove erroneous or sporadic prediction spikes that may be made by a classifier on a continuous input stream of data.
+ 
+ For instance, imagine a classifier that correctly outputs the predicted class label of 1 for a large majority of the time that a user is performing gesture 1, but every so often (perhaps due to sensor noise), the classifier outputs the class label of 2. In this instance the class label filter can be used to remove these sporadic prediction values, with the output of the class label filter in this instance being 1.
+ 
+ The Class Label Filter module is controlled through two parameters: the minimum count value and buffer size value. The minimum count sets the minimum number of class label values that must be present in the class labels buffer for that class label value to be output by the Class Label Filter. The size of the class labels buffer is set by the buffer size parameter. If there is more than one type of class label in the buffer then the class label with the maximum number of instances will be output. If the maximum number of instances for any class label in the buffer is less than the minimum count parameter then the Class Label Filter will output the default null rejection class label of 0. The minimum count and buffer size parameters can be set using the setMinimumCount(UINT minimumCount) and setBufferSize(UINT bufferSize) methods.
+ */
+
+/**
  GRT MIT License
  Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
  
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
  subject to the following conditions:
  
- The above copyright notice and this permission notice shall be included in all copies or substantial 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
  portions of the Software.
  
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
@@ -22,7 +34,7 @@
 #define GRT_CLASS_LABEL_FILTER_HEADER
 
 #include "../Util/GRTCommon.h"
-#include "../GestureRecognitionPipeline/PostProcessing.h"
+#include "../CoreModules/PostProcessing.h"
 
 namespace GRT{
 
@@ -78,10 +90,10 @@ public:
      This function is called by the GestureRecognitionPipeline when any new input data needs to be processed (during the prediction phase for example).
      This function calls the ClassLabelFilter's filter(...) function.
      
-     @param const vector< double > &inputVector: the inputVector that should be processed.  This should be a 1-dimensional vector containing a predicted class label
+     @param const VectorDouble &inputVector: the inputVector that should be processed.  This should be a 1-dimensional vector containing a predicted class label
 	 @return true if the data was processed, false otherwise
      */
-    virtual bool process(const vector< double > &inputVector);
+    virtual bool process(const VectorDouble &inputVector);
     
     /**
      Sets the PostProcessing reset function, overwriting the base PostProcessing function.
@@ -99,7 +111,7 @@ public:
      @param string filename: the name of the file to save the settings to
      @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(string filename);
+    virtual bool saveSettingsToFile(string filename) const;
     
     /**
      This saves the post processing settings to a file.
@@ -108,7 +120,7 @@ public:
      @param string filename: the name of the file to save the settings to
      @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(fstream &file);
+    virtual bool saveSettingsToFile(fstream &file) const;
     
     /**
      This loads the post processing  settings from a file.

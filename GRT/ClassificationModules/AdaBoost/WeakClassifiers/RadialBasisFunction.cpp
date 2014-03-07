@@ -69,7 +69,7 @@ RadialBasisFunction& RadialBasisFunction::operator=(const RadialBasisFunction &r
     return *this;
 }
 
-bool RadialBasisFunction::clone(const WeakClassifier *weakClassifer){
+bool RadialBasisFunction::deepCopyFrom(const WeakClassifier *weakClassifer){
     if( weakClassifer == NULL ) return false;
     
     if( this->getWeakClassifierType() == weakClassifer->getWeakClassifierType() ){
@@ -196,7 +196,7 @@ double RadialBasisFunction::rbf(const VectorDouble &a,const VectorDouble &b){
     return exp( gamma * r );
 }
     
-bool RadialBasisFunction::saveModelToFile(fstream &file){
+bool RadialBasisFunction::saveModelToFile(fstream &file) const{
     
     if(!file.is_open())
 	{
@@ -320,27 +320,27 @@ bool RadialBasisFunction::loadModelFromFile(fstream &file){
 void RadialBasisFunction::print() const{
 }
     
-VectorDouble RadialBasisFunction::getRBFCentre(){
+VectorDouble RadialBasisFunction::getRBFCentre() const{
     return rbfCentre;
 }
     
-UINT RadialBasisFunction::getNumSteps(){
+UINT RadialBasisFunction::getNumSteps() const{
     return numSteps;
 }
 
-double RadialBasisFunction::getPositiveClassificationThreshold(){
+double RadialBasisFunction::getPositiveClassificationThreshold() const{
     return positiveClassificationThreshold;
 }
 
-double RadialBasisFunction::getAlpha(){
+double RadialBasisFunction::getAlpha() const{
     return alpha;
 }
 
-double RadialBasisFunction::getMinAlphaSearchRange(){
+double RadialBasisFunction::getMinAlphaSearchRange() const{
     return minAlphaSearchRange;
 }
 
-double RadialBasisFunction::getMaxAlphaSearchRange(){
+double RadialBasisFunction::getMaxAlphaSearchRange() const{
     return maxAlphaSearchRange;
 }
 

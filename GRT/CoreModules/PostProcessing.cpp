@@ -74,6 +74,68 @@ bool PostProcessing::copyBaseVariables(const PostProcessing *postProcessingModul
     return true;
 }
     
+bool PostProcessing::init(){
+    
+    if( numOutputDimensions == 0 ){
+        errorLog << "init() - Failed to init module, the number of output dimensions is zero!" << endl;
+        initialized = false;
+        return false;
+    }
+    
+    //Setup the output vector
+    processedData.resize( numOutputDimensions );
+    
+    //Flag the module has been initialized
+    initialized = true;
+    
+    return true;
+}
+
+bool PostProcessing::savePostProcessingSettingsToFile(fstream &file) const{
+    
+    if( !file.is_open() ){
+        errorLog << "savePostProcessingSettingsToFile(fstream &file) - The file is not open!" << endl;
+        return false;
+    }
+    
+    if( !MLBase::saveBaseSettingsToFile( file ) ) return false;
+    
+    file << "Initialized: " << initialized << endl;
+    
+    return true;
+}
+
+bool PostProcessing::loadPostProcessingSettingsFromFile(fstream &file){
+    
+    if( !file.is_open() ){
+        errorLog << "loadPostProcessingSettingsFromFile(fstream &file) - The file is not open!" << endl;
+        return false;
+    }
+    
+    //Try and load the base settings from the file
+    if( !MLBase::loadBaseSettingsFromFile( file ) ){
+        return false;
+    }
+    
+    string word;
+    
+    //Load if the filter has been initialized
+    file >> word;
+    if( word != "Initialized:" ){
+        errorLog << "loadPostProcessingSettingsFromFile(fstream &file) - Failed to read Initialized header!" << endl;
+        clear();
+        return false;
+    }
+    file >> initialized;
+    
+    //If the module has been initalized then call the init function to setup the processed data vector
+    if( initialized ){
+        return init();
+    }
+    
+    return true;
+}
+    
 PostProcessing* PostProcessing::createNewInstance() const{
     return createInstanceFromString(postProcessingType);
 }

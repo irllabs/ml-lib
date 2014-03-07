@@ -38,16 +38,19 @@ FeatureExtraction* FeatureExtraction::createNewInstance() const{
     return createInstanceFromString(featureExtractionType);
 }
     
-FeatureExtraction::FeatureExtraction(void){
+FeatureExtraction::FeatureExtraction(){
     featureExtractionType = "NOT_SET"; 
     initialized = false; 
     featureDataReady = false;
     numInputDimensions = 0;
     numOutputDimensions = 0;
     numFeatureExtractionInstances++;
+    infoLog.setProceedingText("[FeatureExtraction]");
+    warningLog.setProceedingText("[WARNING FeatureExtraction]");
+    errorLog.setProceedingText("[ERROR FeatureExtraction]");
 }
     
-FeatureExtraction::~FeatureExtraction(void){
+FeatureExtraction::~FeatureExtraction(){
     if( --numFeatureExtractionInstances == 0 ){
         delete stringFeatureExtractionMap;
         stringFeatureExtractionMap = NULL;
@@ -78,48 +81,70 @@ bool FeatureExtraction::copyBaseVariables(const FeatureExtraction *featureExtrac
     return true;
 }
     
-bool FeatureExtraction::saveBaseSettingsToFile(fstream &file){
+bool FeatureExtraction::init(){
     
-    if( !file.is_open() ){
-        errorLog << "saveBaseSettingsToFile(fstream &file) - The file is not open!" << endl;
+    //Clear any previous feature vector
+    featureVector.clear();
+    
+    if( numOutputDimensions == 0 ){
+        errorLog << "init() - Failed to init module, the number of output dimensions is zero!" << endl;
+        initialized = false;
         return false;
     }
     
-    file << "NumInputDimensions: " << numInputDimensions << endl;
-    file << "NumOutputDimensions: " << numOutputDimensions << endl;
+    //Flag that the feature data has not been computed yet
+    featureDataReady = false;
+    
+    //Resize the feature vector
+    featureVector.resize(numOutputDimensions,0);
+    
+    //Flag the module has been initialized
+    initialized = true;
     
     return true;
 }
 
-bool FeatureExtraction::loadBaseSettingsFromFile(fstream &file){
-	
-	featureVector.clear();
+bool FeatureExtraction::saveFeatureExtractionSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
-        errorLog << "loadBaseSettingsFromFile(fstream &file) - The file is not open!" << endl;
+        errorLog << "saveFeatureExtractionSettingsToFile(fstream &file) - The file is not open!" << endl;
+        return false;
+    }
+    
+    if( !MLBase::saveBaseSettingsToFile( file ) ) return false;
+    
+    file << "Initialized: " << initialized << endl;
+    
+    return true;
+}
+
+bool FeatureExtraction::loadFeatureExtractionSettingsFromFile(fstream &file){
+    
+    if( !file.is_open() ){
+        errorLog << "loadFeatureExtractionSettingsFromFile(fstream &file) - The file is not open!" << endl;
+        return false;
+    }
+    
+    //Try and load the base settings from the file
+    if( !MLBase::loadBaseSettingsFromFile( file ) ){
         return false;
     }
     
     string word;
     
-    //Load the NumInputDimensions
+    //Load if the filter has been initialized
     file >> word;
-    if( word != "NumInputDimensions:" ){
-        errorLog << "loadBaseSettingsFromFile(fstream &file) - Failed to read NumInputDimensions header!" << endl;
+    if( word != "Initialized:" ){
+        errorLog << "loadPreProcessingSettingsFromFile(fstream &file) - Failed to read Initialized header!" << endl;
+        clear();
         return false;
     }
-    file >> numInputDimensions;
+    file >> initialized;
     
-    //Load the NumOutputDimensions
-    file >> word;
-    if( word != "NumOutputDimensions:" ){
-        errorLog << "loadBaseSettingsFromFile(fstream &file) - Failed to read NumOutputDimensions header!" << endl;
-        return false;
+    //If the module has been initalized then call the init function to setup the feature data vector
+    if( initialized ){
+        return init();
     }
-    file >> numOutputDimensions;
-
-	//Resize the feature vector
-	featureVector.resize(numOutputDimensions,0);
     
     return true;
 }

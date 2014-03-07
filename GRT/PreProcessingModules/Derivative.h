@@ -3,33 +3,35 @@
  @author  Nicholas Gillian <ngillian@media.mit.edu>
  @version 1.0
  
- @section LICENSE
+ @brief The Derivative class computes either the first or second order derivative of the input signal. 
+ 
+ @example PreprocessingModulesExamples/DerivativeExample/DerivativeExample.cpp
+ */
+
+/**
  GRT MIT License
  Copyright (c) <2012> <Nicholas Gillian, Media Lab, MIT>
  
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- and associated documentation files (the "Software"), to deal in the Software without restriction, 
- including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
- and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
  subject to the following conditions:
  
- The above copyright notice and this permission notice shall be included in all copies or substantial 
+ The above copyright notice and this permission notice shall be included in all copies or substantial
  portions of the Software.
  
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
- LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- @section DESCRIPTION
- The Derivative class computes either the first or second order derivative of the input signal. 
  */
 
 #ifndef GRT_DERIVATIVE_HEADER
 #define GRT_DERIVATIVE_HEADER
 
-#include "../GestureRecognitionPipeline/PreProcessing.h"
+#include "../CoreModules/PreProcessing.h"
 #include "MovingAverageFilter.h"
 
 namespace GRT{
@@ -104,7 +106,7 @@ public:
      @param string filename: the name of the file to save the settings to
      @return returns true if the model was saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(string filename);
+    virtual bool saveSettingsToFile(string filename) const;
     
     /**
      This saves the current settings of the Derivative to a file.
@@ -113,7 +115,7 @@ public:
      @param fstream &file: a reference to the file the settings will be saved to
      @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(fstream &file);
+    virtual bool saveSettingsToFile(fstream &file) const;
     
     /**
      This loads the Derivative settings from a file.
@@ -152,15 +154,15 @@ public:
      @param double x: the value to compute the derivative of, this should only be called if the dimensionality of the filter was set to 1
 	 @return the derivative of the input.  Zero will be returned if the value was not computed
      */
-	double computeDerivative(double x);
+	double computeDerivative(const double x);
     
     /**
      Computes the derivative of the input, the dimensionality of the input should match the number of inputs for the derivative
      
-     @param vector< double > x: the values to compute the derivative of, the dimensionality of the input should match the number of inputs for the derivative
+     @param const VectorDouble &x: the values to compute the derivative of, the dimensionality of the input should match the number of inputs for the derivative
 	 @return the derivatives of the input.  An empty vector will be returned if the values were not filtered
      */
-    vector< double > computeDerivative(vector< double > x);
+    VectorDouble computeDerivative(const VectorDouble &x);
     
     /**
      Sets the derivative order.  This should either be FIRST_DERIVATIVE (1) or SECOND_DERIVATIVE (2).
@@ -224,7 +226,7 @@ public:
      @param UINT derivativeOrder: flags which derivative order you want, the default value is 0 which will return whatever the current derivativeOrder is
 	 @return returns the last computed derivative values, will return 0 if no values have been computed
      */
-    vector< double > getDerivatives(UINT derivativeOrder = 0);
+    VectorDouble getDerivatives(UINT derivativeOrder = 0);
 
 protected:
     UINT derivativeOrder;                   ///< The order of the derivative that will be computed (either FIRST_DERIVATIVE or SECOND_DERIVATIVE)
@@ -232,8 +234,8 @@ protected:
     double delta;                           ///< The estimated time between sensor samples
     bool filterData;                        ///< Flags if the input data should be filtered before the derivative is computed
     MovingAverageFilter filter;             ///< The filter used to low pass filter the input data
-	vector< double > yy;                    ///< A buffer holding the previous input value(s)
-    vector< double > yyy;                   ///< A buffer holding the previous first derivative values
+	VectorDouble yy;                        ///< A buffer holding the previous input value(s)
+    VectorDouble yyy;                       ///< A buffer holding the previous first derivative values
     
     static RegisterPreProcessingModule< Derivative > registerModule;
     

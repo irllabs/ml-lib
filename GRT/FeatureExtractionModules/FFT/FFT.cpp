@@ -25,12 +25,16 @@ namespace GRT{
 //Register the FFT module with the FeatureExtraction base class
 RegisterFeatureExtractionModule< FFT > FFT::registerModule("FFT");
 
-FFT::FFT(UINT fftWindowSize,UINT hopSize,UINT numDimensions,UINT fftWindowFunction,bool computeMagnitude,bool computePhase):tempBuffer(NULL){ 
+FFT::FFT(UINT fftWindowSize,UINT hopSize,UINT numDimensions,UINT fftWindowFunction,bool computeMagnitude,bool computePhase){
     featureExtractionType = "FFT"; 
     initialized = false; 
     featureDataReady = false;
     numInputDimensions = 0;
     numOutputDimensions = 0;
+    
+    infoLog.setProceedingText("[FFT]");
+    warningLog.setProceedingText("[WARNING FFT]");
+    errorLog.setProceedingText("[ERROR FFT]");
     
     if( isPowerOfTwo(fftWindowSize) && hopSize > 0 && numDimensions > 0 ){
         init(fftWindowSize,hopSize,numDimensions,fftWindowFunction,computeMagnitude,computePhase);
@@ -38,24 +42,20 @@ FFT::FFT(UINT fftWindowSize,UINT hopSize,UINT numDimensions,UINT fftWindowFuncti
 }
     
 FFT::FFT(const FFT &rhs){
+    infoLog.setProceedingText("[FFT]");
+    warningLog.setProceedingText("[WARNING FFT]");
+    errorLog.setProceedingText("[ERROR FFT]");
+
     //Invoke the equals operator to copy the data from the rhs instance to this instance
     *this = rhs;
 }
     
 FFT::~FFT(void){
-    if( tempBuffer != NULL ){
-        delete[] tempBuffer;
-        tempBuffer = NULL;
-    }
 }
     
 FFT& FFT::operator=(const FFT &rhs){
+    
     if( this != &rhs ){
-        if( tempBuffer != NULL ){
-            delete[] tempBuffer;
-            tempBuffer = NULL;
-        }
-        
         this->hopSize = rhs.hopSize;
         this->dataBufferSize = rhs.dataBufferSize;
         this->fftWindowSize = rhs.fftWindowSize;
@@ -64,10 +64,9 @@ FFT& FFT::operator=(const FFT &rhs){
         this->computeMagnitude = rhs.computeMagnitude;
         this->computePhase = rhs.computePhase;
         this->dataBuffer = rhs.dataBuffer;
+        this->tempBuffer = rhs.tempBuffer;
         this->fft = rhs.fft;
         this->windowSizeMap = rhs.windowSizeMap;
-		this->tempBuffer = NULL;
-		if( this->dataBufferSize > 0 ) this->tempBuffer = new double[ this->dataBufferSize ];
         
         copyBaseVariables( (FeatureExtraction*)&rhs );
     }
@@ -92,7 +91,7 @@ bool FFT::deepCopyFrom(const FeatureExtraction *featureExtraction){
     return false;
 }
     
-bool FFT::saveSettingsToFile(string filename){
+bool FFT::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The feature extraction module has not been initialized" << endl;
@@ -128,7 +127,7 @@ bool FFT::loadSettingsFromFile(string filename){
     return true;
 }
 
-bool FFT::saveSettingsToFile(fstream &file){
+bool FFT::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;
@@ -228,11 +227,6 @@ bool FFT::init(UINT fftWindowSize,UINT hopSize,UINT numDimensions,UINT fftWindow
         errorLog << "init(UINT fftWindowSize,UINT hopSize,UINT numDimensions,UINT fftWindowFunction,bool computeMagnitude,bool computePhase) - Unkown Window Function!" << endl;
         return false;
     }
-    
-    if( tempBuffer != NULL ){
-        delete[] tempBuffer;
-        tempBuffer = NULL;
-    }
        
     this->dataBufferSize = fftWindowSize;
     this->fftWindowSize = fftWindowSize;
@@ -242,7 +236,6 @@ bool FFT::init(UINT fftWindowSize,UINT hopSize,UINT numDimensions,UINT fftWindow
     this->computePhase = computePhase;
     hopCounter = 0;
     featureDataReady = false;
-    tempBuffer = new double[ dataBufferSize ];
     numInputDimensions = numDimensions;
     
     //Set the output size, the fftWindowSize is divided by 2 because the FFT is symmetrical so only half the actual FFT is returned
@@ -256,6 +249,8 @@ bool FFT::init(UINT fftWindowSize,UINT hopSize,UINT numDimensions,UINT fftWindow
     
     dataBuffer.clear();
     dataBuffer.resize(dataBufferSize,VectorDouble(numDimensions,0));
+    tempBuffer.clear();
+    tempBuffer.resize( dataBufferSize );
     fft.clear();
     fft.resize(numDimensions);
     
@@ -271,15 +266,15 @@ bool FFT::init(UINT fftWindowSize,UINT hopSize,UINT numDimensions,UINT fftWindow
     return true;
 }
     
-bool FFT::computeFeatures(VectorDouble inputVector){ 
+bool FFT::computeFeatures(const VectorDouble &inputVector){
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "computeFeatures(VectorDouble inputVector) - Not initialized!" << endl;
+        errorLog << "computeFeatures(const VectorDouble &inputVector) - Not initialized!" << endl;
         return false;
     }
     
     if( inputVector.size() != numInputDimensions ){
-        errorLog << "computeFeatures(VectorDouble inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the FeatureExtraction (" << numInputDimensions << ")!" << endl;
+        errorLog << "computeFeatures(const VectorDouble &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the FeatureExtraction (" << numInputDimensions << ")!" << endl;
         return false;
     }
 #endif
@@ -287,15 +282,15 @@ bool FFT::computeFeatures(VectorDouble inputVector){
     return update(inputVector);
 }
     
-bool FFT::update(double x){
+bool FFT::update(const double x){
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "update(double x) - Not initialized!" << endl;
+        errorLog << "update(const double x) - Not initialized!" << endl;
         return false;
     }
     
     if( numInputDimensions != 1 ){
-        errorLog << "update(double x) - The size of the input (1) does not match that of the FeatureExtraction (" << numInputDimensions << ")!" << endl;
+        errorLog << "update(const double x) - The size of the input (1) does not match that of the FeatureExtraction (" << numInputDimensions << ")!" << endl;
         return false;
     }
 #endif
@@ -391,6 +386,16 @@ UINT FFT::getFFTWindowFunction(){
 UINT FFT::getHopCounter(){ 
     if(initialized){ return hopCounter; } 
     return 0; 
+}
+    
+VectorDouble FFT::getFrequencyBins(const unsigned int sampleRate){
+    if( !initialized ){ return VectorDouble(); }
+    
+    VectorDouble freqBins( fftWindowSize );
+    for(unsigned int i=0; i<fftWindowSize; i++){
+        freqBins[i] = (i*sampleRate) / fftWindowSize;
+    }
+    return freqBins;
 }
     
 bool FFT::setHopSize(UINT hopSize){

@@ -72,16 +72,16 @@ bool DeadZone::deepCopyFrom(const PreProcessing *preProcessing){
     return false;
 }
     
-bool DeadZone::process(const vector< double > &inputVector){
+bool DeadZone::process(const VectorDouble &inputVector){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "process(const vector< double > &inputVector) - Not initialized!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - Not initialized!" << endl;
         return false;
     }
     
     if( inputVector.size() != numInputDimensions ){
-        errorLog << "process(const vector< double > &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
         return false;
     }
 #endif
@@ -96,7 +96,7 @@ bool DeadZone::reset(){
     return true;
 }
     
-bool DeadZone::saveSettingsToFile(string filename){
+bool DeadZone::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The DeadZone has not been initialized" << endl;
@@ -116,7 +116,7 @@ bool DeadZone::saveSettingsToFile(string filename){
 	return true;
 }
 
-bool DeadZone::saveSettingsToFile(fstream &file){
+bool DeadZone::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;
@@ -228,22 +228,22 @@ bool DeadZone::init(double lowerLimit,double upperLimit,UINT numDimensions){
     return true;
 }
 
-double DeadZone::filter(double x){
-    vector< double > y = filter(vector<double>(1,x));
+double DeadZone::filter(const double x){
+    VectorDouble y = filter(VectorDouble(1,x));
     if( y.size() == 0 ) return 0;
 	return y[0];
 }
     
-vector< double > DeadZone::filter(const vector< double > &x){
+VectorDouble DeadZone::filter(const VectorDouble &x){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "filter(vector< double > x) - Not Initialized!" << endl;
+        errorLog << "filter(const VectorDouble &x) - Not Initialized!" << endl;
         return vector<double>();
     }
     
     if( x.size() != numInputDimensions ){
-        errorLog << "filter(vector< double > x) - The Number Of Input Dimensions (" << numInputDimensions << ") does not match the size of the input vector (" << x.size() << ")!" << endl;
+        errorLog << "filter(const VectorDouble &x) - The Number Of Input Dimensions (" << numInputDimensions << ") does not match the size of the input vector (" << x.size() << ")!" << endl;
         return vector<double>();
     }
 #endif

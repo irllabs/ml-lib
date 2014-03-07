@@ -88,16 +88,16 @@ bool ClassLabelFilter::deepCopyFrom(const PostProcessing *postProcessing){
     return false;
 }
 
-bool ClassLabelFilter::process(const vector< double > &inputVector){
+bool ClassLabelFilter::process(const VectorDouble &inputVector){
     
 #ifdef GRT_SAFE_CHECKING
     if( !initialized ){
-        errorLog << "process(const vector< double > &inputVector) - Not initialized!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - Not initialized!" << endl;
         return false;
     }
     
     if( inputVector.size() != numInputDimensions ){
-        errorLog << "process(const vector< double > &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
+        errorLog << "process(const VectorDouble &inputVector) - The size of the inputVector (" << inputVector.size() << ") does not match that of the filter (" << numInputDimensions << ")!" << endl;
         return false;
     }
 #endif
@@ -202,7 +202,7 @@ UINT ClassLabelFilter::filter(UINT predictedClassLabel){
     return filteredClassLabel;
 }
     
-bool ClassLabelFilter::saveSettingsToFile(string filename){
+bool ClassLabelFilter::saveSettingsToFile(string filename) const{
     
     if( !initialized ){
         errorLog << "saveSettingsToFile(string filename) - The ClassLabelFilter has not been initialized" << endl;
@@ -222,7 +222,7 @@ bool ClassLabelFilter::saveSettingsToFile(string filename){
     return true;
 }
 
-bool ClassLabelFilter::saveSettingsToFile(fstream &file){
+bool ClassLabelFilter::saveSettingsToFile(fstream &file) const{
     
     if( !file.is_open() ){
         errorLog << "saveSettingsToFile(fstream &file) - The file is not open!" << endl;
