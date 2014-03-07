@@ -407,6 +407,7 @@ namespace ml
         
         // call the objects' setup routines
         FLEXT_SETUP(ml_svm);
+        FLEXT_SETUP(ml_adaboost);
         FLEXT_SETUP(ml_dtw);
         FLEXT_SETUP(ml_hmm);
         FLEXT_SETUP(ml_mlp);
