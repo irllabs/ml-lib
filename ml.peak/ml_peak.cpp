@@ -41,10 +41,8 @@ namespace ml
         
         static void setup(t_classid c)
         {
-            FLEXT_CADDATTR_SET(c, "threshold_crossing_mode", set_threshold_crossing_mode);
-            FLEXT_CADDATTR_SET(c, "negative_threshold", set_negative_threshold);
-            FLEXT_CADDATTR_SET(c, "positive_threshold", set_positive_threshold);
-            FLEXT_CADDATTR_SET(c, "low_pass_filter_size", set_low_pass_filter_size);
+            FLEXT_CADDATTR_SET(c, "search_window_size", set_search_window_size);
+//            FLEXT_CADDATTR_SET(c, "low_pass_filter_size", set_low_pass_filter_size);
             
             FLEXT_CADDMETHOD_(c, 0, "reset", reset);
             FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
@@ -61,17 +59,11 @@ namespace ml
         void usage();
   
         // Attribute setters
-        void set_threshold_crossing_mode(int threshold_crossing_mode);
-        void set_negative_threshold(float negative_threshold);
-        void set_positive_threshold(float positive_threshold);
-        void set_low_pass_filter_size(int low_pass_filter_size);
+//        void set_low_pass_filter_size(int low_pass_filter_size);
+        void set_search_window_size(int search_window_size);
+
         
         // Attribute Getters
-        
-        // TODO: this shoudn't be here because we shouldn't be inheriting ml!
-        // Implement pure virtual methods
-        GRT::MLBase &get_MLBase_instance();
-        const GRT::MLBase &get_MLBase_instance() const;
         
     private:
         
@@ -82,10 +74,8 @@ namespace ml
         FLEXT_CALLBACK(timeout);
         
         // Attribute wrappers
-        FLEXT_CALLSET_I(set_threshold_crossing_mode);
-        FLEXT_CALLSET_F(set_negative_threshold);
-        FLEXT_CALLSET_F(set_positive_threshold);
-        FLEXT_CALLSET_I(set_low_pass_filter_size);
+//        FLEXT_CALLSET_I(set_low_pass_filter_size);
+        FLEXT_CALLSET_I(set_search_window_size);
 
         // Instance variables
         GRT::PeakDetection peakDetection;
@@ -93,46 +83,26 @@ namespace ml
     };
     
     // Attribute setters
-    void ml_peak::set_threshold_crossing_mode(int threshold_crossing_mode)
-    {
-        bool success = peakDetection.setThresholdCrossingMode(threshold_crossing_mode);
+//    void ml_peak::set_low_pass_filter_size(int low_pass_filter_size)
+//    {
+//        bool success = peakDetection.setLowPassFilterSize(low_pass_filter_size);
+//        
+//        if (!success)
+//        {
+//            error("unable to set low pass filter size");
+//        }
+//    }
     
+    void ml_peak::set_search_window_size(int search_window_size)
+    {
+        bool success = peakDetection.setSearchWindowSize(search_window_size);
+
         if (!success)
         {
-            error("unable to set threshold crossing mode");
+            error("unable to set search window size");
         }
     }
-    
-    void ml_peak::set_negative_threshold(float negative_threshold)
-    {
-        bool success = peakDetection.setNegativeThreshold(negative_threshold);
-        
-        if (!success)
-        {
-            error("unable to set negative threshold");
-        }
-    }
-    
-    void ml_peak::set_positive_threshold(float positive_threshold)
-    {
-        bool success = peakDetection.setPositiveThreshold(positive_threshold);
-        
-        if (!success)
-        {
-            error("unable to set positive threshold");
-        }
-    }
-    
-    void ml_peak::set_low_pass_filter_size(int low_pass_filter_size)
-    {
-        bool success = peakDetection.setLowPassFilterSize(low_pass_filter_size);
-        
-        if (!success)
-        {
-            error("unable to set low pass filter size");
-        }
-    }
-    
+
     
     // Attribute Getters
     
@@ -141,6 +111,12 @@ namespace ml
     {
         AtomList peaks;
         bool peakFound = false;
+        
+        
+        // TODO: update this when we the GRT code is complete
+        error("peak detection currently not fully implemented in GRT");
+        return;
+        
         
         for (uint32_t index = 0; index < (unsigned)argc; ++index)
         {
@@ -153,7 +129,7 @@ namespace ml
                 t_atom location_a;
                 t_atom value_a;
                 
-                uint32_t rel_index = peakDetection.getPeakLocation();
+                uint32_t rel_index = 0; // peakDetection.getPeakLocation();
                 uint32_t abs_index = index - rel_index;
                 
                 if (rel_index > index)
@@ -178,8 +154,13 @@ namespace ml
     
     void ml_peak::update(float f)
     {
+        // TODO: update this when we the GRT code is complete
+        error("peak detection currently not fully implemented in GRT");
+        return;
+        
+        
         bool peakFound = peakDetection.update(f);
-        float derivative = peakDetection.getDerivative();
+        float derivative = 0; // peakDetection.getDerivative();
 
         ToOutFloat(1, derivative);
         
@@ -201,7 +182,12 @@ namespace ml
     
     void ml_peak::timeout()
     {
-        bool success = peakDetection.triggerGateTimeout();
+        // TODO: update this when we the GRT code is complete
+        error("peak detection currently not fully implemented in GRT");
+        return;
+
+        
+        bool success = true;// peakDetection.triggerGateTimeout();
         
         if (!success)
         {
@@ -214,10 +200,9 @@ namespace ml
         post("%s", ML_POST_SEP);
         post("Attributes:");
         post("%s", ML_POST_SEP);
-        post("threshold_crossing_mode: 0 - positive threshold crossing, 1 - negative threshold crossing, 2 - positive / negative threshold crossing, 3 - negative / positive threshold crossing");
-        post("negative_threshold: a floating point value setting the negative threshold" );
-        post("positive_threshold: a floating point value setting the positive threshold" );
-        post("low_pass_filter_size: an integer setting the low pass filter size (2 or higher)");
+        post("search_window_size: an integer setting the search window size in values (default: 5)");
+
+//        post("low_pass_filter_size: an integer setting the low pass filter size (2 or higher)");
         post("%s", ML_POST_SEP);
         post("Methods:");
         post("%s", ML_POST_SEP);
