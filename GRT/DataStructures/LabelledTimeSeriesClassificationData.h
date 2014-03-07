@@ -310,21 +310,21 @@ public:
      
 	 @return an unsigned int representing the number of dimensions in the classification data
      */
-	UINT inline getNumDimensions(){ return numDimensions; }
+	UINT inline getNumDimensions() const { return numDimensions; }
 	
 	/**
      Gets the number of samples in the classification data across all the classes.
      
 	 @return an unsigned int representing the total number of samples in the classification data
      */
-	UINT inline getNumSamples(){ return totalNumSamples; }
+	UINT inline getNumSamples() const { return totalNumSamples; }
 	
 	/**
      Gets the number of classes.
      
 	 @return an unsigned int representing the number of classes
      */
-	UINT inline getNumClasses(){ return (UINT)classTracker.size(); }
+	UINT inline getNumClasses() const { return (UINT)classTracker.size(); }
     
     /**
      Gets the minimum class label in the dataset. If there are no values in the dataset then the value 99999 will be returned.
