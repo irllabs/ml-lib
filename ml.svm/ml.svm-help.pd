@@ -50,7 +50,7 @@ attributes), f 50;
 -1 -1 0;
 #X floatatom 237 403 5 0 0 0 - - -, f 5;
 #X obj 472 114 OSCroute /accxyz;
-#X msg 568 261 -0.0177612 0.0132141 0.99118;
+#X msg 568 261 -0.0613251 -0.21756 -0.962067;
 #X msg 70 165 normalise;
 #X msg 69 201 train;
 #X msg 428 638 add 4 -0.979645 -0.136032 -0.227539;
