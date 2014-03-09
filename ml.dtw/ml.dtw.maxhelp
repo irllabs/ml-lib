@@ -32,6 +32,22 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"frgb" : 0.0,
+					"id" : "obj-91",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 732.5, 200.0, 109.0, 20.0 ],
+					"presentation_rect" : [ 732.5, 200.0, 0.0, 0.0 ],
+					"text" : "5. turn OFF record",
+					"textcolor" : [ 1.0, 0.0, 0.0, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-90",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -129,7 +145,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 550.0, 57.0, 94.0, 20.0 ],
 					"presentation_rect" : [ 555.0, 57.0, 0.0, 0.0 ],
-					"text" : "6. test TWO",
+					"text" : "7. test TWO",
 					"textcolor" : [ 1.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -145,7 +161,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 451.0, 57.0, 92.0, 20.0 ],
 					"presentation_rect" : [ 456.0, 57.0, 0.0, 0.0 ],
-					"text" : "5. test ONE",
+					"text" : "6.  test ONE",
 					"textcolor" : [ 1.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -325,9 +341,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 732.5, 174.0, 102.0, 20.0 ],
+					"patching_rect" : [ 732.5, 174.0, 107.0, 20.0 ],
 					"presentation_rect" : [ 20.5, 81.0, 0.0, 0.0 ],
-					"text" : "1.  turn on record",
+					"text" : "1.  turn ON record",
 					"textcolor" : [ 1.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -621,7 +637,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 337.0, 279.5, 200.0, 18.0 ],
-									"text" : "-0.005066 0.02037 1.01265"
+									"text" : "0.175552 -0.71666 -0.583939"
 								}
 
 							}
@@ -1150,7 +1166,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 337.0, 176.0, 228.0, 18.0 ],
-									"text" : "/accxyz -0.005066 0.02037 1.01265"
+									"text" : "/accxyz 0.175552 -0.71666 -0.583939"
 								}
 
 							}
