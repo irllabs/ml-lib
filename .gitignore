@@ -2,7 +2,6 @@
 .DS_Store
 
 # Xcode
-build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -24,11 +23,9 @@ DerivedData
 *.lo
 *.o
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-
-# Compiled Static libraries
+# Libtool Static libraries
 *.lai
 *.la
-*.a
+
+# Flext Build
+pd-linux
