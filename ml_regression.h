@@ -57,9 +57,9 @@ namespace ml
         void get_min_change(float &min_change) const;
         void get_training_rate(float &training_rate) const;
         
-        virtual GRT::MLBase &get_MLBase_instance() final;
-        virtual const GRT::MLBase &get_MLBase_instance() const final;
-        
+        virtual GRT::MLBase &get_MLBase_instance(); // TODO: should be "final" but g++ 4.6.2 doesn't support it
+        virtual const GRT::MLBase &get_MLBase_instance() const; // TODO: should be "final" but g++ 4.6.2 doesn't support it
+
         virtual GRT::Regressifier &get_Regressifier_instance() = 0;
         virtual const GRT::Regressifier &get_Regressifier_instance() const = 0;
         

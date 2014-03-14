@@ -51,8 +51,8 @@ namespace ml
         void get_null_rejection(bool &null_rejection) const;
         void get_null_rejection_coeff(float &null_rejection_coeff) const;
         
-        virtual GRT::MLBase &get_MLBase_instance() final;
-        virtual const GRT::MLBase &get_MLBase_instance() const final;
+        virtual GRT::MLBase &get_MLBase_instance(); // TODO: should be "final" but g++ 4.6.2 doesn't support it
+        virtual const GRT::MLBase &get_MLBase_instance() const; // TODO: should be "final" but g++ 4.6.2 doesn't support it
         
         virtual GRT::Classifier &get_Classifier_instance() = 0;
         virtual const GRT::Classifier &get_Classifier_instance() const = 0;
