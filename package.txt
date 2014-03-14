@@ -1,4 +1,6 @@
 NAME=ml
-SRCS=ml.libsvm/libsvm/svm.cpp ml.cpp ml.libsvm/ml_libsvm.cpp
-INCPATH+=-I./ml.libsvm/libsvm
+SRCS=ml.cpp ml_classification.cpp ml_regression.cpp ml.adaboost/ml_adaboost.cpp ml.dtw/ml_dtw.cpp ml.hmm/ml_hmm.cpp ml.mlp/ml_mlp.cpp ml.linreg/ml_linreg.cpp ml.logreg/ml_logreg.cpp ml.peak/ml_peak.cpp ml.svm/ml_svm.cpp 
+INCPATH+=-I./GRT -I./
+
+LIBS+=lib/libgrt.a
 CFLAGS+=-DFLEXT_SYS=2 -DFLEXT_ATTRIBUTES=1
