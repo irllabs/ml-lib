@@ -207,6 +207,7 @@
 		7D635EB31838D10900E718CE /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB21838D10900E718CE /* MaxAPI.framework */; };
 		7D635EB51838D19F00E718CE /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D635EB41838D19F00E718CE /* MaxAudioAPI.framework */; };
 		7D93C43018A530270083CB07 /* ml.svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D93C42D18A52E860083CB07 /* ml.svm-help.pd */; };
+		7DD48ADC18E03D5200016FA7 /* ml.hmm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D959D3818BE136100774E57 /* ml.hmm.maxhelp */; };
 		7DEE4F5718BD3AA4001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
@@ -237,6 +238,7 @@
 				7D580B7D18A4F8BB004ADEFF /* ml.dtw.maxhelp in Copy Files */,
 				7D580B8318A4F99A004ADEFF /* ml.linreg.maxhelp in Copy Files */,
 				7D580B8418A4F99D004ADEFF /* ml.logreg.maxhelp in Copy Files */,
+				7DD48ADC18E03D5200016FA7 /* ml.hmm.maxhelp in Copy Files */,
 				7D580B8518A4F9A0004ADEFF /* ml.mlp.maxhelp in Copy Files */,
 				7D580B8618A4F9A6004ADEFF /* ml.peak.maxhelp in Copy Files */,
 				7D580B8718A4F9AA004ADEFF /* ml.svm.maxhelp in Copy Files */,
