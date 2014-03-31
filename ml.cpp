@@ -71,6 +71,7 @@ namespace ml
     : currentLabel(0), probs(false), recording(false)
     {
         set_data_type(default_data_type);
+        set_num_inputs(defaultNumInputDimensions);
         AddOutAnything("general purpose outlet");
     }
     
