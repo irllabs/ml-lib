@@ -210,6 +210,15 @@ namespace ml
     
     void ml_mlp::set_num_outputs(int num_outputs)
     {
+        int curr_num_outputs = 0;
+        
+        get_num_outputs(curr_num_outputs);
+        
+        if (num_outputs == curr_num_outputs)
+        {
+            return;
+        }
+        
         const ml_data_type data_type = get_data_type();
         
         if (num_outputs < 0)
