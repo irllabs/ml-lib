@@ -71,7 +71,6 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "training_rate", set_training_rate);
             FLEXT_CADDATTR_SET(c, "momentum", set_momentum);
             FLEXT_CADDATTR_SET(c, "gamma", set_gamma);
-            FLEXT_CADDATTR_SET(c, "multi_threaded_training", set_multi_threaded_training);
             FLEXT_CADDATTR_SET(c, "null_rejection", set_null_rejection);
             FLEXT_CADDATTR_SET(c, "null_rejection_coeff", set_null_rejection_coeff);
             FLEXT_CADDATTR_SET(c, "input_activation_function", set_input_activation_function);
@@ -90,7 +89,6 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "training_rate", get_training_rate);
             FLEXT_CADDATTR_GET(c, "momentum", get_momentum);
             FLEXT_CADDATTR_GET(c, "gamma", get_gamma);
-            FLEXT_CADDATTR_GET(c, "multi_threaded_training", get_multi_threaded_training);
             FLEXT_CADDATTR_GET(c, "null_rejection", get_null_rejection);
             FLEXT_CADDATTR_GET(c, "null_rejection_coeff", get_null_rejection_coeff);
             FLEXT_CADDATTR_GET(c, "input_activation_function", get_input_activation_function);
@@ -121,7 +119,6 @@ namespace ml
         void set_training_rate(float training_rate);
         void set_momentum(float momentum); //
         void set_gamma(float gamma);
-        void set_multi_threaded_training(bool multi_threaded_training);
         void set_null_rejection(bool null_rejection);
         void set_null_rejection_coeff(float null_rejection_coeff);
         void set_input_activation_function(int activation_function);
@@ -141,7 +138,6 @@ namespace ml
         void get_training_rate(float &training_rate) const;
         void get_momentum(float &momentum) const; //
         void get_gamma(float &gamma) const;
-        void get_multi_threaded_training(bool &multi_threaded_training) const;
         void get_null_rejection(bool &null_rejection) const;
         void get_null_rejection_coeff(float &null_rejection_coeff) const;
         void get_input_activation_function(int &activation_function) const;
@@ -174,7 +170,6 @@ namespace ml
         FLEXT_CALLVAR_F(get_training_rate, set_training_rate);
         FLEXT_CALLVAR_F(get_momentum, set_momentum);
         FLEXT_CALLVAR_F(get_gamma, set_gamma);
-        FLEXT_CALLVAR_B(get_multi_threaded_training, set_multi_threaded_training);
         FLEXT_CALLVAR_B(get_null_rejection, set_null_rejection);
         FLEXT_CALLVAR_F(get_null_rejection_coeff, set_null_rejection_coeff);
         FLEXT_CALLVAR_I(get_input_activation_function, set_input_activation_function);
@@ -297,11 +292,6 @@ namespace ml
         {
             flext::error("unable to set gamma");
         }
-    }
-
-    void ml_mlp::set_multi_threaded_training(bool multi_threaded_training)
-    {
-        flext::error("function not implemented");
     }
 
     void ml_mlp::set_null_rejection(bool null_rejection)
@@ -455,11 +445,6 @@ namespace ml
     void ml_mlp::get_gamma(float &gamma) const
     {
         gamma = mlp.getGamma();
-    }
-    
-    void ml_mlp::get_multi_threaded_training(bool &multi_threaded_training) const
-    {
-        flext::error("function not implemented");
     }
     
     void ml_mlp::get_null_rejection(bool &null_rejection) const
