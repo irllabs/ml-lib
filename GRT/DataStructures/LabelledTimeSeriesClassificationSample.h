@@ -36,7 +36,7 @@ namespace GRT{
 class LabelledTimeSeriesClassificationSample{
 public:
 	LabelledTimeSeriesClassificationSample();
-	LabelledTimeSeriesClassificationSample(UINT classLabel,const MatrixDouble &data);
+	LabelledTimeSeriesClassificationSample(const UINT classLabel,const MatrixDouble &data);
 	LabelledTimeSeriesClassificationSample(const LabelledTimeSeriesClassificationSample &rhs);
 	~LabelledTimeSeriesClassificationSample();
 
@@ -57,13 +57,14 @@ public:
 	}
 
 	void clear();
-	void setTrainingSample(UINT classLabel,const MatrixDouble &data);
+	void setTrainingSample(const UINT classLabel,const MatrixDouble &data);
 	inline UINT getLength() const { return data.getNumRows(); }
     inline UINT getNumDimensions() const { return data.getNumCols(); }
     inline UINT getClassLabel() const { return classLabel; }
     MatrixDouble &getData(){ return data; }
+    const MatrixDouble &getData() const { return data; }
 
-private:
+protected:
 	UINT classLabel;
 	MatrixDouble data;
 };

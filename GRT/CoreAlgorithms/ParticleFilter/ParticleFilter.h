@@ -39,6 +39,9 @@ public:
         normWeights = true;
         initMode = INIT_MODE_UNIFORM;
         estimationMode = MEAN;
+        numParticles = 0;
+        stateVectorSize = 0;
+        numDeadParticles = 0;
         minimumWeightThreshold = 1.0e-5;
         robustMeanWeightDistance = 0.2;
         estimationLikelihood = 0;
@@ -88,8 +91,10 @@ public:
             this->verbose = rhs.verbose;
             this->normWeights = rhs.normWeights;
             this->numParticles= rhs.numParticles;
+            this->stateVectorSize = rhs.stateVectorSize;
             this->initMode = rhs.initMode;
             this->estimationMode= rhs.estimationMode;
+            this->numDeadParticles = rhs.numDeadParticles;
             this->minimumWeightThreshold = rhs.minimumWeightThreshold;
             this->robustMeanWeightDistance= rhs.robustMeanWeightDistance;
             this->estimationLikelihood = rhs.estimationLikelihood;
@@ -119,19 +124,25 @@ public:
         //Clear any previous setup
         clear();
         
-        const unsigned int N = initModel.size();
+        //Check to make sure the init model and process noise vectors are the same size
+        if( initModel.size() != processNoise.size() ){
+            errorLog << "ERROR: The number of dimensions in the initModel and processNoise vectors do not match!" << endl;
+            return false;
+        }
         
-        for(unsigned int i=0; i<N; i++){
+        //Check to make sure each vector in the initModel has 2 dimensions, these are min and max or mu and sigma depening on the init mode
+        for(unsigned int i=0; i<initModel.size(); i++){
             if( initModel[i].size() != 2 ){
                 errorLog << "ERROR: The " << i << " dimension of the initModel does not have 2 dimensions!" << endl;
                 return false;
             }
         }
         
+        stateVectorSize = (unsigned int)initModel.size();
         this->initModel = initModel;
         this->processNoise = processNoise;
         this->measurementNoise = measurementNoise;
-        x.resize( N );
+        x.resize( stateVectorSize );
         initialized = true;
         
         if( !initParticles( numParticles ) ){
@@ -245,7 +256,9 @@ public:
     bool clear(){
         initialized = false;
         numParticles = 0;
+        stateVectorSize = 0;
         estimationLikelihood = 0;
+        numDeadParticles = 0;
         x.clear();
         initModel.clear();
         processNoise.clear();
@@ -261,8 +274,26 @@ public:
      
      @return returns the number of particles if the filter is initialized, zero otherwise
      */
-    unsigned int getNumParticles(){
+    unsigned int getNumParticles() const{
         return initialized ? (unsigned int)particles.size() : 0;
+    }
+    
+    /**
+     Gets the number of dimensions in the state vector.
+     
+     @return returns the number of dimensions in the state vector the filter is initialized, zero otherwise
+     */
+    unsigned int getStateVectorSize() const{
+        return initialized ? stateVectorSize : 0;
+    }
+    
+    /**
+     Gets the number of dead particles. Dead particles are particles with weights of INF.
+     
+     @return returns the number of dead particles
+     */
+    unsigned int getNumDeadParticles() const{
+        return numDeadParticles;
     }
     
     /**
@@ -270,7 +301,7 @@ public:
      
      @return returns an unsigned int representing the current initMode
      */
-    unsigned int getInitMode(){
+    unsigned int getInitMode() const{
         return initMode;
     }
     
@@ -279,7 +310,7 @@ public:
      
      @return returns an unsigned int representing the current estimationMode
      */
-    unsigned int getEstimationMode(){
+    unsigned int getEstimationMode() const{
         return estimationMode;
     }
     
@@ -289,7 +320,7 @@ public:
      
      @return returns a double representing the estimation likelihood
      */
-    double getEstimationLikelihood(){
+    double getEstimationLikelihood() const{
         return estimationLikelihood;
     }
     
@@ -298,17 +329,26 @@ public:
      
      @return returns a double vector containing the current state estimation
      */
-    vector< double > getStateEstimation(){
+    VectorDouble getStateEstimation() const{
         return x;
+    }
+    
+    /**
+     Gets the process noise vector.
+     
+     @return returns a double vector containing the process noise
+     */
+    VectorDouble setProcessNoise() const{
+        return processNoise;
     }
     
     /**
      Sets the verbose mode.
      
-     @param bool verbose: the new verbose mode
+     @param const bool verbose: the new verbose mode
      @return returns true if the verboseMode was successfully updated, false otherwise
      */
-    bool setVerbose(bool verbose){
+    bool setVerbose(const bool verbose){
         this->verbose = verbose;
         return true;
     }
@@ -316,10 +356,10 @@ public:
     /**
      Sets if the particle weights should be updated at each filter iteration.
      
-     @param bool normWeights: the new normWeights mode
+     @param const bool normWeights: the new normWeights mode
      @return returns true if the normWeights was successfully updated, false otherwise
      */
-    bool setNormalizeWeights(bool normWeights){
+    bool setNormalizeWeights(const bool normWeights){
         this->normWeights = normWeights;
         return true;
     }
@@ -327,12 +367,12 @@ public:
     /**
      Sets the estimation mode. This should be one of the EstimationModes.
      
-     @param unsigned int estimationMode: the new estimation mode (must be one of the EstimationModes enums)
+     @param const unsigned int estimationMode: the new estimation mode (must be one of the EstimationModes enums)
      @return returns true if the estimationMode was successfully updated, false otherwise
      */
-    bool setEstimationMode(unsigned int estimationMode){
+    bool setEstimationMode(const unsigned int estimationMode){
         if( estimationMode == MEAN || estimationMode == WEIGHTED_MEAN ||
-           estimationMode == ROBUST_MEAN || estimationMode == BEST_PARTICLE )
+            estimationMode == ROBUST_MEAN || estimationMode == BEST_PARTICLE )
         {
             this->estimationMode = estimationMode;
             return true;
@@ -343,10 +383,10 @@ public:
     /**
      Sets the init mode. This should be one of the InitModes.
      
-     @param unsigned int initMode: the new init mode (must be one of the InitMode enums)
+     @param const unsigned int initMode: the new init mode (must be one of the InitMode enums)
      @return returns true if the initMode was successfully updated, false otherwise
      */
-    bool setInitMode(unsigned int initMode){
+    bool setInitMode(const unsigned int initMode){
         if( initMode == INIT_MODE_UNIFORM || initMode == INIT_MODE_GAUSSIAN )
         {
             this->initMode = initMode;
@@ -361,10 +401,10 @@ public:
      
      The new init model vector size must match the size of the current init model vector.
      
-     @param const vector< vector< double > > initModel: a vector containing the new init model for the particle filter
+     @param const vector< VectorDouble > initModel: a vector containing the new init model for the particle filter
      @return returns true if the initModel was successfully updated, false otherwise
      */
-    bool setInitModel(const vector< vector< double > > initModel){
+    bool setInitModel(const vector< VectorDouble > initModel){
         if( this->initModel.size() == initModel.size() ){
             this->initModel = initModel;
             return true;
@@ -375,10 +415,10 @@ public:
     /**
      Sets the process noise. The new process noise vector size must match the size of the current process noise vector.
      
-     @param const vector< double > &processNoise: a vector containing the new process noise for the particle filter
+     @param const VectorDouble &processNoise: a vector containing the new process noise for the particle filter
      @return returns true if the processNoise was successfully updated, false otherwise
      */
-    bool setProcessNoise(const vector< double > &processNoise){
+    bool setProcessNoise(const VectorDouble &processNoise){
         if( this->processNoise.size() == processNoise.size() ){
             this->processNoise = processNoise;
             return true;
@@ -389,10 +429,10 @@ public:
     /**
      Sets the measurement noise. The new measurement noise vector size must match the size of the current measurement noise vector.
      
-     @param const vector< double > &measurementNoise: a vector containing the new measurement noise for the particle filter
+     @param const VectorDouble &measurementNoise: a vector containing the new measurement noise for the particle filter
      @return returns true if the measurementNoise was successfully updated, false otherwise
      */
-    bool setMeasurementNoise(const vector< double > &measurementNoise){
+    bool setMeasurementNoise(const VectorDouble &measurementNoise){
         if( this->measurementNoise.size() == measurementNoise.size() ){
             this->measurementNoise = measurementNoise;
             return true;
@@ -425,7 +465,10 @@ protected:
      @param PARTICLE &p: the current particle that should be passed through your prediction code
      @return returns true if the particle prediction was updated successfully, false otherwise
      */
-    virtual bool predict( PARTICLE &p ) = 0;
+    virtual bool predict( PARTICLE &p ){
+        errorLog << "predict( PARTICLE &p ) Prediction function not implemented!" << endl;
+        return false;
+    }
     
     /**
      This is the main update function in which the weight of the particle should be computed, based
@@ -437,7 +480,10 @@ protected:
      @param SENSOR_DATA &data: the current sensor data
      @return returns true if the particle update was updated successfully, false otherwise
      */
-    virtual bool update( PARTICLE &p, SENSOR_DATA &data ) = 0;
+    virtual bool update( PARTICLE &p, SENSOR_DATA &data ){
+        errorLog << "update( PARTICLE &p, SENSOR_DATA &data ) Update function not implemented!" << endl;
+        return false;
+    }
     
     /**
      This function normalizes the particle weights so they sum to 1.
@@ -449,8 +495,14 @@ protected:
         
         //Compute the total particle weight
         double wNorm = 0;
+        numDeadParticles = 0;
         for(unsigned int i=0; i<numParticles; i++){
             wNorm += particles[i].w;
+            
+            if( isinf( particles[i].w ) ){
+                cout << "particle is inf!\n";
+                numDeadParticles++;
+            }
         }
         
         if( isnan(wNorm) ){
@@ -652,7 +704,7 @@ protected:
      @return returns the Gaussian probabilty for the input x, given mu and sigma
      */
     double gauss(double x,double mu,double sigma){
-        return 1.0/(SQRT_TWO_PI*sigma) * exp( -SQR(x-mu)/(2*SQR(sigma)) );
+        return 1.0/(SQRT_TWO_PI*sigma) * exp( -SQR(x-mu)/(2.0*SQR(sigma)) );
     }
     
     /**
@@ -687,8 +739,10 @@ protected:
     bool verbose;                               ///<A flag that indicates if warning and info messages should be printed
     bool normWeights;                           ///<A flag that indicates if the weights should be normalized at each filter iteration
     unsigned int numParticles;                  ///<The number of particles in the filter
+    unsigned int stateVectorSize;               ///<The size of the state vector (x)
     unsigned int initMode;                      ///<The mode used to initialize the particles, this should be one of the InitModes enums.
     unsigned int estimationMode;                ///<The estimation mode (used to compute the state estimation)
+    unsigned int numDeadParticles;
     double minimumWeightThreshold;              ///<Any weight below this value will not be resampled
     double robustMeanWeightDistance;            ///<The distance parameter used in the ROBUST_MEAN estimation mode
     double estimationLikelihood;                ///<The likelihood of the estimated state

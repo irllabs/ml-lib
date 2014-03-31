@@ -504,6 +504,7 @@ bool KMeans::saveModelToFile(fstream &file) const{
     }
 
    file << "GRT_KMEANS_MODEL_FILE_V1.0\n";
+    
    file << "K: " << numClusters << endl;
    file << "N: " << numInputDimensions <<endl;
    file << "Clusters:\n";
@@ -599,7 +600,6 @@ bool KMeans::loadModelFromFile(fstream &file){
 
    return true;
 }
-
     
 bool KMeans::reset(){
     Clusterer::reset();

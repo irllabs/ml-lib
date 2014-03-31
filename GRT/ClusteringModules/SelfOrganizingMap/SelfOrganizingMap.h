@@ -35,14 +35,15 @@
 
 namespace GRT{
     
-class GuassNeuron{
+class GaussNeuron{
 public:
-    GuassNeuron(){
+    GaussNeuron(){
         numInputs = 0;
         sigma = 0;
+        initialized = false;
     }
     
-    ~GuassNeuron(){
+    ~GaussNeuron(){
         
     }
     
@@ -64,11 +65,26 @@ public:
         for(unsigned int i=0; i<numInputs; i++){
             weights[i] = random.getRandomNumberUniform(0.4,0.6);
         }
+        
+        initialized = true;
 
         return true;
     }
     
-    double getWeightDistance( const VectorDouble &x ){
+    bool clear(){
+        
+        numInputs = 0;
+        weights.clear();
+        initialized = false;
+        return true;
+        
+    }
+    
+    bool getInitialized() const {
+        return initialized;
+    }
+    
+    double getWeightDistance( const VectorDouble &x ) const {
         
         double dist = 0;
         
@@ -79,7 +95,7 @@ public:
         return dist;
     }
     
-    double getSquaredWeightDistance( const VectorDouble &x ){
+    double getSquaredWeightDistance( const VectorDouble &x ) const {
         
         double dist = 0;
         
@@ -90,7 +106,7 @@ public:
         return dist;
     }
     
-    double fire( const VectorDouble &x ){
+    double fire( const VectorDouble &x ) const {
         double y = 0;
         
         for(UINT i=0; i<numInputs; i++){
@@ -99,10 +115,83 @@ public:
         
         return exp( - (y/(2*SQR(sigma))) );
     }
+    
+    bool saveNeuronToFile(fstream &file) const {
+        
+        if( !file.is_open() ){
+            return false;
+        }
+        
+        if( !initialized ){
+            return false;
+        }
+        
+        file << "GAUSS_NEURON\n";
+        file << "NumInputs: " << numInputs << endl;
+        file << "Weights: ";
+        for(UINT i=0; i<numInputs; i++){
+            file << weights[i];
+            if( i < numInputs-1 ) file << "\t";
+        }
+        file << endl;
+        file << "Sigma: " << sigma << endl;
+        
+        return true;
+    }
+    
+    bool loadNeuronFromFile(fstream &file){
+        
+        if( !file.is_open() ){
+            return false;
+        }
+    
+        clear();
+        
+        string word;
+        
+        //Read the header
+        file >> word;
+        if( word != "GAUSS_NEURON" ){
+            return false;
+        }
+        
+        //Read the num inputs
+        file >> word;
+        if( word != "NumInputs:" ){
+            return false;
+        }
+        file >> numInputs;
+        
+        //Resize the weight vector
+        weights.resize( numInputs );
+        
+        //Read the weights header
+        file >> word;
+        if( word != "Weights:" ){
+            return false;
+        }
+
+        //Load the weights
+        for(UINT i=0; i<numInputs; i++){
+            file >> weights[i];
+        }
+        
+        //Load the sigma value
+        file >> word;
+        if( word != "Sigma:" ){
+            return false;
+        }
+        file >> sigma;
+        
+        initialized = true;
+        
+        return true;
+    }
 
     UINT numInputs;
     VectorDouble weights;
     double sigma;
+    bool initialized;
 };
 
 class SelfOrganizingMap : public Clusterer{
@@ -213,6 +302,42 @@ public:
     virtual bool mapInplace( VectorDouble &x );
     
     /**
+     This saves the trained SOM model to a file.
+     This overrides the saveModelToFile function in the base class.
+     
+     @param string filename: the name of the file to save the SOM model to
+     @return returns true if the model was saved successfully, false otherwise
+     */
+    virtual bool saveModelToFile(string filename) const;
+    
+    /**
+     This saves the trained SOM model to a file.
+     This overrides the saveModelToFile function in the base class.
+     
+     @param fstream &file: a reference to the file the SOM model will be saved to
+     @return returns true if the model was saved successfully, false otherwise
+     */
+    virtual bool saveModelToFile(fstream &file) const;
+    
+    /**
+     This loads a trained SOM model from a file.
+     This overrides the loadModelFromFile function in the base class.
+     
+     @param string filename: the name of the file to load the SOM model from
+     @return returns true if the model was loaded successfully, false otherwise
+     */
+    virtual bool loadModelFromFile(string filename);
+    
+    /**
+     This loads a trained SOM model from a file.
+     This overrides the loadModelFromFile function in the base class.
+     
+     @param fstream &file: a reference to the file the SOM model will be loaded from
+     @return returns true if the model was loaded successfully, false otherwise
+     */
+    virtual bool loadModelFromFile(fstream &file);
+    
+    /**
      This function validates the network typology to ensure it is one of the NetworkTypology enums.
      
      @param const UINT networkTypology: the network typology you want to test
@@ -234,7 +359,9 @@ public:
     
     VectorDouble getMappedData() const;
     
-    vector< GuassNeuron > getNeurons() const;
+    vector< GaussNeuron > getNeurons() const;
+    
+    const vector< GaussNeuron > &getNeuronsRef() const;
     
     MatrixDouble getNetworkWeights() const;
     
@@ -251,7 +378,7 @@ protected:
     double alphaStart;
     double alphaEnd;
     VectorDouble mappedData;
-    vector< GuassNeuron > neurons;
+    vector< GaussNeuron > neurons;
     MatrixDouble networkWeights;
     
 private:

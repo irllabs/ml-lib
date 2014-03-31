@@ -25,7 +25,7 @@ namespace GRT{
 //Constructors and Destructors
 LabelledTimeSeriesClassificationSample::LabelledTimeSeriesClassificationSample():classLabel(0){};
 
-LabelledTimeSeriesClassificationSample::LabelledTimeSeriesClassificationSample(UINT classLabel,const MatrixDouble &data){
+LabelledTimeSeriesClassificationSample::LabelledTimeSeriesClassificationSample(const UINT classLabel,const MatrixDouble &data){
 	this->classLabel = classLabel;
 	this->data = data;
 }
@@ -42,7 +42,7 @@ void LabelledTimeSeriesClassificationSample::clear(){
 	data.clear();
 }
 
-void LabelledTimeSeriesClassificationSample::setTrainingSample(UINT classLabel,const MatrixDouble &data){
+void LabelledTimeSeriesClassificationSample::setTrainingSample(const UINT classLabel,const MatrixDouble &data){
 	this->classLabel = classLabel;
 	this->data = data;
 }

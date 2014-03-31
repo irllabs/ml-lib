@@ -125,6 +125,7 @@
 #include "ClusteringModules/KMeans/KMeans.h"
 #include "ClusteringModules/GaussianMixtureModels/GaussianMixtureModels.h"
 #include "ClusteringModules/HierarchicalClustering/HierarchicalClustering.h"
+#include "ClusteringModules/SelfOrganizingMap/SelfOrganizingMap.h"
 
 //Include the Context Modules
 #include "ContextModules/Gate.h"

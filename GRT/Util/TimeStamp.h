@@ -281,7 +281,7 @@ public:
         time_t tim = time(NULL);
         tm *now = localtime( &tim );
 
-        if( time == NULL ) return false;
+        if( now == NULL ) return false;
 
         //Get the millisecon time
         struct timeval nowTimeval;

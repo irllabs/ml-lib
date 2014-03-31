@@ -129,10 +129,17 @@ bool SelfOrganizingMap::trainInplace( MatrixDouble &data ){
     const UINT M = data.getNumRows();
     const UINT N = data.getNumCols();
     numInputDimensions = N;
+    numOutputDimensions = numClusters;
     Random rand;
     
     //Setup the neurons
     neurons.resize( numClusters );
+    
+    if( neurons.size() != numClusters ){
+        errorLog << "trainInplace( MatrixDouble &data ) - Failed to resize neurons vector, there might not be enough memory!" << endl;
+        return false;
+    }
+    
     for(UINT j=0; j<numClusters; j++){
         
         //Init the neuron
@@ -185,11 +192,13 @@ bool SelfOrganizingMap::trainInplace( MatrixDouble &data ){
     
     double error = 0;
     double lastError = 0;
+    double trainingSampleError = 0;
     double delta = 0;
     double minChange = 0;
     double weightUpdate = 0;
     double weightUpdateSum = 0;
     double alpha = 1.0;
+    double neuronDiff = 0;
     UINT iter = 0;
     bool keepTraining = true;
     VectorDouble trainingSample;
@@ -213,6 +222,8 @@ bool SelfOrganizingMap::trainInplace( MatrixDouble &data ){
         error = 0;
         for(UINT i=0; i<M; i++){
             
+            trainingSampleError = 0;
+            
             //Get the i'th random training sample
             trainingSample = data.getRowVector( randomTrainingOrder[i] );
             
@@ -234,14 +245,18 @@ bool SelfOrganizingMap::trainInplace( MatrixDouble &data ){
                 
                 //Update the weights for the j'th neuron
                 weightUpdateSum = 0;
+                neuronDiff = 0;
                 for(UINT n=0; n<N; n++){
-                    weightUpdate = networkWeights[bestIndex][j] * alpha * (trainingSample[n] - neurons[j][n]);
+                    neuronDiff = trainingSample[n] - neurons[j][n];
+                    weightUpdate = networkWeights[bestIndex][j] * alpha * neuronDiff;
                     neurons[j][n] += weightUpdate;
-                    weightUpdateSum += weightUpdate;
+                    weightUpdateSum += neuronDiff;
                 }
                 
-                error += SQR( weightUpdateSum );
+                trainingSampleError += SQR( weightUpdateSum );
             }
+            
+            error += sqrt( trainingSampleError / numClusters );
         }
         
         //Compute the error
@@ -266,6 +281,7 @@ bool SelfOrganizingMap::trainInplace( MatrixDouble &data ){
         trainingLog << "Epoch: " << iter << " Squared Error: " << error << " Delta: " << delta << " Alpha: " << alpha << endl;
     }
     
+    numTrainingIterationsToConverge = iter;
     trained = true;
     
     return true;
@@ -307,6 +323,160 @@ bool SelfOrganizingMap::mapInplace( VectorDouble &x ){
     return true;
 }
     
+bool SelfOrganizingMap::saveModelToFile(string filename) const{
+    
+    std::fstream file;
+    file.open(filename.c_str(), std::ios::out);
+    
+    if( !file.is_open() ){
+        errorLog << "saveModelToFile(string filename) - Failed to open file!" << endl;
+        return false;
+    }
+    
+    if( !saveModelToFile( file ) ){
+        file.close();
+        return false;
+    }
+    
+    file.close();
+    
+    return true;
+}
+
+bool SelfOrganizingMap::saveModelToFile(fstream &file) const{
+    
+    if( !trained ){
+        errorLog << "saveModelToFile(fstream &file) - Can't save model to file, the model has not been trained!" << endl;
+        return false;
+    }
+    
+    file << "GRT_SELF_ORGANIZING_MAP_MODEL_FILE_V1.0\n";
+    
+    if( !saveClustererSettingsToFile( file ) ){
+        errorLog << "saveModelToFile(fstream &file) - Failed to save cluster settings to file!" << endl;
+        return false;
+    }
+    
+    file << "NetworkTypology: " << networkTypology << endl;
+    file << "AlphaStart: " << alphaStart <<endl;
+    file << "AlphaEnd: " << alphaEnd <<endl;
+    
+    if( trained ){
+        file << "NetworkWeights: \n";
+        for(UINT i=0; i<networkWeights.getNumRows(); i++){
+            for(UINT j=0; j<networkWeights.getNumCols(); j++){
+                file << networkWeights[i][j];
+                if( j<networkWeights.getNumCols()-1 ) file << "\t";
+            }
+            file << "\n";
+        }
+        
+        file << "Neurons: \n";
+        for(UINT i=0; i<neurons.size(); i++){
+            if( !neurons[i].saveNeuronToFile( file ) ){
+                errorLog << "saveModelToFile(fstream &file) - Failed to save neuron to file!" << endl;
+                return false;
+            }
+        }
+    }
+    
+    return true;
+    
+}
+
+bool SelfOrganizingMap::loadModelFromFile(string fileName){
+    
+    std::fstream file;
+    string word;
+    file.open(fileName.c_str(), std::ios::in);
+    
+    if(!file.is_open()){
+        errorLog << "loadModelFromFile(string filename) - Failed to open file!" << endl;
+        return false;
+    }
+    
+    if( !loadModelFromFile( file ) ){
+        file.close();
+        return false;
+    }
+    
+    file.close();
+    
+    return true;
+    
+}
+
+bool SelfOrganizingMap::loadModelFromFile(fstream &file){
+    
+    //Clear any previous model
+    clear();
+    
+    string word;
+    file >> word;
+    if( word != "GRT_SELF_ORGANIZING_MAP_MODEL_FILE_V1.0" ){
+        errorLog << "loadModelFromFile(fstream &file) - Failed to load file header!" << endl;
+        return false;
+    }
+    
+    if( !loadClustererSettingsFromFile( file ) ){
+        errorLog << "loadModelFromFile(fstream &file) - Failed to load cluster settings from file!" << endl;
+        return false;
+    }
+    
+    file >> word;
+    if( word != "NetworkTypology:" ){
+        errorLog << "loadModelFromFile(fstream &file) - Failed to load NetworkTypology header!" << endl;
+        return false;
+    }
+    file >> networkTypology;
+    
+    file >> word;
+    if( word != "AlphaStart:" ){
+        errorLog << "loadModelFromFile(fstream &file) - Failed to load AlphaStart header!" << endl;
+        return false;
+    }
+    file >> alphaStart;
+    
+    file >> word;
+    if( word != "AlphaEnd:" ){
+        errorLog << "loadModelFromFile(fstream &file) - Failed to load alphaEnd header!" << endl;
+        return false;
+    }
+    file >> alphaEnd;
+    
+    //Load the model if it has been trained
+    if( trained ){
+        file >> word;
+        if( word != "NetworkWeights:" ){
+            errorLog << "loadModelFromFile(fstream &file) - Failed to load NetworkWeights header!" << endl;
+            return false;
+        }
+        
+        networkWeights.resize(numClusters, numClusters);
+        for(UINT i=0; i<networkWeights.getNumRows(); i++){
+            for(UINT j=0; j<networkWeights.getNumCols(); j++){
+                file >> networkWeights[i][j];
+            }
+        }
+        
+        file >> word;
+        if( word != "Neurons:" ){
+            errorLog << "loadModelFromFile(fstream &file) - Failed to load Neurons header!" << endl;
+            return false;
+        }
+        
+        neurons.resize(numClusters);
+        for(UINT i=0; i<neurons.size(); i++){
+            if( !neurons[i].loadNeuronFromFile( file ) ){
+                errorLog << "loadModelFromFile(fstream &file) - Failed to save neuron to file!" << endl;
+                return false;
+            }
+        }
+    }
+    
+    return true;
+}
+    
 bool SelfOrganizingMap::validateNetworkTypology( const UINT networkTypology ){
     if( networkTypology == RANDOM_NETWORK ) return true;
     
@@ -331,7 +501,11 @@ VectorDouble SelfOrganizingMap::getMappedData() const{
     return mappedData;
 }
     
-vector< GuassNeuron > SelfOrganizingMap::getNeurons() const{
+vector< GaussNeuron > SelfOrganizingMap::getNeurons() const{
+    return neurons;
+}
+    
+const vector< GaussNeuron >& SelfOrganizingMap::getNeuronsRef() const{
     return neurons;
 }
 

@@ -71,7 +71,7 @@ void LabelledTimeSeriesClassificationData::clear(){
 	classTracker.clear();
 }
 
-bool LabelledTimeSeriesClassificationData::setNumDimensions(UINT numDimensions){
+bool LabelledTimeSeriesClassificationData::setNumDimensions(const UINT numDimensions){
     if( numDimensions > 0 ){
         //Clear any previous training data
         clear();
@@ -89,7 +89,7 @@ bool LabelledTimeSeriesClassificationData::setNumDimensions(UINT numDimensions){
     return false;
 }
 
-bool LabelledTimeSeriesClassificationData::setDatasetName(string datasetName){
+bool LabelledTimeSeriesClassificationData::setDatasetName(const string datasetName){
 
     //Make sure there are no spaces in the string
     if( datasetName.find(" ") == string::npos ){
@@ -101,12 +101,12 @@ bool LabelledTimeSeriesClassificationData::setDatasetName(string datasetName){
     return false;
 }
 
-bool LabelledTimeSeriesClassificationData::setInfoText(string infoText){
+bool LabelledTimeSeriesClassificationData::setInfoText(const string infoText){
     this->infoText = infoText;
     return true;
 }
 
-bool LabelledTimeSeriesClassificationData::setClassNameForCorrespondingClassLabel(string className,UINT classLabel){
+bool LabelledTimeSeriesClassificationData::setClassNameForCorrespondingClassLabel(const string className,const UINT classLabel){
 
     for(UINT i=0; i<classTracker.size(); i++){
         if( classTracker[i].classLabel == classLabel ){
@@ -118,12 +118,12 @@ bool LabelledTimeSeriesClassificationData::setClassNameForCorrespondingClassLabe
     return false;
 }
     
-bool LabelledTimeSeriesClassificationData::setAllowNullGestureClass(bool allowNullGestureClass){
+bool LabelledTimeSeriesClassificationData::setAllowNullGestureClass(const bool allowNullGestureClass){
     this->allowNullGestureClass = allowNullGestureClass;
     return true;
 }
 
-bool LabelledTimeSeriesClassificationData::addSample(UINT classLabel,const MatrixDouble &trainingSample){
+bool LabelledTimeSeriesClassificationData::addSample(const UINT classLabel,const MatrixDouble &trainingSample){
 	
     if( trainingSample.getNumCols() != numDimensions ){
         errorLog << "addSample(UINT classLabel, MatrixDouble trainingSample) - The dimensionality of the training sample (" << trainingSample.getNumCols() << ") does not match that of the dataset (" << numDimensions << ")" << endl;
@@ -160,7 +160,7 @@ bool LabelledTimeSeriesClassificationData::addSample(UINT classLabel,const Matri
 	return true;
 }
 
-UINT LabelledTimeSeriesClassificationData::eraseAllSamplesWithClassLabel(UINT classLabel){
+UINT LabelledTimeSeriesClassificationData::eraseAllSamplesWithClassLabel(const UINT classLabel){
 	UINT numExamplesRemoved = 0;
 	UINT numExamplesToRemove = 0;
 
@@ -215,7 +215,7 @@ bool LabelledTimeSeriesClassificationData::removeLastSample(){
 
 }
 
-bool LabelledTimeSeriesClassificationData::relabelAllSamplesWithClassLabel(UINT oldClassLabel,UINT newClassLabel){
+bool LabelledTimeSeriesClassificationData::relabelAllSamplesWithClassLabel(const UINT oldClassLabel,const UINT newClassLabel){
     bool oldClassLabelFound = false;
     bool newClassLabelAllReadyExists = false;
     UINT indexOfOldClassLabel = 0;
@@ -260,7 +260,7 @@ bool LabelledTimeSeriesClassificationData::relabelAllSamplesWithClassLabel(UINT 
     return true;
 }
 
-bool LabelledTimeSeriesClassificationData::setExternalRanges(vector< MinMax > externalRanges, bool useExternalRanges){
+bool LabelledTimeSeriesClassificationData::setExternalRanges(const vector< MinMax > &externalRanges,const bool useExternalRanges){
 
     if( externalRanges.size() != numDimensions ) return false;
 
@@ -270,7 +270,7 @@ bool LabelledTimeSeriesClassificationData::setExternalRanges(vector< MinMax > ex
     return true;
 }
 
-bool LabelledTimeSeriesClassificationData::enableExternalRangeScaling(bool useExternalRanges){
+bool LabelledTimeSeriesClassificationData::enableExternalRangeScaling(const bool useExternalRanges){
     if( externalRanges.size() == numDimensions ){
         this->useExternalRanges = useExternalRanges;
         return true;
@@ -278,12 +278,12 @@ bool LabelledTimeSeriesClassificationData::enableExternalRangeScaling(bool useEx
     return false;
 }
 
-bool LabelledTimeSeriesClassificationData::scale(double minTarget,double maxTarget){
+bool LabelledTimeSeriesClassificationData::scale(const double minTarget,const double maxTarget){
     vector< MinMax > ranges = getRanges();
     return scale(ranges,minTarget,maxTarget);
 }
 
-bool LabelledTimeSeriesClassificationData::scale(vector<MinMax> ranges,double minTarget,double maxTarget){
+bool LabelledTimeSeriesClassificationData::scale(const vector<MinMax> &ranges,const double minTarget,const double maxTarget){
     if( ranges.size() != numDimensions ) return false;
 
     //Scale the training data
@@ -298,7 +298,7 @@ bool LabelledTimeSeriesClassificationData::scale(vector<MinMax> ranges,double mi
     return true;
 }
 
-bool LabelledTimeSeriesClassificationData::saveDatasetToFile(string fileName) const {
+bool LabelledTimeSeriesClassificationData::saveDatasetToFile(const string fileName) const{
 
 	std::fstream file;
 	file.open(fileName.c_str(), std::ios::out);
@@ -347,7 +347,7 @@ bool LabelledTimeSeriesClassificationData::saveDatasetToFile(string fileName) co
 	return true;
 }
 
-bool LabelledTimeSeriesClassificationData::loadDatasetFromFile(string filename){
+bool LabelledTimeSeriesClassificationData::loadDatasetFromFile(const string filename){
 
 	std::fstream file;
 	file.open(filename.c_str(), std::ios::in);
@@ -525,7 +525,7 @@ bool LabelledTimeSeriesClassificationData::loadDatasetFromFile(string filename){
 	return true;
 }
     
-bool LabelledTimeSeriesClassificationData::printStats(){
+bool LabelledTimeSeriesClassificationData::printStats() const {
     
     cout << "DatasetName:\t" << datasetName << endl;
     cout << "DatasetInfo:\t" << infoText << endl;
@@ -556,7 +556,7 @@ bool LabelledTimeSeriesClassificationData::printStats(){
     return true;
 }
     
-LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::partition(UINT trainingSizePercentage,bool useStratifiedSampling){
+LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::partition(const UINT trainingSizePercentage,const bool useStratifiedSampling){
 
     //Partitions the dataset into a training dataset (which is kept by this instance of the LabelledTimeSeriesClassificationData) and
     //a testing/validation dataset (which is return as a new instance of the LabelledTimeSeriesClassificationData).  The trainingSizePercentage
@@ -644,7 +644,7 @@ LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::parti
     return testSet;
 }
 
-bool LabelledTimeSeriesClassificationData::merge(LabelledTimeSeriesClassificationData &labelledData){
+bool LabelledTimeSeriesClassificationData::merge(const LabelledTimeSeriesClassificationData &labelledData){
 
     if( labelledData.getNumDimensions() != numDimensions ){
         errorLog << "merge(LabelledTimeSeriesClassificationData &labelledData) - The number of dimensions in the labelledData (" << labelledData.getNumDimensions() << ") does not match the number of dimensions of this dataset (" << numDimensions << ")" << endl;
@@ -669,7 +669,7 @@ bool LabelledTimeSeriesClassificationData::merge(LabelledTimeSeriesClassificatio
     return true;
 }
 
-bool LabelledTimeSeriesClassificationData::spiltDataIntoKFolds(UINT K,bool useStratifiedSampling){
+bool LabelledTimeSeriesClassificationData::spiltDataIntoKFolds(const UINT K,const bool useStratifiedSampling){
 
     crossValidationSetup = false;
     crossValidationIndexs.clear();
@@ -773,7 +773,7 @@ bool LabelledTimeSeriesClassificationData::spiltDataIntoKFolds(UINT K,bool useSt
 
 }
 
-LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::getTrainingFoldData(UINT foldIndex){
+LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::getTrainingFoldData(const UINT foldIndex) const {
 
     LabelledTimeSeriesClassificationData trainingData;
 
@@ -801,7 +801,7 @@ LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::getTr
     return trainingData;
 }
 
-LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::getTestFoldData(UINT foldIndex){
+LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::getTestFoldData(const UINT foldIndex) const {
     LabelledTimeSeriesClassificationData testData;
 
     if( !crossValidationSetup ) return testData;
@@ -821,7 +821,7 @@ LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::getTe
     return testData;
 }
 
-LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::getClassData(UINT classLabel){
+LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::getClassData(const UINT classLabel) const {
     LabelledTimeSeriesClassificationData classData(numDimensions);
     for(UINT x=0; x<totalNumSamples; x++){
         if( data[x].getClassLabel() == classLabel ){
@@ -831,7 +831,7 @@ LabelledTimeSeriesClassificationData LabelledTimeSeriesClassificationData::getCl
     return classData;
 }
 
-UnlabelledClassificationData LabelledTimeSeriesClassificationData::reformatAsUnlabelledClassificationData(){
+UnlabelledClassificationData LabelledTimeSeriesClassificationData::reformatAsUnlabelledClassificationData() const {
 
     UnlabelledClassificationData unlabelledData;
 
@@ -850,7 +850,7 @@ UnlabelledClassificationData LabelledTimeSeriesClassificationData::reformatAsUnl
     return unlabelledData;
 }
 
-UINT LabelledTimeSeriesClassificationData::getMinimumClassLabel(){
+UINT LabelledTimeSeriesClassificationData::getMinimumClassLabel() const {
     UINT minClassLabel = 99999;
 
     for(UINT i=0; i<classTracker.size(); i++){
@@ -863,7 +863,7 @@ UINT LabelledTimeSeriesClassificationData::getMinimumClassLabel(){
 }
 
 
-UINT LabelledTimeSeriesClassificationData::getMaximumClassLabel(){
+UINT LabelledTimeSeriesClassificationData::getMaximumClassLabel() const {
     UINT maxClassLabel = 0;
 
     for(UINT i=0; i<classTracker.size(); i++){
@@ -875,7 +875,7 @@ UINT LabelledTimeSeriesClassificationData::getMaximumClassLabel(){
     return maxClassLabel;
 }
 
-UINT LabelledTimeSeriesClassificationData::getClassLabelIndexValue(UINT classLabel){
+UINT LabelledTimeSeriesClassificationData::getClassLabelIndexValue(const UINT classLabel) const {
     for(UINT k=0; k<classTracker.size(); k++){
         if( classTracker[k].classLabel == classLabel ){
             return k;
@@ -885,7 +885,7 @@ UINT LabelledTimeSeriesClassificationData::getClassLabelIndexValue(UINT classLab
     return 0;
 }
 
-string LabelledTimeSeriesClassificationData::getClassNameForCorrespondingClassLabel(UINT classLabel){
+string LabelledTimeSeriesClassificationData::getClassNameForCorrespondingClassLabel(const UINT classLabel) const {
 
     for(UINT i=0; i<classTracker.size(); i++){
         if( classTracker[i].classLabel == classLabel ){
@@ -895,7 +895,7 @@ string LabelledTimeSeriesClassificationData::getClassNameForCorrespondingClassLa
     return "CLASS_LABEL_NOT_FOUND";
 }
 
-vector<MinMax> LabelledTimeSeriesClassificationData::getRanges(){
+vector<MinMax> LabelledTimeSeriesClassificationData::getRanges() const {
 
     if( useExternalRanges ) return externalRanges;
 
@@ -916,7 +916,7 @@ vector<MinMax> LabelledTimeSeriesClassificationData::getRanges(){
     return ranges;
 }
     
-MatrixDouble LabelledTimeSeriesClassificationData::getDataAsMatrixDouble(){
+MatrixDouble LabelledTimeSeriesClassificationData::getDataAsMatrixDouble() const {
     
     //Count how many samples are in the entire dataset
     UINT M = 0;
