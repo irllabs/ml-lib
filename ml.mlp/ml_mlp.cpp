@@ -133,6 +133,7 @@ namespace ml
         void get_mode(int &mode) const;
         void get_num_outputs(int &num_outputs) const;
         void get_num_hidden(int &num_hidden) const;
+        void get_min_epochs(int &min_epochs) const;
         void get_max_epochs(int &max_epochs) const;
         void get_min_change(float &min_change) const;
         void get_training_rate(float &training_rate) const;
@@ -164,7 +165,7 @@ namespace ml
         FLEXT_CALLVAR_I(get_mode, set_mode);
         FLEXT_CALLVAR_I(get_num_outputs, set_num_outputs);
         FLEXT_CALLVAR_I(get_num_hidden, set_num_hidden);
-        FLEXT_CALLSET_I(set_min_epochs);
+        FLEXT_CALLVAR_I(get_min_epochs, set_min_epochs);
         FLEXT_CALLVAR_I(get_max_epochs, set_max_epochs);
         FLEXT_CALLVAR_F(get_min_change, set_min_change);
         FLEXT_CALLVAR_F(get_training_rate, set_training_rate);
@@ -420,6 +421,11 @@ namespace ml
     void ml_mlp::get_num_hidden(int &num_hidden) const
     {
         num_hidden = this->numHiddenNeurons;
+    }
+    
+    void ml_mlp::get_min_epochs(int &min_epochs) const
+    {
+        min_epochs = mlp.getMaxNumEpochs();
     }
     
     void ml_mlp::get_max_epochs(int &max_epochs) const
