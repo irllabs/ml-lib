@@ -121,6 +121,12 @@ namespace ml
     
     void ml_peak::set_peak_threshold(float peak_threshold)
     {
+        if (peak_threshold <= 0)
+        {
+            error("peak threshold must be positive and non-zero");
+            return;
+        }
+        
         this->peak_threshold = peak_threshold;
     }
     
