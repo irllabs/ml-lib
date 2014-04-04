@@ -415,6 +415,7 @@ namespace ml
         FLEXT_SETUP(ml_linreg);
         FLEXT_SETUP(ml_logreg);
         FLEXT_SETUP(ml_peak);
+        FLEXT_SETUP(ml_minmax);
     }
     
 #pragma mark - Global constants
