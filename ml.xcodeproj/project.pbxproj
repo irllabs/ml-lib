@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4148AF3818E2626800072953 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4148AF3718E2626800072953 /* MaxAPI.framework */; };
-		4148AF3918E2626800072953 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4148AF3718E2626800072953 /* MaxAPI.framework */; };
-		4148AF3B18E2627400072953 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4148AF3A18E2627400072953 /* MaxAudioAPI.framework */; };
-		4148AF3C18E2627400072953 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4148AF3A18E2627400072953 /* MaxAudioAPI.framework */; };
 		7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D23B92618C9DC3600735880 /* AdaBoost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D23B82A18C9DC3600735880 /* AdaBoost.cpp */; };
@@ -208,6 +204,10 @@
 		7D61B1141876F334000FD114 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
 		7D61B11818788BD6000FD114 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
 		7D61B11918788BD6000FD114 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
+		7D88176018EEF5EE002426FB /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
+		7D88176218EEF5FF002426FB /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
+		7D88176418EEF6A2002426FB /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
+		7D88176518EEF6A2002426FB /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D93C43018A530270083CB07 /* ml.svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D93C42D18A52E860083CB07 /* ml.svm-help.pd */; };
 		7DD48ADC18E03D5200016FA7 /* ml.hmm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D959D3818BE136100774E57 /* ml.hmm.maxhelp */; };
 		7DEE4F5718BD3AA4001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
@@ -251,8 +251,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4148AF3718E2626800072953 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../../Soft Dev/MaxSDK-6.1.4/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
-		4148AF3A18E2627400072953 /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../../Soft Dev/MaxSDK-6.1.4/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		4148AF7918E2634400072953 /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = m_pd.h; path = "../../../Soft Dev/PureData/pd-0.45-4/src/m_pd.h"; sourceTree = "<group>"; };
 		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ml.mlp/ml_mlp.cpp; sourceTree = "<group>"; };
 		7D23B82A18C9DC3600735880 /* AdaBoost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdaBoost.cpp; sourceTree = "<group>"; };
@@ -475,6 +473,9 @@
 		7D61B1061875F661000FD114 /* ml_logreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_logreg.cpp; path = ml.logreg/ml_logreg.cpp; sourceTree = "<group>"; };
 		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
 		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ml.peak/ml_peak.cpp; sourceTree = "<group>"; };
+		7D88175F18EEF5EE002426FB /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
+		7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
+		7D88176318EEF6A2002426FB /* ml_minmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_minmax.cpp; path = ml.minmax/ml_minmax.cpp; sourceTree = "<group>"; };
 		7D93C42D18A52E860083CB07 /* ml.svm-help.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml.svm-help.pd"; path = "ml.svm/ml.svm-help.pd"; sourceTree = "<group>"; };
 		7D959D3818BE136100774E57 /* ml.hmm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.hmm.maxhelp; path = ml.hmm/ml.hmm.maxhelp; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
@@ -494,8 +495,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4148AF3B18E2627400072953 /* MaxAudioAPI.framework in Frameworks */,
-				4148AF3818E2626800072953 /* MaxAPI.framework in Frameworks */,
 				7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,8 +503,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4148AF3C18E2627400072953 /* MaxAudioAPI.framework in Frameworks */,
-				4148AF3918E2626800072953 /* MaxAPI.framework in Frameworks */,
+				7D88176018EEF5EE002426FB /* MaxAPI.framework in Frameworks */,
+				7D88176218EEF5FF002426FB /* MaxAudioAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,8 +535,8 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4148AF3A18E2627400072953 /* MaxAudioAPI.framework */,
-				4148AF3718E2626800072953 /* MaxAPI.framework */,
+				7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */,
+				7D88175F18EEF5EE002426FB /* MaxAPI.framework */,
 				7D4EAF0018343011005B8615 /* Accelerate.framework */,
 			);
 			name = Frameworks;
@@ -560,6 +559,7 @@
 				7D61B1111876F334000FD114 /* ml_dtw.cpp */,
 				7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */,
 				7D61B11618788BD6000FD114 /* ml_peak.cpp */,
+				7D88176318EEF6A2002426FB /* ml_minmax.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -1299,6 +1299,7 @@
 				7D23B94118C9DC3700735880 /* Context.cpp in Sources */,
 				7D23B97218C9DC3700735880 /* LUDecomposition.cpp in Sources */,
 				7D61B1131876F334000FD114 /* ml_dtw.cpp in Sources */,
+				7D88176418EEF6A2002426FB /* ml_minmax.cpp in Sources */,
 				7D23B97018C9DC3700735880 /* InfoLog.cpp in Sources */,
 				7D23B9D818C9EE1700735880 /* ml_adaboost.cpp in Sources */,
 				7D23B94618C9DC3700735880 /* PostProcessing.cpp in Sources */,
@@ -1405,6 +1406,7 @@
 				7D23B99B18C9E74000735880 /* libsvm.cpp in Sources */,
 				7D23B9CA18C9E81500735880 /* LUDecomposition.cpp in Sources */,
 				7D23B98818C9E58400735880 /* AdaBoost.cpp in Sources */,
+				7D88176518EEF6A2002426FB /* ml_minmax.cpp in Sources */,
 				7D23B9C818C9E80F00735880 /* InfoLog.cpp in Sources */,
 				7D23B9D918C9EE1700735880 /* ml_adaboost.cpp in Sources */,
 				7D23B98118C9E55D00735880 /* FeatureExtraction.cpp in Sources */,
@@ -1594,8 +1596,6 @@
 					"$(maxsdk)/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
-					"/Users/ali/Dropbox/Soft\\ Dev/MaxSDK-6.1.4/c74support/max-includes",
-					"/Users/ali/Dropbox/Soft\\ Dev/MaxSDK-6.1.4/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1649,8 +1649,6 @@
 					"$(maxsdk)/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
-					"/Users/ali/Dropbox/Soft\\ Dev/MaxSDK-6.1.4/c74support/max-includes",
-					"/Users/ali/Dropbox/Soft\\ Dev/MaxSDK-6.1.4/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -1703,8 +1701,6 @@
 					"$(maxsdk)/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
-					"/Users/ali/Dropbox/Soft\\ Dev/MaxSDK-6.1.4/c74support/max-includes",
-					"/Users/ali/Dropbox/Soft\\ Dev/MaxSDK-6.1.4/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -1762,7 +1758,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = /Users/jamie/Library/Frameworks/c74support;
+				maxsdk = "$(USER_LIBRARY_DIR)/Frameworks/c74support";
 			};
 			name = Development;
 		};
@@ -1789,7 +1785,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = /Users/jamie/Library/Frameworks/c74support;
+				maxsdk = "$(USER_LIBRARY_DIR)/Frameworks/c74support";
 			};
 			name = Deployment;
 		};
@@ -1807,7 +1803,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = /Users/jamie/Library/Frameworks/c74support;
+				maxsdk = "$(USER_LIBRARY_DIR)/Frameworks/c74support";
 			};
 			name = Default;
 		};
