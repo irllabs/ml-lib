@@ -234,8 +234,7 @@ namespace ml
             uint32_t key = (double)locations[index];
             double value = data[key];
             
-            // Use SetFloat() not SetInt() + SetDouble() work around a flext bug that causes infinite loop!
-            SetFloat(key_a, key);
+            SetInt(key_a, key);
             SetFloat(value_a, value);
             
             atomList.Append(key_a);
