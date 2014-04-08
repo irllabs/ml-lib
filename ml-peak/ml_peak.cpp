@@ -27,7 +27,7 @@ namespace ml
     public:
         ml_peak()
         {
-            post("ml.peak: Peak Detection based on the GRT library version %s", GRT::GRTBase::getGRTRevison().c_str());
+            post("ml-peak: Peak Detection based on the GRT library version %s", GRT::GRTBase::getGRTRevison().c_str());
             FLEXT_ADDMETHOD(0, update);
             FLEXT_ADDMETHOD(0, peaks);
         }
@@ -48,7 +48,7 @@ namespace ml
             FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
 //            FLEXT_CADDMETHOD_(c, 0, "peaks", peaks);
             
-            DefineHelp(c,"ml.peak");
+            DefineHelp(c,"ml-peak");
         }
         
         // Methods
@@ -213,7 +213,7 @@ namespace ml
         post("%s", ML_POST_SEP);
     }
     
-    FLEXT_LIB("ml.peak", ml_peak);
+    FLEXT_LIB("ml-peak", ml_peak);
     
 } //namespace ml
 

@@ -39,7 +39,7 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
-            DefineHelp(c,"ml.logreg");
+            DefineHelp(c,"ml-logreg");
         }
         
         // Implement pure virtual methods
@@ -63,7 +63,7 @@ namespace ml
         return regressifier;
     }
     
-    FLEXT_LIB("ml.logreg", ml_logreg);
+    FLEXT_LIB("ml-logreg", ml_logreg);
     
 } //namespace ml
 

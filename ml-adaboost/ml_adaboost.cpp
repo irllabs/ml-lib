@@ -36,7 +36,7 @@ namespace ml
     public:
         ml_adaboost()
         {
-            post("ml.adaboost: Adaboost classifier based on the GRT library version %s", get_grt_version().c_str());
+            post("ml-adaboost: Adaboost classifier based on the GRT library version %s", get_grt_version().c_str());
             set_scaling(default_scaling);
         }
         
@@ -78,7 +78,7 @@ namespace ml
 //            FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,"ml.adaboost");
+            DefineHelp(c,"ml-adaboost");
         }
         
         // Methods
@@ -189,7 +189,7 @@ namespace ml
         return adaboost;
     }
     
-    FLEXT_LIB("ml.adaboost", ml_adaboost);
+    FLEXT_LIB("ml-adaboost", ml_adaboost);
     
 } //namespace ml
 

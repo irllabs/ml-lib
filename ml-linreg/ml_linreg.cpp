@@ -39,7 +39,7 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
-            DefineHelp(c,"ml.linreg");
+            DefineHelp(c,"ml-linreg");
         }
         
         // Implement pure virtual methods
@@ -64,7 +64,7 @@ namespace ml
     }
 
     
-    FLEXT_LIB("ml.linreg", ml_linreg);
+    FLEXT_LIB("ml-linreg", ml_linreg);
     
 } //namespace ml
 

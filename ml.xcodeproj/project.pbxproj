@@ -190,12 +190,12 @@
 		7D2C59AF189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
 		7D2C59B0189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
-		7D580B7D18A4F8BB004ADEFF /* ml.dtw.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B7918A4F0A8004ADEFF /* ml.dtw.maxhelp */; };
-		7D580B8318A4F99A004ADEFF /* ml.linreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B7E18A4F930004ADEFF /* ml.linreg.maxhelp */; };
-		7D580B8418A4F99D004ADEFF /* ml.logreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B7F18A4F947004ADEFF /* ml.logreg.maxhelp */; };
-		7D580B8518A4F9A0004ADEFF /* ml.mlp.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B8018A4F950004ADEFF /* ml.mlp.maxhelp */; };
-		7D580B8618A4F9A6004ADEFF /* ml.peak.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B8118A4F959004ADEFF /* ml.peak.maxhelp */; };
-		7D580B8718A4F9AA004ADEFF /* ml.svm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B8218A4F992004ADEFF /* ml.svm.maxhelp */; };
+		7D580B7D18A4F8BB004ADEFF /* ml-dtw.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B7918A4F0A8004ADEFF /* ml-dtw.maxhelp */; };
+		7D580B8318A4F99A004ADEFF /* ml-linreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B7E18A4F930004ADEFF /* ml-linreg.maxhelp */; };
+		7D580B8418A4F99D004ADEFF /* ml-logreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B7F18A4F947004ADEFF /* ml-logreg.maxhelp */; };
+		7D580B8518A4F9A0004ADEFF /* ml-mlp.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B8018A4F950004ADEFF /* ml-mlp.maxhelp */; };
+		7D580B8618A4F9A6004ADEFF /* ml-peak.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B8118A4F959004ADEFF /* ml-peak.maxhelp */; };
+		7D580B8718A4F9AA004ADEFF /* ml-svm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D580B8218A4F992004ADEFF /* ml-svm.maxhelp */; };
 		7D61B1031875CAF9000FD114 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7D61B1041875CAF9000FD114 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7D61B1081875F661000FD114 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
@@ -208,8 +208,8 @@
 		7D88176218EEF5FF002426FB /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D88176418EEF6A2002426FB /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D88176518EEF6A2002426FB /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
-		7D93C43018A530270083CB07 /* ml.svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D93C42D18A52E860083CB07 /* ml.svm-help.pd */; };
-		7DD48ADC18E03D5200016FA7 /* ml.hmm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D959D3818BE136100774E57 /* ml.hmm.maxhelp */; };
+		7D93C43018A530270083CB07 /* ml-svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D93C42D18A52E860083CB07 /* ml-svm-help.pd */; };
+		7DD48ADC18E03D5200016FA7 /* ml-hmm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D959D3818BE136100774E57 /* ml-hmm.maxhelp */; };
 		7DEE4F5718BD3AA4001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
@@ -227,7 +227,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				7D93C43018A530270083CB07 /* ml.svm-help.pd in CopyFiles */,
+				7D93C43018A530270083CB07 /* ml-svm-help.pd in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,13 +237,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				7D580B7D18A4F8BB004ADEFF /* ml.dtw.maxhelp in Copy Files */,
-				7D580B8318A4F99A004ADEFF /* ml.linreg.maxhelp in Copy Files */,
-				7D580B8418A4F99D004ADEFF /* ml.logreg.maxhelp in Copy Files */,
-				7DD48ADC18E03D5200016FA7 /* ml.hmm.maxhelp in Copy Files */,
-				7D580B8518A4F9A0004ADEFF /* ml.mlp.maxhelp in Copy Files */,
-				7D580B8618A4F9A6004ADEFF /* ml.peak.maxhelp in Copy Files */,
-				7D580B8718A4F9AA004ADEFF /* ml.svm.maxhelp in Copy Files */,
+				7D580B7D18A4F8BB004ADEFF /* ml-dtw.maxhelp in Copy Files */,
+				7D580B8318A4F99A004ADEFF /* ml-linreg.maxhelp in Copy Files */,
+				7D580B8418A4F99D004ADEFF /* ml-logreg.maxhelp in Copy Files */,
+				7DD48ADC18E03D5200016FA7 /* ml-hmm.maxhelp in Copy Files */,
+				7D580B8518A4F9A0004ADEFF /* ml-mlp.maxhelp in Copy Files */,
+				7D580B8618A4F9A6004ADEFF /* ml-peak.maxhelp in Copy Files */,
+				7D580B8718A4F9AA004ADEFF /* ml-svm.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +252,7 @@
 
 /* Begin PBXFileReference section */
 		4148AF7918E2634400072953 /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = m_pd.h; path = "../../../Soft Dev/PureData/pd-0.45-4/src/m_pd.h"; sourceTree = "<group>"; };
-		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ml.mlp/ml_mlp.cpp; sourceTree = "<group>"; };
+		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = "ml-mlp.mlp/ml_mlp.cpp"; sourceTree = "<group>"; };
 		7D23B82A18C9DC3600735880 /* AdaBoost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdaBoost.cpp; sourceTree = "<group>"; };
 		7D23B82B18C9DC3600735880 /* AdaBoost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaBoost.h; sourceTree = "<group>"; };
 		7D23B82C18C9DC3600735880 /* AdaBoostClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaBoostClassModel.h; sourceTree = "<group>"; };
@@ -460,30 +460,30 @@
 		7D23B92318C9DC3600735880 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		7D23B92418C9DC3600735880 /* WarningLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WarningLog.cpp; sourceTree = "<group>"; };
 		7D23B92518C9DC3600735880 /* WarningLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningLog.h; sourceTree = "<group>"; };
-		7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = ml.adaboost/ml_adaboost.cpp; sourceTree = "<group>"; };
-		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ml.hmm/ml_hmm.cpp; sourceTree = "<group>"; };
+		7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = "ml-adaboost/ml_adaboost.cpp"; sourceTree = "<group>"; };
+		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = "ml-hmm/ml_hmm.cpp"; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		7D580B7918A4F0A8004ADEFF /* ml.dtw.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.dtw.maxhelp; path = ml.dtw/ml.dtw.maxhelp; sourceTree = "<group>"; };
-		7D580B7E18A4F930004ADEFF /* ml.linreg.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.linreg.maxhelp; path = ml.linreg/ml.linreg.maxhelp; sourceTree = "<group>"; };
-		7D580B7F18A4F947004ADEFF /* ml.logreg.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = ml.logreg.maxhelp; path = ml.logreg/ml.logreg.maxhelp; sourceTree = "<group>"; };
-		7D580B8018A4F950004ADEFF /* ml.mlp.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = ml.mlp.maxhelp; path = ml.mlp/ml.mlp.maxhelp; sourceTree = "<group>"; };
-		7D580B8118A4F959004ADEFF /* ml.peak.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = ml.peak.maxhelp; path = ml.peak/ml.peak.maxhelp; sourceTree = "<group>"; };
-		7D580B8218A4F992004ADEFF /* ml.svm.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = ml.svm.maxhelp; path = ml.svm/ml.svm.maxhelp; sourceTree = "<group>"; };
-		7D61B1011875CAF9000FD114 /* ml_linreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_linreg.cpp; path = ml.linreg/ml_linreg.cpp; sourceTree = "<group>"; };
-		7D61B1061875F661000FD114 /* ml_logreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_logreg.cpp; path = ml.logreg/ml_logreg.cpp; sourceTree = "<group>"; };
-		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
-		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ml.peak/ml_peak.cpp; sourceTree = "<group>"; };
+		7D580B7918A4F0A8004ADEFF /* ml-dtw.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ml-dtw.maxhelp"; path = "ml-dtw/ml-dtw.maxhelp"; sourceTree = "<group>"; };
+		7D580B7E18A4F930004ADEFF /* ml-linreg.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ml-linreg.maxhelp"; path = "ml-linreg/ml-linreg.maxhelp"; sourceTree = "<group>"; };
+		7D580B7F18A4F947004ADEFF /* ml-logreg.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml-logreg.maxhelp"; path = "ml-logreg/ml-logreg.maxhelp"; sourceTree = "<group>"; };
+		7D580B8018A4F950004ADEFF /* ml-mlp.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml-mlp.maxhelp"; path = "ml-mlp.mlp/ml-mlp.maxhelp"; sourceTree = "<group>"; };
+		7D580B8118A4F959004ADEFF /* ml-peak.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml-peak.maxhelp"; path = "ml-peak/ml-peak.maxhelp"; sourceTree = "<group>"; };
+		7D580B8218A4F992004ADEFF /* ml-svm.maxhelp */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml-svm.maxhelp"; path = "ml-svm/ml-svm.maxhelp"; sourceTree = "<group>"; };
+		7D61B1011875CAF9000FD114 /* ml_linreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_linreg.cpp; path = "ml-linreg/ml_linreg.cpp"; sourceTree = "<group>"; };
+		7D61B1061875F661000FD114 /* ml_logreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_logreg.cpp; path = "ml-logreg/ml_logreg.cpp"; sourceTree = "<group>"; };
+		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = "ml-dtw/ml_dtw.cpp"; sourceTree = "<group>"; };
+		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = "ml-peak/ml_peak.cpp"; sourceTree = "<group>"; };
 		7D88175F18EEF5EE002426FB /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
-		7D88176318EEF6A2002426FB /* ml_minmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_minmax.cpp; path = ml.minmax/ml_minmax.cpp; sourceTree = "<group>"; };
-		7D93C42D18A52E860083CB07 /* ml.svm-help.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml.svm-help.pd"; path = "ml.svm/ml.svm-help.pd"; sourceTree = "<group>"; };
-		7D959D3818BE136100774E57 /* ml.hmm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.hmm.maxhelp; path = ml.hmm/ml.hmm.maxhelp; sourceTree = "<group>"; };
+		7D88176318EEF6A2002426FB /* ml_minmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_minmax.cpp; path = "ml-minmax/ml_minmax.cpp"; sourceTree = "<group>"; };
+		7D93C42D18A52E860083CB07 /* ml-svm-help.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml-svm-help.pd"; path = "ml-svm/ml-svm-help.pd"; sourceTree = "<group>"; };
+		7D959D3818BE136100774E57 /* ml-hmm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ml-hmm.maxhelp"; path = "ml-hmm/ml-hmm.maxhelp"; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ml_classification.cpp; sourceTree = "<group>"; };
 		7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml_regression.cpp; sourceTree = "<group>"; };
 		7DEE4F5D18BD3F28001A1294 /* ml_regression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml_regression.h; sourceTree = "<group>"; };
 		7DEE4F5E18BD3F38001A1294 /* ml_classification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml_classification.h; sourceTree = "<group>"; };
-		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ml.svm/ml_svm.cpp; sourceTree = "<group>"; };
+		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = "ml-svm/ml_svm.cpp"; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98573560D9E52D300682171 /* ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml.cpp; sourceTree = "<group>"; };
@@ -1166,14 +1166,14 @@
 		7D580B7B18A4F6AE004ADEFF /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				7D93C42D18A52E860083CB07 /* ml.svm-help.pd */,
-				7D580B7918A4F0A8004ADEFF /* ml.dtw.maxhelp */,
-				7D580B7E18A4F930004ADEFF /* ml.linreg.maxhelp */,
-				7D580B7F18A4F947004ADEFF /* ml.logreg.maxhelp */,
-				7D580B8018A4F950004ADEFF /* ml.mlp.maxhelp */,
-				7D959D3818BE136100774E57 /* ml.hmm.maxhelp */,
-				7D580B8118A4F959004ADEFF /* ml.peak.maxhelp */,
-				7D580B8218A4F992004ADEFF /* ml.svm.maxhelp */,
+				7D93C42D18A52E860083CB07 /* ml-svm-help.pd */,
+				7D580B7918A4F0A8004ADEFF /* ml-dtw.maxhelp */,
+				7D580B7E18A4F930004ADEFF /* ml-linreg.maxhelp */,
+				7D580B7F18A4F947004ADEFF /* ml-logreg.maxhelp */,
+				7D580B8018A4F950004ADEFF /* ml-mlp.maxhelp */,
+				7D959D3818BE136100774E57 /* ml-hmm.maxhelp */,
+				7D580B8118A4F959004ADEFF /* ml-peak.maxhelp */,
+				7D580B8218A4F992004ADEFF /* ml-svm.maxhelp */,
 			);
 			name = Help;
 			sourceTree = "<group>";

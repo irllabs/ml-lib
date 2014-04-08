@@ -43,7 +43,7 @@ namespace ml
         hiddenActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getHiddenLayerActivationFunction()),
         outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction())
         {
-            post("ml.mlp: Multilayer Perceptron based on the GRT library version %s", get_grt_version().c_str());
+            post("ml-mlp: Multilayer Perceptron based on the GRT library version %s", get_grt_version().c_str());
             
             labelledRegressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
             labelledClassificationData.setNumDimensions(defaultNumInputDimensions);
@@ -99,7 +99,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "validation_set_size", get_validation_set_size);
             FLEXT_CADDATTR_GET(c, "randomize_training_order", get_randomise_training_order);
        
-            DefineHelp(c,"ml.mlp");
+            DefineHelp(c,"ml-mlp");
         }
         
         // Methods
@@ -771,7 +771,7 @@ namespace ml
         return false;
     }
     
-    FLEXT_LIB("ml.mlp", ml_mlp);
+    FLEXT_LIB("ml-mlp", ml_mlp);
     
 } //namespace ml
 

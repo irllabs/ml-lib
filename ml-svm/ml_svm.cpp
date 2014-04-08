@@ -98,7 +98,7 @@ namespace ml
     public:
         ml_svm()
         {
-            post("ml.svm: Support Vector Machines based on the GRT library version %s", get_grt_version().c_str());
+            post("ml-svm: Support Vector Machines based on the GRT library version %s", get_grt_version().c_str());
             set_scaling(default_scaling);
         }
         
@@ -142,7 +142,7 @@ namespace ml
             
             FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
             
-            DefineHelp(c,"ml.svm");
+            DefineHelp(c,"ml-svm");
         }
         
         // Methods
@@ -437,7 +437,7 @@ namespace ml
         return svm;
     }
     
-    FLEXT_LIB("ml.svm", ml_svm);
+    FLEXT_LIB("ml-svm", ml_svm);
     
 } //namespace ml
 

@@ -34,7 +34,7 @@ namespace ml
         ml_minmax()
         : threshold(1e-6)
         {
-            post("ml.minmax: Peak / valley detection based on Eli Billauer's peakdet");
+            post("ml-minmax: Peak / valley detection based on Eli Billauer's peakdet");
             FLEXT_ADDMETHOD(0, input);
         }
         
@@ -51,7 +51,7 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "threshold", set_threshold);
             FLEXT_CADDATTR_GET(c, "threshold", get_threshold);
             
-            DefineHelp(c,"ml.minmax");
+            DefineHelp(c,"ml-minmax");
         }
         
         // Methods
@@ -151,7 +151,7 @@ namespace ml
         post("%s", ML_POST_SEP);
     }
     
-    FLEXT_LIB("ml.minmax", ml_minmax);
+    FLEXT_LIB("ml-minmax", ml_minmax);
     
 #pragma mark - private methods
     

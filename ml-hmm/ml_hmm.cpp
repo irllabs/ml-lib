@@ -27,7 +27,7 @@ namespace ml
     public:
         ml_hmm()
         {
-            post("ml.hmm: Hidden Markov Model based on the GRT library version %s", get_grt_version().c_str());
+            post("ml-hmm: Hidden Markov Model based on the GRT library version %s", get_grt_version().c_str());
             set_scaling(default_scaling);
             set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
         }
@@ -57,7 +57,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
             FLEXT_CADDATTR_GET(c, "min_improvement", get_min_improvement);
             
-            DefineHelp(c,"ml.hmm");
+            DefineHelp(c,"ml-hmm");
         }
         
         // Methods
@@ -262,7 +262,7 @@ namespace ml
         return labelledTimeSeriesClassificationData.saveDatasetToFile(path);
     }
     
-    FLEXT_LIB("ml.hmm", ml_hmm);
+    FLEXT_LIB("ml-hmm", ml_hmm);
     
 } //namespace ml
 

@@ -27,7 +27,7 @@ namespace ml
     public:
         ml_dtw()
         {
-            post("ml.dtw: Dynamic Time Warping based on the GRT library version %s", get_grt_version().c_str());
+            post("ml-dtw: Dynamic Time Warping based on the GRT library version %s", get_grt_version().c_str());
             set_scaling(default_scaling);
             set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
         }
@@ -56,7 +56,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "enable_z_normalization", get_enable_z_normalization);
             FLEXT_CADDATTR_GET(c, "enable_trim_training_data", get_enable_trim_training_data);
             
-            DefineHelp(c,"ml.dtw");
+            DefineHelp(c,"ml-dtw");
         }
         
         // Methods
@@ -252,7 +252,7 @@ namespace ml
         return labelledTimeSeriesClassificationData.saveDatasetToFile(path);
     }
 
-    FLEXT_LIB("ml.dtw", ml_dtw);
+    FLEXT_LIB("ml-dtw", ml_dtw);
     
 } //namespace ml
 
