@@ -302,13 +302,16 @@ namespace ml
     void ml::clear()
     {
         t_atom status;
-        SetBool(status, true);
+        GRT::MLBase &mlBase = get_MLBase_instance();
+        
+        mlBase.clear();
         
         labelledRegressionData.clear();
         labelledClassificationData.clear();
         labelledTimeSeriesClassificationData.clear();
         unlabelledClassificationData.clear();
         
+        SetBool(status, true);
         ToOutAnything(1, s_clear, 1, &status);
     }
     
@@ -398,7 +401,7 @@ namespace ml
     }
     
 #pragma mark - Main function
-    
+#ifdef BUILD_AS_LIBRARY
     static void main()
     {
         post("%s", ML_POST_SEP);
@@ -417,6 +420,7 @@ namespace ml
         FLEXT_SETUP(ml_peak);
         FLEXT_SETUP(ml_minmax);
     }
+#endif
     
 #pragma mark - Global constants
     
