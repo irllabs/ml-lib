@@ -430,4 +430,7 @@ namespace ml
 } // namespace ml
 
 
+#ifdef BUILD_AS_LIBRARY
 FLEXT_LIB_SETUP(ml, ml::main)
+#endif
+

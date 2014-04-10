@@ -213,7 +213,11 @@ namespace ml
         post("%s", ML_POST_SEP);
     }
     
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB("ml-peak", ml_peak);
+#else
+    FLEXT_NEW("ml-peak", ml_peak);
+#endif
     
 } //namespace ml
 

@@ -771,7 +771,11 @@ namespace ml
         return false;
     }
     
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB("ml-mlp", ml_mlp);
+#else
+    FLEXT_NEW("ml-mlp", ml_mlp);
+#endif
     
 } //namespace ml
 

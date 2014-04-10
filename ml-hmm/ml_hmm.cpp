@@ -262,7 +262,11 @@ namespace ml
         return labelledTimeSeriesClassificationData.saveDatasetToFile(path);
     }
     
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB("ml-hmm", ml_hmm);
+#else
+    FLEXT_NEW("ml-hmm", ml_hmm);
+#endif
     
 } //namespace ml
 

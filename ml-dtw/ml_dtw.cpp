@@ -251,8 +251,12 @@ namespace ml
     {
         return labelledTimeSeriesClassificationData.saveDatasetToFile(path);
     }
-
+    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB("ml-dtw", ml_dtw);
+#else
+    FLEXT_NEW("ml-dtw", ml_dtw);
+#endif
     
 } //namespace ml
 

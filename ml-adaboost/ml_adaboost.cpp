@@ -188,8 +188,12 @@ namespace ml
     {
         return adaboost;
     }
-    
+
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB("ml-adaboost", ml_adaboost);
+#else
+    FLEXT_NEW("ml-adaboost", ml_adaboost);
+#endif
     
 } //namespace ml
 

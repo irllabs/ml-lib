@@ -436,8 +436,11 @@ namespace ml
     {
         return svm;
     }
-    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB("ml-svm", ml_svm);
+#else
+    FLEXT_NEW("ml-svm", ml_svm);
+#endif
     
 } //namespace ml
 

@@ -63,8 +63,11 @@ namespace ml
         return regressifier;
     }
 
-    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB("ml-linreg", ml_linreg);
+#else
+    FLEXT_NEW("ml-linreg", ml_linreg);
+#endif
     
 } //namespace ml
 

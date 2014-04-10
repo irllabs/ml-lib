@@ -151,8 +151,6 @@ namespace ml
         post("%s", ML_POST_SEP);
     }
     
-    FLEXT_LIB("ml-minmax", ml_minmax);
-    
 #pragma mark - private methods
     
     void ml_minmax::detect_minmax(
@@ -241,6 +239,13 @@ namespace ml
             atomList.Append(value_a);
         }
     }
+    
+#ifdef BUILD_AS_LIBRARY
+    FLEXT_LIB("ml-minmax", ml_minmax);
+#else
+    FLEXT_NEW("ml-minmax", ml_minmax);
+#endif
+    
     
 } //namespace ml
 
