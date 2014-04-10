@@ -51,6 +51,8 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "threshold", set_threshold);
             FLEXT_CADDATTR_GET(c, "threshold", get_threshold);
             
+            FLEXT_CADDMETHOD_(c, 0, "help", usage);
+            
             DefineHelp(c,"ml-minmax");
         }
         
@@ -69,6 +71,7 @@ namespace ml
         
         // Method wrappers
         FLEXT_CALLBACK_V(input);
+        FLEXT_CALLBACK(usage);
         
         // Attribute wrappers
         FLEXT_CALLVAR_F(get_threshold, set_threshold);
