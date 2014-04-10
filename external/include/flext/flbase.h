@@ -380,7 +380,10 @@ static void __setup__(t_classid classid) { 	    	\
 
 
 // generate name of dsp/non-dsp setup function
-#if FLEXT_SYS == FLEXT_SYS_PD || FLEXT_SYS == FLEXT_SYS_MAX
+#if defined(FLEXT_USE_HEX_SETUP_NAME) && defined(FLEXT_SYS_PD)
+    #define FLEXT_STPF_0(NAME) setup_##NAME
+    #define FLEXT_STPF_1(NAME) setup_##NAME
+#elif FLEXT_SYS == FLEXT_SYS_PD || FLEXT_SYS == FLEXT_SYS_MAX
 	#define FLEXT_STPF_0(NAME) NAME##_setup
 	#define FLEXT_STPF_1(NAME) NAME##_tilde_setup
 #else
