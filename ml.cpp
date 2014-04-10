@@ -339,7 +339,7 @@ namespace ml
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
         post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and data_typel");
+        post("clear:\tclear the stored training data and model");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
         post("%s", ML_POST_SEP);
