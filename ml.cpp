@@ -419,6 +419,7 @@ namespace ml
         FLEXT_SETUP(ml_logreg);
         FLEXT_SETUP(ml_peak);
         FLEXT_SETUP(ml_minmax);
+        FLEXT_SETUP(ml_anbc);
     }
 #endif
     
