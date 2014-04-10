@@ -32,7 +32,7 @@ namespace ml
         
     public:
         ml_minmax()
-        : threshold(1e-6)
+        : delta(1e-6)
         {
             post("ml-minmax: Peak / valley detection based on Eli Billauer's peakdet");
             FLEXT_ADDMETHOD(0, input);
@@ -48,8 +48,8 @@ namespace ml
         static void setup(t_classid c)
         {
             
-            FLEXT_CADDATTR_SET(c, "threshold", set_threshold);
-            FLEXT_CADDATTR_GET(c, "threshold", get_threshold);
+            FLEXT_CADDATTR_SET(c, "delta", set_delta);
+            FLEXT_CADDATTR_GET(c, "delta", get_delta);
             
             FLEXT_CADDMETHOD_(c, 0, "help", usage);
             
@@ -61,10 +61,10 @@ namespace ml
         void usage();
         
         // Attribute setters
-        void set_threshold(float threshold);
+        void set_delta(float delta);
         
         // Attribute Getters
-        void get_threshold(float &threshold) const;
+        void get_delta(float &delta) const;
         
         
     private:
@@ -74,10 +74,10 @@ namespace ml
         FLEXT_CALLBACK(usage);
         
         // Attribute wrappers
-        FLEXT_CALLVAR_F(get_threshold, set_threshold);
+        FLEXT_CALLVAR_F(get_delta, set_delta);
         
         // Instance variables
-        double threshold;
+        double delta;
         
         // Utility methods
         void detect_minmax(
@@ -93,21 +93,21 @@ namespace ml
                                 );
     };
     
-    void ml_minmax::set_threshold(float threshold)
+    void ml_minmax::set_delta(float delta)
     {
-        if (threshold <= 0)
+        if (delta <= 0)
         {
-            error("minmax threshold must be positive and non-zero");
+            error("minmax delta must be positive and non-zero");
             return;
         }
         
-        this->threshold = threshold;
+        this->delta = delta;
     }
     
     // Attribute Getters
-    void ml_minmax::get_threshold(float &threshold) const
+    void ml_minmax::get_delta(float &delta) const
     {
-        threshold = this->threshold;
+        delta = this->delta;
     }
     
     // Methods
@@ -146,7 +146,7 @@ namespace ml
         post("%s", ML_POST_SEP);
         post("Attributes:");
         post("%s", ML_POST_SEP);
-        post("threshold: a float setting the minmax threshold. Values will be considered if they are greater than the previous and next value by at least the threshold value. (default: 1e-6)");
+        post("delta: a float setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value. (default: 1e-6)");
         post("%s", ML_POST_SEP);
         post("Methods:");
         post("%s", ML_POST_SEP);
@@ -195,7 +195,7 @@ namespace ml
             }
             
             if(is_detecting_max &&
-               data[i] < max - this->threshold)
+               data[i] < max - this->delta)
             {
                 maxima_locations.push_back(max_pos);
                 
@@ -207,7 +207,7 @@ namespace ml
                 min_pos = max_pos;
             }
             else if((!is_detecting_max) &&
-                    data[i] > min + this->threshold)
+                    data[i] > min + this->delta)
             {
                 minima_locations.push_back(min_pos);
                 
