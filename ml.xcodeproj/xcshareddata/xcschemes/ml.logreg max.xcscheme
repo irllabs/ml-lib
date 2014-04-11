@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA02518F69AF600F417F6"
-               BuildableName = "ml-logreg.mxo"
+               BuildableName = "ml.logreg.mxo"
                BlueprintName = "ml.logreg max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>

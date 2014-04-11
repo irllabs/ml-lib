@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7D9FF318F699D800F417F6"
-               BuildableName = "ml-adaboost.mxo"
+               BuildableName = "ml.adaboost.mxo"
                BlueprintName = "ml.adaboost max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA05518F69B2A00F417F6"
-               BuildableName = "ml-dtw.mxo"
+               BuildableName = "ml.dtw.mxo"
                BlueprintName = "ml.dtw max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA06D18F69B4300F417F6"
-               BuildableName = "ml-hmm.mxo"
+               BuildableName = "ml.hmm.mxo"
                BlueprintName = "ml.hmm max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
@@ -71,7 +71,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA00D18F69AD400F417F6"
-               BuildableName = "ml-linreg.mxo"
+               BuildableName = "ml.linreg.mxo"
                BlueprintName = "ml.linreg max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
@@ -85,7 +85,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA02518F69AF600F417F6"
-               BuildableName = "ml-logreg.mxo"
+               BuildableName = "ml.logreg.mxo"
                BlueprintName = "ml.logreg max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
@@ -99,7 +99,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA09D18F69B7100F417F6"
-               BuildableName = "ml-minmax.mxo"
+               BuildableName = "ml.minmax.mxo"
                BlueprintName = "ml.minmax max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
@@ -113,7 +113,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA03D18F69B0F00F417F6"
-               BuildableName = "ml-mlp.mxo"
+               BuildableName = "ml.mlp.mxo"
                BlueprintName = "ml.mlp max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
@@ -127,7 +127,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA08518F69B5A00F417F6"
-               BuildableName = "ml-peak.mxo"
+               BuildableName = "ml.peak.mxo"
                BlueprintName = "ml.peak max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
@@ -141,7 +141,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7D9FD018F6948E00F417F6"
-               BuildableName = "ml-svm.mxo"
+               BuildableName = "ml.svm.mxo"
                BlueprintName = "ml.svm max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>

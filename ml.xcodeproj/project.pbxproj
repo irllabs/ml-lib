@@ -17,6 +17,16 @@
 			name = "BUILD ALL MAX";
 			productName = BUILD_ALL;
 		};
+		7D7DA16418F7DD4700F417F6 /* BUILD ALL PD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7D7DA16518F7DD4800F417F6 /* Build configuration list for PBXAggregateTarget "BUILD ALL PD" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = "BUILD ALL PD";
+			productName = "BUILD ALL PD";
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -107,6 +117,54 @@
 		7D7DA0D118F6A63E00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
 		7D7DA0DE18F6C34C00F417F6 /* ml_anbc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */; };
 		7D7DA0DF18F6C34C00F417F6 /* ml_anbc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */; };
+		7D7DA0EE18F7DC5600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D7DA0EF18F7DC5600F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D7DA0F118F7DC5600F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7D7DA0F218F7DC5600F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7D7DA0F318F7DC5600F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7D7DA0F418F7DC5600F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA0FD18F7DC8900F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D7DA0FE18F7DC8900F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D7DA10018F7DC8900F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7D7DA10118F7DC8900F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7D7DA10218F7DC8900F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7D7DA10318F7DC8900F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA10C18F7DCA600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D7DA10D18F7DCA600F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D7DA10F18F7DCA600F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7D7DA11018F7DCA600F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7D7DA11118F7DCA600F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7D7DA11218F7DCA600F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA11B18F7DCBD00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D7DA11C18F7DCBD00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D7DA11E18F7DCBD00F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7D7DA11F18F7DCBD00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7D7DA12018F7DCBD00F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7D7DA12118F7DCBD00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA12A18F7DCD600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D7DA12B18F7DCD600F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D7DA12D18F7DCD600F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7D7DA12E18F7DCD600F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7D7DA12F18F7DCD600F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7D7DA13018F7DCD600F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA13918F7DCEC00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D7DA13A18F7DCEC00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D7DA13C18F7DCEC00F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7D7DA13D18F7DCEC00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7D7DA13E18F7DCEC00F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7D7DA13F18F7DCEC00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA14818F7DD0600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D7DA14918F7DD0600F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D7DA14B18F7DD0600F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7D7DA14C18F7DD0600F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7D7DA14D18F7DD0600F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7D7DA14E18F7DD0600F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA15718F7DD1C00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D7DA15818F7DD1C00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D7DA15A18F7DD1C00F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7D7DA15B18F7DD1C00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7D7DA15C18F7DD1C00F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7D7DA15D18F7DD1C00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
 		7D88176018EEF5EE002426FB /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D88176218EEF5FF002426FB /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D88176418EEF6A2002426FB /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
@@ -220,6 +278,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D7DA0F518F7DC5600F417F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA10418F7DC8900F417F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA11318F7DCA600F417F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA12218F7DCBD00F417F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA13118F7DCD600F417F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA14018F7DCEC00F417F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA14F18F7DD0600F417F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA15E18F7DD1C00F417F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D93C42F18A530140083CB07 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,6 +402,14 @@
 		7D7DA0E818F7CFA300F417F6 /* ml.peak.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.peak.maxhelp; path = ml.peak/ml.peak.maxhelp; sourceTree = "<group>"; };
 		7D7DA0E918F7CFA300F417F6 /* ml.svm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.svm.maxhelp; path = ml.svm/ml.svm.maxhelp; sourceTree = "<group>"; };
 		7D7DA0EB18F7CFD200F417F6 /* ml.svm-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ml.svm-help.pd"; path = "ml.svm/ml.svm-help.pd"; sourceTree = "<group>"; };
+		7D7DA0FA18F7DC5600F417F6 /* ml.adaboost.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.adaboost.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7DA10918F7DC8900F417F6 /* ml.linreg.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.linreg.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7DA11818F7DCA600F417F6 /* ml.logreg.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.logreg.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7DA12718F7DCBD00F417F6 /* ml.mlp.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.mlp.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7DA13618F7DCD600F417F6 /* ml.dtw.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.dtw.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7DA14518F7DCEC00F417F6 /* ml.hmm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.hmm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7DA15418F7DD0600F417F6 /* ml.peak.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.peak.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7DA16318F7DD1C00F417F6 /* ml.minmax.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.minmax.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D88175F18EEF5EE002426FB /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7D88176318EEF6A2002426FB /* ml_minmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_minmax.cpp; path = ml.minmax/ml_minmax.cpp; sourceTree = "<group>"; };
@@ -550,6 +688,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D7DA0ED18F7DC5600F417F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA0EE18F7DC5600F417F6 /* Accelerate.framework in Frameworks */,
+				7D7DA0EF18F7DC5600F417F6 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA0FC18F7DC8900F417F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA0FD18F7DC8900F417F6 /* Accelerate.framework in Frameworks */,
+				7D7DA0FE18F7DC8900F417F6 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA10B18F7DCA600F417F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA10C18F7DCA600F417F6 /* Accelerate.framework in Frameworks */,
+				7D7DA10D18F7DCA600F417F6 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA11A18F7DCBD00F417F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA11B18F7DCBD00F417F6 /* Accelerate.framework in Frameworks */,
+				7D7DA11C18F7DCBD00F417F6 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA12918F7DCD600F417F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA12A18F7DCD600F417F6 /* Accelerate.framework in Frameworks */,
+				7D7DA12B18F7DCD600F417F6 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA13818F7DCEC00F417F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA13918F7DCEC00F417F6 /* Accelerate.framework in Frameworks */,
+				7D7DA13A18F7DCEC00F417F6 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA14718F7DD0600F417F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA14818F7DD0600F417F6 /* Accelerate.framework in Frameworks */,
+				7D7DA14918F7DD0600F417F6 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA15618F7DD1C00F417F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA15718F7DD1C00F417F6 /* Accelerate.framework in Frameworks */,
+				7D7DA15818F7DD1C00F417F6 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC09B05546B4700DB518D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -588,6 +798,14 @@
 				7D7DA09B18F69B5A00F417F6 /* ml.peak.mxo */,
 				7D7DA0B318F69B7100F417F6 /* ml.minmax.mxo */,
 				7D7DA0DA18F6A63E00F417F6 /* ml.svm.pd_darwin */,
+				7D7DA0FA18F7DC5600F417F6 /* ml.adaboost.pd_darwin */,
+				7D7DA10918F7DC8900F417F6 /* ml.linreg.pd_darwin */,
+				7D7DA11818F7DCA600F417F6 /* ml.logreg.pd_darwin */,
+				7D7DA12718F7DCBD00F417F6 /* ml.mlp.pd_darwin */,
+				7D7DA13618F7DCD600F417F6 /* ml.dtw.pd_darwin */,
+				7D7DA14518F7DCEC00F417F6 /* ml.hmm.pd_darwin */,
+				7D7DA15418F7DD0600F417F6 /* ml.peak.pd_darwin */,
+				7D7DA16318F7DD1C00F417F6 /* ml.minmax.pd_darwin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1415,6 +1633,142 @@
 			productReference = 7D7DA0DA18F6A63E00F417F6 /* ml.svm.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
+		7D7DA0EC18F7DC5600F417F6 /* ml.adaboost pd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7DA0F618F7DC5600F417F6 /* Build configuration list for PBXNativeTarget "ml.adaboost pd" */;
+			buildPhases = (
+				7D7DA0ED18F7DC5600F417F6 /* Frameworks */,
+				7D7DA0F018F7DC5600F417F6 /* Sources */,
+				7D7DA0F518F7DC5600F417F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.adaboost pd";
+			productName = xsample;
+			productReference = 7D7DA0FA18F7DC5600F417F6 /* ml.adaboost.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		7D7DA0FB18F7DC8900F417F6 /* ml.linreg pd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7DA10518F7DC8900F417F6 /* Build configuration list for PBXNativeTarget "ml.linreg pd" */;
+			buildPhases = (
+				7D7DA0FC18F7DC8900F417F6 /* Frameworks */,
+				7D7DA0FF18F7DC8900F417F6 /* Sources */,
+				7D7DA10418F7DC8900F417F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.linreg pd";
+			productName = xsample;
+			productReference = 7D7DA10918F7DC8900F417F6 /* ml.linreg.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		7D7DA10A18F7DCA600F417F6 /* ml.logreg pd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7DA11418F7DCA600F417F6 /* Build configuration list for PBXNativeTarget "ml.logreg pd" */;
+			buildPhases = (
+				7D7DA10B18F7DCA600F417F6 /* Frameworks */,
+				7D7DA10E18F7DCA600F417F6 /* Sources */,
+				7D7DA11318F7DCA600F417F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.logreg pd";
+			productName = xsample;
+			productReference = 7D7DA11818F7DCA600F417F6 /* ml.logreg.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		7D7DA11918F7DCBD00F417F6 /* ml.mlp pd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7DA12318F7DCBD00F417F6 /* Build configuration list for PBXNativeTarget "ml.mlp pd" */;
+			buildPhases = (
+				7D7DA11A18F7DCBD00F417F6 /* Frameworks */,
+				7D7DA11D18F7DCBD00F417F6 /* Sources */,
+				7D7DA12218F7DCBD00F417F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.mlp pd";
+			productName = xsample;
+			productReference = 7D7DA12718F7DCBD00F417F6 /* ml.mlp.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		7D7DA12818F7DCD600F417F6 /* ml.dtw pd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7DA13218F7DCD600F417F6 /* Build configuration list for PBXNativeTarget "ml.dtw pd" */;
+			buildPhases = (
+				7D7DA12918F7DCD600F417F6 /* Frameworks */,
+				7D7DA12C18F7DCD600F417F6 /* Sources */,
+				7D7DA13118F7DCD600F417F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.dtw pd";
+			productName = xsample;
+			productReference = 7D7DA13618F7DCD600F417F6 /* ml.dtw.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		7D7DA13718F7DCEC00F417F6 /* ml.hmm pd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7DA14118F7DCEC00F417F6 /* Build configuration list for PBXNativeTarget "ml.hmm pd" */;
+			buildPhases = (
+				7D7DA13818F7DCEC00F417F6 /* Frameworks */,
+				7D7DA13B18F7DCEC00F417F6 /* Sources */,
+				7D7DA14018F7DCEC00F417F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.hmm pd";
+			productName = xsample;
+			productReference = 7D7DA14518F7DCEC00F417F6 /* ml.hmm.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		7D7DA14618F7DD0600F417F6 /* ml.peak pd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7DA15018F7DD0600F417F6 /* Build configuration list for PBXNativeTarget "ml.peak pd" */;
+			buildPhases = (
+				7D7DA14718F7DD0600F417F6 /* Frameworks */,
+				7D7DA14A18F7DD0600F417F6 /* Sources */,
+				7D7DA14F18F7DD0600F417F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.peak pd";
+			productName = xsample;
+			productReference = 7D7DA15418F7DD0600F417F6 /* ml.peak.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		7D7DA15518F7DD1C00F417F6 /* ml.minmax pd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7DA15F18F7DD1C00F417F6 /* Build configuration list for PBXNativeTarget "ml.minmax pd" */;
+			buildPhases = (
+				7D7DA15618F7DD1C00F417F6 /* Frameworks */,
+				7D7DA15918F7DD1C00F417F6 /* Sources */,
+				7D7DA15E18F7DD1C00F417F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.minmax pd";
+			productName = xsample;
+			productReference = 7D7DA16318F7DD1C00F417F6 /* ml.minmax.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		D2AAC09C05546B4700DB518D /* ml pd */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9A5BC8A0A33819900AD9F03 /* Build configuration list for PBXNativeTarget "ml pd" */;
@@ -1471,6 +1825,14 @@
 			targets = (
 				D2AAC09C05546B4700DB518D /* ml pd */,
 				7D7DA0C318F6A63E00F417F6 /* ml.svm pd */,
+				7D7DA0EC18F7DC5600F417F6 /* ml.adaboost pd */,
+				7D7DA0FB18F7DC8900F417F6 /* ml.linreg pd */,
+				7D7DA10A18F7DCA600F417F6 /* ml.logreg pd */,
+				7D7DA11918F7DCBD00F417F6 /* ml.mlp pd */,
+				7D7DA12818F7DCD600F417F6 /* ml.dtw pd */,
+				7D7DA13718F7DCEC00F417F6 /* ml.hmm pd */,
+				7D7DA14618F7DD0600F417F6 /* ml.peak pd */,
+				7D7DA15518F7DD1C00F417F6 /* ml.minmax pd */,
 				E9974E52077083C700206F68 /* ml max */,
 				7D7D9FD018F6948E00F417F6 /* ml.svm max */,
 				7D7D9FF318F699D800F417F6 /* ml.adaboost max */,
@@ -1482,6 +1844,7 @@
 				7D7DA08518F69B5A00F417F6 /* ml.peak max */,
 				7D7DA09D18F69B7100F417F6 /* ml.minmax max */,
 				7D7DA0BE18F6A04100F417F6 /* BUILD ALL MAX */,
+				7D7DA16418F7DD4700F417F6 /* BUILD ALL PD */,
 			);
 		};
 /* End PBXProject section */
@@ -1582,6 +1945,94 @@
 				7D7DA0CA18F6A63E00F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA0CF18F6A63E00F417F6 /* ml_regression.cpp in Sources */,
 				7D7DA0D118F6A63E00F417F6 /* ml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA0F018F7DC5600F417F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA0F118F7DC5600F417F6 /* ml_svm.cpp in Sources */,
+				7D7DA0F218F7DC5600F417F6 /* ml_classification.cpp in Sources */,
+				7D7DA0F318F7DC5600F417F6 /* ml_regression.cpp in Sources */,
+				7D7DA0F418F7DC5600F417F6 /* ml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA0FF18F7DC8900F417F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA10018F7DC8900F417F6 /* ml_svm.cpp in Sources */,
+				7D7DA10118F7DC8900F417F6 /* ml_classification.cpp in Sources */,
+				7D7DA10218F7DC8900F417F6 /* ml_regression.cpp in Sources */,
+				7D7DA10318F7DC8900F417F6 /* ml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA10E18F7DCA600F417F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA10F18F7DCA600F417F6 /* ml_svm.cpp in Sources */,
+				7D7DA11018F7DCA600F417F6 /* ml_classification.cpp in Sources */,
+				7D7DA11118F7DCA600F417F6 /* ml_regression.cpp in Sources */,
+				7D7DA11218F7DCA600F417F6 /* ml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA11D18F7DCBD00F417F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA11E18F7DCBD00F417F6 /* ml_svm.cpp in Sources */,
+				7D7DA11F18F7DCBD00F417F6 /* ml_classification.cpp in Sources */,
+				7D7DA12018F7DCBD00F417F6 /* ml_regression.cpp in Sources */,
+				7D7DA12118F7DCBD00F417F6 /* ml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA12C18F7DCD600F417F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA12D18F7DCD600F417F6 /* ml_svm.cpp in Sources */,
+				7D7DA12E18F7DCD600F417F6 /* ml_classification.cpp in Sources */,
+				7D7DA12F18F7DCD600F417F6 /* ml_regression.cpp in Sources */,
+				7D7DA13018F7DCD600F417F6 /* ml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA13B18F7DCEC00F417F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA13C18F7DCEC00F417F6 /* ml_svm.cpp in Sources */,
+				7D7DA13D18F7DCEC00F417F6 /* ml_classification.cpp in Sources */,
+				7D7DA13E18F7DCEC00F417F6 /* ml_regression.cpp in Sources */,
+				7D7DA13F18F7DCEC00F417F6 /* ml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA14A18F7DD0600F417F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA14B18F7DD0600F417F6 /* ml_svm.cpp in Sources */,
+				7D7DA14C18F7DD0600F417F6 /* ml_classification.cpp in Sources */,
+				7D7DA14D18F7DD0600F417F6 /* ml_regression.cpp in Sources */,
+				7D7DA14E18F7DD0600F417F6 /* ml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D7DA15918F7DD1C00F417F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7DA15A18F7DD1C00F417F6 /* ml_svm.cpp in Sources */,
+				7D7DA15B18F7DD1C00F417F6 /* ml_classification.cpp in Sources */,
+				7D7DA15C18F7DD1C00F417F6 /* ml_regression.cpp in Sources */,
+				7D7DA15D18F7DD1C00F417F6 /* ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3203,6 +3654,867 @@
 			};
 			name = Default;
 		};
+		7D7DA0F718F7DC5600F417F6 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_sd",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.adaboost;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		7D7DA0F818F7DC5600F417F6 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PD)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_s",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.adaboost;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		7D7DA0F918F7DC5600F417F6 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PDApp)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					"$(PDApp)/bin/pd",
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.adaboost;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+		7D7DA10618F7DC8900F417F6 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_sd",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.linreg;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		7D7DA10718F7DC8900F417F6 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PD)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_s",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.linreg;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		7D7DA10818F7DC8900F417F6 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PDApp)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					"$(PDApp)/bin/pd",
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.linreg;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+		7D7DA11518F7DCA600F417F6 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_sd",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.logreg;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		7D7DA11618F7DCA600F417F6 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PD)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_s",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.logreg;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		7D7DA11718F7DCA600F417F6 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PDApp)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					"$(PDApp)/bin/pd",
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.logreg;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+		7D7DA12418F7DCBD00F417F6 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_sd",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.mlp;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		7D7DA12518F7DCBD00F417F6 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PD)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_s",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.mlp;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		7D7DA12618F7DCBD00F417F6 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PDApp)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					"$(PDApp)/bin/pd",
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.mlp;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+		7D7DA13318F7DCD600F417F6 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_sd",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.dtw;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		7D7DA13418F7DCD600F417F6 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PD)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_s",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.dtw;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		7D7DA13518F7DCD600F417F6 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PDApp)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					"$(PDApp)/bin/pd",
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.dtw;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+		7D7DA14218F7DCEC00F417F6 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_sd",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.hmm;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		7D7DA14318F7DCEC00F417F6 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PD)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_s",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.hmm;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		7D7DA14418F7DCEC00F417F6 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PDApp)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					"$(PDApp)/bin/pd",
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.hmm;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+		7D7DA15118F7DD0600F417F6 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_sd",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.peak;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		7D7DA15218F7DD0600F417F6 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PD)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_s",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.peak;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		7D7DA15318F7DD0600F417F6 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PDApp)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					"$(PDApp)/bin/pd",
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.peak;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+		7D7DA16018F7DD1C00F417F6 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_sd",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.minmax;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		7D7DA16118F7DD1C00F417F6 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PD)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_s",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.minmax;
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		7D7DA16218F7DD1C00F417F6 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PDApp)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					"$(PDApp)/bin/pd",
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = ml.minmax;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+		7D7DA16618F7DD4800F417F6 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Development;
+		};
+		7D7DA16718F7DD4800F417F6 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Deployment;
+		};
+		7D7DA16818F7DD4800F417F6 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Default;
+		};
 		E9A5BC8B0A33819900AD9F03 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3666,6 +4978,95 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
+		};
+		7D7DA0F618F7DC5600F417F6 /* Build configuration list for PBXNativeTarget "ml.adaboost pd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7DA0F718F7DC5600F417F6 /* Development */,
+				7D7DA0F818F7DC5600F417F6 /* Deployment */,
+				7D7DA0F918F7DC5600F417F6 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D7DA10518F7DC8900F417F6 /* Build configuration list for PBXNativeTarget "ml.linreg pd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7DA10618F7DC8900F417F6 /* Development */,
+				7D7DA10718F7DC8900F417F6 /* Deployment */,
+				7D7DA10818F7DC8900F417F6 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D7DA11418F7DCA600F417F6 /* Build configuration list for PBXNativeTarget "ml.logreg pd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7DA11518F7DCA600F417F6 /* Development */,
+				7D7DA11618F7DCA600F417F6 /* Deployment */,
+				7D7DA11718F7DCA600F417F6 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D7DA12318F7DCBD00F417F6 /* Build configuration list for PBXNativeTarget "ml.mlp pd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7DA12418F7DCBD00F417F6 /* Development */,
+				7D7DA12518F7DCBD00F417F6 /* Deployment */,
+				7D7DA12618F7DCBD00F417F6 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D7DA13218F7DCD600F417F6 /* Build configuration list for PBXNativeTarget "ml.dtw pd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7DA13318F7DCD600F417F6 /* Development */,
+				7D7DA13418F7DCD600F417F6 /* Deployment */,
+				7D7DA13518F7DCD600F417F6 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D7DA14118F7DCEC00F417F6 /* Build configuration list for PBXNativeTarget "ml.hmm pd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7DA14218F7DCEC00F417F6 /* Development */,
+				7D7DA14318F7DCEC00F417F6 /* Deployment */,
+				7D7DA14418F7DCEC00F417F6 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D7DA15018F7DD0600F417F6 /* Build configuration list for PBXNativeTarget "ml.peak pd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7DA15118F7DD0600F417F6 /* Development */,
+				7D7DA15218F7DD0600F417F6 /* Deployment */,
+				7D7DA15318F7DD0600F417F6 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D7DA15F18F7DD1C00F417F6 /* Build configuration list for PBXNativeTarget "ml.minmax pd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7DA16018F7DD1C00F417F6 /* Development */,
+				7D7DA16118F7DD1C00F417F6 /* Deployment */,
+				7D7DA16218F7DD1C00F417F6 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D7DA16518F7DD4800F417F6 /* Build configuration list for PBXAggregateTarget "BUILD ALL PD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7DA16618F7DD4800F417F6 /* Development */,
+				7D7DA16718F7DD4800F417F6 /* Deployment */,
+				7D7DA16818F7DD4800F417F6 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		E9A5BC8A0A33819900AD9F03 /* Build configuration list for PBXNativeTarget "ml pd" */ = {
 			isa = XCConfigurationList;

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA06D18F69B4300F417F6"
-               BuildableName = "ml-hmm.mxo"
+               BuildableName = "ml.hmm.mxo"
                BlueprintName = "ml.hmm max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>

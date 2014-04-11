@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA05518F69B2A00F417F6"
-               BuildableName = "ml-dtw.mxo"
+               BuildableName = "ml.dtw.mxo"
                BlueprintName = "ml.dtw max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7D9FF318F699D800F417F6"
-               BuildableName = "ml-adaboost.mxo"
+               BuildableName = "ml.adaboost.mxo"
                BlueprintName = "ml.adaboost max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
