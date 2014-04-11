@@ -1,6 +1,6 @@
 NAME=ml
 SRCS=ml.cpp ml_classification.cpp ml_regression.cpp ml.adaboost/ml_adaboost.cpp ml.dtw/ml_dtw.cpp ml.hmm/ml_hmm.cpp ml.mlp/ml_mlp.cpp ml.linreg/ml_linreg.cpp ml.logreg/ml_logreg.cpp ml.peak/ml_peak.cpp ml.svm/ml_svm.cpp ml.anbc/ml_anbc.cpp ml.minmax/ml_minmax.cpp
-INCPATH+=-I./external/include/GRT -I./external/include -I.
+INCPATH+=-I./external/include/GRT -I./external/include -I./external/include/flext -I.
 LIBPATH+=-L/usr/local/lib
 
 LIBS+=-lgrt
