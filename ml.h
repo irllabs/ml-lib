@@ -28,7 +28,7 @@
 
 #include <stdint.h>
 
-#define ML_VERSION "0.13.0"
+#define ML_VERSION "0.13.1"
 #define ML_NAME "ml-lib"
 #define ML_POST_SEP "---------------------------------------"
 
