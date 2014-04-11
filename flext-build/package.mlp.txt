@@ -1,0 +1,7 @@
+NAME=ml.mlp
+SRCS=ml.cpp ml.mlp/ml_mlp.cpp 
+
+INCPATH+=-I./external/include/GRT -I./external/include -I.
+LIBPATH+=-L/usr/local/lib
+LIBS+=-lgrt
+CFLAGS+=-DFLEXT_SYS=2 -DFLEXT_ATTRIBUTES=1

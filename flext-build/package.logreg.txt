@@ -1,0 +1,7 @@
+NAME=ml.logreg
+SRCS=ml.cpp ml_regression.cpp ml.logreg/ml_logreg.cpp 
+
+INCPATH+=-I./external/include/GRT -I./external/include -I.
+LIBPATH+=-L/usr/local/lib
+LIBS+=-lgrt
+CFLAGS+=-DFLEXT_SYS=2 -DFLEXT_ATTRIBUTES=1
