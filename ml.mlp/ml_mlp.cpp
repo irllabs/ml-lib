@@ -444,7 +444,7 @@ namespace ml
 
     void ml_mlp::get_min_change(float &min_change) const
     {
-        min_change = mlp.getMinChange();
+        flext::error("function not implemented");
     }
     
     void ml_mlp::get_training_rate(float &training_rate) const
@@ -494,7 +494,7 @@ namespace ml
 
     void ml_mlp::get_use_validation_set(bool &use_validation_set) const
     {
-        use_validation_set = mlp.getUseValidationSet();
+        flext::error("function not implemented");
     }
     
     void ml_mlp::get_validation_set_size(int &validation_set_size) const
@@ -504,7 +504,7 @@ namespace ml
     
     void ml_mlp::get_randomise_training_order(bool &randomise_training_order) const
     {
-        randomise_training_order = mlp.getRandomiseTrainingOrder();
+        flext::error("function not implemented");
     }
     
     // Methods
