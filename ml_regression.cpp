@@ -61,7 +61,7 @@ namespace ml
     // Methods
     void ml_regression::train()
     {
-        GRT::UINT numSamples = labelledRegressionData.getNumSamples();
+        GRT::UINT numSamples = regressionData.getNumSamples();
         GRT::Regressifier &regressifier = get_Regressifier_instance();
         
         if (numSamples == 0)
@@ -71,7 +71,7 @@ namespace ml
         }
         
         bool success = false;
-        success = regressifier.train(labelledRegressionData);
+        success = regressifier.train(regressionData);
         
         if (!success)
         {
@@ -86,7 +86,7 @@ namespace ml
 
     void ml_regression::map(int argc, const t_atom *argv)
     {
-        GRT::UINT numSamples = labelledRegressionData.getNumSamples();
+        GRT::UINT numSamples = regressionData.getNumSamples();
         GRT::Regressifier &regressifier = get_Regressifier_instance();
         
         if (numSamples == 0)
@@ -180,11 +180,11 @@ namespace ml
     
     bool ml_regression::load_specialised_data(std::string &path)
     {
-        return labelledRegressionData.loadDatasetFromFile(path);
+        return regressionData.loadDatasetFromFile(path);
     }
     
     bool ml_regression::save_specialised_data(std::string &path) const
     {
-        return labelledRegressionData.saveDatasetToFile(path);
+        return regressionData.saveDatasetToFile(path);
     }
 }

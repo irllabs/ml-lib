@@ -81,7 +81,7 @@ namespace ml
     void ml_anbc::set_weights(const AtomList &weights)
     {
         // weights are per vector element per class so each class has a weight vector of length N where N is the input vector size
-        GRT::LabelledClassificationData weightsLabelledClassificationData;
+        GRT::ClassificationData weightsClassificationData;
         std::vector<double> weightsVector;
         
         if (weights.Count() == 0)
@@ -98,8 +98,8 @@ namespace ml
             weightsVector.push_back(GetAFloat(atomList[count]));
         }
         
-        weightsLabelledClassificationData.addSample(classLabel, weightsVector);
-        anbc.setWeights(weightsLabelledClassificationData);
+        weightsClassificationData.addSample(classLabel, weightsVector);
+        anbc.setWeights(weightsClassificationData);
     }
     
     // Attribute getters

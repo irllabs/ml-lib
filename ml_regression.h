@@ -20,7 +20,7 @@ namespace ml
     public:
         ml_regression()
         {
-            labelledRegressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
+            regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
             set_data_type(LABELLED_REGRESSION);
         }
         

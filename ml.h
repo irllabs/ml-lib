@@ -103,10 +103,10 @@ namespace ml
         void get_probs(bool &probs) const;
         
         // Instance variables
-        GRT::UnlabelledClassificationData unlabelledClassificationData;
-        GRT::LabelledClassificationData labelledClassificationData;
-        GRT::LabelledTimeSeriesClassificationData labelledTimeSeriesClassificationData;
-        GRT::LabelledRegressionData labelledRegressionData;
+        GRT::UnlabelledData unlabelledData;
+        GRT::ClassificationData classificationData;
+        GRT::TimeSeriesClassificationData timeSeriesClassificationData;
+        GRT::RegressionData regressionData;
         GRT::MatrixDouble timeSeriesData;
         GRT::UINT currentLabel;
         bool probs;

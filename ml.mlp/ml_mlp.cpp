@@ -45,8 +45,8 @@ namespace ml
         {
             post("ml.mlp: Multilayer Perceptron based on the GRT library version %s", get_grt_version().c_str());
             
-            labelledRegressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
-            labelledClassificationData.setNumDimensions(defaultNumInputDimensions);
+            regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
+            classificationData.setNumDimensions(defaultNumInputDimensions);
             
             mlp.setMinChange(1.0e-2);
             set_scaling(default_scaling);
@@ -234,7 +234,7 @@ namespace ml
         
         if (data_type == LABELLED_REGRESSION)
         {
-            bool success = labelledRegressionData.setInputAndTargetDimensions(labelledRegressionData.getNumInputDimensions(), num_outputs);
+            bool success = regressionData.setInputAndTargetDimensions(regressionData.getNumInputDimensions(), num_outputs);
            
             if (success == false)
             {
@@ -423,7 +423,7 @@ namespace ml
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            num_outputs = labelledRegressionData.getNumTargetDimensions();
+            num_outputs = regressionData.getNumTargetDimensions();
         }
     }
     
@@ -513,7 +513,7 @@ namespace ml
     {
         const ml_data_type data_type = get_data_type();
         
-        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();
+        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? classificationData.getNumSamples() : regressionData.getNumSamples();
         
         if (numSamples == 0)
         {
@@ -526,26 +526,26 @@ namespace ml
         if (data_type == LABELLED_CLASSIFICATION)
         {
             mlp.init(
-                     labelledClassificationData.getNumDimensions(),
+                     classificationData.getNumDimensions(),
                      numHiddenNeurons,
-                     labelledClassificationData.getNumClasses(),
+                     classificationData.getNumClasses(),
                      inputActivationFunction,
                      hiddenActivationFunction,
                      outputActivationFunction
                      );
-            success = mlp.train(labelledClassificationData);
+            success = mlp.train(classificationData);
         }
         else if (data_type == LABELLED_REGRESSION)
         {
             mlp.init(
-                     labelledRegressionData.getNumInputDimensions(),
+                     regressionData.getNumInputDimensions(),
                      numHiddenNeurons,
-                     labelledRegressionData.getNumTargetDimensions(),
+                     regressionData.getNumTargetDimensions(),
                      inputActivationFunction,
                      hiddenActivationFunction,
                      outputActivationFunction
                      );
-            success = mlp.train(labelledRegressionData);
+            success = mlp.train(regressionData);
         }
 
         if (!success)
@@ -569,7 +569,7 @@ namespace ml
     {
         const ml_data_type data_type = get_data_type();
 
-        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? labelledClassificationData.getNumSamples() : labelledRegressionData.getNumSamples();
+        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? classificationData.getNumSamples() : regressionData.getNumSamples();
 
         if (numSamples == 0)
         {
@@ -609,7 +609,7 @@ namespace ml
         if (mlp.getClassificationModeActive())
         {
             GRT::VectorDouble likelihoods = mlp.getClassLikelihoods();
-            GRT::vector<GRT::UINT> labels = labelledClassificationData.getClassLabels();
+            GRT::vector<GRT::UINT> labels = classificationData.getClassLabels();
             GRT::UINT classification = mlp.getPredictedClassLabel();
             
             if (likelihoods.size() != labels.size())
@@ -734,7 +734,7 @@ namespace ml
     {
         bool success = false;
         
-        success = labelledClassificationData.loadDatasetFromFile(path);
+        success = classificationData.loadDatasetFromFile(path);
         
         if (success)
         {
@@ -742,7 +742,7 @@ namespace ml
             return success;
         }
         
-        success = labelledRegressionData.loadDatasetFromFile(path);
+        success = regressionData.loadDatasetFromFile(path);
         
         if (success)
         {
@@ -759,11 +759,11 @@ namespace ml
 
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            return labelledClassificationData.saveDatasetToFile(path);
+            return classificationData.saveDatasetToFile(path);
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            return labelledRegressionData.saveDatasetToFile(path);
+            return regressionData.saveDatasetToFile(path);
         }
         
         flext::error("unable to save dataset, invalid data type: %d", data_type);

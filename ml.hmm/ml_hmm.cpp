@@ -254,12 +254,12 @@ namespace ml
     
     bool ml_hmm::load_specialised_data(std::string &path)
     {
-        return labelledTimeSeriesClassificationData.loadDatasetFromFile(path);
+        return timeSeriesClassificationData.loadDatasetFromFile(path);
     }
 
     bool ml_hmm::save_specialised_data(std::string &path) const
     {
-        return labelledTimeSeriesClassificationData.saveDatasetToFile(path);
+        return timeSeriesClassificationData.saveDatasetToFile(path);
     }
     
     typedef class ml_hmm ml0x2ehmm;

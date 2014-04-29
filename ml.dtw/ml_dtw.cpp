@@ -244,12 +244,12 @@ namespace ml
     
     bool ml_dtw::load_specialised_data(std::string &path)
     {
-        return labelledTimeSeriesClassificationData.loadDatasetFromFile(path);
+        return timeSeriesClassificationData.loadDatasetFromFile(path);
     }
     
     bool ml_dtw::save_specialised_data(std::string &path) const
     {
-        return labelledTimeSeriesClassificationData.saveDatasetToFile(path);
+        return timeSeriesClassificationData.saveDatasetToFile(path);
     }
     
     typedef class ml_dtw ml0x2edtw;

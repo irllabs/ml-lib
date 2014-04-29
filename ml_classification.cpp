@@ -53,19 +53,19 @@ namespace ml
         
         if (data_type == LABELLED_REGRESSION)
         {
-            labelledRegressionData.getNumSamples();
+            regressionData.getNumSamples();
         }
         else if (data_type == LABELLED_CLASSIFICATION)
         {
-            numSamples = labelledClassificationData.getNumSamples();
+            numSamples = classificationData.getNumSamples();
         }
         else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            numSamples = labelledTimeSeriesClassificationData.getNumSamples();
+            numSamples = timeSeriesClassificationData.getNumSamples();
         }
         else if (data_type == UNLABELLED_CLASSIFICATION)
         {
-            numSamples = unlabelledClassificationData.getNumSamples();
+            numSamples = unlabelledData.getNumSamples();
         }
         
         return numSamples;
@@ -87,15 +87,15 @@ namespace ml
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            success = classifier.train(labelledClassificationData);
+            success = classifier.train(classificationData);
         }
         else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            success = classifier.train(labelledTimeSeriesClassificationData);
+            success = classifier.train(timeSeriesClassificationData);
         }
         else if (data_type == UNLABELLED_CLASSIFICATION)
         {
-            success = classifier.train(unlabelledClassificationData);
+            success = classifier.train(unlabelledData);
         }
         
         if (!success)
@@ -182,12 +182,12 @@ namespace ml
                 
                 if (data_type == LABELLED_CLASSIFICATION)
                 {
-                    labels = labelledClassificationData.getClassLabels();
+                    labels = classificationData.getClassLabels();
                 }
                 else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
                 {
-                    // For some reason getClassLabels() isn't implemented for LabelledTimeSeriesClassificationData so we do this manually
-                    vector<GRT::ClassTracker> classTracker = labelledTimeSeriesClassificationData.getClassTracker();
+                    // For some reason getClassLabels() isn't implemented for TimeSeriesClassificationData so we do this manually
+                    vector<GRT::ClassTracker> classTracker = timeSeriesClassificationData.getClassTracker();
                     for (uint16_t index = 0; index < classTracker.size(); ++index)
                     {
                         labels.push_back(classTracker[index].classLabel);
@@ -269,12 +269,12 @@ namespace ml
     
     bool ml_classification::load_specialised_data(std::string &path)
     {
-        return labelledClassificationData.loadDatasetFromFile(path);
+        return classificationData.loadDatasetFromFile(path);
     }
     
     bool ml_classification::save_specialised_data(std::string &path) const
     {
-        return labelledClassificationData.saveDatasetToFile(path);
+        return classificationData.saveDatasetToFile(path);
     }
     
 }

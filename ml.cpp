@@ -45,19 +45,19 @@ namespace ml
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            success = labelledClassificationData.setNumDimensions(num_inputs);
+            success = classificationData.setNumDimensions(num_inputs);
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            success = labelledRegressionData.setInputAndTargetDimensions(num_inputs, labelledRegressionData.getNumTargetDimensions());
+            success = regressionData.setInputAndTargetDimensions(num_inputs, regressionData.getNumTargetDimensions());
         }
         else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            success = labelledTimeSeriesClassificationData.setNumDimensions(num_inputs);
+            success = timeSeriesClassificationData.setNumDimensions(num_inputs);
         }
         else if (data_type == UNLABELLED_CLASSIFICATION)
         {
-            success = unlabelledClassificationData.setNumDimensions(num_inputs);
+            success = unlabelledData.setNumDimensions(num_inputs);
         }
         
         if (success == false)
@@ -119,20 +119,20 @@ namespace ml
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            numInputDimensions = labelledClassificationData.getNumDimensions();
+            numInputDimensions = classificationData.getNumDimensions();
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            numInputDimensions = labelledRegressionData.getNumInputDimensions();
-            numOutputDimensions = labelledRegressionData.getNumTargetDimensions();
+            numInputDimensions = regressionData.getNumInputDimensions();
+            numOutputDimensions = regressionData.getNumTargetDimensions();
         }
         else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            numInputDimensions = labelledTimeSeriesClassificationData.getNumDimensions();
+            numInputDimensions = timeSeriesClassificationData.getNumDimensions();
         }
         else if (data_type == UNLABELLED_CLASSIFICATION)
         {
-            numInputDimensions = unlabelledClassificationData.getNumDimensions();
+            numInputDimensions = unlabelledData.getNumDimensions();
         }
         else
         {
@@ -190,7 +190,7 @@ namespace ml
             
             if (data_type == LABELLED_CLASSIFICATION)
             {
-                labelledClassificationData.addSample((GRT::UINT)targetVector[0], inputVector);
+                classificationData.addSample((GRT::UINT)targetVector[0], inputVector);
             }
             else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
             {
@@ -213,7 +213,7 @@ namespace ml
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            labelledRegressionData.addSample(inputVector, targetVector);
+            regressionData.addSample(inputVector, targetVector);
         }
     }
     
@@ -231,7 +231,7 @@ namespace ml
         
         if (recording == false && currentLabel != 0 && timeSeriesData.getNumRows() > 0)
         {
-            labelledTimeSeriesClassificationData.addSample(currentLabel, timeSeriesData);
+            timeSeriesClassificationData.addSample(currentLabel, timeSeriesData);
         }
         timeSeriesData.clear();
         currentLabel = 0;
@@ -252,10 +252,10 @@ namespace ml
         std::string file_path = get_symbol_as_string(path);
         
         if (
-            (data_type == LABELLED_REGRESSION && labelledRegressionData.getNumSamples() == 0) ||
-            (data_type == LABELLED_CLASSIFICATION && labelledClassificationData.getNumSamples() == 0) ||
-            (data_type == LABELLED_TIME_SERIES_CLASSIFICATION && labelledTimeSeriesClassificationData.getNumSamples() == 0) ||
-            (data_type == UNLABELLED_CLASSIFICATION && unlabelledClassificationData.getNumSamples() == 0)
+            (data_type == LABELLED_REGRESSION && regressionData.getNumSamples() == 0) ||
+            (data_type == LABELLED_CLASSIFICATION && classificationData.getNumSamples() == 0) ||
+            (data_type == LABELLED_TIME_SERIES_CLASSIFICATION && timeSeriesClassificationData.getNumSamples() == 0) ||
+            (data_type == UNLABELLED_CLASSIFICATION && unlabelledData.getNumSamples() == 0)
             )
         {
             error("no observations added, use 'add' to add training data");
@@ -306,10 +306,10 @@ namespace ml
         
         mlBase.clear();
         
-        labelledRegressionData.clear();
-        labelledClassificationData.clear();
-        labelledTimeSeriesClassificationData.clear();
-        unlabelledClassificationData.clear();
+        regressionData.clear();
+        classificationData.clear();
+        timeSeriesClassificationData.clear();
+        unlabelledData.clear();
         
         SetBool(status, true);
         ToOutAnything(1, s_clear, 1, &status);

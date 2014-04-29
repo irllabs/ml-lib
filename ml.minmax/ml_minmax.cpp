@@ -181,7 +181,7 @@ namespace ml
         }
         
         // Use int32_t because the loop body decrements i
-        for(int32_t i = 1; i < data.size(); ++i)
+        for(uint64_t i = 1; i < data.size(); ++i)
         {
             if(data[i] > max)
             {
