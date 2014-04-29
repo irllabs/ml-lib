@@ -604,19 +604,12 @@
 		7D551A83190FE530008FF361 /* ml.gmm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.gmm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D551A92190FE53B008FF361 /* ml.dtree.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.dtree.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D551AA8190FE9CE008FF361 /* ml.softmax.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.softmax.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D551AA9190FE9CF008FF361 /* ml.minmax max copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ml.minmax max copy-Info.plist"; path = "/Users/jamie/Documents/ml-lib/ml.minmax max copy-Info.plist"; sourceTree = "<absolute>"; };
 		7D551AB8190FE9F1008FF361 /* ml.randforest.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.randforest.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D551AB9190FE9F2008FF361 /* ml.softmax max copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ml.softmax max copy-Info.plist"; path = "/Users/jamie/Documents/ml-lib/ml.softmax max copy-Info.plist"; sourceTree = "<absolute>"; };
 		7D551AC8190FEA0F008FF361 /* ml.mindist.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.mindist.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D551AC9190FEA10008FF361 /* ml.randforest max copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ml.randforest max copy-Info.plist"; path = "/Users/jamie/Documents/ml-lib/ml.randforest max copy-Info.plist"; sourceTree = "<absolute>"; };
 		7D551AD8190FEA2A008FF361 /* ml.lda.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.lda.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D551AD9190FEA2A008FF361 /* ml.mindist max copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ml.mindist max copy-Info.plist"; path = "/Users/jamie/Documents/ml-lib/ml.mindist max copy-Info.plist"; sourceTree = "<absolute>"; };
 		7D551AE8190FEA37008FF361 /* ml.knn.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.knn.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D551AE9190FEA38008FF361 /* ml.lda max copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ml.lda max copy-Info.plist"; path = "/Users/jamie/Documents/ml-lib/ml.lda max copy-Info.plist"; sourceTree = "<absolute>"; };
 		7D551AF8190FEA66008FF361 /* ml.gmm.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.gmm.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D551AF9190FEA67008FF361 /* ml.knn max copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ml.knn max copy-Info.plist"; path = "/Users/jamie/Documents/ml-lib/ml.knn max copy-Info.plist"; sourceTree = "<absolute>"; };
 		7D551B08190FEA80008FF361 /* ml.dtree.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.dtree.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D551B09190FEA80008FF361 /* ml.gmm max copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ml.gmm max copy-Info.plist"; path = "/Users/jamie/Documents/ml-lib/ml.gmm max copy-Info.plist"; sourceTree = "<absolute>"; };
 		7D61B1011875CAF9000FD114 /* ml_linreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_linreg.cpp; path = ml.linreg/ml_linreg.cpp; sourceTree = "<group>"; };
 		7D61B1061875F661000FD114 /* ml_logreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_logreg.cpp; path = ml.logreg/ml_logreg.cpp; sourceTree = "<group>"; };
 		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
@@ -1222,13 +1215,6 @@
 				08FB77ACFE841707C02AAC07 /* Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DDFF38A45A11DB9C8B /* Products */,
-				7D551AA9190FE9CF008FF361 /* ml.minmax max copy-Info.plist */,
-				7D551AB9190FE9F2008FF361 /* ml.softmax max copy-Info.plist */,
-				7D551AC9190FEA10008FF361 /* ml.randforest max copy-Info.plist */,
-				7D551AD9190FEA2A008FF361 /* ml.mindist max copy-Info.plist */,
-				7D551AE9190FEA38008FF361 /* ml.lda max copy-Info.plist */,
-				7D551AF9190FEA67008FF361 /* ml.knn max copy-Info.plist */,
-				7D551B09190FEA80008FF361 /* ml.gmm max copy-Info.plist */,
 			);
 			name = xsample;
 			sourceTree = "<group>";
@@ -3342,7 +3328,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.minmax max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -3396,7 +3382,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.minmax max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
@@ -3449,7 +3435,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.minmax max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
@@ -3503,7 +3489,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.softmax max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -3557,7 +3543,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.softmax max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
@@ -3610,7 +3596,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.softmax max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
@@ -3664,7 +3650,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.randforest max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -3718,7 +3704,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.randforest max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
@@ -3771,7 +3757,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.randforest max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
@@ -3825,7 +3811,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.mindist max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -3879,7 +3865,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.mindist max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
@@ -3932,7 +3918,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.mindist max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
@@ -3986,7 +3972,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.lda max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -4040,7 +4026,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.lda max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
@@ -4093,7 +4079,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.lda max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
@@ -4147,7 +4133,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.knn max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -4201,7 +4187,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.knn max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
@@ -4254,7 +4240,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.knn max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
@@ -4308,7 +4294,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.gmm max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -4362,7 +4348,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.gmm max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
@@ -4415,7 +4401,7 @@
 					"$(maxsdk)/msp-includes",
 					"$(flext)/source",
 				);
-				INFOPLIST_FILE = "ml.gmm max copy-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
