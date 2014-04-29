@@ -248,46 +248,29 @@ public:
     virtual bool clear();
     
     /**
-     This is the main training interface for MatrixDouble data. It overrides the trainInplace function in the ML base class.
-     
-     @param MatrixDouble trainingData: the training data that will be used to train the ML model
-     @return returns true if the model was successfully trained, false otherwise
-     */
-    virtual bool train(MatrixDouble data);
-    
-    /**
-     This is the main training interface for referenced MatrixDouble data. It overrides the trainInplace function in the ML base class.
-     This function runs the main training algorithm and is called by all the other train and trainInplace functions.
+     This is the main training interface for referenced MatrixDouble data. It overrides the train_ function in the ML base class.
+     This function runs the main training algorithm and is called by all the other train and train_ functions.
      
      @param MatrixDouble &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
      */
-    virtual bool trainInplace(MatrixDouble &data);
+    virtual bool train_(MatrixDouble &data);
     
     /**
-     This is the main training interface for reference LabelledClassificationData data. It overrides the trainInplace function in the ML base class.
+     This is the main training interface for reference ClassificationData data. It overrides the train_ function in the ML base class.
      
-     @param LabelledClassificationData &trainingData: a reference to the training data that will be used to train the ML model
+     @param ClassificationData &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
      */
-    virtual bool trainInplace(LabelledClassificationData &trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
-     This is the main training interface for reference UnlabelledClassificationData data. It overrides the trainInplace function in the ML base class.
+     This is the main training interface for reference UnlabelledData data. It overrides the trainInplace function in the ML base class.
      
-     @param UnlabelledClassificationData &trainingData: a reference to the training data that will be used to train the ML model
+     @param UnlabelledData &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
      */
-	virtual bool trainInplace(UnlabelledClassificationData &trainingData);
-    
-    /**
-     This function maps the input vector x through the self organizing map. The function will return true if the mapping was successful.
-     The mapped data can then be accessed via the getMappedData function. You need to train the SOM model before you can use this function.
-     
-     @param VectorDouble inputVector: the input vector for mapping
-     @return returns true if the mapping was completed succesfully, false otherwise
-     */
-    virtual bool map( VectorDouble x );
+	virtual bool train_(UnlabelledData &trainingData);
     
     /**
      This function maps the input vector x by reference through the self organizing map. 
@@ -299,7 +282,7 @@ public:
      @param VectorDouble &inputVector: the input vector for mapping
      @return returns true if the mapping was completed succesfully, false otherwise
      */
-    virtual bool mapInplace( VectorDouble &x );
+    virtual bool map_( VectorDouble &x );
     
     /**
      This saves the trained SOM model to a file.

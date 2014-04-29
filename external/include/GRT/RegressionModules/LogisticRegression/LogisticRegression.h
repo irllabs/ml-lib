@@ -41,9 +41,9 @@ public:
     /**
      Default Constructor
 
-     @param bool useScaling: sets if the training and real-time data should be scaled between [0 1]. Default value = false
+     @param const bool useScaling: sets if the training and real-time data should be scaled between [0 1]. Default value = true
      */
-	LogisticRegression(bool useScaling=false);
+	LogisticRegression(const bool useScaling=true);
     
     /**
      Default Destructor
@@ -71,19 +71,19 @@ public:
      This trains the Logistic Regression model, using the labelled regression data.
      This overrides the train function in the Regression base class.
      
-     @param LabelledRegressionData trainingData: the training data that will be used to train the regression model
+     @param RegressionData &trainingData: the training data that will be used to train the regression model
      @return returns true if the LRC model was trained, false otherwise
     */
-    virtual bool train(LabelledRegressionData trainingData);
+    virtual bool train_(RegressionData &trainingData);
     
     /**
      This performs the regression by mapping the inputVector using the current Logistic Regression model.
      This overrides the predict function in the Regressifier base class.
      
-     @param VectorDouble inputVector: the input vector to classify
+     @param VectorDouble &inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
     */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This saves the trained Logistic Regression model to a file.
@@ -137,8 +137,9 @@ public:
      */
     bool setMaxNumIterations(UINT maxNumIterations);
 
-private:
+protected:
 	inline double sigmoid(const double x) const;
+    bool loadLegacyModelFromFile( fstream &file );
 	
     double w0;
     VectorDouble w;

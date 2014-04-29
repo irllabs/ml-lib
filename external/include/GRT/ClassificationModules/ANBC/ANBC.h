@@ -92,10 +92,10 @@ public:
      This trains the ANBC model, using the labelled classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledClassificationData trainingData: a reference to the training data
+     @param ClassificationData trainingData: a reference to the training data
      @return returns true if the ANBC model was trained, false otherwise
     */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -104,7 +104,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
     */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This resets the ANBC classifier.
@@ -125,28 +125,10 @@ public:
      This saves the trained ANBC model to a file.
      This overrides the saveModelToFile function in the Classifier base class.
      
-     @param string filename: the name of the file to save the ANBC model to
-     @return returns true if the model was saved successfully, false otherwise
-    */
-    virtual bool saveModelToFile(string filename) const;
-    
-    /**
-     This saves the trained ANBC model to a file.
-     This overrides the saveModelToFile function in the Classifier base class.
-     
      @param fstream &file: a reference to the file the ANBC model will be saved to
      @return returns true if the model was saved successfully, false otherwise
      */
     virtual bool saveModelToFile(fstream &file) const;
-    
-    /**
-     This loads a trained ANBC model from a file.
-     This overrides the loadModelFromFile function in the Classifier base class.
-     
-     @param string filename: the name of the file to load the ANBC model from
-     @return returns true if the model was loaded successfully, false otherwise
-    */
-    virtual bool loadModelFromFile(string filename);
     
     /**
      This loads a trained ANBC model from a file.
@@ -197,7 +179,7 @@ public:
      
      @return returns true if the weights were correctly set, false otherwise
      */
-    bool setWeights(LabelledClassificationData weightsData);
+    bool setWeights(const ClassificationData &weightsData);
     
     /**
      Clears any previously set weights.
@@ -205,20 +187,21 @@ public:
      @return returns true if the weights were correctly cleared, false otherwise
      */
     bool clearWeights(){ weightsDataSet = false; weightsData.clear(); return true; }
+    
+    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
+    using MLBase::saveModelToFile;
+    using MLBase::loadModelFromFile;
+    using MLBase::train;
+    using MLBase::train_;
+    using MLBase::predict;
+    using MLBase::predict_;
 
-private:
-    /**
-     This trains the ANBC model using the labelled classification data.
-     
-     @param LabelledClassificationData &trainingData: a reference to the labelled classification data
-     @param double gamma: sets the gamma parameter used to compute the null rejection threshold
-     @return returns true if the ANBC model was trained, false otherwise
-     */
-    bool train(LabelledClassificationData &trainingData,double gamma);
+protected:
+    bool loadLegacyModelFromFile( fstream &file );
     
     bool weightsDataSet;                  //A flag to indicate if the user has manually set the weights buffer
-    LabelledClassificationData weightsData; //The weights of each feature for each class for training the algorithm
-	vector< ANBC_Model > models;            //A buffer to hold all the models
+    ClassificationData weightsData;       //The weights of each feature for each class for training the algorithm
+	vector< ANBC_Model > models;          //A buffer to hold all the models
     
     static RegisterClassifierModule< ANBC > registerModule;
 };

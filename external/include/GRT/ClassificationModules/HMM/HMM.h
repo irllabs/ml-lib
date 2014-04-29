@@ -58,19 +58,19 @@ public:
      This overrides the train function in the Classifier base class. It simply prints a warning message stating that the 
      bool train(LabelledTimeSeriesClassificationData trainingData) function should be used to train the HMM model.
      
-     @param LabelledClassificationData trainingData: a reference to the training data
+     @param ClassificationData trainingData: a reference to the training data
      @return returns true if the HMM model was trained, false otherwise
      */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train(ClassificationData trainingData);
     
     /**
      This trains the HMM model, using the labelled timeseries classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledTimeSeriesClassificationData trainingData: a reference to the training data
+     @param TimeSeriesClassificationData trainingData: a reference to the training data
      @return returns true if the HMM model was trained, false otherwise
      */
-    virtual bool train(LabelledTimeSeriesClassificationData trainingData);
+    virtual bool train_(TimeSeriesClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -79,7 +79,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
      */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This predicts the class of the timeseries.
@@ -88,7 +88,7 @@ public:
      @param MatrixDouble timeSeries: the input timeseries to classify
      @return returns true if the prediction was performed, false otherwise
      */
-    virtual bool predict(MatrixDouble timeseries);
+    virtual bool predict_(MatrixDouble &timeseries);
     
     /**
      This resets the HMM classifier.
@@ -189,7 +189,6 @@ public:
      */
     UINT getNumRandomTrainingIterations() const;
     
-    
     /**
      This function gets the minimum improvement parameter which controls when the HMM training algorithm should stop.
      
@@ -282,9 +281,13 @@ public:
      @return returns true if the parameter was set correctly, false otherwise
      */
     bool setMinImprovement(const double minImprovement);
+    
+    using MLBase::train; ///<Tell the compiler we are using the base class train method to stop hidden virtual function warnings
+    using MLBase::predict; ///<Tell the compiler we are using the base class predict method to stop hidden virtual function warnings
 
 protected:
-    bool convertDataToObservationSequence( LabelledTimeSeriesClassificationData &classData, vector< vector< UINT > > &observationSequences );
+    bool convertDataToObservationSequence( TimeSeriesClassificationData &classData, vector< vector< UINT > > &observationSequences );
+    bool loadLegacyModelFromFile( fstream &file );
 
 	//Variables for all the HMMs
 	UINT numStates;			//The number of states for each model

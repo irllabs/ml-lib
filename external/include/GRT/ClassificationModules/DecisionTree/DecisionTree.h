@@ -86,10 +86,10 @@ public:
      This trains the DecisionTree model, using the labelled classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledClassificationData trainingData: a reference to the training data
+     @param ClassificationData trainingData: a reference to the training data
      @return returns true if the DecisionTree model was trained, false otherwise
     */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -98,7 +98,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
     */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This overrides the clear function in the Classifier base class.
@@ -257,7 +257,12 @@ public:
      */
     bool setRemoveFeaturesAtEachSpilt(const bool removeFeaturesAtEachSpilt);
     
-private:
+    using MLBase::train; ///<Tell the compiler we are using the base class train method to stop hidden virtual function warnings
+    using MLBase::predict; ///<Tell the compiler we are using the base class predict method to stop hidden virtual function warnings
+    
+protected:
+    bool loadLegacyModelFromFile( fstream &file );
+    
     UINT trainingMode;
     UINT numSplittingSteps;
     UINT minNumSamplesPerNode;
@@ -265,11 +270,11 @@ private:
     bool removeFeaturesAtEachSpilt;
     DecisionTreeNode *decisionTree;
     
-    DecisionTreeNode* buildTree( const LabelledClassificationData &trainingData, DecisionTreeNode *parent, vector< UINT > features, const vector< UINT > &classLabels );
-    bool computeBestSpilt( const LabelledClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold );
-    bool computeBestSpiltBestIterativeSpilt( const LabelledClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold );
-    bool computeBestSpiltBestRandomSpilt( const LabelledClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold );
-    VectorDouble getClassProbabilities( const LabelledClassificationData &trainingData, const vector< UINT > &classLabels );
+    DecisionTreeNode* buildTree( const ClassificationData &trainingData, DecisionTreeNode *parent, vector< UINT > features, const vector< UINT > &classLabels );
+    bool computeBestSpilt( const ClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold );
+    bool computeBestSpiltBestIterativeSpilt( const ClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold );
+    bool computeBestSpiltBestRandomSpilt( const ClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold );
+    VectorDouble getClassProbabilities( const ClassificationData &trainingData, const vector< UINT > &classLabels );
     
     
     static RegisterClassifierModule< DecisionTree > registerModule;

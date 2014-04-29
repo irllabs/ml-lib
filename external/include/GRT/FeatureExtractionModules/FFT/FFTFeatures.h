@@ -85,10 +85,10 @@ public:
      Sets the FeatureExtraction computeFeatures function, overwriting the base FeatureExtraction function.
      This function is called by the GestureRecognitionPipeline when any new input data needs to be processed (during the prediction phase for example).
      
-	 @param VectorDouble inputVector: the inputVector that should be processed.  Must have the same dimensionality as the FeatureExtraction module
+	 @param const VectorDouble &inputVector: the inputVector that should be processed.  Must have the same dimensionality as the FeatureExtraction module
 	 @return true if the data was processed, false otherwise
      */
-    virtual bool computeFeatures(VectorDouble inputVector);
+    virtual bool computeFeatures(const VectorDouble &inputVector);
     
     /**
      Sets the FeatureExtraction reset function, overwriting the base FeatureExtraction function.
@@ -101,21 +101,19 @@ public:
     
     /**
      This saves the feature extraction settings to a file.
-     This overrides the saveSettingsToFile function in the FeatureExtraction base class.
      
-     @param string filename: the name of the file to save the settings to
-     @return returns true if the settings were saved successfully, false otherwise (the base class always returns false)
+     @param const string filename: the filename to save the settings to
+     @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(string filename) const;
+    virtual bool saveSettingsToFile(const string filename) const;
     
     /**
-     This loads the feature extraction settings from a file.
-     This overrides the loadSettingsFromFile function in the FeatureExtraction base class.
+     This saves the feature extraction settings to a file.
      
-     @param string filename: the name of the file to load the settings from
-     @return returns true if the settings were loaded successfully, false otherwise (the base class always returns false)
+     @param fstream &file: a reference to the file to save the settings to
+     @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool loadSettingsFromFile(string filename);
+    virtual bool loadSettingsFromFile(const string filename);
     
     /**
      This saves the feature extraction settings to a file.
@@ -150,6 +148,8 @@ public:
 	 @return true if the FTT was initialized, false otherwise
      */   
     bool init(UINT fftWindowSize,UINT numChannelsInFFTSignal,bool computeMaxFreqFeature,bool computeMaxFreqSpectrumRatio,bool computeCentroidFeature,bool computeTopNFreqFeatures,UINT N);
+    
+    //Tell the compiler we are using the following functions from the FeatureExtraction class to stop hidden virtual function warnings
     
 protected:
     UINT fftWindowSize;

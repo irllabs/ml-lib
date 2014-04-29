@@ -82,10 +82,10 @@ public:
      This trains the MinDist model, using the labelled classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledClassificationData trainingData: a reference to the training data
+     @param ClassificationData trainingData: a reference to the training data
      @return returns true if the MinDist model was trained, false otherwise
     */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -94,7 +94,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
     */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This overrides the clear function in the Classifier base class.
@@ -174,15 +174,8 @@ public:
      */
     bool setNumClusters(UINT numClusters);
 
-private:
-    /**
-     This trains the MinDist model using the labelled classification data.
-     
-     @param LabelledClassificationData &trainingData: a reference to the labelled classification data
-     @param double gamma: sets the gamma parameter used to compute the null rejection threshold
-     @return returns true if the ANBC model was trained, false otherwise
-     */
-    virtual bool train(LabelledClassificationData &trainingData,double gamma);
+protected:
+    bool loadLegacyModelFromFile( fstream &file );
     
 	UINT numClusters; 
 	vector< MinDistModel > models;            //A buffer to hold all the models

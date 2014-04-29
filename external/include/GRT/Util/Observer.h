@@ -32,6 +32,9 @@
 #include <algorithm>
 
 namespace GRT {
+    
+//Forward declaration of MLBase
+class MLBase;
         
 template< class NotifyType >
 class Observer
@@ -41,7 +44,7 @@ public:
     
     virtual ~Observer(){}
     
-    virtual void notify(const NotifyType &data){};
+    virtual void notify(const NotifyType &data,const MLBase *trainer){};
 };
     
 } //End of namespace GRT

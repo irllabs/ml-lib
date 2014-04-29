@@ -95,10 +95,10 @@ public:
      This trains the KNN model, using the labelled classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledClassificationData trainingData: a reference to the training data
+     @param ClassificationData trainingData: a reference to the training data
      @return returns true if the KNN model was trained, false otherwise
     */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -107,7 +107,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
     */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This overrides the clear function in the Classifier base class.
@@ -228,10 +228,19 @@ public:
      @return returns true if the distance method was updated successfully, false otherwise
      */
     bool setDistanceMethod(UINT distanceMethod);
+    
+    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
+    using MLBase::saveModelToFile;
+    using MLBase::loadModelFromFile;
+    using MLBase::train;
+    using MLBase::train_;
+    using MLBase::predict;
+    using MLBase::predict_;
 
 protected:
-    bool train_(const LabelledClassificationData &trainingData,const UINT K);
+    bool train_(const ClassificationData &trainingData,const UINT K);
     bool predict(const VectorDouble &inputVector,const UINT K);
+    bool loadLegacyModelFromFile( fstream &file );
     double computeEuclideanDistance(const VectorDouble &a,const VectorDouble &b);
     double computeCosineDistance(const VectorDouble &a,const VectorDouble &b);
     double computeManhattanDistance(const VectorDouble &a,const VectorDouble &b);
@@ -241,10 +250,9 @@ protected:
     bool searchForBestKValue;                   ///> Sets if the best K value should be searched for or if the model should be trained with K
     UINT minKSearchValue;                       ///> The minimum K value to start the search from
     UINT maxKSearchValue;                       ///> The maximum K value to end the search at
-    LabelledClassificationData trainingData;    ///> Holds the trainingData to perform the predictions
+    ClassificationData trainingData;            ///> Holds the trainingData to perform the predictions
     VectorDouble trainingMu;                    ///> Holds the average max-class distance of the training data for each of classes
     VectorDouble trainingSigma;                 ///> Holds the stddev of the max-class distance of the training data for each of classes
-    VectorDouble rejectionThresholds;           ///> Holds the rejection threshold for each of the classes
     
     static RegisterClassifierModule< KNN > registerModule;
     

@@ -219,14 +219,16 @@ class CircularBuffer{
         buffer[ writePtr ] = value;
 
 		//Update the write pointer
-        writePtr = ++writePtr % bufferSize;
+        writePtr++;
+        writePtr = writePtr % bufferSize;
         
         //Check if the buffer is full
         if( ++numValuesInBuffer > bufferSize ){
             numValuesInBuffer = bufferSize;
 
 			//Only update the read pointer if the buffer has been filled
-	        readPtr = ++readPtr % bufferSize;
+            readPtr++;
+	        readPtr = readPtr % bufferSize;
         }
 
         return true;

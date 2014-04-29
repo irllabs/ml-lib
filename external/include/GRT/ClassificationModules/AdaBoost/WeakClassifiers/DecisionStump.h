@@ -70,19 +70,18 @@ public:
     /**
      This function trains the DecisionStump model, using the weighted labelled training data.
      
-     @param LabelledClassificationData &trainingData: the labelled training data
+     @param ClassificationData &trainingData: the labelled training data
      @param VectorDouble &weights: the corresponding weights for each sample in the labelled training data
      @return returns true if the model was trained successfull, false otherwise
      */
-    virtual bool train(LabelledClassificationData &trainingData, VectorDouble &weights);
+    virtual bool train(ClassificationData &trainingData, VectorDouble &weights);
     
     /**
      This function predicts the class label of the input vector, given the current model. The class label returned will
      either be positive (WEAK_CLASSIFIER_POSITIVE_CLASS_LABEL) or negative (WEAK_CLASSIFIER_NEGATIVE_CLASS_LABEL).
      
-     @param LabelledClassificationData &trainingData: the labelled training data
-     @param VectorDouble &weights: the corresponding weights for each sample in the labelled training data
-     @return returns true if the model was trained successfull, false otherwise
+     @param VectorDouble &weights: a reference to the vector used for prediction
+     @return returns the estimated class label, which will be positive or negative
      */
     virtual double predict(const VectorDouble &x);
     

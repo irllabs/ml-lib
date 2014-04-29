@@ -115,7 +115,7 @@ public:
      @param LabelledClassificationData trainingData: a reference to the training data
      @return returns true if the LDA model was trained, false otherwise
     */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train(ClassificationData trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -169,8 +169,8 @@ public:
 
 
 private:
-	MatrixDouble computeBetweenClassScatterMatrix( LabelledClassificationData &data );
-	MatrixDouble computeWithinClassScatterMatrix( LabelledClassificationData &data );
+	MatrixDouble computeBetweenClassScatterMatrix( ClassificationData &data );
+	MatrixDouble computeWithinClassScatterMatrix( ClassificationData &data );
 	
     vector< LDAClassModel > models;
 };

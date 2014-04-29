@@ -58,13 +58,14 @@ public:
     /**
      Default Constructor
      
+     @param const WeakClassifier &weakClassifier: sets the initial weak classifier that is added to the vector of weak classifiers used to train the AdaBoost model
      @param bool useScaling: sets if the training and prediction data should be scaled to a specific range.  Default value is useScaling = false
      @param bool useNullRejection: sets if null rejection will be used for the realtime prediction.  If useNullRejection is set to true then the predictedClassLabel will be set to 0 (which is the default null label) if the distance between the inputVector and the top K datum is greater than the null rejection threshold for the top predicted class.  The null rejection threshold is computed for each class during the training phase. Default value is useNullRejection = false
      @param double nullRejectionCoeff: sets the null rejection coefficient, this is a multipler controlling the null rejection threshold for each class.  This will only be used if the useNullRejection parameter is set to true.  Default value is nullRejectionCoeff = 10.0
      @param UINT numBoostingIterations: sets the number of boosting iterations to use during training. Default value = 20
      @param UINT predictionMethod: sets the prediction method for AdaBoost, this should be one of the PredictionMethods. Default value = MAX_VALUE
      */
-    AdaBoost(const WeakClassifier = DecisionStump(),bool useScaling=false,bool useNullRejection=false,double nullRejectionCoeff=10.0,UINT numBoostingIterations=20,UINT predictionMethod=MAX_VALUE);
+    AdaBoost(const WeakClassifier &weakClassifier = DecisionStump(),bool useScaling=false,bool useNullRejection=false,double nullRejectionCoeff=10.0,UINT numBoostingIterations=20,UINT predictionMethod=MAX_VALUE);
     
     /**
      Defines the copy constructor.
@@ -99,19 +100,19 @@ public:
      This trains the AdaBoost model, using the labelled classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledClassificationData trainingData: a reference to the training data
+     @param ClassificationData &trainingData: a reference to the training data
      @return returns true if the AdaBoost model was trained, false otherwise
      */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
      This overrides the predict function in the Classifier base class.
      
-     @param VectorDouble inputVector: the input vector to classify
+     @param VectorDouble &inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
      */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This overrides the clear function in the Classifier base class.
@@ -125,28 +126,10 @@ public:
      This saves the trained AdaBoost model to a file.
      This overrides the saveModelToFile function in the Classifier base class.
      
-     @param string filename: the name of the file to save the AdaBoost model to
-     @return returns true if the model was saved successfully, false otherwise
-     */
-    virtual bool saveModelToFile(string filename) const;
-    
-    /**
-     This saves the trained AdaBoost model to a file.
-     This overrides the saveModelToFile function in the Classifier base class.
-     
      @param fstream &file: a reference to the file the AdaBoost model will be saved to
      @return returns true if the model was saved successfully, false otherwise
      */
     virtual bool saveModelToFile(fstream &file) const;
-    
-    /**
-     This loads a trained AdaBoost model from a file.
-     This overrides the loadModelFromFile function in the Classifier base class.
-     
-     @param string filename: the name of the file to load the AdaBoost model from
-     @return returns true if the model was loaded successfully, false otherwise
-     */
-    virtual bool loadModelFromFile(string filename);
     
     /**
      This loads a trained AdaBoost model from a file.
@@ -230,7 +213,17 @@ public:
      */
     vector< AdaBoostClassModel > getModels(){ return models; }
     
+    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
+    using MLBase::saveModelToFile;
+    using MLBase::loadModelFromFile;
+    using MLBase::train;
+    using MLBase::train_;
+    using MLBase::predict;
+    using MLBase::predict_;
+    
 protected:
+    bool loadLegacyModelFromFile( fstream &file );
+    
     UINT numBoostingIterations;
     UINT predictionMethod;
     vector< WeakClassifier* > weakClassifiers;

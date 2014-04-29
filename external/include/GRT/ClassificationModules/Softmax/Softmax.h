@@ -79,10 +79,10 @@ public:
      This trains the Softmax model, using the labelled classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledClassificationData trainingData: a reference to the training data
+     @param ClassificationData trainingData: a reference to the training data
      @return returns true if the Softmax model was trained, false otherwise
     */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -91,7 +91,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
     */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This overrides the clear function in the Classifier base class.
@@ -193,8 +193,9 @@ public:
      */
     vector< SoftmaxModel > getModels();
     
-private:
-    bool trainSoftmaxModel(UINT classLabel,SoftmaxModel &model,LabelledClassificationData &data);
+protected:
+    bool trainSoftmaxModel(UINT classLabel,SoftmaxModel &model,ClassificationData &data);
+    bool loadLegacyModelFromFile( fstream &file );
     
     double learningRate;
     double minChange;

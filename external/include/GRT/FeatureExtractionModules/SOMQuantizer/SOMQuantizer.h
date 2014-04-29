@@ -40,9 +40,9 @@
 //Include the main GRT header to get access to the FeatureExtraction base class
 #include "../../CoreModules/FeatureExtraction.h"
 #include "../../ClusteringModules/SelfOrganizingMap/SelfOrganizingMap.h"
-#include "../../DataStructures/LabelledTimeSeriesClassificationData.h"
+#include "../../DataStructures/TimeSeriesClassificationData.h"
 #include "../../DataStructures/LabelledContinuousTimeSeriesClassificationData.h"
-#include "../../DataStructures/UnlabelledClassificationData.h"
+#include "../../DataStructures/UnlabelledData.h"
 
 namespace GRT{
     
@@ -107,21 +107,19 @@ public:
     
     /**
      This saves the feature extraction settings to a file.
-     This overrides the saveSettingsToFile function in the FeatureExtraction base class.
      
-     @param string filename: the name of the file to save the settings to
+     @param const string filename: the filename to save the settings to
      @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(string filename) const;
+    virtual bool saveSettingsToFile(const string filename) const;
     
     /**
-     This loads the feature extraction settings from a file.
-     This overrides the loadSettingsFromFile function in the FeatureExtraction base class.
+     This saves the feature extraction settings to a file.
      
-     @param string filename: the name of the file to load the settings from
-     @return returns true if the settings were loaded successfully, false otherwise
+     @param fstream &file: a reference to the file to save the settings to
+     @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool loadSettingsFromFile(string filename);
+    virtual bool loadSettingsFromFile(const string filename);
     
     /**
      This saves the feature extraction settings to a file.
@@ -154,18 +152,18 @@ public:
     /**
      Trains the quantization model using the training dataset.
      
-     @param LabelledClassificationData &trainingData: the training dataset that will be used to train the quantizer
+     @param ClassificationData &trainingData: the training dataset that will be used to train the quantizer
      @return returns true if the quantizer was trained successfully, false otherwise
      */
-    bool train(LabelledClassificationData &trainingData);
+    bool train_(ClassificationData &trainingData);
 
     /**
      Trains the quantization model using the training dataset.
      
-     @param LabelledTimeSeriesClassificationData &trainingData: the training dataset that will be used to train the quantizer
+     @param TimeSeriesClassificationData &trainingData: the training dataset that will be used to train the quantizer
      @return returns true if the quantizer was trained successfully, false otherwise
      */
-    bool train(LabelledTimeSeriesClassificationData &trainingData);
+    bool train_(TimeSeriesClassificationData &trainingData);
 
     /**
      Trains the quantization model using the training dataset.
@@ -173,15 +171,15 @@ public:
      @param LabelledContinuousTimeSeriesClassificationData &trainingData: the training dataset that will be used to train the quantizer
      @return returns true if the quantizer was trained successfully, false otherwise
      */
-    bool train(LabelledContinuousTimeSeriesClassificationData &trainingData);
+    bool train_(LabelledContinuousTimeSeriesClassificationData &trainingData);
 
     /**
      Trains the quantization model using the training dataset.
      
-     @param UnlabelledClassificationData &trainingData: the training dataset that will be used to train the quantizer
+     @param UnlabelledData &trainingData: the training dataset that will be used to train the quantizer
      @return returns true if the quantizer was trained successfully, false otherwise
      */
-    bool train(UnlabelledClassificationData &trainingData);
+    bool train_(UnlabelledData &trainingData);
 
     /**
      Trains the quantization model using the training dataset.
@@ -189,7 +187,7 @@ public:
      @param MatrixDouble &trainingData: the training dataset that will be used to train the quantizer
      @return returns true if the quantizer was trained successfully, false otherwise
      */
-    bool train(MatrixDouble &trainingData);
+    bool train_(MatrixDouble &trainingData);
 
     /**
      Quantizes the input value using the quantization model. The quantization model must be trained first before you call this function.
@@ -234,6 +232,12 @@ public:
      @return returns a SelfOrganizingMap containing the model used for quantization
      */
 	SelfOrganizingMap getSelfOrganizingMap() const;
+    
+    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
+    using MLBase::train;
+    using MLBase::train_;
+    using MLBase::predict;
+    using MLBase::predict_;
     
 protected:
     bool quantizerTrained;

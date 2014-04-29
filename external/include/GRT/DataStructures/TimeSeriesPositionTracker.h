@@ -123,28 +123,28 @@ public:
      
 	 @return an UINT representing the index that the tracked timeseries starts in a given dataset
      */
-	UINT getStartIndex(){ return startIndex; }
+	UINT getStartIndex() const { return startIndex; }
     
     /**
      Gets the end index
      
 	 @return an UINT representing the index that the tracked timeseries ends in a given dataset
      */
-	UINT getEndIndex(){ return endIndex; }
+	UINT getEndIndex() const { return endIndex; }
     
     /**
      Gets the length of the timeseries
      
 	 @return an UINT representing the length of the tracked timeseries
      */
-	UINT getLength(){ return endIndex-startIndex+1; }
+	UINT getLength() const { return endIndex-startIndex+1; }
     
     /**
      Gets the class label of the tracked timeseries
      
 	 @return an UINT representing the class label of the tracked timeseries in a given dataset
      */
-	UINT getClassLabel(){ return classLabel; }
+	UINT getClassLabel() const { return classLabel; }
 
 protected:
 	UINT startIndex;

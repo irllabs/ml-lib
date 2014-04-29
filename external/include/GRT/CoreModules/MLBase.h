@@ -32,8 +32,10 @@
 #define GRT_MLBASE_HEADER
 
 #include "GRTBase.h"
-#include "../DataStructures/LabelledClassificationData.h"
-#include "../DataStructures/LabelledTimeSeriesClassificationData.h"
+#include "../DataStructures/UnlabelledData.h"
+#include "../DataStructures/ClassificationData.h"
+#include "../DataStructures/RegressionData.h"
+#include "../DataStructures/TimeSeriesClassificationData.h"
 
 namespace GRT{
 
@@ -86,58 +88,76 @@ public:
     bool copyMLBaseVariables(const MLBase *mlBase);
     
     /**
-     This is the main training interface for LabelledClassificationData.
-     By default it will call the trainInplace function, unless it is overwritten by the derived class.
+     This is the main training interface for ClassificationData.
+     By default it will call the train_ function, unless it is overwritten by the derived class.
      
-     @param LabelledClassificationData trainingData: the training data that will be used to train the ML model
+     @param ClassificationData trainingData: the training data that will be used to train the ML model
      @return returns true if the classifier was successfully trained, false otherwise
      */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train(ClassificationData trainingData);
     
     /**
-     This is the main training interface for referenced LabelledClassificationData. This should be overwritten by the derived class.
+     This is the main training interface for referenced ClassificationData. This should be overwritten by the derived class.
      
-     @param LabelledClassificationData &trainingData: a reference to the training data that will be used to train the ML model
+     @param ClassificationData &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the classifier was successfully trained, false otherwise
      */
-    virtual bool trainInplace(LabelledClassificationData &trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
-     This is the main training interface for LabelledTimeSeriesClassificationData.
-     By default it will call the trainInplace function, unless it is overwritten by the derived class.
+     This is the main training interface for regression data.
+     By default it will call the train_ function, unless it is overwritten by the derived class.
      
-     @param LabelledTimeSeriesClassificationData trainingData: the training data that will be used to train the ML model
-     @return returns true if the classifier was successfully trained, false otherwise
+     @param RegressionData trainingData: the training data that will be used to train a new regression model
+     @return returns true if a new regression model was trained, false otherwise
      */
-    virtual bool train(LabelledTimeSeriesClassificationData trainingData);
+    virtual bool train(RegressionData trainingData);
     
     /**
-     This is the main training interface for referenced LabelledTimeSeriesClassificationData. This should be overwritten by the derived class.
+     This is the main training interface for all the regression algorithms. This should be overwritten by the derived class.
      
-     @param LabelledTimeSeriesClassificationData &trainingData: a reference to the training data that will be used to train the ML model
-     @return returns true if the classifier was successfully trained, false otherwise
+     @param RegressionData trainingData: the training data that will be used to train a new regression model
+     @return returns true if a new regression model was trained, false otherwise
      */
-    virtual bool trainInPlace(LabelledTimeSeriesClassificationData &trainingData);
+    virtual bool train_(RegressionData &trainingData);
     
     /**
-     This is the main training interface for UnlabelledClassificationData. This should be overwritten by the derived class.
+     This is the main training interface for TimeSeriesClassificationData.
+     By default it will call the train_ function, unless it is overwritten by the derived class.
      
-     @param UnlabelledClassificationData trainingData: the training data that will be used to train the ML model
+     @param TimeSeriesClassificationData trainingData: the training data that will be used to train the ML model
      @return returns true if the classifier was successfully trained, false otherwise
      */
-    virtual bool train(UnlabelledClassificationData trainingData);
+    virtual bool train(TimeSeriesClassificationData trainingData);
     
     /**
-     This is the main training interface for referenced UnlabelledClassificationData. This should be overwritten by the derived class.
+     This is the main training interface for referenced TimeSeriesClassificationData. This should be overwritten by the derived class.
      
-     @param UnlabelledClassificationData &trainingData: a reference to the training data that will be used to train the ML model
+     @param TimeSeriesClassificationData &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the classifier was successfully trained, false otherwise
      */
-    virtual bool trainInplace(UnlabelledClassificationData &trainingData);
+    virtual bool train_(TimeSeriesClassificationData &trainingData);
+    
+    /**
+     This is the main training interface for UnlabelledData.
+     By default it will call the train_ function, unless it is overwritten by the derived class.
+     
+     @param UnlabelledData trainingData: the training data that will be used to train the ML model
+     @return returns true if the classifier was successfully trained, false otherwise
+     */
+    virtual bool train(UnlabelledData trainingData);
+    
+    /**
+     This is the main training interface for referenced UnlabelledData. This should be overwritten by the derived class.
+     
+     @param UnlabelledData &trainingData: a reference to the training data that will be used to train the ML model
+     @return returns true if the classifier was successfully trained, false otherwise
+     */
+    virtual bool train_(UnlabelledData &trainingData);
     
     /**
      This is the main training interface for MatrixDouble data. 
-     By default it will call the trainInplace function, unless it is overwritten by the derived class.
+     By default it will call the train_ function, unless it is overwritten by the derived class.
      
      @param MatrixDouble trainingData: the training data that will be used to train the ML model
      @return returns true if the classifier was successfully trained, false otherwise
@@ -150,10 +170,11 @@ public:
      @param MatrixDouble &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the classifier was successfully trained, false otherwise
      */
-    virtual bool trainInplace(MatrixDouble &data);
+    virtual bool train_(MatrixDouble &data);
 
     /**
-     This is the main prediction interface for all the GRT machine learning algorithms. This should be overwritten by the derived class.
+     This is the main prediction interface for all the GRT machine learning algorithms.
+     By defaut it will call the predict_ function, unless it is overwritten by the derived class.
      
      @param VectorDouble inputVector: the new input vector for prediction
      @return returns true if the prediction was completed succesfully, false otherwise (the base class always returns false)
@@ -161,7 +182,16 @@ public:
     virtual bool predict(VectorDouble inputVector);
     
     /**
-     This is the prediction interface for time series data. This should be overwritten by the derived class.
+     This is the main prediction interface for all the GRT machine learning algorithms. This should be overwritten by the derived class.
+     
+     @param VectorDouble &inputVector: a reference to the input vector for prediction
+     @return returns true if the prediction was completed succesfully, false otherwise (the base class always returns false)
+     */
+    virtual bool predict_(VectorDouble &inputVector);
+    
+    /**
+     This is the prediction interface for time series data.
+     By defaut it will call the predict_ function, unless it is overwritten by the derived class.
      
      @param MatrixDouble inputMatrix: the new input matrix for prediction
      @return returns true if the prediction was completed succesfully, false otherwise (the base class always returns false)
@@ -169,7 +199,16 @@ public:
     virtual bool predict(MatrixDouble inputMatrix);
     
     /**
-     This is the main mapping interface for all the GRT machine learning algorithms. This should be overwritten by the derived class.
+     This is the prediction interface for time series data. This should be overwritten by the derived class.
+     
+     @param MatrixDouble inputMatrix: a reference to the new input matrix for prediction
+     @return returns true if the prediction was completed succesfully, false otherwise (the base class always returns false)
+     */
+    virtual bool predict_(MatrixDouble &inputMatrix);
+    
+    /**
+     This is the main mapping interface for all the GRT machine learning algorithms.
+     By defaut it will call the map_ function, unless it is overwritten by the derived class.
      
      @param VectorDouble inputVector: the input vector for mapping/regression
      @return returns true if the mapping was completed succesfully, false otherwise (the base class always returns false)
@@ -182,7 +221,7 @@ public:
      @param VectorDouble &inputVector: a reference to the input vector for mapping/regression
      @return returns true if the mapping was completed succesfully, false otherwise (the base class always returns false)
      */
-    virtual bool mapInplace(VectorDouble &inputVector);
+    virtual bool map_(VectorDouble &inputVector);
     
     /**
      This is the main reset interface for all the GRT machine learning algorithms.
@@ -210,13 +249,12 @@ public:
     virtual bool print() const;
     
     /**
-     This saves the trained model to a file.
-     This function should be overwritten by the derived class.
+     This saves the trained model to a file, it calls the saveModelToFile(fstream &file) function unless it is overwritten by the derived class.
      
-     @param string filename: the name of the file to save the model to
+     @param const string filename: the name of the file to save the model to
      @return returns true if the model was saved successfully, false otherwise
      */
-    virtual bool saveModelToFile(string filename) const;
+    virtual bool saveModelToFile(const string filename) const;
     
     /**
      This saves the trained model to a file.
@@ -228,13 +266,12 @@ public:
     virtual bool saveModelToFile(fstream &file) const;
     
     /**
-     This loads a trained model from a file.
-     This function should be overwritten by the derived class.
+     This loads a trained model from a file, it calls the loadModelFromFile(fstream &file) function unless it is overwritten by the derived class.
      
-     @param string filename: the name of the file to load the model from
+     @param const string filename: the name of the file to load the model from
      @return returns true if the model was loaded successfully, false otherwise
      */
-    virtual bool loadModelFromFile(string filename);
+    virtual bool loadModelFromFile(const string filename);
     
     /**
      This loads a trained model from a file.
@@ -295,11 +332,83 @@ public:
     UINT getNumOutputDimensions() const;
     
     /**
+     Gets the minimum number of epochs. This is the minimum number of epochs that can elapse with no change between two training epochs.
+     An epoch is a complete iteration of all training samples.
+     
+     @return returns the minimum number of epochs
+     */
+	UINT getMinNumEpochs() const;
+    
+    /**
+     Gets the maximum number of epochs. This value controls the maximum number of epochs that can be used by the training algorithm.
+     An epoch is a complete iteration of all training samples.
+     
+     @return returns the maximum number of epochs
+     */
+	UINT getMaxNumEpochs() const;
+    
+    /**
+     Gets the size (as a percentage) of the validation set (if one should be used). If this value returned 20 this would mean that
+     20% of the training data would be set aside to create a validation set and the other 80% would be used to actually train the regression model.
+     This will only happen if the useValidationSet parameter is set to true, otherwise 100% of the training data will be used to train the regression model.
+     
+     @return returns the size of the validation set
+     */
+	UINT getValidationSetSize() const;
+    
+    /**
      Gets the number of training iterations that were required for the algorithm to converge.
      
      @return returns the number of training iterations required for the training algorithm to converge, a value of 0 will be returned if the model has not been trained
      */
     UINT getNumTrainingIterationsToConverge() const;
+    
+    /**
+     Gets the minimum change value that controls when the training algorithm should stop.
+     
+     @return returns the minimum change value
+     */
+	double getMinChange() const;
+    
+    /**
+     Gets the current learningRate value, this is value used to update the weights at each step of a learning algorithm such as stochastic gradient descent.
+     
+     @return returns the current learningRate value
+     */
+    double getLearningRate() const;
+    
+    /**
+     Gets the root mean squared error on the training data during the training phase.
+     
+     @return returns the RMS error (on the training data during the training phase)
+     */
+    double getRootMeanSquaredTrainingError() const;
+    
+    /**
+     Gets the total squared error on the training data during the training phase.
+     
+     @return returns the total squared error (on the training data during the training phase)
+     */
+    double getTotalSquaredTrainingError() const;
+    
+    /**
+     Returns true if a validation set should be used for training. If true, then the training dataset will be partitioned into a smaller training dataset
+     and a validation set.
+     
+     The size of the partition is controlled by the validationSetSize parameter, for example, if the validationSetSize parameter is 20 then 20% of the
+     training data will be used for a validation set leaving 80% of the original data to train the model.
+     
+     @return returns true if a validation set should be used for training, false otherwise
+     */
+	bool getUseValidationSet() const;
+    
+    /**
+     Returns true if the order of the training dataset should be randomized at each epoch of training. 
+     Randomizing the order of the training dataset stops a learning algorithm from focusing too much on the first few examples in the dataset.
+     
+     @return returns true if the order of the training dataset should be randomized, false otherwise
+     */
+	bool getRandomiseTrainingOrder() const;
     
 	/**
      Gets if the model for the derived class has been succesfully trained.
@@ -335,13 +444,83 @@ public:
      @return returns true if the derived class type is REGRESSIFIER, false otherwise
      */
     bool getIsBaseTypeRegressifier() const;
-
+    
+    /**
+     Gets if the derived class type is CLUSTERER.
+     
+     @return returns true if the derived class type is CLUSTERER, false otherwise
+     */
+    bool getIsBaseTypeClusterer() const;
+    
     /**
      Sets if scaling should be used during the training and prediction phases.
      
      @return returns true the scaling parameter was updated, false otherwise
      */
     bool enableScaling(bool useScaling);
+    
+    /**
+     Sets the maximum number of epochs (a complete iteration of all training samples) that can be run during the training phase.
+     The maxNumIterations value must be greater than zero.
+     
+     @param const UINT maxNumIterations: the maximum number of iterations value, must be greater than zero
+     @return returns true if the value was updated successfully, false otherwise
+     */
+    bool setMaxNumEpochs(const UINT maxNumEpochs);
+    
+    /**
+     Sets the minimum number of epochs (a complete iteration of all training samples) that can elapse with no change between two training epochs.
+     
+     @param const UINT minNumEpochs: the minimum number of epochs that can elapse with no change between two training epochs
+     @return returns true if the value was updated successfully, false otherwise
+     */
+    bool setMinNumEpochs(const UINT minNumEpochs);
+    
+    /**
+     Sets the minimum change that must be achieved between two training epochs for the training to continue.
+     The minChange value must be greater than zero.
+     
+     @param const double minChange: the minimum change value, must be greater than zero
+     @return returns true if the value was updated successfully, false otherwise
+     */
+    bool setMinChange(const double minChange);
+    
+    /**
+     Sets the learningRate. This is used to update the weights at each step of learning algorithms such as stochastic gradient descent.
+     The learningRate value must be greater than zero.
+     
+     @param double learningRate: the learningRate value used during the training phase, must be greater than zero
+     @return returns true if the value was updated successfully, false otherwise
+     */
+    bool setLearningRate(double learningRate);
+    
+    /**
+     Sets the size of the validation set used by some learning algorithms for training. This value represents the percentage of the main
+     dataset that will be used for training.  For example, if the validationSetSize parameter is 20 then 20% of the training data will be
+     used for a validation set leaving 80% of the original data to train the model.
+     
+     @param const UINT validationSetSize: the new validation set size (as a percentage)
+     @return returns true if the validationSetSize parameter was updated, false otherwise
+     */
+    bool setUseValidationSet(const bool useValidationSet);
+    
+    /**
+     Sets the size of the validation set used by some learning algorithms for training. This value represents the percentage of the main 
+     dataset that will be used for training.  For example, if the validationSetSize parameter is 20 then 20% of the training data will be 
+     used for a validation set leaving 80% of the original data to train the model.
+     
+     @param const UINT validationSetSize: the new validation set size (as a percentage)
+     @return returns true if the validationSetSize parameter was updated, false otherwise
+     */
+    bool setValidationSetSize(const UINT validationSetSize);
+    
+    /**
+     Sets if the order of the training dataset should be randomized at each epoch of training.
+     Randomizing the order of the training dataset stops a learning algorithm from focusing too much on the first few examples in the dataset.
+     
+     @return returns true if the parameter was updated, false otherwise
+     */
+    bool setRandomiseTrainingOrder(const bool randomiseTrainingOrder);
     
     /**
      Registers the observer with the training result observer manager. The observer will then be notified when any new training result is computed.
@@ -400,6 +579,20 @@ public:
     bool notifyTestResultsObservers( const TestInstanceResult &data );
     
     /**
+	 This functions returns a pointer to the current instance.
+     
+     @return returns a MLBase pointer to the current instance.
+     */
+    MLBase* getMLBasePointer();
+    
+    /**
+	 This functions returns a const pointer to the current instance.
+     
+     @return returns a const MLBase pointer to the current instance.
+     */
+    const MLBase* getMLBasePointer() const;
+    
+    /**
      Gets the training results from the last training phase. Each element in the vector represents the training results from 1 training iteration.
      
      @return returns a vector of TrainingResult instances containing the training results from the most recent training phase
@@ -428,6 +621,15 @@ protected:
     UINT numInputDimensions;
     UINT numOutputDimensions;
     UINT numTrainingIterationsToConverge;
+    UINT minNumEpochs;
+    UINT maxNumEpochs;
+    UINT validationSetSize;
+    double learningRate;
+    double minChange;
+    double rootMeanSquaredTrainingError;
+    double totalSquaredTrainingError;
+    bool useValidationSet;
+    bool randomiseTrainingOrder;
     vector< TrainingResult > trainingResults;
     TrainingResultsObserverManager trainingResultsObserverManager;
     TestResultsObserverManager testResultsObserverManager;

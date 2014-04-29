@@ -42,7 +42,7 @@
 #define GRT_DTW_HEADER
 
 #include "../../CoreModules/Classifier.h"
-#include "../../Util/LabelledTimeSeriesClassificationSampleTrimmer.h"
+#include "../../Util/TimeSeriesClassificationSampleTrimmer.h"
 
 namespace GRT{
     
@@ -140,10 +140,10 @@ public:
      This trains the DTW model, using the labelled timeseries classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledTimeSeriesClassificationData trainingData: a reference to the training data
+     @param TimeSeriesClassificationData trainingData: a reference to the training data
      @return returns true if the DTW model was trained, false otherwise
      */
-    virtual bool train(LabelledTimeSeriesClassificationData trainingData);
+    virtual bool train_(TimeSeriesClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -152,7 +152,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
      */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This predicts the class of the timeseries.
@@ -161,7 +161,7 @@ public:
      @param MatrixDouble timeSeries: the input timeseries to classify
      @return returns true if the prediction was performed, false otherwise
      */
-    virtual bool predict(MatrixDouble timeSeries);
+    virtual bool predict_(MatrixDouble &timeSeries);
     
     /**
      This resets the DTW classifier.
@@ -333,10 +333,13 @@ public:
      @return returns a vector of vectors containing the warping paths from the last prediction, or an empty vector if no prediction has been made
      */
     vector< vector< IndexDist > > getWarpingPaths(){ return warpPaths; }
+    
+    using MLBase::train; ///<Tell the compiler we are using the base class train method to stop hidden virtual function warnings
+    using MLBase::predict; ///<Tell the compiler we are using the base class predict method to stop hidden virtual function warnings
 
 private:
 	//Public training and prediction methods
-	bool train_NDDTW(LabelledTimeSeriesClassificationData &trainingData,DTWTemplate &dtwTemplate,UINT &bestIndex);
+	bool train_NDDTW(TimeSeriesClassificationData &trainingData,DTWTemplate &dtwTemplate,UINT &bestIndex);
 
 	//The actual DTW function
 	double computeDistance(MatrixDouble &timeSeriesA,MatrixDouble &timeSeriesB,MatrixDouble &distanceMatrix,vector< IndexDist > &warpPath);
@@ -344,9 +347,9 @@ private:
 	double inline MIN_(double a,double b, double c);
 
 	//Private Scaling and Utility Functions
-	void scaleData(LabelledTimeSeriesClassificationData &trainingData);
+	void scaleData(TimeSeriesClassificationData &trainingData);
 	void scaleData(MatrixDouble &data,MatrixDouble &scaledData);
-	void znormData(LabelledTimeSeriesClassificationData &trainingData);
+	void znormData(TimeSeriesClassificationData &trainingData);
 	void znormData(MatrixDouble &data,MatrixDouble &normData);
 	void smoothData(VectorDouble &data,UINT smoothFactor,VectorDouble &resultsData);
 	void smoothData(MatrixDouble &data,UINT smoothFactor,MatrixDouble &resultsData);
@@ -354,7 +357,9 @@ private:
     
     static RegisterClassifierModule< DTW > registerModule;
 
-public:
+protected:
+    bool loadLegacyModelFromFile( fstream &file );
+    
 	vector< DTWTemplate > templatesBuffer;		//A buffer to store the templates for each time series
     vector< MatrixDouble > distanceMatrices;
     vector< vector< IndexDist > > warpPaths;
@@ -379,6 +384,7 @@ public:
 	UINT				distanceMethod;			//The distance method to be used (should be of enum DISTANCE_METHOD)
 	UINT				averageTemplateLength;	//The overall average template length (over all the templates)
 	
+public:
 	enum DistanceMethods{ABSOLUTE_DIST=0,EUCLIDEAN_DIST,NORM_ABSOLUTE_DIST};
     enum RejectionModes{TEMPLATE_THRESHOLDS=0,CLASS_LIKELIHOODS,THRESHOLDS_AND_LIKELIHOODS};
 

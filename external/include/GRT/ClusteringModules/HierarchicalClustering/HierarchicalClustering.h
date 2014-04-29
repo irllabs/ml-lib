@@ -29,9 +29,7 @@
 #ifndef GRT_HIERARCHICAL_CLUSTERING_HEADER
 #define GRT_HIERARCHICAL_CLUSTERING_HEADER
 
-#include "../../Util/GRTCommon.h"
-#include "../../DataStructures/LabelledClassificationData.h"
-#include "../../DataStructures/UnlabelledClassificationData.h"
+#include "../../CoreModules/Clusterer.h"
 
 namespace GRT{
     
@@ -132,16 +130,117 @@ public:
     vector< ClusterInfo > clusters;
 };
 
-class HierarchicalClustering{
+class HierarchicalClustering : public Clusterer {
 
 public:
-	//Constructor,destructor
+	/**
+     Default Constructor.
+     */
 	HierarchicalClustering();
-    ~HierarchicalClustering();
     
-    bool train(LabelledClassificationData &trainingData);
-	bool train(UnlabelledClassificationData &trainingData);
-	bool train(MatrixDouble &data);
+    /**
+     Defines how the data from the rhs instance should be copied to this instance
+     
+     @param const HierarchicalClustering &rhs: another instance of a HierarchicalClustering
+     */
+    HierarchicalClustering(const HierarchicalClustering &rhs);
+    
+    /**
+     Default Destructor
+     */
+    virtual ~HierarchicalClustering();
+    
+    /**
+     Defines how the data from the rhs instance should be copied to this instance
+     
+     @param const HierarchicalClustering &rhs: another instance of a HierarchicalClustering
+     @return returns a reference to this instance of the HierarchicalClustering
+     */
+    HierarchicalClustering &operator=(const HierarchicalClustering &rhs);
+    
+	/**
+     This deep copies the variables and models from the Clusterer pointer to this HierarchicalClustering instance.
+     This overrides the base deep copy function for the Clusterer modules.
+     
+     @param const Clusterer *clusterer: a pointer to the Clusterer base class, this should be pointing to another HierarchicalClustering instance
+     @return returns true if the clone was successfull, false otherwise
+     */
+    virtual bool deepCopyFrom(const Clusterer *clusterer);
+    
+    /**
+     This resets the Clusterer.
+     This overrides the reset function in the MLBase base class.
+     
+     @return returns true if the Clusterer was reset, false otherwise
+     */
+    virtual bool reset();
+    
+    /**
+     This function clears the Clusterer module, removing any trained model and setting all the base variables to their default values.
+     
+     @return returns true if the derived class was cleared succesfully, false otherwise
+     */
+    virtual bool clear();
+    
+    /**
+     This is the main training interface for referenced MatrixDouble data. It overrides the train_ function in the ML base class.
+     
+     @param MatrixDouble &trainingData: a reference to the training data that will be used to train the ML model
+     @return returns true if the model was successfully trained, false otherwise
+     */
+    virtual bool train_(MatrixDouble &data);
+    
+    /**
+     This is the main training interface for reference ClassificationData data. It overrides the train_ function in the ML base class.
+     
+     @param ClassificationData &trainingData: a reference to the training data that will be used to train the ML model
+     @return returns true if the model was successfully trained, false otherwise
+     */
+    virtual bool train_(ClassificationData &trainingData);
+    
+    /**
+     This is the main training interface for reference UnlabelledData data. It overrides the train_ function in the ML base class.
+     
+     @param UnlabelledData &trainingData: a reference to the training data that will be used to train the ML model
+     @return returns true if the model was successfully trained, false otherwise
+     */
+	virtual bool train_(UnlabelledData &trainingData);
+    
+	/**
+     This saves the trained HierarchicalClustering model to a file.
+     This overrides the saveModelToFile function in the base class.
+     
+     @param string filename: the name of the file to save the HierarchicalClustering model to
+     @return returns true if the model was saved successfully, false otherwise
+     */
+    virtual bool saveModelToFile(string filename) const;
+    
+    /**
+     This saves the trained HierarchicalClustering model to a file.
+     This overrides the saveModelToFile function in the base class.
+     
+     @param fstream &file: a reference to the file the HierarchicalClustering model will be saved to
+     @return returns true if the model was saved successfully, false otherwise
+     */
+    virtual bool saveModelToFile(fstream &file) const;
+    
+    /**
+     This loads a trained HierarchicalClustering model from a file.
+     This overrides the loadModelFromFile function in the base class.
+     
+     @param string filename: the name of the file to load the HierarchicalClustering model from
+     @return returns true if the model was loaded successfully, false otherwise
+     */
+    virtual bool loadModelFromFile(string filename);
+    
+    /**
+     This loads a trained HierarchicalClustering model from a file.
+     This overrides the loadModelFromFile function in the base class.
+     
+     @param fstream &file: a reference to the file the HierarchicalClustering model will be loaded from
+     @return returns true if the model was loaded successfully, false otherwise
+     */
+    virtual bool loadModelFromFile(fstream &file);
     
     bool printModel();
     
@@ -155,7 +254,6 @@ private:
 
 	UINT M;                             //Number of training examples
 	UINT N;                             //Number of dimensions
-    bool trained;
     vector< ClusterLevel > clusters;
     MatrixDouble distanceMatrix;                     //The distance matrix
 	

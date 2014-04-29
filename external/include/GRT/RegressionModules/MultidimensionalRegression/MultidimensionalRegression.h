@@ -78,19 +78,19 @@ public:
      This trains the Multidimensional Regression model, using the labelled regression data.
      This overrides the train function in the ML base class.
      
-     @param LabelledRegressionData trainingData: the training data that will be used to train the regression model
+     @param RegressionData &trainingData: the training data that will be used to train the regression model
      @return returns true if the Multidimensional Regression model was trained, false otherwise
     */
-    virtual bool train(LabelledRegressionData trainingData);
+    virtual bool train_(RegressionData &trainingData);
     
     /**
      This performs the regression by mapping the inputVector using the current Multidimensional Regression model.
      This overrides the predict function in the ML base class.
      
-     @param VectorDouble inputVector: the input vector to classify
+     @param VectorDouble &inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
     */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This saves the trained Multidimensional Regression model to a file.
@@ -158,6 +158,7 @@ protected:
     bool deepCopyRegressionModules( vector< Regressifier* > &newModules ) const;
     bool deleteAll();
 	bool deleteRegressionModules();
+    bool loadLegacyModelFromFile( fstream &file );
 	
     Regressifier *regressifier;
 	vector< Regressifier* > regressionModules;

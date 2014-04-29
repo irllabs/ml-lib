@@ -32,7 +32,6 @@
 #define GRT_MLP_HEADER
 
 #include "Neuron.h"
-#include "../../../DataStructures/LabelledRegressionData.h"
 #include "../../../CoreModules/Regressifier.h"
 
 namespace GRT{
@@ -43,6 +42,11 @@ public:
      Default Constructor
      */
     MLP();
+    
+    /**
+     Copy Constructor
+     */
+    MLP(const MLP &rhs);
     
     /**
      Default Destructor
@@ -69,27 +73,27 @@ public:
     /**
      This trains the MLP model, using the labelled classification data. Calling this function sets the MLP into Classification Model.
      
-     @param LabelledClassificationData trainingData: the training data that will be used to train the classification model
+     @param ClassificationData &trainingData: the training data that will be used to train the classification model
      @return returns true if the MLP model was trained, false otherwise
      */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This trains the MLP model, using the labelled regression data. Calling this function sets the MLP into Regression Model.
      
-     @param LabelledRegressionData trainingData: the training data that will be used to train the regression model
+     @param RegressionData trainingData: the training data that will be used to train the regression model
      @return returns true if the MLP model was trained, false otherwise
      */
-    virtual bool train(LabelledRegressionData trainingData);
+    virtual bool train_(RegressionData &trainingData);
     
     /**
      This function either predicts the class of the input vector (if the MLP is in Classification Mode), or it performs regression using
      the MLP model.
      
-     @param VectorDouble inputVector: the input vector to classify or perform regression on
+     @param VectorDouble &inputVector: the input vector to classify or perform regression on
      @return returns true if the prediction/regression was performed, false otherwise
      */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      Clears any previous model or settings.
@@ -109,28 +113,10 @@ public:
      This saves the trained MLP model to a file.
      This overrides the saveModelToFile function in the ML base class.
      
-     @param string filename: the name of the file to save the MLP model to
-     @return returns true if the model was saved successfully, false otherwise
-     */
-    virtual bool saveModelToFile(string filename) const;
-    
-    /**
-     This saves the trained MLP model to a file.
-     This overrides the saveModelToFile function in the ML base class.
-     
      @param fstream &file: a reference to the file the MLP model will be saved to
      @return returns true if the model was saved successfully, false otherwise
      */
     virtual bool saveModelToFile(fstream &file) const;
-    
-    /**
-     This loads a trained MLP model from a file.
-     This overrides the loadModelFromFile function in the ML base class.
-     
-     @param string filename: the name of the file to load the MLP model from
-     @return returns true if the model was loaded successfully, false otherwise
-     */
-    virtual bool loadModelFromFile(string filename);
     
     /**
      This loads a trained MLP model from a file.
@@ -189,6 +175,7 @@ public:
     
     /**
      Prints the current MLP weights and coefficents to std out.
+     This function is depreciated, you should now use print() instead.
      */
     void printNetwork() const;
     
@@ -489,20 +476,24 @@ public:
      */
     bool setNullRejectionCoeff(const double nullRejectionCoeff);
     
+    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
+    using MLBase::saveModelToFile;
+    using MLBase::loadModelFromFile;
+    using MLBase::train;
+    using MLBase::train_;
+    using MLBase::predict;
+    using MLBase::predict_;
+    
 protected:
     bool inline isNAN(const double v) const;
     
-    /**
-     This is the main training function for both regression and classification.
-     
-     @param LabelledRegressionData &trainingData: the data that will be used to train the model
-     @return returns true if the model was trained, false otherwise
-     */
-    bool train_(LabelledRegressionData &trainingData);
+    bool trainModel(RegressionData &trainingData);
     
-    bool trainOnlineGradientDescentClassification(const LabelledRegressionData &trainingData,const LabelledRegressionData &validationData);
+    bool trainOnlineGradientDescentClassification(const RegressionData &trainingData,const RegressionData &validationData);
     
-    bool trainOnlineGradientDescentRegression(const LabelledRegressionData &trainingData,const LabelledRegressionData &validationData);
+    bool trainOnlineGradientDescentRegression(const RegressionData &trainingData,const RegressionData &validationData);
+    
+    bool loadLegacyModelFromFile( fstream &file );
     
     /**
      Performs one round of back propagation, using the training example and target vector

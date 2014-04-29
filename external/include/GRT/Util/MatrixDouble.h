@@ -95,7 +95,7 @@ public:
      @param const vector< VectorDouble> &rhs: a vector of VectorDoubles
      @return returns a reference to this instance of the MatrixDouble
      */
-    MatrixDouble& operator=(const vector< VectorDouble> &rhs);
+    MatrixDouble& operator=(const vector< VectorDouble > &rhs);
     
     /**
      Resizes the MatrixDouble to the new size of [rows cols]
@@ -121,7 +121,7 @@ public:
      @param const string &filename: the name of the CSV file
      @return returns true or false, indicating if the data was loaded successful
      */
-    bool loadFromCSVFile(const string &filename);
+    bool loadFromCSVFile(const string &filename,const char seperator = ',');
     
     /**
      Prints the MatrixDouble contents to std::cout
@@ -164,6 +164,60 @@ public:
     MatrixDouble multiple(const MatrixDouble &b) const;
     
     /**
+     Performs the multiplcation of the matrix a by the matrix b, directly storing the new data in the this matrix instance.
+     This will resize the current matrix if needed.
+     This makes this matrix c and gives: c = a * b, or if the aTransposed value is true: c = a' * b
+     
+     @param const MatrixDouble &a: the matrix to multiple with b
+     @param const MatrixDouble &b: the matrix to multiple with a
+     @param const bool aTranspose: a flag to indicate if matrix a should be transposed
+     @return true if the operation was completed successfully, false otherwise
+     */
+    bool multiple(const MatrixDouble &a,const MatrixDouble &b,const bool aTranspose = false);
+    
+    /**
+     Adds the input matrix data (b) to this matrix (a), giving: a = a + b.
+     This rows and cols of b must match that of this matrix.
+     
+     @param const MatrixDouble &a: the matrix to multiple with b
+     @param const MatrixDouble &b: the matrix to multiple with a
+     @param const bool aTranspose: a flag to indicate if matrix a should be transposed
+     @return true if the operation was completed successfully, false otherwise
+     */
+    bool add(const MatrixDouble &b);
+    
+    /**
+     Adds the input matrix data (a) to the input matrix (b), storing the data in this matrix (c) giving: c = a + b.
+     The rows and cols in a and b must match.
+     This will resize the current matrix if needed.
+     
+     @param const MatrixDouble &a: the matrix to add with b
+     @param const MatrixDouble &b: the matrix to add with a
+     @return true if the operation was completed successfully, false otherwise
+     */
+    bool add(const MatrixDouble &a,const MatrixDouble &b);
+    
+    /**
+     Subtracts the input matrix data (b) from this matrix (a), giving: a = a - b.
+     This rows and cols of b must match that of this matrix.
+     
+     @param const MatrixDouble &a: the matrix to subtract from this instance
+     @return true if the operation was completed successfully, false otherwise
+     */
+    bool subtract(const MatrixDouble &b);
+    
+    /**
+     Subtracts the input matrix data (b) from this matrix (a), giving (c): c = a - b.
+     This rows and cols of b must match that of this matrix.
+     This will resize the current matrix if needed.
+     
+     @param const MatrixDouble &a: the matrix to subtract with b
+     @param const MatrixDouble &b: the matrix to subtract from a
+     @return true if the operation was completed successfully, false otherwise
+     */
+    bool subtract(const MatrixDouble &a,const MatrixDouble &b);
+    
+    /**
      Gets the mean of each column in the matrix and returns this as a VectorDouble.
      
      @return a VectorDouble with the mean of each column
@@ -199,6 +253,14 @@ public:
     double getTrace() const;
     
 protected:
+    
+    double stringToDouble(const std::string &value){
+        std::stringstream s( value );
+        double d;
+        s >> d;
+        return d;
+    }
+  
     WarningLog warningLog;
     ErrorLog errorLog;
     

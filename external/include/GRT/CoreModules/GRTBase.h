@@ -71,6 +71,14 @@ public:
     bool copyGRTBaseVariables(const GRTBase *GRTBase);
     
     /**
+     This function returns the name of the current class as a string.  For example, if you asked AdaBoost for the class type then this function would
+     return "AdaBoost".
+     
+     return returns a string representing the class type
+     */
+    string getClassType();
+    
+    /**
 	 This function returns the last warning message as a string. If no warnings have occured, the string will be empty.
      
      @return returns the last warning message as a string.
@@ -106,10 +114,25 @@ public:
      @return returns the current GRT revision as a string.
      */
     static string getGRTRevison();
+    
+    /**
+	 This functions returns a pointer to the current instance.
+     
+     @return returns a GRTBase pointer to the current instance.
+     */
+    GRTBase* getGRTBasePointer();
+    
+    /**
+	 This functions returns a const pointer to the current instance.
+     
+     @return returns a const GRTBase pointer to the current instance.
+     */
+    const GRTBase* getGRTBasePointer() const;
 
 protected:
     inline double SQR(const double &x) const{ return x*x; }
 
+    string classType;
     DebugLog debugLog;
     ErrorLog errorLog;
     InfoLog infoLog;

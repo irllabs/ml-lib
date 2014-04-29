@@ -132,8 +132,8 @@ public:
             ts.hour++;
         }
         
-        if( ts.hour >= 60 ){
-            ts.hour = ts.hour % 60;
+        if( ts.hour >= 24 ){
+            ts.hour = ts.hour % 24;
             ts.day++;
         }
         
@@ -180,8 +180,8 @@ public:
                 this->hour++;
             }
             
-            if( this->hour >= 60 ){
-                this->hour = this->hour % 60;
+            if( this->hour >= 24 ){
+                this->hour = this->hour % 24;
                 this->day++;
             }
             

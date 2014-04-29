@@ -111,21 +111,19 @@ public:
     
     /**
      This saves the feature extraction settings to a file.
-     This overrides the saveSettingsToFile function in the FeatureExtraction base class.
      
-     @param string filename: the name of the file to save the settings to
-     @return returns true if the settings were saved successfully, false otherwise (the base class always returns false)
+     @param const string filename: the filename to save the settings to
+     @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(string filename);
+    virtual bool saveSettingsToFile(const string filename) const;
     
     /**
-     This loads the feature extraction settings from a file.
-     This overrides the loadSettingsFromFile function in the FeatureExtraction base class.
+     This saves the feature extraction settings to a file.
      
-     @param string filename: the name of the file to load the settings from
-     @return returns true if the settings were loaded successfully, false otherwise (the base class always returns false)
+     @param fstream &file: a reference to the file to save the settings to
+     @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool loadSettingsFromFile(string filename);
+    virtual bool loadSettingsFromFile(const string filename);
     
     /**
      This saves the feature extraction settings to a file.
@@ -237,6 +235,14 @@ public:
      @return returns a curcular buffer containing the data buffer values, an empty circular buffer will be returned if the ZeroCrossingCounter has not been initialized
      */
     CircularBuffer< VectorDouble > getDataBuffer(){ if( initialized ){ return dataBuffer; } return CircularBuffer< VectorDouble >(); }
+    
+    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
+    using FeatureExtraction::saveSettingsToFile;
+    using FeatureExtraction::loadSettingsFromFile;
+    using MLBase::train;
+    using MLBase::train_;
+    using MLBase::predict;
+    using MLBase::predict_;
     
 protected:
     UINT searchWindowSize;                                  ///< The size of the search window, i.e. the amount of previous data stored and searched

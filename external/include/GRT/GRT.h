@@ -63,16 +63,17 @@
 #include "Util/ThresholdCrossingDetector.h"
 
 //Include the data structures
-#include "DataStructures/LabelledClassificationData.h"
-#include "DataStructures/LabelledTimeSeriesClassificationData.h"
+#include "DataStructures/ClassificationData.h"
+#include "DataStructures/TimeSeriesClassificationData.h"
 #include "DataStructures/LabelledContinuousTimeSeriesClassificationData.h"
-#include "DataStructures/LabelledRegressionData.h"
-#include "DataStructures/UnlabelledClassificationData.h"
+#include "DataStructures/RegressionData.h"
+#include "DataStructures/UnlabelledData.h"
 
 //Include the Core Alogirthms
 #include "CoreAlgorithms/EvolutionaryAlgorithm/EvolutionaryAlgorithm.h"
 #include "CoreAlgorithms/ParticleFilter/ParticleFilter.h"
 #include "CoreAlgorithms/ParticleSwarmOptimization/ParticleSwarmOptimization.h"
+#include "CoreAlgorithms/BernoulliRBM/BernoulliRBM.h"
 
 //Include the PreProcessing Modules
 #include "PreProcessingModules/Derivative.h"

@@ -32,8 +32,6 @@
 #define GRT_CLUSTERER_HEADER
 
 #include "MLBase.h"
-#include "../DataStructures/LabelledClassificationData.h"
-#include "../DataStructures/LabelledTimeSeriesClassificationData.h"
 
 namespace GRT{
 
@@ -96,21 +94,6 @@ public:
      @return returns the number of clusters
      */
     UINT getNumClusters() const;
-    
-    /**
-     Gets the minimum number of epochs. This is the minimum number of epochs (a complete iteration of all training samples)
-     that can elapse with no change between two training epochs.
-     
-     @return returns the minimum number of epochs
-     */
-	UINT getMinNumEpochs() const;
-    
-    /**
-     Gets the maximum number of epochs. This value controls the maximum number of epochs that can be used by the training algorithm.
-     
-     @return returns the maximum number of epochs
-     */
-	UINT getMaxNumEpochs() const;
 
     /**
      Returns the classifeir type as a string.
@@ -128,32 +111,6 @@ public:
      @return returns true if the value was updated successfully, false otherwise
      */
     bool setNumClusters(const UINT numClusters);
-    
-    /**
-     Sets the maximum number of epochs (a complete iteration of all training samples) that can be run during the training phase.
-     The maxNumIterations value must be greater than zero.
-     
-     @param UINT maxNumIterations: the maximum number of iterations value, must be greater than zero
-     @return returns true if the value was updated successfully, false otherwise
-     */
-    bool setMaxNumEpochs(const UINT maxNumEpochs);
-    
-    /**
-     Sets the minimum number of epochs (a complete iteration of all training samples) that can elapse with no change between two training epochs.
-     
-     @param UINT minNumEpochs: the minimum number of epochs that can elapse with no change between two training epochs
-     @return returns true if the value was updated successfully, false otherwise
-     */
-    bool setMinNumEpochs(const UINT minNumEpochs);
-    
-    /**
-     Sets the minimum change that must be achieved between two training epochs for the training to continue.
-     The minChange value must be greater than zero.
-     
-     @param double minChange: the minimum change value, must be greater than zero
-     @return returns true if the value was updated successfully, false otherwise
-     */
-    bool setMinChange(double minChange);
     
     /**
      Defines a map between a string (which will contain the name of the Clusterer, such as KMeans) and a function returns a new instance of that Clusterer
@@ -218,9 +175,6 @@ protected:
 
     string clustererType;
     UINT numClusters;                   //Number of clusters in the model
-    UINT minNumEpochs;
-    UINT maxNumEpochs;
-    double minChange;
     bool converged;
     vector<MinMax> ranges;
     

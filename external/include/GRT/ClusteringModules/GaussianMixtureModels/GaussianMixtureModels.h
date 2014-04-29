@@ -87,36 +87,28 @@ public:
     virtual bool clear();
     
     /**
-     This is the main training interface for MatrixDouble data. It overrides the trainInplace function in the ML base class.
-     
-     @param MatrixDouble trainingData: the training data that will be used to train the ML model
-     @return returns true if the model was successfully trained, false otherwise
-     */
-    virtual bool train(MatrixDouble data);
-    
-    /**
-     This is the main training interface for referenced MatrixDouble data. It overrides the trainInplace function in the ML base class.
+     This is the main training interface for referenced MatrixDouble data. It overrides the train_ function in the ML base class.
      
      @param MatrixDouble &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
      */
-    virtual bool trainInplace(MatrixDouble &data);
+    virtual bool train_(MatrixDouble &data);
     
     /**
-     This is the main training interface for reference LabelledClassificationData data. It overrides the trainInplace function in the ML base class.
+     This is the main training interface for reference ClassificationData data. It overrides the train_ function in the ML base class.
      
-     @param LabelledClassificationData &trainingData: a reference to the training data that will be used to train the ML model
+     @param ClassificationData &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
      */
-    virtual bool trainInplace(LabelledClassificationData &trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
-     This is the main training interface for reference UnlabelledClassificationData data. It overrides the trainInplace function in the ML base class.
+     This is the main training interface for reference UnlabelledData data. It overrides the train_ function in the ML base class.
      
-     @param UnlabelledClassificationData &trainingData: a reference to the training data that will be used to train the ML model
+     @param UnlabelledData &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
      */
-	virtual bool trainInplace(UnlabelledClassificationData &trainingData);
+	virtual bool train_(UnlabelledData &trainingData);
     
 	/**
      This saves the trained GaussianMixtureModels model to a file.
@@ -187,7 +179,7 @@ public:
         return MatrixDouble();
     }
 	
-private:
+protected:
     bool estep( const MatrixDouble &data, VectorDouble &u, VectorDouble &v, double &change );
 	bool mstep( const MatrixDouble &data );
 	bool computeInvAndDet();
@@ -203,7 +195,6 @@ private:
 	VectorDouble det;                         
 	vector< MatrixDouble > sigma;
 	vector< MatrixDouble > invSigma;
-    
     
 private:
     static RegisterClustererModule< GaussianMixtureModels > registerModule;

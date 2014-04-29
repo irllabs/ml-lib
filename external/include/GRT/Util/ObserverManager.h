@@ -29,6 +29,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 namespace GRT{
     
+//Forward declaration of MLBase
+class MLBase;
+    
 template <class NotifyType>
 class ObserverManager {
 public:
@@ -86,14 +89,14 @@ public:
         return true;
     }
     
-    bool notifyObservers(const NotifyType &data){
+    bool notifyObservers(const NotifyType &data,const MLBase *trainer){
         
         //Notify all the observers
         const unsigned int numObservers = (unsigned int)observers.size();
         for(unsigned int i=0; i<numObservers; i++){
             Observer<NotifyType> *ptr = observers[i];
             if( ptr != NULL )
-                ptr->notify( data );
+                ptr->notify( data, trainer );
         }
         
         return true;

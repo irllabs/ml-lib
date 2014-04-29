@@ -31,6 +31,8 @@
 
 #include <iostream>
 #include <vector>
+#include <exception>
+#include "ErrorLog.h"
 
 namespace GRT{
     
@@ -39,7 +41,7 @@ public:
     /**
      Default Constructor
     */
-	Matrix(){
+	Matrix():errorLog("[ERROR Matrix]"){
         rows = 0;
         cols = 0;
         capacity = 0;
@@ -52,7 +54,7 @@ public:
      @param const UINT rows: sets the number of rows in the matrix, must be a value greater than zero
      @param const UINT cols: sets the number of columns in the matrix, must be a value greater than zero
     */
-	Matrix(const unsigned int rows,const unsigned int cols){
+	Matrix(const unsigned int rows,const unsigned int cols):errorLog("[ERROR Matrix]"){
         dataPtr = NULL;
         resize(rows,cols);
 	}
@@ -62,7 +64,7 @@ public:
      
      @param const Matrix &rhs: the Matrix from which the values will be copied
     */
-	Matrix(const Matrix &rhs){
+	Matrix(const Matrix &rhs):errorLog("[ERROR Matrix]"){
         this->dataPtr = NULL;
         this->rows = 0;
         this->cols = 0;
@@ -88,7 +90,7 @@ public:
      
      @param const vector< vector< T > > &data: the input data which will be copied to this Matrix instance
      */
-	Matrix(const std::vector< std::vector< T > > &data){
+	Matrix(const std::vector< std::vector< T > > &data):errorLog("[ERROR Matrix]"){
 		this->dataPtr = NULL;
 		this->rows = 0;
 		this->cols = 0;
@@ -231,32 +233,50 @@ public:
     }
 
     /**
-     Resizes the Matrix to the new size of [r c]
+     Resizes the Matrix to the new size of [r c].  If [r c] matches the previous size then the matrix will not be resized but the function will return true.
      
      @param const UINT r: the number of rows, must be greater than zero
      @param const UINT c: the number of columns, must be greater than zero
      @return returns true or false, indicating if the resize was successful 
     */
 	virtual bool resize(const unsigned int r,const unsigned int c){
+        
+        //If the rows and cols are unchanged then do not resize the data
+        if( r == rows && c == cols ){
+            return true;
+        }
+        
 		//Clear any previous memory
 		clear();
+        
 		if( r > 0 && c > 0 ){
-			rows = r;
-			cols = c;
-			capacity = r;
-			dataPtr = new T*[rows];
-            
-			//Check to see if the memory was created correctly
-			if( dataPtr == NULL ){
-				rows = 0;
-				cols = 0;
-				capacity = 0;
-				return false;
-			}
-			for(unsigned int i=0; i<rows; i++){
-				dataPtr[i] = new T[cols];
-			}
-			return true;
+            try{
+                rows = r;
+                cols = c;
+                capacity = r;
+                dataPtr = new T*[rows];
+                
+                //Check to see if the memory was created correctly
+                if( dataPtr == NULL ){
+                    rows = 0;
+                    cols = 0;
+                    capacity = 0;
+                    return false;
+                }
+                for(unsigned int i=0; i<rows; i++){
+                    dataPtr[i] = new T[cols];
+                }
+                return true;
+                
+            }catch( std::exception& e ){
+                errorLog << "resize: Failed to allocate memory. Error: " << e.what() << std::endl;
+                clear();
+                return false;
+            }catch( ... ){
+                errorLog << "resize: Failed to allocate memory." << std::endl;
+                clear();
+                return false;
+            }
 		}
 		return false;
 	}
@@ -339,7 +359,6 @@ public:
 			return false;
 		}
 
-		
 		//Check to see if we have reached the capacity, if not then simply add the new data
 		if( rows < capacity ){
 			//Add the new sample at the end
@@ -463,6 +482,10 @@ public:
      @return returns the number of columns in the Matrix
     */
 	inline unsigned int getCapacity() const{ return capacity; }
+    
+    T** getDataPointer() const{
+        return dataPtr;
+    }
 
 protected:
     
@@ -470,6 +493,7 @@ protected:
 	unsigned int cols;      ///< The number of columns in the Matrix
 	unsigned int capacity;  ///< The actual capacity of the Matrix, this will be the number of rows, not the actual memory size
 	T **dataPtr;            ///< A pointer to the data
+    ErrorLog errorLog;
 
 };
 

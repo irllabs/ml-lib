@@ -42,10 +42,11 @@
 #define GRT_PRINCIPAL_COMPONENT_ANALYSIS_HEADER
 
 #include "../../Util/GRTCommon.h"
+#include "../../CoreModules/GRTBase.h"
 
 namespace GRT{
 	
-class PrincipalComponentAnalysis{
+class PrincipalComponentAnalysis : public GRTBase{
  public:
     /**
      Default constructor.
@@ -55,7 +56,7 @@ class PrincipalComponentAnalysis{
     /**
      Default destructor.
      */
-	~PrincipalComponentAnalysis();
+	virtual ~PrincipalComponentAnalysis();
 	
     /**
      Runs the principal component analysis algorithm on the input data and builds the resulting feature vector

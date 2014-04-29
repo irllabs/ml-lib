@@ -122,21 +122,19 @@ public:
     
     /**
      This saves the feature extraction settings to a file.
-     This overrides the saveSettingsToFile function in the FeatureExtraction base class.
      
-     @param string filename: the name of the file to save the settings to
-     @return returns true if the settings were saved successfully, false otherwise (the base class always returns false)
+     @param const string filename: the filename to save the settings to
+     @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(string filename) const;
+    virtual bool saveSettingsToFile(const string filename) const;
     
     /**
-     This loads the feature extraction settings from a file.
-     This overrides the loadSettingsFromFile function in the FeatureExtraction base class.
+     This saves the feature extraction settings to a file.
      
-     @param string filename: the name of the file to load the settings from
-     @return returns true if the settings were loaded successfully, false otherwise (the base class always returns false)
+     @param fstream &file: a reference to the file to save the settings to
+     @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool loadSettingsFromFile(string filename);
+    virtual bool loadSettingsFromFile(const string filename);
     
     /**
      This saves the feature extraction settings to a file.

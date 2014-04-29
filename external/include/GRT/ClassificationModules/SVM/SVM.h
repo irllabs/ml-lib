@@ -99,10 +99,10 @@ public:
      This trains the SVM model, using the labelled classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledClassificationData &trainingData: a reference to the training data
+     @param ClassificationData &trainingData: a reference to the training data
      @return returns true if the SVM model was trained, false otherwise
      */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -111,7 +111,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
      */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      Clears any previous model or problem.
@@ -122,28 +122,10 @@ public:
      This saves the trained SVM model to a file.
      This overrides the saveModelToFile function in the Classifier base class.
      
-     @param string filename: the name of the file to save the SVM model to
-     @return returns true if the model was saved successfully, false otherwise
-     */
-    virtual bool saveModelToFile(string filename) const;
-    
-    /**
-     This saves the trained SVM model to a file.
-     This overrides the saveModelToFile function in the Classifier base class.
-     
      @param fstream &file: a reference to the file the SVM model will be saved to
      @return returns true if the model was saved successfully, false otherwise
      */
     virtual bool saveModelToFile(fstream &file) const;
-    
-    /**
-     This loads a trained SVM model from a file.
-     This overrides the loadModelFromFile function in the Classifier base class.
-     
-     @param string filename: the name of the file to load the SVM model from
-     @return returns true if the model was loaded successfully, false otherwise
-     */
-    virtual bool loadModelFromFile(string filename);
     
     /**
      This loads a trained SVM model from a file.
@@ -346,17 +328,26 @@ public:
      return returns true if the useCrossValidation was set, false otherwise
      */
     bool enableCrossValidationTraining(const bool useCrossValidation);
+    
+    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
+    using MLBase::saveModelToFile;
+    using MLBase::loadModelFromFile;
+    using MLBase::train;
+    using MLBase::train_;
+    using MLBase::predict;
+    using MLBase::predict_;
 
 protected:
     void deleteProblemSet();
     bool validateProblemAndParameters();
     bool validateSVMType(UINT svmType);
     bool validateKernelType(UINT kernelType);
-    bool convertLabelledClassificationDataToLIBSVMFormat(LabelledClassificationData &trainingData);
+    bool convertClassificationDataToLIBSVMFormat(ClassificationData &trainingData);
 	bool trainSVM();
     
-	bool predict_(VectorDouble &inputVector);
-	bool predict_(VectorDouble &inputVector,double &maxProbability, vector<double> &probabilites);
+    bool predictSVM(VectorDouble &inputVector);
+	bool predictSVM(VectorDouble &inputVector,double &maxProbability, VectorDouble &probabilites);
+    bool loadLegacyModelFromFile( fstream &file );
     
     struct svm_model *deepCopyModel() const;
     

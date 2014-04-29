@@ -32,8 +32,8 @@
 #define GRT_REGRESSIFIER_HEADER
 
 #include "MLBase.h"
-#include "../DataStructures/LabelledClassificationData.h"
-#include "../DataStructures/LabelledTimeSeriesClassificationData.h"
+#include "../DataStructures/ClassificationData.h"
+#include "../DataStructures/TimeSeriesClassificationData.h"
 
 namespace GRT{
     
@@ -84,14 +84,6 @@ public:
      @return returns true if the module was cleared succesfully, false otherwise
      */
     virtual bool clear();
-
-    /**
-     This is the main training interface for all the regression algorithms.
-     
-     @param LabelledRegressionData trainingData: the training data that will be used to train a new regression model
-     @return returns true if a new regression model was trained, false otherwise
-     */
-    virtual bool train(LabelledRegressionData trainingData){ return false; }
     
     /**
      Gets the regressifier type as a string. This is the name of the regression algorithm, such as "LinearRegression".
@@ -99,77 +91,6 @@ public:
      @return returns the regressifier type as a string
      */
     string getRegressifierType() const;
-    
-    /**
-     Gets the minimum number of epochs. This is the minimum number of epochs (a complete iteration of all training samples) 
-     that can elapse with no change between two training epochs.
-     
-     @return returns the minimum number of epochs
-     */
-	UINT getMinNumEpochs() const;
-    
-    /**
-     Gets the maximum number of epochs. This value controls the maximum number of epochs that can be used by the training algorithm.
-     
-     @return returns the maximum number of epochs
-     */
-	UINT getMaxNumEpochs() const;
-    
-    /**
-     Gets the size (as a percentage) of the validation set (if one should be used). If this value returned 20 this would mean that
-     20% of the training data would be set aside to create a validation set and the other 80% would be used to actually train the regression model.
-     This will only happen if the useValidationSet parameter is set to true, otherwise 100% of the training data will be used to train the regression model.
-     
-     @return returns the size of the validation set
-     */
-	UINT getValidationSetSize() const;
-    
-    /**
-     Gets the minimum change value that controls when the training algorithm should stop.
-     
-     @return returns the minimum change value
-     */
-	double getMinChange() const;
-    
-    /**
-     Gets the current learningRate value, this is value used to update the weights at each step of the stochastic gradient descent.
-     
-     @return returns the current learningRate value
-     */
-    double getLearningRate() const;
-    
-    /**
-     Gets the root mean squared error on the training data during the training phase.
-     
-     @return returns the RMS error (on the training data during the training phase)
-     */
-    double getRootMeanSquaredTrainingError() const;
-    
-    /**
-     Gets the total squared error on the training data during the training phase.
-     
-     @return returns the total squared error (on the training data during the training phase)
-     */
-    double getTotalSquaredTrainingError() const;
-    
-    /**
-     Returns true if a validation set should be used for training. If true, then the training dataset will be partitioned into a smaller training dataset
-     and a validation set.  
-     
-     The size of the partition is controlled by the validationSetSize parameter, for example, if the validationSetSize parameter is 20 then 20% of the
-     training data will be used for a validation set leaving 80% of the original data to train the regression model.
-     
-     @return returns true if a validation set should be used for training, false otherwise
-     */
-	bool getUseValidationSet() const;
-    
-    /**
-     Returns true if the order of the training dataset should be randomized at each epoch of training. Randomizing the order of the training dataset stops
-     the regression learning algorithm from focusing too much on the first few examples in the dataset.
-     
-     @return returns true if the order of the training dataset should be randomized, false otherwise
-     */
-	bool getRandomiseTrainingOrder() const;
     
     /**
      Gets a vector containing the regression data output by the regression algorithm, this will be an M-dimensional vector, where M is the number of output dimensions in the model.  
@@ -191,45 +112,6 @@ public:
      @return returns a vector of MinMax values representing the ranges of the target data
      */
 	vector< MinMax > getOutputRanges() const;
-    
-    /**
-     Sets the maximum number of epochs (a complete iteration of all training samples) that can be run during the training phase.
-     The maxNumIterations value must be greater than zero.
-     
-     @param UINT maxNumIterations: the maximum number of iterations value, must be greater than zero
-     @return returns true if the value was updated successfully, false otherwise
-     */
-    bool setMaxNumEpochs(const UINT maxNumEpochs);
-    
-    /**
-     Sets the minimum number of epochs (a complete iteration of all training samples) that can elapse with no change between two training epochs.
-     
-     @param UINT minNumEpochs: the minimum number of epochs that can elapse with no change between two training epochs
-     @return returns true if the value was updated successfully, false otherwise
-     */
-    bool setMinNumEpochs(const UINT minNumEpochs);
-    
-    /**
-     Sets the minimum change that must be achieved between two training epochs for the training to continue.
-     The minChange value must be greater than zero.
-     
-     @param double minChange: the minimum change value, must be greater than zero
-     @return returns true if the value was updated successfully, false otherwise
-     */
-    bool setMinChange(double minChange);
-    
-    /**
-     Sets the learningRate. This is used to update the weights at each step of the stochastic gradient descent.
-     The learningRate value must be greater than zero.
-     
-     @param double learningRate: the learningRate value used during the training phase, must be greater than zero
-     @return returns true if the value was updated successfully, false otherwise
-     */
-    bool setLearningRate(double learningRate);
-    
-    bool setUseValidationSet(const bool useValidationSet);
-    bool setValidationSetSize(const UINT validationSetSize);
-    bool setRandomiseTrainingOrder(const bool randomiseTrainingOrder);
     
     /**
      Defines a map between a string (which will contain the name of the regressifier, such as LinearRegression) and a function returns a new instance of that regressifier
@@ -293,15 +175,6 @@ protected:
     bool loadBaseSettingsFromFile(fstream &file);
 
     string regressifierType;
-    UINT minNumEpochs;
-    UINT maxNumEpochs;
-    UINT validationSetSize;
-    double learningRate;
-    double minChange;
-    double rootMeanSquaredTrainingError;
-    double totalSquaredTrainingError;
-    bool useValidationSet;
-    bool randomiseTrainingOrder;
     VectorDouble regressionData;
     vector< MinMax > inputVectorRanges;
 	vector< MinMax > targetVectorRanges;

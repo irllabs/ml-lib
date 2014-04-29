@@ -30,7 +30,7 @@
 #define GRT_WEAK_CLASSIFIER_HEADER
 
 #include "../../../Util/GRTCommon.h"
-#include "../../../DataStructures/LabelledClassificationData.h"
+#include "../../../DataStructures/ClassificationData.h"
 
 namespace GRT{
     
@@ -89,11 +89,11 @@ public:
      This function is the main training interface for all the WeakClassifiers.
      This function should be overwritten in the inheriting class.
      
-     @param LabelledClassificationData &trainingData: a reference to the training data that will be used to train the weak classifier model
+     @param ClassificationData &trainingData: a reference to the training data that will be used to train the weak classifier model
      @param VectorDouble &weights: the weight for each training sample, there should be as many weights as there are training samples
      @return returns true if the weak classifier model was trained successful, false otherwise
      */
-    virtual bool train(LabelledClassificationData &trainingData, VectorDouble &weights){
+    virtual bool train(ClassificationData &trainingData, VectorDouble &weights){
         return false;
     }
     

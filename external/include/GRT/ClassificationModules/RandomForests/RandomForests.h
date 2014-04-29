@@ -84,10 +84,10 @@ public:
      This trains the RandomForests model, using the labelled classification data.
      This overrides the train function in the Classifier base class.
      
-     @param LabelledClassificationData trainingData: a reference to the training data
+     @param ClassificationData trainingData: a reference to the training data
      @return returns true if the RandomForests model was trained, false otherwise
     */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -96,7 +96,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
     */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This function clears the RandomForests module, removing any trained model and setting all the base variables to their default values.
@@ -207,7 +207,9 @@ public:
      */
     bool setMaxDepth(const UINT maxDepth);
     
-private:
+protected:
+    bool loadLegacyModelFromFile( fstream &file );
+    
     UINT forestSize;
     UINT numRandomSplits;
     UINT minNumSamplesPerNode;

@@ -33,8 +33,8 @@
 
 #include "../../Util/GRTCommon.h"
 #include "../../CoreModules/Clusterer.h"
-#include "../../DataStructures/LabelledClassificationData.h"
-#include "../../DataStructures/UnlabelledClassificationData.h"
+#include "../../DataStructures/ClassificationData.h"
+#include "../../DataStructures/UnlabelledData.h"
 
 namespace GRT{
 
@@ -92,7 +92,7 @@ public:
     
     /**
      This is the main training algorithm for training a KMeans model. You should only call this function if you have manually set the clusters,
-     otherwise you should use any of the train or trainInplace in functions.
+     otherwise you should use any of the train or train_ in functions.
      
      @param MatrixDouble &trainingData: the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
@@ -100,36 +100,28 @@ public:
     bool trainModel(MatrixDouble &data);
     
     /**
-     This is the main training interface for MatrixDouble data. It overrides the trainInplace function in the ML base class.
-     
-     @param MatrixDouble trainingData: the training data that will be used to train the ML model
-     @return returns true if the model was successfully trained, false otherwise
-     */
-    virtual bool train(MatrixDouble data);
-    
-    /**
-     This is the main training interface for referenced MatrixDouble data. It overrides the trainInplace function in the ML base class.
+     This is the main training interface for referenced MatrixDouble data. It overrides the train_ function in the ML base class.
      
      @param MatrixDouble &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
      */
-    virtual bool trainInplace(MatrixDouble &data);
+    virtual bool train_(MatrixDouble &data);
     
     /**
-     This is the main training interface for reference LabelledClassificationData data. It overrides the trainInplace function in the ML base class.
+     This is the main training interface for reference ClassificationData data. It overrides the train_ function in the ML base class.
      
-     @param LabelledClassificationData &trainingData: a reference to the training data that will be used to train the ML model
+     @param ClassificationData &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
      */
-    virtual bool trainInplace(LabelledClassificationData &trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
-     This is the main training interface for reference UnlabelledClassificationData data. It overrides the trainInplace function in the ML base class.
+     This is the main training interface for reference UnlabelledData data. It overrides the trainInplace function in the ML base class.
      
-     @param UnlabelledClassificationData &trainingData: a reference to the training data that will be used to train the ML model
+     @param UnlabelledData &trainingData: a reference to the training data that will be used to train the ML model
      @return returns true if the model was successfully trained, false otherwise
      */
-	virtual bool trainInplace(UnlabelledClassificationData &trainingData);
+	virtual bool train_(UnlabelledData &trainingData);
     
 	/**
      This saves the trained KMeans model to a file.
@@ -190,8 +182,13 @@ public:
      */
     bool setClusters(const MatrixDouble &clusters);
     
-    //Tell the compiler we are explicitly using the following classes from the base class (this stops hidden overloaded virtual function warnings)
+    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
+    using MLBase::saveModelToFile;
+    using MLBase::loadModelFromFile;
     using MLBase::train;
+    using MLBase::train_;
+    using MLBase::predict;
+    using MLBase::predict_;
 
 protected:
     UINT estep(const MatrixDouble &data);

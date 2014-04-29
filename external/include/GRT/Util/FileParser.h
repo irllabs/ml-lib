@@ -27,6 +27,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <string>
 #include <algorithm>    // copy
 #include <iterator>     // ostream_operator
+#include <sstream>
+#include "MatrixDouble.h"
 
 namespace GRT {
 
@@ -34,7 +36,7 @@ using namespace std;
 
 class FileParser{
 public:
-    FileParser(){
+    FileParser():warningLog("[FileParser]"){
 	    clear();
     }
     ~FileParser(){
@@ -43,7 +45,7 @@ public:
     vector< string >& operator[](const unsigned int &index){
         return fileContents[index];
     }
-
+    
     bool parseCSVFile(string filename,bool removeNewLineCharacter=true){
         return parseFile(filename,removeNewLineCharacter,',');
     }
@@ -119,6 +121,7 @@ protected:
         
         ifstream file( filename.c_str(), ifstream::in );
         if ( !file.is_open() ){
+            warningLog << "parseFile(...) - Failed to open file: " << filename << endl;
             return false;
         }
         
@@ -170,11 +173,12 @@ protected:
         
         return true;
     }
-  
-  bool fileParsed;
-  bool consistentColumnSize;
-  unsigned int columnSize;
-  vector< vector< string > > fileContents;
+    
+    bool fileParsed;
+    bool consistentColumnSize;
+    unsigned int columnSize;
+    WarningLog warningLog;
+    vector< vector< string > > fileContents;
 
 };
     

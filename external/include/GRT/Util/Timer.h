@@ -67,10 +67,10 @@ public:
 	Starts the timer. This starts the timer in COUNTDOWN_MODE, in this mode the timer will start at the specified countdown time and count down until it reaches zero.
 	At zero, the timer will set its state to timerRunning = false, however the timer will continue to countdown resulting in a negative query time.
 	
-	@param double countDownTime: sets the countdown time, this should be in milliseconds (i.e. start(5000) would start the timer with a countdown time of 5 seconds)
+	@param unsigned long countDownTime: sets the countdown time, this should be in milliseconds (i.e. start(5000) would start the timer with a countdown time of 5 seconds)
 	@return returns true if the timer was started successfully, false otherwise
 	*/
-    bool start(double countDownTime){
+    bool start(unsigned long countDownTime){
         if( countDownTime > 0 ){
             startTime = getSystemTime();
             timerRunning = true;
@@ -97,7 +97,7 @@ public:
 	
 	@return returns the current time elapsed in milliseconds (1000 milliseconds == 1 second) or 0 if the timer is not running
 	*/
-    double getMilliSeconds(){
+    unsigned long getMilliSeconds(){
         if( !timerRunning ) return 0;
 
         unsigned long now = getSystemTime();
@@ -107,7 +107,7 @@ public:
                 return double(now-startTime);
                 break;
             case COUNTDOWN_MODE:
-                return (countDownTime - double(now-startTime));
+                return (countDownTime - (now-startTime));
                 break;
             default:
                 return 0;
@@ -184,8 +184,8 @@ public:
 
 private:
     unsigned long startTime;
+    unsigned long countDownTime;
     unsigned int timerMode;
-    double countDownTime;
     bool timerRunning;
 
     enum TimerModes{NORMAL_MODE=0,COUNTDOWN_MODE};

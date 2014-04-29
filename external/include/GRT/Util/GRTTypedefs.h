@@ -35,6 +35,15 @@ namespace GRT {
     
 typedef std::vector<double> VectorDouble;
     
+//Declare typedefs for the legacy data types
+class ClassificationData;
+class RegressionData;
+class TimeSeriesClassificationData;
+class UnlabelledData;
+typedef ClassificationData LabelledClassificationData;
+typedef RegressionData LabelledRegressionData;
+typedef TimeSeriesClassificationData LabelledTimeSeriesClassificationData;
+typedef UnlabelledData UnlabelledClassificationData;
 }
 
 #endif //GRT_TYPEDEFS_HEADER

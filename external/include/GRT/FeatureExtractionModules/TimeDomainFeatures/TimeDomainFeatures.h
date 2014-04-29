@@ -91,21 +91,19 @@ public:
     
     /**
      This saves the feature extraction settings to a file.
-     This overrides the saveSettingsToFile function in the FeatureExtraction base class.
      
-     @param string filename: the name of the file to save the settings to
-     @return returns true if the settings were saved successfully, false otherwise (the base class always returns false)
+     @param const string filename: the filename to save the settings to
+     @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool saveSettingsToFile(string filename) const;
+    virtual bool saveSettingsToFile(const string filename) const;
     
     /**
-     This loads the feature extraction settings from a file.
-     This overrides the loadSettingsFromFile function in the FeatureExtraction base class.
+     This saves the feature extraction settings to a file.
      
-     @param string filename: the name of the file to load the settings from
-     @return returns true if the settings were loaded successfully, false otherwise (the base class always returns false)
+     @param fstream &file: a reference to the file to save the settings to
+     @return returns true if the settings were saved successfully, false otherwise
      */
-    virtual bool loadSettingsFromFile(string filename);
+    virtual bool loadSettingsFromFile(const string filename);
     
     /**
      This saves the feature extraction settings to a file.
@@ -147,8 +145,24 @@ public:
     VectorDouble update(const VectorDouble &x);
     
     /**
+     Get the circular buffer.
+     
+     @return a copy of the circular buffer
      */
     CircularBuffer< VectorDouble > getBufferData();
+    
+    /**
+     Gets a reference to the circular buffer.
+     
+     @return a reference to the circular buffer
+     */
+    const CircularBuffer< VectorDouble > &getBufferData() const;
+    
+    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
+    using MLBase::train;
+    using MLBase::train_;
+    using MLBase::predict;
+    using MLBase::predict_;
 
 protected:
     UINT bufferLength;

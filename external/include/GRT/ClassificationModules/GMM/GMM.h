@@ -86,10 +86,10 @@ public:
      This overrides the train function in the GRT::Classifier base class.
      The GMM is an unsupervised learning algorithm, it will therefore NOT use any class labels provided
      
-     @param LabelledClassificationData trainingData: a reference to the training data
+     @param ClassificationData trainingData: a reference to the training data
      @return returns true if the GMM model was trained, false otherwise
      */
-    virtual bool train(LabelledClassificationData trainingData);
+    virtual bool train_(ClassificationData &trainingData);
     
     /**
      This predicts the class of the inputVector.
@@ -98,7 +98,7 @@ public:
      @param VectorDouble inputVector: the input vector to classify
      @return returns true if the prediction was performed, false otherwise
      */
-    virtual bool predict(VectorDouble inputVector);
+    virtual bool predict_(VectorDouble &inputVector);
     
     /**
      This overrides the clear function in the Classifier base class.
@@ -193,8 +193,12 @@ public:
      */
     bool setMaxIter(UINT maxIter);
     
+    using MLBase::train; ///<Tell the compiler we are using the base class train method to stop hidden virtual function warnings
+    using MLBase::predict; ///<Tell the compiler we are using the base class predict method to stop hidden virtual function warnings
+    
 protected:
     double computeMixtureLikelihood(const VectorDouble &x,UINT k);
+    bool loadLegacyModelFromFile( fstream &file );
     
     UINT numMixtureModels;
     UINT maxIter;

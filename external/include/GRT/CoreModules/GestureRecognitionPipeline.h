@@ -73,85 +73,85 @@ public:
 	GestureRecognitionPipeline& operator=(const GestureRecognitionPipeline &rhs);
     
     /**
-     This is the main training interface for training a Classifier with LabelledClassificationData.  This function will pass the trainingData through 
+     This is the main training interface for training a Classifier with ClassificationData.  This function will pass the trainingData through
      any PreProcessing or FeatureExtraction modules that have been added to the GestureRecognitionPipeline, and then calls the training function of 
      the Classification module that has been added to the GestureRecognitionPipeline.  
      The function will return true if the classifier was trained successfully, false otherwise.
 
-	@param LabelledClassificationData trainingData: the labelled classification training data that will be used to train the classifier at the core of the pipeline
+	@param ClassificationData trainingData: the labelled classification training data that will be used to train the classifier at the core of the pipeline
 	@return bool returns true if the classifier was trained successfully, false otherwise
 	*/
-    bool train(const LabelledClassificationData &trainingData);
+    bool train(const ClassificationData &trainingData);
 
 	/**
-     This is the main training interface for training a Classifier with LabelledClassificationData using K-fold cross validation.  This function will pass 
+     This is the main training interface for training a Classifier with ClassificationData using K-fold cross validation.  This function will pass
      the trainingData through any PreProcessing or FeatureExtraction modules that have been added to the GestureRecognitionPipeline, and then calls the 
      training function of the Classification module that has been added to the GestureRecognitionPipeline.  
      The function will return true if the classifier was trained successfully, false otherwise.
 
-	@param LabelledClassificationData trainingData: the labelled classification training data that will be used to train the classifier at the core of the pipeline
+	@param ClassificationData trainingData: the labelled classification training data that will be used to train the classifier at the core of the pipeline
 	@param const UINT kFoldValue: the number of cross validation folds, this should be a value between in the range of [1 M-1], where M is the number of training samples int the LabelledClassificationData
 	@param const bool useStratifiedSampling: sets if stratified sampling should be used during the cross validation training
 	@return bool returns true if the classifier was trained successfully, false otherwise
 	*/
-    bool train(LabelledClassificationData trainingData,const UINT kFoldValue,const bool useStratifiedSampling = false );
+    bool train(ClassificationData trainingData,const UINT kFoldValue,const bool useStratifiedSampling = false );
 
 	/**
-     This is the main training interface for training a Classifier with LabelledTimeSeriesClassificationData.  This function will pass 
+     This is the main training interface for training a Classifier with TimeSeriesClassificationData.  This function will pass
      the trainingData through any PreProcessing or FeatureExtraction modules that have been added to the GestureRecognitionPipeline, and then calls the 
      training function of the Classification module that has been added to the GestureRecognitionPipeline.  
      The function will return true if the classifier was trained successfully, false otherwise.
 
-    @param LabelledTimeSeriesClassificationData trainingData: the labelled time-series classification training data that will be used to train the classifier at the core of the pipeline
+    @param TimeSeriesClassificationData trainingData: the labelled time-series classification training data that will be used to train the classifier at the core of the pipeline
     @return bool returns true if the classifier was trained successfully, false otherwise
 	*/
-    bool train(LabelledTimeSeriesClassificationData trainingData);
+    bool train(TimeSeriesClassificationData trainingData);
     
     /**
-     This is the main training interface for training a Classifier with LabelledTimeSeriesClassificationData using K-fold cross validation.  
+     This is the main training interface for training a Classifier with TimeSeriesClassificationData using K-fold cross validation.
      This function will pass the trainingData through any PreProcessing or FeatureExtraction modules that have been added to the GestureRecognitionPipeline, and then calls the training function of the Classification module that has been added to the GestureRecognitionPipeline.
      The function will return true if the classifier was trained successfully, false otherwise.
      
-     @param LabelledTimeSeriesClassificationData trainingData: the labelled time-series classification training data that will be used to train the classifier at the core of the pipeline
+     @param TimeSeriesClassificationData trainingData: the labelled time-series classification training data that will be used to train the classifier at the core of the pipeline
      @param const UINT kFoldValue: the number of cross validation folds, this should be a value between in the range of [1 M-1], where M is the number of training samples in the LabelledClassificationData
      @param const bool useStratifiedSampling: sets if stratified sampling should be used during the cross validation training
      @return bool returns true if the classifier was trained and tested successfully, false otherwise
      */
-    bool train(LabelledTimeSeriesClassificationData trainingData,const UINT kFoldValue,const bool useStratifiedSampling = false);
+    bool train(TimeSeriesClassificationData trainingData,const UINT kFoldValue,const bool useStratifiedSampling = false);
 
 	/**
-     This is the main training interface for training a regression module with LabelledRegressionData.  This function will pass 
+     This is the main training interface for training a regression module with RegressionData.  This function will pass
      the trainingData through any PreProcessing or FeatureExtraction modules that have been added to the GestureRecognitionPipeline, and then calls the 
      training function of the regression module that has been added to the GestureRecognitionPipeline.  
      The function will return true if the classifier was trained successfully, false otherwise.
 
-    @param LabelledRegressionData trainingData: the labelled regression training data that will be used to train the regression module at the core of the pipeline
+    @param RegressionData trainingData: the labelled regression training data that will be used to train the regression module at the core of the pipeline
     @return bool returns true if the regression module was trained successfully, false otherwise
 	*/
-    bool train(LabelledRegressionData trainingData);
+    bool train(RegressionData trainingData);
     
     /**
-     This is the main training interface for training a Regressifier with LabelledRegressionData using K-fold cross validation.  This function will pass
+     This is the main training interface for training a Regressifier with RegressionData using K-fold cross validation.  This function will pass
      the trainingData through any PreProcessing or FeatureExtraction modules that have been added to the GestureRecognitionPipeline, and then calls the
      training function of the Regression module that has been added to the GestureRecognitionPipeline.
      The function will return true if the regressifier was trained successfully, false otherwise.
      
-     @param LabelledRegressionData trainingData: the labelled regression training data that will be used to train the regressifier at the core of the pipeline
+     @param RegressionData trainingData: the labelled regression training data that will be used to train the regressifier at the core of the pipeline
      @param const UINT kFoldValue: the number of cross validation folds, this should be a value between in the range of [1 M-1], where M is the number of training samples in the LabelledRegressionData
      @return bool returns true if the regressifier was trained and tested successfully, false otherwise
      */
-    bool train(LabelledRegressionData trainingData,const UINT kFoldValue);
+    bool train(RegressionData trainingData,const UINT kFoldValue);
     
     /**
-     This function is the main interface for testing the accuracy of a pipeline with LabelledClassificationData.  This function will pass
+     This function is the main interface for testing the accuracy of a pipeline with ClassificationData.  This function will pass
      the testData through any PreProcessing or FeatureExtraction modules that have been added to the GestureRecognitionPipeline, and then calls the 
      predict function of the classification module that has been added to the GestureRecognitionPipeline.  
      The function will return true if the pipeline was tested successfully, false otherwise.
 
-     @param LabelledClassificationData testData: the labelled classification data that will be used to test the accuracy of the pipeline
+     @param const ClassificationData &testData: the labelled classification data that will be used to test the accuracy of the pipeline
      @return bool returns true if the pipeline was tested successfully, false otherwise
 	*/
-    bool test(const LabelledClassificationData &testData);
+    bool test(const ClassificationData &testData);
 
     /**
      This function is the main interface for testing the accuracy of a pipeline with LabelledTimeSeriesClassificationData.  This function will pass
@@ -162,7 +162,7 @@ public:
      @param LabelledTimeSeriesClassificationData testData: the labelled timeseries classification data that will be used to test the accuracy of the pipeline
      @return bool returns true if the pipeline was tested successfully, false otherwise
 	*/
-    bool test(LabelledTimeSeriesClassificationData testData);
+    bool test(TimeSeriesClassificationData testData);
 
     /**
      This function is the main interface for testing the accuracy of a pipeline with LabelledContinuousTimeSeriesClassificationData.  This function will pass
@@ -176,15 +176,15 @@ public:
     bool test(LabelledContinuousTimeSeriesClassificationData testData);
 
     /**
-     This function is the main interface for testing the accuracy of a pipeline with LabelledRegressionData.  This function will pass
+     This function is the main interface for testing the accuracy of a pipeline with RegressionData.  This function will pass
      the testData through any PreProcessing or FeatureExtraction modules that have been added to the GestureRecognitionPipeline, and then calls the 
      predict function of the regression module that has been added to the GestureRecognitionPipeline.  
      The function will return true if the pipeline was tested successfully, false otherwise.
 
-     @param LabelledRegressionData testData: the labelled regression data that will be used to test the accuracy of the pipeline
+     @param RegressionData testData: the labelled regression data that will be used to test the accuracy of the pipeline
      @return bool returns true if the pipeline was tested successfully, false otherwise
 	*/
-    bool test(LabelledRegressionData testData);
+    bool test(RegressionData testData);
     
     /**
      This function is the main interface for all predictions using the gesture recognition pipeline.  You can use this function for both classification

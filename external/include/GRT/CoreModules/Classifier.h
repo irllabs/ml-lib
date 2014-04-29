@@ -32,8 +32,6 @@
 #define GRT_CLASSIFIER_HEADER
 
 #include "MLBase.h"
-#include "../DataStructures/LabelledClassificationData.h"
-#include "../DataStructures/LabelledTimeSeriesClassificationData.h"
 
 namespace GRT{
     
@@ -260,6 +258,13 @@ public:
     Classifier* deepCopy() const;
     
     /**
+     Returns a pointer to the classifier.
+     
+     @return returns a pointer the current classifier
+     */
+    const Classifier* getClassifierPointer() const;
+    
+    /**
      Returns a pointer to this classifier. This is useful for a derived class so it can get easy access to this base classifier.
      
      @return Classifier&: a reference to this classifier
@@ -272,9 +277,6 @@ public:
      @return vector< string >: a vector containing the names of the classifiers that have been registered with the base classifier
     */
 	static vector< string > getRegisteredClassifiers();
-	
-	//Tell the compiler we are explicitly using the following classes from the base class (this stops hidden overloaded virtual function warnings)
-    using MLBase::train;
     
 protected:
     /**
