@@ -22,8 +22,31 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #define GRT_TRAINING_LOG_HEADER
 
 #include "Log.h"
+#include "ObserverManager.h"
 
 namespace GRT{
+    
+class TrainingLogMessage{
+public:
+    TrainingLogMessage(std::string proceedingText = "",std::string message = ""){
+        this->proceedingText = proceedingText;
+        this->message = message;
+    }
+    ~TrainingLogMessage(){
+        
+    }
+    
+    std::string getProceedingText() const {
+        return proceedingText;
+    }
+    
+    std::string getMessage() const {
+        return message;
+    }
+    
+    std::string proceedingText;
+    std::string message;
+};
 
 class TrainingLog : public Log{
 public:
@@ -49,8 +72,16 @@ public:
     //Setters
     static bool enableLogging(bool loggingEnabled);
     
+    static bool registerObserver(Observer< TrainingLogMessage > &observer);
+    
 protected:
+    virtual void triggerCallback( const std::string &message ) const{
+        observerManager.notifyObservers( TrainingLogMessage(proceedingText,message) );
+        return;
+    }
+    
     static bool trainingLoggingEnabled;
+    static ObserverManager< TrainingLogMessage > observerManager;
 };
 
 }; //End of namespace GRT

@@ -407,8 +407,15 @@ public:
      @return a MatrixDouble containing the data from the current dataset.
      */
     MatrixDouble getDataAsMatrixDouble() const;
+    
+    /**
+     Gets the class labels in the current dataset.
+     
+     @return a vector containing the class labels from the current dataset.
+     */
+    vector< UINT > getClassLabels() const;
 
-private:
+protected:
     string datasetName;                                     ///< The name of the dataset
     string infoText;                                        ///< Some infoText about the dataset
 	UINT numDimensions;										///< The number of dimensions in the dataset

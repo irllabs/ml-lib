@@ -159,7 +159,7 @@ public:
      */
     virtual bool loadModelFromFile(fstream &file);
     
-    bool predict(VectorDouble inputVector,UINT &predictedClusterLabel,double &maxLikelihood,VectorDouble &clusterLikelihoods);
+    //bool predict(VectorDouble inputVector,UINT &predictedClusterLabel,double &maxLikelihood,VectorDouble &clusterLikelihoods);
 
     //Getters
 	double getTheta(){ return finalTheta; }
@@ -197,11 +197,9 @@ protected:
 	inline double SQR(const double a) {return a*a;};
 
     bool computeTheta;
-    bool estimateClassLabels;
     UINT numTrainingSamples;            ///<Number of training examples
 	UINT nchg;                          ///<Number of values changes
 	double finalTheta;
-	vector<UINT> clusterLabels;
     MatrixDouble clusters;
 	vector< UINT > assign, count;
     VectorDouble thetaTracker;

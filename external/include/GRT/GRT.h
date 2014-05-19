@@ -94,6 +94,7 @@
 #include "FeatureExtractionModules/TimeDomainFeatures/TimeDomainFeatures.h"
 #include "FeatureExtractionModules/PCA/PrincipalComponentAnalysis.h"
 #include "FeatureExtractionModules/KMeansQuantizer/KMeansQuantizer.h"
+#include "FeatureExtractionModules/KMeansFeatures/KMeansFeatures.h"
 #include "FeatureExtractionModules/TimeseriesBuffer/TimeseriesBuffer.h"
 
 //Include the PostProcessing Modules

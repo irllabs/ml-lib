@@ -28,7 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <sstream>
 #include <string>
 #include <float.h>
-#include <math.h>
+#include <cmath>
 #include <time.h>
 #include <map>
 #include <limits>

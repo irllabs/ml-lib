@@ -43,13 +43,14 @@ class RandomForests : public Classifier
 public:
     /**
      Default Constructor
-
-     @param bool useScaling: sets if the training and real-time data should be scaled between [0 1]. Default value = false
-     @param UINT numRandomSplits: sets the number of random spilts that will be used to search for the best spliting value for each node. Default value = 100
-     @param UINT minNumSamplesPerNode: sets the minimum number of samples that are allowed per node, if the number of samples is below that, the node will become a leafNode.  Default value = 5
-     @param UINT maxDepth: sets the maximum depth of the tree. Default value = 10
+     
+     @param const UINT forestSize: sets the number of decision trees that will be trained. Default value = 10
+     @param const UINT numRandomSplits: sets the number of random spilts that will be used to search for the best spliting value for each node. Default value = 100
+     @param const UINT minNumSamplesPerNode: sets the minimum number of samples that are allowed per node, if the number of samples is below that, the node will become a leafNode.  Default value = 5
+     @param const UINT maxDepth: sets the maximum depth of the tree. Default value = 10
+     @param const bool useScaling: sets if the training and real-time data should be scaled between [0 1]. Default value = false
      */
-	RandomForests(bool useScaling=false,UINT numRandomSplits=100,UINT minNumSamplesPerNode=5,UINT maxDepth=10);
+	RandomForests(const UINT forestSize=10,const UINT numRandomSplits=100,const UINT minNumSamplesPerNode=5,const UINT maxDepth=10,const bool useScaling=false);
     
     /**
      Defines the copy constructor.
@@ -149,6 +150,13 @@ public:
     virtual bool loadModelFromFile(fstream &file);
     
     /**
+     Gets the number of trees in the random forest.
+     
+     @return returns the number of trees in the random forest
+     */
+    UINT getForestSize() const;
+    
+    /**
      Gets the current training mode. This will be one of the TrainingModes enums.
      
      @return returns the training mode
@@ -176,6 +184,14 @@ public:
      @return returns the maximum depth of the tree
      */
     UINT getMaxDepth() const;
+    
+    /**
+     Sets the number of trees in the forest.  Changing this value will clear any previously trained model.
+     
+     @param UINT forestSize: sets the number of trees in the forest.
+     @return returns true if the parameter was set, false otherwise
+     */
+    bool setForestSize(const UINT forestSize);
     
     /**
      Sets the number of steps that will be used to search for the best spliting value for each node.

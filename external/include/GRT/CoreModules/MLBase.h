@@ -630,6 +630,7 @@ protected:
     double totalSquaredTrainingError;
     bool useValidationSet;
     bool randomiseTrainingOrder;
+    Random random;
     vector< TrainingResult > trainingResults;
     TrainingResultsObserverManager trainingResultsObserverManager;
     TestResultsObserverManager testResultsObserverManager;

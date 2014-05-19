@@ -350,6 +350,7 @@ protected:
     bool loadLegacyModelFromFile( fstream &file );
     
     struct svm_model *deepCopyModel() const;
+    struct svm_problem deepCopyProblemSet() const;
     
 	bool problemSet;
 	struct svm_model *model;

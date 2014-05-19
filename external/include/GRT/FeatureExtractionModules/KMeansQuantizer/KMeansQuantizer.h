@@ -210,14 +210,14 @@ public:
      
      @return returns true if the quantization model has been trained, false otherwise
      */
-    bool getQuantizerTrained(){ return quantizerTrained; }
+    bool getQuantizerTrained() const { return trained; }
 
     /**
      Gets the most recent quantized value. This can also be accessed by using the first element in the featureVector.
      
      @return returns the most recent quantized value
      */
-	UINT getQuantizedValue(){ return (quantizerTrained ? (UINT)featureVector[0] : 0); }
+    UINT getQuantizedValue() const { return (trained ? (UINT)featureVector[0] : 0); }
 	
 	/**
      Gets the quantization distances from the most recent quantization.
@@ -245,7 +245,6 @@ public:
     using MLBase::predict_;
     
 protected:
-    bool quantizerTrained;
     UINT numClusters;
     MatrixDouble clusters;
     VectorDouble quantizationDistances;

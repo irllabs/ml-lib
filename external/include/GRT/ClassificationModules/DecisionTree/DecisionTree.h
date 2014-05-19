@@ -44,14 +44,14 @@ public:
     /**
      Default Constructor
 
-     @param bool useScaling: sets if the training and real-time data should be scaled between [0 1]. Default value = false
      @param UINT numSplittingSteps: sets the number of steps that will be used to search for the best spliting value for each node. Default value = 100
      @param UINT minNumSamplesPerNode: sets the minimum number of samples that are allowed per node, if the number of samples is below that, the node will become a leafNode.  Default value = 5
      @param UINT maxDepth: sets the maximum depth of the tree. Default value = 10
      @param bool removeFeaturesAtEachSpilt: sets if a feature is removed at each spilt so it can not be used again. Default value = false
      @param UINT trainingMode: sets the training mode, this should be one of the TrainingMode enums. Default value = BEST_ITERATIVE_SPILT
+     @param bool useScaling: sets if the training and real-time data should be scaled between [0 1]. Default value = false
      */
-	DecisionTree(bool useScaling=false,UINT numSplittingSteps=100,UINT minNumSamplesPerNode=5,UINT maxDepth=10,bool removeFeaturesAtEachSpilt = false,UINT trainingMode = BEST_ITERATIVE_SPILT);
+	DecisionTree(const UINT numSplittingSteps=100,const UINT minNumSamplesPerNode=5,const UINT maxDepth=10,const bool removeFeaturesAtEachSpilt = false,const UINT trainingMode = BEST_ITERATIVE_SPILT,const bool useScaling=false);
     
     /**
      Defines the copy constructor.
@@ -271,9 +271,9 @@ protected:
     DecisionTreeNode *decisionTree;
     
     DecisionTreeNode* buildTree( const ClassificationData &trainingData, DecisionTreeNode *parent, vector< UINT > features, const vector< UINT > &classLabels );
-    bool computeBestSpilt( const ClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold );
-    bool computeBestSpiltBestIterativeSpilt( const ClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold );
-    bool computeBestSpiltBestRandomSpilt( const ClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold );
+    bool computeBestSpilt( const ClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold, double &minError );
+    bool computeBestSpiltBestIterativeSpilt( const ClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold, double &minError );
+    bool computeBestSpiltBestRandomSpilt( const ClassificationData &trainingData, const vector< UINT > &features, const vector< UINT > &classLabels, UINT &featureIndex, double &threshold, double &minError );
     VectorDouble getClassProbabilities( const ClassificationData &trainingData, const vector< UINT > &classLabels );
     
     

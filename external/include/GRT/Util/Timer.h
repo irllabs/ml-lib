@@ -97,14 +97,14 @@ public:
 	
 	@return returns the current time elapsed in milliseconds (1000 milliseconds == 1 second) or 0 if the timer is not running
 	*/
-    unsigned long getMilliSeconds(){
+    signed long getMilliSeconds(){
         if( !timerRunning ) return 0;
 
         unsigned long now = getSystemTime();
 
         switch( timerMode ){
             case NORMAL_MODE:
-                return double(now-startTime);
+                return (now-startTime);
                 break;
             case COUNTDOWN_MODE:
                 return (countDownTime - (now-startTime));
@@ -146,7 +146,6 @@ public:
 	    if( !timerRunning ){
             return false;
         }
-
         if( getMilliSeconds() > 0 ) return false;
         return true;
 	}
@@ -165,14 +164,14 @@ public:
 	*/
     static unsigned long getSystemTime( ) {
 #ifdef __GRT_OSX_BUILD__
-            struct timeval now;
-            gettimeofday( &now, NULL );
-            return now.tv_usec/1000 + now.tv_sec*1000;
+        struct timeval now;
+        gettimeofday( &now, NULL );
+        return now.tv_usec/1000 + now.tv_sec*1000;
 #endif
 #ifdef __GRT_WINDOWS_BUILD__
-			SYSTEMTIME systemTime;
-            GetSystemTime(&systemTime);
-			return (systemTime.wHour*60*60*1000) + (systemTime.wMinute*60*1000) + (systemTime.wSecond*1000) + systemTime.wMilliseconds;
+        SYSTEMTIME systemTime;
+        GetSystemTime(&systemTime);
+        return (systemTime.wHour*60*60*1000) + (systemTime.wMinute*60*1000) + (systemTime.wSecond*1000) + systemTime.wMilliseconds;
 #endif
 #ifdef __GRT_LINUX_BUILD__
         struct timeval now;
@@ -182,7 +181,7 @@ public:
         return 0;
     }
 
-private:
+protected:
     unsigned long startTime;
     unsigned long countDownTime;
     unsigned int timerMode;

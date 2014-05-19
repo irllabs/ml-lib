@@ -22,8 +22,31 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #define GRT_INFO_LOG_HEADER
 
 #include "Log.h"
+#include "ObserverManager.h"
 
 namespace GRT{
+    
+class InfoLogMessage{
+public:
+    InfoLogMessage(std::string proceedingText = "",std::string message = ""){
+        this->proceedingText = proceedingText;
+        this->message = message;
+    }
+    ~InfoLogMessage(){
+        
+    }
+    
+    std::string getProceedingText() const {
+        return proceedingText;
+    }
+    
+    std::string getMessage() const {
+        return message;
+    }
+    
+    std::string proceedingText;
+    std::string message;
+};
 
 class InfoLog : public Log{
 public:
@@ -46,11 +69,19 @@ public:
     
     //Setters
     static bool enableLogging(bool loggingEnabled);
+    
+    static bool registerObserver(Observer< InfoLogMessage > &observer);
 
 protected:
+    virtual void triggerCallback( const std::string &message ) const{
+        observerManager.notifyObservers( InfoLogMessage(proceedingText,message) );
+        return;
+    }
+    
+    static ObserverManager< InfoLogMessage > observerManager;
     static bool infoLoggingEnabled;
 };
 
-}; //End of namespace GRT
+} //End of namespace GRT
 
 #endif //GRT_INFO_LOG_HEADER

@@ -44,7 +44,7 @@ public:
     
     virtual ~Observer(){}
     
-    virtual void notify(const NotifyType &data,const MLBase *trainer){};
+    virtual void notify(const NotifyType &data){};
 };
     
 } //End of namespace GRT

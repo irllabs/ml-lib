@@ -39,7 +39,7 @@ namespace GRT{
 class BernoulliRBM : public MLBase{
 
 public:
-    BernoulliRBM(const UINT numHiddenUnits = 100,const UINT numTrainingEpochs = 1000,const UINT numGibbsSteps = 1,const double learningRate = 1,const double learningRateUpdate = 1,const double momentum = 0.5,const bool useScaling = true,const bool randomiseTrainingOrder = true);
+    BernoulliRBM(const UINT numHiddenUnits = 100,const UINT maxNumEpochs = 1000,const double learningRate = 1,const double learningRateUpdate = 1,const double momentum = 0.5,const bool useScaling = true,const bool randomiseTrainingOrder = true);
   
     virtual ~BernoulliRBM();
     
@@ -128,21 +128,21 @@ public:
     UINT getNumVisibleUnits() const;
     UINT getNumHiddenUnits() const;
     const MatrixDouble& getWeights() const;
-    
-    
     bool setNumHiddenUnits(const UINT numHiddenUnits);
-    bool setNumTrainingEpochs(const UINT numTrainingEpochs);
-    bool setNumGibbsSteps(const UINT numGibbsSteps);
+    bool setMomentum(const double momentum);
     bool setLearningRateUpdate(const double learningRateUpdate);
     bool setRandomizeWeightsForTraining(const bool randomizeWeightsForTraining);
+    bool setBatchSize(const UINT batchSize);
+    bool setBatchStepSize(const UINT batchStepSize);
     
 protected:
+    bool loadLegacyModelFromFile(fstream &file);
     
-    inline double sigmoid(const double x) {
+    inline double sigmoid(const double &x) {
         return 1.0 / (1.0 + exp(-x));
     }
     
-    inline double sigmoidRandom(const double x){
+    inline double sigmoidRandom(const double &x){
         return (1.0 / (1.0 + exp(-x)) > rand.getRandomNumberUniform(0.0,1.0)) ? 1.0 : 0.0;
     }
     
@@ -151,8 +151,8 @@ protected:
     bool randomizeWeightsForTraining;
     UINT numVisibleUnits;
     UINT numHiddenUnits;
-    UINT numTrainingEpochs;
-    UINT numGibbsSteps;
+    UINT batchSize;
+    UINT batchStepSize;
     double momentum;
     double learningRateUpdate;
     MatrixDouble weightsMatrix;

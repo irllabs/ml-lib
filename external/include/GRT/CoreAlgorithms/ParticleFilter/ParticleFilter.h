@@ -499,19 +499,19 @@ protected:
         for(unsigned int i=0; i<numParticles; i++){
             wNorm += particles[i].w;
             
-            if( isinf( particles[i].w ) ){
+            if( std::isinf( particles[i].w ) ){
                 cout << "particle is inf!\n";
                 numDeadParticles++;
             }
         }
         
-        if( isnan(wNorm) ){
+        if( std::isnan(wNorm) ){
             if( verbose )
                 warningLog << "WARNING: Weight norm is NAN!" << endl;
             return true;
         }
         
-        if( isinf(wNorm) ){
+        if( std::isinf(wNorm) ){
             if( verbose )
                 warningLog << "WARNING: Weight norm is INF!" << endl;
             return true;
@@ -550,7 +550,7 @@ protected:
                     for(unsigned int j=0; j<N; j++){
                         x[j] += particles[i][j];
                     }
-                    estimationLikelihood += isnan(particles[i].w) ? 0 : particles[i].w;
+                    estimationLikelihood += std::isnan(particles[i].w) ? 0 : particles[i].w;
                 }
                 
                 for(unsigned int j=0; j<N; j++){
@@ -570,7 +570,7 @@ protected:
                 }
                 
                 for(unsigned int i=0; i<numParticles; i++){
-                    estimationLikelihood += isnan(particles[i].w) ? 0 : particles[i].w;
+                    estimationLikelihood += std::isnan(particles[i].w) ? 0 : particles[i].w;
                 }
                 estimationLikelihood /= double(numParticles);
                 break;
@@ -595,7 +595,7 @@ protected:
                         for(unsigned int j=0; j<N; j++){
                             x[j] += particles[i][j] * particles[i].w;
                         }
-                        estimationLikelihood += isnan(particles[i].w) ? 0 : particles[i].w;
+                        estimationLikelihood += std::isnan(particles[i].w) ? 0 : particles[i].w;
                         sum += particles[i].w;
                         robustMeanParticleCounter++;
                     }
@@ -615,7 +615,7 @@ protected:
                     }
                 }
                 x = particles[bestIndex].x;
-                estimationLikelihood = isnan(particles[bestIndex].w) ? 0 : particles[bestIndex].w;
+                estimationLikelihood = std::isnan(particles[bestIndex].w) ? 0 : particles[bestIndex].w;
                 break;
             default:
                 errorLog << "ERROR: Unknown estimation mode!" << endl;

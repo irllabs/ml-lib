@@ -29,9 +29,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 namespace GRT{
     
-//Forward declaration of MLBase
-class MLBase;
-    
 template <class NotifyType>
 class ObserverManager {
 public:
@@ -47,7 +44,7 @@ public:
     ObserverManager& operator=(const ObserverManager &rhs){
         if( this != &rhs ){
             removeAllObservers();
-            for(UINT i=0; i<rhs.observers.size(); i++){
+            for(size_t i=0; i<rhs.observers.size(); i++){
                 observers.push_back( rhs.observers[i] );
             }
         }
@@ -57,8 +54,8 @@ public:
     bool registerObserver( Observer<NotifyType> &newObserver ){
         
         //Check to make sure we have not registered this observer already
-        const unsigned int numObservers = (unsigned int)observers.size();
-        for(unsigned int i=0; i<numObservers; i++){
+        const size_t numObservers = observers.size();
+        for(size_t i=0; i<numObservers; i++){
             Observer<NotifyType> *ptr = observers[i];
             if( ptr == &newObserver ){
                 return false;
@@ -73,8 +70,8 @@ public:
     bool removeObserver( const Observer<NotifyType> &oldObserver ){
         
         //Find the old observer and remove it from the observers list
-        const unsigned int numObservers = (unsigned int)observers.size();
-        for(unsigned int i=0; i<numObservers; i++){
+        const size_t numObservers = observers.size();
+        for(size_t i=0; i<numObservers; i++){
             const Observer<NotifyType> *ptr = observers[i];
             if( ptr == &oldObserver ){
                 observers.erase( observers.begin() + i );
@@ -89,14 +86,14 @@ public:
         return true;
     }
     
-    bool notifyObservers(const NotifyType &data,const MLBase *trainer){
+    bool notifyObservers(const NotifyType &data){
         
         //Notify all the observers
-        const unsigned int numObservers = (unsigned int)observers.size();
-        for(unsigned int i=0; i<numObservers; i++){
+        const size_t numObservers = observers.size();
+        for(size_t i=0; i<numObservers; i++){
             Observer<NotifyType> *ptr = observers[i];
             if( ptr != NULL )
-                ptr->notify( data, trainer );
+                ptr->notify( data );
         }
         
         return true;
@@ -104,7 +101,7 @@ public:
     
 protected:
     
-    vector< Observer<NotifyType>* > observers;
+    std::vector< Observer<NotifyType>* > observers;
     
 };
     

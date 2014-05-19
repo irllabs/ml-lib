@@ -41,12 +41,12 @@ public:
         errorLog.setProceedingText("[ERROR TimeStamp]");
         warningLog.setProceedingText("[WARNING TimeStamp]");
     }
-
+    
     TimeStamp(const TimeStamp &rhs){
         *this = rhs;
     }
     
-    TimeStamp(const string &timeStampAsString){
+    TimeStamp(const std::string &timeStampAsString){
         this->year = 0;
         this->month = 0;
         this->day = 0;
@@ -59,11 +59,11 @@ public:
         errorLog.setProceedingText("[ERROR TimeStamp]");
         warningLog.setProceedingText("[WARNING TimeStamp]");
     }
-
+    
     ~TimeStamp(){
-
+        
     }
-
+    
     TimeStamp& operator=(const TimeStamp &rhs){
         if( this != &rhs ){
             this->year = rhs.year;
@@ -78,7 +78,7 @@ public:
         }
         return *this;
     }
-
+    
     bool operator>(const TimeStamp &rhs) const{
         if( this->getTimeInMilliseconds() > rhs.getTimeInMilliseconds() ){
             return true;
@@ -141,11 +141,11 @@ public:
         if( ts.month > 12 ){
             numDaysInMonth = getNumDaysInMonth( ts.month % 12 );
         }else numDaysInMonth = getNumDaysInMonth( ts.month );
-            
-            if( ts.day >= numDaysInMonth ){
-                ts.day = ts.day - numDaysInMonth;
-                ts.month++;
-            }
+        
+        if( ts.day >= numDaysInMonth ){
+            ts.day = ts.day - numDaysInMonth;
+            ts.month++;
+        }
         
         if( ts.month > 12 ){
             ts.month = ts.month % 12;
@@ -154,7 +154,7 @@ public:
         
         return ts;
     }
-
+    
     TimeStamp& operator+=(const TimeStamp &rhs){
         if( this != &rhs ){
             this->year += rhs.year;
@@ -202,91 +202,214 @@ public:
         }
         return *this;
     }
-
-    unsigned int getTimeInMilliseconds() const{
-	    
-		unsigned int secondInMs = 1000;
-		unsigned int minuteInMs = 60*secondInMs;
-		unsigned int hourInMs = 60*minuteInMs;
-		unsigned int dayInMs = 24*hourInMs;
-		//unsigned int yearInMs = 365*dayInMs;
-	    
-		//unsigned int firstJanTwentyTwelveInMS = 1325394000000;
-		unsigned int yearTime = 0;
-		unsigned int monthTime = 0;
-		unsigned int dayTime = day * dayInMs;
-		unsigned int hourTime = hour * hourInMs;
-		unsigned int minuteTime = minute * minuteInMs;
-		unsigned int secondTime = second * secondInMs;
-	    
-	/*
-		unsigned int janInMs = 31*dayInMs;
-		unsigned int febInMs = 29*dayInMs + janInMs;
-		unsigned int marchInMs = 31*dayInMs + febInMs;
-		unsigned int aprilInMs = 30*dayInMs + marchInMs;
-		unsigned int mayInMs = 31*dayInMs + aprilInMs;
-		unsigned int juneInMs = 30*dayInMs + mayInMs;
-		unsigned int julyInMs = 31*dayInMs + juneInMs;
-		unsigned int augInMs = 31*dayInMs + julyInMs;
-		unsigned int sepInMs = 31*dayInMs + augInMs;
-		unsigned int octInMs = 31*dayInMs + sepInMs;
-		unsigned int novInMs = 30*dayInMs + octInMs;
-	
-		switch( month ){
-			case 1:
-				monthTime = 0;
-				break;
-			case 2:
-				monthTime = janInMs;
-				break;
-			case 3:
-				monthTime = febInMs;
-				break;
-			case 4:
-				monthTime = marchInMs;
-				break;
-			case 5:
-				monthTime = aprilInMs;
-				break;
-			case 6:
-				monthTime = mayInMs;
-				break;
-			case 7:
-				monthTime = juneInMs;
-				break;
-			case 8:
-				monthTime = julyInMs;
-				break;
-			case 9:
-				monthTime = augInMs;
-				break;
-			case 10:
-				monthTime = sepInMs;
-				break;
-			case 11:
-				monthTime = octInMs;
-				break;
-			case 12:
-				monthTime = novInMs;
-				break;
-		}
-	    */
+    
+    TimeStamp operator-(const TimeStamp &rhs){
+        
+        int year = (int)this->year - rhs.year;
+        int month = (int)this->month - rhs.month;
+        int day = (int)this->day - rhs.day;
+        int hour = (int)this->hour - rhs.hour;
+        int minute = (int)this->minute - rhs.minute;
+        int second = (int)this->second - rhs.second;
+        int millisecond = (int)this->millisecond - rhs.millisecond;
+        
+        if( millisecond < 0 ){
+            millisecond = this->millisecond + 1000 - rhs.millisecond;
+            second--;
+        }
+        
+        if( second < 0 ){
+            second = this->second + 60 - rhs.second;
+            minute--;
+        }
+        
+        if( minute < 0 ){
+            minute = this->minute + 60 - rhs.minute;
+            hour--;
+        }
+        
+        if( hour < 0 ){
+            hour = this->hour + 24 - rhs.hour;
+            day--;
+        }
+        
+        if( day <= 0 ){
+            int numDaysInMonth = 0;
+            if( month > 1 ){
+                numDaysInMonth = getNumDaysInMonth( month - 1 );
+            }else numDaysInMonth = getNumDaysInMonth( 12 - month );
+            
+            day = numDaysInMonth - day;
+            month--;
+        }
+        
+        if( month <= 0 ){
+            month = 12 - month;
+            year--;
+        }
+        
+        TimeStamp ts;
+        ts.year = year;
+        ts.month = month;
+        ts.day = day;
+        ts.hour = hour;
+        ts.minute = minute;
+        ts.second = second;
+        ts.millisecond = millisecond;
+        
+        return ts;
+    }
+    
+    TimeStamp& operator-=(const TimeStamp &rhs){
+        if( this != &rhs ){
+            
+            int year = (int)this->year - rhs.year;
+            int month = (int)this->month - rhs.month;
+            int day = (int)this->day - rhs.day;
+            int hour = (int)this->hour - rhs.hour;
+            int minute = (int)this->minute - rhs.minute;
+            int second = (int)this->second - rhs.second;
+            int millisecond = (int)this->millisecond - rhs.millisecond;
+            
+            if( millisecond < 0 ){
+                millisecond = this->millisecond + 1000 - rhs.millisecond;
+                second--;
+            }
+            
+            if( second < 0 ){
+                second = this->second + 60 - rhs.second;
+                minute--;
+            }
+            
+            if( minute < 0 ){
+                minute = this->minute + 60 - rhs.minute;
+                hour--;
+            }
+            
+            if( hour < 0 ){
+                hour = this->hour + 24 - rhs.hour;
+                day--;
+            }
+            
+            if( day <= 0 ){
+                int numDaysInMonth = 0;
+                if( month > 1 ){
+                    numDaysInMonth = getNumDaysInMonth( month - 1 );
+                }else numDaysInMonth = getNumDaysInMonth( 12 - month );
+                
+                day = numDaysInMonth - day;
+                month--;
+            }
+            
+            if( month <= 0 ){
+                month = 12 - month;
+                year--;
+            }
+            
+            this->year = year;
+            this->month = month;
+            this->day = day;
+            this->hour = hour;
+            this->minute = minute;
+            this->second = second;
+            this->millisecond = millisecond;
+        }
+        return *this;
+    }
+    
+    unsigned long long getTimeInMilliseconds() const{
+        
+        unsigned long long secondInMs = 1000;
+        unsigned long long minuteInMs = 60*secondInMs;
+        unsigned long long hourInMs = 60*minuteInMs;
+        unsigned long long dayInMs = 24*hourInMs;
+        
+        unsigned long long firstJan2014InMS = 1388534400000; //Number of milliseconds since Jan 01 1970 on 01/01/2014 at 00:00:00
+        unsigned long long yearTime = year == 2014 ? firstJan2014InMS : 0;
+        unsigned long long monthTime = 0;
+        unsigned long long dayTime = day == 1 ? 0 : (day-1) * dayInMs;
+        unsigned long long hourTime = hour == 0 ? 0 : (hour-1) * hourInMs;
+        unsigned long long minuteTime = minute == 0 ? 0 : (minute-1) * minuteInMs;
+        unsigned long long secondTime = second == 0 ? 0 : (second-1) * secondInMs;
+        
+        unsigned long long janInMs = 31*dayInMs;
+        unsigned long long febInMs = 29*dayInMs + janInMs;
+        unsigned long long marchInMs = 31*dayInMs + febInMs;
+        unsigned long long aprilInMs = 30*dayInMs + marchInMs;
+        unsigned long long mayInMs = 31*dayInMs + aprilInMs;
+        unsigned long long juneInMs = 30*dayInMs + mayInMs;
+        unsigned long long julyInMs = 31*dayInMs + juneInMs;
+        unsigned long long augInMs = 31*dayInMs + julyInMs;
+        unsigned long long sepInMs = 31*dayInMs + augInMs;
+        unsigned long long octInMs = 31*dayInMs + sepInMs;
+        unsigned long long novInMs = 30*dayInMs + octInMs;
+        
+        switch( month ){
+            case 1:
+                monthTime = 0;
+                break;
+            case 2:
+                monthTime = janInMs;
+                break;
+            case 3:
+                monthTime = febInMs;
+                break;
+            case 4:
+                monthTime = marchInMs;
+                break;
+            case 5:
+                monthTime = aprilInMs;
+                break;
+            case 6:
+                monthTime = mayInMs;
+                break;
+            case 7:
+                monthTime = juneInMs;
+                break;
+            case 8:
+                monthTime = julyInMs;
+                break;
+            case 9:
+                monthTime = augInMs;
+                break;
+            case 10:
+                monthTime = sepInMs;
+                break;
+            case 11:
+                monthTime = octInMs;
+                break;
+            case 12:
+                monthTime = novInMs;
+                break;
+        }
+        
         return (yearTime + monthTime + dayTime + hourTime + minuteTime + secondTime + millisecond);
     }
-
+    
+    unsigned int getDayTimeInMilliseconds() const{
+        
+        unsigned int secondInMs = 1000;
+        unsigned int minuteInMs = 60*secondInMs;
+        unsigned int hourInMs = 60*minuteInMs;
+        unsigned int hourTime = hour * hourInMs;
+        unsigned int minuteTime = minute * minuteInMs;
+        unsigned int secondTime = second * secondInMs;
+        return (hourTime + minuteTime + secondTime + millisecond);
+    }
+    
     bool setTimeStampAsNow(){
 #if defined(__GRT_OSX_BUILD__) || defined(__GRT_LINUX_BUILD__)
-
+        
         //Get the date and time
         time_t tim = time(NULL);
         tm *now = localtime( &tim );
-
+        
         if( now == NULL ) return false;
-
+        
         //Get the millisecon time
         struct timeval nowTimeval;
         gettimeofday( &nowTimeval, NULL );
-
+        
         year = (unsigned int)now->tm_year + 1900;
         month = (unsigned int)now->tm_mon + 1;
         day = (unsigned int)now->tm_mday;
@@ -294,13 +417,13 @@ public:
         minute = (unsigned int)now->tm_min;
         second = (unsigned int)now->tm_sec;
         millisecond = (unsigned int)nowTimeval.tv_usec/1000;
-
+        
         return true;
 #endif
 #ifdef __GRT_WINDOWS_BUILD__
-		SYSTEMTIME systemTime;
+        SYSTEMTIME systemTime;
         GetSystemTime(&systemTime);
-		year = (unsigned int)systemTime.wYear;
+        year = (unsigned int)systemTime.wYear;
         month = (unsigned int)systemTime.wMonth;
         day = (unsigned int)systemTime.wDay;
         hour = (unsigned int)systemTime.wHour;
@@ -309,49 +432,53 @@ public:
         millisecond = (unsigned int)systemTime.wMilliseconds;
         return true;
 #endif
-        warningLog << "setTimeStampAsNow() - Failed to get time stamp value! Unknown OS!" << endl;
+        warningLog << "setTimeStampAsNow() - Failed to get time stamp value! Unknown OS!" << std::endl;
         return false;
     }
     
-    bool setTimeStampFromString(const string &timeString){
-	    
-	    //Find all the _
-	    vector<string> s;
-	    string tempString;
-	    for(unsigned int i=0; i<timeString.length(); i++ ){
-		if( timeString[i] == '_' || timeString[i] == '\n' || timeString[i] == '\r'  ){
-			s.push_back( tempString );
-			tempString = "";
-		}else tempString += timeString[i];
-	    }
-	    
-	    if( tempString.size() > 0 ) s.push_back( tempString );
-	    
-	    if( s.size() != 7 ){
-		    cout << "WARNING: Failed to set timestamp from string. Incorrect size! Size: " << s.size() << endl;
-		    return false;
-	    }
-	    
-	    year = Util::stringToInt( s[0] );
-	    month = Util::stringToInt( s[1]  );
-	    day = Util::stringToInt( s[2] );
-	    hour = Util::stringToInt( s[3]  );
-	    minute = Util::stringToInt( s[4] );
-	    second = Util::stringToInt( s[5]  );
-	    millisecond = Util::stringToInt( s[6]  );
-	    
-	    return true;
+    bool setTimeStampFromString(const std::string &timeString){
+        
+        if( timeString == "NOW" || timeString == "now" ){
+            return setTimeStampAsNow();
+        }
+        
+        //Find all the _
+        std::vector< std::string > s;
+        std::string tempString;
+        for(unsigned int i=0; i<timeString.length(); i++ ){
+            if( timeString[i] == '_' || timeString[i] == '\n' || timeString[i] == '\r'  ){
+                s.push_back( tempString );
+                tempString = "";
+            }else tempString += timeString[i];
+        }
+        
+        if( tempString.size() > 0 ) s.push_back( tempString );
+        
+        if( s.size() != 7 ){
+            warningLog << "WARNING: Failed to set timestamp from string. Incorrect size! Size: " << s.size() << std::endl;
+            return false;
+        }
+        
+        year = Util::stringToInt( s[0] );
+        month = Util::stringToInt( s[1]  );
+        day = Util::stringToInt( s[2] );
+        hour = Util::stringToInt( s[3]  );
+        minute = Util::stringToInt( s[4] );
+        second = Util::stringToInt( s[5]  );
+        millisecond = Util::stringToInt( s[6]  );
+        
+        return true;
     }
-
-    string getTimeStampAsString() const{
-        string timeString = "";
+    
+    std::string getTimeStampAsString() const{
+        std::string timeString = "";
         timeString += Util::toString(year) + "_" + Util::toString(month) + "_" + Util::toString(day);
         timeString += "_" + Util::toString(hour) + "_" + Util::toString(minute) + "_" + Util::toString(second) + "_" + Util::toString(millisecond);
         return timeString;
     }
     
-    string getTimeStampAsJSONString() const{
-        string timeString = "{";
+    std::string getTimeStampAsJSONString() const{
+        std::string timeString = "{";
         timeString += "\"year\":" + Util::toString(year) + ",";
         timeString += "\"month\":" + Util::toString(month) + ",";
         timeString += "\"day\":" + Util::toString(day) + ",";
@@ -364,49 +491,67 @@ public:
         return timeString;
     }
     
+    std::string getTimeAsISOString() const{
+        std::string s = "";
+        s += Util::toString(year) + "-";
+        s += pad( Util::toString(month) ) + "-";
+        s += pad( Util::toString(day) ) + "T";
+        s += pad( Util::toString( hour ) ) + ":";
+        s += pad( Util::toString( minute ) ) + ":";
+        s += pad( Util::toString( second ) ) + ".";
+        s += Util::toString( millisecond ) + "Z";
+        return s;
+    }
+    
     unsigned int getNumDaysInMonth( const unsigned int month ){
         switch( month ){
-			case 1://Jan
-				return 31;
-				break;
-			case 2: //Feb
-				return 29; //Leap Year?????
-				break;
-			case 3: //March
-				return 31;
-				break;
-			case 4: //April
-				return 30;
-				break;
-			case 5: //May
-				return 31;
-				break;
-			case 6: //June
-				return 30;
-				break;
-			case 7: //July
-				return 31;
-				break;
-			case 8: //August
-				return 31;
-				break;
-			case 9: //September
-				return 31;
-				break;
-			case 10: //October
-				return 31;
-				break;
-			case 11: //November
-				return 30;
-				break;
-			case 12: //December
-				return 31;
-				break;
-		}
-        warningLog << "getNumDaysInMonth(const unsigned int month) - Bad month parameter: " << month << endl;
+            case 1://Jan
+                return 31;
+                break;
+            case 2: //Feb
+                return 29; //Leap Year?????
+                break;
+            case 3: //March
+                return 31;
+                break;
+            case 4: //April
+                return 30;
+                break;
+            case 5: //May
+                return 31;
+                break;
+            case 6: //June
+                return 30;
+                break;
+            case 7: //July
+                return 31;
+                break;
+            case 8: //August
+                return 31;
+                break;
+            case 9: //September
+                return 31;
+                break;
+            case 10: //October
+                return 31;
+                break;
+            case 11: //November
+                return 30;
+                break;
+            case 12: //December
+                return 31;
+                break;
+        }
+        warningLog << "getNumDaysInMonth(const unsigned int month) - Bad month parameter: " << month << std::endl;
         return 0;
     }
-
+    
+    std::string pad(const std::string s) const {
+        
+        if( s.length() != 1 ) return s;
+        return ( "0" + s );
+    }
+    
     unsigned int year;
     unsigned int month;
     unsigned int day;

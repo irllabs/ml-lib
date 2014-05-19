@@ -106,7 +106,6 @@ public:
             if( foundA != std::string::npos || foundB != std::string::npos ){
                 cols[ K ]  = cols[ K ].substr(0,cols[K].length()-1);
             }
-            
         }
         
         return true;
@@ -127,41 +126,23 @@ protected:
         
         vector< string > vec;
         string line;
-        const int sepValue = seperator;
         
         //Loop over each line of data and parse the contents
         while ( getline(file,line) )
         {
-            //Scan the line contents for the seperator token and parse the contents between each token
-            vec.clear();
-            string columnString = "";
-            unsigned int length = (unsigned int)line.length();
-            for(unsigned int i=0; i<length; i++){
-                if( int(line[i]) == sepValue ){
-                    vec.push_back( columnString );
-                    columnString = "";
-                }else columnString += line[i];
+            if( !parseColumn(line, vec,seperator) ){
+                clear();
+                warningLog << "parseFile(...) - Failed to parse column!" << endl;
+                file.close();
+                return false;
             }
-            
-            //Add the last column
-            vec.push_back( columnString );
             
             //Check to make sure all the columns are consistent
             if( columnSize == 0 ){
                 consistentColumnSize = true;
                 columnSize = (unsigned int)vec.size();
             }else if( columnSize != vec.size() ) consistentColumnSize = false;
-            
-            //Remove the new line character from the string in the last column
-            if( removeNewLineCharacter && vec.size() >= 1 ){
-                size_t K = vec.size()-1;
-                size_t foundA = vec[ K ].find('\n');
-                size_t foundB = vec[K ].find('\r');
-                if( foundA != std::string::npos || foundB != std::string::npos ){
-                    vec[ K ] = vec[ K ].substr(0,vec[ K ].length()-1);
-                }
-            }
-            
+
             fileContents.push_back( vec );
         }
         

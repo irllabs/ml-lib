@@ -10,6 +10,9 @@
 #define GRT_TRAINING_RESULT_HEADER
 
 namespace GRT {
+    
+//Forward declartion of MLBase class
+class MLBase;
 
 class TrainingResult{
 public:
@@ -24,6 +27,7 @@ public:
         accuracy = 0;
         totalSquaredTrainingError = 0;
         rootMeanSquaredTrainingError = 0;
+        trainer = NULL;
     }
     
     /**
@@ -58,6 +62,7 @@ public:
             this->accuracy = rhs.accuracy;
             this->totalSquaredTrainingError = rhs.totalSquaredTrainingError;
             this->rootMeanSquaredTrainingError = rhs.rootMeanSquaredTrainingError;
+            this->trainer = rhs.trainer;
         }
         return *this;
     }
@@ -111,16 +116,27 @@ public:
     }
     
     /**
+     Gets a pointer to the class used for training.
+     
+     @return returns a pointer to the trainer
+     */
+    MLBase* getTrainer() const{
+        return trainer;
+    }
+    
+    /**
      Sets the training result for classification data. This will place the training mode into CLASSIFICATION_MODE.
 
      @param unsigned int trainingIteration: the current training iteration (or epoch)
      @param double accuracy: the accuracy for the current training iteration
+     @param MLBase *trainer: a pointer to the class used to generate the result
      @return returns true if the training result was set successfully
      */
-    bool setClassificationResult(unsigned int trainingIteration,double accuracy){
+    bool setClassificationResult(unsigned int trainingIteration,double accuracy,MLBase *trainer){
         this->trainingMode = CLASSIFICATION_MODE;
         this->trainingIteration = trainingIteration;
         this->accuracy = accuracy;
+        this->trainer = trainer;
         return true;
     }
     
@@ -130,13 +146,15 @@ public:
      @param unsigned int trainingIteration: the current training iteration (or epoch)
      @param double totalSquaredTrainingError: the total squared training error for the current iteration
      @param double rootMeanSquaredTrainingError: the root mean squared training error for the current iteration
+     @param MLBase *trainer: a pointer to the class used to generate the result
      @return returns true if the training result was set successfully
      */
-    bool setRegressionResult(unsigned int trainingIteration,double totalSquaredTrainingError,double rootMeanSquaredTrainingError){
+    bool setRegressionResult(unsigned int trainingIteration,double totalSquaredTrainingError,double rootMeanSquaredTrainingError,MLBase *trainer){
         this->trainingMode = REGRESSION_MODE;
         this->trainingIteration = trainingIteration;
         this->totalSquaredTrainingError = totalSquaredTrainingError;
         this->rootMeanSquaredTrainingError = rootMeanSquaredTrainingError;
+        this->trainer = trainer;
         return true;
     }
 
@@ -147,6 +165,7 @@ protected:
     double accuracy;
     double totalSquaredTrainingError;
     double rootMeanSquaredTrainingError;
+    MLBase *trainer;
     
 public:
     

@@ -22,7 +22,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits>
-#include <math.h>
+#include <cmath>
 
 #ifdef __GRT_WINDOWS_BUILD__
 //Include any Windows specific headers
@@ -64,7 +64,7 @@ public:
 	@param const unsigned int numMilliseconds: the number of milliseconds to sleep for, 1000 milliseconds = 1 second.
 	@return returns true if the sleep function was called successfully, false otherwise
 	*/
-    static bool sleep(const unsigned int numMilliseconds);
+    static bool sleep(const unsigned int &numMilliseconds);
     
     /**
      Performs minmax scaling. The input value (x) will be scaled from the source range to the target range.
@@ -77,7 +77,7 @@ public:
      @param const bool constrain: if true, then the value will be constrained to the minSource and maxSource
 	 @return the scaled value
      */
-    static double scale(double x,const double minSource,const double maxSource,const double minTarget,const double maxTarget,const bool constrain=false);
+    static double scale(const double &x,const double &minSource,const double &maxSource,const double &minTarget,const double &maxTarget,const bool constrain=false);
 
     /**
     Converts an int to a string.
@@ -85,7 +85,7 @@ public:
     @param const int i: the value you want to convert to a string
     @return std::string: the value as a string
 	*/
-    static std::string intToString(const int i);
+    static std::string intToString(const int &i);
 
     /**
     Converts an unsigned int to a string.
@@ -93,7 +93,7 @@ public:
     @param const unsigned int i: the value you want to convert to a string
     @return std::string: the value as a string
 	*/
-    static std::string intToString(const unsigned int i);
+    static std::string intToString(const unsigned int &i);
 
     /**
     Converts an unsigned int to a string.
@@ -101,7 +101,7 @@ public:
     @param const unsigned int i: the value you want to convert to a string
     @return std::string: the value as a string
 	*/
-    static std::string toString(const int i);
+    static std::string toString(const int &i);
 
 	/**
     Converts an unsigned int to a string.
@@ -109,7 +109,7 @@ public:
     @param const unsigned int i: the value you want to convert to a string
 	@return std::string: the value as a string
 	*/
-    static std::string toString(const unsigned int i);
+    static std::string toString(const unsigned int &i);
 
     /**
     Converts a long to a string.
@@ -117,7 +117,7 @@ public:
     @param const long i: the value you want to convert to a string
     @return std::string: the value as a string
     */
-    static std::string toString(const long i);
+    static std::string toString(const long &i);
 
     /**
     Converts an unsigned long to a string.
@@ -125,7 +125,15 @@ public:
     @param const unsigned long i: the value you want to convert to a string
     @return std::string: the value as a string
     */
-    static std::string toString(const unsigned long i);
+    static std::string toString(const unsigned long &i);
+    
+    /**
+     Converts an unsigned long long to a string.
+     
+     @param const unsigned long long i: the value you want to convert to a string
+     @return std::string: the value as a string
+     */
+    static std::string toString(const unsigned long long &i);
 
     /**
      Converts a boolean to a string.
@@ -133,7 +141,7 @@ public:
      @param const bool b: the value you want to convert to a string
      @return std::string: the boolan as a string
      */
-    static std::string toString(const bool b);
+    static std::string toString(const bool &b);
     
 	/**
     Converts a double to a string.
@@ -141,7 +149,7 @@ public:
     @param const double v: the value you want to convert to a string
     @return std::string: the value as a string
 	*/
-    static std::string toString(const double v);
+    static std::string toString(const double &v);
 
     /**
     Converts a long double to a string.
@@ -149,7 +157,7 @@ public:
     @param const long double v: the value you want to convert to a string
     @return std::string: the value as a string
     */
-    static std::string toString(const long double v);
+    static std::string toString(const long double &v);
 
 	/**
     Converts a float to a string.
@@ -157,7 +165,7 @@ public:
     @param const float v: the value you want to convert to a string
     @return std::string: the value as a string
 	*/
-    static std::string toString(const float v);
+    static std::string toString(const float &v);
 
     /**
     Converts a string to an int.

@@ -41,6 +41,11 @@ public:
     
     const Log& operator<< (const bool val ) const{
         if( *loggingEnabledPtr ){
+            if( *writeProceedingTextPtr ){
+                *writeProceedingTextPtr = false;
+                *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
+            }
             std::cout << proceedingText.c_str() << val;
             *lastMessagePtr += Util::toString(val);
         }
@@ -51,8 +56,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
             *lastMessagePtr += Util::toString(val);
@@ -64,8 +69,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
             *lastMessagePtr += Util::toString(val);
@@ -77,8 +82,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
             *lastMessagePtr += Util::toString(val);
@@ -90,8 +95,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
             *lastMessagePtr += Util::toString(val);
@@ -103,8 +108,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
             *lastMessagePtr += Util::toString(val);
@@ -115,8 +120,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
             *lastMessagePtr += Util::toString(val);
@@ -127,8 +132,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
             *lastMessagePtr += Util::toString(val);
@@ -139,8 +144,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
             *lastMessagePtr += Util::toString(val);
@@ -152,8 +157,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
             *lastMessagePtr += Util::toString(val);
@@ -164,8 +169,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val;
         }
@@ -176,8 +181,8 @@ public:
         if( *loggingEnabledPtr ){
             if( *writeProceedingTextPtr ){
                 *writeProceedingTextPtr = false;
-                std::cout << proceedingText.c_str();
                 *lastMessagePtr = "";
+                std::cout << proceedingText.c_str();
             }
             std::cout << val.c_str();
             *lastMessagePtr += val;
@@ -193,7 +198,7 @@ public:
                 *lastMessagePtr = "";
             }
             std::cout << val;
-            *lastMessagePtr += Util::toString(val);
+            *lastMessagePtr += val;
         }
         return *this;
     }
@@ -210,6 +215,9 @@ public:
             // call the function, but we cannot return it's value
             manip(std::cout);
             *writeProceedingTextPtr = true;
+            
+            //Trigger any logging callbacks
+            triggerCallback( lastMessage );
         }
         
         return *this;
@@ -224,10 +232,15 @@ public:
     
     //Setters
     void setProceedingText(const std::string &proceedingText){
-        this->proceedingText = proceedingText + ": ";
+        if( proceedingText.length() == 0 ) this->proceedingText = "";
+        else this->proceedingText = proceedingText + " ";
     }
 
 protected:
+    virtual void triggerCallback( const std::string &message ) const{
+        return;
+    }
+    
     std::string proceedingText;
     std::string lastMessage;
     bool *loggingEnabledPtr;
@@ -236,6 +249,6 @@ protected:
     bool writeProceedingText;
 };
 
-}; //End of namespace GRT
+} //End of namespace GRT
 
 #endif //GRT_LOG_HEADER

@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <math.h>
+#include <cmath>
 #include "DebugLog.h"
 #include "ErrorLog.h"
 #include "WarningLog.h"
@@ -112,7 +112,7 @@ public:
      @param const string &filename: the name of the CSV file
      @return returns true or false, indicating if the data was saved successful
      */
-    bool saveToCSVFile(const string &filename);
+    bool saveToCSVFile(const string &filename) const;
     
     /**
      Loads a matrix from a CSV file. This assumes that the data has been saved as rows and columns in the CSV file
@@ -137,6 +137,29 @@ public:
      @return returns true or false, indicating if the transpose was successful
      */
     bool transpose();
+    
+    /**
+     Scales the matrix to a new range given by the min and max targets.
+     
+     @return returns true if the matrix was scaled, false otherwise
+     */
+    bool scale(const double minTarget,const double maxTarget);
+    
+    /**
+     Scales the matrix to a new range given by the min and max targets using the ranges as the source ranges.
+     
+     @return returns true if the matrix was scaled, false otherwise
+     */
+    bool scale(const vector< MinMax > &ranges,const double minTarget,const double maxTarget);
+    
+    /**
+     Normalizes each row in the matrix by subtracting the row mean and dividing by the row standard deviation.
+     A small amount (alpha) is added to the standard deviation to stop the normalization from exploding.
+     
+     @param const double alpha: a small value that will be added to the standard deviation
+     @return returns true if the matrix was normalized, false otherwise
+     */
+    bool znorm(const double alpha = 0.001);
     
     /**
      Performs the multiplication of the data by the scalar value.
@@ -216,6 +239,20 @@ public:
      @return true if the operation was completed successfully, false otherwise
      */
     bool subtract(const MatrixDouble &a,const MatrixDouble &b);
+    
+    /**
+     Gets the ranges min value throughout the entire matrix.
+     
+     @return a double value containing the minimum matrix value
+     */
+    double getMinValue() const;
+    
+    /**
+     Gets the ranges max value throughout the entire matrix.
+     
+     @return a double value containing the maximum matrix value
+     */
+    double getMaxValue() const;
     
     /**
      Gets the mean of each column in the matrix and returns this as a VectorDouble.

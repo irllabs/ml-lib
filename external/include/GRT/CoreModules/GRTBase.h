@@ -36,7 +36,7 @@
 #include <sstream>
 #include <string>
 #include <float.h>
-#include <math.h>
+#include <cmath>
 #include <time.h>
 #include <map>
 #include <limits>
@@ -76,7 +76,7 @@ public:
      
      return returns a string representing the class type
      */
-    string getClassType();
+    string getClassType() const;
     
     /**
 	 This function returns the last warning message as a string. If no warnings have occured, the string will be empty.
