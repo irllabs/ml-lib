@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.softmax";
+    static const std::string ml_object_name = "ml.randforest";
     
     // Utility functions
     
