@@ -19,18 +19,14 @@
 #ifndef ml_ml_h
 #define ml_ml_h
 
-#include "GRT.h"
+#include "ml_base.h"
 
-#include <flext.h>
+#include "GRT.h"
 
 #include <vector>
 #include <map>
 
 #include <stdint.h>
-
-#define ML_VERSION "0.14.0"
-#define ML_NAME "ml-lib"
-#define ML_POST_SEP "---------------------------------------"
 
 namespace ml
 {
