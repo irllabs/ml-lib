@@ -1233,29 +1233,11 @@
 		08FB77ACFE841707C02AAC07 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7DACBF4D192B79DF00F0E7D7 /* Feature Extraction */,
+				7DACBF4C192B791400F0E7D7 /* Classification */,
+				7DACBF4B192B78E000F0E7D7 /* Regression */,
 				7DBFDE6318439E09009ED61E /* ml.h */,
-				7DEE4F5D18BD3F28001A1294 /* ml_regression.h */,
-				7DEE4F5E18BD3F38001A1294 /* ml_classification.h */,
-				7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */,
-				7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */,
 				E98573560D9E52D300682171 /* ml.cpp */,
-				7DF077F71847577100C55E3C /* ml_svm.cpp */,
-				7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */,
-				7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */,
-				7D61B1011875CAF9000FD114 /* ml_linreg.cpp */,
-				7D61B1061875F661000FD114 /* ml_logreg.cpp */,
-				7D133C6E185FAB0F0020213F /* ml_mlp.cpp */,
-				7D61B1111876F334000FD114 /* ml_dtw.cpp */,
-				7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */,
-				7D61B11618788BD6000FD114 /* ml_peak.cpp */,
-				7D88176318EEF6A2002426FB /* ml_minmax.cpp */,
-				7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */,
-				7DA1F137190FDC6100F491FB /* ml_randforest.cpp */,
-				7DA1F134190FDC4800F491FB /* ml_mindist.cpp */,
-				7DA1F131190FDC3300F491FB /* ml_lda.cpp */,
-				7DA1F12E190FDC2500F491FB /* ml_knn.cpp */,
-				7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */,
-				7DA1F128190FDAC100F491FB /* ml_dtree.cpp */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -1275,6 +1257,48 @@
 				7D7DA0E018F7CF3700F417F6 /* ml.adaboost.maxhelp */,
 			);
 			name = Help;
+			sourceTree = "<group>";
+		};
+		7DACBF4B192B78E000F0E7D7 /* Regression */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4F5D18BD3F28001A1294 /* ml_regression.h */,
+				7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */,
+				7D61B1011875CAF9000FD114 /* ml_linreg.cpp */,
+				7D61B1061875F661000FD114 /* ml_logreg.cpp */,
+				7D133C6E185FAB0F0020213F /* ml_mlp.cpp */,
+			);
+			name = Regression;
+			sourceTree = "<group>";
+		};
+		7DACBF4C192B791400F0E7D7 /* Classification */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4F5E18BD3F38001A1294 /* ml_classification.h */,
+				7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */,
+				7DF077F71847577100C55E3C /* ml_svm.cpp */,
+				7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */,
+				7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */,
+				7D61B1111876F334000FD114 /* ml_dtw.cpp */,
+				7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */,
+				7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */,
+				7DA1F137190FDC6100F491FB /* ml_randforest.cpp */,
+				7DA1F134190FDC4800F491FB /* ml_mindist.cpp */,
+				7DA1F131190FDC3300F491FB /* ml_lda.cpp */,
+				7DA1F12E190FDC2500F491FB /* ml_knn.cpp */,
+				7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */,
+				7DA1F128190FDAC100F491FB /* ml_dtree.cpp */,
+			);
+			name = Classification;
+			sourceTree = "<group>";
+		};
+		7DACBF4D192B79DF00F0E7D7 /* Feature Extraction */ = {
+			isa = PBXGroup;
+			children = (
+				7D61B11618788BD6000FD114 /* ml_peak.cpp */,
+				7D88176318EEF6A2002426FB /* ml_minmax.cpp */,
+			);
+			name = "Feature Extraction";
 			sourceTree = "<group>";
 		};
 		7DAE08AA18F40FB000049C24 /* Externals */ = {
