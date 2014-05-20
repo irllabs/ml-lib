@@ -143,15 +143,15 @@ namespace ml
     
     void ml_minmax::usage()
     {
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("delta: a float setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value. (default: 1e-6)");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
     }
     
 #pragma mark - private methods

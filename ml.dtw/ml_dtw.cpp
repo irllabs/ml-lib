@@ -204,9 +204,9 @@ namespace ml
     // methods
     void ml_dtw::usage()
     {
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
         post("null_rejection:\tinteger (0 or 1) sets NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
@@ -217,9 +217,9 @@ namespace ml
         post("constrain_warping_path:\tinteger (0 or 1) sets the warping path should be constrained to within a specific radius from the main diagonal of the cost matrix (default 1)");
         post("enable_z_normalization:\tinteger (0 or 1) turning z-normalization on or off for training and prediction (default 0)");
         post("enable_trim_training_data:\tinteger (0 or 1) enabling data trimming prior to training (default 0)");        
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -227,7 +227,7 @@ namespace ml
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
 
     }
     

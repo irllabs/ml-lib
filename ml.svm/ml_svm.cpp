@@ -387,9 +387,9 @@ namespace ml
     
     void ml_svm::usage()
     {
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("type:\tset type of SVM (default 0)");
         post("	0 -- C-SVC		(multi-class classification)");
         post("	1 -- nu-SVC		(multi-class classification)");
@@ -412,9 +412,9 @@ namespace ml
         post("epsilon:\tset tolerance of termination criterion (default 0.001)");
         post("shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)");
         post("probs:\twhether to display classification probabilities, 0 or 1 (default 0)");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave a trained model, first argument gives path to save location");
         post("load:\tload a trained model, first argument gives path to the load location");
@@ -423,7 +423,7 @@ namespace ml
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the class of the input feature vector provided as a list");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         
     }
     

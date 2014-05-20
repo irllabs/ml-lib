@@ -162,19 +162,19 @@ namespace ml
     // Methods
     void ml_adaboost::usage()
     {
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("prediction_method:\tinteger (%d:MAX_VALUE or %d:MAX_POSITIVE_VALUE) sets the Adaboost prediction method (default %d)",
              GRT::AdaBoost::MAX_VALUE, GRT::AdaBoost::MAX_POSITIVE_VALUE, GRT::AdaBoost::MAX_VALUE);
         post("num_boosting_iterations:\tinteger (>0) sets the number of boosting iterations that should be used when training the model (default 20)");
         post("weak_classifier:\tinteger (%d:DECISION_STUMP or %d:RADIAL_BASIS_FUNCTION) sets the weak classifier to be used by Adaboost, (default: %d)", DECISION_STUMP, RADIAL_BASIS_FUNCTION, DECISION_STUMP);
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         // Method help here
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         
     }
     

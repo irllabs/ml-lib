@@ -197,20 +197,20 @@ namespace ml
 
     void ml_peak::usage()
     {
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("search_window_size: an integer setting the search window size in values (default: 5)");
 
 //        post("low_pass_filter_size: an integer setting the low pass filter size (2 or higher)");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
         post("float:\ta floating point value to the inlet updates the current value of the peak detector");
         post("reset:\treset the peak detector");
         post("timeout:\t (see GRT documentation)");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_POST_SEP);
+        post("%s", ML_LINE_SEPARATOR);
     }
     
     typedef class ml_peak ml0x2epeak;
