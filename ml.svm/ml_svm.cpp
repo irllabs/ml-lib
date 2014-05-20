@@ -28,6 +28,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.svm";
+    
     // Utility functions
     GRT::SVM::SVMTypes svm_type_from_type_string(std::string type_string)
     {
@@ -98,7 +100,9 @@ namespace ml
     public:
         ml_svm()
         {
-            post("ml.svm: Support Vector Machines based on the GRT library version %s", get_grt_version().c_str());
+            std::stringstream ss;
+            ss << "Support Vector Machines based on the GRT library version " << get_grt_version().c_str();
+            post(ss.str());
             set_scaling(default_scaling);
         }
         
@@ -143,7 +147,7 @@ namespace ml
             
             FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
             
-            DefineHelp(c,"ml.svm");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -204,6 +208,9 @@ namespace ml
         FLEXT_CALLVAR_V(get_weights, set_weights);
         FLEXT_CALLVAR_I(get_kfold_value, set_kfold_value);
         FLEXT_CALLSET_B(set_enable_cross_validation);
+        
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
         
         // Instance variables
         GRT::SVM svm;
@@ -387,9 +394,9 @@ namespace ml
     
     void ml_svm::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("type:\tset type of SVM (default 0)");
         post("	0 -- C-SVC		(multi-class classification)");
         post("	1 -- nu-SVC		(multi-class classification)");
@@ -412,9 +419,9 @@ namespace ml
         post("epsilon:\tset tolerance of termination criterion (default 0.001)");
         post("shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)");
         post("probs:\twhether to display classification probabilities, 0 or 1 (default 0)");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave a trained model, first argument gives path to save location");
         post("load:\tload a trained model, first argument gives path to the load location");
@@ -423,7 +430,7 @@ namespace ml
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the class of the input feature vector provided as a list");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         
     }
     
@@ -441,9 +448,9 @@ namespace ml
     typedef class ml_svm ml0x2esvm;
 
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.svm", ml_svm);
+    FLEXT_LIB(ml_object_name.c_str(), ml_svm);
 #else
-    FLEXT_NEW("ml.svm", ml0x2esvm);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2esvm);
 #endif
     
     

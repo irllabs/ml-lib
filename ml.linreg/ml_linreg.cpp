@@ -20,6 +20,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.linreg";
+    
     class ml_linreg : ml_regression
     {
         FLEXT_HEADER_S(ml_linreg, ml_regression, setup);
@@ -27,7 +29,7 @@ namespace ml
     public:
         ml_linreg()
         {
-            post("ml.regressifier: Linear Regression based on the GRT library version %s", get_grt_version().c_str());
+            post("Linear Regression based on the GRT library version" + get_grt_version());
             set_scaling(default_scaling);
         }
         
@@ -39,7 +41,7 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
-            DefineHelp(c,"ml.linreg");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Implement pure virtual methods
@@ -47,6 +49,9 @@ namespace ml
         const GRT::Regressifier &get_Regressifier_instance() const;
 
     private:
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        
         // Instance variables
         GRT::LinearRegression regressifier;
         
@@ -66,9 +71,9 @@ namespace ml
     typedef class ml_linreg ml0x2elinreg;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.linreg", ml_linreg);
+    FLEXT_LIB(ml_object_name.c_str(), ml_linreg);
 #else
-    FLEXT_NEW("ml.linreg", ml0x2elinreg);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2elinreg);
 #endif
     
 } //namespace ml

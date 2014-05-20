@@ -16,10 +16,12 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ml.h"
+#include "ml_ml.h"
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.mlp";
+    
     typedef enum mlp_layer_
     {
         LAYER_INPUT,
@@ -43,7 +45,7 @@ namespace ml
         hiddenActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getHiddenLayerActivationFunction()),
         outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction())
         {
-            post("ml.mlp: Multilayer Perceptron based on the GRT library version %s", get_grt_version().c_str());
+            post("Multilayer Perceptron based on the GRT library version " + get_grt_version());
             
             regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
             classificationData.setNumDimensions(defaultNumInputDimensions);
@@ -99,7 +101,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "validation_set_size", get_validation_set_size);
             FLEXT_CADDATTR_GET(c, "randomize_training_order", get_randomise_training_order);
        
-            DefineHelp(c,"ml.mlp");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -181,6 +183,9 @@ namespace ml
         FLEXT_CALLVAR_I(get_validation_set_size, set_validation_set_size);
         FLEXT_CALLVAR_B(get_randomise_training_order, set_randomise_training_order);
 
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        
         // Instance variables
         GRT::MLP mlp;
         GRT::UINT numHiddenNeurons;
@@ -346,10 +351,10 @@ namespace ml
                 outputActivationFunction = activation_function_;
                 break;
             default:
-                flext::error("no activation function for layer: %d", layer);
+                ml::error("no activation function for layer: " + std::to_string(layer));
                 return;
         }
-        post("activation function set to %s", mlp.activationFunctionToString(activation_function_).c_str());
+        post("activation function set to " + mlp.activationFunctionToString(activation_function_));
     }
     
     void ml_mlp::set_input_activation_function(int activation_function)
@@ -683,13 +688,16 @@ namespace ml
     
     void ml_mlp::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
-        post("mode:\tinteger setting mode of the MLP, %d for regression and %d for classification (default %d)",
-             LABELLED_REGRESSION, LABELLED_CLASSIFICATION, default_data_type);
-        post("num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default %d)", defaultNumOutputDimensions);
-        post("num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default %d)", defaultNumHiddenNeurons);
+        post(ML_LINE_SEPARATOR);
+        
+        std::stringstream post_stream;
+        
+        post_stream << "mode:\tinteger setting mode of the MLP, " << LABELLED_REGRESSION << " for regression and " <<LABELLED_CLASSIFICATION << " for classification (default " << default_data_type << ")";
+        
+        post("num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default " + std::to_string( defaultNumOutputDimensions) + ")");
+        post("num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default " + std::to_string( defaultNumHiddenNeurons) + ")");
         post("min_epochs:\tinteger setting the minimum number of training iterations (default 10)");
         post("max_epochs:\tinteger setting the maximum number of training iterations (default 100)");
         post("min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)");
@@ -706,9 +714,9 @@ namespace ml
         post("validation_set_size:\tinteger integer determining the size of the validation set (default 20)");
         post("randomize_training_order:\tinteger (0 or 1) sets whether to randomize the training order (default 0)");
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode, where N is determined by the num_outputs attribute");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -716,7 +724,7 @@ namespace ml
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
     // Implement pure virtual methods
@@ -774,9 +782,9 @@ namespace ml
     typedef class ml_mlp ml0x2emlp;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.mlp", ml_mlp);
+    FLEXT_LIB(ml_object_name.c_str(), ml_mlp);
 #else
-    FLEXT_NEW("ml.mlp", ml0x2emlp);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2emlp);
 #endif
     
 } //namespace ml

@@ -32,7 +32,8 @@
 
 namespace ml
 {
-    class ml_base
+    class ml_base:
+    public flext_base
     {
     public:
         

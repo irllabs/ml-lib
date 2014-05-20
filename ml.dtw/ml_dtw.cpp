@@ -20,6 +20,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.dtw";
+    
     class ml_dtw : ml_classification
     {
         FLEXT_HEADER_S(ml_dtw, ml_classification, setup);
@@ -27,7 +29,7 @@ namespace ml
     public:
         ml_dtw()
         {
-            post("ml.dtw: Dynamic Time Warping based on the GRT library version %s", get_grt_version().c_str());
+            post("Dynamic Time Warping based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
             set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
         }
@@ -56,7 +58,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "enable_z_normalization", get_enable_z_normalization);
             FLEXT_CADDATTR_GET(c, "enable_trim_training_data", get_enable_trim_training_data);
             
-            DefineHelp(c,"ml.dtw");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -96,6 +98,10 @@ namespace ml
         FLEXT_CALLVAR_B(get_enable_z_normalization, set_enable_z_normalization);
         FLEXT_CALLVAR_B(get_enable_trim_training_data, set_enable_trim_training_data);
         
+        
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        
         // Instance variables
         GRT::DTW classifier;
         
@@ -108,7 +114,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set rejection mode");
+            error("unable to set rejection mode");
         }
     }
     
@@ -118,7 +124,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set warping radius");
+            error("unable to set warping radius");
         }
     }
     
@@ -128,7 +134,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set offset time series using first sample");
+            error("unable to set offset time series using first sample");
         }
     }
     
@@ -139,7 +145,7 @@ namespace ml
         
         if (!succes)
         {
-            flext::error("unable to set constrain warping path");
+            error("unable to set constrain warping path");
         }
     }
     
@@ -150,7 +156,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set z-normalization");
+            error("unable to set z-normalization");
         }
     }
     
@@ -162,51 +168,51 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to enable trim training data");
+            error("unable to enable trim training data");
         }
     }
     
     // Attribute getters
     void ml_dtw::get_rejection_mode(int &rejection_mode) const
     {
-        flext::error("function not implemented");
+        error("function not implemented");
     }
 
     void ml_dtw::get_warping_radius(float &warping_radius) const
     {
-        flext::error("function not implemented");
+        error("function not implemented");
     }
     
 
     void ml_dtw::get_offget_time_series(bool &offget_time_series) const
     {
-        flext::error("function not implemented");
+        error("function not implemented");
     }
     
 
     void ml_dtw::get_constrain_warping_path(bool &constrain_warping_path) const
     {
-        flext::error("function not implement");
+        error("function not implement");
     }
     
 
     void ml_dtw::get_enable_z_normalization(bool &enable_z_normalization) const
     {
-        flext::error("function not implemented");
+        error("function not implemented");
     }
     
 
     void ml_dtw::get_enable_trim_training_data(bool &enable_trim_training_data) const
     {
-        flext::error("function not implemented");
+        error("function not implemented");
     }
     
     // methods
     void ml_dtw::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
         post("null_rejection:\tinteger (0 or 1) sets NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
@@ -217,9 +223,9 @@ namespace ml
         post("constrain_warping_path:\tinteger (0 or 1) sets the warping path should be constrained to within a specific radius from the main diagonal of the cost matrix (default 1)");
         post("enable_z_normalization:\tinteger (0 or 1) turning z-normalization on or off for training and prediction (default 0)");
         post("enable_trim_training_data:\tinteger (0 or 1) enabling data trimming prior to training (default 0)");        
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -227,7 +233,7 @@ namespace ml
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
 
     }
     
@@ -255,9 +261,9 @@ namespace ml
     typedef class ml_dtw ml0x2edtw;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.dtw", ml_dtw);
+    FLEXT_LIB(ml_object_name.c_str(), ml_dtw);
 #else
-    FLEXT_NEW("ml.dtw", ml0x2edtw);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2edtw);
 #endif
     
 } //namespace ml

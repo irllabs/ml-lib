@@ -20,6 +20,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.lda";
+    
     // Utility functions
     
     
@@ -31,7 +33,7 @@ namespace ml
     public:
         ml_lda()
         {
-            post("ml.lda: LDA algorithm based on the GRT library version %s", get_grt_version().c_str());
+            post("LDA algorithm based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
         }
         
@@ -50,7 +52,7 @@ namespace ml
             // Flext method messages
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,"ml.lda");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -67,6 +69,9 @@ namespace ml
         // Flext method wrappers
         
         // Flext attribute wrappers
+        
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
         
         // Instance variables
         GRT::LDA lda;
@@ -91,7 +96,7 @@ namespace ml
         return lda;
     }
     
-    FLEXT_LIB("ml.lda", ml_lda);
+    FLEXT_LIB(ml_object_name.c_str(), ml_lda);
     
 } //namespace ml
 

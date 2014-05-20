@@ -20,6 +20,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.logreg";
+    
     class ml_logreg : ml_regression
     {
         FLEXT_HEADER_S(ml_logreg, ml_regression, setup);
@@ -27,7 +29,7 @@ namespace ml
     public:
         ml_logreg()
         {
-            post("ml.regressifier: Logistic Regression based on the GRT library version %s", get_grt_version().c_str());
+            post("Logistic Regression based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
         }
         
@@ -39,7 +41,7 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
-            DefineHelp(c,"ml.logreg");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Implement pure virtual methods
@@ -47,6 +49,9 @@ namespace ml
         const GRT::Regressifier &get_Regressifier_instance() const;
         
     private:
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
+                
         // Instance variables
         GRT::LogisticRegression regressifier;
         
@@ -66,9 +71,9 @@ namespace ml
     typedef class ml_logreg ml0x2elogreg;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.logreg", ml_logreg);
+    FLEXT_LIB(ml_object_name.c_str(), ml_logreg);
 #else
-    FLEXT_NEW("ml.logreg", ml0x2elogreg);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2elogreg);
 #endif
     
 } //namespace ml

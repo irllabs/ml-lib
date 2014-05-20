@@ -41,22 +41,22 @@
 		7D551A5A190FE514008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D551A5D190FE514008FF361 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D551A5E190FE514008FF361 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D551A5F190FE514008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551A5F190FE514008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551A68190FE523008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551A69190FE523008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D551A6C190FE523008FF361 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D551A6D190FE523008FF361 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D551A6E190FE523008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551A6E190FE523008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551A77190FE530008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551A78190FE530008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D551A7B190FE530008FF361 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D551A7C190FE530008FF361 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D551A7D190FE530008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551A7D190FE530008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551A86190FE53B008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551A87190FE53B008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D551A8A190FE53B008FF361 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D551A8B190FE53B008FF361 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D551A8C190FE53B008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551A8C190FE53B008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551A93190FE60D008FF361 /* ml_softmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */; };
 		7D551A94190FE612008FF361 /* ml_randforest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F137190FDC6100F491FB /* ml_randforest.cpp */; };
 		7D551A95190FE616008FF361 /* ml_mindist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F134190FDC4800F491FB /* ml_mindist.cpp */; };
@@ -64,43 +64,43 @@
 		7D551A97190FE61E008FF361 /* ml_knn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12E190FDC2500F491FB /* ml_knn.cpp */; };
 		7D551A98190FE622008FF361 /* ml_gmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */; };
 		7D551A99190FE626008FF361 /* ml_dtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F128190FDAC100F491FB /* ml_dtree.cpp */; };
-		7D551A9C190FE9CE008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551A9C190FE9CE008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551A9D190FE9CE008FF361 /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D551A9F190FE9CE008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D551AA0190FE9CE008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AA1190FE9CE008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551AA2190FE9CE008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D551AAC190FE9F1008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551AAC190FE9F1008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551AAD190FE9F1008FF361 /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D551AAF190FE9F1008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D551AB0190FE9F1008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AB1190FE9F1008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551AB2190FE9F1008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D551ABC190FEA0F008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551ABC190FEA0F008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551ABD190FEA0F008FF361 /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D551ABF190FEA0F008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D551AC0190FEA0F008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AC1190FEA0F008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551AC2190FEA0F008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D551ACC190FEA2A008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551ACC190FEA2A008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551ACD190FEA2A008FF361 /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D551ACF190FEA2A008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D551AD0190FEA2A008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AD1190FEA2A008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551AD2190FEA2A008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D551ADC190FEA37008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551ADC190FEA37008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551ADD190FEA37008FF361 /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D551ADF190FEA37008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D551AE0190FEA37008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AE1190FEA37008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551AE2190FEA37008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D551AEC190FEA66008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551AEC190FEA66008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551AED190FEA66008FF361 /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D551AEF190FEA66008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D551AF0190FEA66008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AF1190FEA66008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551AF2190FEA66008FF361 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D551AFC190FEA80008FF361 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D551AFC190FEA80008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D551AFD190FEA80008FF361 /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D551AFF190FEA80008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D551B00190FEA80008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
@@ -118,53 +118,53 @@
 		7D6511DB18F436CF0050C9C8 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D6512D718F4428B0050C9C8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7D9FD418F6948E00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
-		7D7D9FDB18F6948E00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7D9FDB18F6948E00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7D9FDF18F6948E00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D7D9FE018F6948E00F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7D9FE118F6948E00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7D9FE218F6948E00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7D9FF218F6971F00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7D9FF618F699D800F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
-		7D7D9FF718F699D800F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7D9FF718F699D800F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7D9FF918F699D800F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D7D9FFA18F699D800F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7D9FFB18F699D800F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7D9FFC18F699D800F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA00B18F69A3800F417F6 /* ml_adaboost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */; };
 		7D7DA00C18F69A4600F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
-		7D7DA01118F69AD400F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA01118F69AD400F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA01318F69AD400F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D7DA01418F69AD400F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA01518F69AD400F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA01618F69AD400F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D7DA02918F69AF600F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA02918F69AF600F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA02B18F69AF600F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D7DA02C18F69AF600F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA02D18F69AF600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA02E18F69AF600F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D7DA04118F69B0F00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA04118F69B0F00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA04318F69B0F00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D7DA04418F69B0F00F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA04518F69B0F00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA04618F69B0F00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA05818F69B2A00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
-		7D7DA05918F69B2A00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA05918F69B2A00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA05B18F69B2A00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D7DA05C18F69B2A00F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA05D18F69B2A00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA05E18F69B2A00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA07018F69B4300F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
-		7D7DA07118F69B4300F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA07118F69B4300F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA07318F69B4300F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D7DA07418F69B4300F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA07518F69B4300F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA07618F69B4300F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D7DA08918F69B5A00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA08918F69B5A00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA08B18F69B5A00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D7DA08C18F69B5A00F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA08D18F69B5A00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA08E18F69B5A00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
-		7D7DA0A118F69B7100F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA0A118F69B7100F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA0A318F69B7100F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D7DA0A418F69B7100F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA0A518F69B7100F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
@@ -183,49 +183,49 @@
 		7D7DA0C818F6A63E00F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		7D7DA0CA18F6A63E00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA0CF18F6A63E00F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D7DA0D118F6A63E00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA0D118F6A63E00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA0DE18F6C34C00F417F6 /* ml_anbc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */; };
 		7D7DA0DF18F6C34C00F417F6 /* ml_anbc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */; };
 		7D7DA0EE18F7DC5600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA0EF18F7DC5600F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA0F218F7DC5600F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA0F318F7DC5600F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D7DA0F418F7DC5600F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA0F418F7DC5600F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA0FD18F7DC8900F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA0FE18F7DC8900F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA10118F7DC8900F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA10218F7DC8900F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D7DA10318F7DC8900F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA10318F7DC8900F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA10C18F7DCA600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA10D18F7DCA600F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA11018F7DCA600F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA11118F7DCA600F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D7DA11218F7DCA600F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA11218F7DCA600F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA11B18F7DCBD00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA11C18F7DCBD00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA11F18F7DCBD00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA12018F7DCBD00F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D7DA12118F7DCBD00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA12118F7DCBD00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA12A18F7DCD600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA12B18F7DCD600F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA12E18F7DCD600F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA12F18F7DCD600F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D7DA13018F7DCD600F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA13018F7DCD600F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA13918F7DCEC00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA13A18F7DCEC00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA13D18F7DCEC00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA13E18F7DCEC00F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D7DA13F18F7DCEC00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA13F18F7DCEC00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA14818F7DD0600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA14918F7DD0600F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA14C18F7DD0600F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA14D18F7DD0600F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D7DA14E18F7DD0600F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA14E18F7DD0600F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7DA15718F7DD1C00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA15818F7DD1C00F417F6 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7DA15B18F7DD1C00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA15C18F7DD1C00F417F6 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D7DA15D18F7DD1C00F417F6 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7D7DA15D18F7DD1C00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D88176018EEF5EE002426FB /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D88176218EEF5FF002426FB /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D88176418EEF6A2002426FB /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
@@ -248,17 +248,17 @@
 		7DA1F140190FE3F900F491FB /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7DA1F143190FE3F900F491FB /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DA1F144190FE3F900F491FB /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7DA1F145190FE3F900F491FB /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7DA1F145190FE3F900F491FB /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7DA1F14E190FE40E00F491FB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7DA1F14F190FE40E00F491FB /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7DA1F152190FE40E00F491FB /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DA1F153190FE40E00F491FB /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7DA1F154190FE40E00F491FB /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7DA1F154190FE40E00F491FB /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7DA1F15D190FE41A00F491FB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7DA1F15E190FE41A00F491FB /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7DA1F161190FE41A00F491FB /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DA1F162190FE41A00F491FB /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7DA1F163190FE41A00F491FB /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		7DA1F163190FE41A00F491FB /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7DACBF50192B869600F0E7D7 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
 		7DACBF51192B869600F0E7D7 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
 		7DACBF52192B869600F0E7D7 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
@@ -293,13 +293,27 @@
 		7DACBF6F192B869600F0E7D7 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
 		7DACBF70192B869600F0E7D7 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
 		7DACBF71192B869600F0E7D7 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
+		7DACBF72192BAC3500F0E7D7 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
+		7DACBF73192BAC3900F0E7D7 /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
+		7DACBF74192BAC4100F0E7D7 /* ml_adaboost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */; };
+		7DACBF75192BAC5600F0E7D7 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
+		7DACBF76192BAC5D00F0E7D7 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
+		7DACBF77192BAC6300F0E7D7 /* ml_softmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */; };
+		7DACBF78192BAC6C00F0E7D7 /* ml_randforest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F137190FDC6100F491FB /* ml_randforest.cpp */; };
+		7DACBF79192BAC7400F0E7D7 /* ml_mindist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F134190FDC4800F491FB /* ml_mindist.cpp */; };
+		7DACBF7A192BAC7900F0E7D7 /* ml_lda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F131190FDC3300F491FB /* ml_lda.cpp */; };
+		7DACBF7B192BACFB00F0E7D7 /* ml_knn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12E190FDC2500F491FB /* ml_knn.cpp */; };
+		7DACBF7C192BAD0900F0E7D7 /* ml_gmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */; };
+		7DACBF7D192BAD2500F0E7D7 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
+		7DACBF7E192BAD2900F0E7D7 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
+		7DACBF7F192BAD2F00F0E7D7 /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
 		7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
 		7DF077F81847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		7DF077F91847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
-		E98573570D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
-		E98573580D9E52D300682171 /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml.cpp */; };
+		E98573570D9E52D300682171 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
+		E98573580D9E52D300682171 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -854,7 +868,7 @@
 		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ml.svm/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
-		E98573560D9E52D300682171 /* ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml.cpp; sourceTree = "<group>"; };
+		E98573560D9E52D300682171 /* ml_ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml_ml.cpp; sourceTree = "<group>"; };
 		E9974E53077083C700206F68 /* ml.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1275,7 +1289,7 @@
 				7DACBF4E192B82F900F0E7D7 /* ml_base.h */,
 				7DACBF4F192B869600F0E7D7 /* ml_base.cpp */,
 				7DBFDE6318439E09009ED61E /* ml_ml.h */,
-				E98573560D9E52D300682171 /* ml.cpp */,
+				E98573560D9E52D300682171 /* ml_ml.cpp */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -2575,7 +2589,7 @@
 				7D551A5D190FE514008FF361 /* ml_classification.cpp in Sources */,
 				7D551A96190FE61A008FF361 /* ml_lda.cpp in Sources */,
 				7D551A5E190FE514008FF361 /* ml_regression.cpp in Sources */,
-				7D551A5F190FE514008FF361 /* ml.cpp in Sources */,
+				7D551A5F190FE514008FF361 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2587,7 +2601,7 @@
 				7D551A6C190FE523008FF361 /* ml_classification.cpp in Sources */,
 				7D551A97190FE61E008FF361 /* ml_knn.cpp in Sources */,
 				7D551A6D190FE523008FF361 /* ml_regression.cpp in Sources */,
-				7D551A6E190FE523008FF361 /* ml.cpp in Sources */,
+				7D551A6E190FE523008FF361 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2599,7 +2613,7 @@
 				7D551A7B190FE530008FF361 /* ml_classification.cpp in Sources */,
 				7D551A98190FE622008FF361 /* ml_gmm.cpp in Sources */,
 				7D551A7C190FE530008FF361 /* ml_regression.cpp in Sources */,
-				7D551A7D190FE530008FF361 /* ml.cpp in Sources */,
+				7D551A7D190FE530008FF361 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2611,7 +2625,7 @@
 				7D551A99190FE626008FF361 /* ml_dtree.cpp in Sources */,
 				7D551A8A190FE53B008FF361 /* ml_classification.cpp in Sources */,
 				7D551A8B190FE53B008FF361 /* ml_regression.cpp in Sources */,
-				7D551A8C190FE53B008FF361 /* ml.cpp in Sources */,
+				7D551A8C190FE53B008FF361 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2619,7 +2633,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551A9C190FE9CE008FF361 /* ml.cpp in Sources */,
+				7D551A9C190FE9CE008FF361 /* ml_ml.cpp in Sources */,
+				7DACBF77192BAC6300F0E7D7 /* ml_softmax.cpp in Sources */,
 				7DACBF6B192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D551A9D190FE9CE008FF361 /* ml_minmax.cpp in Sources */,
 			);
@@ -2629,8 +2644,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551AAC190FE9F1008FF361 /* ml.cpp in Sources */,
+				7D551AAC190FE9F1008FF361 /* ml_ml.cpp in Sources */,
 				7DACBF6C192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DACBF78192BAC6C00F0E7D7 /* ml_randforest.cpp in Sources */,
 				7D551AAD190FE9F1008FF361 /* ml_minmax.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2639,9 +2655,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551ABC190FEA0F008FF361 /* ml.cpp in Sources */,
+				7D551ABC190FEA0F008FF361 /* ml_ml.cpp in Sources */,
 				7DACBF6D192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D551ABD190FEA0F008FF361 /* ml_minmax.cpp in Sources */,
+				7DACBF79192BAC7400F0E7D7 /* ml_mindist.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2649,7 +2666,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551ACC190FEA2A008FF361 /* ml.cpp in Sources */,
+				7DACBF7A192BAC7900F0E7D7 /* ml_lda.cpp in Sources */,
+				7D551ACC190FEA2A008FF361 /* ml_ml.cpp in Sources */,
 				7DACBF6E192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D551ACD190FEA2A008FF361 /* ml_minmax.cpp in Sources */,
 			);
@@ -2659,8 +2677,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551ADC190FEA37008FF361 /* ml.cpp in Sources */,
+				7D551ADC190FEA37008FF361 /* ml_ml.cpp in Sources */,
 				7DACBF6F192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DACBF7B192BACFB00F0E7D7 /* ml_knn.cpp in Sources */,
 				7D551ADD190FEA37008FF361 /* ml_minmax.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2669,7 +2688,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551AEC190FEA66008FF361 /* ml.cpp in Sources */,
+				7DACBF7C192BAD0900F0E7D7 /* ml_gmm.cpp in Sources */,
+				7D551AEC190FEA66008FF361 /* ml_ml.cpp in Sources */,
 				7DACBF70192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D551AED190FEA66008FF361 /* ml_minmax.cpp in Sources */,
 			);
@@ -2679,7 +2699,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551AFC190FEA80008FF361 /* ml.cpp in Sources */,
+				7D551AFC190FEA80008FF361 /* ml_ml.cpp in Sources */,
 				7DACBF71192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D551AFD190FEA80008FF361 /* ml_minmax.cpp in Sources */,
 			);
@@ -2691,7 +2711,7 @@
 			files = (
 				7D7D9FD418F6948E00F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA00C18F69A4600F417F6 /* ml_svm.cpp in Sources */,
-				7D7D9FDB18F6948E00F417F6 /* ml.cpp in Sources */,
+				7D7D9FDB18F6948E00F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF62192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2702,7 +2722,7 @@
 			files = (
 				7D7DA00B18F69A3800F417F6 /* ml_adaboost.cpp in Sources */,
 				7D7D9FF618F699D800F417F6 /* ml_classification.cpp in Sources */,
-				7D7D9FF718F699D800F417F6 /* ml.cpp in Sources */,
+				7D7D9FF718F699D800F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF63192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2711,7 +2731,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA01118F69AD400F417F6 /* ml.cpp in Sources */,
+				7D7DA01118F69AD400F417F6 /* ml_ml.cpp in Sources */,
 				7D7DA0B518F69C8200F417F6 /* ml_linreg.cpp in Sources */,
 				7D7DA0BC18F69EB700F417F6 /* ml_regression.cpp in Sources */,
 				7DACBF64192B869600F0E7D7 /* ml_base.cpp in Sources */,
@@ -2722,7 +2742,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA02918F69AF600F417F6 /* ml.cpp in Sources */,
+				7D7DA02918F69AF600F417F6 /* ml_ml.cpp in Sources */,
 				7D7DA0B618F69CA200F417F6 /* ml_logreg.cpp in Sources */,
 				7D7DA0BD18F69EB800F417F6 /* ml_regression.cpp in Sources */,
 				7DACBF65192B869600F0E7D7 /* ml_base.cpp in Sources */,
@@ -2735,7 +2755,7 @@
 			files = (
 				7D7DA0B718F69CA700F417F6 /* ml_mlp.cpp in Sources */,
 				7DACBF66192B869600F0E7D7 /* ml_base.cpp in Sources */,
-				7D7DA04118F69B0F00F417F6 /* ml.cpp in Sources */,
+				7D7DA04118F69B0F00F417F6 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2745,7 +2765,7 @@
 			files = (
 				7D7DA05818F69B2A00F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA0B818F69CAB00F417F6 /* ml_dtw.cpp in Sources */,
-				7D7DA05918F69B2A00F417F6 /* ml.cpp in Sources */,
+				7D7DA05918F69B2A00F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF67192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2756,7 +2776,7 @@
 			files = (
 				7D7DA07018F69B4300F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA0B918F69CAF00F417F6 /* ml_hmm.cpp in Sources */,
-				7D7DA07118F69B4300F417F6 /* ml.cpp in Sources */,
+				7D7DA07118F69B4300F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF68192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2765,7 +2785,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA08918F69B5A00F417F6 /* ml.cpp in Sources */,
+				7D7DA08918F69B5A00F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF69192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D7DA0BA18F69CB300F417F6 /* ml_peak.cpp in Sources */,
 			);
@@ -2775,7 +2795,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA0A118F69B7100F417F6 /* ml.cpp in Sources */,
+				7D7DA0A118F69B7100F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF6A192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D7DA0BB18F69CB800F417F6 /* ml_minmax.cpp in Sources */,
 			);
@@ -2789,7 +2809,7 @@
 				7D7DA0C818F6A63E00F417F6 /* ml_svm.cpp in Sources */,
 				7D7DA0CA18F6A63E00F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA0CF18F6A63E00F417F6 /* ml_regression.cpp in Sources */,
-				7D7DA0D118F6A63E00F417F6 /* ml.cpp in Sources */,
+				7D7DA0D118F6A63E00F417F6 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2799,8 +2819,9 @@
 			files = (
 				7D7DA0F218F7DC5600F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA0F318F7DC5600F417F6 /* ml_regression.cpp in Sources */,
-				7D7DA0F418F7DC5600F417F6 /* ml.cpp in Sources */,
+				7D7DA0F418F7DC5600F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF52192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DACBF74192BAC4100F0E7D7 /* ml_adaboost.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2810,7 +2831,8 @@
 			files = (
 				7D7DA10118F7DC8900F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA10218F7DC8900F417F6 /* ml_regression.cpp in Sources */,
-				7D7DA10318F7DC8900F417F6 /* ml.cpp in Sources */,
+				7D7DA10318F7DC8900F417F6 /* ml_ml.cpp in Sources */,
+				7DACBF7D192BAD2500F0E7D7 /* ml_linreg.cpp in Sources */,
 				7DACBF53192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2821,7 +2843,8 @@
 			files = (
 				7D7DA11018F7DCA600F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA11118F7DCA600F417F6 /* ml_regression.cpp in Sources */,
-				7D7DA11218F7DCA600F417F6 /* ml.cpp in Sources */,
+				7DACBF7E192BAD2900F0E7D7 /* ml_logreg.cpp in Sources */,
+				7D7DA11218F7DCA600F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF54192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2832,7 +2855,8 @@
 			files = (
 				7D7DA11F18F7DCBD00F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA12018F7DCBD00F417F6 /* ml_regression.cpp in Sources */,
-				7D7DA12118F7DCBD00F417F6 /* ml.cpp in Sources */,
+				7DACBF7F192BAD2F00F0E7D7 /* ml_mlp.cpp in Sources */,
+				7D7DA12118F7DCBD00F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF55192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2843,7 +2867,8 @@
 			files = (
 				7D7DA12E18F7DCD600F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA12F18F7DCD600F417F6 /* ml_regression.cpp in Sources */,
-				7D7DA13018F7DCD600F417F6 /* ml.cpp in Sources */,
+				7DACBF75192BAC5600F0E7D7 /* ml_dtw.cpp in Sources */,
+				7D7DA13018F7DCD600F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF56192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2854,7 +2879,8 @@
 			files = (
 				7D7DA13D18F7DCEC00F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA13E18F7DCEC00F417F6 /* ml_regression.cpp in Sources */,
-				7D7DA13F18F7DCEC00F417F6 /* ml.cpp in Sources */,
+				7DACBF76192BAC5D00F0E7D7 /* ml_hmm.cpp in Sources */,
+				7D7DA13F18F7DCEC00F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF57192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2865,7 +2891,8 @@
 			files = (
 				7D7DA14C18F7DD0600F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA14D18F7DD0600F417F6 /* ml_regression.cpp in Sources */,
-				7D7DA14E18F7DD0600F417F6 /* ml.cpp in Sources */,
+				7DACBF72192BAC3500F0E7D7 /* ml_peak.cpp in Sources */,
+				7D7DA14E18F7DD0600F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF58192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2876,8 +2903,9 @@
 			files = (
 				7D7DA15B18F7DD1C00F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA15C18F7DD1C00F417F6 /* ml_regression.cpp in Sources */,
-				7D7DA15D18F7DD1C00F417F6 /* ml.cpp in Sources */,
+				7D7DA15D18F7DD1C00F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF59192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DACBF73192BAC3900F0E7D7 /* ml_minmax.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2889,7 +2917,7 @@
 				7DA1F143190FE3F900F491FB /* ml_classification.cpp in Sources */,
 				7D551A93190FE60D008FF361 /* ml_softmax.cpp in Sources */,
 				7DA1F144190FE3F900F491FB /* ml_regression.cpp in Sources */,
-				7DA1F145190FE3F900F491FB /* ml.cpp in Sources */,
+				7DA1F145190FE3F900F491FB /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2901,7 +2929,7 @@
 				7DA1F152190FE40E00F491FB /* ml_classification.cpp in Sources */,
 				7DA1F153190FE40E00F491FB /* ml_regression.cpp in Sources */,
 				7D551A94190FE612008FF361 /* ml_randforest.cpp in Sources */,
-				7DA1F154190FE40E00F491FB /* ml.cpp in Sources */,
+				7DA1F154190FE40E00F491FB /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2913,7 +2941,7 @@
 				7D551A95190FE616008FF361 /* ml_mindist.cpp in Sources */,
 				7DA1F161190FE41A00F491FB /* ml_classification.cpp in Sources */,
 				7DA1F162190FE41A00F491FB /* ml_regression.cpp in Sources */,
-				7DA1F163190FE41A00F491FB /* ml.cpp in Sources */,
+				7DA1F163190FE41A00F491FB /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2937,7 +2965,7 @@
 				7DA1F12F190FDC2500F491FB /* ml_knn.cpp in Sources */,
 				7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */,
 				7D61B1081875F661000FD114 /* ml_logreg.cpp in Sources */,
-				E98573570D9E52D300682171 /* ml.cpp in Sources */,
+				E98573570D9E52D300682171 /* ml_ml.cpp in Sources */,
 				7DA1F13B190FDC6D00F491FB /* ml_softmax.cpp in Sources */,
 				7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */,
 				7DACBF50192B869600F0E7D7 /* ml_base.cpp in Sources */,
@@ -2965,7 +2993,7 @@
 				7DA1F130190FDC2500F491FB /* ml_knn.cpp in Sources */,
 				7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */,
 				7D61B1091875F661000FD114 /* ml_logreg.cpp in Sources */,
-				E98573580D9E52D300682171 /* ml.cpp in Sources */,
+				E98573580D9E52D300682171 /* ml_ml.cpp in Sources */,
 				7DA1F13C190FDC6D00F491FB /* ml_softmax.cpp in Sources */,
 				7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */,
 				7DACBF61192B869600F0E7D7 /* ml_base.cpp in Sources */,

@@ -50,7 +50,7 @@ namespace ml
     std::string get_symbol_as_string(const t_symbol *symbol);
     
     class ml:
-    public flext_base
+    public ml_base
     {
         FLEXT_HEADER_S(ml, flext_base, setup);
         

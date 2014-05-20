@@ -16,13 +16,14 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ml.h"
+#include "ml_ml.h"
 
 #include <vector>
 
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.svm";
     static const t_symbol *s_min  = flext::MakeSymbol("min");
     static const t_symbol *s_max  = flext::MakeSymbol("max");
     
@@ -53,7 +54,7 @@ namespace ml
             
             FLEXT_CADDMETHOD_(c, 0, "help", usage);
             
-            DefineHelp(c,"ml.minmax");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -75,6 +76,9 @@ namespace ml
         
         // Attribute wrappers
         FLEXT_CALLVAR_F(get_delta, set_delta);
+        
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
         
         // Instance variables
         double delta;
@@ -143,15 +147,15 @@ namespace ml
     
     void ml_minmax::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("delta: a float setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value. (default: 1e-6)");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
 #pragma mark - private methods
@@ -246,9 +250,9 @@ namespace ml
     typedef class ml_minmax ml0x2eminmax;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.minmax", ml_minmax);
+    FLEXT_LIB(ml_object_name.c_str(), ml_minmax);
 #else
-    FLEXT_NEW("ml.minmax", ml0x2eminmax);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2eminmax);
 #endif
     
     

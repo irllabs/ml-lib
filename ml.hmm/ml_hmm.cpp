@@ -20,6 +20,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.hmm";
+    
     class ml_hmm : ml_classification
     {
         FLEXT_HEADER_S(ml_hmm, ml_classification, setup);
@@ -27,7 +29,7 @@ namespace ml
     public:
         ml_hmm()
         {
-            post("ml.hmm: Hidden Markov Model based on the GRT library version %s", get_grt_version().c_str());
+            post("Hidden Markov Model based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
             set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
         }
@@ -57,7 +59,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
             FLEXT_CADDATTR_GET(c, "min_improvement", get_min_improvement);
             
-            DefineHelp(c,"ml.hmm");
+            DefineHelp(c,ml_object_name.c_str());
         }
         
         // Methods
@@ -100,6 +102,9 @@ namespace ml
         FLEXT_CALLVAR_I(get_num_random_training_iterations, set_num_random_training_iterations);
         FLEXT_CALLVAR_F(get_min_improvement, set_min_improvement);
         
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        
         // Instance variables
         GRT::HMM classifier;
         
@@ -112,7 +117,7 @@ namespace ml
 
         if (!success)
         {
-            flext::error("unable to set number of states");
+            error("unable to set number of states");
         }
     }
     
@@ -122,7 +127,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set number of symbols");
+            error("unable to set number of symbols");
         }
     }
     
@@ -132,7 +137,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set model type");
+            error("unable to set model type");
         }
     }
     
@@ -142,7 +147,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set delta");
+            error("unable to set delta");
         }
     }
     
@@ -152,7 +157,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set max number of iterations");
+            error("unable to set max number of iterations");
         }
     }
     
@@ -162,7 +167,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set number of random training iterations");
+            error("unable to set number of random training iterations");
         }
     }
     
@@ -172,7 +177,7 @@ namespace ml
         
         if (!success)
         {
-            flext::error("unable to set min improvement");
+            error("unable to set min improvement");
         }
     }
     
@@ -215,9 +220,9 @@ namespace ml
     // methods
     void ml_hmm::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
         post("num_states:\tinteger ( > 0) sets the number of states in the model (default 5)");
@@ -227,9 +232,9 @@ namespace ml
         post("max_num_iterations:\tinteger ( > 0) set the maximum number of training iterations (default 100)");
         post("num_random_training_iterations:\tinteger setting the number of random training iterations (default 10)");
         post("min_improvement:\tfloat sets the minimum improvement parameter which controls when the HMM training algorithm should stop (default 1.0e-2)");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -237,7 +242,7 @@ namespace ml
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         
     }
     
@@ -265,9 +270,9 @@ namespace ml
     typedef class ml_hmm ml0x2ehmm;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.hmm", ml_hmm);
+    FLEXT_LIB(ml_object_name.c_str(), ml_hmm);
 #else
-    FLEXT_NEW("ml.hmm", ml0x2ehmm);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2ehmm);
 #endif
     
 } //namespace ml

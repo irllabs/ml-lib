@@ -20,6 +20,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.mindist";
+    
     // Utility functions
     
     
@@ -31,7 +33,7 @@ namespace ml
     public:
         ml_mindist()
         {
-            post("ml.mindist: MinDist classifier algorithm based on the GRT library version %s", get_grt_version().c_str());
+            post("MinDist classifier algorithm based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
         }
         
@@ -52,7 +54,7 @@ namespace ml
             // Flext method messages
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,"ml.mindist");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -73,6 +75,9 @@ namespace ml
         
         // Flext attribute wrappers
         FLEXT_CALLVAR_I(get_num_clusters, set_num_clusters);
+        
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
         
         // Instance variables
         GRT::MinDist mindist;
@@ -97,17 +102,17 @@ namespace ml
     
     void ml_mindist::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
         post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
         post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
         post("num_clusters:\tinteger (n > 0) sets how many clusters each model will try to find during the training phase (default 10)");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -115,7 +120,7 @@ namespace ml
         post("clear:\tclear the stored training data and data_typel");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
     // Implement pure virtual methods
@@ -129,7 +134,7 @@ namespace ml
         return mindist;
     }
     
-    FLEXT_LIB("ml.mindist", ml_mindist);
+    FLEXT_LIB(ml_object_name.c_str(), ml_mindist);
     
 } //namespace ml
 

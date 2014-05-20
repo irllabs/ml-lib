@@ -20,6 +20,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.softmax";
+    
     // Utility functions
     
     
@@ -31,7 +33,7 @@ namespace ml
     public:
         ml_softmax()
         {
-            post("ml.softmax: Softmax algorithm based on the GRT library version %s", get_grt_version().c_str());
+            post("Softmax algorithm based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
         }
         
@@ -50,7 +52,7 @@ namespace ml
             // Flext method messages
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,"ml.softmax");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -67,6 +69,9 @@ namespace ml
         // Flext method wrappers
         
         // Flext attribute wrappers
+        
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
         
         // Instance variables
         GRT::Softmax softmax;
@@ -92,7 +97,7 @@ namespace ml
         return softmax;
     }
     
-    FLEXT_LIB("ml.softmax", ml_softmax);
+    FLEXT_LIB(ml_object_name.c_str(), ml_softmax);
     
 } //namespace ml
 

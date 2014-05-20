@@ -106,7 +106,7 @@ namespace ml
         
         if (argc < 0 || (unsigned)argc != numInputNeurons)
         {
-            error("invalid input length, expected %d, got %d", numInputNeurons, argc);
+            error("invalid input length, expected " + std::to_string(numInputNeurons) + " got " + std::to_string(argc));
         }
         
         for (uint32_t index = 0; index < (uint32_t)argc; ++index)
@@ -128,7 +128,7 @@ namespace ml
         
         if (numOutputDimensions != regressifier.getNumOutputDimensions())
         {
-            error("invalid output dimensions: %d", numOutputDimensions);
+            error("invalid output dimensions: " + std::to_string(numOutputDimensions));
             return;
         }
         
@@ -147,16 +147,16 @@ namespace ml
     
     void ml_regression::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
-        post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default %d)", defaultNumInputDimensions);
+        post(ML_LINE_SEPARATOR);
+        post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default " + std::to_string(defaultNumInputDimensions) + ")");
         post("training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)");
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -164,7 +164,7 @@ namespace ml
         post("clear:\tclear the stored training data and data_typel");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
 #pragma mark - pure virtual method implementation

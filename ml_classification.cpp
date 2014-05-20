@@ -8,6 +8,8 @@
 
 #include "ml_classification.h"
 
+#include <sstream>
+
 namespace ml
 {
     // Attribute Setters
@@ -144,7 +146,9 @@ namespace ml
         
         if (argc < 0 || (unsigned)argc != numInputFeatures)
         {
-            error("invalid input length, expected %d, got %d", numInputFeatures, argc);
+            std::stringstream ss;
+            ss << "invalid input length, expected " << numInputFeatures << ", got " << argc;
+            error(ss.str());
         }
         
         for (uint32_t index = 0; index < (uint32_t)argc; ++index)
@@ -236,16 +240,16 @@ namespace ml
     
     void ml_classification::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
         post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
         post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -253,7 +257,7 @@ namespace ml
         post("clear:\tclear the stored training data and data_typel");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
 #pragma mark - pure virtual method implementation

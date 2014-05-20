@@ -138,7 +138,7 @@ namespace ml
         }
         else
         {
-            error("unhandled data_type: %d", data_type);
+            error("unhandled data_type:" + std::to_string(data_type));
             return;
         }
         
@@ -150,10 +150,10 @@ namespace ml
             
             if (numInputDimensions < 1)
             {
-                error("invalid input length, expected at least %d", numOutputDimensions + 1);
+                error("invalid input length, expected at least " + std::to_string(numOutputDimensions + 1));
                 return;
             }
-            post("new input vector size, adjusting num_inputs to %d", numInputDimensions);
+            post("new input vector size, adjusting num_inputs to " + std::to_string(numInputDimensions));
             set_num_inputs(numInputDimensions);
         }
         
@@ -242,7 +242,8 @@ namespace ml
     void ml::record(bool state)
     {
         record_(state);
-        post("recording: %s", recording ? "on" : "off");
+        std::string record_state = recording ? "on" : "off";
+        post("recording: " + record_state);
     }
     
     void ml::save(const t_symbol *path) const
@@ -272,7 +273,7 @@ namespace ml
         
         if (!success)
         {
-            error("unable to save training data to path: %s", file_path.c_str());
+            error("unable to save training data to path: " + file_path);
         }
         
         SetInt(a_success, success);
@@ -294,7 +295,7 @@ namespace ml
         
         if (!success)
         {
-            error("unable to load training data from: %s, incorrect format?", file_path.c_str());
+            error("unable to load training data from: " + file_path + " incorrect format?");
         }
         
         SetInt(a_success, success);
@@ -329,14 +330,14 @@ namespace ml
     
     void ml::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -344,12 +345,12 @@ namespace ml
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
     void ml::any(const t_symbol *s, int argc, const t_atom *argv)
     {
-        error("messages with the selector '%s' are not supported", GetString(s));
+        error("messages with the selector '" + std::string(GetString(s)) + "' are not supported");
     }
     
     std::string ml::get_grt_version()
@@ -381,7 +382,7 @@ namespace ml
     {
         if (data_type > MLP_NUM_DATA_TYPES)
         {
-            error("invalid data type: %d", data_type);
+            error("invalid data type: %d" + std::to_string(data_type));
             return;
         }
         this->data_type = data_type;
@@ -406,10 +407,10 @@ namespace ml
 #ifdef BUILD_AS_LIBRARY
     static void main()
     {
-        post("%s", ML_LINE_SEPARATOR);
-        post("%s - machine learning library for Max and Pure Data", ML_NAME);
-        post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
-        post("%s", ML_LINE_SEPARATOR);
+        flext::post(ML_LINE_SEPARATOR);
+        flext::post("%s - machine learning library for Max and Pure Data", ML_NAME);
+        flext::post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
+        flext::post(ML_LINE_SEPARATOR);
         
         // call the objects' setup routines
         FLEXT_SETUP(ml_svm);

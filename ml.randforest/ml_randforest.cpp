@@ -20,6 +20,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.softmax";
+    
     // Utility functions
     
     
@@ -31,7 +33,7 @@ namespace ml
     public:
         ml_randforest()
         {
-            post("ml.randforest: Random Forests algorithm based on the GRT library version %s", get_grt_version().c_str());
+            post("Random Forests algorithm based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
         }
         
@@ -58,7 +60,7 @@ namespace ml
             // Flext method messages
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,"ml.randforest");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -86,6 +88,9 @@ namespace ml
         FLEXT_CALLVAR_I(get_num_random_splits, set_num_random_splits);
         FLEXT_CALLVAR_I(get_min_samples_per_node, set_min_samples_per_node);
         FLEXT_CALLVAR_I(get_max_depth, set_max_depth);
+        
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
         
         // Instance variables
         GRT::RandomForests randforest;
@@ -130,9 +135,9 @@ namespace ml
     // Methods
     void ml_randforest::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
         post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
@@ -141,9 +146,9 @@ namespace ml
         post("min_samples_per_node:\tinteger (n > 0) Sets the minimum number of samples that are allowed per node (default 5)");
         post("max_depth:\tinteger (n > 0) Sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node. (default 10)");
 
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -151,7 +156,7 @@ namespace ml
         post("clear:\tclear the stored training data and data_typel");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
     // Implement pure virtual methods
@@ -165,7 +170,7 @@ namespace ml
         return randforest;
     }
     
-    FLEXT_LIB("ml.randforest", ml_randforest);
+    FLEXT_LIB(ml_object_name.c_str(), ml_randforest);
     
 } //namespace ml
 

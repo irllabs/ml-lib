@@ -18,8 +18,12 @@
 
 #include "ml_classification.h"
 
+#include <sstream>
+
 namespace ml
 {
+    static const std::string ml_object_name = "ml.adaboost";
+    
     enum weak_classifiers_
     {
         DECISION_STUMP,
@@ -36,7 +40,7 @@ namespace ml
     public:
         ml_adaboost()
         {
-            post("ml.adaboost: Adaboost classifier based on the GRT library version %s", get_grt_version().c_str());
+            post("Adaboost classifier based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
         }
         
@@ -78,7 +82,7 @@ namespace ml
 //            FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,"ml.adaboost");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -105,6 +109,9 @@ namespace ml
         FLEXT_CALLSET_I(set_num_boosting_iterations);
         FLEXT_CALLSET_I(set_weak_classifier);
 
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
+                
         // Instance variables
         GRT::AdaBoost adaboost;
     };
@@ -121,10 +128,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set prediction method, must be %d or %d",
-                  GRT::AdaBoost::MAX_POSITIVE_VALUE,
-                  GRT::AdaBoost::MAX_VALUE
-                  );
+            error("unable to set prediction method, must be " + std::to_string(GRT::AdaBoost::MAX_POSITIVE_VALUE) + " or " + std::to_string(GRT::AdaBoost::MAX_VALUE));
         }
     }
     
@@ -152,7 +156,10 @@ namespace ml
         }
         else
         {
-            error("invalid weak classifier: %d, must be %d:DECISION_STUMP or %d:RADIAL_BASIS_FUNCTION", weak_classifier, DECISION_STUMP, RADIAL_BASIS_FUNCTION);
+            std::stringstream error_stream;
+            error_stream << "invalid weak classifier: " << weak_classifier << " must be " << DECISION_STUMP <<
+            ":DECISION_STUMP or " << RADIAL_BASIS_FUNCTION << ": RADIAL_BASIS_FUNCTION";
+            error(error_stream.str());
         }
     }
 
@@ -162,19 +169,21 @@ namespace ml
     // Methods
     void ml_adaboost::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
-        post("prediction_method:\tinteger (%d:MAX_VALUE or %d:MAX_POSITIVE_VALUE) sets the Adaboost prediction method (default %d)",
-             GRT::AdaBoost::MAX_VALUE, GRT::AdaBoost::MAX_POSITIVE_VALUE, GRT::AdaBoost::MAX_VALUE);
+        post(ML_LINE_SEPARATOR);
+        std::stringstream post_stream;
+        post_stream << "prediction_method:\tinteger (" << GRT::AdaBoost::MAX_VALUE << ":MAX_VALUE or " <<  GRT::AdaBoost::MAX_POSITIVE_VALUE << ":MAX_POSITIVE_VALUE) sets the Adaboost prediction method (default " << GRT::AdaBoost::MAX_VALUE << ")";
+        post(post_stream.str());
         post("num_boosting_iterations:\tinteger (>0) sets the number of boosting iterations that should be used when training the model (default 20)");
-        post("weak_classifier:\tinteger (%d:DECISION_STUMP or %d:RADIAL_BASIS_FUNCTION) sets the weak classifier to be used by Adaboost, (default: %d)", DECISION_STUMP, RADIAL_BASIS_FUNCTION, DECISION_STUMP);
-        post("%s", ML_LINE_SEPARATOR);
+        post_stream.clear();
+        post_stream << "weak_classifier:\tinteger (" << DECISION_STUMP << ":DECISION_STUMP or " << RADIAL_BASIS_FUNCTION << ":RADIAL_BASIS_FUNCTION) sets the weak classifier to be used by Adaboost, (default: " << DECISION_STUMP << ")";
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         // Method help here
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         
     }
     
@@ -192,9 +201,9 @@ namespace ml
     typedef class ml_adaboost ml0x2eadaboost;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.adaboost", ml_adaboost);
+    FLEXT_LIB(ml_object_name.c_str(), ml_adaboost);
 #else
-    FLEXT_NEW("ml.adaboost", ml0x2eadaboost);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2eadaboost);
 #endif
     
 } //namespace ml

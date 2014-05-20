@@ -16,10 +16,12 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ml.h"
+#include "ml_ml.h"
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.peak";
+    
     class ml_peak : flext_base
     {
         FLEXT_HEADER_S(ml_peak, flext_base, setup);
@@ -48,7 +50,7 @@ namespace ml
             FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
 //            FLEXT_CADDMETHOD_(c, 0, "peaks", peaks);
             
-            DefineHelp(c,"ml.peak");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -77,6 +79,9 @@ namespace ml
 //        FLEXT_CALLSET_I(set_low_pass_filter_size);
         FLEXT_CALLSET_I(set_search_window_size);
 
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        
         // Instance variables
         GRT::PeakDetection peakDetection;
         
@@ -197,28 +202,28 @@ namespace ml
 
     void ml_peak::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("search_window_size: an integer setting the search window size in values (default: 5)");
 
 //        post("low_pass_filter_size: an integer setting the low pass filter size (2 or higher)");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("float:\ta floating point value to the inlet updates the current value of the peak detector");
         post("reset:\treset the peak detector");
         post("timeout:\t (see GRT documentation)");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
     typedef class ml_peak ml0x2epeak;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.peak", ml_peak);
+    FLEXT_LIB(ml_object_name.c_str(), ml_peak);
 #else
-    FLEXT_NEW("ml.peak", ml0x2epeak);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2epeak);
 #endif
     
 } //namespace ml

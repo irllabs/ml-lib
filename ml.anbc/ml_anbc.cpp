@@ -22,6 +22,8 @@
 
 namespace ml
 {
+    static const std::string ml_object_name = "ml.anbc";
+    
     // Utility functions
     
     
@@ -33,7 +35,7 @@ namespace ml
     public:
         ml_anbc()
         {
-            post("ml.anbc: Adaptive Naive Bayes classifier based on the GRT library version %s", get_grt_version().c_str());
+            post("Adaptive Naive Bayes classifier based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
         }
         
@@ -49,7 +51,7 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "weights", set_weights);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,"ml.anbc");
+            DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
@@ -69,6 +71,9 @@ namespace ml
         
         // Flext attribute wrappers
         FLEXT_CALLSET_V(set_weights);
+        
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
         
         // Instance variables
         GRT::ANBC anbc;
@@ -93,7 +98,8 @@ namespace ml
         const t_atom *atomList = weights.Atoms();
         GRT::UINT classLabel = GetAInt(atomList[0]);
         
-        for (uint32_t count = 1; count < weights.Count(); ++count)
+        // Use int for count instead of uint32_t because weights.Count() returns int
+        for (int count = 1; count < weights.Count(); ++count)
         {
             weightsVector.push_back(GetAFloat(atomList[count]));
         }
@@ -108,16 +114,16 @@ namespace ml
     // Methods
     void ml_anbc::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("weights:\tvector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights");
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
         post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
         post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         // Method help here
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
@@ -126,7 +132,7 @@ namespace ml
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
     // Implement pure virtual methods
@@ -143,9 +149,9 @@ namespace ml
     typedef class ml_anbc ml0x2eanbc;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB("ml.anbc", ml_anbc);
+    FLEXT_LIB(ml_object_name.c_str(), ml_anbc);
 #else
-    FLEXT_NEW("ml.anbc", ml0x2eanbc);
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2eanbc);
 #endif
     
 } //namespace ml

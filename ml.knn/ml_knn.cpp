@@ -20,8 +20,10 @@
 
 namespace ml
 {
-    // Utility functions
     
+    static const std::string ml_object_name = "ml.knn";
+
+    // Utility functions
     
     // Class declaration
     class ml_knn : ml_classification
@@ -31,7 +33,7 @@ namespace ml
     public:
         ml_knn()
         {
-            post("ml.knn: Support Vector Machines based on the GRT library version %s", get_grt_version().c_str());
+            post("Support Vector Machines based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
         }
         
@@ -59,7 +61,7 @@ namespace ml
             // Flext method messages
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,"ml.knn");
+            DefineHelp(c,ml_object_name.c_str());
         }
         
         // Methods
@@ -90,6 +92,9 @@ namespace ml
         FLEXT_CALLVAR_I(get_min_k_search_value, set_min_k_search_value);
         FLEXT_CALLVAR_I(get_max_k_search_value, set_max_k_search_value);
         FLEXT_CALLVAR_B(get_best_k_value_search, set_best_k_value_search);
+        
+        // Virtual method override
+        virtual const std::string get_object_name(void) const { return ml_object_name; };
         
         // Instance variables
         GRT::KNN knn;
@@ -144,9 +149,9 @@ namespace ml
     
     void ml_knn::usage()
     {
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Attributes:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
         post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
         post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
@@ -155,9 +160,9 @@ namespace ml
         post("min_k_search_value:\tinteger (n > 0) sets the minimum K value to use when searching for the best K value. (default 1)");
         post("max_k_search_value:\tinteger (n > 0) sets the maximum K value to use when searching for the best K value. (default 10)");
         post("best_k_value_search:\tbool (0 or 1) set whether k value search is enabled or not (default 0)");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("Methods:");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
         post("save:\tsave training examples, first argument gives path to save location");
         post("load:\tload training examples, first argument gives path to the load location");
@@ -165,7 +170,7 @@ namespace ml
         post("clear:\tclear the stored training data and data_typel");
         post("map:\tgive the regression value for the input feature vector");
         post("help:\tpost this usage statement to the console");
-        post("%s", ML_LINE_SEPARATOR);
+        post(ML_LINE_SEPARATOR);
     }
     
     // Implement pure virtual methods
@@ -179,7 +184,7 @@ namespace ml
         return knn;
     }
     
-    FLEXT_LIB("ml.knn", ml_knn);
+    FLEXT_LIB(ml_object_name.c_str(), ml_knn);
     
 } //namespace ml
 
