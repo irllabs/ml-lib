@@ -23,7 +23,7 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.svm";
+    static const std::string ml_object_name = "ml.minmax";
     static const t_symbol *s_min  = flext::MakeSymbol("min");
     static const t_symbol *s_max  = flext::MakeSymbol("max");
     
@@ -166,8 +166,8 @@ namespace ml
                                   std::vector<uint32_t> &minima_locations
                                   )
     {
-        double  max = data[0];
-        double  min = data[0];
+        double  max = DBL_MIN;
+        double  min = DBL_MAX;
         uint32_t max_pos = 0;
         uint32_t min_pos = 0;
         bool    is_detecting_max = false;
@@ -184,8 +184,8 @@ namespace ml
             minima_locations.clear();
         }
         
-        // Use int32_t because the loop body decrements i
-        for(uint64_t i = 1; i < data.size(); ++i)
+        // Use int64_t because the loop body decrements i
+        for(int64_t i = 1; i < data.size(); ++i)
         {
             if(data[i] > max)
             {
