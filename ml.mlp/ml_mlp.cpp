@@ -154,8 +154,8 @@ namespace ml
         // Implement pure virtual methods
         GRT::MLBase &get_MLBase_instance();
         const GRT::MLBase &get_MLBase_instance() const;
-        bool load_specialised_data(std::string &path);
-        bool save_specialised_data(std::string &path) const;
+        bool read_specialised_data(std::string &path);
+        bool write_specialised_data(std::string &path) const;
         
     private:
         void set_activation_function(int activation_function, mlp_layer layer);
@@ -718,8 +718,8 @@ namespace ml
         post("Methods:");
         post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode, where N is determined by the num_outputs attribute");
-        post("save:\tsave training examples, first argument gives path to save location");
-        post("load:\tload training examples, first argument gives path to the load location");
+        post("write:\twrite training examples, first argument gives path to write location");
+        post("read:\tread training examples, first argument gives path to the read location");
         post("train:\ttrain the MLP based on vectors added with 'add'");
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode");
@@ -738,7 +738,7 @@ namespace ml
         return mlp;
     }
     
-    bool ml_mlp::load_specialised_data(std::string &path)
+    bool ml_mlp::read_specialised_data(std::string &path)
     {
         bool success = false;
         
@@ -761,7 +761,7 @@ namespace ml
         
     }
     
-    bool ml_mlp::save_specialised_data(std::string &path) const
+    bool ml_mlp::write_specialised_data(std::string &path) const
     {
         const ml_data_type data_type = get_data_type();
 
@@ -774,7 +774,7 @@ namespace ml
             return regressionData.saveDatasetToFile(path);
         }
         
-        flext::error("unable to save dataset, invalid data type: %d", data_type);
+        flext::error("unable to write dataset, invalid data type: %d", data_type);
         
         return false;
     }

@@ -246,7 +246,7 @@ namespace ml
         post("recording: " + record_state);
     }
     
-    void ml::save(const t_symbol *path) const
+    void ml::write(const t_symbol *path) const
     {
         bool success = false;
         t_atom a_success;
@@ -262,25 +262,25 @@ namespace ml
             )
         {
             error("no observations added, use 'add' to add training data");
-            ToOutAnything(1, s_save, 1, &a_success);
+            ToOutAnything(1, s_write, 1, &a_success);
             return;
         }
         
         if (!check_empty_with_error(file_path))
         {
-            success = save_specialised_data(file_path);
+            success = write_specialised_data(file_path);
         }
         
         if (!success)
         {
-            error("unable to save training data to path: " + file_path);
+            error("unable to write training data to path: " + file_path);
         }
         
         SetInt(a_success, success);
-        ToOutAnything(1, s_save, 1, &a_success);
+        ToOutAnything(1, s_write, 1, &a_success);
     }
     
-    void ml::load(const t_symbol *path)
+    void ml::read(const t_symbol *path)
     {
         bool success = false;
         t_atom a_success;
@@ -290,16 +290,16 @@ namespace ml
         
         if (!check_empty_with_error(file_path))
         {
-            success = load_specialised_data(file_path);
+            success = read_specialised_data(file_path);
         }
         
         if (!success)
         {
-            error("unable to load training data from: " + file_path + " incorrect format?");
+            error("unable to read training data from: " + file_path + " incorrect format?");
         }
         
         SetInt(a_success, success);
-        ToOutAnything(1, s_load, 1, &a_success);
+        ToOutAnything(1, s_read, 1, &a_success);
     }
     
     void ml::clear()
@@ -339,8 +339,8 @@ namespace ml
         post("Methods:");
         post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("save:\tsave training examples, first argument gives path to save location");
-        post("load:\tload training examples, first argument gives path to the load location");
+        post("write:\twrite training examples, first argument gives path to write location");
+        post("read:\tread training examples, first argument gives path to the read location");
         post("train:\ttrain the MLP based on vectors added with 'add'");
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the regression value for the input feature vector");
@@ -370,8 +370,8 @@ namespace ml
         FLEXT_CADDMETHOD(c, 0, any);
         FLEXT_CADDMETHOD_(c, 0, "add", add);
         FLEXT_CADDMETHOD_(c, 0, "record", record);
-        FLEXT_CADDMETHOD_(c, 0, "save", save);
-        FLEXT_CADDMETHOD_(c, 0, "load", load);
+        FLEXT_CADDMETHOD_(c, 0, "write", write);
+        FLEXT_CADDMETHOD_(c, 0, "read", read);
         FLEXT_CADDMETHOD_(c, 0, "train", train);
         FLEXT_CADDMETHOD_(c, 0, "clear", clear);
         FLEXT_CADDMETHOD_(c, 0, "map", map);
@@ -437,8 +437,8 @@ namespace ml
     
     const t_symbol *ml::s_train = flext::MakeSymbol("train");
     const t_symbol *ml::s_clear = flext::MakeSymbol("clear");
-    const t_symbol *ml::s_load = flext::MakeSymbol("load");
-    const t_symbol *ml::s_save = flext::MakeSymbol("save");
+    const t_symbol *ml::s_read = flext::MakeSymbol("read");
+    const t_symbol *ml::s_write = flext::MakeSymbol("write");
     const t_symbol *ml::s_probs = flext::MakeSymbol("probs");
     const t_symbol *ml::s_error = flext::MakeSymbol("error");
     

@@ -57,8 +57,8 @@ namespace ml
         virtual GRT::Classifier &get_Classifier_instance() = 0;
         virtual const GRT::Classifier &get_Classifier_instance() const = 0;
         
-        bool load_specialised_data(std::string &path);
-        bool save_specialised_data(std::string &path) const;
+        bool read_specialised_data(std::string &path);
+        bool write_specialised_data(std::string &path) const;
         
     private:
         bool get_num_samples() const;

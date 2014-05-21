@@ -87,8 +87,8 @@ namespace ml
         // Implement pure virtual methods
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
-        bool load_specialised_data(std::string &path);
-        bool save_specialised_data(std::string &path) const;
+        bool read_specialised_data(std::string &path);
+        bool write_specialised_data(std::string &path) const;
         
     private:
         // Method wrappers
@@ -236,8 +236,8 @@ namespace ml
         post("Methods:");
         post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("save:\tsave training examples, first argument gives path to save location");
-        post("load:\tload training examples, first argument gives path to the load location");
+        post("write:\twrite training examples, first argument gives path to write location");
+        post("read:\tread training examples, first argument gives path to the read location");
         post("train:\ttrain the MLP based on vectors added with 'add'");
         post("clear:\tclear the stored training data and model");
         post("map:\tgive the regression value for the input feature vector");
@@ -257,12 +257,12 @@ namespace ml
         return classifier;
     }
     
-    bool ml_hmm::load_specialised_data(std::string &path)
+    bool ml_hmm::read_specialised_data(std::string &path)
     {
         return timeSeriesClassificationData.loadDatasetFromFile(path);
     }
 
-    bool ml_hmm::save_specialised_data(std::string &path) const
+    bool ml_hmm::write_specialised_data(std::string &path) const
     {
         return timeSeriesClassificationData.saveDatasetToFile(path);
     }

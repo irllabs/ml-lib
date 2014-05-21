@@ -62,14 +62,14 @@ namespace ml
         
         static const t_symbol *s_train;
         static const t_symbol *s_clear;
-        static const t_symbol *s_load;
-        static const t_symbol *s_save;
+        static const t_symbol *s_read;
+        static const t_symbol *s_write;
         static const t_symbol *s_probs;
         static const t_symbol *s_error;
                 
         virtual void add(int argc, const t_atom *argv);
-        virtual void save(const t_symbol *path) const;
-        virtual void load(const t_symbol *path);
+        virtual void write(const t_symbol *path) const;
+        virtual void read(const t_symbol *path);
         virtual void train();
         virtual void clear();
         virtual void map(int argc, const t_atom *argv);
@@ -83,8 +83,8 @@ namespace ml
         
         virtual GRT::MLBase &get_MLBase_instance() = 0;
         virtual const GRT::MLBase &get_MLBase_instance() const = 0;
-        virtual bool load_specialised_data(std::string &path) = 0;
-        virtual bool save_specialised_data(std::string &path) const = 0;
+        virtual bool read_specialised_data(std::string &path) = 0;
+        virtual bool write_specialised_data(std::string &path) const = 0;
         
         bool check_empty_with_error(std::string &string) const;
         
@@ -115,8 +115,8 @@ namespace ml
         FLEXT_CALLBACK_A(any);
         FLEXT_CALLBACK_V(add);
         FLEXT_CALLBACK_B(record);
-        FLEXT_CALLBACK_S(save);
-        FLEXT_CALLBACK_S(load);
+        FLEXT_CALLBACK_S(write);
+        FLEXT_CALLBACK_S(read);
         FLEXT_CALLBACK(train);
         FLEXT_CALLBACK(clear);
         FLEXT_CALLBACK_V(map);

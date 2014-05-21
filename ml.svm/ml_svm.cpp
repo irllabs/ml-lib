@@ -423,8 +423,8 @@ namespace ml
         post("Methods:");
         post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("save:\tsave a trained model, first argument gives path to save location");
-        post("load:\tload a trained model, first argument gives path to the load location");
+        post("write:\twrite a trained model, first argument gives path to write location");
+        post("read:\tread a trained model, first argument gives path to the read location");
         post("cross_validation:\t\tperform cross-validation");
         post("train:\ttrain the SVM based on labelled vectors added with 'add'");
         post("clear:\tclear the stored training data and model");

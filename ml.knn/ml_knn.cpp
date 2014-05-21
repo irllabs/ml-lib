@@ -164,8 +164,8 @@ namespace ml
         post("Methods:");
         post(ML_LINE_SEPARATOR);
         post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("save:\tsave training examples, first argument gives path to save location");
-        post("load:\tload training examples, first argument gives path to the load location");
+        post("write:\twrite training examples, first argument gives path to write location");
+        post("read:\tread training examples, first argument gives path to the read location");
         post("train:\ttrain the MLP based on vectors added with 'add'");
         post("clear:\tclear the stored training data and data_typel");
         post("map:\tgive the regression value for the input feature vector");

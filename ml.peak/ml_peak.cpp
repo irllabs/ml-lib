@@ -160,14 +160,14 @@ namespace ml
     void ml_peak::update(float f)
     {
         // TODO: update this when we the GRT code is complete
-        error("peak detection currently not fully implemented in GRT");
-        return;
-        
+//        error("peak detection currently not fully implemented in GRT");
+//        return;
+//        
         
         bool peakFound = peakDetection.update(f);
-        float derivative = 0; // peakDetection.getDerivative();
+//        float derivative = peakDetection.getDerivative();
 
-        ToOutFloat(1, derivative);
+//        ToOutFloat(1, derivative);
         
         if (peakFound)
         {
