@@ -16,7 +16,9 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ml_ml.h"
+#include "ml_base.h"
+
+#include "GRT.h"
 
 #include <vector>
 
@@ -29,13 +31,13 @@ namespace ml
     
     class ml_minmax : flext_base
     {
-        FLEXT_HEADER_S(ml_minmax, flext_base, setup);
+        FLEXT_HEADER_S(ml_minmax, ml_base, setup);
         
     public:
         ml_minmax()
         : delta(1e-6)
         {
-            post("ml.minmax: Peak / valley detection based on Eli Billauer's peakdet");
+            post("Peak / valley detection based on Eli Billauer's peakdet");
             FLEXT_ADDMETHOD(0, input);
         }
         

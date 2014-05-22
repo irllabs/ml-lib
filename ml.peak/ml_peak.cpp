@@ -16,20 +16,22 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ml_ml.h"
+#include "ml_base.h"
+
+#include "GRT.h"
 
 namespace ml
 {
     static const std::string ml_object_name = "ml.peak";
     
-    class ml_peak : flext_base
+    class ml_peak : ml_base
     {
-        FLEXT_HEADER_S(ml_peak, flext_base, setup);
+        FLEXT_HEADER_S(ml_peak, ml_base, setup);
         
     public:
         ml_peak()
         {
-            post("ml.peak: Peak Detection based on the GRT library version %s", GRT::GRTBase::getGRTRevison().c_str());
+            post("Peak Detection based on the GRT library version " + GRT::GRTBase::getGRTRevison());
             FLEXT_ADDMETHOD(0, update);
             FLEXT_ADDMETHOD(0, peaks);
         }
