@@ -29,7 +29,7 @@ namespace ml
     // Class declaration
     class ml_dtree : ml_classification
     {
-        FLEXT_HEADER_S(ml_dtree, ml, setup);
+        FLEXT_HEADER_S(ml_dtree, ml_classification, setup);
         
     public:
         ml_dtree()

@@ -28,7 +28,7 @@ namespace ml
     // Class declaration
     class ml_softmax : ml_classification
     {
-        FLEXT_HEADER_S(ml_softmax, ml, setup);
+        FLEXT_HEADER_S(ml_softmax, ml_classification, setup);
         
     public:
         ml_softmax()

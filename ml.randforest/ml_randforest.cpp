@@ -28,7 +28,7 @@ namespace ml
     // Class declaration
     class ml_randforest : ml_classification
     {
-        FLEXT_HEADER_S(ml_randforest, ml, setup);
+        FLEXT_HEADER_S(ml_randforest, ml_classification, setup);
         
     public:
         ml_randforest()

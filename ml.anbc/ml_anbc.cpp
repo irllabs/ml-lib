@@ -30,7 +30,7 @@ namespace ml
     // Class declaration
     class ml_anbc : ml_classification
     {
-        FLEXT_HEADER_S(ml_anbc, ml, setup);
+        FLEXT_HEADER_S(ml_anbc, ml_classification, setup);
         
     public:
         ml_anbc()
@@ -65,7 +65,7 @@ namespace ml
         // Pure virtual method implementations
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
-        
+             
     private:
         // Flext method wrappers
         

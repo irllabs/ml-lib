@@ -178,12 +178,12 @@ namespace ml
         return get_Regressifier_instance();
     }
     
-    bool ml_regression::read_specialised_data(std::string &path)
+    bool ml_regression::read_specialised_dataset(std::string &path)
     {
         return regressionData.loadDatasetFromFile(path);
     }
     
-    bool ml_regression::write_specialised_data(std::string &path) const
+    bool ml_regression::write_specialised_dataset(std::string &path) const
     {
         return regressionData.saveDatasetToFile(path);
     }

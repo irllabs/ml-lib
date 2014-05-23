@@ -18,12 +18,18 @@
 
 #include "ml_ml.h"
 
+#include <string>
+
 namespace ml
 {
     
+#pragma mark - Constants
+    const std::string k_model_extension = ".model";
+    const std::string k_data_extension = ".data";
+    
 #pragma mark - Utility methods
     
-    std::string get_symbol_as_string(const t_symbol *symbol)
+    const std::string get_symbol_as_string(const t_symbol *symbol)
     {
         const char *c_string = flext::GetAString(symbol);
         std::string cpp_string = c_string != NULL ? c_string : "";
@@ -31,7 +37,49 @@ namespace ml
         return cpp_string;
     }
     
-    void error();
+    const std::string get_file_extension_from_path(const std::string &path_)
+    {
+        std::string extension;
+        std::string path = path_;
+        
+        size_t sep = path.find_last_of("\\/");
+        
+        if (sep != std::string::npos)
+        {
+            path = path.substr(sep + 1, path.size() - sep - 1);
+        }
+        
+        size_t dot = path.find_last_of(".");
+        
+        if (dot != std::string::npos)
+        {
+            extension = path.substr(dot, path.size() - dot);
+        }
+        
+        extension = extension == "." ? "" : extension;
+        
+        return  extension;
+    }
+    
+    void get_data_file_paths(const std::string &supplied_path, std::string &data_path, std::string &model_path)
+    {
+        std::string extension = get_file_extension_from_path(supplied_path);
+        
+        if (extension == k_model_extension)
+        {
+            model_path = supplied_path;
+        }
+        else if (extension == k_data_extension)
+        {
+            data_path = supplied_path;
+        }
+        else
+        {
+            data_path = supplied_path + k_data_extension;
+            model_path = supplied_path + k_model_extension;
+        }
+    }
+    
     
 #pragma mark - ml implementation
     
@@ -253,6 +301,7 @@ namespace ml
         SetInt(a_success, success);
         const ml_data_type data_type = get_data_type();
         std::string file_path = get_symbol_as_string(path);
+        GRT::MLBase mlBase = get_MLBase_instance();
         
         if (
             (data_type == LABELLED_REGRESSION && regressionData.getNumSamples() == 0) ||
@@ -266,16 +315,43 @@ namespace ml
             return;
         }
         
-        if (!check_empty_with_error(file_path))
+        if (check_empty_with_error(file_path))
         {
-            success = write_specialised_data(file_path);
+            return;
         }
         
-        if (!success)
+        std::string dataset_file_path;
+        std::string model_file_path;
+        
+        get_data_file_paths(file_path, dataset_file_path, model_file_path);
+        
+        if (!dataset_file_path.empty())
         {
-            error("unable to write training data to path: " + file_path);
+            success = write_specialised_dataset(dataset_file_path);
+        
+            if (!success)
+            {
+                error("unable to write training data to path: " + dataset_file_path);
+            }
         }
         
+        if (!model_file_path.empty())
+        {
+            if (mlBase.getTrained())
+            {
+                success = mlBase.saveModelToFile(model_file_path);
+                
+                if (!success)
+                {
+                    error("unable to write model to path: " + model_file_path);
+                }
+            }
+            else if (get_file_extension_from_path(file_path) == k_model_extension)
+            {
+                error("model not trained, use 'train' to train a model");
+            }
+        }
+       
         SetInt(a_success, success);
         ToOutAnything(1, s_write, 1, &a_success);
     }
@@ -285,17 +361,38 @@ namespace ml
         bool success = false;
         t_atom a_success;
         SetInt(a_success, success);
+        GRT::MLBase mlBase = get_MLBase_instance();
 
         std::string file_path = get_symbol_as_string(path);
         
-        if (!check_empty_with_error(file_path))
+        if (check_empty_with_error(file_path))
         {
-            success = read_specialised_data(file_path);
+            return;
         }
         
-        if (!success)
+        std::string dataset_file_path;
+        std::string model_file_path;
+        
+        get_data_file_paths(file_path, dataset_file_path, model_file_path);
+
+        if (!dataset_file_path.empty())
         {
-            error("unable to read training data from: " + file_path + " incorrect format?");
+            success = read_specialised_dataset(dataset_file_path);
+            
+            if (!success)
+            {
+                error("unable to read training data from path: " + dataset_file_path);
+            }
+        }
+        
+        if (!model_file_path.empty())
+        {
+            success = mlBase.loadModelFromFile(model_file_path);
+            
+            if (!success)
+            {
+                error("unable to read model from path: " + model_file_path);
+            }
         }
         
         SetInt(a_success, success);

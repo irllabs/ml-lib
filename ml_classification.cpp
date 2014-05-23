@@ -271,12 +271,12 @@ namespace ml
         return get_Classifier_instance();
     }
     
-    bool ml_classification::read_specialised_data(std::string &path)
+    bool ml_classification::read_specialised_dataset(std::string &path)
     {
         return classificationData.loadDatasetFromFile(path);
     }
     
-    bool ml_classification::write_specialised_data(std::string &path) const
+    bool ml_classification::write_specialised_dataset(std::string &path) const
     {
         return classificationData.saveDatasetToFile(path);
     }

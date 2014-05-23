@@ -84,8 +84,8 @@ namespace ml
         // Implement pure virtual methods
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
-        bool read_specialised_data(std::string &path);
-        bool write_specialised_data(std::string &path) const;
+        bool read_specialised_dataset(std::string &path);
+        bool write_specialised_dataset(std::string &path) const;
         
     private:
         // Method wrappers
@@ -248,12 +248,12 @@ namespace ml
         return classifier;
     }
     
-    bool ml_dtw::read_specialised_data(std::string &path)
+    bool ml_dtw::read_specialised_dataset(std::string &path)
     {
         return timeSeriesClassificationData.loadDatasetFromFile(path);
     }
     
-    bool ml_dtw::write_specialised_data(std::string &path) const
+    bool ml_dtw::write_specialised_dataset(std::string &path) const
     {
         return timeSeriesClassificationData.saveDatasetToFile(path);
     }

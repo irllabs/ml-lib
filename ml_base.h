@@ -28,8 +28,6 @@
 #define ML_NAME "ml-lib"
 #define ML_LINE_SEPARATOR "---------------------------------------"
 
-
-
 namespace ml
 {
     class ml_base:

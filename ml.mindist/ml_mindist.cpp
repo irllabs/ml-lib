@@ -28,7 +28,7 @@ namespace ml
     // Class declaration
     class ml_mindist : ml_classification
     {
-        FLEXT_HEADER_S(ml_mindist, ml, setup);
+        FLEXT_HEADER_S(ml_mindist, ml_classification, setup);
         
     public:
         ml_mindist()

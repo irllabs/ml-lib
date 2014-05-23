@@ -28,7 +28,7 @@ namespace ml
     // Class declaration
     class ml_knn : ml_classification
     {
-        FLEXT_HEADER_S(ml_knn, ml, setup);
+        FLEXT_HEADER_S(ml_knn, ml_classification, setup);
         
     public:
         ml_knn()

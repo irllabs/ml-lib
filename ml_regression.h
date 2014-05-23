@@ -63,8 +63,8 @@ namespace ml
         virtual GRT::Regressifier &get_Regressifier_instance() = 0;
         virtual const GRT::Regressifier &get_Regressifier_instance() const = 0;
         
-        bool read_specialised_data(std::string &path);
-        bool write_specialised_data(std::string &path) const;
+        bool read_specialised_dataset(std::string &path);
+        bool write_specialised_dataset(std::string &path) const;
 
         
     private:

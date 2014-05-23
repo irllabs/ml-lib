@@ -95,7 +95,7 @@ namespace ml
     
     class ml_svm : ml_classification
     {
-        FLEXT_HEADER_S(ml_svm, ml, setup);
+        FLEXT_HEADER_S(ml_svm, ml_classification, setup);
         
     public:
         ml_svm()

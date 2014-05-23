@@ -154,8 +154,8 @@ namespace ml
         // Implement pure virtual methods
         GRT::MLBase &get_MLBase_instance();
         const GRT::MLBase &get_MLBase_instance() const;
-        bool read_specialised_data(std::string &path);
-        bool write_specialised_data(std::string &path) const;
+        bool read_specialised_dataset(std::string &path);
+        bool write_specialised_dataset(std::string &path) const;
         
     private:
         void set_activation_function(int activation_function, mlp_layer layer);
@@ -738,7 +738,7 @@ namespace ml
         return mlp;
     }
     
-    bool ml_mlp::read_specialised_data(std::string &path)
+    bool ml_mlp::read_specialised_dataset(std::string &path)
     {
         bool success = false;
         
@@ -761,7 +761,7 @@ namespace ml
         
     }
     
-    bool ml_mlp::write_specialised_data(std::string &path) const
+    bool ml_mlp::write_specialised_dataset(std::string &path) const
     {
         const ml_data_type data_type = get_data_type();
 

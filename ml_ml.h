@@ -47,7 +47,8 @@ namespace ml
     const GRT::UINT defaultNumOutputDimensions = 1;
     
     // Utility functions
-    std::string get_symbol_as_string(const t_symbol *symbol);
+    const std::string get_symbol_as_string(const t_symbol *symbol);
+    const std::string get_file_extension_from_path(const std::string &path); // can be a full path or just file name
     
     class ml:
     public ml_base
@@ -83,8 +84,8 @@ namespace ml
         
         virtual GRT::MLBase &get_MLBase_instance() = 0;
         virtual const GRT::MLBase &get_MLBase_instance() const = 0;
-        virtual bool read_specialised_data(std::string &path) = 0;
-        virtual bool write_specialised_data(std::string &path) const = 0;
+        virtual bool read_specialised_dataset(std::string &path) = 0;
+        virtual bool write_specialised_dataset(std::string &path) const = 0;
         
         bool check_empty_with_error(std::string &string) const;
         
