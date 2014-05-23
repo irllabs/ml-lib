@@ -24,7 +24,7 @@
 
 #include <string>
 
-#define ML_VERSION "0.14.0"
+#define ML_VERSION "0.15.0"
 #define ML_NAME "ml-lib"
 #define ML_LINE_SEPARATOR "---------------------------------------"
 
