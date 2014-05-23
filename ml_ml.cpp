@@ -301,7 +301,7 @@ namespace ml
         SetInt(a_success, success);
         const ml_data_type data_type = get_data_type();
         std::string file_path = get_symbol_as_string(path);
-        GRT::MLBase mlBase = get_MLBase_instance();
+        const GRT::MLBase &mlBase = get_MLBase_instance();
         
         if (
             (data_type == LABELLED_REGRESSION && regressionData.getNumSamples() == 0) ||
@@ -361,7 +361,7 @@ namespace ml
         bool success = false;
         t_atom a_success;
         SetInt(a_success, success);
-        GRT::MLBase mlBase = get_MLBase_instance();
+        GRT::MLBase &mlBase = get_MLBase_instance();
 
         std::string file_path = get_symbol_as_string(path);
         
