@@ -1,7 +1,0 @@
-NAME=ml.minmax
-SRCS=ml.cpp ml.minmax/ml_minmax.cpp 
-
-INCPATH+=-I./external/include/GRT -I./external/include -I./external/include/flext -I.
-LIBPATH+=-L/usr/local/lib
-LIBS+=-lgrt
-CFLAGS+=-DFLEXT_SYS=2 -DFLEXT_ATTRIBUTES=1 -DFLEXT_USE_HEX_SETUP_NAME
