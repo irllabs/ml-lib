@@ -1,4 +1,7 @@
-source package.common.txt
-NAME=ml.svm
-SRCS=ml_ml.cpp ml_base.cpp ml_classification.cpp ml.svm/ml_svm.cpp 
+INCPATH+=-I../../dependencies/include/GRT -I../../dependencies/include -I../../dependencies/include/flext -I../../sources
+LIBPATH+=-L/usr/local/lib
+LIBS+=-lgrt
 
+CFLAGS+=-std=c++0x -DFLEXT_SYS=2 -DFLEXT_ATTRIBUTES=1 -DFLEXT_USE_HEX_SETUP_NAME
+NAME=ml.svm
+SRCS=../../sources/ml_ml.cpp ../../sources/ml_base.cpp ../../sources/classification/ml_classification.cpp ../../sources/classification/ml_svm.cpp
