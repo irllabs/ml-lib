@@ -1,0 +1,4 @@
+source package.common.txt
+NAME=ml.svm
+SRCS=ml_ml.cpp ml_base.cpp ml_classification.cpp ml.svm/ml_svm.cpp 
+
