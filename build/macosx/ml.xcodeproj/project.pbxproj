@@ -302,6 +302,7 @@
 		7DACBF7D192BAD2500F0E7D7 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7DACBF7E192BAD2900F0E7D7 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
 		7DACBF7F192BAD2F00F0E7D7 /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
+		7DD669111989098F008EF46E /* libflext-max_sd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAE097818F40FB100049C24 /* libflext-max_sd.a */; };
 		7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
 		7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
@@ -638,9 +639,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ml.mlp/ml_mlp.cpp; sourceTree = "<group>"; };
-		7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = ml.adaboost/ml_adaboost.cpp; sourceTree = "<group>"; };
-		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ml.hmm/ml_hmm.cpp; sourceTree = "<group>"; };
+		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ../../sources/regression/ml_mlp.cpp; sourceTree = "<group>"; };
+		7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = ../../sources/classification/ml_adaboost.cpp; sourceTree = "<group>"; };
+		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ../../sources/classification/ml_hmm.cpp; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D551A65190FE514008FF361 /* ml.lda.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.lda.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D551A74190FE523008FF361 /* ml.knn.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.knn.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -653,11 +654,11 @@
 		7D551AE8190FEA37008FF361 /* ml.knn.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.knn.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D551AF8190FEA66008FF361 /* ml.gmm.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.gmm.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D551B08190FEA80008FF361 /* ml.dtree.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.dtree.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D61B1011875CAF9000FD114 /* ml_linreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_linreg.cpp; path = ml.linreg/ml_linreg.cpp; sourceTree = "<group>"; };
-		7D61B1061875F661000FD114 /* ml_logreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_logreg.cpp; path = ml.logreg/ml_logreg.cpp; sourceTree = "<group>"; };
-		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ml.dtw/ml_dtw.cpp; sourceTree = "<group>"; };
-		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ml.peak/ml_peak.cpp; sourceTree = "<group>"; };
-		7D6511D718F4366F0050C9C8 /* libgrt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgrt.a; sourceTree = "<group>"; };
+		7D61B1011875CAF9000FD114 /* ml_linreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_linreg.cpp; path = ../../sources/regression/ml_linreg.cpp; sourceTree = "<group>"; };
+		7D61B1061875F661000FD114 /* ml_logreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_logreg.cpp; path = ../../sources/regression/ml_logreg.cpp; sourceTree = "<group>"; };
+		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ../../sources/classification/ml_dtw.cpp; sourceTree = "<group>"; };
+		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ../../sources/feature_extraction/ml_peak.cpp; sourceTree = "<group>"; };
+		7D6511D718F4366F0050C9C8 /* libgrt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrt.a; path = ../../dependencies/lib/macosx/libgrt.a; sourceTree = "<group>"; };
 		7D7D9FEF18F6948E00F417F6 /* ml.svm.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.svm.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA00918F699D800F417F6 /* ml.adaboost.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.adaboost.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA02318F69AD400F417F6 /* ml.linreg.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.linreg.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -668,17 +669,17 @@
 		7D7DA09B18F69B5A00F417F6 /* ml.peak.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.peak.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA0B318F69B7100F417F6 /* ml.minmax.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.minmax.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA0DA18F6A63E00F417F6 /* ml.svm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.svm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_anbc.cpp; path = ml.anbc/ml_anbc.cpp; sourceTree = "<group>"; };
-		7D7DA0E018F7CF3700F417F6 /* ml.adaboost.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.adaboost.maxhelp; path = ml.adaboost/ml.adaboost.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E218F7CFA300F417F6 /* ml.dtw.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.dtw.maxhelp; path = ml.dtw/ml.dtw.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E318F7CFA300F417F6 /* ml.hmm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.hmm.maxhelp; path = ml.hmm/ml.hmm.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E418F7CFA300F417F6 /* ml.linreg.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.linreg.maxhelp; path = ml.linreg/ml.linreg.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E518F7CFA300F417F6 /* ml.logreg.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.logreg.maxhelp; path = ml.logreg/ml.logreg.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E618F7CFA300F417F6 /* ml.minmax.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.minmax.maxhelp; path = ml.minmax/ml.minmax.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.mlp.maxhelp; path = ml.mlp/ml.mlp.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E818F7CFA300F417F6 /* ml.peak.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.peak.maxhelp; path = ml.peak/ml.peak.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E918F7CFA300F417F6 /* ml.svm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.svm.maxhelp; path = ml.svm/ml.svm.maxhelp; sourceTree = "<group>"; };
-		7D7DA0EB18F7CFD200F417F6 /* ml.svm-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ml.svm-help.pd"; path = "ml.svm/ml.svm-help.pd"; sourceTree = "<group>"; };
+		7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_anbc.cpp; path = ../../sources/classification/ml_anbc.cpp; sourceTree = "<group>"; };
+		7D7DA0E018F7CF3700F417F6 /* ml.adaboost.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.adaboost.maxhelp; path = ../../documentation/help/max/ml.adaboost.maxhelp; sourceTree = "<group>"; };
+		7D7DA0E218F7CFA300F417F6 /* ml.dtw.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.dtw.maxhelp; path = ../../documentation/help/max/ml.dtw.maxhelp; sourceTree = "<group>"; };
+		7D7DA0E318F7CFA300F417F6 /* ml.hmm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.hmm.maxhelp; path = ../../documentation/help/max/ml.hmm.maxhelp; sourceTree = "<group>"; };
+		7D7DA0E418F7CFA300F417F6 /* ml.linreg.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.linreg.maxhelp; path = ../../documentation/help/max/ml.linreg.maxhelp; sourceTree = "<group>"; };
+		7D7DA0E518F7CFA300F417F6 /* ml.logreg.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.logreg.maxhelp; path = ../../documentation/help/max/ml.logreg.maxhelp; sourceTree = "<group>"; };
+		7D7DA0E618F7CFA300F417F6 /* ml.minmax.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.minmax.maxhelp; path = ../../documentation/help/max/ml.minmax.maxhelp; sourceTree = "<group>"; };
+		7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.mlp.maxhelp; path = ../../documentation/help/max/ml.mlp.maxhelp; sourceTree = "<group>"; };
+		7D7DA0E818F7CFA300F417F6 /* ml.peak.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.peak.maxhelp; path = ../../documentation/help/max/ml.peak.maxhelp; sourceTree = "<group>"; };
+		7D7DA0E918F7CFA300F417F6 /* ml.svm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.svm.maxhelp; path = ../../documentation/help/max/ml.svm.maxhelp; sourceTree = "<group>"; };
+		7D7DA0EB18F7CFD200F417F6 /* ml.svm-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ml.svm-help.pd"; path = "../../documentation/help/pd/ml.svm-help.pd"; sourceTree = "<group>"; };
 		7D7DA0FA18F7DC5600F417F6 /* ml.adaboost.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.adaboost.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA10918F7DC8900F417F6 /* ml.linreg.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.linreg.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA11818F7DCA600F417F6 /* ml.logreg.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.logreg.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -687,52 +688,52 @@
 		7D7DA14518F7DCEC00F417F6 /* ml.hmm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.hmm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA15418F7DD0600F417F6 /* ml.peak.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.peak.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA16318F7DD1C00F417F6 /* ml.minmax.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.minmax.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D88175F18EEF5EE002426FB /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
-		7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
-		7D88176318EEF6A2002426FB /* ml_minmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_minmax.cpp; path = ml.minmax/ml_minmax.cpp; sourceTree = "<group>"; };
-		7DA1F128190FDAC100F491FB /* ml_dtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtree.cpp; path = ml.dtree/ml_dtree.cpp; sourceTree = "<group>"; };
-		7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_gmm.cpp; path = ml.gmm/ml_gmm.cpp; sourceTree = "<group>"; };
-		7DA1F12E190FDC2500F491FB /* ml_knn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_knn.cpp; path = ml.knn/ml_knn.cpp; sourceTree = "<group>"; };
-		7DA1F131190FDC3300F491FB /* ml_lda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_lda.cpp; path = ml.lda/ml_lda.cpp; sourceTree = "<group>"; };
-		7DA1F134190FDC4800F491FB /* ml_mindist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mindist.cpp; path = ml.mindist/ml_mindist.cpp; sourceTree = "<group>"; };
-		7DA1F137190FDC6100F491FB /* ml_randforest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_randforest.cpp; path = ml.randforest/ml_randforest.cpp; sourceTree = "<group>"; };
-		7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_softmax.cpp; path = ml.softmax/ml_softmax.cpp; sourceTree = "<group>"; };
+		7D88175F18EEF5EE002426FB /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
+		7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
+		7D88176318EEF6A2002426FB /* ml_minmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_minmax.cpp; path = ../../sources/feature_extraction/ml_minmax.cpp; sourceTree = "<group>"; };
+		7DA1F128190FDAC100F491FB /* ml_dtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtree.cpp; path = ../../sources/classification/ml_dtree.cpp; sourceTree = "<group>"; };
+		7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_gmm.cpp; path = ../../sources/classification/ml_gmm.cpp; sourceTree = "<group>"; };
+		7DA1F12E190FDC2500F491FB /* ml_knn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_knn.cpp; path = ../../sources/classification/ml_knn.cpp; sourceTree = "<group>"; };
+		7DA1F131190FDC3300F491FB /* ml_lda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_lda.cpp; path = ../../sources/classification/ml_lda.cpp; sourceTree = "<group>"; };
+		7DA1F134190FDC4800F491FB /* ml_mindist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mindist.cpp; path = ../../sources/classification/ml_mindist.cpp; sourceTree = "<group>"; };
+		7DA1F137190FDC6100F491FB /* ml_randforest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_randforest.cpp; path = ../../sources/classification/ml_randforest.cpp; sourceTree = "<group>"; };
+		7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_softmax.cpp; path = ../../sources/classification/ml_softmax.cpp; sourceTree = "<group>"; };
 		7DA1F14B190FE3F900F491FB /* ml.softmax.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.softmax.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA1F15A190FE40E00F491FB /* ml.randforest.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.randforest.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA1F169190FE41A00F491FB /* ml.mindist.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.mindist.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DACBF4E192B82F900F0E7D7 /* ml_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml_base.h; sourceTree = "<group>"; };
-		7DACBF4F192B869600F0E7D7 /* ml_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml_base.cpp; sourceTree = "<group>"; };
-		7DAE08AD18F40FB100049C24 /* flbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flbase.h; sourceTree = "<group>"; };
-		7DAE08AE18F40FB100049C24 /* flclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flclass.h; sourceTree = "<group>"; };
-		7DAE08AF18F40FB100049C24 /* flcontainers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flcontainers.h; sourceTree = "<group>"; };
-		7DAE08B018F40FB100049C24 /* fldefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs.h; sourceTree = "<group>"; };
-		7DAE08B118F40FB100049C24 /* fldefs_attradd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_attradd.h; sourceTree = "<group>"; };
-		7DAE08B218F40FB100049C24 /* fldefs_attrcb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_attrcb.h; sourceTree = "<group>"; };
-		7DAE08B318F40FB100049C24 /* fldefs_attrvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_attrvar.h; sourceTree = "<group>"; };
-		7DAE08B418F40FB100049C24 /* fldefs_hdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_hdr.h; sourceTree = "<group>"; };
-		7DAE08B518F40FB100049C24 /* fldefs_methadd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_methadd.h; sourceTree = "<group>"; };
-		7DAE08B618F40FB100049C24 /* fldefs_methbind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_methbind.h; sourceTree = "<group>"; };
-		7DAE08B718F40FB100049C24 /* fldefs_methcall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_methcall.h; sourceTree = "<group>"; };
-		7DAE08B818F40FB100049C24 /* fldefs_methcb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_methcb.h; sourceTree = "<group>"; };
-		7DAE08B918F40FB100049C24 /* fldefs_meththr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_meththr.h; sourceTree = "<group>"; };
-		7DAE08BA18F40FB100049C24 /* fldefs_setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldefs_setup.h; sourceTree = "<group>"; };
-		7DAE08BB18F40FB100049C24 /* fldsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fldsp.h; sourceTree = "<group>"; };
-		7DAE08BC18F40FB100049C24 /* flext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flext.h; sourceTree = "<group>"; };
-		7DAE08BD18F40FB100049C24 /* flfeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flfeatures.h; sourceTree = "<group>"; };
-		7DAE08BE18F40FB100049C24 /* flinternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flinternal.h; sourceTree = "<group>"; };
-		7DAE08BF18F40FB100049C24 /* flmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flmap.h; sourceTree = "<group>"; };
-		7DAE08C018F40FB100049C24 /* flpopns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flpopns.h; sourceTree = "<group>"; };
-		7DAE08C118F40FB100049C24 /* flprefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flprefix.h; sourceTree = "<group>"; };
-		7DAE08C218F40FB100049C24 /* flpushns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flpushns.h; sourceTree = "<group>"; };
-		7DAE08C318F40FB100049C24 /* flstdc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flstdc.h; sourceTree = "<group>"; };
-		7DAE08C418F40FB100049C24 /* flsupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flsupport.h; sourceTree = "<group>"; };
-		7DAE08C618F40FB100049C24 /* atomic_int.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = atomic_int.hpp; sourceTree = "<group>"; };
-		7DAE08C718F40FB100049C24 /* atomic_ptr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = atomic_ptr.hpp; sourceTree = "<group>"; };
-		7DAE08C818F40FB100049C24 /* branch_hints.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = branch_hints.hpp; sourceTree = "<group>"; };
-		7DAE08C918F40FB100049C24 /* cas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cas.hpp; sourceTree = "<group>"; };
-		7DAE08CA18F40FB100049C24 /* fifo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fifo.hpp; sourceTree = "<group>"; };
-		7DAE08CB18F40FB100049C24 /* prefix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = prefix.hpp; sourceTree = "<group>"; };
-		7DAE08CC18F40FB100049C24 /* stack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = stack.hpp; sourceTree = "<group>"; };
+		7DACBF4E192B82F900F0E7D7 /* ml_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_base.h; path = ../../sources/ml_base.h; sourceTree = "<group>"; };
+		7DACBF4F192B869600F0E7D7 /* ml_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_base.cpp; path = ../../sources/ml_base.cpp; sourceTree = "<group>"; };
+		7DAE08AD18F40FB100049C24 /* flbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flbase.h; path = ../../dependencies/include/flext/flbase.h; sourceTree = "<group>"; };
+		7DAE08AE18F40FB100049C24 /* flclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flclass.h; path = ../../dependencies/include/flext/flclass.h; sourceTree = "<group>"; };
+		7DAE08AF18F40FB100049C24 /* flcontainers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flcontainers.h; path = ../../dependencies/include/flext/flcontainers.h; sourceTree = "<group>"; };
+		7DAE08B018F40FB100049C24 /* fldefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs.h; path = ../../dependencies/include/flext/fldefs.h; sourceTree = "<group>"; };
+		7DAE08B118F40FB100049C24 /* fldefs_attradd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_attradd.h; path = ../../dependencies/include/flext/fldefs_attradd.h; sourceTree = "<group>"; };
+		7DAE08B218F40FB100049C24 /* fldefs_attrcb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_attrcb.h; path = ../../dependencies/include/flext/fldefs_attrcb.h; sourceTree = "<group>"; };
+		7DAE08B318F40FB100049C24 /* fldefs_attrvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_attrvar.h; path = ../../dependencies/include/flext/fldefs_attrvar.h; sourceTree = "<group>"; };
+		7DAE08B418F40FB100049C24 /* fldefs_hdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_hdr.h; path = ../../dependencies/include/flext/fldefs_hdr.h; sourceTree = "<group>"; };
+		7DAE08B518F40FB100049C24 /* fldefs_methadd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_methadd.h; path = ../../dependencies/include/flext/fldefs_methadd.h; sourceTree = "<group>"; };
+		7DAE08B618F40FB100049C24 /* fldefs_methbind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_methbind.h; path = ../../dependencies/include/flext/fldefs_methbind.h; sourceTree = "<group>"; };
+		7DAE08B718F40FB100049C24 /* fldefs_methcall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_methcall.h; path = ../../dependencies/include/flext/fldefs_methcall.h; sourceTree = "<group>"; };
+		7DAE08B818F40FB100049C24 /* fldefs_methcb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_methcb.h; path = ../../dependencies/include/flext/fldefs_methcb.h; sourceTree = "<group>"; };
+		7DAE08B918F40FB100049C24 /* fldefs_meththr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_meththr.h; path = ../../dependencies/include/flext/fldefs_meththr.h; sourceTree = "<group>"; };
+		7DAE08BA18F40FB100049C24 /* fldefs_setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldefs_setup.h; path = ../../dependencies/include/flext/fldefs_setup.h; sourceTree = "<group>"; };
+		7DAE08BB18F40FB100049C24 /* fldsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fldsp.h; path = ../../dependencies/include/flext/fldsp.h; sourceTree = "<group>"; };
+		7DAE08BC18F40FB100049C24 /* flext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flext.h; path = ../../dependencies/include/flext/flext.h; sourceTree = SOURCE_ROOT; };
+		7DAE08BD18F40FB100049C24 /* flfeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flfeatures.h; path = ../../dependencies/include/flext/flfeatures.h; sourceTree = "<group>"; };
+		7DAE08BE18F40FB100049C24 /* flinternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flinternal.h; path = ../../dependencies/include/flext/flinternal.h; sourceTree = "<group>"; };
+		7DAE08BF18F40FB100049C24 /* flmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flmap.h; path = ../../dependencies/include/flext/flmap.h; sourceTree = "<group>"; };
+		7DAE08C018F40FB100049C24 /* flpopns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flpopns.h; path = ../../dependencies/include/flext/flpopns.h; sourceTree = "<group>"; };
+		7DAE08C118F40FB100049C24 /* flprefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flprefix.h; path = ../../dependencies/include/flext/flprefix.h; sourceTree = "<group>"; };
+		7DAE08C218F40FB100049C24 /* flpushns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flpushns.h; path = ../../dependencies/include/flext/flpushns.h; sourceTree = "<group>"; };
+		7DAE08C318F40FB100049C24 /* flstdc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flstdc.h; path = ../../dependencies/include/flext/flstdc.h; sourceTree = "<group>"; };
+		7DAE08C418F40FB100049C24 /* flsupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flsupport.h; path = ../../dependencies/include/flext/flsupport.h; sourceTree = "<group>"; };
+		7DAE08C618F40FB100049C24 /* atomic_int.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = atomic_int.hpp; path = ../../dependencies/include/flext/lockfree/atomic_int.hpp; sourceTree = "<group>"; };
+		7DAE08C718F40FB100049C24 /* atomic_ptr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = atomic_ptr.hpp; path = ../../dependencies/include/flext/lockfree/atomic_ptr.hpp; sourceTree = "<group>"; };
+		7DAE08C818F40FB100049C24 /* branch_hints.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = branch_hints.hpp; path = ../../dependencies/include/flext/lockfree/branch_hints.hpp; sourceTree = "<group>"; };
+		7DAE08C918F40FB100049C24 /* cas.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cas.hpp; path = ../../dependencies/include/flext/lockfree/cas.hpp; sourceTree = "<group>"; };
+		7DAE08CA18F40FB100049C24 /* fifo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = fifo.hpp; path = ../../dependencies/include/flext/lockfree/fifo.hpp; sourceTree = "<group>"; };
+		7DAE08CB18F40FB100049C24 /* prefix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = prefix.hpp; path = ../../dependencies/include/flext/lockfree/prefix.hpp; sourceTree = "<group>"; };
+		7DAE08CC18F40FB100049C24 /* stack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = stack.hpp; path = ../../dependencies/include/flext/lockfree/stack.hpp; sourceTree = "<group>"; };
 		7DAE08D018F40FB100049C24 /* AdaBoost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaBoost.h; sourceTree = "<group>"; };
 		7DAE08D118F40FB100049C24 /* AdaBoostClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaBoostClassModel.h; sourceTree = "<group>"; };
 		7DAE08D318F40FB100049C24 /* DecisionStump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecisionStump.h; sourceTree = "<group>"; };
@@ -798,7 +799,7 @@
 		7DAE093018F40FB100049C24 /* TimeDomainFeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDomainFeatures.h; sourceTree = "<group>"; };
 		7DAE093218F40FB100049C24 /* TimeseriesBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeseriesBuffer.h; sourceTree = "<group>"; };
 		7DAE093418F40FB100049C24 /* ZeroCrossingCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeroCrossingCounter.h; sourceTree = "<group>"; };
-		7DAE093518F40FB100049C24 /* GRT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRT.h; sourceTree = "<group>"; };
+		7DAE093518F40FB100049C24 /* GRT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GRT.h; path = ../../dependencies/include/GRT/GRT.h; sourceTree = SOURCE_ROOT; };
 		7DAE093718F40FB100049C24 /* ClassLabelChangeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassLabelChangeFilter.h; sourceTree = "<group>"; };
 		7DAE093818F40FB100049C24 /* ClassLabelFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassLabelFilter.h; sourceTree = "<group>"; };
 		7DAE093918F40FB100049C24 /* ClassLabelTimeoutFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassLabelTimeoutFilter.h; sourceTree = "<group>"; };
@@ -851,19 +852,19 @@
 		7DAE097118F40FB100049C24 /* TrainingResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingResult.h; sourceTree = "<group>"; };
 		7DAE097218F40FB100049C24 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		7DAE097318F40FB100049C24 /* WarningLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningLog.h; sourceTree = "<group>"; };
-		7DAE097418F40FB100049C24 /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m_pd.h; sourceTree = "<group>"; };
-		7DAE097818F40FB100049C24 /* libflext-max_sd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libflext-max_sd.a"; sourceTree = "<group>"; };
-		7DAE098118F40FB200049C24 /* libflext-pd_sd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libflext-pd_sd.a"; sourceTree = "<group>"; };
-		7DBFDE6318439E09009ED61E /* ml_ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml_ml.h; sourceTree = "<group>"; };
+		7DAE097418F40FB100049C24 /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = m_pd.h; path = ../../dependencies/include/m_pd.h; sourceTree = SOURCE_ROOT; };
+		7DAE097818F40FB100049C24 /* libflext-max_sd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libflext-max_sd.a"; path = "../../dependencies/lib/macosx/libflext-max_sd.a"; sourceTree = SOURCE_ROOT; };
+		7DAE098118F40FB200049C24 /* libflext-pd_sd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libflext-pd_sd.a"; path = "../../dependencies/lib/macosx/libflext-pd_sd.a"; sourceTree = "<group>"; };
+		7DBFDE6318439E09009ED61E /* ml_ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_ml.h; path = ../../sources/ml_ml.h; sourceTree = "<group>"; };
 		7DD99CD818F4088700BE0A1A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ml_classification.cpp; sourceTree = "<group>"; };
-		7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml_regression.cpp; sourceTree = "<group>"; };
-		7DEE4F5D18BD3F28001A1294 /* ml_regression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml_regression.h; sourceTree = "<group>"; };
-		7DEE4F5E18BD3F38001A1294 /* ml_classification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml_classification.h; sourceTree = "<group>"; };
-		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ml.svm/ml_svm.cpp; sourceTree = "<group>"; };
+		7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ml_classification.cpp; path = ../../sources/classification/ml_classification.cpp; sourceTree = "<group>"; };
+		7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression.cpp; path = ../../sources/regression/ml_regression.cpp; sourceTree = "<group>"; };
+		7DEE4F5D18BD3F28001A1294 /* ml_regression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_regression.h; path = ../../sources/regression/ml_regression.h; sourceTree = "<group>"; };
+		7DEE4F5E18BD3F38001A1294 /* ml_classification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_classification.h; path = ../../sources/classification/ml_classification.h; sourceTree = "<group>"; };
+		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ../../sources/classification/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
-		E98573560D9E52D300682171 /* ml_ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml_ml.cpp; sourceTree = "<group>"; };
+		E98573560D9E52D300682171 /* ml_ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_ml.cpp; path = ../../sources/ml_ml.cpp; sourceTree = "<group>"; };
 		E9974E53077083C700206F68 /* ml.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1043,6 +1044,7 @@
 				7D7DA05B18F69B2A00F417F6 /* MaxAPI.framework in Frameworks */,
 				7D7DA05C18F69B2A00F417F6 /* MaxAudioAPI.framework in Frameworks */,
 				7D7DA05D18F69B2A00F417F6 /* Accelerate.framework in Frameworks */,
+				7DD669111989098F008EF46E /* libflext-max_sd.a in Frameworks */,
 				7D7DA05E18F69B2A00F417F6 /* libgrt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1430,7 +1432,8 @@
 				7DAE094318F40FB100049C24 /* RegressionModules */,
 				7DAE094E18F40FB100049C24 /* Util */,
 			);
-			path = GRT;
+			name = GRT;
+			path = ../../dependencies/include/GRT;
 			sourceTree = "<group>";
 		};
 		7DAE08CE18F40FB100049C24 /* ClassificationModules */ = {
@@ -3013,7 +3016,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3049,7 +3052,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3085,7 +3088,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3118,7 +3121,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3154,7 +3157,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3190,7 +3193,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3223,7 +3226,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3259,7 +3262,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3295,7 +3298,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3328,7 +3331,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3364,7 +3367,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3400,7 +3403,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -3447,7 +3450,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3502,7 +3505,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3553,7 +3556,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3608,7 +3611,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3663,7 +3666,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3714,7 +3717,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3769,7 +3772,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3824,7 +3827,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3875,7 +3878,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3930,7 +3933,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -3985,7 +3988,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4036,7 +4039,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4091,7 +4094,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4146,7 +4149,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4197,7 +4200,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4252,7 +4255,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4307,7 +4310,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4358,7 +4361,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4413,7 +4416,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4468,7 +4471,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4519,7 +4522,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4574,7 +4577,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4629,7 +4632,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4680,7 +4683,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4735,7 +4738,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4790,7 +4793,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4841,7 +4844,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4896,7 +4899,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -4951,7 +4954,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5002,7 +5005,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5057,7 +5060,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5112,7 +5115,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5163,7 +5166,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5218,7 +5221,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5273,7 +5276,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5324,7 +5327,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5379,7 +5382,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5434,7 +5437,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5485,7 +5488,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5540,7 +5543,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5595,7 +5598,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5646,7 +5649,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5701,7 +5704,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5756,7 +5759,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5807,7 +5810,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5862,7 +5865,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5917,7 +5920,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -5968,7 +5971,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -6030,7 +6033,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6066,7 +6069,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6102,7 +6105,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6135,7 +6138,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6171,7 +6174,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6207,7 +6210,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6240,7 +6243,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6276,7 +6279,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6312,7 +6315,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6345,7 +6348,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6381,7 +6384,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6417,7 +6420,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6450,7 +6453,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6486,7 +6489,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6522,7 +6525,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6555,7 +6558,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6591,7 +6594,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6627,7 +6630,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6660,7 +6663,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6696,7 +6699,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6732,7 +6735,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6765,7 +6768,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6801,7 +6804,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6837,7 +6840,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6870,7 +6873,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6906,7 +6909,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6942,7 +6945,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -6996,7 +6999,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7032,7 +7035,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7068,7 +7071,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7101,7 +7104,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7137,7 +7140,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7173,7 +7176,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7206,7 +7209,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7242,7 +7245,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7278,7 +7281,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7431,7 +7434,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -7487,7 +7490,7 @@
 				"INSTALL_PATH[sdk=*]" = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -7539,7 +7542,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/external/lib",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
