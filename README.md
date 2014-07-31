@@ -7,20 +7,53 @@
 ## Installation
 
 - Download the latest release from the [GitHub releases page](https://github.com/cmuartfab/ml-lib/releases)
-- For Max, add `ml.mxo` and the ml-lib helpfiles to your Max Search Path
-- For Pd, add  `ml.pd_*` to your Pd search path and add the "ml" library to your startup flags by opening up the application Preferences and adding "-lib ml" to the Startup Flags
+- For Max, add the `ml.*.mxo` externals and the ml-lib helpfiles to your Max Search Path
+- For Pd, add  `ml.*.pd_*` to your Pd search path and add the "ml" library to your startup flags by opening up the application Preferences and adding "-lib ml" to the Startup Flags
 
-##  Components
+##  Library structure
 
-**ml-lib** includes the following machine learning algorithms:
-- SVM: Support Vector Machines
-- DTW: Dynamic Time Warping
-- HMM: Hidden Markov Models
-- LINREG: Linear Regression
-- LOGREG: Logical Regression
-- MLP: Multi-layer Perceptron Artificial Neural Networks (ANN)
+**ml-lib** objects follow the naming convention `ml.*` where “*” is an abbreviated form of the algorithm implemented by the object. 
 
-**ml-lib** also includes generic data processors like peak detection.
+Objects fall into one of five categories:
+
+- **Pre-processing**: pre-process data prior to used as input to a classification or regression object
+- **Post-processing**: post-process data after being output from a classification or regression object
+- **Feature extraction**: extract “features” from control data. [Feature vectors](http://en.wikipedia.org/wiki/Feature_vector) can be used as input to classification or regression objects
+- **Classification**: take feature vectors as input, and output a value representing the class of the input. For example an object detecting hand position might output 0 for left, 1 for right, 2 for top and 3 for bottom. 
+- **Regression**: perform an M x N mapping between an input vector and an output vector with one or more dimensions. For example an object may map `x` and `y` dimensions of hand position to a single dimension representing the distance from origin (0, 0).
+
+## Object list
+
+### Pre-processing
+
+*No objects currently implemented*
+
+### Post-processing
+
+*No objects currently implemented*
+
+### Feature extraction
+
+- `ml.peak`: output detected peaks from a continues stream of input values
+- `ml.minmax`: output a vector of minima and maxima locations (peaks) from an input vector
+
+### Classification
+
+- `ml.adaboost`:  [Adaptive Boosting](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.AdaBoost)
+- `ml.dtw`: [Dynamic Time Warping](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.DTW)
+- `ml.gmm`: [Gaussian Mixture Model](http://www.nickgillian.com/wiki/pmwiki.php/GRT/GMMClassifier)
+- `ml.hmm`: [Hidden Markov Models](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.HMM)
+- `ml.knn`: [k’s Nearest Neighbour](http://www.nickgillian.com/wiki/pmwiki.php/GRT/KNN)
+- `ml.mindist`:[Minimum Distance](http://www.nickgillian.com/wiki/pmwiki.php/GRT/MinDist)
+- `ml.randforest`: [Random Decision Forest](http://www.nickgillian.com/wiki/pmwiki.php/GRT/RandomForests)
+- `ml.softmax`: [Softmax](http://www.nickgillian.com/wiki/pmwiki.php/GRT/Softmax)
+- `ml.svm`: [Support Vector Machines](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.SVM)
+
+### Regression
+
+- `ml.linreg`: [Linear Regression](http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression)
+- `ml.logreg`: [Logistic Regression](http://www.nickgillian.com/wiki/pmwiki.php/GRT/LogisticRegression)
+- `ml.mlp`: [Multi-layer Perceptron](http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP) Artificial Neural Networks (ANN)
 
 See the help file for each component for further details about operation and usage.
 
