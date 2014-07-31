@@ -523,7 +523,7 @@ namespace ml
         FLEXT_SETUP(ml_softmax);
         FLEXT_SETUP(ml_randforest);
         FLEXT_SETUP(ml_mindist);
-        FLEXT_SETUP(ml_lda);
+//        FLEXT_SETUP(ml_lda);
         FLEXT_SETUP(ml_knn);
         FLEXT_SETUP(ml_gmm);
         FLEXT_SETUP(ml_dtree);

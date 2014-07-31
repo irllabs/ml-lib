@@ -210,20 +210,6 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D551ACA190FEA2A008FF361"
-               BuildableName = "ml.lda.mxo"
-               BlueprintName = "ml.lda max"
-               ReferencedContainer = "container:ml.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D551ABA190FEA0F008FF361"
                BuildableName = "ml.mindist.mxo"
                BlueprintName = "ml.mindist max"
