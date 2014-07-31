@@ -7314,7 +7314,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7350,7 +7350,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -7386,7 +7386,7 @@
 					"$(flext)/source",
 				);
 				INSTALL_PATH = "$(PD)/extra";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/external/lib";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
