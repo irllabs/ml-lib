@@ -27,7 +27,6 @@ classification_externals = (
         "anbc",
         "dtw",
         "hmm",
-        "lda",
         "randforest",
         "svm"
         )
