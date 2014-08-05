@@ -99,6 +99,8 @@
 		7D6511DA18F436CE0050C9C8 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D6511DB18F436CF0050C9C8 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D6512D718F4428B0050C9C8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D65FDDD1991760200C82004 /* ml.mlp.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */; };
+		7D65FDDE19917D1A00C82004 /* ml.svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D7DA0EB18F7CFD200F417F6 /* ml.svm-help.pd */; };
 		7D7D9FD418F6948E00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7D9FDB18F6948E00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7D9FDF18F6948E00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
@@ -429,6 +431,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7D65FDDD1991760200C82004 /* ml.mlp.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +482,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7D65FDDE19917D1A00C82004 /* ml.svm-help.pd in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

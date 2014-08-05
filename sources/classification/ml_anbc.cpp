@@ -22,7 +22,9 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.anbc";
+    // Constants
+    const std::string ml_object_name = "ml.anbc";
+    const std::string k_attribute_help = "weights:\tvector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights";
     
     // Utility functions
     
@@ -37,6 +39,7 @@ namespace ml
         {
             post("Adaptive Naive Bayes classifier based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
+            help.append_attributes(k_attribute_help);
         }
         
         ~ml_anbc()
@@ -112,28 +115,7 @@ namespace ml
     
     
     // Methods
-    void ml_anbc::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("weights:\tvector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights");
-        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
-        post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        // Method help here
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("write:\twrite training examples, first argument gives path to write location");
-        post("read:\tread training examples, first argument gives path to the read location");
-        post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and model");
-        post("map:\tgive the regression value for the input feature vector");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
-    }
+    
     
     // Implement pure virtual methods
     GRT::Classifier &ml_anbc::get_Classifier_instance()

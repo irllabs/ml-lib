@@ -26,6 +26,17 @@ namespace ml
 #pragma mark - Constants
     const std::string k_model_extension = ".model";
     const std::string k_data_extension = ".data";
+    const std::string k_method_help =
+    "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc"
+    "write:\twrite training examples, first argument gives path to write location\n"
+    "read:\tread training examples, first argument gives path to the read location\n"
+    "train:\ttrain the MLP based on vectors added with 'add'\n"
+    "clear:\tclear the stored training data and model\n"
+    "map:\tgive the regression value for the input feature vector\n"
+    "help:\tpost this usage statement to the console\n";
+    const std::string k_attribute_help =
+    "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n"
+    "probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet\n";
     
 #pragma mark - Utility methods
     
@@ -83,6 +94,16 @@ namespace ml
     
 #pragma mark - ml implementation
     
+    ml::ml()
+    : currentLabel(0), probs(false), recording(false)
+    {
+        help.append_attributes(k_attribute_help);
+        help.append_methods(k_method_help);
+        set_data_type(default_data_type);
+        set_num_inputs(defaultNumInputDimensions);
+        AddOutAnything("general purpose outlet");
+    }
+    
     void ml::set_num_inputs(uint8_t num_inputs)
     {
         if (num_inputs < 0)
@@ -115,14 +136,6 @@ namespace ml
             error("unable to set input or target dimensions");
             return;
         }
-    }
-    
-    ml::ml()
-    : currentLabel(0), probs(false), recording(false)
-    {
-        set_data_type(default_data_type);
-        set_num_inputs(defaultNumInputDimensions);
-        AddOutAnything("general purpose outlet");
     }
     
     void ml::set_scaling(bool scaling)
@@ -425,26 +438,6 @@ namespace ml
         error("function not implemented");
     }
     
-    void ml::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("write:\twrite training examples, first argument gives path to write location");
-        post("read:\tread training examples, first argument gives path to the read location");
-        post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and model");
-        post("map:\tgive the regression value for the input feature vector");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
-    }
-    
     void ml::any(const t_symbol *s, int argc, const t_atom *argv)
     {
         error("messages with the selector '" + std::string(GetString(s)) + "' are not supported");
@@ -454,6 +447,11 @@ namespace ml
     {
         GRT::MLBase &mlBase = get_MLBase_instance();
         return mlBase.getGRTVersion();
+    }
+    
+    void ml::usage() const
+    {
+        this->post(help.full_message());
     }
     
     void ml::setup(t_classid c)
@@ -504,10 +502,8 @@ namespace ml
 #ifdef BUILD_AS_LIBRARY
     static void main()
     {
-        flext::post(ML_LINE_SEPARATOR);
         flext::post("%s - machine learning library for Max and Pure Data", ML_NAME);
         flext::post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
-        flext::post(ML_LINE_SEPARATOR);
         
         // call the objects' setup routines
         FLEXT_SETUP(ml_svm);

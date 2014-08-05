@@ -20,13 +20,18 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.dtree";
-
+    // Constants
+    const std::string ml_object_name = "ml.dtree";
+    const std::string k_attribute_help =
+    "training_mode:\tinteger (0 = BEST_ITERATIVE_SPILT, 1=BEST_RANDOM_SPLIT) sets the training mode (default 0)\n"
+    "num_splitting_steps:\tinteger (n > 0) Sets the number of steps that will be used to search for the best spliting value for each node (default 100)\n"
+    "min_samples_per_node:\tinteger (n > 0) sets the minimum number of samples that are allowed per node, if the number of samples at a node is below this value then the node will automatically become a leaf node (default 5)\n"
+    "max_depth:\tinteger (n > 0) sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node (default 10)\n"
+    "remove_features_at_each_split:\tbool (0 or 1) sets if a feature is removed at each spilt so it can not be used again (default 0)\n";
     
     // Utility functions
     
     
-    // Class declaration
     class ml_dtree : ml_classification
     {
         FLEXT_HEADER_S(ml_dtree, ml_classification, setup);
@@ -36,6 +41,7 @@ namespace ml
         {
             post("Decision Tree learning algorithm based on the GRT library version %s" + get_grt_version());
             set_scaling(default_scaling);
+            help.append_attributes(k_attribute_help);
         }
         
         ~ml_dtree()
@@ -168,33 +174,6 @@ namespace ml
         remove_features_at_each_split = dtree.getRemoveFeaturesAtEachSpilt();
     }
 
-    void ml_dtree::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
-        post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
-        post("training_mode:\tinteger (0 = BEST_ITERATIVE_SPILT, 1=BEST_RANDOM_SPLIT) sets the training mode (default 0)");
-        post("num_splitting_steps:\tinteger (n > 0) Sets the number of steps that will be used to search for the best spliting value for each node (default 100)");
-        post("min_samples_per_node:\tinteger (n > 0) sets the minimum number of samples that are allowed per node, if the number of samples at a node is below this value then the node will automatically become a leaf node (default 5)");
-        post("max_depth:\tinteger (n > 0) sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node (default 10)");
-        post("probs:\tbool (0 or 1) sets if a feature is removed at each spilt so it can not be used again (default 0)");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("write:\twrite training examples, first argument gives path to write location");
-        post("read:\tread training examples, first argument gives path to the read location");
-        post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and data_typel");
-        post("map:\tgive the regression value for the input feature vector");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
-    }
-    
     // Implement pure virtual methods
     GRT::Classifier &ml_dtree::get_Classifier_instance()
     {

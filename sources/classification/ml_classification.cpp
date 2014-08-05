@@ -12,6 +12,18 @@
 
 namespace ml
 {
+    // Constants
+    const std::string k_attribute_help =
+    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)\n"
+    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n";
+   
+    // ml_classification implementation
+    ml_classification::ml_classification()
+    {
+        help.append_attributes(k_attribute_help);
+        set_data_type(LABELLED_CLASSIFICATION);
+    }
+    
     // Attribute Setters
     void ml_classification::set_null_rejection(bool null_rejection)
     {
@@ -236,28 +248,6 @@ namespace ml
         
         GRT::UINT classification = classifier.getPredictedClassLabel();
         ToOutInt(0, classification);
-    }
-    
-    void ml_classification::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
-        post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("write:\twrite training examples, first argument gives path to write location");
-        post("read:\tread training examples, first argument gives path to the read location");
-        post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and data_typel");
-        post("map:\tgive the regression value for the input feature vector");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
     }
     
 #pragma mark - pure virtual method implementation

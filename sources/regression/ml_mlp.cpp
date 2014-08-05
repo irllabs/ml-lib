@@ -20,7 +20,36 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.mlp";
+    const GRT::UINT defaultNumHiddenNeurons = 2;
+
+    const std::string ml_object_name = "ml.mlp";
+    const std::string k_method_help =
+    "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode, where N is determined by the num_outputs attribute\n"
+    "write:\twrite training examples, first argument gives path to write location\n"
+    "read:\tread training examples, first argument gives path to the read location\n"
+    "train:\ttrain the MLP based on vectors added with 'add'\n"
+    "clear:\tclear the stored training data and model\n"
+    "map:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode\n"
+    "help:\tpost this usage statement to the console\n";
+    const std::string k_attribute_help =
+    "num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default " + std::to_string( defaultNumOutputDimensions) + ")\n"
+    "num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default " + std::to_string( defaultNumHiddenNeurons) + ")\n"
+    "min_epochs:\tinteger setting the minimum number of training iterations (default 10)\n"
+    "max_epochs:\tinteger setting the maximum number of training iterations (default 100)\n"
+    "min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)\n"
+    "training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)\n"
+    "momentum:\tfloating point value setting the momentum of the MLP (default 0.5)\n"
+    "gamma:\tfloating point value setting the gamma of the MLP (default 2.0)\n"
+    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)\n"
+    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n"
+    "input_activation_function:\tinteger determining the activation function for the input layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
+    "hidden_activation_function:\tinteger determining the activation function for the hidden layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
+    "output_activation_function:\tinteger determining the activation function for the output layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
+    "rand_training_iterations:\tinteger setting the number of random training iterations (default 10)\n"
+    "use_validation_set:\tinteger (0 or 1) sets whether to use a validation training set (default 1)\n"
+    "validation_set_size:\tinteger integer determining the size of the validation set (default 20)\n"
+    "randomize_training_order:\tinteger (0 or 1) sets whether to randomize the training order (default 0)\n"
+    "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n";
     
     typedef enum mlp_layer_
     {
@@ -31,7 +60,6 @@ namespace ml
     }
     mlp_layer;
     
-    const GRT::UINT defaultNumHiddenNeurons = 2;
     
     class ml_mlp : ml
     {
@@ -52,6 +80,13 @@ namespace ml
             
             mlp.setMinChange(1.0e-2);
             set_scaling(default_scaling);
+            
+            std::stringstream post_stream;
+            
+            post_stream << "mode:\tinteger setting mode of the MLP, " << LABELLED_REGRESSION << " for regression and " <<LABELLED_CLASSIFICATION << " for classification (default " << default_data_type << ")\n";
+            help.append_attributes(k_attribute_help);
+            help.append_methods(k_method_help);
+            help.append_attributes(post_stream.str());
         }
         
         ~ml_mlp()
@@ -108,7 +143,6 @@ namespace ml
         void clear();
         void train();
         void map(int argc, const t_atom *argv);
-        void usage();
         void error();
         
         // Attribute Setters
@@ -684,47 +718,6 @@ namespace ml
         
         ToOutAnything(0, s_error, 1, &error_a);
                       
-    }
-    
-    void ml_mlp::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        
-        std::stringstream post_stream;
-        
-        post_stream << "mode:\tinteger setting mode of the MLP, " << LABELLED_REGRESSION << " for regression and " <<LABELLED_CLASSIFICATION << " for classification (default " << default_data_type << ")";
-        
-        post("num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default " + std::to_string( defaultNumOutputDimensions) + ")");
-        post("num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default " + std::to_string( defaultNumHiddenNeurons) + ")");
-        post("min_epochs:\tinteger setting the minimum number of training iterations (default 10)");
-        post("max_epochs:\tinteger setting the maximum number of training iterations (default 100)");
-        post("min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)");
-        post("training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)");
-        post("momentum:\tfloating point value setting the momentum of the MLP (default 0.5)");
-        post("gamma:\tfloating point value setting the gamma of the MLP (default 2.0)");
-        post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
-        post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
-        post("input_activation_function:\tinteger determining the activation function for the input layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)");
-        post("hidden_activation_function:\tinteger determining the activation function for the hidden layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)");
-        post("output_activation_function:\tinteger determining the activation function for the output layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)");
-        post("rand_training_iterations:\tinteger setting the number of random training iterations (default 10)");
-        post("use_validation_set:\tinteger (0 or 1) sets whether to use a validation training set (default 1)");
-        post("validation_set_size:\tinteger integer determining the size of the validation set (default 20)");
-        post("randomize_training_order:\tinteger (0 or 1) sets whether to randomize the training order (default 0)");
-        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode, where N is determined by the num_outputs attribute");
-        post("write:\twrite training examples, first argument gives path to write location");
-        post("read:\tread training examples, first argument gives path to the read location");
-        post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and model");
-        post("map:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
     }
     
     // Implement pure virtual methods

@@ -74,7 +74,7 @@ namespace ml
         virtual void train();
         virtual void clear();
         virtual void map(int argc, const t_atom *argv);
-        virtual void usage();
+        virtual void usage() const;
         
         void record(bool state);
         void any(const t_symbol *s, int argc, const t_atom *argv);

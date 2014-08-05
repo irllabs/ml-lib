@@ -18,12 +18,8 @@ namespace ml
         FLEXT_HEADER_S(ml_regression, ml, setup);
         
     public:
-        ml_regression()
-        {
-            regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
-            set_data_type(LABELLED_REGRESSION);
-        }
-        
+        ml_regression();
+               
         ~ml_regression()
         {
             
@@ -44,7 +40,6 @@ namespace ml
         // Methods
         void train();
         void map(int argc, const t_atom *argv);
-        void usage();
         
         // Attribute Setters
         void set_max_iterations(int max_iterations);

@@ -22,7 +22,11 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.adaboost";
+    // Constants
+    
+    const std::string ml_object_name = "ml.adaboost";
+    const std::string k_attribute_help = "num_boosting_iterations:\tinteger (>0) sets the number of boosting iterations that should be used when training the model (default 20)\n";
+    
     
     enum weak_classifiers_
     {
@@ -42,6 +46,13 @@ namespace ml
         {
             post("Adaboost classifier based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
+            std::stringstream post_stream;
+            post_stream << "prediction_method:\tinteger (" << GRT::AdaBoost::MAX_VALUE << ":MAX_VALUE or " <<  GRT::AdaBoost::MAX_POSITIVE_VALUE << ":MAX_POSITIVE_VALUE) sets the Adaboost prediction method (default " << GRT::AdaBoost::MAX_VALUE << ")";
+            help.append_attributes(post_stream.str());
+            post_stream.clear();
+            post_stream << "weak_classifier:\tinteger (" << DECISION_STUMP << ":DECISION_STUMP or " << RADIAL_BASIS_FUNCTION << ":RADIAL_BASIS_FUNCTION) sets the weak classifier to be used by Adaboost, (default: " << DECISION_STUMP << ")";
+            help.append_attributes(post_stream.str());
+            help.append_attributes(k_attribute_help);
         }
         
         ~ml_adaboost()
@@ -86,7 +97,6 @@ namespace ml
         }
         
         // Methods
-        void usage();
         
         // Attribute Setters
         void set_prediction_method(int prediction_method);
@@ -165,27 +175,7 @@ namespace ml
 
     // Attribute getters
     
-    
     // Methods
-    void ml_adaboost::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        std::stringstream post_stream;
-        post_stream << "prediction_method:\tinteger (" << GRT::AdaBoost::MAX_VALUE << ":MAX_VALUE or " <<  GRT::AdaBoost::MAX_POSITIVE_VALUE << ":MAX_POSITIVE_VALUE) sets the Adaboost prediction method (default " << GRT::AdaBoost::MAX_VALUE << ")";
-        post(post_stream.str());
-        post("num_boosting_iterations:\tinteger (>0) sets the number of boosting iterations that should be used when training the model (default 20)");
-        post_stream.clear();
-        post_stream << "weak_classifier:\tinteger (" << DECISION_STUMP << ":DECISION_STUMP or " << RADIAL_BASIS_FUNCTION << ":RADIAL_BASIS_FUNCTION) sets the weak classifier to be used by Adaboost, (default: " << DECISION_STUMP << ")";
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        // Method help here
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
-        
-    }
     
     // Implement pure virtual methods
     GRT::Classifier &ml_adaboost::get_Classifier_instance()

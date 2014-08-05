@@ -20,7 +20,10 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.gmm";
+    // Constants
+    const std::string ml_object_name = "ml.gmm";
+    const std::string k_attribute_help =
+    "num_mixture_models:\tinteger (n > 0) sets the number of mixture models used for class (default 2)\n";
     
     // Utility functions
     
@@ -35,6 +38,7 @@ namespace ml
         {
             post("Gaussian Mixture Models based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
+            help.append_attributes(k_attribute_help);
         }
         
         ~ml_gmm()
@@ -101,29 +105,6 @@ namespace ml
     
     // Methods
     
-    void ml_gmm::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
-        post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
-        post("num_mixture_models:\tinteger (n > 0) sets the number of mixture models used for class (default 2)");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("write:\twrite training examples, first argument gives path to write location");
-        post("read:\tread training examples, first argument gives path to the read location");
-        post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and data_typel");
-        post("map:\tgive the regression value for the input feature vector");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
-        
-    }
     
     // Implement pure virtual methods
     GRT::Classifier &ml_gmm::get_Classifier_instance()

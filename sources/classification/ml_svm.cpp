@@ -28,7 +28,33 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.svm";
+    // Constants
+    const std::string ml_object_name = "ml.svm";
+    const std::string k_attribute_help =
+    "type:\tset type of SVM (default 0)\n"
+    "	0 -- C-SVC		(multi-class classification)\n"
+    "	1 -- nu-SVC		(multi-class classification)\n"
+    "	2 -- one-class SVM\n"
+    "	3 -- epsilon-SVR	(regression)\n"
+    "	4 -- nu-SVR		(regression)\n"
+    "kernel:\tset type of kernel function (default 2)\n"
+    "	0 -- linear: u'*v\n"
+    "	1 -- polynomial: (gamma*u'*v + coef0)^degree\n"
+    "	2 -- radial basis function: exp(-gamma*|u-v|^2)\n"
+    "	3 -- sigmoid: tanh(gamma*u'*v + coef0)\n"
+    "	4 -- precomputed kernel (kernel values in training_set_file)\n"
+    "degree:\tset degree in kernel function (default 3)\n"
+    "gamma:\tset gamma in kernel function (default 1/num_features)\n"
+    "coef0:\tset coef0 in kernel function (default 0)\n"
+    "cost:\tset the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)\n"
+    "nu:\tset the parameter nu of nu-SVC, one-class SVM, and nu-SVR (default 0.5)\n"
+    "epsilon:\tset the epsilon in loss function of epsilon-SVR (default 0.1)\n"
+    "cachesize:\tset cache memory size in MB (default 100)\n"
+    "epsilon:\tset tolerance of termination criterion (default 0.001)\n"
+    "shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)\n";
+   
+    const std::string k_method_help =
+    "cross_validation:\t\tperform cross-validation\n";
     
     // Utility functions
     GRT::SVM::SVMTypes svm_type_from_type_string(std::string type_string)
@@ -100,6 +126,8 @@ namespace ml
     public:
         ml_svm()
         {
+            help.append_attributes(k_attribute_help);
+            help.append_methods(k_method_help);
             std::stringstream ss;
             ss << "Support Vector Machines based on the GRT library version " << get_grt_version().c_str();
             post(ss.str());
@@ -152,7 +180,6 @@ namespace ml
         
         // Methods
         void cross_validation();
-        void usage();
         
         // Attribute Setters
         void set_type(int type); // svm type
@@ -390,48 +417,6 @@ namespace ml
     {
         double result = svm.getCrossValidationResult();
         ToOutDouble(0, result);
-    }
-    
-    void ml_svm::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("type:\tset type of SVM (default 0)");
-        post("	0 -- C-SVC		(multi-class classification)");
-        post("	1 -- nu-SVC		(multi-class classification)");
-        post("	2 -- one-class SVM");
-        post("	3 -- epsilon-SVR	(regression)");
-        post("	4 -- nu-SVR		(regression)");
-        post("kernel:\tset type of kernel function (default 2)");
-        post("	0 -- linear: u'*v");
-        post("	1 -- polynomial: (gamma*u'*v + coef0)^degree");
-        post("	2 -- radial basis function: exp(-gamma*|u-v|^2)");
-        post("	3 -- sigmoid: tanh(gamma*u'*v + coef0)");
-        post("	4 -- precomputed kernel (kernel values in training_set_file)");
-        post("degree:\tset degree in kernel function (default 3)");
-        post("gamma:\tset gamma in kernel function (default 1/num_features)");
-        post("coef0:\tset coef0 in kernel function (default 0)");
-        post("cost:\tset the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)");
-        post("nu:\tset the parameter nu of nu-SVC, one-class SVM, and nu-SVR (default 0.5)");
-        post("epsilon:\tset the epsilon in loss function of epsilon-SVR (default 0.1)");
-        post("cachesize:\tset cache memory size in MB (default 100)");
-        post("epsilon:\tset tolerance of termination criterion (default 0.001)");
-        post("shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)");
-        post("probs:\twhether to display classification probabilities, 0 or 1 (default 0)");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("write:\twrite a trained model, first argument gives path to write location");
-        post("read:\tread a trained model, first argument gives path to the read location");
-        post("cross_validation:\t\tperform cross-validation");
-        post("train:\ttrain the SVM based on labelled vectors added with 'add'");
-        post("clear:\tclear the stored training data and model");
-        post("map:\tgive the class of the input feature vector provided as a list");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
-        
     }
     
     // Implement pure virtual methods

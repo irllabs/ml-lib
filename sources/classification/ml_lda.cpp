@@ -16,6 +16,9 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+
+// TODO: GRT header states class is still under development (August 5th 2014)
+
 #include "ml_classification.h"
 
 namespace ml

@@ -58,7 +58,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "~/Documents/ml-lib/ml.svm/ml.svm-help.pd"
+            argument = "${BUILT_PRODUCTS_DIR}/ml.svm-help.pd"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

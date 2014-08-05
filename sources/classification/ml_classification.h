@@ -11,6 +11,8 @@
 
 #include "ml_ml.h"
 
+
+
 namespace ml
 {
     class ml_classification : public ml
@@ -18,10 +20,7 @@ namespace ml
         FLEXT_HEADER_S(ml_classification, ml, setup);
         
     public:
-        ml_classification()
-        {
-            set_data_type(LABELLED_CLASSIFICATION);
-        }
+        ml_classification();
         
         ~ml_classification()
         {
@@ -41,7 +40,6 @@ namespace ml
         // Methods
         void train();
         void map(int argc, const t_atom *argv);
-        void usage();
         
         // Attribute Setters
         void set_null_rejection(bool null_rejection);

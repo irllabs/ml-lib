@@ -20,7 +20,15 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.hmm";
+    // Constants
+    const std::string ml_object_name = "ml.hmm";
+    const std::string k_attribute_help =  "num_states:\tinteger ( > 0) sets the number of states in the model (default 5)\n"
+    "num_symbols:\tinteger ( > 0) sets the number of symbols in the model (default 10)\n"
+    "model_type:\tinteger (0 = ERGODIC, 1 = LEFTRIGHT) sets the model type used for the HMM (default LEFTRIGHT)\n"
+    "delta:\tinteger ( > 0) controls how many states a model can transition to if the LEFTRIGHT model type is used (default 1)\n"
+    "max_num_iterations:\tinteger ( > 0) set the maximum number of training iterations (default 100)\n"
+    "num_random_training_iterations:\tinteger setting the number of random training iterations (default 10)\n"
+    "min_improvement:\tfloat sets the minimum improvement parameter which controls when the HMM training algorithm should stop (default 1.0e-2)\n";
     
     class ml_hmm : ml_classification
     {
@@ -32,6 +40,7 @@ namespace ml
             post("Hidden Markov Model based on the GRT library version " + get_grt_version());
             set_scaling(default_scaling);
             set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
+            help.append_attributes(k_attribute_help);
         }
         
         ~ml_hmm()
@@ -63,7 +72,6 @@ namespace ml
         }
         
         // Methods
-        void usage();
         
         // Attribute Setters
         void set_num_states(int num_states);
@@ -218,33 +226,6 @@ namespace ml
     }
     
     // methods
-    void ml_hmm::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post("num_states:\tinteger ( > 0) sets the number of states in the model (default 5)");
-        post("num_symbols:\tinteger ( > 0) sets the number of symbols in the model (default 10)");
-        post("model_type:\tinteger (0 = ERGODIC, 1 = LEFTRIGHT) sets the model type used for the HMM (default LEFTRIGHT)");
-        post("delta:\tinteger ( > 0) controls how many states a model can transition to if the LEFTRIGHT model type is used (default 1)");
-        post("max_num_iterations:\tinteger ( > 0) set the maximum number of training iterations (default 100)");
-        post("num_random_training_iterations:\tinteger setting the number of random training iterations (default 10)");
-        post("min_improvement:\tfloat sets the minimum improvement parameter which controls when the HMM training algorithm should stop (default 1.0e-2)");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("write:\twrite training examples, first argument gives path to write location");
-        post("read:\tread training examples, first argument gives path to the read location");
-        post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and model");
-        post("map:\tgive the regression value for the input feature vector");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
-        
-    }
     
     // Implement pure virtual methods
     GRT::Classifier &ml_hmm::get_Classifier_instance()

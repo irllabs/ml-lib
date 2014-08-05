@@ -20,9 +20,13 @@
 
 namespace ml
 {
-    
+    // Constants
     static const std::string ml_object_name = "ml.knn";
-
+    static const std::string k_attribute_help =  "k:\tinteger (k > 1) Sets the K nearest neighbours that will be searched for by the algorithm during prediction.(default 10)\n"
+    "min_k_search_value:\tinteger (n > 0) sets the minimum K value to use when searching for the best K value. (default 1)\n"
+    "max_k_search_value:\tinteger (n > 0) sets the maximum K value to use when searching for the best K value. (default 10)\n"
+    "best_k_value_search:\tbool (0 or 1) set whether k value search is enabled or not (default 0)\n";
+        
     // Utility functions
     
     // Class declaration
@@ -147,31 +151,6 @@ namespace ml
     
     // Methods
     
-    void ml_knn::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post("null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)");
-        post("null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)");
-        post("k:\tinteger (k > 1) Sets the K nearest neighbours that will be searched for by the algorithm during prediction.(default 10)");
-        post("min_k_search_value:\tinteger (n > 0) sets the minimum K value to use when searching for the best K value. (default 1)");
-        post("max_k_search_value:\tinteger (n > 0) sets the maximum K value to use when searching for the best K value. (default 10)");
-        post("best_k_value_search:\tbool (0 or 1) set whether k value search is enabled or not (default 0)");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("write:\twrite training examples, first argument gives path to write location");
-        post("read:\tread training examples, first argument gives path to the read location");
-        post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and data_typel");
-        post("map:\tgive the regression value for the input feature vector");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
-    }
     
     // Implement pure virtual methods
     GRT::Classifier &ml_knn::get_Classifier_instance()

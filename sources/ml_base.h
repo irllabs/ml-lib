@@ -26,18 +26,35 @@
 
 #define ML_VERSION "0.15.1"
 #define ML_NAME "ml-lib"
-#define ML_LINE_SEPARATOR "---------------------------------------"
 
 namespace ml
 {
+    class ml_help
+    {
+    public:
+        ml_help() { }
+        
+        void append_methods(const std::string &methods) { this->methods.append(methods); }
+        void append_attributes(const std::string &attributes) { this->attributes.append(attributes); }
+        
+        std::string full_message(void) const;
+        
+    private:
+        std::string methods;
+        std::string attributes;
+    };
+    
+    
     class ml_base:
     public flext_base
     {
     public:
-        
         void post(const std::string &message) const;
         void error(const std::string &message) const;
  
+    protected:
+        ml_help help;
+    
     private:
         virtual const std::string get_object_name(void) const = 0;
     };

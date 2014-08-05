@@ -22,7 +22,15 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.peak";
+    // Constants
+    const std::string ml_object_name = "ml.peak";
+    const std::string k_attribute_help =
+    "search_window_size: an integer setting the search window size in values (default: 5)\n";
+    const std::string k_method_help =
+    "float:\ta floating point value to the inlet updates the current value of the peak detector\n"
+    "reset:\treset the peak detector\n"
+    "timeout:\t (see GRT documentation)\n"
+    "help:\tpost this usage statement to the console\n";
     
     class ml_peak : ml_base
     {
@@ -34,6 +42,9 @@ namespace ml
             post("Peak Detection based on the GRT library version " + GRT::GRTBase::getGRTRevison());
             FLEXT_ADDMETHOD(0, update);
             FLEXT_ADDMETHOD(0, peaks);
+            
+            help.append_attributes(k_attribute_help);
+            help.append_attributes(k_method_help);
         }
         
         ~ml_peak()
@@ -202,24 +213,6 @@ namespace ml
         }
     }
 
-    void ml_peak::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("search_window_size: an integer setting the search window size in values (default: 5)");
-
-//        post("low_pass_filter_size: an integer setting the low pass filter size (2 or higher)");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("float:\ta floating point value to the inlet updates the current value of the peak detector");
-        post("reset:\treset the peak detector");
-        post("timeout:\t (see GRT documentation)");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
-    }
-    
     typedef class ml_peak ml0x2epeak;
     
 #ifdef BUILD_AS_LIBRARY

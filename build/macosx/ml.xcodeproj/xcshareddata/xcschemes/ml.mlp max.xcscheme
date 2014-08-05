@@ -78,9 +78,18 @@
       <PathRunnable
          FilePath = "/Applications/Max 6.1 Runtime/Max Runtime.app">
       </PathRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7D7DA03D18F69B0F00F417F6"
+            BuildableName = "ml.mlp.mxo"
+            BlueprintName = "ml.mlp max"
+            ReferencedContainer = "container:ml.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "~/Documents/ml-lib/ml.mlp/ml.mlp.maxhelp"
+            argument = "${BUILT_PRODUCTS_DIR}/ml.mlp.maxhelp"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

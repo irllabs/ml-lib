@@ -18,21 +18,49 @@
 
 #include "ml_base.h"
 
+#include <sstream>
+
 #define ML_POST_SEPARATOR ": "
+#define ML_LINE_SEPARATOR "---------------------------------------\n"
 
 namespace ml
 {
+#pragma mark - Constants
 
 #pragma mark - utility functions
    
     void post_prefixed_message(const std::string object_name, const std::string &message, void(*post_function)(const char *,...));
 
+#pragma mark - ml_help implementation
     
-#pragma mark - ml implementation
+    std::string ml_help::full_message(void) const
+    {
+        std::string full_message;
+        
+        full_message.append(ML_LINE_SEPARATOR);
+        full_message.append("Attributes:\n");
+        full_message.append(ML_LINE_SEPARATOR);
+        full_message.append(attributes.c_str());
+        full_message.append(ML_LINE_SEPARATOR);
+        full_message.append("Methods:\n");
+        full_message.append(ML_LINE_SEPARATOR);
+        full_message.append(methods.c_str());
+        full_message.append(ML_LINE_SEPARATOR);
+        
+        return full_message;
+    }
+    
+#pragma mark - ml_base implementation
     
     void ml_base::post(const std::string &message) const
     {
-        post_prefixed_message(get_object_name(), message, flext::post);
+        std::stringstream message_lines(message);
+        std::string line;
+        
+        while(std::getline(message_lines, line, '\n'))
+        {
+            post_prefixed_message(get_object_name(), line, flext::post);
+        }
     }
     
     void ml_base::error(const std::string &message) const

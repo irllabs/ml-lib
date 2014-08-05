@@ -25,11 +25,12 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.minmax";
-    static const t_symbol *s_min  = flext::MakeSymbol("min");
-    static const t_symbol *s_max  = flext::MakeSymbol("max");
+    const std::string ml_object_name = "ml.minmax";
+    const t_symbol *s_min  = flext::MakeSymbol("min");
+    const t_symbol *s_max  = flext::MakeSymbol("max");
+    const std::string k_attribute_help = "delta: a float setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value. (default: 1e-6)";
     
-    class ml_minmax : flext_base
+    class ml_minmax : ml_base
     {
         FLEXT_HEADER_S(ml_minmax, ml_base, setup);
         
@@ -39,11 +40,11 @@ namespace ml
         {
             post("Peak / valley detection based on Eli Billauer's peakdet");
             FLEXT_ADDMETHOD(0, input);
+            help.append_attributes(k_attribute_help);
         }
         
         ~ml_minmax()
         {
-            
         }
         
     protected:
@@ -53,15 +54,12 @@ namespace ml
             
             FLEXT_CADDATTR_SET(c, "delta", set_delta);
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
-            
-            FLEXT_CADDMETHOD_(c, 0, "help", usage);
-            
+                        
             DefineHelp(c, ml_object_name.c_str());
         }
         
         // Methods
         void input(int argc, t_atom *argv);
-        void usage();
         
         // Attribute setters
         void set_delta(float delta);
@@ -74,7 +72,6 @@ namespace ml
         
         // Method wrappers
         FLEXT_CALLBACK_V(input);
-        FLEXT_CALLBACK(usage);
         
         // Attribute wrappers
         FLEXT_CALLVAR_F(get_delta, set_delta);
@@ -145,19 +142,6 @@ namespace ml
         
         ToOutList(0, minima);
         ToOutList(0, maxima);
-    }
-    
-    void ml_minmax::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("delta: a float setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value. (default: 1e-6)");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
     }
     
 #pragma mark - private methods

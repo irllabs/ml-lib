@@ -10,6 +10,14 @@
 
 namespace ml
 {
+
+    // Constants
+    const std::string k_attribute_help =
+    "training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)\n"
+    "max_iterations:\tinteger setting the maximum number of training iterations (default 100)\n"
+    "min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)\n";
+
+
     // Attribute setters
     void ml_regression::set_max_iterations(int max_iterations)
     {
@@ -59,6 +67,13 @@ namespace ml
     }
     
     // Methods
+    ml_regression::ml_regression()
+    {
+        regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
+        set_data_type(LABELLED_REGRESSION);
+        help.append_attributes(k_attribute_help);
+    }
+    
     void ml_regression::train()
     {
         GRT::UINT numSamples = regressionData.getNumSamples();
@@ -143,28 +158,6 @@ namespace ml
         }
         
         ToOutList(0, result);
-    }
-    
-    void ml_regression::usage()
-    {
-        post(ML_LINE_SEPARATOR);
-        post("Attributes:");
-        post(ML_LINE_SEPARATOR);
-        post("num_inputs:\tinteger setting number of neurons in the input layer of the MLP (default " + std::to_string(defaultNumInputDimensions) + ")");
-        post("training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)");
-        post("scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)");
-        post("probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet");
-        post(ML_LINE_SEPARATOR);
-        post("Methods:");
-        post(ML_LINE_SEPARATOR);
-        post("add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc");
-        post("write:\twrite training examples, first argument gives path to write location");
-        post("read:\tread training examples, first argument gives path to the read location");
-        post("train:\ttrain the MLP based on vectors added with 'add'");
-        post("clear:\tclear the stored training data and data_typel");
-        post("map:\tgive the regression value for the input feature vector");
-        post("help:\tpost this usage statement to the console");
-        post(ML_LINE_SEPARATOR);
     }
     
 #pragma mark - pure virtual method implementation
