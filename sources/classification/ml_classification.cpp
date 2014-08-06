@@ -250,7 +250,7 @@ namespace ml
         ToOutInt(0, classification);
     }
     
-#pragma mark - pure virtual method implementation
+    // pure virtual method implementation
     GRT::MLBase &ml_classification::get_MLBase_instance()
     {
         return get_Classifier_instance();

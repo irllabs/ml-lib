@@ -23,7 +23,7 @@
 namespace ml
 {
     
-#pragma mark - Constants
+    // Constants
     const std::string k_model_extension = ".model";
     const std::string k_data_extension = ".data";
     const std::string k_method_help =
@@ -38,7 +38,7 @@ namespace ml
     "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n"
     "probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet\n";
     
-#pragma mark - Utility methods
+    // Utility methods
     
     const std::string get_symbol_as_string(const t_symbol *symbol)
     {
@@ -92,7 +92,7 @@ namespace ml
     }
     
     
-#pragma mark - ml implementation
+    // ml implementation
     
     ml::ml()
     : currentLabel(0), probs(false), recording(false)
@@ -498,7 +498,6 @@ namespace ml
         return false;
     }
     
-#pragma mark - Main function
 #ifdef BUILD_AS_LIBRARY
     static void main()
     {
@@ -526,7 +525,7 @@ namespace ml
     }
 #endif
     
-#pragma mark - Global constants
+    // Global constants
     
     const t_symbol *ml::s_train = flext::MakeSymbol("train");
     const t_symbol *ml::s_clear = flext::MakeSymbol("clear");

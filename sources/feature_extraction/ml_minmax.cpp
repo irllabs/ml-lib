@@ -144,7 +144,7 @@ namespace ml
         ToOutList(0, maxima);
     }
     
-#pragma mark - private methods
+    // Private methods
     
     void ml_minmax::detect_minmax(
                                   const std::vector<double> &data,

@@ -25,13 +25,13 @@
 
 namespace ml
 {
-#pragma mark - Constants
+    // Constants
 
-#pragma mark - utility functions
+    // Utility functions
    
     void post_prefixed_message(const std::string object_name, const std::string &message, void(*post_function)(const char *,...));
 
-#pragma mark - ml_help implementation
+    // ml_help implementation
     
     std::string ml_help::full_message(void) const
     {
@@ -50,7 +50,7 @@ namespace ml
         return full_message;
     }
     
-#pragma mark - ml_base implementation
+    // ml_base implementation
     
     void ml_base::post(const std::string &message) const
     {
@@ -68,7 +68,7 @@ namespace ml
         post_prefixed_message(get_object_name(), message, flext::error);
     }
     
-#pragma mark - free standing functions
+    // free-standing functions
     
     void post_prefixed_message(const std::string object_name, const std::string &message, void(*post_function)(const char *,...))
     {

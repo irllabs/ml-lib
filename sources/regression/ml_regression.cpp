@@ -160,7 +160,7 @@ namespace ml
         ToOutList(0, result);
     }
     
-#pragma mark - pure virtual method implementation
+    // pure virtual method implementation
     GRT::MLBase &ml_regression::get_MLBase_instance()
     {
         return get_Regressifier_instance();
