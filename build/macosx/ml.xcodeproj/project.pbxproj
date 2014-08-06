@@ -101,6 +101,24 @@
 		7D6512D718F4428B0050C9C8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D65FDDD1991760200C82004 /* ml.mlp.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */; };
 		7D65FDDE19917D1A00C82004 /* ml.svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D7DA0EB18F7CFD200F417F6 /* ml.svm-help.pd */; };
+		7D65FFC9199259B400C82004 /* ml_feature_extraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */; };
+		7D65FFCA199259B400C82004 /* ml_feature_extraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */; };
+		7D65FFCD1992BCC500C82004 /* ml_zerox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */; };
+		7D65FFCE1992BCC500C82004 /* ml_zerox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */; };
+		7D65FFD11992C18C00C82004 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D65FFD21992C18C00C82004 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D65FFD41992C18C00C82004 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
+		7D65FFD81992C18C00C82004 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
+		7D65FFDF1992C1B200C82004 /* ml_feature_extraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */; };
+		7D65FFE01992C1BA00C82004 /* ml_zerox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */; };
+		7D65FFE31992C1FF00C82004 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
+		7D65FFE41992C1FF00C82004 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
+		7D65FFE51992C1FF00C82004 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7D65FFE61992C1FF00C82004 /* ml_knn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12E190FDC2500F491FB /* ml_knn.cpp */; };
+		7D65FFE81992C1FF00C82004 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
+		7D65FFE91992C1FF00C82004 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
+		7D65FFEA1992C1FF00C82004 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D65FFEB1992C1FF00C82004 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
 		7D7D9FD418F6948E00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7D9FDB18F6948E00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7D9FDF18F6948E00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
@@ -385,6 +403,25 @@
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D65FFD91992C18C00C82004 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D65FFEC1992C1FF00C82004 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D7D9FE318F6948E00F417F6 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -625,6 +662,12 @@
 		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ../../sources/classification/ml_dtw.cpp; sourceTree = "<group>"; };
 		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ../../sources/feature_extraction/ml_peak.cpp; sourceTree = "<group>"; };
 		7D6511D718F4366F0050C9C8 /* libgrt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrt.a; path = ../../dependencies/lib/macosx/libgrt.a; sourceTree = "<group>"; };
+		7D65FFC7199253D400C82004 /* ml_feature_extraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_feature_extraction.h; path = ../../sources/feature_extraction/ml_feature_extraction.h; sourceTree = "<group>"; };
+		7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_feature_extraction.cpp; path = ../../sources/feature_extraction/ml_feature_extraction.cpp; sourceTree = "<group>"; };
+		7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_zerox.cpp; path = ../../sources/feature_extraction/ml_zerox.cpp; sourceTree = "<group>"; };
+		7D65FFDE1992C18C00C82004 /* ml.zerox pd.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "ml.zerox pd.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D65FFF11992C1FF00C82004 /* ml.zerox max.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ml.zerox max.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D65FFF21992C20000C82004 /* ml.knn max copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ml.knn max copy-Info.plist"; path = "/Users/jamie/Documents/ml-lib/build/macosx/ml.knn max copy-Info.plist"; sourceTree = "<absolute>"; };
 		7D7D9FEF18F6948E00F417F6 /* ml.svm.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.svm.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA00918F699D800F417F6 /* ml.adaboost.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.adaboost.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA02318F69AD400F417F6 /* ml.linreg.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.linreg.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -928,6 +971,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D65FFD01992C18C00C82004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D65FFD11992C18C00C82004 /* Accelerate.framework in Frameworks */,
+				7D65FFD21992C18C00C82004 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D65FFE71992C1FF00C82004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D65FFE81992C1FF00C82004 /* MaxAPI.framework in Frameworks */,
+				7D65FFE91992C1FF00C82004 /* MaxAudioAPI.framework in Frameworks */,
+				7D65FFEA1992C1FF00C82004 /* Accelerate.framework in Frameworks */,
+				7D65FFEB1992C1FF00C82004 /* libgrt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D7D9FDE18F6948E00F417F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1194,6 +1257,8 @@
 				7D551AE8190FEA37008FF361 /* ml.knn.mxo */,
 				7D551AF8190FEA66008FF361 /* ml.gmm.mxo */,
 				7D551B08190FEA80008FF361 /* ml.dtree.mxo */,
+				7D65FFDE1992C18C00C82004 /* ml.zerox pd.pd_darwin */,
+				7D65FFF11992C1FF00C82004 /* ml.zerox max.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1206,6 +1271,7 @@
 				08FB77ACFE841707C02AAC07 /* Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DDFF38A45A11DB9C8B /* Products */,
+				7D65FFF21992C20000C82004 /* ml.knn max copy-Info.plist */,
 			);
 			name = xsample;
 			sourceTree = "<group>";
@@ -1290,6 +1356,9 @@
 			children = (
 				7D61B11618788BD6000FD114 /* ml_peak.cpp */,
 				7D88176318EEF6A2002426FB /* ml_minmax.cpp */,
+				7D65FFC7199253D400C82004 /* ml_feature_extraction.h */,
+				7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */,
+				7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */,
 			);
 			name = "Feature Extraction";
 			sourceTree = "<group>";
@@ -2037,6 +2106,40 @@
 			productReference = 7D551B08190FEA80008FF361 /* ml.dtree.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
+		7D65FFCF1992C18C00C82004 /* ml.zerox pd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D65FFDA1992C18C00C82004 /* Build configuration list for PBXNativeTarget "ml.zerox pd" */;
+			buildPhases = (
+				7D65FFD01992C18C00C82004 /* Frameworks */,
+				7D65FFD31992C18C00C82004 /* Sources */,
+				7D65FFD91992C18C00C82004 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.zerox pd";
+			productName = xsample;
+			productReference = 7D65FFDE1992C18C00C82004 /* ml.zerox pd.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		7D65FFE11992C1FF00C82004 /* ml.zerox max */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D65FFED1992C1FF00C82004 /* Build configuration list for PBXNativeTarget "ml.zerox max" */;
+			buildPhases = (
+				7D65FFE21992C1FF00C82004 /* Sources */,
+				7D65FFE71992C1FF00C82004 /* Frameworks */,
+				7D65FFEC1992C1FF00C82004 /* Copy Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml.zerox max";
+			productName = "Max xsample static";
+			productReference = 7D65FFF11992C1FF00C82004 /* ml.zerox max.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
 		7D7D9FD018F6948E00F417F6 /* ml.svm max */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D7D9FEB18F6948E00F417F6 /* Build configuration list for PBXNativeTarget "ml.svm max" */;
@@ -2464,6 +2567,7 @@
 				7D551A66190FE523008FF361 /* ml.knn pd */,
 				7D551A75190FE530008FF361 /* ml.gmm pd */,
 				7D551A84190FE53B008FF361 /* ml.dtree pd */,
+				7D65FFCF1992C18C00C82004 /* ml.zerox pd */,
 				E9974E52077083C700206F68 /* ml max */,
 				7D7D9FD018F6948E00F417F6 /* ml.svm max */,
 				7D7D9FF318F699D800F417F6 /* ml.adaboost max */,
@@ -2480,6 +2584,7 @@
 				7D551ADA190FEA37008FF361 /* ml.knn max */,
 				7D551AEA190FEA66008FF361 /* ml.gmm max */,
 				7D551AFA190FEA80008FF361 /* ml.dtree max */,
+				7D65FFE11992C1FF00C82004 /* ml.zerox max */,
 				7D7DA0BE18F6A04100F417F6 /* BUILD ALL MAX */,
 				7D7DA16418F7DD4700F417F6 /* BUILD ALL PD */,
 			);
@@ -2585,6 +2690,28 @@
 				7D551AFC190FEA80008FF361 /* ml_ml.cpp in Sources */,
 				7DACBF71192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DA0B69D192F768E001F56DA /* ml_classification.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D65FFD31992C18C00C82004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D65FFD41992C18C00C82004 /* ml_base.cpp in Sources */,
+				7D65FFD81992C18C00C82004 /* ml_ml.cpp in Sources */,
+				7D65FFDF1992C1B200C82004 /* ml_feature_extraction.cpp in Sources */,
+				7D65FFE01992C1BA00C82004 /* ml_zerox.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D65FFE21992C1FF00C82004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D65FFE31992C1FF00C82004 /* ml_ml.cpp in Sources */,
+				7D65FFE41992C1FF00C82004 /* ml_base.cpp in Sources */,
+				7D65FFE51992C1FF00C82004 /* ml_classification.cpp in Sources */,
+				7D65FFE61992C1FF00C82004 /* ml_knn.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2833,8 +2960,10 @@
 				7D61B11818788BD6000FD114 /* ml_peak.cpp in Sources */,
 				7D7D9FF218F6971F00F417F6 /* ml_classification.cpp in Sources */,
 				7D61B1131876F334000FD114 /* ml_dtw.cpp in Sources */,
+				7D65FFC9199259B400C82004 /* ml_feature_extraction.cpp in Sources */,
 				7D88176418EEF6A2002426FB /* ml_minmax.cpp in Sources */,
 				7D23B9D818C9EE1700735880 /* ml_adaboost.cpp in Sources */,
+				7D65FFCD1992BCC500C82004 /* ml_zerox.cpp in Sources */,
 				7DA1F12C190FDC0600F491FB /* ml_gmm.cpp in Sources */,
 				7D2C59AF189AF5EA001A78C9 /* ml_hmm.cpp in Sources */,
 				7D7DA0DE18F6C34C00F417F6 /* ml_anbc.cpp in Sources */,
@@ -2860,8 +2989,10 @@
 				7D61B11918788BD6000FD114 /* ml_peak.cpp in Sources */,
 				7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */,
 				7D61B1141876F334000FD114 /* ml_dtw.cpp in Sources */,
+				7D65FFCA199259B400C82004 /* ml_feature_extraction.cpp in Sources */,
 				7D2C59B0189AF5EA001A78C9 /* ml_hmm.cpp in Sources */,
 				7D88176518EEF6A2002426FB /* ml_minmax.cpp in Sources */,
+				7D65FFCE1992BCC500C82004 /* ml_zerox.cpp in Sources */,
 				7DA1F12D190FDC0600F491FB /* ml_gmm.cpp in Sources */,
 				7D23B9D918C9EE1700735880 /* ml_adaboost.cpp in Sources */,
 				7D7DA0DF18F6C34C00F417F6 /* ml_anbc.cpp in Sources */,
@@ -4148,6 +4279,272 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
+				SDKROOT = macosx10.8;
+				SECTORDER_FLAGS = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+			};
+			name = Default;
+		};
+		7D65FFDB1992C18C00C82004 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = "$(PD-devel)/src";
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_sd",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "ml.zerox pd";
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		7D65FFDC1992C18C00C82004 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PD)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-lflext-pd_s",
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "ml.zerox pd";
+				USER_HEADER_SEARCH_PATHS = "";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		7D65FFDD1992C18C00C82004 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = pd_darwin;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+					FLEXT_USE_HEX_SETUP_NAME,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PDApp)/src",
+					"$(flext)/source",
+				);
+				INSTALL_PATH = "$(PD)/extra";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../dependencies/lib/macosx";
+				LIBRARY_STYLE = BUNDLE;
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"-bundle_loader",
+					"$(PDApp)/bin/pd",
+				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "ml.zerox pd";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+		7D65FFEE1992C1FF00C82004 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
+				);
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=1",
+					"FLEXT_ATTRIBUTES=1",
+				);
+				GENERATE_PKGINFO_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+					"$(flext)/source",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_PREPROCESS = YES;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(maxsdk)/max-includes",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
+				);
+				LIBRARY_STYLE = DYNAMIC;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "ml.zerox max";
+				SDKROOT = macosx10.8;
+				SECTORDER_FLAGS = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+				ZERO_LINK = YES;
+				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+			};
+			name = Development;
+		};
+		7D65FFEF1992C1FF00C82004 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = NO;
+				DEPLOYMENT_POSTPROCESSING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FLEXT_SYS=1",
+					"FLEXT_ATTRIBUTES=1",
+				);
+				GENERATE_PKGINFO_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+					"$(flext)/source",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_PREPROCESS = YES;
+				INSTALL_PATH = "";
+				"INSTALL_PATH[sdk=*]" = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(maxsdk)/max-includes",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
+				);
+				LIBRARY_STYLE = DYNAMIC;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "ml.zerox max";
+				SDKROOT = macosx10.8;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
+				USER_HEADER_SEARCH_PATHS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+				ZERO_LINK = NO;
+				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+			};
+			name = Deployment;
+		};
+		7D65FFF01992C1FF00C82004 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FLEXT_SYS=1",
+					"FLEXT_ATTRIBUTES=1",
+				);
+				GENERATE_PKGINFO_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+					"$(flext)/source",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(maxsdk)/max-includes",
+					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
+				);
+				LIBRARY_STYLE = DYNAMIC;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "ml.zerox max";
 				SDKROOT = macosx10.8;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -7353,6 +7750,26 @@
 				7D551B05190FEA80008FF361 /* Development */,
 				7D551B06190FEA80008FF361 /* Deployment */,
 				7D551B07190FEA80008FF361 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D65FFDA1992C18C00C82004 /* Build configuration list for PBXNativeTarget "ml.zerox pd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D65FFDB1992C18C00C82004 /* Development */,
+				7D65FFDC1992C18C00C82004 /* Deployment */,
+				7D65FFDD1992C18C00C82004 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		7D65FFED1992C1FF00C82004 /* Build configuration list for PBXNativeTarget "ml.zerox max" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D65FFEE1992C1FF00C82004 /* Development */,
+				7D65FFEF1992C1FF00C82004 /* Deployment */,
+				7D65FFF01992C1FF00C82004 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;

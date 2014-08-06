@@ -28,7 +28,7 @@ namespace ml
     const std::string k_data_extension = ".data";
     const std::string k_method_help =
     "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc"
-    "write:\twrite training examples, first argument gives path to write location\n"
+    "write:\twrite training examples, first argument gives path to write file\n"
     "read:\tread training examples, first argument gives path to the read location\n"
     "train:\ttrain the MLP based on vectors added with 'add'\n"
     "clear:\tclear the stored training data and model\n"
