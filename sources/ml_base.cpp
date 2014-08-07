@@ -25,14 +25,10 @@
 
 namespace ml
 {
-    // Constants
-
-    // Utility functions
-   
+    // Utility function declarations
     void post_prefixed_message(const std::string object_name, const std::string &message, void(*post_function)(const char *,...));
 
     // ml_help implementation
-    
     std::string ml_help::full_message(void) const
     {
         std::string full_message;
@@ -51,7 +47,6 @@ namespace ml
     }
     
     // ml_base implementation
-    
     void ml_base::post(const std::string &message) const
     {
         std::stringstream message_lines(message);
@@ -68,8 +63,7 @@ namespace ml
         post_prefixed_message(get_object_name(), message, flext::error);
     }
     
-    // free-standing functions
-    
+    // Utility function definitions
     void post_prefixed_message(const std::string object_name, const std::string &message, void(*post_function)(const char *,...))
     {
         std::string full_message = object_name + ML_POST_SEPARATOR + message;

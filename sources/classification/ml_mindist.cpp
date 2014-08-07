@@ -21,12 +21,7 @@
 namespace ml
 {
     const std::string ml_object_name = "ml.mindist";
-    const std::string k_attribute_help = "num_clusters:\tinteger (n > 0) sets how many clusters each model will try to find during the training phase (default 10)";
     
-    // Utility functions
-    
-    
-    // Class declaration
     class ml_mindist : ml_classification
     {
         FLEXT_HEADER_S(ml_mindist, ml_classification, setup);
@@ -34,14 +29,9 @@ namespace ml
     public:
         ml_mindist()
         {
-            post("MinDist classifier algorithm based on the GRT library version " + get_grt_version());
+            post("MinDist classifier algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
-            help.append_attributes(k_attribute_help);
-        }
-        
-        ~ml_mindist()
-        {
-            
+            help.append_attributes(attribute_help);
         }
         
     protected:
@@ -53,19 +43,14 @@ namespace ml
             // Flext attribute get messages
             FLEXT_CADDATTR_GET(c, "num_clusters", get_num_clusters);
             
-            // Flext method messages
-            
             // Associate this Flext class with a certain help file prefix
             DefineHelp(c, ml_object_name.c_str());
         }
         
-        // Methods
-        void usage();
-        
-        // Attribute Setters
+        // Flext attribute setters
         void set_num_clusters(int type);
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_num_clusters(int &type) const;
         
         // Pure virtual method implementations
@@ -73,35 +58,30 @@ namespace ml
         const GRT::Classifier &get_Classifier_instance() const;
         
     private:
-        // Flext method wrappers
-        
-        // Flext attribute wrappers
+        // Flext Flext attribute wrappers
         FLEXT_CALLVAR_I(get_num_clusters, set_num_clusters);
         
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::MinDist mindist;
+        
+        static const std::string attribute_help;
     };
     
-    // Utility functions
     
-    
-    // Attribute setters
+    // Flext attribute setters
     void ml_mindist::set_num_clusters(int num_clusters)
     {
         mindist.setNumClusters(num_clusters);
     }
     
-    // Attribute getters
+    // Flext attribute getters
     void ml_mindist::get_num_clusters(int &num_clusters) const
     {
         error("function not implemented");
     }
-    
-    // Methods
-    
+        
     // Implement pure virtual methods
     GRT::Classifier &ml_mindist::get_Classifier_instance()
     {
@@ -112,6 +92,8 @@ namespace ml
     {
         return mindist;
     }
+    
+    const std::string ml_mindist::attribute_help = "num_clusters:\tinteger (n > 0) sets how many clusters each model will try to find during the training phase (default 10)";
     
     FLEXT_LIB(ml_object_name.c_str(), ml_mindist);
     

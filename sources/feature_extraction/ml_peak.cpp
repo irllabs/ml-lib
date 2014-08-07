@@ -22,15 +22,7 @@
 
 namespace ml
 {
-    // Constants
     const std::string ml_object_name = "ml.peak";
-    const std::string k_attribute_help =
-    "search_window_size: an integer setting the search window size in values (default: 5)\n";
-    const std::string k_method_help =
-    "float:\ta floating point value to the inlet updates the current value of the peak detector\n"
-    "reset:\treset the peak detector\n"
-    "timeout:\t (see GRT documentation)\n"
-    "help:\tpost this usage statement to the console\n";
     
     class ml_peak : ml_base
     {
@@ -43,17 +35,11 @@ namespace ml
             FLEXT_ADDMETHOD(0, update);
             FLEXT_ADDMETHOD(0, peaks);
             
-            help.append_attributes(k_attribute_help);
-            help.append_attributes(k_method_help);
-        }
-        
-        ~ml_peak()
-        {
-            
+            help.append_attributes(attribute_help);
+            help.append_attributes(method_help);
         }
         
     protected:
-        
         static void setup(t_classid c)
         {
             FLEXT_CADDATTR_SET(c, "search_window_size", set_search_window_size);
@@ -73,34 +59,36 @@ namespace ml
         void timeout();
         void usage();
   
-        // Attribute setters
+        // Flext attribute setters
 //        void set_low_pass_filter_size(int low_pass_filter_size);
         void set_search_window_size(int search_window_size);
 
         
-        // Attribute Getters
+        // Flext attribute getters
         
     private:
         
-        // Method wrappers
+        // Flext method wrappers
         FLEXT_CALLBACK_F(update);
         FLEXT_CALLBACK_V(peaks);
         FLEXT_CALLBACK(reset);
         FLEXT_CALLBACK(timeout);
         
-        // Attribute wrappers
+        // Flext attribute wrappers
 //        FLEXT_CALLSET_I(set_low_pass_filter_size);
         FLEXT_CALLSET_I(set_search_window_size);
 
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::PeakDetection peakDetection;
         
+        static const std::string attribute_help;
+        static const std::string method_help;
+
     };
     
-    // Attribute setters
+    // Flext attribute setters
 //    void ml_peak::set_low_pass_filter_size(int low_pass_filter_size)
 //    {
 //        bool success = peakDetection.setLowPassFilterSize(low_pass_filter_size);
@@ -122,7 +110,7 @@ namespace ml
     }
 
     
-    // Attribute Getters
+    // Flext attribute getters
     
     // Methods
     void ml_peak::peaks(int argc, t_atom *argv)
@@ -213,6 +201,14 @@ namespace ml
         }
     }
 
+    const std::string ml_peak::attribute_help =
+    "search_window_size: an integer setting the search window size in values (default: 5)\n";
+    const std::string ml_peak::method_help =
+    "float:\ta floating point value to the inlet updates the current value of the peak detector\n"
+    "reset:\treset the peak detector\n"
+    "timeout:\t (see GRT documentation)\n"
+    "help:\tpost this usage statement to the console\n";
+    
     typedef class ml_peak ml0x2epeak;
     
 #ifdef BUILD_AS_LIBRARY

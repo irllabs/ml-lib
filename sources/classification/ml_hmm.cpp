@@ -20,15 +20,7 @@
 
 namespace ml
 {
-    // Constants
     const std::string ml_object_name = "ml.hmm";
-    const std::string k_attribute_help =  "num_states:\tinteger ( > 0) sets the number of states in the model (default 5)\n"
-    "num_symbols:\tinteger ( > 0) sets the number of symbols in the model (default 10)\n"
-    "model_type:\tinteger (0 = ERGODIC, 1 = LEFTRIGHT) sets the model type used for the HMM (default LEFTRIGHT)\n"
-    "delta:\tinteger ( > 0) controls how many states a model can transition to if the LEFTRIGHT model type is used (default 1)\n"
-    "max_num_iterations:\tinteger ( > 0) set the maximum number of training iterations (default 100)\n"
-    "num_random_training_iterations:\tinteger setting the number of random training iterations (default 10)\n"
-    "min_improvement:\tfloat sets the minimum improvement parameter which controls when the HMM training algorithm should stop (default 1.0e-2)\n";
     
     class ml_hmm : ml_classification
     {
@@ -37,15 +29,10 @@ namespace ml
     public:
         ml_hmm()
         {
-            post("Hidden Markov Model based on the GRT library version " + get_grt_version());
+            post("Hidden Markov Model based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
             set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
-            help.append_attributes(k_attribute_help);
-        }
-        
-        ~ml_hmm()
-        {
-            
+            help.append_attributes(attribute_help);
         }
         
     protected:
@@ -71,9 +58,7 @@ namespace ml
             DefineHelp(c,ml_object_name.c_str());
         }
         
-        // Methods
-        
-        // Attribute Setters
+        // Flext attribute setters
         void set_num_states(int num_states);
         void set_num_symbols(int num_symbols);
         void set_model_type(int model_type);
@@ -81,9 +66,8 @@ namespace ml
         void set_max_num_iterations(int max_num_iterations);
         void set_num_random_training_iterations(int num_random_training_iterations);
         void set_min_improvement(float min_improvement);
-        
-        
-        // Attribute Getters
+                
+        // Flext attribute getters
         void get_num_states(int &num_states) const;
         void get_num_symbols(int &num_symbols) const;
         void get_model_type(int &model_type) const;
@@ -99,9 +83,7 @@ namespace ml
         bool write_specialised_dataset(std::string &path) const;
         
     private:
-        // Method wrappers
-        
-        // Attribute wrappers
+        // Flext attribute wrappers
         FLEXT_CALLVAR_I(get_num_states, set_num_states);
         FLEXT_CALLVAR_I(get_num_symbols, set_num_symbols);
         FLEXT_CALLVAR_I(get_model_type, set_model_type);
@@ -116,9 +98,10 @@ namespace ml
         // Instance variables
         GRT::HMM classifier;
         
+        static const std::string attribute_help;
     };
     
-    // Attribute setters
+    // Flext attribute setters
     void ml_hmm::set_num_states(int num_states)
     {
         bool success = classifier.setNumStates(num_states);
@@ -189,7 +172,7 @@ namespace ml
         }
     }
     
-    // Attribute getters
+    // Flext attribute getters
     void ml_hmm::get_num_states(int &num_states) const
     {
         num_states = classifier.getNumStates();
@@ -225,8 +208,6 @@ namespace ml
         min_improvement = classifier.getMinImprovement();
     }
     
-    // methods
-    
     // Implement pure virtual methods
     GRT::Classifier &ml_hmm::get_Classifier_instance()
     {
@@ -240,13 +221,21 @@ namespace ml
     
     bool ml_hmm::read_specialised_dataset(std::string &path)
     {
-        return timeSeriesClassificationData.loadDatasetFromFile(path);
+        return time_series_classification_data.loadDatasetFromFile(path);
     }
 
     bool ml_hmm::write_specialised_dataset(std::string &path) const
     {
-        return timeSeriesClassificationData.saveDatasetToFile(path);
+        return time_series_classification_data.saveDatasetToFile(path);
     }
+    
+    const std::string ml_hmm::attribute_help =  "num_states:\tinteger ( > 0) sets the number of states in the model (default 5)\n"
+    "num_symbols:\tinteger ( > 0) sets the number of symbols in the model (default 10)\n"
+    "model_type:\tinteger (0 = ERGODIC, 1 = LEFTRIGHT) sets the model type used for the HMM (default LEFTRIGHT)\n"
+    "delta:\tinteger ( > 0) controls how many states a model can transition to if the LEFTRIGHT model type is used (default 1)\n"
+    "max_num_iterations:\tinteger ( > 0) set the maximum number of training iterations (default 100)\n"
+    "num_random_training_iterations:\tinteger setting the number of random training iterations (default 10)\n"
+    "min_improvement:\tfloat sets the minimum improvement parameter which controls when the HMM training algorithm should stop (default 1.0e-2)\n";
     
     typedef class ml_hmm ml0x2ehmm;
     

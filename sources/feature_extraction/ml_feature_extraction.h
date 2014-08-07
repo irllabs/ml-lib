@@ -11,7 +11,6 @@
 
 #include "ml_ml.h"
 
-
 namespace ml
 {
     class ml_feature_extraction : public ml
@@ -21,11 +20,6 @@ namespace ml
     public:
         ml_feature_extraction();
         
-        ~ml_feature_extraction()
-        {
-            
-        }
-        
     protected:
         static void setup(t_classid c)
         {
@@ -33,12 +27,9 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "num_output_dimensions", get_num_output_dimensions);
         }
         
-        // Methods
         void map(int argc, const t_atom *argv);
-        
-        // Attribute Setters
-        
-        // Attribute Getters
+                
+        // Flext attribute getters
         void get_num_input_dimensions(int &num_input_dimensions) const;
         void get_num_output_dimensions(int &num_output_dimensions) const;
         
@@ -48,13 +39,16 @@ namespace ml
         virtual GRT::FeatureExtraction &get_FeatureExtraction_instance() = 0;
         virtual const GRT::FeatureExtraction &get_FeatureExtraction_instance() const = 0;
         
+        // Override pure virtual functions - do nothing
+        virtual bool read_specialised_dataset(std::string &path) { return true; };
+        virtual bool write_specialised_dataset(std::string &path) const { return true; };
+        
     private:
-        
-        // Method wrappers
-        
-        // Attribute wrappers
+        // Flext attribute wrappers
         FLEXT_CALLGET_I(get_num_input_dimensions);
         FLEXT_CALLGET_I(get_num_output_dimensions);
+        
+        static const std::string attribute_help;
     };
 }
 

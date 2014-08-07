@@ -20,14 +20,11 @@
 
 namespace ml
 {
-    // Constants
     const std::string ml_object_name = "ml.randforest";
     const std::string k_attribute_help =
     "num_random_splits:\tinteger (n > 0) sets the number of steps that will be used to search for the best spliting value for each node. (default 100)\n"
     "min_samples_per_node:\tinteger (n > 0) Sets the minimum number of samples that are allowed per node (default 5)\n"
     "max_depth:\tinteger (n > 0) Sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node. (default 10)\n";
-    
-    // Utility functions
     
     
     // Class declaration
@@ -38,7 +35,7 @@ namespace ml
     public:
         ml_randforest()
         {
-            post("Random Forests algorithm based on the GRT library version " + get_grt_version());
+            post("Random Forests algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
             help.append_attributes(k_attribute_help);
         }
@@ -62,23 +59,17 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "min_samples_per_node", get_min_samples_per_node);
             FLEXT_CADDATTR_GET(c, "max_depth", get_max_depth);
 
-            
-            // Flext method messages
-            
             // Associate this Flext class with a certain help file prefix
             DefineHelp(c, ml_object_name.c_str());
         }
         
-        // Methods
-        void usage();
-        
-        // Attribute Setters
+        // Flext attribute setters
         void set_num_random_splits(int num_random_splits);
         void set_min_samples_per_node(int min_samples_per_node);
         void set_max_depth(int max_depth);
 
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_num_random_splits(int &num_random_splits) const;
         void get_min_samples_per_node(int &min_samples_per_node) const;
         void get_max_depth(int &max_depth) const;
@@ -88,9 +79,7 @@ namespace ml
         const GRT::Classifier &get_Classifier_instance() const;
         
     private:
-        // Flext method wrappers
-        
-        // Flext attribute wrappers
+        // Flext Flext attribute wrappers
         FLEXT_CALLVAR_I(get_num_random_splits, set_num_random_splits);
         FLEXT_CALLVAR_I(get_min_samples_per_node, set_min_samples_per_node);
         FLEXT_CALLVAR_I(get_max_depth, set_max_depth);
@@ -98,14 +87,13 @@ namespace ml
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::RandomForests randforest;
+        
+        static const std::string attribute_help;
     };
     
-    // Utility functions
     
-    
-    // Attribute setters
+    // Flext attribute setters
     void ml_randforest::set_num_random_splits(int num_random_splits)
     {
         randforest.setNumRandomSpilts(num_random_splits);
@@ -121,7 +109,7 @@ namespace ml
         randforest.setMinNumSamplesPerNode(max_depth);
     }
     
-    // Attribute getters
+    // Flext attribute getters
     void ml_randforest::get_num_random_splits(int &num_random_splits) const
     {
         num_random_splits = randforest.getNumRandomSpilts();
@@ -136,9 +124,6 @@ namespace ml
     {
         max_depth = randforest.getMaxDepth();
     }
-
-    
-    // Methods
     
     // Implement pure virtual methods
     GRT::Classifier &ml_randforest::get_Classifier_instance()
@@ -150,6 +135,11 @@ namespace ml
     {
         return randforest;
     }
+    
+    const std::string ml_randforest::attribute_help =
+    "num_random_splits:\tinteger (n > 0) sets the number of steps that will be used to search for the best spliting value for each node. (default 100)\n"
+    "min_samples_per_node:\tinteger (n > 0) Sets the minimum number of samples that are allowed per node (default 5)\n"
+    "max_depth:\tinteger (n > 0) Sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node. (default 10)\n";
     
     FLEXT_LIB(ml_object_name.c_str(), ml_randforest);
     

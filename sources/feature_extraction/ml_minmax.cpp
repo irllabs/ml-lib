@@ -22,13 +22,11 @@
 
 #include <vector>
 
-
 namespace ml
 {
     const std::string ml_object_name = "ml.minmax";
     const t_symbol *s_min  = flext::MakeSymbol("min");
     const t_symbol *s_max  = flext::MakeSymbol("max");
-    const std::string k_attribute_help = "delta: a float setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value. (default: 1e-6)";
     
     class ml_minmax : ml_base
     {
@@ -40,11 +38,7 @@ namespace ml
         {
             post("Peak / valley detection based on Eli Billauer's peakdet");
             FLEXT_ADDMETHOD(0, input);
-            help.append_attributes(k_attribute_help);
-        }
-        
-        ~ml_minmax()
-        {
+            help.append_attributes(attribute_help);
         }
         
     protected:
@@ -58,28 +52,26 @@ namespace ml
             DefineHelp(c, ml_object_name.c_str());
         }
         
-        // Methods
         void input(int argc, t_atom *argv);
         
-        // Attribute setters
+        // Flext attribute setters
         void set_delta(float delta);
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_delta(float &delta) const;
         
         
     private:
         
-        // Method wrappers
+        // Flext method wrappers
         FLEXT_CALLBACK_V(input);
         
-        // Attribute wrappers
+        // Flext attribute wrappers
         FLEXT_CALLVAR_F(get_delta, set_delta);
         
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         double delta;
         
         // Utility methods
@@ -94,6 +86,8 @@ namespace ml
                                 const std::vector<uint32_t> &locations,
                                 AtomList &atomList
                                 );
+        
+        static const std::string attribute_help;
     };
     
     void ml_minmax::set_delta(float delta)
@@ -107,13 +101,12 @@ namespace ml
         this->delta = delta;
     }
     
-    // Attribute Getters
+    // Flext attribute getters
     void ml_minmax::get_delta(float &delta) const
     {
         delta = this->delta;
     }
     
-    // Methods
     void ml_minmax::input(int argc, t_atom *argv)
     {
         AtomList maxima;
@@ -143,8 +136,6 @@ namespace ml
         ToOutList(0, minima);
         ToOutList(0, maxima);
     }
-    
-    // Private methods
     
     void ml_minmax::detect_minmax(
                                   const std::vector<double> &data,
@@ -232,6 +223,8 @@ namespace ml
             atomList.Append(value_a);
         }
     }
+    
+    const std::string ml_minmax::attribute_help = "delta: a float setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value. (default: 1e-6)";
     
     typedef class ml_minmax ml0x2eminmax;
     

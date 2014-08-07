@@ -20,15 +20,8 @@
 
 namespace ml
 {
-    // Constants
     const std::string ml_object_name = "ml.gmm";
-    const std::string k_attribute_help =
-    "num_mixture_models:\tinteger (n > 0) sets the number of mixture models used for class (default 2)\n";
     
-    // Utility functions
-    
-    
-    // Class declaration
     class ml_gmm : ml_classification
     {
         FLEXT_HEADER_S(ml_gmm, ml_classification, setup);
@@ -36,14 +29,9 @@ namespace ml
     public:
         ml_gmm()
         {
-            post("Gaussian Mixture Models based on the GRT library version " + get_grt_version());
+            post("Gaussian Mixture Models based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
-            help.append_attributes(k_attribute_help);
-        }
-        
-        ~ml_gmm()
-        {
-            
+            help.append_attributes(attribute_help);
         }
         
     protected:
@@ -55,19 +43,14 @@ namespace ml
             // Flext attribute get messages
             FLEXT_CADDATTR_GET(c, "num_mixture_models", get_num_mixture_models);
             
-            // Flext method messages
-            
             // Associate this Flext class with a certain help file prefix
             DefineHelp(c, ml_object_name.c_str());
         }
         
-        // Methods
-        void usage();
-        
-        // Attribute Setters
+        // Flext attribute setters
         void set_num_mixture_models(int type);
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_num_mixture_models(int &type) const;
         
         // Pure virtual method implementations
@@ -75,36 +58,29 @@ namespace ml
         const GRT::Classifier &get_Classifier_instance() const;
         
     private:
-        // Flext method wrappers
-        
-        // Flext attribute wrappers
+        // Flext Flext attribute wrappers
         FLEXT_CALLVAR_I(get_num_mixture_models, set_num_mixture_models);
         
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::GMM gmm;
+        
+        static const std::string attribute_help;
     };
     
-    // Utility functions
-    
-    
-    // Attribute setters
+    // Flext attribute setters
     void ml_gmm::set_num_mixture_models(int num_mixture_models)
     {
         gmm.setNumMixtureModels(num_mixture_models);
     }
     
     
-    // Attribute getters
+    // Flext attribute getters
     void ml_gmm::get_num_mixture_models(int &num_mixture_models) const
     {
         flext::error("function not implemented");
     }
-    
-    // Methods
-    
     
     // Implement pure virtual methods
     GRT::Classifier &ml_gmm::get_Classifier_instance()
@@ -117,6 +93,9 @@ namespace ml
         return gmm;
     }
     
+    const std::string ml_gmm::attribute_help =
+    "num_mixture_models:\tinteger (n > 0) sets the number of mixture models used for class (default 2)\n";
+        
     FLEXT_LIB(ml_object_name.c_str(), ml_gmm);
     
 } //namespace ml

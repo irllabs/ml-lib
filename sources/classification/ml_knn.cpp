@@ -20,16 +20,8 @@
 
 namespace ml
 {
-    // Constants
     static const std::string ml_object_name = "ml.knn";
-    static const std::string k_attribute_help =  "k:\tinteger (k > 1) Sets the K nearest neighbours that will be searched for by the algorithm during prediction.(default 10)\n"
-    "min_k_search_value:\tinteger (n > 0) sets the minimum K value to use when searching for the best K value. (default 1)\n"
-    "max_k_search_value:\tinteger (n > 0) sets the maximum K value to use when searching for the best K value. (default 10)\n"
-    "best_k_value_search:\tbool (0 or 1) set whether k value search is enabled or not (default 0)\n";
-        
-    // Utility functions
     
-    // Class declaration
     class ml_knn : ml_classification
     {
         FLEXT_HEADER_S(ml_knn, ml_classification, setup);
@@ -37,13 +29,9 @@ namespace ml
     public:
         ml_knn()
         {
-            post("Support Vector Machines based on the GRT library version " + get_grt_version());
+            post("Support Vector Machines based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
-        }
-        
-        ~ml_knn()
-        {
-            
+            help.append_attributes(attribute_help);
         }
         
     protected:
@@ -54,7 +42,6 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "min_k_search_value", set_min_k_search_value);
             FLEXT_CADDATTR_SET(c, "max_k_search_value", set_max_k_search_value);
             FLEXT_CADDATTR_SET(c, "best_k_value_search", set_best_k_value_search);
-
             
             // Flext attribute get messages
             FLEXT_CADDATTR_GET(c, "k", get_k);
@@ -62,36 +49,28 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "max_k_search_value", get_max_k_search_value);
             FLEXT_CADDATTR_GET(c, "best_k_value_search", get_best_k_value_search);
             
-            // Flext method messages
-            
             // Associate this Flext class with a certain help file prefix
             DefineHelp(c,ml_object_name.c_str());
         }
         
-        // Methods
-        void usage();
-        
-        // Attribute Setters
+        // Flext attribute setters
         void set_k(int k);
         void set_min_k_search_value(int min_k_search_value);
         void set_max_k_search_value(int max_k_search_value);
         void set_best_k_value_search(bool best_k_value_search);
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_k(int &k) const;
         void get_min_k_search_value(int &min_k_search_value) const;
         void get_max_k_search_value(int &max_k_search_value) const;
         void get_best_k_value_search(bool &best_k_value_search) const;
-
         
         // Pure virtual method implementations
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
         
     private:
-        // Flext method wrappers
-        
-        // Flext attribute wrappers
+        // Flext Flext attribute wrappers
         FLEXT_CALLVAR_I(get_k, set_k);
         FLEXT_CALLVAR_I(get_min_k_search_value, set_min_k_search_value);
         FLEXT_CALLVAR_I(get_max_k_search_value, set_max_k_search_value);
@@ -100,14 +79,12 @@ namespace ml
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::KNN knn;
+        
+        static const std::string attribute_help;
     };
     
-    // Utility functions
-    
-    
-    // Attribute setters
+    // Flext attribute setters
     void ml_knn::set_k(int k)
     {
         knn.setK(k);
@@ -128,7 +105,7 @@ namespace ml
         knn.enableBestKValueSearch(best_k_value_search);
     }
     
-    // Attribute getters
+    // Flext attribute getters
     void ml_knn::get_k(int &k) const
     {
         flext::error("function not implemented");
@@ -149,8 +126,6 @@ namespace ml
         flext::error("function not implemented");
     }
     
-    // Methods
-    
     
     // Implement pure virtual methods
     GRT::Classifier &ml_knn::get_Classifier_instance()
@@ -162,6 +137,12 @@ namespace ml
     {
         return knn;
     }
+    
+    const std::string ml_knn::attribute_help =  "k:\tinteger (k > 1) Sets the K nearest neighbours that will be searched for by the algorithm during prediction.(default 10)\n"
+    "min_k_search_value:\tinteger (n > 0) sets the minimum K value to use when searching for the best K value. (default 1)\n"
+    "max_k_search_value:\tinteger (n > 0) sets the maximum K value to use when searching for the best K value. (default 10)\n"
+    "best_k_value_search:\tbool (0 or 1) set whether k value search is enabled or not (default 0)\n";
+    
     
     FLEXT_LIB(ml_object_name.c_str(), ml_knn);
     

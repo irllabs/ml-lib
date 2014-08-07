@@ -10,15 +10,7 @@
 
 namespace ml
 {
-
-    // Constants
-    const std::string k_attribute_help =
-    "training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)\n"
-    "max_iterations:\tinteger setting the maximum number of training iterations (default 100)\n"
-    "min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)\n";
-
-
-    // Attribute setters
+    // Flext attribute setters
     void ml_regression::set_max_iterations(int max_iterations)
     {
         GRT::Regressifier &regressifier = get_Regressifier_instance();
@@ -47,7 +39,7 @@ namespace ml
         }
     }
     
-    // Attribute getters
+    // Flext attribute getters
     void ml_regression::get_max_iterations(int &max_iterations) const
     {
         const GRT::Regressifier &regressifier = get_Regressifier_instance();
@@ -69,14 +61,14 @@ namespace ml
     // Methods
     ml_regression::ml_regression()
     {
-        regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
+        regression_data.setInputAndTargetDimensions(default_num_input_dimensions, default_num_output_dimensions);
         set_data_type(LABELLED_REGRESSION);
-        help.append_attributes(k_attribute_help);
+        help.append_attributes(attribute_help);
     }
     
     void ml_regression::train()
     {
-        GRT::UINT numSamples = regressionData.getNumSamples();
+        GRT::UINT numSamples = regression_data.getNumSamples();
         GRT::Regressifier &regressifier = get_Regressifier_instance();
         
         if (numSamples == 0)
@@ -86,7 +78,7 @@ namespace ml
         }
         
         bool success = false;
-        success = regressifier.train(regressionData);
+        success = regressifier.train(regression_data);
         
         if (!success)
         {
@@ -101,7 +93,7 @@ namespace ml
 
     void ml_regression::map(int argc, const t_atom *argv)
     {
-        GRT::UINT numSamples = regressionData.getNumSamples();
+        GRT::UINT numSamples = regression_data.getNumSamples();
         GRT::Regressifier &regressifier = get_Regressifier_instance();
         
         if (numSamples == 0)
@@ -138,8 +130,8 @@ namespace ml
             return;
         }
         
-        GRT::VectorDouble regressionData = regressifier.getRegressionData();
-        GRT::VectorDouble::size_type numOutputDimensions = regressionData.size();
+        GRT::VectorDouble regression_data = regressifier.getRegressionData();
+        GRT::VectorDouble::size_type numOutputDimensions = regression_data.size();
         
         if (numOutputDimensions != regressifier.getNumOutputDimensions())
         {
@@ -152,7 +144,7 @@ namespace ml
         for (uint32_t index = 0; index < numOutputDimensions; ++index)
         {
             t_atom value_a;
-            double value = regressionData[index];
+            double value = regression_data[index];
             SetFloat(value_a, value);
             result.Append(value_a);
         }
@@ -173,11 +165,17 @@ namespace ml
     
     bool ml_regression::read_specialised_dataset(std::string &path)
     {
-        return regressionData.loadDatasetFromFile(path);
+        return regression_data.loadDatasetFromFile(path);
     }
     
     bool ml_regression::write_specialised_dataset(std::string &path) const
     {
-        return regressionData.saveDatasetToFile(path);
+        return regression_data.saveDatasetToFile(path);
     }
+    
+    const std::string ml_regression::attribute_help =
+    "training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)\n"
+    "max_iterations:\tinteger setting the maximum number of training iterations (default 100)\n"
+    "min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)\n";
+
 }

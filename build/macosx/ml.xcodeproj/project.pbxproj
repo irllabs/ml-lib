@@ -666,8 +666,7 @@
 		7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_feature_extraction.cpp; path = ../../sources/feature_extraction/ml_feature_extraction.cpp; sourceTree = "<group>"; };
 		7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_zerox.cpp; path = ../../sources/feature_extraction/ml_zerox.cpp; sourceTree = "<group>"; };
 		7D65FFDE1992C18C00C82004 /* ml.zerox pd.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "ml.zerox pd.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D65FFF11992C1FF00C82004 /* ml.zerox max.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ml.zerox max.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D65FFF21992C20000C82004 /* ml.knn max copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ml.knn max copy-Info.plist"; path = "/Users/jamie/Documents/ml-lib/build/macosx/ml.knn max copy-Info.plist"; sourceTree = "<absolute>"; };
+		7D65FFF11992C1FF00C82004 /* ml.zerox.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.zerox.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7D9FEF18F6948E00F417F6 /* ml.svm.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.svm.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA00918F699D800F417F6 /* ml.adaboost.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.adaboost.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA02318F69AD400F417F6 /* ml.linreg.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.linreg.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1258,7 +1257,7 @@
 				7D551AF8190FEA66008FF361 /* ml.gmm.mxo */,
 				7D551B08190FEA80008FF361 /* ml.dtree.mxo */,
 				7D65FFDE1992C18C00C82004 /* ml.zerox pd.pd_darwin */,
-				7D65FFF11992C1FF00C82004 /* ml.zerox max.mxo */,
+				7D65FFF11992C1FF00C82004 /* ml.zerox.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1271,7 +1270,6 @@
 				08FB77ACFE841707C02AAC07 /* Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DDFF38A45A11DB9C8B /* Products */,
-				7D65FFF21992C20000C82004 /* ml.knn max copy-Info.plist */,
 			);
 			name = xsample;
 			sourceTree = "<group>";
@@ -2137,7 +2135,7 @@
 			);
 			name = "ml.zerox max";
 			productName = "Max xsample static";
-			productReference = 7D65FFF11992C1FF00C82004 /* ml.zerox max.mxo */;
+			productReference = 7D65FFF11992C1FF00C82004 /* ml.zerox.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
 		7D7D9FD018F6948E00F417F6 /* ml.svm max */ = {
@@ -4437,7 +4435,7 @@
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "ml.zerox max";
+				PRODUCT_NAME = ml.zerox;
 				SDKROOT = macosx10.8;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -4492,7 +4490,7 @@
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "ml.zerox max";
+				PRODUCT_NAME = ml.zerox;
 				SDKROOT = macosx10.8;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
@@ -4544,7 +4542,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "ml.zerox max";
+				PRODUCT_NAME = ml.zerox;
 				SDKROOT = macosx10.8;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";

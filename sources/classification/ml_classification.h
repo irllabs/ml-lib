@@ -22,11 +22,6 @@ namespace ml
     public:
         ml_classification();
         
-        ~ml_classification()
-        {
-            
-        }
-        
     protected:
         static void setup(t_classid c)
         {
@@ -41,11 +36,11 @@ namespace ml
         void train();
         void map(int argc, const t_atom *argv);
         
-        // Attribute Setters
+        // Flext attribute setters
         void set_null_rejection(bool null_rejection);
         void set_null_rejection_coeff(float null_rejection_coeff);
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_null_rejection(bool &null_rejection) const;
         void get_null_rejection_coeff(float &null_rejection_coeff) const;
         
@@ -61,12 +56,11 @@ namespace ml
     private:
         bool get_num_samples() const;
         
-        // Method wrappers
-        
-        // Attribute wrappers
+        // Flext attribute wrappers
         FLEXT_CALLVAR_B(get_null_rejection, set_null_rejection);
         FLEXT_CALLVAR_F(get_null_rejection_coeff, set_null_rejection_coeff);
         
+        static const std::string attribute_help;
     };
 }
 

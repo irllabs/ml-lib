@@ -22,10 +22,6 @@ namespace ml
 {
     static const std::string ml_object_name = "ml.softmax";
     
-    // Utility functions
-    
-    
-    // Class declaration
     class ml_softmax : ml_classification
     {
         FLEXT_HEADER_S(ml_softmax, ml_classification, setup);
@@ -33,58 +29,27 @@ namespace ml
     public:
         ml_softmax()
         {
-            post("Softmax algorithm based on the GRT library version " + get_grt_version());
+            post("Softmax algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
-        }
-        
-        ~ml_softmax()
-        {
-            
         }
         
     protected:
         static void setup(t_classid c)
         {
-            // Flext attribute set messages
-            
-            // Flext attribute get messages
-            
-            // Flext method messages
-            
             // Associate this Flext class with a certain help file prefix
             DefineHelp(c, ml_object_name.c_str());
         }
-        
-        // Methods
-        
-        // Attribute Setters
-        
-        // Attribute Getters
         
         // Pure virtual method implementations
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
         
     private:
-        // Flext method wrappers
-        
-        // Flext attribute wrappers
-        
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::Softmax softmax;
     };
-    
-    // Utility functions
-    
-    
-    // Attribute setters
-    
-    // Attribute getters
-    
-    // Methods
     
     // Implement pure virtual methods
     GRT::Classifier &ml_softmax::get_Classifier_instance()

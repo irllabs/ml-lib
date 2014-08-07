@@ -22,85 +22,21 @@
 
 namespace ml
 {
+    static const std::string k_model_extension = ".model";
+    static const std::string k_data_extension = ".data";
     
-    // Constants
-    const std::string k_model_extension = ".model";
-    const std::string k_data_extension = ".data";
-    const std::string k_method_help =
-    "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc"
-    "write:\twrite training examples, first argument gives path to write file\n"
-    "read:\tread training examples, first argument gives path to the read location\n"
-    "train:\ttrain the MLP based on vectors added with 'add'\n"
-    "clear:\tclear the stored training data and model\n"
-    "map:\tgive the regression value for the input feature vector\n"
-    "help:\tpost this usage statement to the console\n";
-    const std::string k_attribute_help =
-    "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n"
-    "probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet\n";
-    
-    // Utility methods
-    
-    const std::string get_symbol_as_string(const t_symbol *symbol)
-    {
-        const char *c_string = flext::GetAString(symbol);
-        std::string cpp_string = c_string != NULL ? c_string : "";
-        
-        return cpp_string;
-    }
-    
-    const std::string get_file_extension_from_path(const std::string &path_)
-    {
-        std::string extension;
-        std::string path = path_;
-        
-        size_t sep = path.find_last_of("\\/");
-        
-        if (sep != std::string::npos)
-        {
-            path = path.substr(sep + 1, path.size() - sep - 1);
-        }
-        
-        size_t dot = path.find_last_of(".");
-        
-        if (dot != std::string::npos)
-        {
-            extension = path.substr(dot, path.size() - dot);
-        }
-        
-        extension = extension == "." ? "" : extension;
-        
-        return  extension;
-    }
-    
-    void get_data_file_paths(const std::string &supplied_path, std::string &data_path, std::string &model_path)
-    {
-        std::string extension = get_file_extension_from_path(supplied_path);
-        
-        if (extension == k_model_extension)
-        {
-            model_path = supplied_path;
-        }
-        else if (extension == k_data_extension)
-        {
-            data_path = supplied_path;
-        }
-        else
-        {
-            data_path = supplied_path + k_data_extension;
-            model_path = supplied_path + k_model_extension;
-        }
-    }
-    
-    
-    // ml implementation
-    
+    const std::string get_symbol_as_string(const t_symbol *symbol);
+    const std::string get_file_extension_from_path(const std::string &path); // can be a full path or just file name
+    void get_data_file_paths(const std::string &supplied_path, std::string &data_path, std::string &model_path);
+    bool check_empty_with_error(std::string &string);
+
     ml::ml()
-    : currentLabel(0), probs(false), recording(false)
+    : current_label(0), probs(false), recording(false)
     {
-        help.append_attributes(k_attribute_help);
-        help.append_methods(k_method_help);
+        help.append_attributes(attribute_help);
+        help.append_methods(method_help);
         set_data_type(default_data_type);
-        set_num_inputs(defaultNumInputDimensions);
+        set_num_inputs(default_num_input_dimensions);
         AddOutAnything("general purpose outlet");
     }
     
@@ -116,19 +52,19 @@ namespace ml
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            success = classificationData.setNumDimensions(num_inputs);
+            success = classification_data.setNumDimensions(num_inputs);
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            success = regressionData.setInputAndTargetDimensions(num_inputs, regressionData.getNumTargetDimensions());
+            success = regression_data.setInputAndTargetDimensions(num_inputs, regression_data.getNumTargetDimensions());
         }
         else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            success = timeSeriesClassificationData.setNumDimensions(num_inputs);
+            success = time_series_classification_data.setNumDimensions(num_inputs);
         }
         else if (data_type == UNLABELLED_CLASSIFICATION)
         {
-            success = unlabelledData.setNumDimensions(num_inputs);
+            success = unlabelled_data.setNumDimensions(num_inputs);
         }
         
         if (success == false)
@@ -182,20 +118,20 @@ namespace ml
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            numInputDimensions = classificationData.getNumDimensions();
+            numInputDimensions = classification_data.getNumDimensions();
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            numInputDimensions = regressionData.getNumInputDimensions();
-            numOutputDimensions = regressionData.getNumTargetDimensions();
+            numInputDimensions = regression_data.getNumInputDimensions();
+            numOutputDimensions = regression_data.getNumTargetDimensions();
         }
         else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            numInputDimensions = timeSeriesClassificationData.getNumDimensions();
+            numInputDimensions = time_series_classification_data.getNumDimensions();
         }
         else if (data_type == UNLABELLED_CLASSIFICATION)
         {
-            numInputDimensions = unlabelledData.getNumDimensions();
+            numInputDimensions = unlabelled_data.getNumDimensions();
         }
         else
         {
@@ -253,20 +189,20 @@ namespace ml
             
             if (data_type == LABELLED_CLASSIFICATION)
             {
-                classificationData.addSample((GRT::UINT)targetVector[0], inputVector);
+                classification_data.addSample((GRT::UINT)targetVector[0], inputVector);
             }
             else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
             {
                 if (recording)
                 {
                     // allow label to be changed on-the-fly without explicitly toggling "record"
-                    if (label != currentLabel)
+                    if (label != current_label)
                     {
                         record_(false);
                         record_(true);
                     }
-                    currentLabel = label;
-                    timeSeriesData.push_back(inputVector);
+                    current_label = label;
+                    time_series_data.push_back(inputVector);
                 }
                 else
                 {
@@ -276,7 +212,7 @@ namespace ml
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            regressionData.addSample(inputVector, targetVector);
+            regression_data.addSample(inputVector, targetVector);
         }
     }
     
@@ -292,12 +228,12 @@ namespace ml
         
         recording = state;
         
-        if (recording == false && currentLabel != 0 && timeSeriesData.getNumRows() > 0)
+        if (recording == false && current_label != 0 && time_series_data.getNumRows() > 0)
         {
-            timeSeriesClassificationData.addSample(currentLabel, timeSeriesData);
+            time_series_classification_data.addSample(current_label, time_series_data);
         }
-        timeSeriesData.clear();
-        currentLabel = 0;
+        time_series_data.clear();
+        current_label = 0;
     }
     
     void ml::record(bool state)
@@ -317,10 +253,10 @@ namespace ml
         const GRT::MLBase &mlBase = get_MLBase_instance();
         
         if (
-            (data_type == LABELLED_REGRESSION && regressionData.getNumSamples() == 0) ||
-            (data_type == LABELLED_CLASSIFICATION && classificationData.getNumSamples() == 0) ||
-            (data_type == LABELLED_TIME_SERIES_CLASSIFICATION && timeSeriesClassificationData.getNumSamples() == 0) ||
-            (data_type == UNLABELLED_CLASSIFICATION && unlabelledData.getNumSamples() == 0)
+            (data_type == LABELLED_REGRESSION && regression_data.getNumSamples() == 0) ||
+            (data_type == LABELLED_CLASSIFICATION && classification_data.getNumSamples() == 0) ||
+            (data_type == LABELLED_TIME_SERIES_CLASSIFICATION && time_series_classification_data.getNumSamples() == 0) ||
+            (data_type == UNLABELLED_CLASSIFICATION && unlabelled_data.getNumSamples() == 0)
             )
         {
             error("no observations added, use 'add' to add training data");
@@ -419,10 +355,10 @@ namespace ml
         
         mlBase.clear();
         
-        regressionData.clear();
-        classificationData.clear();
-        timeSeriesClassificationData.clear();
-        unlabelledData.clear();
+        regression_data.clear();
+        classification_data.clear();
+        time_series_classification_data.clear();
+        unlabelled_data.clear();
         
         SetBool(status, true);
         ToOutAnything(1, s_clear, 1, &status);
@@ -441,12 +377,6 @@ namespace ml
     void ml::any(const t_symbol *s, int argc, const t_atom *argv)
     {
         error("messages with the selector '" + std::string(GetString(s)) + "' are not supported");
-    }
-    
-    std::string ml::get_grt_version()
-    {
-        GRT::MLBase &mlBase = get_MLBase_instance();
-        return mlBase.getGRTVersion();
     }
     
     void ml::usage() const
@@ -488,15 +418,6 @@ namespace ml
         return data_type;
     }
     
-    bool ml::check_empty_with_error(std::string &string) const
-    {
-        if (string.empty())
-        {
-            error("path string is empty");
-            return true;
-        }
-        return false;
-    }
     
 #ifdef BUILD_AS_LIBRARY
     static void main()
@@ -504,7 +425,6 @@ namespace ml
         flext::post("%s - machine learning library for Max and Pure Data", ML_NAME);
         flext::post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
         
-        // call the objects' setup routines
         FLEXT_SETUP(ml_svm);
         FLEXT_SETUP(ml_adaboost);
         FLEXT_SETUP(ml_dtw);
@@ -522,10 +442,70 @@ namespace ml
         FLEXT_SETUP(ml_knn);
         FLEXT_SETUP(ml_gmm);
         FLEXT_SETUP(ml_dtree);
+        FLEXT_SETUP(ml_zerox);
     }
 #endif
     
-    // Global constants
+    const std::string get_symbol_as_string(const t_symbol *symbol)
+    {
+        const char *c_string = flext::GetAString(symbol);
+        std::string cpp_string = c_string != NULL ? c_string : "";
+        
+        return cpp_string;
+    }
+    
+    const std::string get_file_extension_from_path(const std::string &path_)
+    {
+        std::string extension;
+        std::string path = path_;
+        
+        size_t sep = path.find_last_of("\\/");
+        
+        if (sep != std::string::npos)
+        {
+            path = path.substr(sep + 1, path.size() - sep - 1);
+        }
+        
+        size_t dot = path.find_last_of(".");
+        
+        if (dot != std::string::npos)
+        {
+            extension = path.substr(dot, path.size() - dot);
+        }
+        
+        extension = extension == "." ? "" : extension;
+        
+        return  extension;
+    }
+    
+    void get_data_file_paths(const std::string &supplied_path, std::string &data_path, std::string &model_path)
+    {
+        std::string extension = get_file_extension_from_path(supplied_path);
+        
+        if (extension == k_model_extension)
+        {
+            model_path = supplied_path;
+        }
+        else if (extension == k_data_extension)
+        {
+            data_path = supplied_path;
+        }
+        else
+        {
+            data_path = supplied_path + k_data_extension;
+            model_path = supplied_path + k_model_extension;
+        }
+    }
+    
+    bool check_empty_with_error(std::string &string)
+    {
+        if (string.empty())
+        {
+            error("path string is empty");
+            return true;
+        }
+        return false;
+    }
     
     const t_symbol *ml::s_train = flext::MakeSymbol("train");
     const t_symbol *ml::s_clear = flext::MakeSymbol("clear");
@@ -533,6 +513,19 @@ namespace ml
     const t_symbol *ml::s_write = flext::MakeSymbol("write");
     const t_symbol *ml::s_probs = flext::MakeSymbol("probs");
     const t_symbol *ml::s_error = flext::MakeSymbol("error");
+    
+    const std::string ml::method_help =
+    "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc"
+    "write:\twrite training examples, first argument gives path to write file\n"
+    "read:\tread training examples, first argument gives path to the read location\n"
+    "train:\ttrain the MLP based on vectors added with 'add'\n"
+    "clear:\tclear the stored training data and model\n"
+    "map:\tgive the regression value for the input feature vector\n"
+    "help:\tpost this usage statement to the console\n";
+    
+    const std::string ml::attribute_help =
+    "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n"
+    "probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet\n";
     
 } // namespace ml
 

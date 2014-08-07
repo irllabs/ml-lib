@@ -23,15 +23,7 @@
 
 namespace ml
 {
-    // Constants
     const std::string ml_object_name = "ml.dtw";
-    const std::string k_attribute_help =
-    "rejection_mode:\tinteger sets the method used for null rejection. (0 = TEMPLATE_THRESHOLDS, 1 = CLASS_LIKELIHOODS, 2 = THRESHOLDS_AND_LIKELIHOODS, default 0)\n"
-    "warping_radius:\tfloat (0..1)  sets the radius of the warping path, which is used if the constrain_warping_path is set to 1. (default 0.2)\n"
-    "offset_time_series:\tinteger (0 or 1) sets if each timeseries should be offset by the first sample in the timeseries (default 0)\n"
-    "constrain_warping_path:\tinteger (0 or 1) sets the warping path should be constrained to within a specific radius from the main diagonal of the cost matrix (default 1)\n"
-    "enable_z_normalization:\tinteger (0 or 1) turning z-normalization on or off for training and prediction (default 0)\n"
-    "enable_trim_training_data:\tinteger (0 or 1) enabling data trimming prior to training (default 0)\n";
     
     class ml_dtw : ml_classification
     {
@@ -40,15 +32,10 @@ namespace ml
     public:
         ml_dtw()
         {
-            post("Dynamic Time Warping based on the GRT library version " + get_grt_version());
+            post("Dynamic Time Warping based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
             set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
-            help.append_attributes(k_attribute_help);
-        }
-        
-        ~ml_dtw()
-        {
-            
+            help.append_attributes(attribute_help);
         }
         
     protected:
@@ -72,11 +59,8 @@ namespace ml
             
             DefineHelp(c, ml_object_name.c_str());
         }
-        
-        // Methods
-        void usage();
-        
-        // Attribute Setters
+                
+        // Flext attribute setters
         void set_rejection_mode(int rejection_mode);
         void set_warping_radius(float warping_radius);
         void set_offset_time_series(bool offset_time_series);
@@ -85,7 +69,7 @@ namespace ml
         void set_enable_trim_training_data(bool enable_trim_training_data);
 
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_rejection_mode(int &rejection_mode) const;
         void get_warping_radius(float &warping_radius) const;
         void get_offget_time_series(bool &offget_time_series) const;
@@ -100,9 +84,7 @@ namespace ml
         bool write_specialised_dataset(std::string &path) const;
         
     private:
-        // Method wrappers
-        
-        // Attribute wrappers
+        // Flext attribute wrappers
         FLEXT_CALLVAR_I(get_rejection_mode, set_rejection_mode);
         FLEXT_CALLVAR_F(get_warping_radius, set_warping_radius);
         FLEXT_CALLVAR_B(get_offget_time_series, set_offset_time_series);
@@ -114,12 +96,12 @@ namespace ml
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::DTW classifier;
         
+        static const std::string attribute_help;
     };
     
-    // Attribute setters
+    // Flext attribute setters
     void ml_dtw::set_rejection_mode(int rejection_mode)
     {
         bool success = classifier.setRejectionMode(rejection_mode);
@@ -184,7 +166,7 @@ namespace ml
         }
     }
     
-    // Attribute getters
+    // Flext attribute getters
     void ml_dtw::get_rejection_mode(int &rejection_mode) const
     {
         error("function not implemented");
@@ -232,13 +214,21 @@ namespace ml
     
     bool ml_dtw::read_specialised_dataset(std::string &path)
     {
-        return timeSeriesClassificationData.loadDatasetFromFile(path);
+        return time_series_classification_data.loadDatasetFromFile(path);
     }
     
     bool ml_dtw::write_specialised_dataset(std::string &path) const
     {
-        return timeSeriesClassificationData.saveDatasetToFile(path);
+        return time_series_classification_data.saveDatasetToFile(path);
     }
+    
+    const std::string ml_dtw::attribute_help =
+    "rejection_mode:\tinteger sets the method used for null rejection. (0 = TEMPLATE_THRESHOLDS, 1 = CLASS_LIKELIHOODS, 2 = THRESHOLDS_AND_LIKELIHOODS, default 0)\n"
+    "warping_radius:\tfloat (0..1)  sets the radius of the warping path, which is used if the constrain_warping_path is set to 1. (default 0.2)\n"
+    "offset_time_series:\tinteger (0 or 1) sets if each timeseries should be offset by the first sample in the timeseries (default 0)\n"
+    "constrain_warping_path:\tinteger (0 or 1) sets the warping path should be constrained to within a specific radius from the main diagonal of the cost matrix (default 1)\n"
+    "enable_z_normalization:\tinteger (0 or 1) turning z-normalization on or off for training and prediction (default 0)\n"
+    "enable_trim_training_data:\tinteger (0 or 1) enabling data trimming prior to training (default 0)\n";
     
     typedef class ml_dtw ml0x2edtw;
     

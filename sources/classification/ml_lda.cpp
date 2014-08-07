@@ -36,7 +36,7 @@ namespace ml
     public:
         ml_lda()
         {
-            post("LDA algorithm based on the GRT library version " + get_grt_version());
+            post("LDA algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
         }
         
@@ -60,31 +60,30 @@ namespace ml
         
         // Methods
         
-        // Attribute Setters
+        // Flext attribute setters
         
-        // Attribute Getters
+        // Flext attribute getters
         
         // Pure virtual method implementations
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
         
     private:
-        // Flext method wrappers
+        // Flext Flext method wrappers
         
-        // Flext attribute wrappers
+        // Flext Flext attribute wrappers
         
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::LDA lda;
     };
     
     // Utility functions
         
-    // Attribute setters
+    // Flext attribute setters
     
-    // Attribute getters
+    // Flext attribute getters
     
     // Methods
     

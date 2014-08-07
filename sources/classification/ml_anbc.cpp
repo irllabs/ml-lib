@@ -22,14 +22,8 @@
 
 namespace ml
 {
-    // Constants
     const std::string ml_object_name = "ml.anbc";
-    const std::string k_attribute_help = "weights:\tvector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights";
-    
-    // Utility functions
-    
-    
-    // Class declaration
+   
     class ml_anbc : ml_classification
     {
         FLEXT_HEADER_S(ml_anbc, ml_classification, setup);
@@ -37,16 +31,11 @@ namespace ml
     public:
         ml_anbc()
         {
-            post("Adaptive Naive Bayes classifier based on the GRT library version " + get_grt_version());
+            post("Adaptive Naive Bayes classifier based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
-            help.append_attributes(k_attribute_help);
+            help.append_attributes(attribute_help);
         }
-        
-        ~ml_anbc()
-        {
-            
-        }
-        
+    
     protected:
         static void setup(t_classid c)
         {
@@ -57,22 +46,15 @@ namespace ml
             DefineHelp(c, ml_object_name.c_str());
         }
         
-        // Methods
-        void usage();
-        
-        // Attribute Setters
+        // Flext attribute setters
         void set_weights(const AtomList &weights);
-        
-        // Attribute Getters
         
         // Pure virtual method implementations
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
              
     private:
-        // Flext method wrappers
-        
-        // Flext attribute wrappers
+        // Flext Flext attribute wrappers
         FLEXT_CALLSET_V(set_weights);
         
         // Virtual method override
@@ -80,12 +62,11 @@ namespace ml
         
         // Instance variables
         GRT::ANBC anbc;
+        
+        static const std::string attribute_help;
     };
     
-    // Utility functions
-    
-    
-    // Attribute setters
+    // Flext attribute setters
     void ml_anbc::set_weights(const AtomList &weights)
     {
         // weights are per vector element per class so each class has a weight vector of length N where N is the input vector size
@@ -111,12 +92,6 @@ namespace ml
         anbc.setWeights(weightsClassificationData);
     }
     
-    // Attribute getters
-    
-    
-    // Methods
-    
-    
     // Implement pure virtual methods
     GRT::Classifier &ml_anbc::get_Classifier_instance()
     {
@@ -127,6 +102,8 @@ namespace ml
     {
         return anbc;
     }
+    
+    const std::string ml_anbc::attribute_help = "weights:\tvector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights";
     
     typedef class ml_anbc ml0x2eanbc;
     

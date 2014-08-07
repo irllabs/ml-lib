@@ -31,9 +31,7 @@ namespace ml
 {
     class ml_help
     {
-    public:
-        ml_help() { }
-        
+    public:        
         void append_methods(const std::string &methods) { this->methods.append(methods); }
         void append_attributes(const std::string &attributes) { this->attributes.append(attributes); }
         

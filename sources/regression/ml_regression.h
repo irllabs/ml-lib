@@ -19,15 +19,11 @@ namespace ml
         
     public:
         ml_regression();
-               
-        ~ml_regression()
-        {
-            
-        }
         
     protected:
         static void setup(t_classid c)
         {
+            // Flext attribute wrappers
             FLEXT_CADDATTR_SET(c, "max_iterations", set_max_iterations);
             FLEXT_CADDATTR_SET(c, "min_change", set_min_change);
             FLEXT_CADDATTR_SET(c, "training_rate", set_training_rate);
@@ -37,17 +33,16 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "training_rate", get_training_rate);
         }
         
-        // Methods
         void train();
         void map(int argc, const t_atom *argv);
         
-        // Attribute Setters
+        // Flext attribute setters
         void set_max_iterations(int max_iterations);
         void set_min_change(float min_change);
         void set_training_rate(float training_rate);
         
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_max_iterations(int &max_iterations) const;
         void get_min_change(float &min_change) const;
         void get_training_rate(float &training_rate) const;
@@ -63,13 +58,12 @@ namespace ml
 
         
     private:
-        
-        // Method wrappers
-        
-        // Attribute wrappers
+        // Flext attribute wrappers
         FLEXT_CALLVAR_I(get_max_iterations, set_max_iterations);
         FLEXT_CALLVAR_F(get_min_change, set_min_change);
         FLEXT_CALLVAR_F(get_training_rate, set_training_rate);
+        
+        static const std::string attribute_help;
     };
 }
 

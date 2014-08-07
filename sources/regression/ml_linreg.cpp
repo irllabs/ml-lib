@@ -29,13 +29,8 @@ namespace ml
     public:
         ml_linreg()
         {
-            post("Linear Regression based on the GRT library version" + get_grt_version());
+            post("Linear Regression based on the GRT library version" + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
-        }
-        
-        ~ml_linreg()
-        {
-            
         }
         
     protected:
@@ -52,7 +47,6 @@ namespace ml
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::LinearRegression regressifier;
         
     };

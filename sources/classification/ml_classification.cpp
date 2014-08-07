@@ -12,19 +12,13 @@
 
 namespace ml
 {
-    // Constants
-    const std::string k_attribute_help =
-    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)\n"
-    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n";
-   
-    // ml_classification implementation
     ml_classification::ml_classification()
     {
-        help.append_attributes(k_attribute_help);
+        help.append_attributes(attribute_help);
         set_data_type(LABELLED_CLASSIFICATION);
     }
     
-    // Attribute Setters
+    // Flext attribute setters
     void ml_classification::set_null_rejection(bool null_rejection)
     {
         GRT::Classifier &classifier = get_Classifier_instance();
@@ -47,7 +41,7 @@ namespace ml
         }
     }
     
-    // Attribute Getters
+    // Flext attribute getters
     void ml_classification::get_null_rejection(bool &null_rejection) const
     {
         error("function not implemented");
@@ -59,7 +53,6 @@ namespace ml
         null_rejection_coeff = classifier.getNullRejectionCoeff();
     }
     
-    // Methods
     bool ml_classification::get_num_samples() const
     {
         GRT::UINT numSamples = 0;
@@ -67,19 +60,19 @@ namespace ml
         
         if (data_type == LABELLED_REGRESSION)
         {
-            regressionData.getNumSamples();
+            regression_data.getNumSamples();
         }
         else if (data_type == LABELLED_CLASSIFICATION)
         {
-            numSamples = classificationData.getNumSamples();
+            numSamples = classification_data.getNumSamples();
         }
         else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            numSamples = timeSeriesClassificationData.getNumSamples();
+            numSamples = time_series_classification_data.getNumSamples();
         }
         else if (data_type == UNLABELLED_CLASSIFICATION)
         {
-            numSamples = unlabelledData.getNumSamples();
+            numSamples = unlabelled_data.getNumSamples();
         }
         
         return numSamples;
@@ -101,15 +94,15 @@ namespace ml
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            success = classifier.train(classificationData);
+            success = classifier.train(classification_data);
         }
         else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
         {
-            success = classifier.train(timeSeriesClassificationData);
+            success = classifier.train(time_series_classification_data);
         }
         else if (data_type == UNLABELLED_CLASSIFICATION)
         {
-            success = classifier.train(unlabelledData);
+            success = classifier.train(unlabelled_data);
         }
         
         if (!success)
@@ -173,8 +166,8 @@ namespace ml
         
         if (recording)
         {
-            timeSeriesData.push_back(query);
-            success = classifier.predict(timeSeriesData);
+            time_series_data.push_back(query);
+            success = classifier.predict(time_series_data);
         }
         else
         {
@@ -198,12 +191,12 @@ namespace ml
                 
                 if (data_type == LABELLED_CLASSIFICATION)
                 {
-                    labels = classificationData.getClassLabels();
+                    labels = classification_data.getClassLabels();
                 }
                 else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
                 {
                     // For some reason getClassLabels() isn't implemented for TimeSeriesClassificationData so we do this manually
-                    vector<GRT::ClassTracker> classTracker = timeSeriesClassificationData.getClassTracker();
+                    vector<GRT::ClassTracker> classTracker = time_series_classification_data.getClassTracker();
                     for (uint16_t index = 0; index < classTracker.size(); ++index)
                     {
                         labels.push_back(classTracker[index].classLabel);
@@ -263,12 +256,18 @@ namespace ml
     
     bool ml_classification::read_specialised_dataset(std::string &path)
     {
-        return classificationData.loadDatasetFromFile(path);
+        return classification_data.loadDatasetFromFile(path);
     }
     
     bool ml_classification::write_specialised_dataset(std::string &path) const
     {
-        return classificationData.saveDatasetToFile(path);
+        return classification_data.saveDatasetToFile(path);
     }
+    
+    const std::string ml_classification::attribute_help =
+    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)\n"
+    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n";
+    
+
     
 }

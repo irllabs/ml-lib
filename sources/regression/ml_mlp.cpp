@@ -20,36 +20,8 @@
 
 namespace ml
 {
-    const GRT::UINT defaultNumHiddenNeurons = 2;
-
+    const GRT::UINT default_num_hidden_neurons = 2;
     const std::string ml_object_name = "ml.mlp";
-    const std::string k_method_help =
-    "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode, where N is determined by the num_outputs attribute\n"
-    "write:\twrite training examples, first argument gives path to write location\n"
-    "read:\tread training examples, first argument gives path to the read location\n"
-    "train:\ttrain the MLP based on vectors added with 'add'\n"
-    "clear:\tclear the stored training data and model\n"
-    "map:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode\n"
-    "help:\tpost this usage statement to the console\n";
-    const std::string k_attribute_help =
-    "num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default " + std::to_string( defaultNumOutputDimensions) + ")\n"
-    "num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default " + std::to_string( defaultNumHiddenNeurons) + ")\n"
-    "min_epochs:\tinteger setting the minimum number of training iterations (default 10)\n"
-    "max_epochs:\tinteger setting the maximum number of training iterations (default 100)\n"
-    "min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)\n"
-    "training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)\n"
-    "momentum:\tfloating point value setting the momentum of the MLP (default 0.5)\n"
-    "gamma:\tfloating point value setting the gamma of the MLP (default 2.0)\n"
-    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)\n"
-    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n"
-    "input_activation_function:\tinteger determining the activation function for the input layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
-    "hidden_activation_function:\tinteger determining the activation function for the hidden layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
-    "output_activation_function:\tinteger determining the activation function for the output layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
-    "rand_training_iterations:\tinteger setting the number of random training iterations (default 10)\n"
-    "use_validation_set:\tinteger (0 or 1) sets whether to use a validation training set (default 1)\n"
-    "validation_set_size:\tinteger integer determining the size of the validation set (default 20)\n"
-    "randomize_training_order:\tinteger (0 or 1) sets whether to randomize the training order (default 0)\n"
-    "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n";
     
     typedef enum mlp_layer_
     {
@@ -60,7 +32,6 @@ namespace ml
     }
     mlp_layer;
     
-    
     class ml_mlp : ml
     {
         FLEXT_HEADER_S(ml_mlp, ml, setup);
@@ -68,15 +39,15 @@ namespace ml
     public:
         ml_mlp()
         :
-        numHiddenNeurons(defaultNumHiddenNeurons),
+        numHiddenNeurons(default_num_hidden_neurons),
         inputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getInputLayerActivationFunction()),
         hiddenActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getHiddenLayerActivationFunction()),
         outputActivationFunction((GRT::Neuron::ActivationFunctions)mlp.getOutputLayerActivationFunction())
         {
-            post("Multilayer Perceptron based on the GRT library version " + get_grt_version());
+            post("Multilayer Perceptron based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             
-            regressionData.setInputAndTargetDimensions(defaultNumInputDimensions, defaultNumOutputDimensions);
-            classificationData.setNumDimensions(defaultNumInputDimensions);
+            regression_data.setInputAndTargetDimensions(default_num_input_dimensions, default_num_output_dimensions);
+            classification_data.setNumDimensions(default_num_input_dimensions);
             
             mlp.setMinChange(1.0e-2);
             set_scaling(default_scaling);
@@ -84,14 +55,9 @@ namespace ml
             std::stringstream post_stream;
             
             post_stream << "mode:\tinteger setting mode of the MLP, " << LABELLED_REGRESSION << " for regression and " <<LABELLED_CLASSIFICATION << " for classification (default " << default_data_type << ")\n";
-            help.append_attributes(k_attribute_help);
-            help.append_methods(k_method_help);
+            help.append_attributes(attribute_help);
+            help.append_methods(method_help);
             help.append_attributes(post_stream.str());
-        }
-        
-        ~ml_mlp()
-        {
-            
         }
         
     protected:
@@ -139,13 +105,12 @@ namespace ml
             DefineHelp(c, ml_object_name.c_str());
         }
         
-        // Methods
         void clear();
         void train();
         void map(int argc, const t_atom *argv);
         void error();
         
-        // Attribute Setters
+        // Flext attribute setters
         void set_mode(int mode);
         void set_num_outputs(int num_outputs);
         void set_num_hidden(int num_hidden);
@@ -165,7 +130,7 @@ namespace ml
         void set_validation_set_size(int validation_set_size);
         void set_randomise_training_order(bool randomise_training_order);
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_mode(int &mode) const;
         void get_num_outputs(int &num_outputs) const;
         void get_num_hidden(int &num_hidden) const;
@@ -194,10 +159,10 @@ namespace ml
     private:
         void set_activation_function(int activation_function, mlp_layer layer);
         
-        // Method wrappers
+        // Flext method wrappers
         FLEXT_CALLBACK(error);
 
-        // Attribute wrappers
+        // Flext attribute wrappers
         FLEXT_CALLVAR_I(get_mode, set_mode);
         FLEXT_CALLVAR_I(get_num_outputs, set_num_outputs);
         FLEXT_CALLVAR_I(get_num_hidden, set_num_hidden);
@@ -220,17 +185,17 @@ namespace ml
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::MLP mlp;
         GRT::UINT numHiddenNeurons;
         GRT::Neuron::ActivationFunctions inputActivationFunction;
         GRT::Neuron::ActivationFunctions hiddenActivationFunction;
         GRT::Neuron::ActivationFunctions outputActivationFunction;
+        
+        static const std::string method_help;
+        static const std::string attribute_help;
     };
     
-    // Utility functions
-        
-    // Attribute setters
+    // Flext attribute setters
     void ml_mlp::set_mode(int mode)
     {
         if (mode > MLP_NUM_DATA_TYPES)
@@ -273,7 +238,7 @@ namespace ml
         
         if (data_type == LABELLED_REGRESSION)
         {
-            bool success = regressionData.setInputAndTargetDimensions(regressionData.getNumInputDimensions(), num_outputs);
+            bool success = regression_data.setInputAndTargetDimensions(regression_data.getNumInputDimensions(), num_outputs);
            
             if (success == false)
             {
@@ -446,7 +411,7 @@ namespace ml
         }
     }
     
-    // Attribute getters
+    // Flext attribute getters
     void ml_mlp::get_mode(int &mode) const
     {
         mode = get_data_type();
@@ -458,11 +423,11 @@ namespace ml
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            num_outputs = defaultNumOutputDimensions;
+            num_outputs = default_num_output_dimensions;
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            num_outputs = regressionData.getNumTargetDimensions();
+            num_outputs = regression_data.getNumTargetDimensions();
         }
     }
     
@@ -552,7 +517,7 @@ namespace ml
     {
         const ml_data_type data_type = get_data_type();
         
-        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? classificationData.getNumSamples() : regressionData.getNumSamples();
+        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? classification_data.getNumSamples() : regression_data.getNumSamples();
         
         if (numSamples == 0)
         {
@@ -565,26 +530,26 @@ namespace ml
         if (data_type == LABELLED_CLASSIFICATION)
         {
             mlp.init(
-                     classificationData.getNumDimensions(),
+                     classification_data.getNumDimensions(),
                      numHiddenNeurons,
-                     classificationData.getNumClasses(),
+                     classification_data.getNumClasses(),
                      inputActivationFunction,
                      hiddenActivationFunction,
                      outputActivationFunction
                      );
-            success = mlp.train(classificationData);
+            success = mlp.train(classification_data);
         }
         else if (data_type == LABELLED_REGRESSION)
         {
             mlp.init(
-                     regressionData.getNumInputDimensions(),
+                     regression_data.getNumInputDimensions(),
                      numHiddenNeurons,
-                     regressionData.getNumTargetDimensions(),
+                     regression_data.getNumTargetDimensions(),
                      inputActivationFunction,
                      hiddenActivationFunction,
                      outputActivationFunction
                      );
-            success = mlp.train(regressionData);
+            success = mlp.train(regression_data);
         }
 
         if (!success)
@@ -608,7 +573,7 @@ namespace ml
     {
         const ml_data_type data_type = get_data_type();
 
-        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? classificationData.getNumSamples() : regressionData.getNumSamples();
+        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? classification_data.getNumSamples() : regression_data.getNumSamples();
 
         if (numSamples == 0)
         {
@@ -648,7 +613,7 @@ namespace ml
         if (mlp.getClassificationModeActive())
         {
             GRT::VectorDouble likelihoods = mlp.getClassLikelihoods();
-            GRT::vector<GRT::UINT> labels = classificationData.getClassLabels();
+            GRT::vector<GRT::UINT> labels = classification_data.getClassLabels();
             GRT::UINT classification = mlp.getPredictedClassLabel();
             
             if (likelihoods.size() != labels.size())
@@ -678,8 +643,8 @@ namespace ml
         }
         else if (mlp.getRegressionModeActive())
         {
-            GRT::VectorDouble regressionData = mlp.getRegressionData();
-            GRT::VectorDouble::size_type numOutputDimensions = regressionData.size();
+            GRT::VectorDouble regression_data = mlp.getRegressionData();
+            GRT::VectorDouble::size_type numOutputDimensions = regression_data.size();
             
             if (numOutputDimensions != mlp.getNumOutputNeurons())
             {
@@ -692,7 +657,7 @@ namespace ml
             for (uint32_t index = 0; index < numOutputDimensions; ++index)
             {
                 t_atom value_a;
-                double value = regressionData[index];
+                double value = regression_data[index];
                 SetFloat(value_a, value);
                 result.Append(value_a);
             }
@@ -735,7 +700,7 @@ namespace ml
     {
         bool success = false;
         
-        success = classificationData.loadDatasetFromFile(path);
+        success = classification_data.loadDatasetFromFile(path);
         
         if (success)
         {
@@ -743,7 +708,7 @@ namespace ml
             return success;
         }
         
-        success = regressionData.loadDatasetFromFile(path);
+        success = regression_data.loadDatasetFromFile(path);
         
         if (success)
         {
@@ -760,17 +725,45 @@ namespace ml
 
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            return classificationData.saveDatasetToFile(path);
+            return classification_data.saveDatasetToFile(path);
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            return regressionData.saveDatasetToFile(path);
+            return regression_data.saveDatasetToFile(path);
         }
         
         flext::error("unable to write dataset, invalid data type: %d", data_type);
         
         return false;
     }
+    
+    const std::string ml_mlp::method_help =
+    "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode, where N is determined by the num_outputs attribute\n"
+    "write:\twrite training examples, first argument gives path to write location\n"
+    "read:\tread training examples, first argument gives path to the read location\n"
+    "train:\ttrain the MLP based on vectors added with 'add'\n"
+    "clear:\tclear the stored training data and model\n"
+    "map:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode\n"
+    "help:\tpost this usage statement to the console\n";
+    const std::string ml_mlp::attribute_help =
+    "num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default " + std::to_string( default_num_output_dimensions) + ")\n"
+    "num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default " + std::to_string( default_num_hidden_neurons) + ")\n"
+    "min_epochs:\tinteger setting the minimum number of training iterations (default 10)\n"
+    "max_epochs:\tinteger setting the maximum number of training iterations (default 100)\n"
+    "min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)\n"
+    "training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)\n"
+    "momentum:\tfloating point value setting the momentum of the MLP (default 0.5)\n"
+    "gamma:\tfloating point value setting the gamma of the MLP (default 2.0)\n"
+    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)\n"
+    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n"
+    "input_activation_function:\tinteger determining the activation function for the input layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
+    "hidden_activation_function:\tinteger determining the activation function for the hidden layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
+    "output_activation_function:\tinteger determining the activation function for the output layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
+    "rand_training_iterations:\tinteger setting the number of random training iterations (default 10)\n"
+    "use_validation_set:\tinteger (0 or 1) sets whether to use a validation training set (default 1)\n"
+    "validation_set_size:\tinteger integer determining the size of the validation set (default 20)\n"
+    "randomize_training_order:\tinteger (0 or 1) sets whether to randomize the training order (default 0)\n"
+    "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n";
     
     typedef class ml_mlp ml0x2emlp;
     

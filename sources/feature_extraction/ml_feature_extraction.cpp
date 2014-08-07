@@ -12,31 +12,24 @@
 
 namespace ml
 {
-    // Constants
-    const std::string k_attribute_help =
-    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' feature_extraction results below the NULL-rejection threshold will be discarded (default 1)\n"
-    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n";
-    
-    // ml_feature_extraction implementation
     ml_feature_extraction::ml_feature_extraction()
     {
-        help.append_attributes(k_attribute_help);
+        help.append_attributes(attribute_help);
     }
     
-    // Attribute Getters
-    void ml_feature_extraction::get_num_input_dimensions(int &num_input_dimensions)
+    // Flext attribute getters
+    void ml_feature_extraction::get_num_input_dimensions(int &num_input_dimensions) const
     {
-        GRT::FeatureExtraction &feature_extractor = get_FeatureExtraction_instance();
-        num_input_dimensions = feature_extractor.getNumInputDimensions();
+//        GRT::FeatureExtraction &feature_extractor = get_FeatureExtraction_instance();
+//        num_input_dimensions = feature_extractor.getNumInputDimensions();
     }
     
-    void ml_feature_extraction::get_num_output_dimensions(int &num_output_dimensions)
+    void ml_feature_extraction::get_num_output_dimensions(int &num_output_dimensions) const
     {
-        GRT::FeatureExtraction &feature_extractor = get_FeatureExtraction_instance();
-        num_output_dimensions = feature_extractor.getNumOutputDimensions();
+//        GRT::FeatureExtraction &feature_extractor = get_FeatureExtraction_instance();
+//        num_output_dimensions = feature_extractor.getNumOutputDimensions();
     }
     
-    // Methods
     void ml_feature_extraction::map(int argc, const t_atom *argv)
     {
         GRT::VectorDouble input(argc);
@@ -83,5 +76,9 @@ namespace ml
     {
         return get_FeatureExtraction_instance();
     }
+    
+    const std::string ml_feature_extraction::attribute_help =
+    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' feature_extraction results below the NULL-rejection threshold will be discarded (default 1)\n"
+    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n";
     
 }

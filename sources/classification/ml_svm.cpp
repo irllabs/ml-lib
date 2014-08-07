@@ -28,33 +28,7 @@
 
 namespace ml
 {
-    // Constants
     const std::string ml_object_name = "ml.svm";
-    const std::string k_attribute_help =
-    "type:\tset type of SVM (default 0)\n"
-    "	0 -- C-SVC		(multi-class classification)\n"
-    "	1 -- nu-SVC		(multi-class classification)\n"
-    "	2 -- one-class SVM\n"
-    "	3 -- epsilon-SVR	(regression)\n"
-    "	4 -- nu-SVR		(regression)\n"
-    "kernel:\tset type of kernel function (default 2)\n"
-    "	0 -- linear: u'*v\n"
-    "	1 -- polynomial: (gamma*u'*v + coef0)^degree\n"
-    "	2 -- radial basis function: exp(-gamma*|u-v|^2)\n"
-    "	3 -- sigmoid: tanh(gamma*u'*v + coef0)\n"
-    "	4 -- precomputed kernel (kernel values in training_set_file)\n"
-    "degree:\tset degree in kernel function (default 3)\n"
-    "gamma:\tset gamma in kernel function (default 1/num_features)\n"
-    "coef0:\tset coef0 in kernel function (default 0)\n"
-    "cost:\tset the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)\n"
-    "nu:\tset the parameter nu of nu-SVC, one-class SVM, and nu-SVR (default 0.5)\n"
-    "epsilon:\tset the epsilon in loss function of epsilon-SVR (default 0.1)\n"
-    "cachesize:\tset cache memory size in MB (default 100)\n"
-    "epsilon:\tset tolerance of termination criterion (default 0.001)\n"
-    "shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)\n";
-   
-    const std::string k_method_help =
-    "cross_validation:\t\tperform cross-validation\n";
     
     // Utility functions
     GRT::SVM::SVMTypes svm_type_from_type_string(std::string type_string)
@@ -126,21 +100,15 @@ namespace ml
     public:
         ml_svm()
         {
-            help.append_attributes(k_attribute_help);
-            help.append_methods(k_method_help);
+            help.append_attributes(attribute_help);
+            help.append_methods(method_help);
             std::stringstream ss;
-            ss << "Support Vector Machines based on the GRT library version " << get_grt_version().c_str();
+            ss << "Support Vector Machines based on the GRT library version " << GRT::GRTBase::getGRTVersion().c_str();
             post(ss.str());
             set_scaling(default_scaling);
         }
         
-        ~ml_svm()
-        {
-
-        }
-        
     protected:
-
         static void setup(t_classid c)
         {
             FLEXT_CADDATTR_SET(c, "type", set_type);
@@ -157,7 +125,6 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "weights", set_weights);
             FLEXT_CADDATTR_SET(c, "mode", set_kfold_value);
             FLEXT_CADDATTR_SET(c, "enable_cross_validation", set_enable_cross_validation);
-            
             
             FLEXT_CADDATTR_GET(c, "type", get_type);
             FLEXT_CADDATTR_GET(c, "kernel", get_kernel);
@@ -178,10 +145,9 @@ namespace ml
             DefineHelp(c, ml_object_name.c_str());
         }
         
-        // Methods
         void cross_validation();
         
-        // Attribute Setters
+        // Flext attribute setters
         void set_type(int type); // svm type
         void set_kernel(int kernel);
         void set_degree(int degree);
@@ -197,7 +163,7 @@ namespace ml
         void set_kfold_value(int mode);
         void set_enable_cross_validation(bool enable_cross_validation);
         
-        // Attribute Getters
+        // Flext attribute getters
         void get_type(int &type) const;
         void get_kernel(int &type) const;
         void get_degree(int &type) const;
@@ -217,10 +183,10 @@ namespace ml
         const GRT::Classifier &get_Classifier_instance() const;
         
     private:
-        // Method wrappers
+        // Flext method wrappers
         FLEXT_CALLBACK(cross_validation);
         
-        // Attribute wrappers
+        // Flext attribute wrappers
         FLEXT_CALLVAR_I(get_type, set_type);
         FLEXT_CALLVAR_I(get_kernel, set_kernel);
         FLEXT_CALLVAR_I(get_degree, set_degree);
@@ -239,14 +205,13 @@ namespace ml
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
         
-        // Instance variables
         GRT::SVM svm;
+        
+        static const std::string attribute_help;
+        static const std::string method_help;
     };
     
-    // Utility functions
-    
-    
-    // Attribute setters
+    // Flext attribute setters
     void ml_svm::set_type(int type)
     {
         switch (type)
@@ -343,7 +308,7 @@ namespace ml
         svm.enableCrossValidationTraining(enable_cross_validation);
     }
     
-    // Attribute getters
+    // Flext attribute getters
     void ml_svm::get_type(int &type) const
     {
         std::string type_s = svm.getSVMType();
@@ -412,7 +377,6 @@ namespace ml
         error("function not implemented");
     }
     
-    // Methods
     void ml_svm::cross_validation()
     {
         double result = svm.getCrossValidationResult();
@@ -429,6 +393,32 @@ namespace ml
     {
         return svm;
     }
+    
+    const std::string ml_svm::attribute_help =
+    "type:\tset type of SVM (default 0)\n"
+    "	0 -- C-SVC		(multi-class classification)\n"
+    "	1 -- nu-SVC		(multi-class classification)\n"
+    "	2 -- one-class SVM\n"
+    "	3 -- epsilon-SVR	(regression)\n"
+    "	4 -- nu-SVR		(regression)\n"
+    "kernel:\tset type of kernel function (default 2)\n"
+    "	0 -- linear: u'*v\n"
+    "	1 -- polynomial: (gamma*u'*v + coef0)^degree\n"
+    "	2 -- radial basis function: exp(-gamma*|u-v|^2)\n"
+    "	3 -- sigmoid: tanh(gamma*u'*v + coef0)\n"
+    "	4 -- precomputed kernel (kernel values in training_set_file)\n"
+    "degree:\tset degree in kernel function (default 3)\n"
+    "gamma:\tset gamma in kernel function (default 1/num_features)\n"
+    "coef0:\tset coef0 in kernel function (default 0)\n"
+    "cost:\tset the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)\n"
+    "nu:\tset the parameter nu of nu-SVC, one-class SVM, and nu-SVR (default 0.5)\n"
+    "epsilon:\tset the epsilon in loss function of epsilon-SVR (default 0.1)\n"
+    "cachesize:\tset cache memory size in MB (default 100)\n"
+    "epsilon:\tset tolerance of termination criterion (default 0.001)\n"
+    "shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)\n";
+    
+    const std::string ml_svm::method_help =
+    "cross_validation:\t\tperform cross-validation\n";
     
     typedef class ml_svm ml0x2esvm;
 

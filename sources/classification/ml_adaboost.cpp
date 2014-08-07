@@ -22,21 +22,14 @@
 
 namespace ml
 {
-    // Constants
-    
     const std::string ml_object_name = "ml.adaboost";
-    const std::string k_attribute_help = "num_boosting_iterations:\tinteger (>0) sets the number of boosting iterations that should be used when training the model (default 20)\n";
-    
     
     enum weak_classifiers_
     {
         DECISION_STUMP,
         RADIAL_BASIS_FUNCTION
     };
-    // Utility functions
-    
-    
-    // Class declaration
+  
     class ml_adaboost : ml_classification
     {
         FLEXT_HEADER_S(ml_adaboost, ml_classification, setup);
@@ -44,7 +37,7 @@ namespace ml
     public:
         ml_adaboost()
         {
-            post("Adaboost classifier based on the GRT library version " + get_grt_version());
+            post("Adaboost classifier based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
             std::stringstream post_stream;
             post_stream << "prediction_method:\tinteger (" << GRT::AdaBoost::MAX_VALUE << ":MAX_VALUE or " <<  GRT::AdaBoost::MAX_POSITIVE_VALUE << ":MAX_POSITIVE_VALUE) sets the Adaboost prediction method (default " << GRT::AdaBoost::MAX_VALUE << ")";
@@ -55,12 +48,7 @@ namespace ml
             post_stream.clear();
             post_stream << "add_weak_classifier:\tinteger (" << DECISION_STUMP << ":DECISION_STUMP or " << RADIAL_BASIS_FUNCTION << ":RADIAL_BASIS_FUNCTION) adds the weak classifier to the list of classifiers used by Adaboost)";
             help.append_attributes(post_stream.str());
-            help.append_attributes(k_attribute_help);
-        }
-        
-        ~ml_adaboost()
-        {
-            
+            help.append_attributes(attribute_help);
         }
         
     protected:
@@ -70,30 +58,24 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "prediction_method", set_prediction_method);
             FLEXT_CADDATTR_SET(c, "num_boosting_iterations", set_num_boosting_iterations);
             FLEXT_CADDATTR_SET(c, "set_weak_classifier", set_weak_classifier);
-            FLEXT_CADDATTR_SET(c, "add_weak_classifier", add_weak_classifier)
+            FLEXT_CADDATTR_SET(c, "add_weak_classifier", add_weak_classifier);
             
             // Associate this Flext class with a certain help file prefix
             DefineHelp(c, ml_object_name.c_str());
         }
         
-        // Methods
-        
-        // Attribute Setters
+        // Flext attribute setters
         void set_prediction_method(int prediction_method);
         void set_num_boosting_iterations(int num_boosting_iterations);
         void set_weak_classifier(int weak_classifier);
         void add_weak_classifier(int weak_classifier);
-        
-        // Attribute Getters
         
         // Pure virtual method implementations
         GRT::Classifier &get_Classifier_instance();
         const GRT::Classifier &get_Classifier_instance() const;
            
     private:
-        // Flext method wrappers
-        
-        // Flext attribute wrappers
+        // Flext Flext attribute wrappers
         FLEXT_CALLSET_I(set_prediction_method);
         FLEXT_CALLSET_I(set_num_boosting_iterations);
         FLEXT_CALLSET_I(set_weak_classifier);
@@ -102,14 +84,12 @@ namespace ml
         // Virtual method override
         virtual const std::string get_object_name(void) const { return ml_object_name; };
                 
-        // Instance variables
         GRT::AdaBoost adaboost;
+        
+        static const std::string attribute_help;
     };
     
-    // Utility functions
-    
-    
-    // Attribute setters
+    // Flext attribute setters
     void ml_adaboost::set_prediction_method(int prediction_method)
     {
         bool success = false;
@@ -172,10 +152,6 @@ namespace ml
         }
     }
 
-    // Attribute getters
-    
-    // Methods
-    
     // Implement pure virtual methods
     GRT::Classifier &ml_adaboost::get_Classifier_instance()
     {
@@ -187,6 +163,8 @@ namespace ml
         return adaboost;
     }
 
+    const std::string ml_adaboost::attribute_help = "num_boosting_iterations:\tinteger (>0) sets the number of boosting iterations that should be used when training the model (default 20)\n";
+    
     typedef class ml_adaboost ml0x2eadaboost;
     
 #ifdef BUILD_AS_LIBRARY
