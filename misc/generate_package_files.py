@@ -13,6 +13,7 @@ PACKAGE_TEMPLATE = "package.template.txt"
 COMMON_SOURCES = "%s/ml_ml.cpp %s/ml_base.cpp " % (SOURCES_ROOT, SOURCES_ROOT)
 CLASSIFICATION_SOURCES = COMMON_SOURCES + "%s/ml_classification.cpp " % CLASSIFICATION_ROOT
 REGRESSION_SOURCES = COMMON_SOURCES + "%s/ml_regression.cpp " % REGRESSION_ROOT
+FEATURE_EXTRACTION_SOURCES = COMMON_SOURCES + "%s/ml_feature_extraction.cpp " % FEATURE_EXTRACTION_ROOT
 NAME_PREFIX = "ml."
 NAME_MARKER = "%NAME%"
 SOURCES_MARKER = "%SOURCES%"
@@ -39,7 +40,8 @@ regression_externals = (
 
 feature_extraction_externals = (
         "minmax",
-        "peak"
+        "peak",
+        "zerox"
         )
 
 all_externals = classification_externals + regression_externals + feature_extraction_externals
@@ -59,7 +61,7 @@ for external in all_externals:
         sources = REGRESSION_SOURCES
         path_prefix = REGRESSION_ROOT
     elif external in feature_extraction_externals:
-        sources = COMMON_SOURCES
+        sources = FEATURE_EXTRACTION_SOURCES
         path_prefix = FEATURE_EXTRACTION_ROOT
     else:
         print "error processing external: %s"
