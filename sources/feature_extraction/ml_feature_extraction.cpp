@@ -70,12 +70,13 @@ namespace ml
         }
         
         AtomList features_l;
+        GRT::VectorDouble::iterator iterator;
         
-        for (uint32_t count = 0; count < features.size(); ++count)
+        for (iterator = features.begin(); iterator != features.end(); iterator++)
         {
             t_atom feature_a;
             
-            SetDouble(&feature_a, features[count]);
+            SetDouble(&feature_a, *iterator);
             features_l.Append(feature_a);
         }
 
