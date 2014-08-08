@@ -126,7 +126,6 @@ namespace ml
         flext::error("function not implemented");
     }
     
-    
     // Implement pure virtual methods
     GRT::Classifier &ml_knn::get_Classifier_instance()
     {
@@ -143,8 +142,13 @@ namespace ml
     "max_k_search_value:\tinteger (n > 0) sets the maximum K value to use when searching for the best K value. (default 10)\n"
     "best_k_value_search:\tbool (0 or 1) set whether k value search is enabled or not (default 0)\n";
     
+    typedef class ml_knn ml0x2eknn;
     
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(ml_object_name.c_str(), ml_knn);
+#else
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2eknn);
+#endif
     
 } //namespace ml
 

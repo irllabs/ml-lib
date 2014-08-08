@@ -168,7 +168,13 @@ namespace ml
     "remove_features_at_each_split:\tbool (0 or 1) sets if a feature is removed at each spilt so it can not be used again (default 0)\n";
 
     
+    typedef class ml_dtree ml0x2edtree;
+    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(ml_object_name.c_str(), ml_dtree);
+#else
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2edtree);
+#endif
     
 } //namespace ml
 

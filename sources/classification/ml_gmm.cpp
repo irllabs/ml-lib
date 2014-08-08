@@ -96,7 +96,14 @@ namespace ml
     const std::string ml_gmm::attribute_help =
     "num_mixture_models:\tinteger (n > 0) sets the number of mixture models used for class (default 2)\n";
         
+    typedef class ml_gmm ml0x2egmm;
+    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(ml_object_name.c_str(), ml_gmm);
+#else
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2egmm);
+#endif
+
     
 } //namespace ml
 

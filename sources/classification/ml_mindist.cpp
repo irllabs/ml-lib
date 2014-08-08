@@ -95,7 +95,14 @@ namespace ml
     
     const std::string ml_mindist::attribute_help = "num_clusters:\tinteger (n > 0) sets how many clusters each model will try to find during the training phase (default 10)";
     
+    typedef class ml_mindist ml0x2emindist;
+    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(ml_object_name.c_str(), ml_mindist);
+#else
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2emindist);
+#endif
+
     
 } //namespace ml
 

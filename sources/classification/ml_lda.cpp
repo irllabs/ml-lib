@@ -98,7 +98,14 @@ namespace ml
         return lda;
     }
     
+    typedef class ml_lda ml0x2elda;
+    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(ml_object_name.c_str(), ml_lda);
+#else
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2elda);
+#endif
+
     
 } //namespace ml
 

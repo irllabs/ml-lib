@@ -141,7 +141,14 @@ namespace ml
     "min_samples_per_node:\tinteger (n > 0) Sets the minimum number of samples that are allowed per node (default 5)\n"
     "max_depth:\tinteger (n > 0) Sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node. (default 10)\n";
     
+    typedef class ml_randforest ml0x2erandforest;
+    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(ml_object_name.c_str(), ml_randforest);
+#else
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2erandforest);
+#endif
+
     
 } //namespace ml
 

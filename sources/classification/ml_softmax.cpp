@@ -62,7 +62,13 @@ namespace ml
         return softmax;
     }
     
+    typedef class ml_softmax ml0x2esoftmax;
+    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(ml_object_name.c_str(), ml_softmax);
+#else
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2esoftmax);
+#endif
     
 } //namespace ml
 

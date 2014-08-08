@@ -108,7 +108,13 @@ namespace ml
     
     const std::string ml_zerox::attribute_help =  "";
     
+    typedef class ml_zerox ml0x2ezerox;
+    
+#ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(ml_object_name.c_str(), ml_zerox);
+#else
+    FLEXT_NEW(ml_object_name.c_str(), ml0x2ezerox);
+#endif
     
 } //namespace ml
 
