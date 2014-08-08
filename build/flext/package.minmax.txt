@@ -4,4 +4,4 @@ LIBS+=-lgrt
 
 CFLAGS+=-std=c++0x -DFLEXT_SYS=2 -DFLEXT_ATTRIBUTES=1 -DFLEXT_USE_HEX_SETUP_NAME
 NAME=ml.minmax
-SRCS=../../sources/ml_ml.cpp ../../sources/ml_base.cpp ../../sources/feature_extraction/ml_minmax.cpp
+SRCS=../../sources/ml_ml.cpp ../../sources/ml_base.cpp ../../sources/feature_extraction/ml_feature_extraction.cpp ../../sources/feature_extraction/ml_minmax.cpp
