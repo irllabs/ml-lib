@@ -24,7 +24,7 @@
 
 #include <string>
 
-#define ML_VERSION "0.15.1"
+#define ML_VERSION "0.16.0"
 #define ML_NAME "ml-lib"
 
 namespace ml
