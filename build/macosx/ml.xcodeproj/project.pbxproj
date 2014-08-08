@@ -311,6 +311,24 @@
 		7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
 		7DF077F81847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		7DF077F91847577100C55E3C /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7DFA31A31994C470005A77C1 /* ml.dtw.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E218F7CFA300F417F6 /* ml.dtw.maxhelp */; };
+		7DFA31A41994C473005A77C1 /* ml.hmm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E318F7CFA300F417F6 /* ml.hmm.maxhelp */; };
+		7DFA31A51994C476005A77C1 /* ml.linreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E418F7CFA300F417F6 /* ml.linreg.maxhelp */; };
+		7DFA31A61994C47C005A77C1 /* ml.logreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E518F7CFA300F417F6 /* ml.logreg.maxhelp */; };
+		7DFA31A71994C47F005A77C1 /* ml.minmax.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E618F7CFA300F417F6 /* ml.minmax.maxhelp */; };
+		7DFA31A81994C484005A77C1 /* ml.mlp.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */; };
+		7DFA31A91994C488005A77C1 /* ml.peak.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E818F7CFA300F417F6 /* ml.peak.maxhelp */; };
+		7DFA31AA1994C48B005A77C1 /* ml.svm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E918F7CFA300F417F6 /* ml.svm.maxhelp */; };
+		7DFA31AB1994C490005A77C1 /* ml.adaboost.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E018F7CF3700F417F6 /* ml.adaboost.maxhelp */; };
+		7DFA31AC1994C497005A77C1 /* ml.svm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E918F7CFA300F417F6 /* ml.svm.maxhelp */; };
+		7DFA31AD1994C49D005A77C1 /* ml.adaboost.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E018F7CF3700F417F6 /* ml.adaboost.maxhelp */; };
+		7DFA31AE1994C4A2005A77C1 /* ml.linreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E418F7CFA300F417F6 /* ml.linreg.maxhelp */; };
+		7DFA31AF1994C4A7005A77C1 /* ml.logreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E518F7CFA300F417F6 /* ml.logreg.maxhelp */; };
+		7DFA31B01994C4AF005A77C1 /* ml.dtw.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E218F7CFA300F417F6 /* ml.dtw.maxhelp */; };
+		7DFA31B11994C4C0005A77C1 /* ml.hmm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E318F7CFA300F417F6 /* ml.hmm.maxhelp */; };
+		7DFA31B21994C4C7005A77C1 /* ml.peak.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E818F7CFA300F417F6 /* ml.peak.maxhelp */; };
+		7DFA31B31994C4CC005A77C1 /* ml.minmax.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E618F7CFA300F417F6 /* ml.minmax.maxhelp */; };
+		7DFA31B71994CC47005A77C1 /* ml.zerox-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DFA31B61994CC3E005A77C1 /* ml.zerox-help.pd */; };
 		E98573570D9E52D300682171 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		E98573580D9E52D300682171 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 /* End PBXBuildFile section */
@@ -409,6 +427,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31B71994CC47005A77C1 /* ml.zerox-help.pd in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +447,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31AC1994C497005A77C1 /* ml.svm.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +458,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31AD1994C49D005A77C1 /* ml.adaboost.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +469,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31AE1994C4A2005A77C1 /* ml.linreg.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +480,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31AF1994C4A7005A77C1 /* ml.logreg.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +502,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31B01994C4AF005A77C1 /* ml.dtw.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +513,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31B11994C4C0005A77C1 /* ml.hmm.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +524,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31B21994C4C7005A77C1 /* ml.peak.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +535,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31B31994C4CC005A77C1 /* ml.minmax.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +664,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7DFA31A31994C470005A77C1 /* ml.dtw.maxhelp in Copy Files */,
+				7DFA31A41994C473005A77C1 /* ml.hmm.maxhelp in Copy Files */,
+				7DFA31A61994C47C005A77C1 /* ml.logreg.maxhelp in Copy Files */,
+				7DFA31A81994C484005A77C1 /* ml.mlp.maxhelp in Copy Files */,
+				7DFA31A71994C47F005A77C1 /* ml.minmax.maxhelp in Copy Files */,
+				7DFA31A91994C488005A77C1 /* ml.peak.maxhelp in Copy Files */,
+				7DFA31AA1994C48B005A77C1 /* ml.svm.maxhelp in Copy Files */,
+				7DFA31AB1994C490005A77C1 /* ml.adaboost.maxhelp in Copy Files */,
+				7DFA31A51994C476005A77C1 /* ml.linreg.maxhelp in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,7 +701,7 @@
 		7D65FFC7199253D400C82004 /* ml_feature_extraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_feature_extraction.h; path = ../../sources/feature_extraction/ml_feature_extraction.h; sourceTree = "<group>"; };
 		7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_feature_extraction.cpp; path = ../../sources/feature_extraction/ml_feature_extraction.cpp; sourceTree = "<group>"; };
 		7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_zerox.cpp; path = ../../sources/feature_extraction/ml_zerox.cpp; sourceTree = "<group>"; };
-		7D65FFDE1992C18C00C82004 /* ml.zerox pd.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "ml.zerox pd.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D65FFDE1992C18C00C82004 /* ml.zerox.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.zerox.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D65FFF11992C1FF00C82004 /* ml.zerox.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.zerox.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7D9FEF18F6948E00F417F6 /* ml.svm.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.svm.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA00918F699D800F417F6 /* ml.adaboost.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.adaboost.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -871,6 +907,7 @@
 		7DEE4F5E18BD3F38001A1294 /* ml_classification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_classification.h; path = ../../sources/classification/ml_classification.h; sourceTree = "<group>"; };
 		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ../../sources/classification/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DFA31B61994CC3E005A77C1 /* ml.zerox-help.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml.zerox-help.pd"; path = "../../documentation/help/pd/ml.zerox-help.pd"; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98573560D9E52D300682171 /* ml_ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_ml.cpp; path = ../../sources/ml_ml.cpp; sourceTree = "<group>"; };
 		E9974E53077083C700206F68 /* ml.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1256,7 +1293,7 @@
 				7D551AE8190FEA37008FF361 /* ml.knn.mxo */,
 				7D551AF8190FEA66008FF361 /* ml.gmm.mxo */,
 				7D551B08190FEA80008FF361 /* ml.dtree.mxo */,
-				7D65FFDE1992C18C00C82004 /* ml.zerox pd.pd_darwin */,
+				7D65FFDE1992C18C00C82004 /* ml.zerox.pd_darwin */,
 				7D65FFF11992C1FF00C82004 /* ml.zerox.mxo */,
 			);
 			name = Products;
@@ -1307,6 +1344,7 @@
 				7D7DA0E318F7CFA300F417F6 /* ml.hmm.maxhelp */,
 				7D7DA0E418F7CFA300F417F6 /* ml.linreg.maxhelp */,
 				7D7DA0E518F7CFA300F417F6 /* ml.logreg.maxhelp */,
+				7DFA31B61994CC3E005A77C1 /* ml.zerox-help.pd */,
 				7D7DA0E618F7CFA300F417F6 /* ml.minmax.maxhelp */,
 				7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */,
 				7D7DA0E818F7CFA300F417F6 /* ml.peak.maxhelp */,
@@ -2118,7 +2156,7 @@
 			);
 			name = "ml.zerox pd";
 			productName = xsample;
-			productReference = 7D65FFDE1992C18C00C82004 /* ml.zerox pd.pd_darwin */;
+			productReference = 7D65FFDE1992C18C00C82004 /* ml.zerox.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		7D65FFE11992C1FF00C82004 /* ml.zerox max */ = {
@@ -4319,7 +4357,7 @@
 					dynamic_lookup,
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "ml.zerox pd";
+				PRODUCT_NAME = ml.zerox;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = YES;
 			};
@@ -4355,7 +4393,7 @@
 					dynamic_lookup,
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "ml.zerox pd";
+				PRODUCT_NAME = ml.zerox;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = NO;
 			};
@@ -4390,7 +4428,7 @@
 					"$(PDApp)/bin/pd",
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "ml.zerox pd";
+				PRODUCT_NAME = ml.zerox;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Default;

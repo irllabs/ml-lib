@@ -10,6 +10,8 @@
 
 #include <sstream>
 
+// TODO: we need to override the method help becase ml_feature_extraction subclasses don't support most of the standard ml methods
+
 namespace ml
 {
     ml_feature_extraction::ml_feature_extraction()
@@ -33,11 +35,12 @@ namespace ml
     void ml_feature_extraction::map(int argc, const t_atom *argv)
     {
         GRT::VectorDouble input(argc);
+        GRT::FeatureExtraction &feature_extractor = get_FeatureExtraction_instance();
         
-        if (argc <= 0)
+        if (argc <= 0 || (GRT::UINT)argc != feature_extractor.getNumInputDimensions())
         {
             std::stringstream ss;
-            ss << "invalid input length: " << argc;
+            ss << "invalid input length: " << argc << ", expected: " << feature_extractor.getNumInputDimensions();
             error(ss.str());
             return;
         }
@@ -47,12 +50,25 @@ namespace ml
             double value = GetAFloat(argv[index]);
             input[index] = value;
         }
-
-        GRT::FeatureExtraction &feature_extractor = get_FeatureExtraction_instance();
         
-        feature_extractor.computeFeatures(input);
+        bool success = feature_extractor.computeFeatures(input);
+        
+        if (success == false)
+        {
+            error("unable to map input");
+            return;
+        }
         
         GRT::VectorDouble features = feature_extractor.getFeatureVector();
+        
+        if (features.size() == 0 || features.size() != feature_extractor.getNumOutputDimensions())
+        {
+            std::stringstream ss;
+            ss << "unexpected output length: " << features.size() << ", expected: " << feature_extractor.getNumOutputDimensions();
+            error(ss.str());
+            return;
+        }
+        
         AtomList features_l;
         
         for (uint32_t count = 0; count < features.size(); ++count)
