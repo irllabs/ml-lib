@@ -40,7 +40,7 @@
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
       <PathRunnable
-         FilePath = "/Applications/Pd-extended.app">
+         FilePath = "/Applications/Pd-extended.app/Contents/Resources/bin/pd">
       </PathRunnable>
       <CommandLineArguments>
          <CommandLineArgument

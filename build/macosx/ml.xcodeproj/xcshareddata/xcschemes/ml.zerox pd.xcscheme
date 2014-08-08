@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D65FFCF1992C18C00C82004"
-               BuildableName = "ml.zerox pd.pd_darwin"
+               BuildableName = "ml.zerox.pd_darwin"
                BlueprintName = "ml.zerox pd"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
@@ -40,15 +40,24 @@
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
       <PathRunnable
-         FilePath = "/Applications/Pd-extended.app">
+         FilePath = "/Applications/Pd-extended.app/Contents/Resources/bin/pd">
       </PathRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7D65FFCF1992C18C00C82004"
+            BuildableName = "ml.zerox.pd_darwin"
+            BlueprintName = "ml.zerox pd"
+            ReferencedContainer = "container:ml.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-path ${BUILT_PRODUCTS_DIR}"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "~/Documents/ml-lib/${PRODUCT_NAME}/${PRODUCT_NAME}-help.pd"
+            argument = "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}-help.pd"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
