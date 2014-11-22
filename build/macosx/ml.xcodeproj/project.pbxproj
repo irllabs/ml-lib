@@ -3403,7 +3403,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -3413,7 +3413,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -3458,7 +3458,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -3469,7 +3469,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -3510,7 +3510,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -3519,7 +3519,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -3564,7 +3564,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -3574,7 +3574,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -3619,7 +3619,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -3630,7 +3630,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -3671,7 +3671,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -3680,7 +3680,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -3725,7 +3725,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -3735,7 +3735,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -3780,7 +3780,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -3791,7 +3791,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -3832,7 +3832,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -3841,7 +3841,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -3886,7 +3886,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -3896,7 +3896,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -3941,7 +3941,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -3952,7 +3952,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -3993,7 +3993,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4002,7 +4002,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -4047,7 +4047,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4057,7 +4057,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -4102,7 +4102,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -4113,7 +4113,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -4154,7 +4154,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4163,7 +4163,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -4208,7 +4208,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4218,7 +4218,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -4263,7 +4263,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -4274,7 +4274,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -4315,7 +4315,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4324,7 +4324,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -4474,7 +4474,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4484,7 +4484,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -4529,7 +4529,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -4540,7 +4540,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -4581,7 +4581,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4590,7 +4590,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -4635,7 +4635,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4645,7 +4645,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -4690,7 +4690,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -4701,7 +4701,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -4742,7 +4742,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4751,7 +4751,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -4796,7 +4796,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4806,7 +4806,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -4851,7 +4851,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -4862,7 +4862,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -4903,7 +4903,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4912,7 +4912,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -4957,7 +4957,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -4967,7 +4967,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -5012,7 +5012,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -5023,7 +5023,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -5064,7 +5064,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5073,7 +5073,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -5118,7 +5118,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5128,7 +5128,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -5173,7 +5173,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -5184,7 +5184,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -5225,7 +5225,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5234,7 +5234,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -5279,7 +5279,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5289,7 +5289,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -5334,7 +5334,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -5345,7 +5345,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -5386,7 +5386,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5395,7 +5395,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -5440,7 +5440,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5450,7 +5450,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -5495,7 +5495,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -5506,7 +5506,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -5547,7 +5547,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5556,7 +5556,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -5601,7 +5601,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5611,7 +5611,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -5656,7 +5656,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -5667,7 +5667,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -5708,7 +5708,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5717,7 +5717,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -5762,7 +5762,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5772,7 +5772,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -5817,7 +5817,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -5828,7 +5828,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -5869,7 +5869,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5878,7 +5878,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -5923,7 +5923,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -5933,7 +5933,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -5978,7 +5978,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -5989,7 +5989,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -6030,7 +6030,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -6039,7 +6039,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -6047,6 +6047,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -6054,6 +6055,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -6061,6 +6063,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -7375,6 +7378,7 @@
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = ml;
+				SYMROOT = build;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = YES;
 			};
@@ -7411,6 +7415,7 @@
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = ml;
+				SYMROOT = build;
 				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = NO;
 			};
@@ -7446,6 +7451,7 @@
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = ml;
+				SYMROOT = build;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Default;
@@ -7459,7 +7465,6 @@
 				DEBUGGING_SYMBOLS = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
@@ -7492,7 +7497,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -7502,7 +7507,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
 		};
@@ -7515,7 +7520,6 @@
 				DEPLOYMENT_LOCATION = NO;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
@@ -7548,7 +7552,7 @@
 				OTHER_LDFLAGS = "-lflext-max_s";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -7559,7 +7563,7 @@
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
 		};
@@ -7570,7 +7574,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
@@ -7601,7 +7604,7 @@
 				OTHER_LDFLAGS = "-lflext-max_sd";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = (
@@ -7610,7 +7613,7 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = mxo;
-				maxsdk = /Users/jamie/Library/Frameworks/Max5/c74support;
+				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
 		};
@@ -7630,9 +7633,10 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = i386;
 				WARNING_CFLAGS = (
@@ -7640,7 +7644,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "$(USER_LIBRARY_DIR)/Frameworks/c74support";
+				maxsdk = "~/Development/MaxSDK-6.1.4/c74support";
 			};
 			name = Development;
 		};
@@ -7661,9 +7665,10 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = i386;
 				WARNING_CFLAGS = (
@@ -7671,7 +7676,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "$(USER_LIBRARY_DIR)/Frameworks/c74support";
+				maxsdk = "~/Development/MaxSDK-6.1.4/c74support";
 			};
 			name = Deployment;
 		};
@@ -7684,8 +7689,9 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = i386;
 				WARNING_CFLAGS = (
@@ -7693,7 +7699,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "$(USER_LIBRARY_DIR)/Frameworks/c74support";
+				maxsdk = "~/Development/MaxSDK-6.1.4/c74support";
 			};
 			name = Default;
 		};
