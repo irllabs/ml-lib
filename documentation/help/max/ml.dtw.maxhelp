@@ -1411,6 +1411,7 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-67",
@@ -1419,12 +1420,13 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 554.0, 605.0, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "s mlp"
+					"text" : "s dtw"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-66",
@@ -1433,7 +1435,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 556.0, 486.0, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "s mlp"
+					"text" : "s dtw"
 				}
 
 			}
@@ -1642,6 +1644,7 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-78",
@@ -1650,7 +1653,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 556.0, 373.0, 39.0, 22.0 ],
 					"style" : "",
-					"text" : "s mlp"
+					"text" : "s dtw"
 				}
 
 			}
@@ -2721,6 +2724,10 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "ml.dtw.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "OSC-route.mxo",
 				"type" : "iLaX"
 			}
