@@ -7717,7 +7717,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "~/Development/MaxSDK-6.1.4/c74support";
+				maxsdk = "~/Development/MaxSDK/c74support";
 			};
 			name = Development;
 		};
@@ -7750,7 +7750,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "~/Development/MaxSDK-6.1.4/c74support";
+				maxsdk = "~/Development/MaxSDK/c74support";
 			};
 			name = Deployment;
 		};
@@ -7774,7 +7774,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "~/Development/MaxSDK-6.1.4/c74support";
+				maxsdk = "~/Development/MaxSDK/c74support";
 			};
 			name = Default;
 		};
