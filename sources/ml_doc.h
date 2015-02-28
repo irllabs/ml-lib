@@ -17,21 +17,6 @@
  */
 
 
-//Class [1]:
-//Name
-//Short description
-//Long description
-//URL
-//
-//Attribute [0-N]:
-//Name
-//Description
-//Minimum
-//Maximum
-//Type
-//Allowed Values
-//Default Value
-//
 //Method [0-N]: (methods are stateless)
 //Name
 //Description
@@ -49,7 +34,7 @@
 
 namespace ml_doc
 {
-    class attribute_doc
+    class message_descriptor
     {
     public:
         virtual std::string print(void)
@@ -63,13 +48,13 @@ namespace ml_doc
     };
 
     template <typename T>
-    class valued_attribute_doc : public attribute_doc
+    class valued_message_descriptor : public message_descriptor
     {
 
     public:
         virtual std::string print(void)
         {
-            std::string out = attribute_doc::print();
+            std::string out = message_descriptor::print();
             if (allowed_values.size())
             {
                 out += "(allowed values: [";
@@ -91,14 +76,14 @@ namespace ml_doc
     };
 
     template <typename T>
-    class ranged_attribute_doc :
-    public valued_attribute_doc<T>
+    class ranged_message_descriptor :
+    public valued_message_descriptor<T>
     {
 
     public:
         virtual std::string print(void)
         {
-            std::string out = valued_attribute_doc<T>::print();
+            std::string out = valued_message_descriptor<T>::print();
             out += "(min: " + std::to_string(min) + " max: " + std::to_string(min) + ") ";
             return out;
         }
@@ -107,21 +92,21 @@ namespace ml_doc
         T max;
     };
 
-    class class_doc
+    class class_descriptor
     {
     public:
         template <typename T>
-        void add_attribute_doc(T &attribute_doc)
+        void add_message_descriptor(T &message_descriptor)
         {
-            std::unique_ptr<ml_doc::attribute_doc> attr_ptr(new T(attribute_doc));
-            attribute_docs.push_back(std::move(attr_ptr));
+            std::unique_ptr<ml_doc::message_descriptor> attr_ptr(new T(message_descriptor));
+            message_descriptors.push_back(std::move(attr_ptr));
         }
 
         std::string print(void)
         {
             std::string out = name + ": " + desc + "\n";
 
-            for(auto &attr : attribute_docs)
+            for(auto &attr : message_descriptors)
             {
                 out += attr->print();
                 out += "\n";
@@ -133,7 +118,7 @@ namespace ml_doc
         std::string desc;
 
     private:
-        std::vector<std::unique_ptr<attribute_doc> > attribute_docs;
+        std::vector<std::unique_ptr<message_descriptor> > message_descriptors;
     };
 
     class ml_doc_manager
@@ -146,12 +131,12 @@ namespace ml_doc
             return instance;
         }
 
-        std::string doc_for_class(std::string class_name)
+        std::string descriptor_for_class(std::string class_name)
         {
-            auto it = docs.find(class_name);
-            std::unique_ptr<class_doc> doc;
+            auto it = descriptors.find(class_name);
+            std::unique_ptr<class_descriptor> descriptor;
 
-            if (it == docs.end())
+            if (it == descriptors.end())
             {
                 return "";
             }
@@ -159,9 +144,9 @@ namespace ml_doc
             return it->second->print();
         }
 
-        bool is_empty(class_doc &doc)
+        bool is_empty(class_descriptor &descriptor)
         {
-            return &doc == &empty_doc;
+            return &descriptor == &empty_descriptor;
         }
 
     private:
@@ -171,8 +156,8 @@ namespace ml_doc
     
         void populate(void)
         {
-            std::unique_ptr<class_doc> ml_mlp(new class_doc());
-            ranged_attribute_doc<int> min_epochs;
+            std::unique_ptr<class_descriptor> ml_mlp(new class_descriptor());
+            ranged_message_descriptor<int> min_epochs;
             
             min_epochs.name = "min_epochs";
             min_epochs.desc = "the minimum number of training iterations";
@@ -181,17 +166,17 @@ namespace ml_doc
             min_epochs.def = 10;
             min_epochs.allowed_values = {1, 2, 3, 4, 5};
             
-            ml_mlp->add_attribute_doc(min_epochs);
+            ml_mlp->add_message_descriptor(min_epochs);
             ml_mlp->name = "ml.mlp";
             ml_mlp->desc = "blah blah blah";
             
-            docs.emplace(std::pair<std::string, std::unique_ptr<class_doc> >("ml.mlp", std::move(ml_mlp)));
+            descriptors.emplace(std::pair<std::string, std::unique_ptr<class_descriptor> >("ml.mlp", std::move(ml_mlp)));
         }
 
-        std::map<std::string, std::unique_ptr<class_doc> > docs;
-        class_doc empty_doc;
+        std::map<std::string, std::unique_ptr<class_descriptor> > descriptors;
+        class_descriptor empty_descriptor;
   };
 }
 
 
-#endif /* defined(ml_doc) */
+#endif /* defined(ml_descriptor) */
