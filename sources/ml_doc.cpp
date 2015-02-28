@@ -32,7 +32,6 @@ namespace ml_doc
         }
         return out;
     }
-
     
     // ml_doc_manager implementation
     ml_doc_manager& ml_doc_manager::shared_instance()
@@ -42,7 +41,7 @@ namespace ml_doc
         return instance;
     }
 
-    std::string ml_doc_manager::descriptor_for_class(std::string class_name)
+    std::string ml_doc_manager::doc_for_class(std::string class_name)
     {
         auto it = descriptors.find(class_name);
         std::unique_ptr<class_descriptor> descriptor;
@@ -55,9 +54,32 @@ namespace ml_doc
         return it->second->print();
     }
     
+    void ml_doc_manager::add_class_descriptor(unique_class_descriptor &descriptor)
+    {
+        descriptors.emplace(std::pair<std::string, unique_class_descriptor >(descriptor->name, std::move(descriptor)));
+    }
+    
+    // TODO: could also do with init_class_descriptors(const std::vector<std::pair<std::string, std::string> >)
+    void ml_doc_manager::init_class_descriptors(const std::vector<std::string> class_names)
+    {
+        for (std::string class_name : class_names)
+        {
+            unique_class_descriptor descriptor(new class_descriptor(class_name));
+            add_class_descriptor(descriptor);
+        }
+    }
+
     void ml_doc_manager::populate(void)
     {
-        std::unique_ptr<class_descriptor> ml_mlp(new class_descriptor());
+        init_class_descriptors
+        (
+            {
+                "ml.dtree",
+                "ml.gmm",
+                "ml.knn"
+            }
+        );
+        
         ranged_message_descriptor<int> min_epochs;
         
         min_epochs.name = "min_epochs";
@@ -67,11 +89,10 @@ namespace ml_doc
         min_epochs.def = 10;
         min_epochs.allowed_values = {1, 2, 3, 4, 5};
         
-        ml_mlp->add_message_descriptor(min_epochs);
-        ml_mlp->name = "ml.mlp";
-        ml_mlp->desc = "blah blah blah";
+        descriptors["ml.dtree"]->add_message_descriptor(min_epochs);
         
-        descriptors.emplace(std::pair<std::string, std::unique_ptr<class_descriptor> >("ml.mlp", std::move(ml_mlp)));
+        
+       
     }
-
+    
 }

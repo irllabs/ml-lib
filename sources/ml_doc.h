@@ -100,6 +100,8 @@ namespace ml_doc
     {
     public:
         class_descriptor() : parent(nullptr) {};
+        class_descriptor(std::string& name) : name(name), parent(nullptr)  {};
+
         
         template <typename T>
         void add_message_descriptor(T &message_descriptor)
@@ -121,17 +123,22 @@ namespace ml_doc
     class ml_doc_manager
     {
     public:
+        typedef std::unique_ptr<class_descriptor> unique_class_descriptor;
+
         static ml_doc_manager& shared_instance();
-        std::string descriptor_for_class(std::string class_name);
+        std::string doc_for_class(std::string class_name);
+        void add_class_descriptor(unique_class_descriptor &descriptor);
         
     private:
+        void init_class_descriptors(const std::vector<std::string> class_names);
+
         ml_doc_manager() {};
         ml_doc_manager(ml_doc_manager const&) = delete;
         void operator=(ml_doc_manager const&) = delete;
 
         void populate(void);
         
-        std::map<std::string, std::unique_ptr<class_descriptor> > descriptors;
+        std::map<std::string, unique_class_descriptor > descriptors;
         class_descriptor empty_descriptor;
   };
 }
