@@ -18,19 +18,16 @@
 
 #include "ml_classification.h"
 
-
-
-
 namespace ml
 {
-    const std::string ml_object_name = "ml.dtw";
+    const std::string object_name = "ml.dtw";
     
-    class ml_dtw : ml_classification
+    class dtw : classification
     {
-        FLEXT_HEADER_S(ml_dtw, ml_classification, setup);
+        FLEXT_HEADER_S(dtw, classification, setup);
         
     public:
-        ml_dtw()
+        dtw()
         {
             post("Dynamic Time Warping based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
@@ -41,7 +38,7 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
-            ml_classification::setup(c);
+            classification::setup(c);
             
             FLEXT_CADDATTR_SET(c, "rejection_mode", set_rejection_mode);
             FLEXT_CADDATTR_SET(c, "warping_radius", set_warping_radius);
@@ -57,7 +54,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "enable_z_normalization", get_enable_z_normalization);
             FLEXT_CADDATTR_GET(c, "enable_trim_training_data", get_enable_trim_training_data);
             
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
                 
         // Flext attribute setters
@@ -94,7 +91,7 @@ namespace ml
         
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::DTW classifier;
         
@@ -102,7 +99,7 @@ namespace ml
     };
     
     // Flext attribute setters
-    void ml_dtw::set_rejection_mode(int rejection_mode)
+    void dtw::set_rejection_mode(int rejection_mode)
     {
         bool success = classifier.setRejectionMode(rejection_mode);
         
@@ -112,7 +109,7 @@ namespace ml
         }
     }
     
-    void ml_dtw::set_warping_radius(float warping_radius)
+    void dtw::set_warping_radius(float warping_radius)
     {
         bool success = classifier.setWarpingRadius(warping_radius);
         
@@ -122,7 +119,7 @@ namespace ml
         }
     }
     
-    void ml_dtw::set_offset_time_series(bool offset_time_series)
+    void dtw::set_offset_time_series(bool offset_time_series)
     {
         bool success = classifier.setOffsetTimeseriesUsingFirstSample(offset_time_series);
         
@@ -133,7 +130,7 @@ namespace ml
     }
     
 
-    void ml_dtw::set_constrain_warping_path(bool constrain_warping_path)
+    void dtw::set_constrain_warping_path(bool constrain_warping_path)
     {
         bool succes = classifier.setContrainWarpingPath(constrain_warping_path);
         
@@ -144,7 +141,7 @@ namespace ml
     }
     
 
-    void ml_dtw::set_enable_z_normalization(bool enable_z_normalization)
+    void dtw::set_enable_z_normalization(bool enable_z_normalization)
     {
         bool success = classifier.enableZNormalization(enable_z_normalization);
         
@@ -155,7 +152,7 @@ namespace ml
     }
     
 
-    void ml_dtw::set_enable_trim_training_data(bool enable_trim_training_data)
+    void dtw::set_enable_trim_training_data(bool enable_trim_training_data)
     {
         // Use defaults for threshold and percentage
         bool success = classifier.enableTrimTrainingData(enable_trim_training_data, 0.1, 90);
@@ -167,62 +164,62 @@ namespace ml
     }
     
     // Flext attribute getters
-    void ml_dtw::get_rejection_mode(int &rejection_mode) const
+    void dtw::get_rejection_mode(int &rejection_mode) const
     {
         error("function not implemented");
     }
 
-    void ml_dtw::get_warping_radius(float &warping_radius) const
-    {
-        error("function not implemented");
-    }
-    
-
-    void ml_dtw::get_offget_time_series(bool &offget_time_series) const
+    void dtw::get_warping_radius(float &warping_radius) const
     {
         error("function not implemented");
     }
     
 
-    void ml_dtw::get_constrain_warping_path(bool &constrain_warping_path) const
+    void dtw::get_offget_time_series(bool &offget_time_series) const
+    {
+        error("function not implemented");
+    }
+    
+
+    void dtw::get_constrain_warping_path(bool &constrain_warping_path) const
     {
         error("function not implement");
     }
     
 
-    void ml_dtw::get_enable_z_normalization(bool &enable_z_normalization) const
+    void dtw::get_enable_z_normalization(bool &enable_z_normalization) const
     {
         error("function not implemented");
     }
     
 
-    void ml_dtw::get_enable_trim_training_data(bool &enable_trim_training_data) const
+    void dtw::get_enable_trim_training_data(bool &enable_trim_training_data) const
     {
         error("function not implemented");
     }
     
     // Implement pure virtual methods
-    GRT::Classifier &ml_dtw::get_Classifier_instance()
+    GRT::Classifier &dtw::get_Classifier_instance()
     {
         return classifier;
     }
     
-    const GRT::Classifier &ml_dtw::get_Classifier_instance() const
+    const GRT::Classifier &dtw::get_Classifier_instance() const
     {
         return classifier;
     }
     
-    bool ml_dtw::read_specialised_dataset(std::string &path)
+    bool dtw::read_specialised_dataset(std::string &path)
     {
         return time_series_classification_data.loadDatasetFromFile(path);
     }
     
-    bool ml_dtw::write_specialised_dataset(std::string &path) const
+    bool dtw::write_specialised_dataset(std::string &path) const
     {
         return time_series_classification_data.saveDatasetToFile(path);
     }
     
-    const std::string ml_dtw::attribute_help =
+    const std::string dtw::attribute_help =
     "rejection_mode:\tinteger sets the method used for null rejection. (0 = TEMPLATE_THRESHOLDS, 1 = CLASS_LIKELIHOODS, 2 = THRESHOLDS_AND_LIKELIHOODS, default 0)\n"
     "warping_radius:\tfloat (0..1)  sets the radius of the warping path, which is used if the constrain_warping_path is set to 1. (default 0.2)\n"
     "offset_time_series:\tinteger (0 or 1) sets if each timeseries should be offset by the first sample in the timeseries (default 0)\n"
@@ -230,12 +227,12 @@ namespace ml
     "enable_z_normalization:\tinteger (0 or 1) turning z-normalization on or off for training and prediction (default 0)\n"
     "enable_trim_training_data:\tinteger (0 or 1) enabling data trimming prior to training (default 0)\n";
     
-    typedef class ml_dtw ml0x2edtw;
+    typedef class dtw ml0x2edtw;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_dtw);
+    FLEXT_LIB(object_name.c_str(), dtw);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2edtw);
+    FLEXT_NEW(object_name.c_str(), ml0x2edtw);
 #endif
     
 } //namespace ml

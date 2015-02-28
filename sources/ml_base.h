@@ -17,19 +17,19 @@
  */
 
 
-#ifndef ml_ml_base_h
-#define ml_ml_base_h
+#ifndef ml_base_h
+#define ml_base_h
 
 #include "flext.h"
 
 #include <string>
 
-#define ML_VERSION "0.16.1"
-#define ML_NAME "ml-lib"
+#define VERSION "0.16.1"
+#define NAME "ml-lib"
 
 namespace ml
 {
-    class ml_help
+    class help
     {
     public:        
         void append_methods(const std::string &methods) { this->methods.append(methods); }
@@ -43,7 +43,7 @@ namespace ml
     };
     
     
-    class ml_base:
+    class base:
     public flext_base
     {
     public:
@@ -51,7 +51,7 @@ namespace ml
         void error(const std::string &message) const;
  
     protected:
-        ml_help help;
+        help help;
     
     private:
         virtual const std::string get_object_name(void) const = 0;

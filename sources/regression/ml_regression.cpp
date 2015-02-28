@@ -11,13 +11,13 @@
 namespace ml
 {
     // Flext attribute setters
-    void ml_regression::set_max_iterations(int max_iterations)
+    void regression::set_max_iterations(int max_iterations)
     {
         GRT::Regressifier &regressifier = get_Regressifier_instance();
         regressifier.setMaxNumEpochs(max_iterations);
     }
     
-    void ml_regression::set_min_change(float min_change)
+    void regression::set_min_change(float min_change)
     {
         GRT::Regressifier &regressifier = get_Regressifier_instance();
         bool success = regressifier.setMinChange(min_change);
@@ -28,7 +28,7 @@ namespace ml
         }
     }
     
-    void ml_regression::set_training_rate(float training_rate)
+    void regression::set_training_rate(float training_rate)
     {
         GRT::Regressifier &regressifier = get_Regressifier_instance();
         bool success = regressifier.setLearningRate(training_rate);
@@ -40,33 +40,33 @@ namespace ml
     }
     
     // Flext attribute getters
-    void ml_regression::get_max_iterations(int &max_iterations) const
+    void regression::get_max_iterations(int &max_iterations) const
     {
         const GRT::Regressifier &regressifier = get_Regressifier_instance();
         max_iterations = regressifier.getMaxNumEpochs();
     }
     
-    void ml_regression::get_min_change(float &min_change) const
+    void regression::get_min_change(float &min_change) const
     {
         error("function not implemented");
         //        min_change = regressifier->getMinChange();
     }
     
-    void ml_regression::get_training_rate(float &training_rate) const
+    void regression::get_training_rate(float &training_rate) const
     {
         const GRT::Regressifier &regressifier = get_Regressifier_instance();
         training_rate = regressifier.getLearningRate();
     }
     
     // Methods
-    ml_regression::ml_regression()
+    regression::regression()
     {
         regression_data.setInputAndTargetDimensions(default_num_input_dimensions, default_num_output_dimensions);
         set_data_type(LABELLED_REGRESSION);
         help.append_attributes(attribute_help);
     }
     
-    void ml_regression::train()
+    void regression::train()
     {
         GRT::UINT numSamples = regression_data.getNumSamples();
         GRT::Regressifier &regressifier = get_Regressifier_instance();
@@ -91,7 +91,7 @@ namespace ml
         ToOutAnything(1, s_train, 1, &a_success);
     }
 
-    void ml_regression::map(int argc, const t_atom *argv)
+    void regression::map(int argc, const t_atom *argv)
     {
         GRT::UINT numSamples = regression_data.getNumSamples();
         GRT::Regressifier &regressifier = get_Regressifier_instance();
@@ -153,27 +153,27 @@ namespace ml
     }
     
     // pure virtual method implementation
-    GRT::MLBase &ml_regression::get_MLBase_instance()
+    GRT::MLBase &regression::get_MLBase_instance()
     {
         return get_Regressifier_instance();
     }
     
-    const GRT::MLBase &ml_regression::get_MLBase_instance() const
+    const GRT::MLBase &regression::get_MLBase_instance() const
     {
         return get_Regressifier_instance();
     }
     
-    bool ml_regression::read_specialised_dataset(std::string &path)
+    bool regression::read_specialised_dataset(std::string &path)
     {
         return regression_data.loadDatasetFromFile(path);
     }
     
-    bool ml_regression::write_specialised_dataset(std::string &path) const
+    bool regression::write_specialised_dataset(std::string &path) const
     {
         return regression_data.saveDatasetToFile(path);
     }
     
-    const std::string ml_regression::attribute_help =
+    const std::string regression::attribute_help =
     "training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)\n"
     "max_iterations:\tinteger setting the maximum number of training iterations (default 100)\n"
     "min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)\n";

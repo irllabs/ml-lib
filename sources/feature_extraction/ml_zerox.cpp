@@ -20,14 +20,14 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.zerox";
+    static const std::string object_name = "ml.zerox";
     
-    class ml_zerox : ml_feature_extraction
+    class zerox : feature_extraction
     {
-        FLEXT_HEADER_S(ml_zerox, ml_feature_extraction, setup);
+        FLEXT_HEADER_S(zerox, feature_extraction, setup);
         
     public:
-        ml_zerox()
+        zerox()
         {
             post("Zero Crossings Extraction based on the GRT library version " + GRT::GRTBase::getGRTVersion());
         }
@@ -45,7 +45,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "dead_zone_threshold", get_dead_zone_threshold);
 
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,ml_object_name.c_str());
+            DefineHelp(c,object_name.c_str());
         }
         
         // Flext attribute setters
@@ -66,54 +66,54 @@ namespace ml
         FLEXT_CALLVAR_I(get_dead_zone_threshold, set_dead_zone_threshold);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
-        GRT::ZeroCrossingCounter zerox;
+        GRT::ZeroCrossingCounter grt_zerox;
         
         static const std::string attribute_help;
     };
     
     // Flext attribute setters
-    void ml_zerox::set_search_window_size(int search_window_size)
+    void zerox::set_search_window_size(int search_window_size)
     {
-        zerox.setSearchWindowSize(search_window_size);
+        grt_zerox.setSearchWindowSize(search_window_size);
     }
     
-    void ml_zerox::set_dead_zone_threshold(int dead_zone_threshold)
+    void zerox::set_dead_zone_threshold(int dead_zone_threshold)
     {
-        zerox.setDeadZoneThreshold(dead_zone_threshold);
+        grt_zerox.setDeadZoneThreshold(dead_zone_threshold);
     }
     
     // Flext attribute getters
-    void ml_zerox::get_search_window_size(int &search_window_size) const
+    void zerox::get_search_window_size(int &search_window_size) const
     {
        // search_window_size = zerox.getSearchWindowSize();
     }
     
-    void ml_zerox::get_dead_zone_threshold(int &dead_zone_threshold) const
+    void zerox::get_dead_zone_threshold(int &dead_zone_threshold) const
     {
        // dead_zone_threshold = zerox.getDeadZoneThreshold();
     }
     
     // Implement pure virtual methods
-    GRT::FeatureExtraction &ml_zerox::get_FeatureExtraction_instance()
+    GRT::FeatureExtraction &zerox::get_FeatureExtraction_instance()
     {
-        return zerox;
+        return grt_zerox;
     }
     
-    const GRT::FeatureExtraction &ml_zerox::get_FeatureExtraction_instance() const
+    const GRT::FeatureExtraction &zerox::get_FeatureExtraction_instance() const
     {
-        return zerox;
+        return grt_zerox;
     }
     
-    const std::string ml_zerox::attribute_help =  "";
+    const std::string zerox::attribute_help =  "";
     
-    typedef class ml_zerox ml0x2ezerox;
+    typedef class zerox ml0x2ezerox;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_zerox);
+    FLEXT_LIB(object_name.c_str(), zerox);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2ezerox);
+    FLEXT_NEW(object_name.c_str(), ml0x2ezerox);
 #endif
     
 } //namespace ml

@@ -20,14 +20,14 @@
 
 namespace ml
 {
-    const std::string ml_object_name = "ml.hmm";
+    const std::string object_name = "ml.hmm";
     
-    class ml_hmm : ml_classification
+    class hmm : classification
     {
-        FLEXT_HEADER_S(ml_hmm, ml_classification, setup);
+        FLEXT_HEADER_S(hmm, classification, setup);
         
     public:
-        ml_hmm()
+        hmm()
         {
             post("Hidden Markov Model based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
@@ -38,7 +38,7 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
-            ml_classification::setup(c);
+            classification::setup(c);
             
             FLEXT_CADDATTR_SET(c, "num_states", set_num_states);
             FLEXT_CADDATTR_SET(c, "num_symbols", set_num_symbols);
@@ -55,7 +55,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
             FLEXT_CADDATTR_GET(c, "min_improvement", get_min_improvement);
             
-            DefineHelp(c,ml_object_name.c_str());
+            DefineHelp(c,object_name.c_str());
         }
         
         // Flext attribute setters
@@ -93,7 +93,7 @@ namespace ml
         FLEXT_CALLVAR_F(get_min_improvement, set_min_improvement);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         // Instance variables
         GRT::HMM classifier;
@@ -102,7 +102,7 @@ namespace ml
     };
     
     // Flext attribute setters
-    void ml_hmm::set_num_states(int num_states)
+    void hmm::set_num_states(int num_states)
     {
         bool success = classifier.setNumStates(num_states);
 
@@ -112,7 +112,7 @@ namespace ml
         }
     }
     
-    void ml_hmm::set_num_symbols(int num_symbols)
+    void hmm::set_num_symbols(int num_symbols)
     {
         bool success = classifier.setNumSymbols(num_symbols);
         
@@ -122,7 +122,7 @@ namespace ml
         }
     }
     
-    void ml_hmm::set_model_type(int model_type)
+    void hmm::set_model_type(int model_type)
     {
         bool success = classifier.setModelType(model_type);
         
@@ -132,7 +132,7 @@ namespace ml
         }
     }
     
-    void ml_hmm::set_delta(int delta)
+    void hmm::set_delta(int delta)
     {
         bool success = classifier.setDelta(delta);
         
@@ -142,7 +142,7 @@ namespace ml
         }
     }
     
-    void ml_hmm::set_max_num_iterations(int max_num_iterations)
+    void hmm::set_max_num_iterations(int max_num_iterations)
     {
         bool success = classifier.setMaxNumIterations(max_num_iterations);
         
@@ -152,7 +152,7 @@ namespace ml
         }
     }
     
-    void ml_hmm::set_num_random_training_iterations(int num_random_training_iterations)
+    void hmm::set_num_random_training_iterations(int num_random_training_iterations)
     {
         bool success = classifier.setNumRandomTrainingIterations(num_random_training_iterations);
         
@@ -162,7 +162,7 @@ namespace ml
         }
     }
     
-    void ml_hmm::set_min_improvement(float min_improvement)
+    void hmm::set_min_improvement(float min_improvement)
     {
         bool success = classifier.setMinImprovement(min_improvement);
         
@@ -173,63 +173,63 @@ namespace ml
     }
     
     // Flext attribute getters
-    void ml_hmm::get_num_states(int &num_states) const
+    void hmm::get_num_states(int &num_states) const
     {
         num_states = classifier.getNumStates();
     }
     
-    void ml_hmm::get_num_symbols(int &num_symbols) const
+    void hmm::get_num_symbols(int &num_symbols) const
     {
         num_symbols = classifier.getNumSymbols();
     }
     
-    void ml_hmm::get_model_type(int &model_type) const
+    void hmm::get_model_type(int &model_type) const
     {
         model_type = classifier.getModelType();
     }
     
-    void ml_hmm::get_delta(int &delta) const
+    void hmm::get_delta(int &delta) const
     {
         delta = classifier.getDelta();
     }
     
-    void ml_hmm::get_max_num_iterations(int &max_num_iterations) const
+    void hmm::get_max_num_iterations(int &max_num_iterations) const
     {
         max_num_iterations = classifier.getMaxNumIterations();
     }
     
-    void ml_hmm::get_num_random_training_iterations(int &num_random_training_iterations) const
+    void hmm::get_num_random_training_iterations(int &num_random_training_iterations) const
     {
         num_random_training_iterations = classifier.getNumRandomTrainingIterations();
     }
     
-    void ml_hmm::get_min_improvement(float &min_improvement) const
+    void hmm::get_min_improvement(float &min_improvement) const
     {
         min_improvement = classifier.getMinImprovement();
     }
     
     // Implement pure virtual methods
-    GRT::Classifier &ml_hmm::get_Classifier_instance()
+    GRT::Classifier &hmm::get_Classifier_instance()
     {
         return classifier;
     }
     
-    const GRT::Classifier &ml_hmm::get_Classifier_instance() const
+    const GRT::Classifier &hmm::get_Classifier_instance() const
     {
         return classifier;
     }
     
-    bool ml_hmm::read_specialised_dataset(std::string &path)
+    bool hmm::read_specialised_dataset(std::string &path)
     {
         return time_series_classification_data.loadDatasetFromFile(path);
     }
 
-    bool ml_hmm::write_specialised_dataset(std::string &path) const
+    bool hmm::write_specialised_dataset(std::string &path) const
     {
         return time_series_classification_data.saveDatasetToFile(path);
     }
     
-    const std::string ml_hmm::attribute_help =  "num_states:\tinteger ( > 0) sets the number of states in the model (default 5)\n"
+    const std::string hmm::attribute_help =  "num_states:\tinteger ( > 0) sets the number of states in the model (default 5)\n"
     "num_symbols:\tinteger ( > 0) sets the number of symbols in the model (default 10)\n"
     "model_type:\tinteger (0 = ERGODIC, 1 = LEFTRIGHT) sets the model type used for the HMM (default LEFTRIGHT)\n"
     "delta:\tinteger ( > 0) controls how many states a model can transition to if the LEFTRIGHT model type is used (default 1)\n"
@@ -237,12 +237,12 @@ namespace ml
     "num_random_training_iterations:\tinteger setting the number of random training iterations (default 10)\n"
     "min_improvement:\tfloat sets the minimum improvement parameter which controls when the HMM training algorithm should stop (default 1.0e-2)\n";
     
-    typedef class ml_hmm ml0x2ehmm;
+    typedef class hmm ml0x2ehmm;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_hmm);
+    FLEXT_LIB(object_name.c_str(), hmm);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2ehmm);
+    FLEXT_NEW(object_name.c_str(), ml0x2ehmm);
 #endif
     
 } //namespace ml

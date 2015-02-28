@@ -20,14 +20,14 @@
 
 namespace ml
 {
-    const std::string ml_object_name = "ml.gmm";
+    const std::string object_name = "ml.gmm";
     
-    class ml_gmm : ml_classification
+    class gmm : classification
     {
-        FLEXT_HEADER_S(ml_gmm, ml_classification, setup);
+        FLEXT_HEADER_S(gmm, classification, setup);
         
     public:
-        ml_gmm()
+        gmm()
         {
             post("Gaussian Mixture Models based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
@@ -44,7 +44,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "num_mixture_models", get_num_mixture_models);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
@@ -62,46 +62,46 @@ namespace ml
         FLEXT_CALLVAR_I(get_num_mixture_models, set_num_mixture_models);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
-        GRT::GMM gmm;
+        GRT::GMM grt_gmm;
         
         static const std::string attribute_help;
     };
     
     // Flext attribute setters
-    void ml_gmm::set_num_mixture_models(int num_mixture_models)
+    void gmm::set_num_mixture_models(int num_mixture_models)
     {
-        gmm.setNumMixtureModels(num_mixture_models);
+        grt_gmm.setNumMixtureModels(num_mixture_models);
     }
     
     
     // Flext attribute getters
-    void ml_gmm::get_num_mixture_models(int &num_mixture_models) const
+    void gmm::get_num_mixture_models(int &num_mixture_models) const
     {
         flext::error("function not implemented");
     }
     
     // Implement pure virtual methods
-    GRT::Classifier &ml_gmm::get_Classifier_instance()
+    GRT::Classifier &gmm::get_Classifier_instance()
     {
-        return gmm;
+        return grt_gmm;
     }
     
-    const GRT::Classifier &ml_gmm::get_Classifier_instance() const
+    const GRT::Classifier &gmm::get_Classifier_instance() const
     {
-        return gmm;
+        return grt_gmm;
     }
     
-    const std::string ml_gmm::attribute_help =
+    const std::string gmm::attribute_help =
     "num_mixture_models:\tinteger (n > 0) sets the number of mixture models used for class (default 2)\n";
         
-    typedef class ml_gmm ml0x2egmm;
+    typedef class gmm ml0x2egmm;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_gmm);
+    FLEXT_LIB(object_name.c_str(), gmm);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2egmm);
+    FLEXT_NEW(object_name.c_str(), ml0x2egmm);
 #endif
 
     

@@ -23,24 +23,24 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.lda";
+    static const std::string object_name = "ml.lda";
     
     // Utility functions
     
     
     // Class declaration
-    class ml_lda : ml_classification
+    class lda : classification
     {
-        FLEXT_HEADER_S(ml_lda, ml_classification, setup);
+        FLEXT_HEADER_S(lda, classification, setup);
         
     public:
-        ml_lda()
+        lda()
         {
             post("LDA algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
         }
         
-        ~ml_lda()
+        ~lda()
         {
             
         }
@@ -55,7 +55,7 @@ namespace ml
             // Flext method messages
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Methods
@@ -74,7 +74,7 @@ namespace ml
         // Flext Flext attribute wrappers
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::LDA lda;
     };
@@ -88,22 +88,22 @@ namespace ml
     // Methods
     
     // Implement pure virtual methods
-    GRT::Classifier &ml_lda::get_Classifier_instance()
+    GRT::Classifier &lda::get_Classifier_instance()
     {
         return lda;
     }
     
-    const GRT::Classifier &ml_lda::get_Classifier_instance() const
+    const GRT::Classifier &lda::get_Classifier_instance() const
     {
         return lda;
     }
     
-    typedef class ml_lda ml0x2elda;
+    typedef class lda ml0x2elda;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_lda);
+    FLEXT_LIB(object_name.c_str(), lda);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2elda);
+    FLEXT_NEW(object_name.c_str(), ml0x2elda);
 #endif
 
     

@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    const std::string ml_object_name = "ml.randforest";
+    const std::string object_name = "ml.randforest";
     const std::string k_attribute_help =
     "num_random_splits:\tinteger (n > 0) sets the number of steps that will be used to search for the best spliting value for each node. (default 100)\n"
     "min_samples_per_node:\tinteger (n > 0) Sets the minimum number of samples that are allowed per node (default 5)\n"
@@ -28,19 +28,19 @@ namespace ml
     
     
     // Class declaration
-    class ml_randforest : ml_classification
+    class randforest : classification
     {
-        FLEXT_HEADER_S(ml_randforest, ml_classification, setup);
+        FLEXT_HEADER_S(randforest, classification, setup);
         
     public:
-        ml_randforest()
+        randforest()
         {
             post("Random Forests algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
             help.append_attributes(k_attribute_help);
         }
         
-        ~ml_randforest()
+        ~randforest()
         {
             
         }
@@ -60,7 +60,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "max_depth", get_max_depth);
 
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
@@ -85,68 +85,68 @@ namespace ml
         FLEXT_CALLVAR_I(get_max_depth, set_max_depth);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
-        GRT::RandomForests randforest;
+        GRT::RandomForests grt_randforest;
         
         static const std::string attribute_help;
     };
     
     
     // Flext attribute setters
-    void ml_randforest::set_num_random_splits(int num_random_splits)
+    void randforest::set_num_random_splits(int num_random_splits)
     {
-        randforest.setNumRandomSpilts(num_random_splits);
+        grt_randforest.setNumRandomSpilts(num_random_splits);
     }
     
-    void ml_randforest::set_min_samples_per_node(int min_samples_per_node)
+    void randforest::set_min_samples_per_node(int min_samples_per_node)
     {
-        randforest.setMinNumSamplesPerNode(min_samples_per_node);
+        grt_randforest.setMinNumSamplesPerNode(min_samples_per_node);
     }
     
-    void ml_randforest::set_max_depth(int max_depth)
+    void randforest::set_max_depth(int max_depth)
     {
-        randforest.setMinNumSamplesPerNode(max_depth);
+        grt_randforest.setMinNumSamplesPerNode(max_depth);
     }
     
     // Flext attribute getters
-    void ml_randforest::get_num_random_splits(int &num_random_splits) const
+    void randforest::get_num_random_splits(int &num_random_splits) const
     {
-        num_random_splits = randforest.getNumRandomSpilts();
+        num_random_splits = grt_randforest.getNumRandomSpilts();
     }
     
-    void ml_randforest::get_min_samples_per_node(int &min_samples_per_node) const
+    void randforest::get_min_samples_per_node(int &min_samples_per_node) const
     {
-        min_samples_per_node = randforest.getMinNumSamplesPerNode();
+        min_samples_per_node = grt_randforest.getMinNumSamplesPerNode();
     }
     
-    void ml_randforest::get_max_depth(int &max_depth) const
+    void randforest::get_max_depth(int &max_depth) const
     {
-        max_depth = randforest.getMaxDepth();
+        max_depth = grt_randforest.getMaxDepth();
     }
     
     // Implement pure virtual methods
-    GRT::Classifier &ml_randforest::get_Classifier_instance()
+    GRT::Classifier &randforest::get_Classifier_instance()
     {
-        return randforest;
+        return grt_randforest;
     }
     
-    const GRT::Classifier &ml_randforest::get_Classifier_instance() const
+    const GRT::Classifier &randforest::get_Classifier_instance() const
     {
-        return randforest;
+        return grt_randforest;
     }
     
-    const std::string ml_randforest::attribute_help =
+    const std::string randforest::attribute_help =
     "num_random_splits:\tinteger (n > 0) sets the number of steps that will be used to search for the best spliting value for each node. (default 100)\n"
     "min_samples_per_node:\tinteger (n > 0) Sets the minimum number of samples that are allowed per node (default 5)\n"
     "max_depth:\tinteger (n > 0) Sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node. (default 10)\n";
     
-    typedef class ml_randforest ml0x2erandforest;
+    typedef class randforest ml0x2erandforest;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_randforest);
+    FLEXT_LIB(object_name.c_str(), randforest);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2erandforest);
+    FLEXT_NEW(object_name.c_str(), ml0x2erandforest);
 #endif
 
     

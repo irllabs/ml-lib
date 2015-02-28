@@ -20,14 +20,14 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.softmax";
+    static const std::string object_name = "ml.softmax";
     
-    class ml_softmax : ml_classification
+    class softmax : classification
     {
-        FLEXT_HEADER_S(ml_softmax, ml_classification, setup);
+        FLEXT_HEADER_S(softmax, classification, setup);
         
     public:
-        ml_softmax()
+        softmax()
         {
             post("Softmax algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
@@ -37,7 +37,7 @@ namespace ml
         static void setup(t_classid c)
         {
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Pure virtual method implementations
@@ -46,28 +46,28 @@ namespace ml
         
     private:
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
-        GRT::Softmax softmax;
+        GRT::Softmax grt_softmax;
     };
     
     // Implement pure virtual methods
-    GRT::Classifier &ml_softmax::get_Classifier_instance()
+    GRT::Classifier &softmax::get_Classifier_instance()
     {
-        return softmax;
+        return grt_softmax;
     }
     
-    const GRT::Classifier &ml_softmax::get_Classifier_instance() const
+    const GRT::Classifier &softmax::get_Classifier_instance() const
     {
-        return softmax;
+        return grt_softmax;
     }
     
-    typedef class ml_softmax ml0x2esoftmax;
+    typedef class softmax ml0x2esoftmax;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_softmax);
+    FLEXT_LIB(object_name.c_str(), softmax);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2esoftmax);
+    FLEXT_NEW(object_name.c_str(), ml0x2esoftmax);
 #endif
     
 } //namespace ml

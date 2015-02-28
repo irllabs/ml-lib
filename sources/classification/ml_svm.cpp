@@ -28,7 +28,7 @@
 
 namespace ml
 {
-    const std::string ml_object_name = "ml.svm";
+    const std::string object_name = "ml.svm";
     
     // Utility functions
     GRT::SVM::SVMTypes svm_type_from_type_string(std::string type_string)
@@ -93,12 +93,12 @@ namespace ml
         return GRT::SVM::LINEAR_KERNEL;
     }
     
-    class ml_svm : ml_classification
+    class svm : classification
     {
-        FLEXT_HEADER_S(ml_svm, ml_classification, setup);
+        FLEXT_HEADER_S(svm, classification, setup);
         
     public:
-        ml_svm()
+        svm()
         {
             help.append_attributes(attribute_help);
             help.append_methods(method_help);
@@ -142,7 +142,7 @@ namespace ml
             
             FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
             
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         void cross_validation();
@@ -203,16 +203,16 @@ namespace ml
         FLEXT_CALLSET_B(set_enable_cross_validation);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
-        GRT::SVM svm;
+        GRT::SVM grt_svm;
         
         static const std::string attribute_help;
         static const std::string method_help;
     };
     
     // Flext attribute setters
-    void ml_svm::set_type(int type)
+    void svm::set_type(int type)
     {
         switch (type)
         {
@@ -221,7 +221,7 @@ namespace ml
             case GRT::ONE_CLASS:
             case GRT::EPSILON_SVR:
             case GRT::NU_SVR:
-                svm.setSVMType(type);
+                grt_svm.setSVMType(type);
                 break;
                 
             default:
@@ -230,7 +230,7 @@ namespace ml
         }
     }
     
-    void ml_svm::set_kernel(int kernel)
+    void svm::set_kernel(int kernel)
     {
         switch (kernel)
         {
@@ -239,7 +239,7 @@ namespace ml
             case GRT::RBF:
             case GRT::SIGMOID:
             case GRT::PRECOMPUTED:
-                svm.setKernelType(kernel);
+                grt_svm.setKernelType(kernel);
                 break;
                 
             default:
@@ -248,153 +248,153 @@ namespace ml
         }
     }
     
-    void ml_svm::set_degree(int degree)
+    void svm::set_degree(int degree)
     {
-        svm.setDegree(degree);
+        grt_svm.setDegree(degree);
     }
     
-    void ml_svm::set_gamma(float gamma)
+    void svm::set_gamma(float gamma)
     {
-        svm.setGamma(gamma);
+        grt_svm.setGamma(gamma);
     }
     
-    void ml_svm::set_coef0(float coef0)
+    void svm::set_coef0(float coef0)
     {
-        svm.setCoef0(coef0);
+        grt_svm.setCoef0(coef0);
     }
     
-    void ml_svm::set_cost(float cost)
+    void svm::set_cost(float cost)
     {
-        svm.setC(cost);
+        grt_svm.setC(cost);
     }
     
-    void ml_svm::set_nu(float nu)
+    void svm::set_nu(float nu)
     {
-        svm.setNu(nu);
+        grt_svm.setNu(nu);
     }
     
-    void ml_svm::set_epsilon(float epsilon)
-    {
-        error("function not implemented");
-    }
-    
-    void ml_svm::set_cachesize(int cachesize)
+    void svm::set_epsilon(float epsilon)
     {
         error("function not implemented");
     }
     
-    void ml_svm::set_shrinking(int shrinking)
+    void svm::set_cachesize(int cachesize)
     {
         error("function not implemented");
     }
     
-    void ml_svm::set_probs(bool probs)
+    void svm::set_shrinking(int shrinking)
+    {
+        error("function not implemented");
+    }
+    
+    void svm::set_probs(bool probs)
     {
         this->probs = probs;
     }
     
-    void ml_svm::set_weights(const AtomList &weights)
+    void svm::set_weights(const AtomList &weights)
     {
         error("function not implemented");
     }
     
-    void ml_svm::set_kfold_value(int mode)
+    void svm::set_kfold_value(int mode)
     {
-        svm.setKFoldCrossValidationValue(mode);
+        grt_svm.setKFoldCrossValidationValue(mode);
     }
     
-    void ml_svm::set_enable_cross_validation(bool enable_cross_validation)
+    void svm::set_enable_cross_validation(bool enable_cross_validation)
     {
-        svm.enableCrossValidationTraining(enable_cross_validation);
+        grt_svm.enableCrossValidationTraining(enable_cross_validation);
     }
     
     // Flext attribute getters
-    void ml_svm::get_type(int &type) const
+    void svm::get_type(int &type) const
     {
-        std::string type_s = svm.getSVMType();
+        std::string type_s = grt_svm.getSVMType();
         type = svm_type_from_type_string(type_s);
     }
     
-    void ml_svm::get_kernel(int &kernel) const
+    void svm::get_kernel(int &kernel) const
     {
-        std::string kernel_s = svm.getKernelType();
+        std::string kernel_s = grt_svm.getKernelType();
         kernel = svm_kernel_type_from_kernel_string(kernel_s);
         
     }
     
-    void ml_svm::get_degree(int &degree) const
+    void svm::get_degree(int &degree) const
     {
-        degree = svm.getDegree();
+        degree = grt_svm.getDegree();
     }
     
-    void ml_svm::get_gamma(float &gamma) const
+    void svm::get_gamma(float &gamma) const
     {
-        gamma = svm.getGamma();
+        gamma = grt_svm.getGamma();
     }
     
-    void ml_svm::get_coef0(float &coef0) const
+    void svm::get_coef0(float &coef0) const
     {
-        coef0 = svm.getCoef0();
+        coef0 = grt_svm.getCoef0();
     }
     
-    void ml_svm::get_cost(float &cost) const
+    void svm::get_cost(float &cost) const
     {
-        cost = svm.getC();
+        cost = grt_svm.getC();
     }
     
-    void ml_svm::get_nu(float &nu) const
+    void svm::get_nu(float &nu) const
     {
-        nu = svm.getNu();
+        nu = grt_svm.getNu();
     }
     
-    void ml_svm::get_epsilon(float &epsilon) const
-    {
-        error("function not implemented");
-    }
-    
-    void ml_svm::get_cachesize(int &cachesize) const
+    void svm::get_epsilon(float &epsilon) const
     {
         error("function not implemented");
     }
     
-    void ml_svm::get_shrinking(int &shrinking) const
+    void svm::get_cachesize(int &cachesize) const
     {
         error("function not implemented");
     }
     
-    void ml_svm::get_probs(bool &probs) const
+    void svm::get_shrinking(int &shrinking) const
+    {
+        error("function not implemented");
+    }
+    
+    void svm::get_probs(bool &probs) const
     {
         probs = this->probs;
     }
     
-    void ml_svm::get_weights(AtomList &weights) const
+    void svm::get_weights(AtomList &weights) const
     {
         error("function not implemented");
     }
     
-    void ml_svm::get_kfold_value(int &mode) const
+    void svm::get_kfold_value(int &mode) const
     {
         error("function not implemented");
     }
     
-    void ml_svm::cross_validation()
+    void svm::cross_validation()
     {
-        double result = svm.getCrossValidationResult();
+        double result = grt_svm.getCrossValidationResult();
         ToOutDouble(0, result);
     }
     
     // Implement pure virtual methods
-    GRT::Classifier &ml_svm::get_Classifier_instance()
+    GRT::Classifier &svm::get_Classifier_instance()
     {
-        return svm;
+        return grt_svm;
     }
     
-    const GRT::Classifier &ml_svm::get_Classifier_instance() const
+    const GRT::Classifier &svm::get_Classifier_instance() const
     {
-        return svm;
+        return grt_svm;
     }
     
-    const std::string ml_svm::attribute_help =
+    const std::string svm::attribute_help =
     "type:\tset type of SVM (default 0)\n"
     "	0 -- C-SVC		(multi-class classification)\n"
     "	1 -- nu-SVC		(multi-class classification)\n"
@@ -417,15 +417,15 @@ namespace ml
     "epsilon:\tset tolerance of termination criterion (default 0.001)\n"
     "shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)\n";
     
-    const std::string ml_svm::method_help =
+    const std::string svm::method_help =
     "cross_validation:\t\tperform cross-validation\n";
     
-    typedef class ml_svm ml0x2esvm;
+    typedef class svm ml0x2esvm;
 
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_svm);
+    FLEXT_LIB(object_name.c_str(), svm);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2esvm);
+    FLEXT_NEW(object_name.c_str(), ml0x2esvm);
 #endif
     
     

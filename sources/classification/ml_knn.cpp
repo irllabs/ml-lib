@@ -20,14 +20,14 @@
 
 namespace ml
 {
-    static const std::string ml_object_name = "ml.knn";
+    static const std::string object_name = "ml.knn";
     
-    class ml_knn : ml_classification
+    class knn : classification
     {
-        FLEXT_HEADER_S(ml_knn, ml_classification, setup);
+        FLEXT_HEADER_S(knn, classification, setup);
         
     public:
-        ml_knn()
+        knn()
         {
             post("Support Vector Machines based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
@@ -50,7 +50,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "best_k_value_search", get_best_k_value_search);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c,ml_object_name.c_str());
+            DefineHelp(c,object_name.c_str());
         }
         
         // Flext attribute setters
@@ -77,77 +77,77 @@ namespace ml
         FLEXT_CALLVAR_B(get_best_k_value_search, set_best_k_value_search);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
-        GRT::KNN knn;
+        GRT::KNN grt_knn;
         
         static const std::string attribute_help;
     };
     
     // Flext attribute setters
-    void ml_knn::set_k(int k)
+    void knn::set_k(int k)
     {
-        knn.setK(k);
+        grt_knn.setK(k);
     }
     
-    void ml_knn::set_min_k_search_value(int min_k_search_value)
+    void knn::set_min_k_search_value(int min_k_search_value)
     {
-        knn.setMinKSearchValue(min_k_search_value);
+        grt_knn.setMinKSearchValue(min_k_search_value);
     }
     
-    void ml_knn::set_max_k_search_value(int max_k_search_value)
+    void knn::set_max_k_search_value(int max_k_search_value)
     {
-        knn.setMaxKSearchValue(max_k_search_value);
+        grt_knn.setMaxKSearchValue(max_k_search_value);
     }
     
-    void ml_knn::set_best_k_value_search(bool best_k_value_search)
+    void knn::set_best_k_value_search(bool best_k_value_search)
     {
-        knn.enableBestKValueSearch(best_k_value_search);
+        grt_knn.enableBestKValueSearch(best_k_value_search);
     }
     
     // Flext attribute getters
-    void ml_knn::get_k(int &k) const
+    void knn::get_k(int &k) const
     {
         flext::error("function not implemented");
     }
 
-    void ml_knn::get_min_k_search_value(int &min_k_search_value) const
+    void knn::get_min_k_search_value(int &min_k_search_value) const
     {
         flext::error("function not implemented");
     }
 
-    void ml_knn::get_max_k_search_value(int &max_k_search_value) const
+    void knn::get_max_k_search_value(int &max_k_search_value) const
     {
         flext::error("function not implemented");
     }
 
-    void ml_knn::get_best_k_value_search(bool &best_k_value_search) const
+    void knn::get_best_k_value_search(bool &best_k_value_search) const
     {
         flext::error("function not implemented");
     }
     
     // Implement pure virtual methods
-    GRT::Classifier &ml_knn::get_Classifier_instance()
+    GRT::Classifier &knn::get_Classifier_instance()
     {
-        return knn;
+        return grt_knn;
     }
     
-    const GRT::Classifier &ml_knn::get_Classifier_instance() const
+    const GRT::Classifier &knn::get_Classifier_instance() const
     {
-        return knn;
+        return grt_knn;
     }
     
-    const std::string ml_knn::attribute_help =  "k:\tinteger (k > 1) Sets the K nearest neighbours that will be searched for by the algorithm during prediction.(default 10)\n"
+    const std::string knn::attribute_help =  "k:\tinteger (k > 1) Sets the K nearest neighbours that will be searched for by the algorithm during prediction.(default 10)\n"
     "min_k_search_value:\tinteger (n > 0) sets the minimum K value to use when searching for the best K value. (default 1)\n"
     "max_k_search_value:\tinteger (n > 0) sets the maximum K value to use when searching for the best K value. (default 10)\n"
     "best_k_value_search:\tbool (0 or 1) set whether k value search is enabled or not (default 0)\n";
     
-    typedef class ml_knn ml0x2eknn;
+    typedef class knn ml0x2eknn;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_knn);
+    FLEXT_LIB(object_name.c_str(), knn);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2eknn);
+    FLEXT_NEW(object_name.c_str(), ml0x2eknn);
 #endif
     
 } //namespace ml

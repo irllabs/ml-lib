@@ -1,26 +1,34 @@
-//
-//  ml_classification.h
-//  ml
-//
-//  Created by Jamie Bullock on 25/02/2014.
-//
-//
+/*
+ * ml-lib, a machine learning library for Max and Pure Data
+ * Copyright (C) 2013 Carnegie Mellon University
+ *
+ * This program is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation, either version 2 of the License, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-#ifndef ml_ml_classification_h
-#define ml_ml_classification_h
+#ifndef classification_h
+#define classification_h
 
 #include "ml_ml.h"
 
-
-
 namespace ml
 {
-    class ml_classification : public ml
+    class classification : public ml
     {
-        FLEXT_HEADER_S(ml_classification, ml, setup);
+        FLEXT_HEADER_S(classification, ml, setup);
         
     public:
-        ml_classification();
+        classification();
         
     protected:
         static void setup(t_classid c)

@@ -1,24 +1,35 @@
-//
-//  ml_feature_extraction.h
-//  ml
-//
-//  Created by Jamie Bullock on 06/08/2014.
-//
-//
+/*
+ * ml-lib, a machine learning library for Max and Pure Data
+ * Copyright (C) 2013 Carnegie Mellon University
+ *
+ * This program is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation, either version 2 of the License, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-#ifndef ml_ml_feature_extraction_h
-#define ml_ml_feature_extraction_h
+
+#ifndef ml_feature_extraction_h
+#define ml_feature_extraction_h
 
 #include "ml_ml.h"
 
 namespace ml
 {
-    class ml_feature_extraction : public ml
+    class feature_extraction : public ml
     {
-        FLEXT_HEADER_S(ml_feature_extraction, ml, setup);
+        FLEXT_HEADER_S(feature_extraction, ml, setup);
         
     public:
-        ml_feature_extraction();
+        feature_extraction();
         
     protected:
         static void setup(t_classid c)

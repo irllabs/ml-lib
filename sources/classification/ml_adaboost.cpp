@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const std::string ml_object_name = "ml.adaboost";
+    const std::string object_name = "ml.adaboost";
     
     enum weak_classifiers_
     {
@@ -30,12 +30,12 @@ namespace ml
         RADIAL_BASIS_FUNCTION
     };
   
-    class ml_adaboost : ml_classification
+    class adaboost : classification
     {
-        FLEXT_HEADER_S(ml_adaboost, ml_classification, setup);
+        FLEXT_HEADER_S(adaboost, classification, setup);
         
     public:
-        ml_adaboost()
+        adaboost()
         {
             post("Adaboost classifier based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
@@ -61,7 +61,7 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "add_weak_classifier", add_weak_classifier);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
@@ -82,19 +82,19 @@ namespace ml
         FLEXT_CALLSET_I(add_weak_classifier);
 
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
                 
-        GRT::AdaBoost adaboost;
+        GRT::AdaBoost grt_adaboost;
         
         static const std::string attribute_help;
     };
     
     // Flext attribute setters
-    void ml_adaboost::set_prediction_method(int prediction_method)
+    void adaboost::set_prediction_method(int prediction_method)
     {
         bool success = false;
         
-        success = adaboost.setPredictionMethod(prediction_method);
+        success = grt_adaboost.setPredictionMethod(prediction_method);
         
         if (success == false)
         {
@@ -102,11 +102,11 @@ namespace ml
         }
     }
     
-    void ml_adaboost::set_num_boosting_iterations(int num_boosting_iterations)
+    void adaboost::set_num_boosting_iterations(int num_boosting_iterations)
     {
         bool success = false;
         
-        success = adaboost.setNumBoostingIterations(num_boosting_iterations);
+        success = grt_adaboost.setNumBoostingIterations(num_boosting_iterations);
         
         if (success == false)
         {
@@ -114,15 +114,15 @@ namespace ml
         }
     }
     
-    void ml_adaboost::set_weak_classifier(int weak_classifier)
+    void adaboost::set_weak_classifier(int weak_classifier)
     {
         if (weak_classifier == DECISION_STUMP)
         {
-            adaboost.setWeakClassifier(GRT::DecisionStump());
+            grt_adaboost.setWeakClassifier(GRT::DecisionStump());
         }
         else if (weak_classifier == RADIAL_BASIS_FUNCTION)
         {
-            adaboost.setWeakClassifier(GRT::RadialBasisFunction());
+            grt_adaboost.setWeakClassifier(GRT::RadialBasisFunction());
         }
         else
         {
@@ -133,15 +133,15 @@ namespace ml
         }
     }
     
-    void ml_adaboost::add_weak_classifier(int weak_classifier)
+    void adaboost::add_weak_classifier(int weak_classifier)
     {
         if (weak_classifier == DECISION_STUMP)
         {
-            adaboost.addWeakClassifier(GRT::DecisionStump());
+            grt_adaboost.addWeakClassifier(GRT::DecisionStump());
         }
         else if (weak_classifier == RADIAL_BASIS_FUNCTION)
         {
-            adaboost.addWeakClassifier(GRT::RadialBasisFunction());
+            grt_adaboost.addWeakClassifier(GRT::RadialBasisFunction());
         }
         else
         {
@@ -153,24 +153,24 @@ namespace ml
     }
 
     // Implement pure virtual methods
-    GRT::Classifier &ml_adaboost::get_Classifier_instance()
+    GRT::Classifier &adaboost::get_Classifier_instance()
     {
-        return adaboost;
+        return grt_adaboost;
     }
     
-    const GRT::Classifier &ml_adaboost::get_Classifier_instance() const
+    const GRT::Classifier &adaboost::get_Classifier_instance() const
     {
-        return adaboost;
+        return grt_adaboost;
     }
 
-    const std::string ml_adaboost::attribute_help = "num_boosting_iterations:\tinteger (>0) sets the number of boosting iterations that should be used when training the model (default 20)\n";
+    const std::string adaboost::attribute_help = "num_boosting_iterations:\tinteger (>0) sets the number of boosting iterations that should be used when training the model (default 20)\n";
     
-    typedef class ml_adaboost ml0x2eadaboost;
+    typedef class adaboost ml0x2eadaboost;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_adaboost);
+    FLEXT_LIB(object_name.c_str(), adaboost);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2eadaboost);
+    FLEXT_NEW(object_name.c_str(), ml0x2eadaboost);
 #endif
     
 } //namespace ml

@@ -1,10 +1,20 @@
-//
-//  ml_classification.h
-//  ml
-//
-//  Created by Jamie Bullock on 25/02/2014.
-//
-//
+/*
+ * ml-lib, a machine learning library for Max and Pure Data
+ * Copyright (C) 2013 Carnegie Mellon University
+ *
+ * This program is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation, either version 2 of the License, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #include "ml_classification.h"
 
@@ -12,14 +22,14 @@
 
 namespace ml
 {
-    ml_classification::ml_classification()
+    classification::classification()
     {
         help.append_attributes(attribute_help);
         set_data_type(LABELLED_CLASSIFICATION);
     }
     
     // Flext attribute setters
-    void ml_classification::set_null_rejection(bool null_rejection)
+    void classification::set_null_rejection(bool null_rejection)
     {
         GRT::Classifier &classifier = get_Classifier_instance();
         bool success = classifier.enableNullRejection(null_rejection);
@@ -30,7 +40,7 @@ namespace ml
         }
     }
     
-    void ml_classification::set_null_rejection_coeff(float null_rejection_coeff)
+    void classification::set_null_rejection_coeff(float null_rejection_coeff)
     {
         GRT::Classifier &classifier = get_Classifier_instance();
         bool success = classifier.setNullRejectionCoeff(null_rejection_coeff);
@@ -42,21 +52,21 @@ namespace ml
     }
     
     // Flext attribute getters
-    void ml_classification::get_null_rejection(bool &null_rejection) const
+    void classification::get_null_rejection(bool &null_rejection) const
     {
         error("function not implemented");
     }
     
-    void ml_classification::get_null_rejection_coeff(float &null_rejection_coeff) const
+    void classification::get_null_rejection_coeff(float &null_rejection_coeff) const
     {
         const GRT::Classifier &classifier = get_Classifier_instance();
         null_rejection_coeff = classifier.getNullRejectionCoeff();
     }
     
-    bool ml_classification::get_num_samples() const
+    bool classification::get_num_samples() const
     {
         GRT::UINT numSamples = 0;
-        const ml_data_type data_type = get_data_type();
+        const data_type data_type = get_data_type();
         
         if (data_type == LABELLED_REGRESSION)
         {
@@ -78,10 +88,10 @@ namespace ml
         return numSamples;
     }
     
-    void ml_classification::train()
+    void classification::train()
     {
         GRT::UINT numSamples = get_num_samples();
-        const ml_data_type data_type = get_data_type();
+        const enum data_type data_type = get_data_type();
         GRT::Classifier &classifier = get_Classifier_instance();
         
         if (numSamples == 0)
@@ -116,11 +126,11 @@ namespace ml
         ToOutAnything(1, s_train, 1, &a_success);
     }
     
-    void ml_classification::map(int argc, const t_atom *argv)
+    void classification::map(int argc, const t_atom *argv)
     {
         GRT::UINT numSamples = get_num_samples();
         GRT::Classifier &classifier = get_Classifier_instance();
-        const ml_data_type data_type = get_data_type();
+        const data_type data_type = get_data_type();
         
         if (numSamples == 0)
         {
@@ -244,27 +254,27 @@ namespace ml
     }
     
     // pure virtual method implementation
-    GRT::MLBase &ml_classification::get_MLBase_instance()
+    GRT::MLBase &classification::get_MLBase_instance()
     {
         return get_Classifier_instance();
     }
     
-    const GRT::MLBase &ml_classification::get_MLBase_instance() const
+    const GRT::MLBase &classification::get_MLBase_instance() const
     {
         return get_Classifier_instance();
     }
     
-    bool ml_classification::read_specialised_dataset(std::string &path)
+    bool classification::read_specialised_dataset(std::string &path)
     {
         return classification_data.loadDatasetFromFile(path);
     }
     
-    bool ml_classification::write_specialised_dataset(std::string &path) const
+    bool classification::write_specialised_dataset(std::string &path) const
     {
         return classification_data.saveDatasetToFile(path);
     }
     
-    const std::string ml_classification::attribute_help =
+    const std::string classification::attribute_help =
     "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)\n"
     "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n";
     
