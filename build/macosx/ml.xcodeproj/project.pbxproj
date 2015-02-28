@@ -1367,9 +1367,9 @@
 				7DACBF4E192B82F900F0E7D7 /* ml_base.h */,
 				7DACBF4F192B869600F0E7D7 /* ml_base.cpp */,
 				7DBFDE6318439E09009ED61E /* ml_ml.h */,
-				7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */,
-				7D2AEA6D1A95270E009F75BE /* ml_doc.h */,
 				E98573560D9E52D300682171 /* ml_ml.cpp */,
+				7D2AEA6D1A95270E009F75BE /* ml_doc.h */,
+				7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
