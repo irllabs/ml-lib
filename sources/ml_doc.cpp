@@ -17,68 +17,96 @@
  */
 
 #include "ml_doc.h"
+#include "ml_formatter.h"
+#include "ml_names.h"
+
+#include <iostream>
 
 namespace ml_doc
 {
     
-    std::string class_descriptor::print(void)
+    std::string message_descriptor::print(const formatter &formatter) const
     {
-        std::string out = name + ": " + desc + "\n";
-        
-        for(auto &attr : message_descriptors)
-        {
-            out += attr->print();
-            out += "\n";
-        }
-        return out;
+        return formatter.format(*this);
     }
     
-    // ml_doc_manager implementation
-    ml_doc_manager& ml_doc_manager::shared_instance()
+    // ml_doc_as_string.h pure virtual methods
+    
+    std::string message_descriptor::desc_string(void) const
     {
-        static ml_doc_manager instance;
+        return desc;
+    }
+    
+    std::string message_descriptor::name_string(void) const
+    {
+        return name;
+    }
+    
+
+    std::string class_descriptor::print(const formatter &formatter) const
+    {
+        return formatter.format(*this);
+    }
+    
+    // ml_formattable.h pure virtual methods
+    std::string class_descriptor::desc_string(void) const
+    {
+        return desc;
+    }
+    
+    std::string class_descriptor::name_string(void) const
+    {
+        return name;
+    }
+    
+    std::vector<std::shared_ptr<formattable_message_descriptor> > class_descriptor::formattables(void) const
+    {
+        std::vector<std::shared_ptr<formattable_message_descriptor> > formattables;
+        
+        for (auto formattable : message_descriptors)
+        {
+            formattables.push_back(formattable);
+        }
+        
+        return formattables;
+    }
+    
+    // doc_manager implementation
+    doc_manager& doc_manager::shared_instance(ml_doc::formatter &formatter)
+    {
+        static doc_manager instance(formatter);
         instance.populate();
         return instance;
     }
 
-    std::string ml_doc_manager::doc_for_class(std::string class_name)
+    std::string doc_manager::doc_for_class(ml_doc::name class_name)
     {
         auto it = descriptors.find(class_name);
-        std::unique_ptr<class_descriptor> descriptor;
-        
         if (it == descriptors.end())
         {
-            return "";
+            return "descriptor not found";
         }
         
-        return it->second->print();
+        return it->second->print(formatter);
     }
     
-    void ml_doc_manager::add_class_descriptor(unique_class_descriptor &descriptor)
+    void doc_manager::add_class_descriptor(ml_doc::name name, unique_class_descriptor &descriptor)
     {
-        descriptors.emplace(std::pair<std::string, unique_class_descriptor >(descriptor->name, std::move(descriptor)));
+        descriptors.emplace(std::pair<ml_doc::name, unique_class_descriptor >(name, std::move(descriptor)));
     }
     
-    // TODO: could also do with init_class_descriptors(const std::vector<std::pair<std::string, std::string> >)
-    void ml_doc_manager::init_class_descriptors(const std::vector<std::string> class_names)
+    void doc_manager::init_class_descriptors(void)
     {
-        for (std::string class_name : class_names)
+        for (auto name_pair : ml_doc::name_lookup)
         {
-            unique_class_descriptor descriptor(new class_descriptor(class_name));
-            add_class_descriptor(descriptor);
+            unique_class_descriptor descriptor(new class_descriptor(name_pair.second));
+            add_class_descriptor(name_pair.first, descriptor);
         }
     }
 
-    void ml_doc_manager::populate(void)
+    void doc_manager::populate(void)
     {
-        init_class_descriptors
-        (
-            {
-                "ml.dtree",
-                "ml.gmm",
-                "ml.knn"
-            }
-        );
+        init_class_descriptors();
         
         ranged_message_descriptor<int> min_epochs;
         
@@ -89,9 +117,7 @@ namespace ml_doc
         min_epochs.def = 10;
         min_epochs.allowed_values = {1, 2, 3, 4, 5};
         
-        descriptors["ml.dtree"]->add_message_descriptor(min_epochs);
-        
-        
+        descriptors[ml_doc::name::mlp]->add_message_descriptor(min_epochs);
        
     }
     

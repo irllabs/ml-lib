@@ -16,11 +16,11 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef ml_doc_h__
+#define ml_doc_h__
 
-//Method [0-N]: (methods are stateless)
-//Name
-//Description
-//Arguments
+#include "ml_formattable.h"
+#include "ml_formatter.h"
 
 #include <string>
 #include <vector>
@@ -28,25 +28,26 @@
 #include <memory>
 #include <map>
 
-#ifndef ml_doc_h
-#define ml_doc_h
-
 namespace ml_doc
 {
-    class message_descriptor
+
+    enum class name;
+    
+    class message_descriptor : public formattable_message_descriptor
     {
     public:
         message_descriptor()
         : is_method(false) {};
         
-        virtual std::string print(void)
-        {
-            std::string out = name + ": " + desc + ". ";
-            return out;
-        }
+        virtual std::string print(const formatter &formatter) const;
 
         std::string name;
         std::string desc;
+        
+        // ml_formattable.h pure virtual methods
+        virtual std::string desc_string(void) const;
+        virtual std::string name_string(void) const;
+        
     private:
         const bool is_method;
     };
@@ -56,27 +57,29 @@ namespace ml_doc
     {
 
     public:
-        virtual std::string print(void)
+        virtual std::string print(const formatter &formatter) const
         {
-            std::string out = message_descriptor::print();
-            if (allowed_values.size())
-            {
-                out += "(allowed values: [";
-                for (auto val : allowed_values) 
-                {
-                    out += std::to_string(val);
-                    out += " ";
-                }
-                out += "]) ";
-            }
-
-            out += "(default: " + std::to_string(def) + ") ";
-
-            return out;
+            return formatter.format(*this);
         }
-
+       
         std::vector<T> allowed_values;
         T def;
+        
+        // ml_formattable.h pure virtual methods
+        virtual std::vector<std::string> allowed_values_strings(void) const
+        {
+            std::vector<std::string> values_string;
+            for (auto value : allowed_values)
+            {
+                values_string.push_back(std::to_string(value));
+            }
+            return values_string;
+        }
+        
+        virtual std::string def_string(void) const
+        {
+            return std::to_string(def);
+        }
     };
 
     template <typename T>
@@ -85,63 +88,77 @@ namespace ml_doc
     {
 
     public:
-        virtual std::string print(void)
+        virtual std::string print(const formatter &formatter) const
         {
-            std::string out = valued_message_descriptor<T>::print();
-            out += "(min: " + std::to_string(min) + " max: " + std::to_string(min) + ") ";
-            return out;
+            return formatter.format(*this);
         }
 
         T min;
         T max;
+        
+        // ml_formattable.h pure virtual methods
+        virtual std::string min_string(void) const
+        {
+            return std::to_string(min);
+        }
+        
+        virtual std::string max_string(void) const
+        {
+            return std::to_string(max);
+        }
     };
 
-    class class_descriptor
+    class class_descriptor : public formattable_class_descriptor
     {
     public:
         class_descriptor() : parent(nullptr) {};
         class_descriptor(std::string& name) : name(name), parent(nullptr)  {};
 
-        
         template <typename T>
         void add_message_descriptor(T &message_descriptor)
         {
-            std::unique_ptr<ml_doc::message_descriptor> attr_ptr(new T(message_descriptor));
+            std::shared_ptr<ml_doc::message_descriptor> attr_ptr(new T(message_descriptor));
             message_descriptors.push_back(std::move(attr_ptr));
         }
-
-        std::string print(void);
+        
+        const std::vector<std::shared_ptr<message_descriptor> > &get_message_descriptors(void) const;
+        std::string print(const formatter &formatter) const;
         
         std::string name;
         std::string desc;
         
+        // ml_formattable.h pure virtual methods
+        virtual std::string desc_string(void) const;
+        virtual std::string name_string(void) const;
+        virtual std::vector<std::shared_ptr<formattable_message_descriptor> > formattables(void) const;
+        
     private:
-        std::vector<std::unique_ptr<message_descriptor> > message_descriptors;
+        std::vector<std::shared_ptr<message_descriptor> > message_descriptors;
         class_descriptor *parent;
     };
 
-    class ml_doc_manager
+    class doc_manager
     {
     public:
-        typedef std::unique_ptr<class_descriptor> unique_class_descriptor;
-
-        static ml_doc_manager& shared_instance();
-        std::string doc_for_class(std::string class_name);
-        void add_class_descriptor(unique_class_descriptor &descriptor);
+        static doc_manager& shared_instance(formatter &formatter);
+        std::string doc_for_class(ml_doc::name class_name);
         
     private:
-        void init_class_descriptors(const std::vector<std::string> class_names);
+        typedef std::unique_ptr<class_descriptor> unique_class_descriptor;
+        void add_class_descriptor(ml_doc::name name, unique_class_descriptor &descriptor);
+        void init_class_descriptors(void);
 
-        ml_doc_manager() {};
-        ml_doc_manager(ml_doc_manager const&) = delete;
-        void operator=(ml_doc_manager const&) = delete;
+        doc_manager(formatter &formatter) : formatter(formatter) {};
+        doc_manager(doc_manager const&) = delete;
+        void operator=(doc_manager const&) = delete;
 
         void populate(void);
         
-        std::map<std::string, unique_class_descriptor > descriptors;
+        std::map<ml_doc::name, unique_class_descriptor > descriptors;
         class_descriptor empty_descriptor;
+        formatter &formatter;
   };
 }
 
 
-#endif /* defined(ml_descriptor) */
+#endif /* defined(ml_doc_h__) */
