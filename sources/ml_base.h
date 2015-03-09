@@ -17,8 +17,8 @@
  */
 
 
-#ifndef ml_base_h
-#define ml_base_h
+#ifndef ml_base_h__
+#define ml_base_h__
 
 #include "flext.h"
 

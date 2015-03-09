@@ -17,6 +17,8 @@
  */
 
 
+#ifndef ml_ml_h__
+#define ml_ml_h__
 
 #include "ml_base.h"
 
@@ -26,9 +28,6 @@
 #include <map>
 
 #include <stdint.h>
-
-#ifndef ml_ml_h
-#define ml_ml_h
 
 namespace ml
 {

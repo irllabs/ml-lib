@@ -17,8 +17,8 @@
  */
 
 
-#ifndef ml_feature_extraction_h
-#define ml_feature_extraction_h
+#ifndef ml_feature_extraction_h__
+#define ml_feature_extraction_h__
 
 #include "ml_ml.h"
 

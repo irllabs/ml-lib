@@ -16,8 +16,8 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef classification_h
-#define classification_h
+#ifndef ml_classification_h__
+#define ml_classification_h__
 
 #include "ml_ml.h"
 

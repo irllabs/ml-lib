@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef ml_regression_h
-#define ml_regression_h
+#ifndef ml_regression_h__
+#define ml_regression_h__
 
 #include "ml_ml.h"
 
