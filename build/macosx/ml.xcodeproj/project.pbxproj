@@ -153,6 +153,40 @@
 		7D65FFE91992C1FF00C82004 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D65FFEA1992C1FF00C82004 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D65FFEB1992C1FF00C82004 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6511D718F4366F0050C9C8 /* libgrt.a */; };
+		7D71CBA81AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBA91AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBAA1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBAB1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBAC1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBAD1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBAE1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBAF1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB01AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB11AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB21AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB31AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB41AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB51AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB61AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB71AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB81AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBB91AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBBA1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBBB1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBBC1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBBD1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBBE1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBBF1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC01AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC11AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC21AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC31AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC41AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC51AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC61AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC71AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC81AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7D71CBC91AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
 		7D7D9FD418F6948E00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7D9FDB18F6948E00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D7D9FDF18F6948E00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
@@ -339,6 +373,40 @@
 		7DACBF7D192BAD2500F0E7D7 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7DACBF7E192BAD2900F0E7D7 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
 		7DACBF7F192BAD2F00F0E7D7 /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
+		7DD0C43B1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C43C1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C43D1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C43E1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C43F1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4401AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4411AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4421AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4431AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4441AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4451AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4461AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4471AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4481AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4491AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C44A1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C44B1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C44C1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C44D1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C44E1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C44F1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4501AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4511AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4521AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4531AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4541AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4551AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4561AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4571AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4581AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C4591AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C45A1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C45B1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
+		7DD0C45C1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
 		7DD669111989098F008EF46E /* libflext-max_sd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAE097818F40FB100049C24 /* libflext-max_sd.a */; };
 		7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
@@ -717,7 +785,7 @@
 		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ../../sources/regression/ml_mlp.cpp; sourceTree = "<group>"; };
 		7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = ../../sources/classification/ml_adaboost.cpp; sourceTree = "<group>"; };
 		7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_doc.cpp; path = ../../sources/ml_doc.cpp; sourceTree = "<group>"; };
-		7D2AEA6D1A95270E009F75BE /* ml_doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ml_doc.h; path = ../../sources/ml_doc.h; sourceTree = "<group>"; };
+		7D2AEA6D1A95270E009F75BE /* ml_doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_doc.h; path = ../../sources/ml_doc.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ../../sources/classification/ml_hmm.cpp; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D551A74190FE523008FF361 /* ml.knn.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.knn.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -734,11 +802,14 @@
 		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ../../sources/classification/ml_dtw.cpp; sourceTree = "<group>"; };
 		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ../../sources/feature_extraction/ml_peak.cpp; sourceTree = "<group>"; };
 		7D6511D718F4366F0050C9C8 /* libgrt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrt.a; path = ../../dependencies/lib/macosx/libgrt.a; sourceTree = "<group>"; };
-		7D65FFC7199253D400C82004 /* ml_feature_extraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_feature_extraction.h; path = ../../sources/feature_extraction/ml_feature_extraction.h; sourceTree = "<group>"; };
+		7D65FFC7199253D400C82004 /* ml_feature_extraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_feature_extraction.h; path = ../../sources/feature_extraction/ml_feature_extraction.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_feature_extraction.cpp; path = ../../sources/feature_extraction/ml_feature_extraction.cpp; sourceTree = "<group>"; };
 		7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_zerox.cpp; path = ../../sources/feature_extraction/ml_zerox.cpp; sourceTree = "<group>"; };
 		7D65FFDE1992C18C00C82004 /* ml.zerox.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.zerox.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D65FFF11992C1FF00C82004 /* ml.zerox.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.zerox.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_formatter.cpp; path = ../../sources/ml_formatter.cpp; sourceTree = "<group>"; };
+		7D71CBCA1AADB9D20099CD5B /* ml_formattable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_formattable.h; path = ../../sources/ml_formattable.h; sourceTree = "<group>"; };
+		7D71CBCB1AADB9D20099CD5B /* ml_formatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_formatter.h; path = ../../sources/ml_formatter.h; sourceTree = "<group>"; };
 		7D7D9FEF18F6948E00F417F6 /* ml.svm.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.svm.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA00918F699D800F417F6 /* ml.adaboost.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.adaboost.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA02318F69AD400F417F6 /* ml.linreg.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.linreg.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -781,7 +852,7 @@
 		7DA1F14B190FE3F900F491FB /* ml.softmax.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.softmax.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA1F15A190FE40E00F491FB /* ml.randforest.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.randforest.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA1F169190FE41A00F491FB /* ml.mindist.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.mindist.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DACBF4E192B82F900F0E7D7 /* ml_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_base.h; path = ../../sources/ml_base.h; sourceTree = "<group>"; };
+		7DACBF4E192B82F900F0E7D7 /* ml_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_base.h; path = ../../sources/ml_base.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DACBF4F192B869600F0E7D7 /* ml_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_base.cpp; path = ../../sources/ml_base.cpp; sourceTree = "<group>"; };
 		7DAE08AD18F40FB100049C24 /* flbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flbase.h; path = ../../dependencies/include/flext/flbase.h; sourceTree = "<group>"; };
 		7DAE08AE18F40FB100049C24 /* flclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flclass.h; path = ../../dependencies/include/flext/flclass.h; sourceTree = "<group>"; };
@@ -935,11 +1006,13 @@
 		7DAE097418F40FB100049C24 /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = m_pd.h; path = ../../dependencies/include/m_pd.h; sourceTree = SOURCE_ROOT; };
 		7DAE097818F40FB100049C24 /* libflext-max_sd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libflext-max_sd.a"; path = "../../dependencies/lib/macosx/libflext-max_sd.a"; sourceTree = SOURCE_ROOT; };
 		7DAE098118F40FB200049C24 /* libflext-pd_sd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libflext-pd_sd.a"; path = "../../dependencies/lib/macosx/libflext-pd_sd.a"; sourceTree = "<group>"; };
-		7DBFDE6318439E09009ED61E /* ml_ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_ml.h; path = ../../sources/ml_ml.h; sourceTree = "<group>"; };
+		7DBFDE6318439E09009ED61E /* ml_ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_ml.h; path = ../../sources/ml_ml.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7DD0C4391AA221C300A4E510 /* ml_names.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_names.cpp; path = ../../sources/ml_names.cpp; sourceTree = "<group>"; };
+		7DD0C43A1AA221C300A4E510 /* ml_names.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_names.h; path = ../../sources/ml_names.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DD99CD818F4088700BE0A1A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ml_classification.cpp; path = ../../sources/classification/ml_classification.cpp; sourceTree = "<group>"; };
 		7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression.cpp; path = ../../sources/regression/ml_regression.cpp; sourceTree = "<group>"; };
-		7DEE4F5D18BD3F28001A1294 /* ml_regression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_regression.h; path = ../../sources/regression/ml_regression.h; sourceTree = "<group>"; };
+		7DEE4F5D18BD3F28001A1294 /* ml_regression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_regression.h; path = ../../sources/regression/ml_regression.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DEE4F5E18BD3F38001A1294 /* ml_classification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_classification.h; path = ../../sources/classification/ml_classification.h; sourceTree = "<group>"; };
 		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ../../sources/classification/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1368,8 +1441,9 @@
 				7DACBF4F192B869600F0E7D7 /* ml_base.cpp */,
 				7DBFDE6318439E09009ED61E /* ml_ml.h */,
 				E98573560D9E52D300682171 /* ml_ml.cpp */,
-				7D2AEA6D1A95270E009F75BE /* ml_doc.h */,
-				7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */,
+				7D71CBCC1AADB9E80099CD5B /* Documentation */,
+				7DD0C4391AA221C300A4E510 /* ml_names.cpp */,
+				7DD0C43A1AA221C300A4E510 /* ml_names.h */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -1390,6 +1464,18 @@
 				7D7DA0E018F7CF3700F417F6 /* ml.adaboost.maxhelp */,
 			);
 			name = Help;
+			sourceTree = "<group>";
+		};
+		7D71CBCC1AADB9E80099CD5B /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				7D2AEA6D1A95270E009F75BE /* ml_doc.h */,
+				7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */,
+				7D71CBCA1AADB9D20099CD5B /* ml_formattable.h */,
+				7D71CBCB1AADB9D20099CD5B /* ml_formatter.h */,
+				7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */,
+			);
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 		7DACBF4B192B78E000F0E7D7 /* Regression */ = {
@@ -2675,6 +2761,8 @@
 				7D551A6C190FE523008FF361 /* ml_classification.cpp in Sources */,
 				7D551A97190FE61E008FF361 /* ml_knn.cpp in Sources */,
 				7D551A6D190FE523008FF361 /* ml_regression.cpp in Sources */,
+				7D71CBB51AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C4481AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D551A6E190FE523008FF361 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2688,6 +2776,8 @@
 				7D551A7B190FE530008FF361 /* ml_classification.cpp in Sources */,
 				7D551A98190FE622008FF361 /* ml_gmm.cpp in Sources */,
 				7D551A7C190FE530008FF361 /* ml_regression.cpp in Sources */,
+				7D71CBB61AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C4491AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D551A7D190FE530008FF361 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2701,6 +2791,8 @@
 				7D551A99190FE626008FF361 /* ml_dtree.cpp in Sources */,
 				7D551A8A190FE53B008FF361 /* ml_classification.cpp in Sources */,
 				7D551A8B190FE53B008FF361 /* ml_regression.cpp in Sources */,
+				7D71CBB71AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C44A1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D551A8C190FE53B008FF361 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2710,10 +2802,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D551A9C190FE9CE008FF361 /* ml_ml.cpp in Sources */,
+				7D71CBC31AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DACBF77192BAC6300F0E7D7 /* ml_softmax.cpp in Sources */,
 				7D2AEA891A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DA0B697192F7687001F56DA /* ml_classification.cpp in Sources */,
 				7DACBF6B192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C4561AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2722,10 +2816,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D551AAC190FE9F1008FF361 /* ml_ml.cpp in Sources */,
+				7D71CBC41AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DACBF6C192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D2AEA8A1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DA0B698192F7688001F56DA /* ml_classification.cpp in Sources */,
 				7DACBF78192BAC6C00F0E7D7 /* ml_randforest.cpp in Sources */,
+				7DD0C4571AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2734,10 +2830,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D551ABC190FEA0F008FF361 /* ml_ml.cpp in Sources */,
+				7D71CBC51AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DACBF6D192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D2AEA8B1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DA0B699192F7689001F56DA /* ml_classification.cpp in Sources */,
 				7DACBF79192BAC7400F0E7D7 /* ml_mindist.cpp in Sources */,
+				7DD0C4581AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2746,10 +2844,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D551ADC190FEA37008FF361 /* ml_ml.cpp in Sources */,
+				7D71CBC61AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DACBF6F192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D2AEA8C1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DA0B69B192F768B001F56DA /* ml_classification.cpp in Sources */,
 				7DACBF7B192BACFB00F0E7D7 /* ml_knn.cpp in Sources */,
+				7DD0C4591AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2758,10 +2858,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DACBF7C192BAD0900F0E7D7 /* ml_gmm.cpp in Sources */,
+				7D71CBC71AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D551AEC190FEA66008FF361 /* ml_ml.cpp in Sources */,
 				7D2AEA8D1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DA0B69C192F768C001F56DA /* ml_classification.cpp in Sources */,
 				7DACBF70192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C45A1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2770,9 +2872,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D551AFC190FEA80008FF361 /* ml_ml.cpp in Sources */,
+				7DD0C45B1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D2AEA8E1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DACBF71192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DA0B69D192F768E001F56DA /* ml_classification.cpp in Sources */,
+				7D71CBC81AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2781,10 +2885,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D65FFD41992C18C00C82004 /* ml_base.cpp in Sources */,
+				7D71CBB81AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D65FFD81992C18C00C82004 /* ml_ml.cpp in Sources */,
 				7D2AEA7E1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D65FFDF1992C1B200C82004 /* ml_feature_extraction.cpp in Sources */,
 				7D65FFE01992C1BA00C82004 /* ml_zerox.cpp in Sources */,
+				7DD0C44B1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2793,10 +2899,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D65FFE31992C1FF00C82004 /* ml_ml.cpp in Sources */,
+				7D71CBC91AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D65FFE41992C1FF00C82004 /* ml_base.cpp in Sources */,
 				7D2AEA8F1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D65FFE51992C1FF00C82004 /* ml_classification.cpp in Sources */,
 				7D65FFE61992C1FF00C82004 /* ml_knn.cpp in Sources */,
+				7DD0C45C1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2805,10 +2913,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7D9FD418F6948E00F417F6 /* ml_classification.cpp in Sources */,
+				7D71CBBA1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7DA00C18F69A4600F417F6 /* ml_svm.cpp in Sources */,
 				7D2AEA801A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D7D9FDB18F6948E00F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF62192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C44D1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2817,10 +2927,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA00B18F69A3800F417F6 /* ml_adaboost.cpp in Sources */,
+				7D71CBBB1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7D9FF618F699D800F417F6 /* ml_classification.cpp in Sources */,
 				7D2AEA811A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D7D9FF718F699D800F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF63192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C44E1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2829,10 +2941,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA01118F69AD400F417F6 /* ml_ml.cpp in Sources */,
+				7D71CBBC1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7DA0B518F69C8200F417F6 /* ml_linreg.cpp in Sources */,
 				7D2AEA821A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D7DA0BC18F69EB700F417F6 /* ml_regression.cpp in Sources */,
 				7DACBF64192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C44F1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2841,10 +2955,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA02918F69AF600F417F6 /* ml_ml.cpp in Sources */,
+				7D71CBBD1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7DA0B618F69CA200F417F6 /* ml_logreg.cpp in Sources */,
 				7D2AEA831A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D7DA0BD18F69EB800F417F6 /* ml_regression.cpp in Sources */,
 				7DACBF65192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C4501AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2853,9 +2969,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA0B718F69CA700F417F6 /* ml_mlp.cpp in Sources */,
+				7DD0C4511AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D2AEA841A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DACBF66192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D7DA04118F69B0F00F417F6 /* ml_ml.cpp in Sources */,
+				7D71CBBE1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2864,10 +2982,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA05818F69B2A00F417F6 /* ml_classification.cpp in Sources */,
+				7D71CBBF1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7DA0B818F69CAB00F417F6 /* ml_dtw.cpp in Sources */,
 				7D2AEA851A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D7DA05918F69B2A00F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF67192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C4521AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2876,10 +2996,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA07018F69B4300F417F6 /* ml_classification.cpp in Sources */,
+				7D71CBC01AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7DA0B918F69CAF00F417F6 /* ml_hmm.cpp in Sources */,
 				7D2AEA861A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D7DA07118F69B4300F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF68192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C4531AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2888,9 +3010,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA08918F69B5A00F417F6 /* ml_ml.cpp in Sources */,
+				7DD0C4541AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D2AEA871A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DACBF69192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D7DA0BA18F69CB300F417F6 /* ml_peak.cpp in Sources */,
+				7D71CBC11AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2899,9 +3023,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA0A118F69B7100F417F6 /* ml_ml.cpp in Sources */,
+				7DD0C4551AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D2AEA881A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DACBF6A192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D7DA0BB18F69CB800F417F6 /* ml_minmax.cpp in Sources */,
+				7D71CBC21AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2914,6 +3040,8 @@
 				7D7DA0C818F6A63E00F417F6 /* ml_svm.cpp in Sources */,
 				7D7DA0CA18F6A63E00F417F6 /* ml_classification.cpp in Sources */,
 				7D7DA0CF18F6A63E00F417F6 /* ml_regression.cpp in Sources */,
+				7D71CBA91AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C43C1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D7DA0D118F6A63E00F417F6 /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2927,6 +3055,8 @@
 				7D7DA0F318F7DC5600F417F6 /* ml_regression.cpp in Sources */,
 				7D7DA0F418F7DC5600F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF52192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7D71CBAA1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C43D1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DACBF74192BAC4100F0E7D7 /* ml_adaboost.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2936,10 +3066,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA10218F7DC8900F417F6 /* ml_regression.cpp in Sources */,
+				7D71CBAB1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7DA10318F7DC8900F417F6 /* ml_ml.cpp in Sources */,
 				7D2AEA711A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DACBF7D192BAD2500F0E7D7 /* ml_linreg.cpp in Sources */,
 				7DACBF53192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C43E1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2948,10 +3080,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA11118F7DCA600F417F6 /* ml_regression.cpp in Sources */,
+				7D71CBAC1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DACBF7E192BAD2900F0E7D7 /* ml_logreg.cpp in Sources */,
 				7D2AEA721A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D7DA11218F7DCA600F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF54192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C43F1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2960,10 +3094,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA12018F7DCBD00F417F6 /* ml_regression.cpp in Sources */,
+				7D71CBAD1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DACBF7F192BAD2F00F0E7D7 /* ml_mlp.cpp in Sources */,
 				7D2AEA731A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D7DA12118F7DCBD00F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF55192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C4401AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2976,6 +3112,8 @@
 				7D7DA12F18F7DCD600F417F6 /* ml_regression.cpp in Sources */,
 				7DACBF75192BAC5600F0E7D7 /* ml_dtw.cpp in Sources */,
 				7D7DA13018F7DCD600F417F6 /* ml_ml.cpp in Sources */,
+				7D71CBAE1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C4411AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DACBF56192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2989,6 +3127,8 @@
 				7D7DA13E18F7DCEC00F417F6 /* ml_regression.cpp in Sources */,
 				7DACBF76192BAC5D00F0E7D7 /* ml_hmm.cpp in Sources */,
 				7D7DA13F18F7DCEC00F417F6 /* ml_ml.cpp in Sources */,
+				7D71CBAF1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C4421AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DACBF57192B869600F0E7D7 /* ml_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2998,10 +3138,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA14D18F7DD0600F417F6 /* ml_regression.cpp in Sources */,
+				7D71CBB01AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DACBF72192BAC3500F0E7D7 /* ml_peak.cpp in Sources */,
 				7D2AEA761A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D7DA14E18F7DD0600F417F6 /* ml_ml.cpp in Sources */,
 				7DACBF58192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DD0C4431AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3010,10 +3152,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA15C18F7DD1C00F417F6 /* ml_regression.cpp in Sources */,
+				7D71CBB11AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7DA15D18F7DD1C00F417F6 /* ml_ml.cpp in Sources */,
 				7D2AEA771A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DACBF59192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DACBF73192BAC3900F0E7D7 /* ml_minmax.cpp in Sources */,
+				7DD0C4441AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3026,6 +3170,8 @@
 				7DA1F143190FE3F900F491FB /* ml_classification.cpp in Sources */,
 				7D551A93190FE60D008FF361 /* ml_softmax.cpp in Sources */,
 				7DA1F144190FE3F900F491FB /* ml_regression.cpp in Sources */,
+				7D71CBB21AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C4451AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DA1F145190FE3F900F491FB /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3039,6 +3185,8 @@
 				7DA1F152190FE40E00F491FB /* ml_classification.cpp in Sources */,
 				7DA1F153190FE40E00F491FB /* ml_regression.cpp in Sources */,
 				7D551A94190FE612008FF361 /* ml_randforest.cpp in Sources */,
+				7D71CBB31AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C4461AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DA1F154190FE40E00F491FB /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3052,6 +3200,8 @@
 				7D551A95190FE616008FF361 /* ml_mindist.cpp in Sources */,
 				7DA1F161190FE41A00F491FB /* ml_classification.cpp in Sources */,
 				7DA1F162190FE41A00F491FB /* ml_regression.cpp in Sources */,
+				7D71CBB41AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DD0C4471AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DA1F163190FE41A00F491FB /* ml_ml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3073,10 +3223,12 @@
 				7D65FFCD1992BCC500C82004 /* ml_zerox.cpp in Sources */,
 				7DA1F12C190FDC0600F491FB /* ml_gmm.cpp in Sources */,
 				7D2C59AF189AF5EA001A78C9 /* ml_hmm.cpp in Sources */,
+				7D71CBA81AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7DA0DE18F6C34C00F417F6 /* ml_anbc.cpp in Sources */,
 				7DA1F138190FDC6100F491FB /* ml_randforest.cpp in Sources */,
 				7DA1F12F190FDC2500F491FB /* ml_knn.cpp in Sources */,
 				7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */,
+				7DD0C43B1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D61B1081875F661000FD114 /* ml_logreg.cpp in Sources */,
 				E98573570D9E52D300682171 /* ml_ml.cpp in Sources */,
 				7DA1F13B190FDC6D00F491FB /* ml_softmax.cpp in Sources */,
@@ -3103,10 +3255,12 @@
 				7D65FFCE1992BCC500C82004 /* ml_zerox.cpp in Sources */,
 				7DA1F12D190FDC0600F491FB /* ml_gmm.cpp in Sources */,
 				7D23B9D918C9EE1700735880 /* ml_adaboost.cpp in Sources */,
+				7D71CBB91AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D7DA0DF18F6C34C00F417F6 /* ml_anbc.cpp in Sources */,
 				7DA1F139190FDC6100F491FB /* ml_randforest.cpp in Sources */,
 				7DA1F130190FDC2500F491FB /* ml_knn.cpp in Sources */,
 				7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */,
+				7DD0C44C1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D61B1091875F661000FD114 /* ml_logreg.cpp in Sources */,
 				E98573580D9E52D300682171 /* ml_ml.cpp in Sources */,
 				7DA1F13C190FDC6D00F491FB /* ml_softmax.cpp in Sources */,
