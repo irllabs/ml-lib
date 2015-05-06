@@ -9,10 +9,9 @@ extern "C" {
 #endif
 
 #define PD_MAJOR_VERSION 0
-#define PD_MINOR_VERSION 45
-#define PD_BUGFIX_VERSION 4
-#define PD_TEST_VERSION ""
-extern int pd_compatibilitylevel;   /* e.g., 43 for pd 0.43 compatibility */
+#define PD_MINOR_VERSION 43
+#define PD_BUGFIX_VERSION 1
+#define PD_TEST_VERSION "test4"
 
 /* old name for "MSW" flag -- we have to take it for the sake of many old
 "nmakefiles" for externs, which will define NT and not MSW */
@@ -29,7 +28,7 @@ extern int pd_compatibilitylevel;   /* e.g., 43 for pd 0.43 compatibility */
 #endif /* _MSC_VER */
 
     /* the external storage class is "extern" in UNIX; in MSW it's ugly. */
-#ifdef _WIN32
+#ifdef MSW
 #ifdef PD_INTERNAL
 #define EXTERN __declspec(dllexport) extern
 #else
@@ -37,7 +36,7 @@ extern int pd_compatibilitylevel;   /* e.g., 43 for pd 0.43 compatibility */
 #endif /* PD_INTERNAL */
 #else
 #define EXTERN extern
-#endif /* _WIN32 */
+#endif /* MSW */
 
     /* and depending on the compiler, hidden data structures are
     declared differently: */
@@ -58,23 +57,6 @@ extern int pd_compatibilitylevel;   /* e.g., 43 for pd 0.43 compatibility */
 #include <stddef.h>     /* just for size_t -- how lame! */
 #endif
 
-/* Microsoft Visual Studio is not C99, it does not provide stdint.h */
-#ifdef _MSC_VER
-typedef signed __int8     int8_t;
-typedef signed __int16    int16_t;
-typedef signed __int32    int32_t;
-typedef signed __int64    int64_t;
-typedef unsigned __int8   uint8_t;
-typedef unsigned __int16  uint16_t;
-typedef unsigned __int32  uint32_t;
-typedef unsigned __int64  uint64_t;
-#else
-# include <stdint.h>
-#endif
-
-/* for FILE, needed by sys_fopen() and sys_fclose() only */
-#include <stdio.h>
-
 #define MAXPDSTRING 1000        /* use this for anything you want */
 #define MAXPDARG 5              /* max number of args we can typecheck today */
 
@@ -82,24 +64,9 @@ typedef unsigned __int64  uint64_t;
 #if !defined(PD_LONGINTTYPE)
 #define PD_LONGINTTYPE long
 #endif
-
-#if !defined(PD_FLOATSIZE)
-  /* normally, our floats (t_float, t_sample,...) are 32bit */
-# define PD_FLOATSIZE 32
+#if !defined(PD_FLOATTYPE)
+#define PD_FLOATTYPE float
 #endif
-
-#if PD_FLOATSIZE == 32
-# define PD_FLOATTYPE float
-/* an unsigned int of the same size as FLOATTYPE: */
-# define PD_FLOATUINTTYPE unsigned int
-
-#elif PD_FLOATSIZE == 64
-# define PD_FLOATTYPE double
-# define PD_FLOATUINTTYPE unsigned long
-#else
-# error invalid FLOATSIZE: must be 32 or 64
-#endif
-
 typedef PD_LONGINTTYPE t_int;       /* pointer-size integer */
 typedef PD_FLOATTYPE t_float;       /* a float type at most the same size */
 typedef PD_FLOATTYPE t_floatarg;    /* float type for function calls */
@@ -151,7 +118,7 @@ typedef union word
     t_symbol *w_symbol;
     t_gpointer *w_gpointer;
     t_array *w_array;
-    struct _binbuf *w_binbuf;
+    struct _glist *w_list;
     int w_index;
 } t_word;
 
@@ -330,7 +297,6 @@ EXTERN void binbuf_restore(t_binbuf *x, int argc, t_atom *argv);
 EXTERN void binbuf_print(t_binbuf *x);
 EXTERN int binbuf_getnatom(t_binbuf *x);
 EXTERN t_atom *binbuf_getvec(t_binbuf *x);
-EXTERN int binbuf_resize(t_binbuf *x, int newsize);
 EXTERN void binbuf_eval(t_binbuf *x, t_pd *target, int argc, t_atom *argv);
 EXTERN int binbuf_read(t_binbuf *b, char *filename, char *dirname,
     int crflag);
@@ -350,12 +316,9 @@ EXTERN t_clock *clock_new(void *owner, t_method fn);
 EXTERN void clock_set(t_clock *x, double systime);
 EXTERN void clock_delay(t_clock *x, double delaytime);
 EXTERN void clock_unset(t_clock *x);
-EXTERN void clock_setunit(t_clock *x, double timeunit, int sampflag);
 EXTERN double clock_getlogicaltime(void);
 EXTERN double clock_getsystime(void); /* OBSOLETE; use clock_getlogicaltime() */
 EXTERN double clock_gettimesince(double prevsystime);
-EXTERN double clock_gettimesincewithunits(double prevsystime,
-    double units, int sampflag);
 EXTERN double clock_getsystimeafter(double delaytime);
 EXTERN void clock_free(t_clock *x);
 
@@ -461,7 +424,6 @@ EXTERN void class_setparentwidget(t_class *c, t_parentwidgetbehavior *w);
 EXTERN t_parentwidgetbehavior *class_parentwidget(t_class *c);
 EXTERN char *class_getname(t_class *c);
 EXTERN char *class_gethelpname(t_class *c);
-EXTERN char *class_gethelpdir(t_class *c);
 EXTERN void class_setdrawcommand(t_class *c);
 EXTERN int class_isdrawcommand(t_class *c);
 EXTERN void class_domainsignalin(t_class *c, int onset);
@@ -473,8 +435,6 @@ EXTERN void class_set_extern_dir(t_symbol *s);
 typedef void (*t_savefn)(t_gobj *x, t_binbuf *b);
 EXTERN void class_setsavefn(t_class *c, t_savefn f);
 EXTERN t_savefn class_getsavefn(t_class *c);
-EXTERN void obj_saveformat(t_object *x, t_binbuf *bb); /* add format to bb */
-
         /* prototype for functions to open properties dialogs */
 typedef void (*t_propertiesfn)(t_gobj *x, struct _glist *glist);
 EXTERN void class_setpropertiesfn(t_class *c, t_propertiesfn f);
@@ -512,20 +472,13 @@ EXTERN int sys_isreadablefile(const char *name);
 EXTERN int sys_isabsolutepath(const char *dir);
 EXTERN void sys_bashfilename(const char *from, char *to);
 EXTERN void sys_unbashfilename(const char *from, char *to);
-EXTERN int open_via_path(const char *dir, const char *name, const char *ext,
+EXTERN int open_via_path(const char *name, const char *ext, const char *dir,
     char *dirresult, char **nameresult, unsigned int size, int bin);
+EXTERN int sys_close(int fd);
 EXTERN int sched_geteventno(void);
 EXTERN double sys_getrealtime(void);
 EXTERN int (*sys_idlehook)(void);   /* hook to add idle time computation */
 
-/* Win32's open()/fopen() do not handle UTF-8 filenames so we need
- * these internal versions that handle UTF-8 filenames the same across
- * all platforms.  They are recommended for use in external
- * objectclasses as well so they work with Unicode filenames on Windows */
-EXTERN int sys_open(const char *path, int oflag, ...);
-EXTERN int sys_close(int fd);
-EXTERN FILE *sys_fopen(const char *filename, const char *mode);
-EXTERN int sys_fclose(FILE *stream);
 
 /* ------------  threading ------------------- */ 
 EXTERN void sys_lock(void);
@@ -536,10 +489,6 @@ EXTERN int sys_trylock(void);
 /* --------------- signals ----------------------------------- */
 
 typedef PD_FLOATTYPE t_sample;
-typedef union _sampleint_union {
-  t_sample f;
-  PD_FLOATUINTTYPE i;
-} t_sampleint_union;
 #define MAXLOGSIG 32
 #define MAXSIGSIZE (1 << MAXLOGSIG)
 
@@ -647,8 +596,6 @@ EXTERN void garray_resize(t_garray *x, t_floatarg f);  /* avoid; use this: */
 EXTERN void garray_resize_long(t_garray *x, long n);   /* better version */
 EXTERN void garray_usedindsp(t_garray *x);
 EXTERN void garray_setsaveit(t_garray *x, int saveit);
-EXTERN t_glist *garray_getglist(t_garray *x);
-EXTERN t_array *garray_getarray(t_garray *x);
 EXTERN t_class *scalar_class;
 
 EXTERN t_float *value_get(t_symbol *s);
@@ -692,37 +639,18 @@ defined, there is a "te_xpix" field in objects, not a "te_xpos" as before: */
 
 #define PD_USE_TE_XPIX
 
-#ifndef _MSC_VER /* Microoft compiler can't handle "inline" function/macros */
-#if defined(__i386__) || defined(__x86_64__) || defined(__arm__)
+#if defined(__i386__) || defined(__x86_64__)
 /* a test for NANs and denormals.  Should only be necessary on i386. */
-# if PD_FLOATSIZE == 32
-static inline int PD_BADFLOAT(t_sample f) {
-  t_sampleint_union u;
-  u.f=f;
-  return ((u.i & 0x7f800000)==0) || ((u.i&0x7f800000)==0x7f800000);
-}
-/* more stringent test: anything not between 1e-19 and 1e19 in absolute val */
-static inline int PD_BIGORSMALL(t_sample f) {
-  t_sampleint_union u;
-  u.f=f;
-  return ((u.i & 0x60000000)==0) || ((u.i & 0x60000000)==0x60000000);
-}
-# else
-#  warning 64bit mode: BIGORSMALL not implemented yet
-#  define PD_BADFLOAT(f) 0
-#  define PD_BIGORSMALL(f) 0
-# endif
-#else
-# define PD_BADFLOAT(f) 0
-# define PD_BIGORSMALL(f) 0
-#endif
-#else   /* _MSC_VER */
 #define PD_BADFLOAT(f) ((((*(unsigned int*)&(f))&0x7f800000)==0) || \
     (((*(unsigned int*)&(f))&0x7f800000)==0x7f800000))
 /* more stringent test: anything not between 1e-19 and 1e19 in absolute val */
 #define PD_BIGORSMALL(f) ((((*(unsigned int*)&(f))&0x60000000)==0) || \
     (((*(unsigned int*)&(f))&0x60000000)==0x60000000))
-#endif /* _MSC_VER */
+#else
+#define PD_BADFLOAT(f) 0
+#define PD_BIGORSMALL(f) 0
+#endif
+
     /* get version number at run time */
 EXTERN void sys_getversion(int *major, int *minor, int *bugfix);
 

@@ -136,7 +136,6 @@
 		7D65FFE31992C1FF00C82004 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D65FFE41992C1FF00C82004 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
 		7D65FFE51992C1FF00C82004 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
-		7D65FFE61992C1FF00C82004 /* ml_knn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12E190FDC2500F491FB /* ml_knn.cpp */; };
 		7D65FFE81992C1FF00C82004 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D65FFE91992C1FF00C82004 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D65FFEA1992C1FF00C82004 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
@@ -582,40 +581,6 @@
 		7DF93E1D1AC84F4700C6BFA7 /* ANBC_Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C2E1AC84F4600C6BFA7 /* ANBC_Model.cpp */; };
 		7DF93E1E1AC84F4700C6BFA7 /* ANBC_Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C2E1AC84F4600C6BFA7 /* ANBC_Model.cpp */; };
 		7DF93E1F1AC84F4700C6BFA7 /* ANBC_Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C2E1AC84F4600C6BFA7 /* ANBC_Model.cpp */; };
-		7DF93E201AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E211AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E221AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E231AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E241AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E251AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E261AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E271AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E281AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E291AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E2A1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E2B1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E2C1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E2D1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E2E1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E2F1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E301AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E311AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E321AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E331AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E341AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E351AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E361AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E371AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E381AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E391AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E3A1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E3B1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E3C1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E3D1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E3E1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E3F1AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E401AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
-		7DF93E411AC84F4700C6BFA7 /* BAG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C311AC84F4600C6BFA7 /* BAG.cpp */; };
 		7DF93E421AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C341AC84F4600C6BFA7 /* DecisionTree.cpp */; };
 		7DF93E431AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C341AC84F4600C6BFA7 /* DecisionTree.cpp */; };
 		7DF93E441AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C341AC84F4600C6BFA7 /* DecisionTree.cpp */; };
@@ -3948,7 +3913,6 @@
 		7DF94B431AC84F4800C6BFA7 /* WarningLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D521AC84F4600C6BFA7 /* WarningLog.cpp */; };
 		7DF94B441AC84F4800C6BFA7 /* WarningLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D521AC84F4600C6BFA7 /* WarningLog.cpp */; };
 		7DF94B451AC84F4800C6BFA7 /* WarningLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D521AC84F4600C6BFA7 /* WarningLog.cpp */; };
-		7DF94B481AC92B2F00C6BFA7 /* libflext-pd_sd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF92CEB1AC84E7000C6BFA7 /* libflext-pd_sd.a */; };
 		7DFA31A31994C470005A77C1 /* ml.dtw.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E218F7CFA300F417F6 /* ml.dtw.maxhelp */; };
 		7DFA31A41994C473005A77C1 /* ml.hmm.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E318F7CFA300F417F6 /* ml.hmm.maxhelp */; };
 		7DFA31A51994C476005A77C1 /* ml.linreg.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E418F7CFA300F417F6 /* ml.linreg.maxhelp */; };
@@ -3970,58 +3934,6 @@
 		E98573570D9E52D300682171 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		E98573580D9E52D300682171 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7DF92CEA1AC84E7000C6BFA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E99747CD0770545100206F68;
-			remoteInfo = "PD static single";
-		};
-		7DF92CEC1AC84E7000C6BFA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E997483F0770570800206F68;
-			remoteInfo = "PD static multi";
-		};
-		7DF92CEE1AC84E7000C6BFA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E9974886077058C100206F68;
-			remoteInfo = "PD shared";
-		};
-		7DF92CF01AC84E7000C6BFA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E99749BE07705CC400206F68;
-			remoteInfo = "Max static single";
-		};
-		7DF92CF21AC84E7000C6BFA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E9974BC407705F1400206F68;
-			remoteInfo = "Max static multi";
-		};
-		7DF92CF41AC84E7000C6BFA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E9974BFA07705F4F00206F68;
-			remoteInfo = "Max shared";
-		};
-		7DF94B461AC92AF700C6BFA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E99747CC0770545100206F68;
-			remoteInfo = "PD static single";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7D551A6F190FE523008FF361 /* CopyFiles */ = {
@@ -4441,7 +4353,6 @@
 		7DA1F169190FE41A00F491FB /* ml.mindist.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.mindist.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DACBF4E192B82F900F0E7D7 /* ml_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_base.h; path = ../../sources/ml_base.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DACBF4F192B869600F0E7D7 /* ml_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_base.cpp; path = ../../sources/ml_base.cpp; sourceTree = "<group>"; };
-		7DAE097418F40FB100049C24 /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = m_pd.h; path = ../../vendor/pd/m_pd.h; sourceTree = SOURCE_ROOT; };
 		7DBFDE6318439E09009ED61E /* ml_ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_ml.h; path = ../../sources/ml_ml.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DD0C4391AA221C300A4E510 /* ml_names.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_names.cpp; path = ../../sources/ml_names.cpp; sourceTree = "<group>"; };
 		7DD0C43A1AA221C300A4E510 /* ml_names.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_names.h; path = ../../sources/ml_names.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -4452,7 +4363,6 @@
 		7DEE4F5E18BD3F38001A1294 /* ml_classification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_classification.h; path = ../../sources/classification/ml_classification.h; sourceTree = "<group>"; };
 		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ../../sources/classification/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = flext.xcodeproj; path = ../../vendor/flext/flext.xcodeproj; sourceTree = "<group>"; };
 		7DF93C211AC84F4600C6BFA7 /* AdaBoost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdaBoost.cpp; sourceTree = "<group>"; };
 		7DF93C221AC84F4600C6BFA7 /* AdaBoost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaBoost.h; sourceTree = "<group>"; };
 		7DF93C231AC84F4600C6BFA7 /* AdaBoostClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaBoostClassModel.h; sourceTree = "<group>"; };
@@ -4704,6 +4614,7 @@
 		7DF93D521AC84F4600C6BFA7 /* WarningLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WarningLog.cpp; sourceTree = "<group>"; };
 		7DF93D531AC84F4600C6BFA7 /* WarningLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningLog.h; sourceTree = "<group>"; };
 		7DFA31B61994CC3E005A77C1 /* ml.zerox-help.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml.zerox-help.pd"; path = "../../documentation/help/pd/ml.zerox-help.pd"; sourceTree = "<group>"; };
+		7DFC38B21AFA2F9A0068E111 /* flext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = flext.h; path = ../../flext/source/flext.h; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98573560D9E52D300682171 /* ml_ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_ml.cpp; path = ../../sources/ml_ml.cpp; sourceTree = "<group>"; };
 		E9974E53077083C700206F68 /* ml.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4714,7 +4625,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DF94B481AC92B2F00C6BFA7 /* libflext-pd_sd.a in Frameworks */,
 				7D551A68190FE523008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5064,9 +4974,8 @@
 		0867D691FE84028FC02AAC07 /* xsample */ = {
 			isa = PBXGroup;
 			children = (
+				7DFC38B11AFA2F2B0068E111 /* Flext */,
 				7DF93C1E1AC84F4600C6BFA7 /* GRT */,
-				7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */,
-				7DAE08AA18F40FB000049C24 /* Vendor */,
 				7DF077FA1847589B00C55E3C /* Resources */,
 				08FB77ACFE841707C02AAC07 /* Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -5178,24 +5087,6 @@
 			name = "Feature Extraction";
 			sourceTree = "<group>";
 		};
-		7DAE08AA18F40FB000049C24 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				7DAE08AB18F40FB100049C24 /* pd */,
-			);
-			name = Vendor;
-			path = external;
-			sourceTree = "<group>";
-		};
-		7DAE08AB18F40FB100049C24 /* pd */ = {
-			isa = PBXGroup;
-			children = (
-				7DAE097418F40FB100049C24 /* m_pd.h */,
-			);
-			name = pd;
-			path = include;
-			sourceTree = "<group>";
-		};
 		7DF077FA1847589B00C55E3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -5203,19 +5094,6 @@
 				7DF077FB184758C300C55E3C /* Info.plist */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		7DF92CE21AC84E6F00C6BFA7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7DF92CEB1AC84E7000C6BFA7 /* libflext-pd_sd.a */,
-				7DF92CED1AC84E7000C6BFA7 /* libflext-pd_td.a */,
-				7DF92CEF1AC84E7000C6BFA7 /* libflext-pd_d.dylib */,
-				7DF92CF11AC84E7000C6BFA7 /* libflext-max_sd.a */,
-				7DF92CF31AC84E7000C6BFA7 /* libflext-max_td.a */,
-				7DF92CF51AC84E7000C6BFA7 /* libflext-max_d.dylib */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7DF93C1E1AC84F4600C6BFA7 /* GRT */ = {
@@ -5948,6 +5826,15 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		7DFC38B11AFA2F2B0068E111 /* Flext */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC38B21AFA2F9A0068E111 /* flext.h */,
+			);
+			name = Flext;
+			path = ../../vendor/grt/GRT;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -5962,7 +5849,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7DF94B471AC92AF700C6BFA7 /* PBXTargetDependency */,
 			);
 			name = "ml.knn pd";
 			productName = xsample;
@@ -6536,7 +6422,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0630;
 			};
 			buildConfigurationList = E9A5BC920A33819900AD9F03 /* Build configuration list for PBXProject "ml" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -6548,12 +6434,6 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* xsample */;
 			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 7DF92CE21AC84E6F00C6BFA7 /* Products */;
-					ProjectRef = 7DF901561AC84B3B00C6BFA7 /* flext.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D2AAC09C05546B4700DB518D /* ml pd */,
@@ -6596,51 +6476,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		7DF92CEB1AC84E7000C6BFA7 /* libflext-pd_sd.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libflext-pd_sd.a";
-			remoteRef = 7DF92CEA1AC84E7000C6BFA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7DF92CED1AC84E7000C6BFA7 /* libflext-pd_td.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libflext-pd_td.a";
-			remoteRef = 7DF92CEC1AC84E7000C6BFA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7DF92CEF1AC84E7000C6BFA7 /* libflext-pd_d.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = "libflext-pd_d.dylib";
-			remoteRef = 7DF92CEE1AC84E7000C6BFA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7DF92CF11AC84E7000C6BFA7 /* libflext-max_sd.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libflext-max_sd.a";
-			remoteRef = 7DF92CF01AC84E7000C6BFA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7DF92CF31AC84E7000C6BFA7 /* libflext-max_td.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libflext-max_td.a";
-			remoteRef = 7DF92CF21AC84E7000C6BFA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7DF92CF51AC84E7000C6BFA7 /* libflext-max_d.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = "libflext-max_d.dylib";
-			remoteRef = 7DF92CF41AC84E7000C6BFA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXSourcesBuildPhase section */
 		7D551A6A190FE523008FF361 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -6649,7 +6484,6 @@
 				7DF93FA31AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF946471AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF942291AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E2D1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942D31AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF942071AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945E11AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -6769,7 +6603,6 @@
 				7DF93FA41AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF946481AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF9422A1AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E2E1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942D41AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF942081AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945E21AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -6889,7 +6722,6 @@
 				7DF93FA51AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF946491AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF9422B1AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E2F1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942D51AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF942091AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945E31AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -7113,7 +6945,6 @@
 				7DF93FB11AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF9418D1AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E5D1AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E3B1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF9409F1AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947A91AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949A71AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -7232,7 +7063,6 @@
 				7DF93FB21AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF9418E1AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E5E1AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E3C1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940A01AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947AA1AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949A81AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -7351,7 +7181,6 @@
 				7DF93FB31AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF9418F1AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E5F1AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E3D1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940A11AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947AB1AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949A91AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -7470,7 +7299,6 @@
 				7DF93FB41AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941901AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E601AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E3E1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940A21AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947AC1AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949AA1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -7589,7 +7417,6 @@
 				7DF93FB51AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941911AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E611AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E3F1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940A31AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947AD1AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949AB1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -7651,7 +7478,6 @@
 				7DF947261AC84F4800C6BFA7 /* Derivative.cpp in Sources */,
 				7DF94A561AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF9443A1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
-				7DF93E401AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF948BE1AC84F4800C6BFA7 /* LogisticRegression.cpp in Sources */,
 				7DF9421A1AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF9434C1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
@@ -7826,7 +7652,6 @@
 				7DF93FA61AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941821AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E521AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E301AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940941AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF9479E1AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF9499C1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -7935,7 +7760,6 @@
 				7DF943F71AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944E51AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DF947271AC84F4800C6BFA7 /* Derivative.cpp in Sources */,
-				7D65FFE61992C1FF00C82004 /* ml_knn.cpp in Sources */,
 				7DF949031AC84F4800C6BFA7 /* RegressionTree.cpp in Sources */,
 				7DF947491AC84F4800C6BFA7 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF942E71AC84F4700C6BFA7 /* Context.cpp in Sources */,
@@ -7945,7 +7769,6 @@
 				7DF93FB71AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941931AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E631AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E411AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940A51AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947AF1AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949AD1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -8064,7 +7887,6 @@
 				7DF93FA81AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941841AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E541AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E321AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940961AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947A01AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF9499E1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -8183,7 +8005,6 @@
 				7DF93FA91AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941851AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E551AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E331AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940971AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947A11AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF9499F1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -8302,7 +8123,6 @@
 				7DF93FAA1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941861AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E561AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E341AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940981AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947A21AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949A01AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -8421,7 +8241,6 @@
 				7DF93FAB1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941871AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E571AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E351AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940991AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947A31AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949A11AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -8483,7 +8302,6 @@
 				7DF9471C1AC84F4800C6BFA7 /* Derivative.cpp in Sources */,
 				7DF94A4C1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF944301AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
-				7DF93E361AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF948B41AC84F4800C6BFA7 /* LogisticRegression.cpp in Sources */,
 				7DF942101AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF943421AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
@@ -8658,7 +8476,6 @@
 				7DF93FAD1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941891AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E591AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E371AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF9409B1AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947A51AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949A31AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -8777,7 +8594,6 @@
 				7DF93FAE1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF9418A1AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E5A1AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E381AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF9409C1AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947A61AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949A41AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -8839,7 +8655,6 @@
 				7DF9471F1AC84F4800C6BFA7 /* Derivative.cpp in Sources */,
 				7DF94A4F1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF944331AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
-				7DF93E391AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF948B71AC84F4800C6BFA7 /* LogisticRegression.cpp in Sources */,
 				7DF942131AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF943451AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
@@ -8957,7 +8772,6 @@
 				7DF947201AC84F4800C6BFA7 /* Derivative.cpp in Sources */,
 				7DF94A501AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF944341AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
-				7DF93E3A1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF948B81AC84F4800C6BFA7 /* LogisticRegression.cpp in Sources */,
 				7DF942141AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF943461AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
@@ -9028,7 +8842,6 @@
 				7DF93F971AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF9463B1AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF9421D1AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E211AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942C71AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF941FB1AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945D51AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -9148,7 +8961,6 @@
 				7DF93F981AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF9463C1AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF9421E1AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E221AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942C81AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF941FC1AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945D61AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -9372,7 +9184,6 @@
 				7DF93F991AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941751AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E451AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E231AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940871AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947911AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF9498F1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -9491,7 +9302,6 @@
 				7DF93F9A1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941761AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E461AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E241AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940881AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947921AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949901AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -9610,7 +9420,6 @@
 				7DF93F9B1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF941771AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E471AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E251AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF940891AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947931AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949911AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -9625,7 +9434,6 @@
 				7DF93F9C1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF946401AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF942221AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E261AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942CC1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF942001AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945DA1AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -9745,7 +9553,6 @@
 				7DF93F9D1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF946411AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF942231AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E271AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942CD1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF942011AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945DB1AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -9969,7 +9776,6 @@
 				7DF93F9E1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF9417A1AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E4A1AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E281AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF9408C1AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947961AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949941AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -10088,7 +9894,6 @@
 				7DF93F9F1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF9417B1AC84F4700C6BFA7 /* KMeans.cpp in Sources */,
 				7DF93E4B1AC84F4700C6BFA7 /* DecisionTree.cpp in Sources */,
-				7DF93E291AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF9408D1AC84F4700C6BFA7 /* Softmax.cpp in Sources */,
 				7DF947971AC84F4800C6BFA7 /* LeakyIntegrator.cpp in Sources */,
 				7DF949951AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -10103,7 +9908,6 @@
 				7DF93FA01AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF946441AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF942261AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E2A1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942D01AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF942041AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945DE1AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -10223,7 +10027,6 @@
 				7DF93FA11AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF946451AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF942271AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E2B1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942D11AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF942051AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945DF1AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -10343,7 +10146,6 @@
 				7DF93FA21AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF946461AC84F4800C6BFA7 /* TimeseriesBuffer.cpp in Sources */,
 				7DF942281AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
-				7DF93E2C1AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF942D21AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF942061AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF945E01AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
@@ -10481,7 +10283,6 @@
 				7DF945D41AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
 				7DF9496A1AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF942601AC84F4700C6BFA7 /* Tree.cpp in Sources */,
-				7DF93E201AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF947061AC84F4800C6BFA7 /* Derivative.cpp in Sources */,
 				7DF949261AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DA1F129190FDAC100F491FB /* ml_dtree.cpp in Sources */,
@@ -10618,7 +10419,6 @@
 				7DF945E51AC84F4800C6BFA7 /* RBMQuantizer.cpp in Sources */,
 				7DF9497B1AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF942711AC84F4700C6BFA7 /* Tree.cpp in Sources */,
-				7DF93E311AC84F4700C6BFA7 /* BAG.cpp in Sources */,
 				7DF947171AC84F4800C6BFA7 /* Derivative.cpp in Sources */,
 				7DF949371AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DA1F12A190FDAC100F491FB /* ml_dtree.cpp in Sources */,
@@ -10732,19 +10532,12 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		7DF94B471AC92AF700C6BFA7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "PD static single";
-			targetProxy = 7DF94B461AC92AF700C6BFA7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		7D551A71190FE523008FF361 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -10779,6 +10572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -10814,6 +10608,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -10848,6 +10643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -10868,7 +10664,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -10883,6 +10678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -10904,7 +10700,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -10919,6 +10714,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -10953,6 +10749,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -10973,7 +10770,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -10988,6 +10784,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -11009,7 +10806,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -11024,6 +10820,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -11092,7 +10889,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
 				SDKROOT = macosx;
@@ -11147,7 +10944,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
 				SDKROOT = macosx;
@@ -11199,7 +10996,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
 				SDKROOT = macosx;
@@ -11253,7 +11050,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
 				SDKROOT = macosx;
@@ -11308,7 +11105,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
 				SDKROOT = macosx;
@@ -11360,7 +11157,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
 				SDKROOT = macosx;
@@ -11414,7 +11211,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
 				SDKROOT = macosx;
@@ -11469,7 +11266,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
 				SDKROOT = macosx;
@@ -11521,7 +11318,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
 				SDKROOT = macosx;
@@ -11575,7 +11372,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
 				SDKROOT = macosx;
@@ -11630,7 +11427,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
 				SDKROOT = macosx;
@@ -11682,7 +11479,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
 				SDKROOT = macosx;
@@ -11736,7 +11533,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
 				SDKROOT = macosx;
@@ -11791,7 +11588,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
 				SDKROOT = macosx;
@@ -11843,7 +11640,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
 				SDKROOT = macosx;
@@ -11897,7 +11694,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
 				SDKROOT = macosx;
@@ -11952,7 +11749,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
 				SDKROOT = macosx;
@@ -12004,7 +11801,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
 				SDKROOT = macosx;
@@ -12024,6 +11821,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -12044,7 +11842,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -12059,6 +11856,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -12080,7 +11878,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -12095,6 +11892,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -12163,7 +11961,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
 				SDKROOT = macosx;
@@ -12218,7 +12016,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
 				SDKROOT = macosx;
@@ -12270,7 +12068,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
 				SDKROOT = macosx;
@@ -12324,7 +12122,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
 				SDKROOT = macosx;
@@ -12379,7 +12177,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
 				SDKROOT = macosx;
@@ -12431,7 +12229,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
 				SDKROOT = macosx;
@@ -12485,7 +12283,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
 				SDKROOT = macosx;
@@ -12540,7 +12338,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
 				SDKROOT = macosx;
@@ -12592,7 +12390,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
 				SDKROOT = macosx;
@@ -12646,7 +12444,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
 				SDKROOT = macosx;
@@ -12701,7 +12499,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
 				SDKROOT = macosx;
@@ -12753,7 +12551,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
 				SDKROOT = macosx;
@@ -12807,7 +12605,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
 				SDKROOT = macosx;
@@ -12862,7 +12660,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
 				SDKROOT = macosx;
@@ -12914,7 +12712,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
 				SDKROOT = macosx;
@@ -12968,7 +12766,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
 				SDKROOT = macosx;
@@ -13023,7 +12821,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
 				SDKROOT = macosx;
@@ -13075,7 +12873,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
 				SDKROOT = macosx;
@@ -13129,7 +12927,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
 				SDKROOT = macosx;
@@ -13184,7 +12982,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
 				SDKROOT = macosx;
@@ -13236,7 +13034,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
 				SDKROOT = macosx;
@@ -13290,7 +13088,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
 				SDKROOT = macosx;
@@ -13345,7 +13143,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
 				SDKROOT = macosx;
@@ -13397,7 +13195,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
 				SDKROOT = macosx;
@@ -13451,7 +13249,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
 				SDKROOT = macosx;
@@ -13506,7 +13304,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
 				SDKROOT = macosx;
@@ -13558,7 +13356,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
 				SDKROOT = macosx;
@@ -13612,7 +13410,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
 				SDKROOT = macosx;
@@ -13667,7 +13465,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
 				SDKROOT = macosx;
@@ -13719,7 +13517,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
 				SDKROOT = macosx;
@@ -13763,6 +13561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -13783,7 +13582,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -13798,6 +13596,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -13819,7 +13618,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -13834,6 +13632,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -13868,6 +13667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -13888,7 +13688,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -13903,6 +13702,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -13924,7 +13724,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -13939,6 +13738,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -13973,6 +13773,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -13993,7 +13794,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14008,6 +13808,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14029,7 +13830,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14044,6 +13844,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -14078,6 +13879,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14098,7 +13900,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14113,6 +13914,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14134,7 +13936,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14149,6 +13950,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -14183,6 +13985,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14203,7 +14006,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14218,6 +14020,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14239,7 +14042,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14254,6 +14056,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -14288,6 +14091,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14308,7 +14112,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14323,6 +14126,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14344,7 +14148,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14359,6 +14162,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -14393,6 +14197,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14413,7 +14218,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14428,6 +14232,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14449,7 +14254,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14464,6 +14268,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -14498,6 +14303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14518,7 +14324,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14533,6 +14338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14554,7 +14360,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14569,6 +14374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -14603,6 +14409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14623,7 +14430,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14638,6 +14444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14659,7 +14466,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14674,6 +14480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -14729,6 +14536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14749,7 +14557,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14764,6 +14571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14785,7 +14593,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14800,6 +14607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -14834,6 +14642,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14854,7 +14663,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14869,6 +14677,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14890,7 +14699,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14905,6 +14713,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -14939,6 +14748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -14959,7 +14769,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -14974,6 +14783,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -14995,7 +14805,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -15010,6 +14819,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -15044,6 +14854,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -15064,7 +14875,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_sd",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -15080,6 +14890,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -15101,7 +14912,6 @@
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
-					"-lflext-pd_s",
 					"-undefined",
 					dynamic_lookup,
 				);
@@ -15117,6 +14927,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -15186,7 +14997,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
 				SDKROOT = macosx;
@@ -15241,7 +15052,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "-lflext-max_s";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
 				SDKROOT = macosx;
@@ -15293,7 +15104,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-lflext-max_sd";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
 				SDKROOT = macosx;
@@ -15321,6 +15132,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					_DEBUG,
 					FLEXT_USESIMD,
+					FLEXT_INLINE,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -15331,6 +15143,8 @@
 				OTHER_CFLAGS = (
 					"-I",
 					"$(SRCROOT)/../../vendor/flext/source",
+					"-I",
+					"$(SRCROOT)/../../vendor/pd",
 				);
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = macosx;
@@ -15358,6 +15172,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
 					FLEXT_USESIMD,
+					FLEXT_INLINE,
 				);
 				GCC_STRICT_ALIASING = YES;
 				HEADER_SEARCH_PATHS = (
@@ -15369,6 +15184,8 @@
 				OTHER_CFLAGS = (
 					"-I",
 					"$(SRCROOT)/../../vendor/flext/source",
+					"-I",
+					"$(SRCROOT)/../../vendor/pd",
 				);
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = macosx;
@@ -15399,6 +15216,8 @@
 				OTHER_CFLAGS = (
 					"-I",
 					"$(SRCROOT)/../../vendor/flext/source",
+					"-I",
+					"$(SRCROOT)/../../vendor/pd",
 				);
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;

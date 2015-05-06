@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0630"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -76,6 +76,7 @@
          </ExecutionAction>
       </PostActions>
       <PathRunnable
+         runnableDebuggingMode = "0"
          FilePath = "/Applications/Max 6.1 Runtime/Max Runtime.app">
       </PathRunnable>
       <MacroExpansion>

@@ -96,7 +96,7 @@ namespace ml
     // Flext attribute setters
     void randforest::set_num_random_splits(int num_random_splits)
     {
-        grt_randforest.setNumRandomSpilts(num_random_splits);
+        grt_randforest.setNumRandomSplits(num_random_splits);
     }
     
     void randforest::set_min_samples_per_node(int min_samples_per_node)
@@ -112,7 +112,7 @@ namespace ml
     // Flext attribute getters
     void randforest::get_num_random_splits(int &num_random_splits) const
     {
-        num_random_splits = grt_randforest.getNumRandomSpilts();
+        num_random_splits = grt_randforest.getNumRandomSplits();
     }
     
     void randforest::get_min_samples_per_node(int &min_samples_per_node) const

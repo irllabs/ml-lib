@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0630"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -76,8 +76,18 @@
          </ExecutionAction>
       </PostActions>
       <PathRunnable
+         runnableDebuggingMode = "0"
          FilePath = "/Applications/Max 6.1 Runtime/Max Runtime.app">
       </PathRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7D7D9FD018F6948E00F417F6"
+            BuildableName = "ml.svm.mxo"
+            BlueprintName = "ml.svm max"
+            ReferencedContainer = "container:ml.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
             argument = "~/Documents/ml-lib/ml.svm/ml.svm.maxhelp"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0630"
    version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -41,6 +41,7 @@
       debugXPCServices = "NO"
       allowLocationSimulation = "NO">
       <PathRunnable
+         runnableDebuggingMode = "0"
          FilePath = "/Applications/Pd-extended.app/Contents/Resources/bin/pd">
       </PathRunnable>
       <MacroExpansion>
