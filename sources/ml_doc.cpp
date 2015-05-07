@@ -25,7 +25,7 @@
 namespace ml_doc
 {
     
-    std::string message_descriptor::print(const formatter &formatter) const
+    std::string message_descriptor::print(const generic_formatter &formatter) const
     {
         return formatter.format(*this);
     }
@@ -43,7 +43,7 @@ namespace ml_doc
     }
     
 
-    std::string class_descriptor::print(const formatter &formatter) const
+    std::string class_descriptor::print(const generic_formatter &formatter) const
     {
         return formatter.format(*this);
     }
@@ -72,7 +72,7 @@ namespace ml_doc
     }
     
     // doc_manager implementation
-    doc_manager& doc_manager::shared_instance(ml_doc::formatter &formatter)
+    doc_manager& doc_manager::shared_instance(generic_formatter &formatter)
     {
         static doc_manager instance(formatter);
         instance.populate();

@@ -27,14 +27,14 @@ namespace ml_doc
     class formattable_message_descriptor;
     class formattable_class_descriptor;
 
-    class formatter
+    class generic_formatter
     {
     public:
         virtual std::string format(const formattable_message_descriptor &descriptor) const = 0;
         virtual std::string format(const formattable_class_descriptor &descriptor) const = 0;
     };
     
-    class max_formatter : public formatter
+    class max_formatter : public generic_formatter
     {
     public:
         virtual std::string format(const formattable_message_descriptor &descriptor) const;

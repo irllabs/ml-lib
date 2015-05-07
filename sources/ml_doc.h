@@ -39,7 +39,7 @@ namespace ml_doc
         message_descriptor()
         : is_method(false) {};
         
-        virtual std::string print(const formatter &formatter) const;
+        virtual std::string print(const generic_formatter &formatter) const;
 
         std::string name;
         std::string desc;
@@ -57,7 +57,7 @@ namespace ml_doc
     {
 
     public:
-        virtual std::string print(const formatter &formatter) const
+        virtual std::string print(const generic_formatter &formatter) const
         {
             return formatter.format(*this);
         }
@@ -88,7 +88,7 @@ namespace ml_doc
     {
 
     public:
-        virtual std::string print(const formatter &formatter) const
+        virtual std::string print(const generic_formatter &formatter) const
         {
             return formatter.format(*this);
         }
@@ -122,7 +122,7 @@ namespace ml_doc
         }
         
         const std::vector<std::shared_ptr<message_descriptor> > &get_message_descriptors(void) const;
-        std::string print(const formatter &formatter) const;
+        std::string print(const generic_formatter &formatter) const;
         
         std::string name;
         std::string desc;
@@ -140,7 +140,7 @@ namespace ml_doc
     class doc_manager
     {
     public:
-        static doc_manager& shared_instance(formatter &formatter);
+        static doc_manager& shared_instance(generic_formatter &formatter);
         std::string doc_for_class(ml_doc::name class_name);
         
     private:
@@ -148,7 +148,7 @@ namespace ml_doc
         void add_class_descriptor(ml_doc::name name, unique_class_descriptor &descriptor);
         void init_class_descriptors(void);
 
-        doc_manager(formatter &formatter) : formatter(formatter) {};
+        doc_manager(generic_formatter &formatter) : formatter(formatter) {};
         doc_manager(doc_manager const&) = delete;
         void operator=(doc_manager const&) = delete;
 
@@ -156,8 +156,8 @@ namespace ml_doc
         
         std::map<ml_doc::name, unique_class_descriptor > descriptors;
         class_descriptor empty_descriptor;
-        formatter &formatter;
-  };
+        generic_formatter &formatter;
+    };
 }
 
 

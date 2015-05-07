@@ -51,7 +51,7 @@ namespace ml
         void error(const std::string &message) const;
  
     protected:
-        help help;
+	ml::help help;
     
     private:
         virtual const std::string get_object_name(void) const = 0;
