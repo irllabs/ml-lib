@@ -15133,6 +15133,7 @@
 					_DEBUG,
 					FLEXT_USESIMD,
 					FLEXT_INLINE,
+					FLEXT_USE_CMEM,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -15173,6 +15174,7 @@
 					NDEBUG,
 					FLEXT_USESIMD,
 					FLEXT_INLINE,
+					FLEXT_USE_CMEM,
 				);
 				GCC_STRICT_ALIASING = YES;
 				HEADER_SEARCH_PATHS = (
