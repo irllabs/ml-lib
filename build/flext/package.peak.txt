@@ -1,7 +1,0 @@
-INCPATH+=-I../../dependencies/include/GRT -I../../dependencies/include -I../../dependencies/include/flext -I../../sources
-LIBPATH+=-L/usr/local/lib
-LIBS+=-lgrt
-
-CFLAGS+=-std=c++0x -DFLEXT_SYS=2 -DFLEXT_ATTRIBUTES=1 -DFLEXT_USE_HEX_SETUP_NAME
-NAME=ml.peak
-SRCS=../../sources/ml_ml.cpp ../../sources/ml_base.cpp ../../sources/feature_extraction/ml_feature_extraction.cpp ../../sources/feature_extraction/ml_peak.cpp
