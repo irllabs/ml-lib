@@ -27,5 +27,8 @@ DerivedData
 *.lai
 *.la
 
-# Flext Build
-pd-linux
+# Built pd binaries
+*.pd_linux
+*.pd_darwin
+
+

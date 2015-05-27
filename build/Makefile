@@ -11,6 +11,7 @@ ML_PATH =  ../sources
 ML_CLASSIFICATION_PATH = $(ML_PATH)/classification
 ML_REGRESSION_PATH = $(ML_PATH)/regression
 ML_FEATURE_EXTRACTION_PATH = $(ML_PATH)/feature_extraction
+ML_INSTALL_DIR = ./build
 
 ML_BASE_SRC = 	ml_base.cpp \
 		ml_formatter.cpp \
@@ -66,8 +67,11 @@ GRT_INCLUDE = $(VENDOR_BASE)/grt/GRT
 PD_INCLUDE = $(VENDOR_BASE)/pd
 ML_INCLUDE = $(ML_PATH)
 
-CPPFLAGS = -std=c++11 -I$(FLEXT_INCLUDE) -I$(GRT_INCLUDE) -I$(PD_INCLUDE) -I$(ML_INCLUDE)
+CPPFLAGS = -fdata-sections -ffunction-sections -O2 -std=c++11 -I$(FLEXT_INCLUDE) -I$(GRT_INCLUDE) -I$(PD_INCLUDE) -I$(ML_INCLUDE)
+LDFLAGS = -Wl,--gc-sections
 FLEXT_CPPFLAGS = -DFLEXT_SYS=2 -DFLEXT_INLINE -DFLEXT_USE_CMEM -DFLEXT_ATTRIBUTES=1 -DFLEXT_USE_HEX_SETUP_NAME
+
+.PHONY: install
 
 all: $(ML_LIB_OBJ) $(ML_LIB_EXT_OBJ) $(ML_LIB_EXT_PD)
 
@@ -83,12 +87,17 @@ ml_lib: $(ML_LIB_OBJ)
 	g++ $(CPPFLAGS) -c $< -o $@
 
 %.pd_linux: %.o ml_lib grt
-	g++ -shared $(GRT_OBJ) $(ML_BASE_OBJ) $(ML_CLASSIFICATION_OBJ) $(ML_REGRESSION_OBJ) $(ML_FEATURE_EXTRACTION_OBJ) $< -o $@
+	g++ -shared $(LDFLAGS) $(GRT_OBJ) $(ML_BASE_OBJ) $(ML_CLASSIFICATION_OBJ) $(ML_REGRESSION_OBJ) $(ML_FEATURE_EXTRACTION_OBJ) $< -o $@
+	strip --strip-unneeded $@
 	
-
+install: $(ML_LIB_EXT_PD)
+	install -d $(ML_INSTALL_DIR)
+	install -m 644 $(ML_LIB_EXT_PD) $(ML_INSTALL_DIR)
 grt-clean:
-	rm $(GRT_OBJ)
+	rm -f $(GRT_OBJ)
 
 pd-clean:
-	rm $(ML_CLASSIFICATION_EXT_PD)
+	rm -f $(ML_CLASSIFICATION_EXT_PD)
+	rm -f $(ML_CLASSIFICATION_EXT_OBJ)
 
+clean: grt-clean pd-clean
