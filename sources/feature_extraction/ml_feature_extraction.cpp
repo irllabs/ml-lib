@@ -1,38 +1,48 @@
-//
-//  ml_feature_extraction.cpp
-//  ml
-//
-//  Created by Jamie Bullock on 06/08/2014.
-//
-//
+/*
+ * ml-lib, a machine learning library for Max and Pure Data
+ * Copyright (C) 2013 Carnegie Mellon University
+ *
+ * This program is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation, either version 2 of the License, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #include "ml_feature_extraction.h"
 
 #include <sstream>
 
-// TODO: we need to override the method help becase ml_feature_extraction subclasses don't support most of the standard ml methods
+// TODO: we need to override the method help becase feature_extraction subclasses don't support most of the standard ml methods
 
 namespace ml
 {
-    ml_feature_extraction::ml_feature_extraction()
+    feature_extraction::feature_extraction()
     {
         help.append_attributes(attribute_help);
     }
     
     // Flext attribute getters
-    void ml_feature_extraction::get_num_input_dimensions(int &num_input_dimensions) const
+    void feature_extraction::get_num_input_dimensions(int &num_input_dimensions) const
     {
 //        GRT::FeatureExtraction &feature_extractor = get_FeatureExtraction_instance();
 //        num_input_dimensions = feature_extractor.getNumInputDimensions();
     }
     
-    void ml_feature_extraction::get_num_output_dimensions(int &num_output_dimensions) const
+    void feature_extraction::get_num_output_dimensions(int &num_output_dimensions) const
     {
 //        GRT::FeatureExtraction &feature_extractor = get_FeatureExtraction_instance();
 //        num_output_dimensions = feature_extractor.getNumOutputDimensions();
     }
     
-    void ml_feature_extraction::map(int argc, const t_atom *argv)
+    void feature_extraction::map(int argc, const t_atom *argv)
     {
         GRT::VectorDouble input(argc);
         GRT::FeatureExtraction &feature_extractor = get_FeatureExtraction_instance();
@@ -84,17 +94,17 @@ namespace ml
     }
     
     // pure virtual method implementation
-    GRT::MLBase &ml_feature_extraction::get_MLBase_instance()
+    GRT::MLBase &feature_extraction::get_MLBase_instance()
     {
         return get_FeatureExtraction_instance();
     }
     
-    const GRT::MLBase &ml_feature_extraction::get_MLBase_instance() const
+    const GRT::MLBase &feature_extraction::get_MLBase_instance() const
     {
         return get_FeatureExtraction_instance();
     }
     
-    const std::string ml_feature_extraction::attribute_help =
+    const std::string feature_extraction::attribute_help =
     "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' feature_extraction results below the NULL-rejection threshold will be discarded (default 1)\n"
     "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n";
     

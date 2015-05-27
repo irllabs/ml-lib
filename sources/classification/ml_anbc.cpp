@@ -22,14 +22,14 @@
 
 namespace ml
 {
-    const std::string ml_object_name = "ml.anbc";
+    const std::string object_name = "ml.anbc";
    
-    class ml_anbc : ml_classification
+    class anbc : classification
     {
-        FLEXT_HEADER_S(ml_anbc, ml_classification, setup);
+        FLEXT_HEADER_S(anbc, classification, setup);
         
     public:
-        ml_anbc()
+        anbc()
         {
             post("Adaptive Naive Bayes classifier based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
@@ -43,7 +43,7 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "weights", set_weights);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
@@ -58,16 +58,16 @@ namespace ml
         FLEXT_CALLSET_V(set_weights);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         // Instance variables
-        GRT::ANBC anbc;
+        GRT::ANBC grt_anbc;
         
         static const std::string attribute_help;
     };
     
     // Flext attribute setters
-    void ml_anbc::set_weights(const AtomList &weights)
+    void anbc::set_weights(const AtomList &weights)
     {
         // weights are per vector element per class so each class has a weight vector of length N where N is the input vector size
         GRT::ClassificationData weightsClassificationData;
@@ -75,7 +75,7 @@ namespace ml
         
         if (weights.Count() == 0)
         {
-            anbc.clearWeights();
+            grt_anbc.clearWeights();
             return;
         }
         
@@ -89,28 +89,28 @@ namespace ml
         }
         
         weightsClassificationData.addSample(classLabel, weightsVector);
-        anbc.setWeights(weightsClassificationData);
+        grt_anbc.setWeights(weightsClassificationData);
     }
     
     // Implement pure virtual methods
-    GRT::Classifier &ml_anbc::get_Classifier_instance()
+    GRT::Classifier &anbc::get_Classifier_instance()
     {
-        return anbc;
+        return grt_anbc;
     }
     
-    const GRT::Classifier &ml_anbc::get_Classifier_instance() const
+    const GRT::Classifier &anbc::get_Classifier_instance() const
     {
-        return anbc;
+        return grt_anbc;
     }
     
-    const std::string ml_anbc::attribute_help = "weights:\tvector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights";
+    const std::string anbc::attribute_help = "weights:\tvector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights";
     
-    typedef class ml_anbc ml0x2eanbc;
+    typedef class anbc ml0x2eanbc;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_anbc);
+    FLEXT_LIB(object_name.c_str(), anbc);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2eanbc);
+    FLEXT_NEW(object_name.c_str(), ml0x2eanbc);
 #endif
     
 } //namespace ml

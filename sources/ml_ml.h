@@ -16,8 +16,9 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ml_ml_h
-#define ml_ml_h
+
+#ifndef ml_ml_h__
+#define ml_ml_h__
 
 #include "ml_base.h"
 
@@ -30,18 +31,9 @@
 
 namespace ml
 {
-    typedef enum ml_data_type_
-    {
-        LABELLED_CLASSIFICATION,
-        LABELLED_REGRESSION,
-        LABELLED_TIME_SERIES_CLASSIFICATION,
-        UNLABELLED_CLASSIFICATION,
-        MLP_NUM_DATA_TYPES
-    }
-    ml_data_type;
     
     class ml:
-    public ml_base
+    public base
     {
         FLEXT_HEADER_S(ml, flext_base, setup);
         
@@ -49,6 +41,16 @@ namespace ml
         ml();
         
     protected:
+        
+        enum data_type
+        {
+            LABELLED_CLASSIFICATION,
+            LABELLED_REGRESSION,
+            LABELLED_TIME_SERIES_CLASSIFICATION,
+            UNLABELLED_CLASSIFICATION,
+            NUM_DATA_TYPES
+        };
+        
         static void setup(t_classid c);
         
         virtual void add(int argc, const t_atom *argv);
@@ -62,8 +64,8 @@ namespace ml
         void record(bool state);
         void any(const t_symbol *s, int argc, const t_atom *argv);
         
-        ml_data_type get_data_type() const;
-        void set_data_type(ml_data_type data_type);
+        data_type get_data_type() const;
+        void set_data_type(data_type type);
         
         virtual GRT::MLBase &get_MLBase_instance() = 0;
         virtual const GRT::MLBase &get_MLBase_instance() const = 0;
@@ -95,7 +97,10 @@ namespace ml
         static const t_symbol *s_probs;
         static const t_symbol *s_error;
         
+        const data_type default_data_type = LABELLED_CLASSIFICATION;
+        
     private:
+        
         void record_(bool state);
         void set_num_inputs(uint8_t num_inputs);
         
@@ -114,13 +119,12 @@ namespace ml
         FLEXT_CALLVAR_B(get_scaling, set_scaling);
         FLEXT_CALLVAR_B(get_probs, set_probs);
         
-        ml_data_type data_type;
+        data_type data_type_;
         
         static const std::string method_help;
         static const std::string attribute_help;
     };
 
-    const ml_data_type default_data_type = LABELLED_CLASSIFICATION;
     const bool default_scaling = true;
     const GRT::UINT default_num_input_dimensions = 2;
     const GRT::UINT default_num_output_dimensions = 1;

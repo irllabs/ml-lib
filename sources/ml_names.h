@@ -16,46 +16,38 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-#ifndef ml_base_h__
-#define ml_base_h__
-
-#include "flext.h"
+#ifndef ml_names_h__
+#define ml_names_h__
 
 #include <string>
+#include <map>
 
-#define VERSION "0.16.1"
-#define NAME "ml-lib"
+namespace ml_doc {
 
-namespace ml
-{
-    class help
+    enum class name 
     {
-    public:        
-        void append_methods(const std::string &methods) { this->methods.append(methods); }
-        void append_attributes(const std::string &attributes) { this->attributes.append(attributes); }
-        
-        std::string full_message(void) const;
-        
-    private:
-        std::string methods;
-        std::string attributes;
+        peak,
+        minmax,
+        zerox,
+        svm,
+        adaboost,
+        anbc,
+        dtw,
+        hmm,
+        softmax,
+        randforest,
+        mindist,
+        lda,
+        knn,
+        gmm,
+        dtree,
+        linreg,
+        logreg,
+        mlp
     };
-    
-    
-    class base:
-    public flext_base
-    {
-    public:
-        void post(const std::string &message) const;
-        void error(const std::string &message) const;
- 
-    protected:
-	ml::help help;
-    
-    private:
-        virtual const std::string get_object_name(void) const = 0;
-    };
+
+    extern std::map<name, std::string> name_lookup;
+
 }
 
-#endif
+#endif /* defined(ml_names_h__) */

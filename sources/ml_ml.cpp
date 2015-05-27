@@ -48,7 +48,7 @@ namespace ml
         }
         
         bool success = false;
-        const ml_data_type data_type = get_data_type();
+        const data_type data_type = get_data_type();
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
@@ -114,7 +114,7 @@ namespace ml
         
         GRT::UINT numInputDimensions = 0;
         GRT::UINT numOutputDimensions = 1;
-        const ml_data_type data_type = get_data_type();
+        const data_type data_type = get_data_type();
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
@@ -218,7 +218,7 @@ namespace ml
     
     void ml::record_(bool state)
     {
-        const ml_data_type data_type = get_data_type();
+        const data_type data_type = get_data_type();
         
         if (data_type != LABELLED_TIME_SERIES_CLASSIFICATION)
         {
@@ -248,7 +248,7 @@ namespace ml
         bool success = false;
         t_atom a_success;
         SetInt(a_success, success);
-        const ml_data_type data_type = get_data_type();
+        const data_type data_type = get_data_type();
         std::string file_path = get_symbol_as_string(path);
         const GRT::MLBase &mlBase = get_MLBase_instance();
         
@@ -403,46 +403,46 @@ namespace ml
         FLEXT_CADDMETHOD_(c, 0, "help", usage);
     }
     
-    void ml::set_data_type(ml_data_type data_type)
+    void ml::set_data_type(data_type type)
     {
-        if (data_type > MLP_NUM_DATA_TYPES)
+        if (type > NUM_DATA_TYPES)
         {
-            error("invalid data type: %d" + std::to_string(data_type));
+            error("invalid data type: %d" + std::to_string(type));
             return;
         }
-        this->data_type = data_type;
+        this->data_type_ = type;
     }
     
-    ml_data_type ml::get_data_type() const
+    ml::data_type ml::get_data_type() const
     {
-        return data_type;
+        return data_type_;
     }
     
     
 #ifdef BUILD_AS_LIBRARY
     static void main()
     {
-        flext::post("%s - machine learning library for Max and Pure Data", ML_NAME);
-        flext::post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
+        flext::post("%s - machine learning library for Max and Pure Data", NAME);
+        flext::post("version " VERSION " (c) 2013 Carnegie Mellon University");
         
-        FLEXT_SETUP(ml_svm);
-        FLEXT_SETUP(ml_adaboost);
-        FLEXT_SETUP(ml_dtw);
-        FLEXT_SETUP(ml_hmm);
-        FLEXT_SETUP(ml_mlp);
-        FLEXT_SETUP(ml_linreg);
-        FLEXT_SETUP(ml_logreg);
-        FLEXT_SETUP(ml_peak);
-        FLEXT_SETUP(ml_minmax);
-        FLEXT_SETUP(ml_anbc);
-        FLEXT_SETUP(ml_softmax);
-        FLEXT_SETUP(ml_randforest);
-        FLEXT_SETUP(ml_mindist);
-//        FLEXT_SETUP(ml_lda);
-        FLEXT_SETUP(ml_knn);
-        FLEXT_SETUP(ml_gmm);
-        FLEXT_SETUP(ml_dtree);
-        FLEXT_SETUP(ml_zerox);
+        FLEXT_SETUP(svm);
+        FLEXT_SETUP(adaboost);
+        FLEXT_SETUP(dtw);
+        FLEXT_SETUP(hmm);
+        FLEXT_SETUP(mlp);
+        FLEXT_SETUP(linreg);
+        FLEXT_SETUP(logreg);
+        FLEXT_SETUP(peak);
+        FLEXT_SETUP(minmax);
+        FLEXT_SETUP(anbc);
+        FLEXT_SETUP(softmax);
+        FLEXT_SETUP(randforest);
+        FLEXT_SETUP(mindist);
+//        FLEXT_SETUP(lda);
+        FLEXT_SETUP(knn);
+        FLEXT_SETUP(gmm);
+        FLEXT_SETUP(dtree);
+        FLEXT_SETUP(zerox);
     }
 #endif
     

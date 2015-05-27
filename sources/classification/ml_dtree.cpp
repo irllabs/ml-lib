@@ -20,14 +20,14 @@
 
 namespace ml
 {
-    const std::string ml_object_name = "ml.dtree";
+    const std::string object_name = "ml.dtree";
     
-    class ml_dtree : ml_classification
+    class dtree : classification
     {
-        FLEXT_HEADER_S(ml_dtree, ml_classification, setup);
+        FLEXT_HEADER_S(dtree, classification, setup);
         
     public:
-        ml_dtree()
+        dtree()
         {
             post("Decision Tree learning algorithm based on the GRT library version %s" + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
@@ -53,7 +53,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "remove_features_at_each_split", get_remove_features_at_each_split);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
                 
         // Flext attribute setters
@@ -85,17 +85,17 @@ namespace ml
         FLEXT_CALLVAR_B(get_remove_features_at_each_split, set_remove_features_at_each_split);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
                 
-        GRT::DecisionTree dtree;
+        GRT::DecisionTree grt_dtree;
         
         static const std::string attribute_help;
     };
     
     // Flext attribute setters
-    void ml_dtree::set_training_mode(int training_mode)
+    void dtree::set_training_mode(int training_mode)
     {
-        bool success = dtree.setTrainingMode(training_mode);
+        bool success = grt_dtree.setTrainingMode(training_mode);
         
         if (success == false)
         {
@@ -103,64 +103,64 @@ namespace ml
         }
     }
     
-    void ml_dtree::set_num_splitting_steps(int num_splitting_steps)
+    void dtree::set_num_splitting_steps(int num_splitting_steps)
     {
-        dtree.setNumSplittingSteps(num_splitting_steps);
+        grt_dtree.setNumSplittingSteps(num_splitting_steps);
     }
 
-    void ml_dtree::set_min_samples_per_node(int min_samples_per_node)
+    void dtree::set_min_samples_per_node(int min_samples_per_node)
     {
-        dtree.setMinNumSamplesPerNode(min_samples_per_node);
+        grt_dtree.setMinNumSamplesPerNode(min_samples_per_node);
     }
     
-    void ml_dtree::set_max_depth(int max_depth)
+    void dtree::set_max_depth(int max_depth)
     {
-        dtree.setMaxDepth(max_depth);
+        grt_dtree.setMaxDepth(max_depth);
     }
 
-    void ml_dtree::set_remove_features_at_each_split(bool remove_features_at_each_split)
+    void dtree::set_remove_features_at_each_split(bool remove_features_at_each_split)
     {
-        dtree.setRemoveFeaturesAtEachSpilt(remove_features_at_each_split);
+        grt_dtree.setRemoveFeaturesAtEachSpilt(remove_features_at_each_split);
     }
     
     // Flext attribute getters
-    void ml_dtree::get_training_mode(int &training_mode) const
+    void dtree::get_training_mode(int &training_mode) const
     {
-        training_mode = dtree.getTrainingMode();
+        training_mode = grt_dtree.getTrainingMode();
     }
 
-    void ml_dtree::get_num_splitting_steps(int &num_splitting_steps) const
+    void dtree::get_num_splitting_steps(int &num_splitting_steps) const
     {
-        num_splitting_steps = dtree.getNumSplittingSteps();
+        num_splitting_steps = grt_dtree.getNumSplittingSteps();
     }
 
-    void ml_dtree::get_min_samples_per_node(int &min_samples_per_node) const
+    void dtree::get_min_samples_per_node(int &min_samples_per_node) const
     {
-        min_samples_per_node = dtree.getMinNumSamplesPerNode();
+        min_samples_per_node = grt_dtree.getMinNumSamplesPerNode();
     }
     
-    void ml_dtree::get_max_depth(int &max_depth) const
+    void dtree::get_max_depth(int &max_depth) const
     {
-        max_depth = dtree.getMaxDepth();
+        max_depth = grt_dtree.getMaxDepth();
     }
     
-    void ml_dtree::get_remove_features_at_each_split(bool &remove_features_at_each_split) const
+    void dtree::get_remove_features_at_each_split(bool &remove_features_at_each_split) const
     {
-        remove_features_at_each_split = dtree.getRemoveFeaturesAtEachSpilt();
+        remove_features_at_each_split = grt_dtree.getRemoveFeaturesAtEachSpilt();
     }
 
     // Implement pure virtual methods
-    GRT::Classifier &ml_dtree::get_Classifier_instance()
+    GRT::Classifier &dtree::get_Classifier_instance()
     {
-        return dtree;
+        return grt_dtree;
     }
     
-    const GRT::Classifier &ml_dtree::get_Classifier_instance() const
+    const GRT::Classifier &dtree::get_Classifier_instance() const
     {
-        return dtree;
+        return grt_dtree;
     }
     
-    const std::string ml_dtree::attribute_help =
+    const std::string dtree::attribute_help =
     "training_mode:\tinteger (0 = BEST_ITERATIVE_SPILT, 1=BEST_RANDOM_SPLIT) sets the training mode (default 0)\n"
     "num_splitting_steps:\tinteger (n > 0) Sets the number of steps that will be used to search for the best spliting value for each node (default 100)\n"
     "min_samples_per_node:\tinteger (n > 0) sets the minimum number of samples that are allowed per node, if the number of samples at a node is below this value then the node will automatically become a leaf node (default 5)\n"
@@ -168,12 +168,12 @@ namespace ml
     "remove_features_at_each_split:\tbool (0 or 1) sets if a feature is removed at each spilt so it can not be used again (default 0)\n";
 
     
-    typedef class ml_dtree ml0x2edtree;
+    typedef class dtree ml0x2edtree;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_dtree);
+    FLEXT_LIB(object_name.c_str(), dtree);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2edtree);
+    FLEXT_NEW(object_name.c_str(), ml0x2edtree);
 #endif
     
 } //namespace ml

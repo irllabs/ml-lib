@@ -22,14 +22,14 @@
 
 namespace ml
 {
-    const std::string ml_object_name = "ml.peak";
+    const std::string object_name = "ml.peak";
     
-    class ml_peak : ml_base
+    class peak : base
     {
-        FLEXT_HEADER_S(ml_peak, ml_base, setup);
+        FLEXT_HEADER_S(peak, base, setup);
         
     public:
-        ml_peak()
+        peak()
         {
             post("Peak Detection based on the GRT library version " + GRT::GRTBase::getGRTRevison());
             FLEXT_ADDMETHOD(0, update);
@@ -49,7 +49,7 @@ namespace ml
             FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
 //            FLEXT_CADDMETHOD_(c, 0, "peaks", peaks);
             
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Methods
@@ -79,7 +79,7 @@ namespace ml
         FLEXT_CALLSET_I(set_search_window_size);
 
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::PeakDetection peakDetection;
         
@@ -89,7 +89,7 @@ namespace ml
     };
     
     // Flext attribute setters
-//    void ml_peak::set_low_pass_filter_size(int low_pass_filter_size)
+//    void peak::set_low_pass_filter_size(int low_pass_filter_size)
 //    {
 //        bool success = peakDetection.setLowPassFilterSize(low_pass_filter_size);
 //        
@@ -99,7 +99,7 @@ namespace ml
 //        }
 //    }
     
-    void ml_peak::set_search_window_size(int search_window_size)
+    void peak::set_search_window_size(int search_window_size)
     {
         bool success = peakDetection.setSearchWindowSize(search_window_size);
 
@@ -113,7 +113,7 @@ namespace ml
     // Flext attribute getters
     
     // Methods
-    void ml_peak::peaks(int argc, t_atom *argv)
+    void peak::peaks(int argc, t_atom *argv)
     {
         AtomList peaks;
         bool peakFound = false;
@@ -158,7 +158,7 @@ namespace ml
         }
     }
     
-    void ml_peak::update(float f)
+    void peak::update(float f)
     {
         // TODO: update this when we the GRT code is complete
 //        error("peak detection currently not fully implemented in GRT");
@@ -176,7 +176,7 @@ namespace ml
         }
     }
     
-    void ml_peak::reset()
+    void peak::reset()
     {
         bool success = peakDetection.reset();
         
@@ -186,7 +186,7 @@ namespace ml
         }
     }
     
-    void ml_peak::timeout()
+    void peak::timeout()
     {
         // TODO: update this when we the GRT code is complete
         error("peak detection currently not fully implemented in GRT");
@@ -201,20 +201,20 @@ namespace ml
         }
     }
 
-    const std::string ml_peak::attribute_help =
+    const std::string peak::attribute_help =
     "search_window_size: an integer setting the search window size in values (default: 5)\n";
-    const std::string ml_peak::method_help =
+    const std::string peak::method_help =
     "float:\ta floating point value to the inlet updates the current value of the peak detector\n"
     "reset:\treset the peak detector\n"
     "timeout:\t (see GRT documentation)\n"
     "help:\tpost this usage statement to the console\n";
     
-    typedef class ml_peak ml0x2epeak;
+    typedef class peak ml0x2epeak;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_peak);
+    FLEXT_LIB(object_name.c_str(), peak);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2epeak);
+    FLEXT_NEW(object_name.c_str(), ml0x2epeak);
 #endif
     
 } //namespace ml

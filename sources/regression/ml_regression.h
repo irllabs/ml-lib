@@ -6,19 +6,19 @@
 //
 //
 
-#ifndef ml_ml_regression_h
-#define ml_ml_regression_h
+#ifndef ml_regression_h__
+#define ml_regression_h__
 
 #include "ml_ml.h"
 
 namespace ml
 {
-    class ml_regression : public ml
+    class regression : public ml
     {
-        FLEXT_HEADER_S(ml_regression, ml, setup);
+        FLEXT_HEADER_S(regression, ml, setup);
         
     public:
-        ml_regression();
+        regression();
         
     protected:
         static void setup(t_classid c)

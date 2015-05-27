@@ -17,45 +17,32 @@
  */
 
 
-#ifndef ml_base_h__
-#define ml_base_h__
-
-#include "flext.h"
+#ifndef ml_formatter__
+#define ml_formatter__
 
 #include <string>
 
-#define VERSION "0.16.1"
-#define NAME "ml-lib"
-
-namespace ml
+namespace ml_doc
 {
-    class help
-    {
-    public:        
-        void append_methods(const std::string &methods) { this->methods.append(methods); }
-        void append_attributes(const std::string &attributes) { this->attributes.append(attributes); }
-        
-        std::string full_message(void) const;
-        
-    private:
-        std::string methods;
-        std::string attributes;
-    };
-    
-    
-    class base:
-    public flext_base
+    class formattable_message_descriptor;
+    class formattable_class_descriptor;
+
+    class generic_formatter
     {
     public:
-        void post(const std::string &message) const;
-        void error(const std::string &message) const;
- 
-    protected:
-	ml::help help;
-    
-    private:
-        virtual const std::string get_object_name(void) const = 0;
+        virtual std::string format(const formattable_message_descriptor &descriptor) const = 0;
+        virtual std::string format(const formattable_class_descriptor &descriptor) const = 0;
     };
+    
+    class max_formatter : public generic_formatter
+    {
+    public:
+        virtual std::string format(const formattable_message_descriptor &descriptor) const;
+        virtual std::string format(const formattable_class_descriptor &descriptor) const;
+    };
+    
 }
 
-#endif
+
+
+#endif /* defined(ml_formatter__) */

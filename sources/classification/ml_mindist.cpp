@@ -20,14 +20,14 @@
 
 namespace ml
 {
-    const std::string ml_object_name = "ml.mindist";
+    const std::string object_name = "ml.mindist";
     
-    class ml_mindist : ml_classification
+    class mindist : classification
     {
-        FLEXT_HEADER_S(ml_mindist, ml_classification, setup);
+        FLEXT_HEADER_S(mindist, classification, setup);
         
     public:
-        ml_mindist()
+        mindist()
         {
             post("MinDist classifier algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(default_scaling);
@@ -44,7 +44,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "num_clusters", get_num_clusters);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_object_name.c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
@@ -62,45 +62,45 @@ namespace ml
         FLEXT_CALLVAR_I(get_num_clusters, set_num_clusters);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return ml_object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
-        GRT::MinDist mindist;
+        GRT::MinDist grt_mindist;
         
         static const std::string attribute_help;
     };
     
     
     // Flext attribute setters
-    void ml_mindist::set_num_clusters(int num_clusters)
+    void mindist::set_num_clusters(int num_clusters)
     {
-        mindist.setNumClusters(num_clusters);
+        grt_mindist.setNumClusters(num_clusters);
     }
     
     // Flext attribute getters
-    void ml_mindist::get_num_clusters(int &num_clusters) const
+    void mindist::get_num_clusters(int &num_clusters) const
     {
         error("function not implemented");
     }
         
     // Implement pure virtual methods
-    GRT::Classifier &ml_mindist::get_Classifier_instance()
+    GRT::Classifier &mindist::get_Classifier_instance()
     {
-        return mindist;
+        return grt_mindist;
     }
     
-    const GRT::Classifier &ml_mindist::get_Classifier_instance() const
+    const GRT::Classifier &mindist::get_Classifier_instance() const
     {
-        return mindist;
+        return grt_mindist;
     }
     
-    const std::string ml_mindist::attribute_help = "num_clusters:\tinteger (n > 0) sets how many clusters each model will try to find during the training phase (default 10)";
+    const std::string mindist::attribute_help = "num_clusters:\tinteger (n > 0) sets how many clusters each model will try to find during the training phase (default 10)";
     
-    typedef class ml_mindist ml0x2emindist;
+    typedef class mindist ml0x2emindist;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_object_name.c_str(), ml_mindist);
+    FLEXT_LIB(object_name.c_str(), mindist);
 #else
-    FLEXT_NEW(ml_object_name.c_str(), ml0x2emindist);
+    FLEXT_NEW(object_name.c_str(), ml0x2emindist);
 #endif
 
     
