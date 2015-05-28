@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    static const std::string object_name = "ml.softmax";
+    static const ml_doc::name object_name = ml_doc::name::softmax;
     
     class softmax : classification
     {
@@ -37,7 +37,7 @@ namespace ml
         static void setup(t_classid c)
         {
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         // Pure virtual method implementations
@@ -46,7 +46,7 @@ namespace ml
         
     private:
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         GRT::Softmax grt_softmax;
     };
@@ -65,9 +65,9 @@ namespace ml
     typedef class softmax ml0x2esoftmax;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), softmax);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), softmax);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2esoftmax);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2esoftmax);
 #endif
     
 } //namespace ml

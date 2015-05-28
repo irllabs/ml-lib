@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    const std::string object_name = "ml.mindist";
+    const ml_doc::name object_name = ml_doc::name::mindist;
     
     class mindist : classification
     {
@@ -44,7 +44,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "num_clusters", get_num_clusters);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         // Flext attribute setters
@@ -62,7 +62,7 @@ namespace ml
         FLEXT_CALLVAR_I(get_num_clusters, set_num_clusters);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         GRT::MinDist grt_mindist;
         
@@ -98,9 +98,9 @@ namespace ml
     typedef class mindist ml0x2emindist;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), mindist);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), mindist);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2emindist);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2emindist);
 #endif
 
     

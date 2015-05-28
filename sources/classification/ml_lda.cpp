@@ -23,7 +23,7 @@
 
 namespace ml
 {
-    static const std::string object_name = "ml.lda";
+    static const ml_doc::name object_name = ml_doc::name::lda;
     
     // Utility functions
     
@@ -55,7 +55,7 @@ namespace ml
             // Flext method messages
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         // Methods
@@ -101,9 +101,9 @@ namespace ml
     typedef class lda ml0x2elda;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), lda);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), lda);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2elda);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2elda);
 #endif
 
     

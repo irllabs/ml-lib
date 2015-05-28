@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    const std::string object_name = "ml.randforest";
+    const ml_doc::name object_name = ml_doc::name::randforest;
     const std::string k_attribute_help =
     "num_random_splits:\tinteger (n > 0) sets the number of steps that will be used to search for the best spliting value for each node. (default 100)\n"
     "min_samples_per_node:\tinteger (n > 0) Sets the minimum number of samples that are allowed per node (default 5)\n"
@@ -60,7 +60,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "max_depth", get_max_depth);
 
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         // Flext attribute setters
@@ -85,7 +85,7 @@ namespace ml
         FLEXT_CALLVAR_I(get_max_depth, set_max_depth);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         GRT::RandomForests grt_randforest;
         
@@ -144,9 +144,9 @@ namespace ml
     typedef class randforest ml0x2erandforest;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), randforest);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), randforest);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2erandforest);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2erandforest);
 #endif
 
     

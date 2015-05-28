@@ -21,8 +21,8 @@
 namespace ml
 {
     const GRT::UINT default_num_hidden_neurons = 2;
-    const std::string object_name = "ml.mlp";
-    
+    const ml_doc::name object_name = ml_doc::name::mlp;
+        
     typedef enum mlp_layer_
     {
         LAYER_INPUT,
@@ -102,7 +102,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "validation_set_size", get_validation_set_size);
             FLEXT_CADDATTR_GET(c, "randomize_training_order", get_randomise_training_order);
        
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         void clear();
@@ -183,7 +183,7 @@ namespace ml
         FLEXT_CALLVAR_B(get_randomise_training_order, set_randomise_training_order);
 
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         GRT::MLP grt_mlp;
         GRT::UINT num_hidden_neurons;
@@ -768,9 +768,9 @@ namespace ml
     typedef class mlp ml0x2emlp;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), mlp);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), mlp);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2emlp);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2emlp);
 #endif
     
 } //namespace ml

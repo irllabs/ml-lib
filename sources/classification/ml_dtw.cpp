@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    const std::string object_name = "ml.dtw";
+    const ml_doc::name object_name = ml_doc::name::dtw;
     
     class dtw : classification
     {
@@ -54,7 +54,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "enable_z_normalization", get_enable_z_normalization);
             FLEXT_CADDATTR_GET(c, "enable_trim_training_data", get_enable_trim_training_data);
             
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
                 
         // Flext attribute setters
@@ -230,9 +230,9 @@ namespace ml
     typedef class dtw ml0x2edtw;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), dtw);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), dtw);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2edtw);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2edtw);
 #endif
     
 } //namespace ml

@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const std::string object_name = "ml.peak";
+    const ml_doc::name object_name = ml_doc::name::peak;
     
     class peak : base
     {
@@ -49,7 +49,7 @@ namespace ml
             FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
 //            FLEXT_CADDMETHOD_(c, 0, "peaks", peaks);
             
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         // Methods
@@ -79,7 +79,7 @@ namespace ml
         FLEXT_CALLSET_I(set_search_window_size);
 
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         GRT::PeakDetection peakDetection;
         
@@ -212,9 +212,9 @@ namespace ml
     typedef class peak ml0x2epeak;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), peak);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), peak);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2epeak);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2epeak);
 #endif
     
 } //namespace ml

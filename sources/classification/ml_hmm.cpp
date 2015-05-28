@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    const std::string object_name = "ml.hmm";
+    const ml_doc::name object_name = ml_doc::name::hmm;
     
     class hmm : classification
     {
@@ -55,7 +55,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
 //            FLEXT_CADDATTR_GET(c, "min_improvement", get_min_improvement);
             
-            DefineHelp(c,object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         // Flext attribute setters
@@ -240,9 +240,9 @@ namespace ml
     typedef class hmm ml0x2ehmm;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), hmm);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), hmm);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2ehmm);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2ehmm);
 #endif
     
 } //namespace ml

@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    const std::string object_name = "ml.dtree";
+    const ml_doc::name object_name = ml_doc::name::dtree;
     
     class dtree : classification
     {
@@ -53,7 +53,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "remove_features_at_each_split", get_remove_features_at_each_split);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
                 
         // Flext attribute setters
@@ -85,7 +85,7 @@ namespace ml
         FLEXT_CALLVAR_B(get_remove_features_at_each_split, set_remove_features_at_each_split);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
                 
         GRT::DecisionTree grt_dtree;
         
@@ -171,9 +171,9 @@ namespace ml
     typedef class dtree ml0x2edtree;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), dtree);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), dtree);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2edtree);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2edtree);
 #endif
     
 } //namespace ml

@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    const std::string object_name = "ml.gmm";
+    const ml_doc::name object_name = ml_doc::name::gmm;
     
     class gmm : classification
     {
@@ -44,7 +44,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "num_mixture_models", get_num_mixture_models);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         // Flext attribute setters
@@ -62,7 +62,7 @@ namespace ml
         FLEXT_CALLVAR_I(get_num_mixture_models, set_num_mixture_models);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         GRT::GMM grt_gmm;
         
@@ -99,9 +99,9 @@ namespace ml
     typedef class gmm ml0x2egmm;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), gmm);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), gmm);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2egmm);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2egmm);
 #endif
 
     

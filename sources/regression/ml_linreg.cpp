@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    static const std::string object_name = "ml.linreg";
+    static const ml_doc::name object_name = ml_doc::name::linreg;
     
     class linreg : regression
     {
@@ -36,7 +36,7 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         // Implement pure virtual methods
@@ -65,9 +65,9 @@ namespace ml
     typedef class linreg ml0x2elinreg;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), linreg);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), linreg);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2elinreg);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2elinreg);
 #endif
     
 } //namespace ml

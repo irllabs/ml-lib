@@ -54,13 +54,18 @@ namespace ml
         
         while(std::getline(message_lines, line, '\n'))
         {
-            post_prefixed_message(get_object_name(), line, flext::post);
+            post_prefixed_message(get_object_name_string(), line, flext::post);
         }
     }
     
     void base::error(const std::string &message) const
     {
-        post_prefixed_message(get_object_name(), message, flext::error);
+        post_prefixed_message(get_object_name_string(), message, flext::error);
+    }
+    
+    const std::string base::get_object_name_string() const
+    {
+        return ml_doc::name_lookup[get_object_name()];
     }
     
     // Utility function definitions

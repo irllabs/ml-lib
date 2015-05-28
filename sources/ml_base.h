@@ -21,6 +21,8 @@
 #define ml_base_h__
 
 #include "flext.h"
+#include "ml_doc.h"
+#include "ml_names.h"
 
 #include <string>
 
@@ -51,10 +53,11 @@ namespace ml
         void error(const std::string &message) const;
  
     protected:
-	ml::help help;
+        ml::help help;
+        const std::string get_object_name_string(void) const;
     
     private:
-        virtual const std::string get_object_name(void) const = 0;
+        virtual const ml_doc::name get_object_name(void) const = 0;
     };
 }
 

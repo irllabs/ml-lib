@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const std::string object_name = "ml.anbc";
+    const ml_doc::name object_name = ml_doc::name::anbc;
    
     class anbc : classification
     {
@@ -43,7 +43,7 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "weights", set_weights);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, object_name.c_str());
+            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
         }
         
         // Flext attribute setters
@@ -58,7 +58,7 @@ namespace ml
         FLEXT_CALLSET_V(set_weights);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         // Instance variables
         GRT::ANBC grt_anbc;
@@ -108,9 +108,9 @@ namespace ml
     typedef class anbc ml0x2eanbc;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), anbc);
+    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), anbc);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2eanbc);
+    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2eanbc);
 #endif
     
 } //namespace ml
