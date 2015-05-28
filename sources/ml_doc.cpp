@@ -75,7 +75,6 @@ namespace ml_doc
     doc_manager& doc_manager::shared_instance(generic_formatter &formatter)
     {
         static doc_manager instance(formatter);
-        instance.populate();
         return instance;
     }
 

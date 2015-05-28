@@ -147,8 +147,8 @@ namespace ml_doc
         typedef std::unique_ptr<class_descriptor> unique_class_descriptor;
         void add_class_descriptor(ml_doc::name name, unique_class_descriptor &descriptor);
         void init_class_descriptors(void);
-
-        doc_manager(generic_formatter &formatter) : formatter(formatter) {};
+ 
+        doc_manager(generic_formatter &formatter) : formatter(formatter) { populate(); };
         doc_manager(doc_manager const&) = delete;
         void operator=(doc_manager const&) = delete;
 
