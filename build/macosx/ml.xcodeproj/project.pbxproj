@@ -10854,7 +10854,7 @@
 		7D551AA5190FE9CE008FF361 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -10888,7 +10888,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
@@ -10909,7 +10909,7 @@
 		7D551AA6190FE9CE008FF361 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -10943,7 +10943,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
@@ -10965,7 +10965,7 @@
 		7D551AA7190FE9CE008FF361 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -10994,7 +10994,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -11015,7 +11015,7 @@
 		7D551AB5190FE9F1008FF361 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -11049,7 +11049,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
@@ -11070,7 +11070,7 @@
 		7D551AB6190FE9F1008FF361 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -11104,7 +11104,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
@@ -11126,7 +11126,7 @@
 		7D551AB7190FE9F1008FF361 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -11155,7 +11155,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -11176,7 +11176,7 @@
 		7D551AC5190FEA0F008FF361 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -11210,7 +11210,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
@@ -11231,7 +11231,7 @@
 		7D551AC6190FEA0F008FF361 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -11265,7 +11265,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
@@ -11287,7 +11287,7 @@
 		7D551AC7190FEA0F008FF361 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -11316,7 +11316,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -11337,7 +11337,7 @@
 		7D551AE5190FEA37008FF361 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -11371,7 +11371,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
@@ -11392,7 +11392,7 @@
 		7D551AE6190FEA37008FF361 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -11426,7 +11426,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
@@ -11448,7 +11448,7 @@
 		7D551AE7190FEA37008FF361 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -11477,7 +11477,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -11498,7 +11498,7 @@
 		7D551AF5190FEA66008FF361 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -11532,7 +11532,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
@@ -11553,7 +11553,7 @@
 		7D551AF6190FEA66008FF361 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -11587,7 +11587,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
@@ -11609,7 +11609,7 @@
 		7D551AF7190FEA66008FF361 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -11638,7 +11638,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -11659,7 +11659,7 @@
 		7D551B05190FEA80008FF361 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -11693,7 +11693,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
@@ -11714,7 +11714,7 @@
 		7D551B06190FEA80008FF361 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -11748,7 +11748,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
@@ -11770,7 +11770,7 @@
 		7D551B07190FEA80008FF361 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -11799,7 +11799,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -11926,7 +11926,7 @@
 		7D65FFEE1992C1FF00C82004 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -11960,7 +11960,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
@@ -11981,7 +11981,7 @@
 		7D65FFEF1992C1FF00C82004 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -12015,7 +12015,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
@@ -12037,7 +12037,7 @@
 		7D65FFF01992C1FF00C82004 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -12066,7 +12066,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -12087,7 +12087,7 @@
 		7D7D9FEC18F6948E00F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -12121,7 +12121,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
@@ -12142,7 +12142,7 @@
 		7D7D9FED18F6948E00F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -12176,7 +12176,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
@@ -12198,7 +12198,7 @@
 		7D7D9FEE18F6948E00F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -12227,7 +12227,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -12248,7 +12248,7 @@
 		7D7DA00618F699D800F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -12282,7 +12282,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
@@ -12303,7 +12303,7 @@
 		7D7DA00718F699D800F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -12337,7 +12337,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
@@ -12359,7 +12359,7 @@
 		7D7DA00818F699D800F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -12388,7 +12388,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -12409,7 +12409,7 @@
 		7D7DA02018F69AD400F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -12443,7 +12443,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
@@ -12464,7 +12464,7 @@
 		7D7DA02118F69AD400F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -12498,7 +12498,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
@@ -12520,7 +12520,7 @@
 		7D7DA02218F69AD400F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -12549,7 +12549,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -12570,7 +12570,7 @@
 		7D7DA03818F69AF600F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -12604,7 +12604,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
@@ -12625,7 +12625,7 @@
 		7D7DA03918F69AF600F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -12659,7 +12659,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
@@ -12681,7 +12681,7 @@
 		7D7DA03A18F69AF600F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -12710,7 +12710,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -12731,7 +12731,7 @@
 		7D7DA05018F69B0F00F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -12765,7 +12765,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
@@ -12786,7 +12786,7 @@
 		7D7DA05118F69B0F00F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -12820,7 +12820,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
@@ -12842,7 +12842,7 @@
 		7D7DA05218F69B0F00F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -12871,7 +12871,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -12892,7 +12892,7 @@
 		7D7DA06818F69B2A00F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -12926,7 +12926,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
@@ -12947,7 +12947,7 @@
 		7D7DA06918F69B2A00F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -12981,7 +12981,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
@@ -13003,7 +13003,7 @@
 		7D7DA06A18F69B2A00F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -13032,7 +13032,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -13053,7 +13053,7 @@
 		7D7DA08018F69B4300F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -13087,7 +13087,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
@@ -13108,7 +13108,7 @@
 		7D7DA08118F69B4300F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -13142,7 +13142,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
@@ -13164,7 +13164,7 @@
 		7D7DA08218F69B4300F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -13193,7 +13193,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -13214,7 +13214,7 @@
 		7D7DA09818F69B5A00F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -13248,7 +13248,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
@@ -13269,7 +13269,7 @@
 		7D7DA09918F69B5A00F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -13303,7 +13303,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
@@ -13325,7 +13325,7 @@
 		7D7DA09A18F69B5A00F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -13354,7 +13354,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -13375,7 +13375,7 @@
 		7D7DA0B018F69B7100F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -13409,7 +13409,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
@@ -13430,7 +13430,7 @@
 		7D7DA0B118F69B7100F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -13464,7 +13464,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
@@ -13486,7 +13486,7 @@
 		7D7DA0B218F69B7100F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -13515,7 +13515,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -14962,7 +14962,7 @@
 		E9A5BC8F0A33819900AD9F03 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -14996,7 +14996,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
@@ -15017,7 +15017,7 @@
 		E9A5BC900A33819900AD9F03 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_LOCATION = NO;
@@ -15051,7 +15051,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
@@ -15073,7 +15073,7 @@
 		E9A5BC910A33819900AD9F03 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -15102,7 +15102,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -15123,7 +15123,7 @@
 		E9A5BC930A33819900AD9F03 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_ALTIVEC_EXTENSIONS = YES;
@@ -15139,7 +15139,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-I",
@@ -15151,7 +15151,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "i386 x86_64";
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
@@ -15164,7 +15164,7 @@
 		E9A5BC940A33819900AD9F03 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_ALTIVEC_EXTENSIONS = YES;
@@ -15181,7 +15181,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-I",
@@ -15193,7 +15193,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "i386 x86_64";
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
@@ -15206,14 +15206,14 @@
 		E9A5BC950A33819900AD9F03 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-I",
@@ -15224,7 +15224,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "i386 x86_64";
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
