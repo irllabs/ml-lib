@@ -10,6 +10,8 @@
 
 This means the software is considered feature complete, but has not been extensively tested and should not be used in production environments.
 
+The library has currently been tested on Mac OS X with Max 5.x and 6.x and on Mac OS X and Linux on i386 and armv6 architectures using Pure Data. Issues have been reported with Max 7 and this has been investigated.
+
 Bugs should be reported via the [issues page](https://github.com/cmuartfab/ml-lib/issues).
 
 ## Installation
