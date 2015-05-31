@@ -1,3 +1,3 @@
-language: cpp
+language: objective-c
 script: xcodebuild -project ml.xcodeproj -scheme "BUILD ALL MAX" -configuration Deployment CONFIGURATION_BUILD_DIR=./Release
 script: xcodebuild -project ml.xcodeproj -scheme "BUILD ALL PD" -configuration Deployment CONFIGURATION_BUILD_DIR=./Release
