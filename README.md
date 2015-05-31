@@ -1,5 +1,7 @@
 # ml-lib
 
+[![Build Status](https://travis-ci.org/cmuartfab/ml-lib.svg?branch=develop)](https://travis-ci.org/cmuartfab/ml-lib)
+
 **ml-lib** is a library of machine learning externals for Max and Pure Data.
 **ml-lib** is primarily based on the [Gesture Recognition Toolkit](http://www.nickgillian.com/software/grt) by Nick Gillian
 **ml-lib** is designed to work on a variety of platforms including OS X, Windows, Linux, on Intel and ARM architectures.
