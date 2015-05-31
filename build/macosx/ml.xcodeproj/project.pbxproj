@@ -10864,8 +10864,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -10882,10 +10880,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -10919,8 +10914,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -10937,10 +10930,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -10973,8 +10963,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -10988,10 +10976,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11025,8 +11010,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -11043,10 +11026,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11080,8 +11060,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -11098,10 +11076,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11134,8 +11109,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -11149,10 +11122,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11186,8 +11156,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -11204,10 +11172,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11241,8 +11206,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -11259,10 +11222,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11295,8 +11255,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -11310,10 +11268,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11347,8 +11302,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -11365,10 +11318,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11402,8 +11352,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -11420,10 +11368,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11456,8 +11401,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -11471,10 +11414,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11508,8 +11448,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -11526,10 +11464,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11563,8 +11498,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -11581,10 +11514,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11617,8 +11547,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -11632,10 +11560,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11669,8 +11594,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -11687,10 +11610,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11724,8 +11644,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -11742,10 +11660,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11778,8 +11693,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -11793,10 +11706,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11936,8 +11846,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -11954,10 +11862,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -11991,8 +11896,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -12009,10 +11912,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12045,8 +11945,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -12060,10 +11958,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12095,10 +11990,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					"$(maxsdk)/max-includes",
-					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -12115,10 +12006,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12150,10 +12038,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					"$(maxsdk)/max-includes",
-					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -12170,10 +12054,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12204,10 +12085,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					"$(maxsdk)/max-includes",
-					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -12221,10 +12098,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12276,10 +12150,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12331,10 +12202,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12382,10 +12250,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12419,8 +12284,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -12437,10 +12300,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12474,8 +12334,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -12492,10 +12350,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12528,8 +12383,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -12543,10 +12396,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12580,8 +12430,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -12598,10 +12446,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12635,8 +12480,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -12653,10 +12496,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12689,8 +12529,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -12704,10 +12542,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12741,8 +12576,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -12759,10 +12592,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12796,8 +12626,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -12814,10 +12642,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12850,8 +12675,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -12865,10 +12688,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12902,8 +12722,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -12920,10 +12738,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -12957,8 +12772,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -12975,10 +12788,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13011,8 +12821,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -13026,10 +12834,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13063,8 +12868,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -13081,10 +12884,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13118,8 +12918,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -13136,10 +12934,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13172,8 +12967,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -13187,10 +12980,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13224,8 +13014,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -13242,10 +13030,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13279,8 +13064,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -13297,10 +13080,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13333,8 +13113,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -13348,10 +13126,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13385,8 +13160,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -13403,10 +13176,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13440,8 +13210,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -13458,10 +13226,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -13494,8 +13259,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -13509,10 +13272,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -14971,8 +14731,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -14990,10 +14748,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -15026,8 +14781,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -15045,10 +14798,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "";
 				"INSTALL_PATH[sdk=*]" = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -15080,8 +14830,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -15096,10 +14844,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = (
-					"$(maxsdk)/max-includes",
-					"$(PROJECT_DIR)/../../dependencies/lib/macosx",
-				);
+				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -15126,6 +14871,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+				);
 				GCC_ALTIVEC_EXTENSIONS = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -15140,6 +14889,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "MaxSDK-6.1.4";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-I",
@@ -15157,7 +14907,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "~/Development/MaxSDK/c74support";
+				maxsdk = "$(PROJECT_DIR)/c74support";
 			};
 			name = Development;
 		};
@@ -15167,6 +14917,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+				);
 				GCC_ALTIVEC_EXTENSIONS = YES;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -15182,6 +14936,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "MaxSDK-6.1.4";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-I",
@@ -15199,7 +14954,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "~/Development/MaxSDK/c74support";
+				maxsdk = "$(PROJECT_DIR)/c74support";
 			};
 			name = Deployment;
 		};
@@ -15209,11 +14964,16 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "MaxSDK-6.1.4";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-I",
@@ -15230,7 +14990,7 @@
 					"-Wall",
 					"-Wno-unused-parameter",
 				);
-				maxsdk = "~/Development/MaxSDK/c74support";
+				maxsdk = "$(PROJECT_DIR)/c74support";
 			};
 			name = Default;
 		};
