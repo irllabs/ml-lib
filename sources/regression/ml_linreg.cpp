@@ -45,7 +45,7 @@ namespace ml
 
     private:
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         GRT::LinearRegression regressifier;
         

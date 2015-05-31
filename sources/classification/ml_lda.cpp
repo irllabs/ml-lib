@@ -74,7 +74,7 @@ namespace ml
         // Flext Flext attribute wrappers
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         GRT::LDA lda;
     };

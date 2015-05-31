@@ -93,7 +93,7 @@ namespace ml
 //        FLEXT_CALLVAR_F(get_min_improvement, set_min_improvement);
         
         // Virtual method override
-        virtual const std::string get_object_name(void) const { return object_name; };
+        virtual const ml_doc::name get_object_name(void) const { return object_name; };
         
         // Instance variables
         GRT::HMM classifier;
