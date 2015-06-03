@@ -4,6 +4,10 @@
 **ml-lib** is primarily based on the [Gesture Recognition Toolkit](http://www.nickgillian.com/software/grt) by Nick Gillian
 **ml-lib** is designed to work on a variety of platforms including OS X, Windows, Linux, on Intel and ARM architectures.
 
+## Bug Reports and Discussion
+Please use the [GitHub Issue](https://github.com/cmuartfab/ml-lib/issues) Tracker for all bug reports
+Please use the [ArtFab Discussion form (under Software > ml.lib)](http://discuss.artfab.art.cmu.edu/c/software/ml-lib) for all general conversations, questions, discussions and project sharing.  
+
 ## Development Status
 
 **ML-LIB IS CURRENTLY IN OPEN BETA** 
