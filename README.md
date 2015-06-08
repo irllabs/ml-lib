@@ -4,6 +4,8 @@
 **ml-lib** is primarily based on the [Gesture Recognition Toolkit](http://www.nickgillian.com/software/grt) by Nick Gillian
 **ml-lib** is designed to work on a variety of platforms including OS X, Windows, Linux, on Intel and ARM architectures.
 
+The goal of ml-lib is to provide a simple, consistent interface to a wide range of machine learning techniques in Max and Pure Data. The canonical NIME 2015 paper on ml-lib can be found [here](https://nime2015.lsu.edu/proceedings/201/0201-paper.pdf).
+
 ## Bug Reports and Discussion
 Please use the [GitHub Issue Tracker](https://github.com/cmuartfab/ml-lib/issues) for all bug reports and feature requests.
 
