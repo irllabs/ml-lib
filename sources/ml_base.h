@@ -22,12 +22,12 @@
 
 #include "flext.h"
 #include "ml_doc.h"
-#include "ml_names.h"
 
 #include <string>
 
-#define VERSION "0.16.2"
+#define VERSION "0.17.0"
 #define NAME "ml-lib"
+#define NAME_PREFIX "ml."
 
 namespace ml
 {
@@ -54,10 +54,8 @@ namespace ml
  
     protected:
         ml::help help;
-        const std::string get_object_name_string(void) const;
-    
-    private:
-        virtual const ml_doc::name get_object_name(void) const = 0;
+        const std::string get_help_string(void) const;
+        virtual const std::string get_object_name(void) const = 0;
     };
 }
 

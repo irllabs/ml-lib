@@ -39,6 +39,7 @@ namespace ml_doc
         
         formatted += "(default: " + f.def_string() + ") ";
         formatted += "(min: " + f.min_string() + " max: " + f.max_string() + ") ";
+        formatted += "\n";
         
         return formatted;
     }
@@ -46,14 +47,14 @@ namespace ml_doc
     std::string max_formatter::format(const formattable_class_descriptor &f) const
     {
         std::string formatted = f.name_string() + ": " + f.desc_string() + "\n";
+    
+        std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
         
-        const std::vector<std::shared_ptr<formattable_message_descriptor> > &fs = f.formattables();
-        
-        for(auto attr : fs)
+        for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
         {
-            formatted += format(*attr);
-            formatted += "\n";
+            formatted += this->format(*formattable);
         }
+        
         return formatted;
     }
 

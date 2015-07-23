@@ -54,18 +54,21 @@ namespace ml
         
         while(std::getline(message_lines, line, '\n'))
         {
-            post_prefixed_message(get_object_name_string(), line, flext::post);
+            post_prefixed_message(get_object_name(), line, flext::post);
         }
     }
     
     void base::error(const std::string &message) const
     {
-        post_prefixed_message(get_object_name_string(), message, flext::error);
+        post_prefixed_message(get_object_name(), message, flext::error);
     }
     
-    const std::string base::get_object_name_string() const
+    const std::string base::get_help_string(void) const
     {
-        return ml_doc::name_lookup[get_object_name()];
+        ml_doc::max_formatter formatter;
+        ml_doc::doc_manager &doc_manager = ml_doc::doc_manager::shared_instance(formatter);
+        std::string doc = doc_manager.doc_for_class(get_object_name());
+        return doc;
     }
     
     // Utility function definitions

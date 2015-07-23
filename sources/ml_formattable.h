@@ -44,7 +44,8 @@ namespace ml_doc
     class formattable_class_descriptor : virtual public formattable_descriptor
     {
     public:
-           virtual std::vector<std::shared_ptr<formattable_message_descriptor> > formattables(void) const = 0;
+        virtual std::vector<std::unique_ptr<formattable_message_descriptor>> get_formattable_message_descriptors(void) const = 0;
+
     };
 }
 
