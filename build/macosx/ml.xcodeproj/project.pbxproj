@@ -409,7 +409,6 @@
 		7DCCEC5C1B1B835D00DEFCF1 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DCCEC5D1B1B836100DEFCF1 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
 		7DCCEC5E1B1B836400DEFCF1 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7DCCEC5F1B1B836900DEFCF1 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
 		7DCCEC601B1B837200DEFCF1 /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
 		7DCCEC611B1B837500DEFCF1 /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
 		7DCCEC621B1B838C00DEFCF1 /* SVM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C6C1AC84F4600C6BFA7 /* SVM.cpp */; };
@@ -448,39 +447,6 @@
 		7DCCEC901B1B8ECA00DEFCF1 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
 		7DCCEC911B1B8F0000DEFCF1 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D041AC84F4600C6BFA7 /* MovingAverageFilter.cpp */; };
 		7DCCEC921B1B8F0300DEFCF1 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D041AC84F4600C6BFA7 /* MovingAverageFilter.cpp */; };
-		7DD0C43B1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C43D1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C43E1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C43F1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4401AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4411AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4421AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4431AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4441AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4451AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4461AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4471AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4481AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4491AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C44A1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C44B1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C44C1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C44D1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C44E1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C44F1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4501AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4511AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4521AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4531AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4541AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4551AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4561AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4571AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4581AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C4591AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C45A1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C45B1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
-		7DD0C45C1AA221C300A4E510 /* ml_names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0C4391AA221C300A4E510 /* ml_names.cpp */; };
 		7DD8C6EA1B1BB39F00866538 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF41AC84F4600C6BFA7 /* DeadZone.cpp */; };
 		7DD8C6EB1B1BB3A200866538 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF41AC84F4600C6BFA7 /* DeadZone.cpp */; };
 		7DD8C6EC1B1BB3AD00866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
@@ -2308,8 +2274,6 @@
 		7DACBF4E192B82F900F0E7D7 /* ml_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_base.h; path = ../../sources/ml_base.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DACBF4F192B869600F0E7D7 /* ml_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_base.cpp; path = ../../sources/ml_base.cpp; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml_ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_ml.h; path = ../../sources/ml_ml.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		7DD0C4391AA221C300A4E510 /* ml_names.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_names.cpp; path = ../../sources/ml_names.cpp; sourceTree = "<group>"; };
-		7DD0C43A1AA221C300A4E510 /* ml_names.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_names.h; path = ../../sources/ml_names.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DD99CD818F4088700BE0A1A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ml_classification.cpp; path = ../../sources/classification/ml_classification.cpp; sourceTree = "<group>"; };
 		7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression.cpp; path = ../../sources/regression/ml_regression.cpp; sourceTree = "<group>"; };
@@ -2960,8 +2924,6 @@
 				7DBFDE6318439E09009ED61E /* ml_ml.h */,
 				E98573560D9E52D300682171 /* ml_ml.cpp */,
 				7D71CBCC1AADB9E80099CD5B /* Documentation */,
-				7DD0C4391AA221C300A4E510 /* ml_names.cpp */,
-				7DD0C43A1AA221C300A4E510 /* ml_names.h */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -4474,7 +4436,6 @@
 				7DF949551AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF94AED1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DD8C70C1B1BC49900866538 /* DeadZone.cpp in Sources */,
-				7DD0C4481AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF94A431AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949BB1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943C11AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
@@ -4529,7 +4490,6 @@
 				7D71CBB61AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DF949561AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF94AEE1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
-				7DD0C4491AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DD8C70D1B1BC49900866538 /* DeadZone.cpp in Sources */,
 				7DF94A441AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949BC1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
@@ -4583,7 +4543,6 @@
 				7DF949571AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DD8C71E1B1BC4AE00866538 /* Derivative.cpp in Sources */,
 				7DF94AEF1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
-				7DD0C44A1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF94A451AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949BD1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943C31AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
@@ -4646,7 +4605,6 @@
 				7DF942E11AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949EB1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A71AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C4561AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4705,7 +4663,6 @@
 				7DF949EC1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D405EC71B1BCC84003A2172 /* DecisionTree.cpp in Sources */,
 				7DF949A81AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C4571AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D16A26B1B1BFE0A0076C05F /* DecisionTreeNode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4762,7 +4719,6 @@
 				7DF942E31AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949ED1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A91AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C4581AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D405EC11B1BCBAF003A2172 /* KMeansFeatures.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4817,7 +4773,6 @@
 				7DF942E41AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949EE1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949AA1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C4591AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4872,7 +4827,6 @@
 				7DF942E51AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949EF1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949AB1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C45A1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4881,7 +4835,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D551AFC190FEA80008FF361 /* ml_ml.cpp in Sources */,
-				7DD0C45B1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF949461AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF9432A1AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF943901AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
@@ -4977,7 +4930,6 @@
 				7DF942D61AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949E01AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9499C1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C44B1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5029,7 +4981,6 @@
 				7DF949F11AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949AD1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DD8C7371B1BC4CA00866538 /* DoubleMovingAverageFilter.cpp in Sources */,
-				7DD0C45C1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5084,7 +5035,6 @@
 				7DF942D81AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949E21AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9499E1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C44D1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5141,7 +5091,6 @@
 				7DF949E31AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9499F1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF205FF1B1BB21D00BB0AA4 /* DoubleMovingAverageFilter.cpp in Sources */,
-				7DD0C44E1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5195,7 +5144,6 @@
 				7DF942DA1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949E41AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A01AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C44F1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5249,7 +5197,6 @@
 				7DF942DB1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949E51AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A11AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C4501AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5258,7 +5205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA0B718F69CA700F417F6 /* ml_mlp.cpp in Sources */,
-				7DD0C4511AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF9493C1AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF943201AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF943861AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
@@ -5357,7 +5303,6 @@
 				7D9F2B3E1B1B956800B4BA08 /* DeadZone.cpp in Sources */,
 				7DF949E71AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A31AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C4521AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5413,7 +5358,6 @@
 				7DF949E81AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF93FAE1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF949A41AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C4531AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5422,7 +5366,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA08918F69B5A00F417F6 /* ml_ml.cpp in Sources */,
-				7DD0C4541AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF9493F1AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF943231AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF943891AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
@@ -5474,7 +5417,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7DA0A118F69B7100F417F6 /* ml_ml.cpp in Sources */,
-				7DD0C4551AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF949401AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF943241AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF9438A1AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
@@ -5531,7 +5473,6 @@
 				7DCCEC5E1B1B836400DEFCF1 /* ml_ml.cpp in Sources */,
 				7DD8C7181B1BC4A900866538 /* Derivative.cpp in Sources */,
 				7DCCEC6C1B1B859E00DEFCF1 /* ErrorLog.cpp in Sources */,
-				7DCCEC5F1B1B836900DEFCF1 /* ml_names.cpp in Sources */,
 				7DCCEC6A1B1B857200DEFCF1 /* InfoLog.cpp in Sources */,
 				7DCCEC6B1B1B858700DEFCF1 /* DebugLog.cpp in Sources */,
 				7DCCEC6D1B1B85CD00DEFCF1 /* ClassificationData.cpp in Sources */,
@@ -5601,7 +5542,6 @@
 				7DF9494A1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7D9F2B3F1B1B95BA00B4BA08 /* Derivative.cpp in Sources */,
 				7DF94AE21AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
-				7DD0C43D1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF94A381AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949B01AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF205FE1B1BB21B00BB0AA4 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -5666,7 +5606,6 @@
 				7DF942C91AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949D31AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9498F1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C43E1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5720,7 +5659,6 @@
 				7DF942CA1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949D41AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949901AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C43F1AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5775,7 +5713,6 @@
 				7DF942CB1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949D51AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949911AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C4401AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5821,7 +5758,6 @@
 				7DF9494E1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7D818CC31B1B92B800043BB9 /* Derivative.cpp in Sources */,
 				7DF94AE61AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
-				7DD0C4411AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF94A3C1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949B41AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943BA1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
@@ -5877,7 +5813,6 @@
 				7D71CBAF1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DF9494F1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF94AE71AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
-				7DD0C4421AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF94A3D1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949B51AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943BB1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
@@ -5939,7 +5874,6 @@
 				7DF942CE1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949D81AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949941AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
-				7DD0C4431AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5993,7 +5927,6 @@
 				7DF949D91AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949951AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DD8C6F51B1BBA7400866538 /* DoubleMovingAverageFilter.cpp in Sources */,
-				7DD0C4441AA221C300A4E510 /* ml_names.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6038,7 +5971,6 @@
 				7DF949521AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DD8C7191B1BC4AA00866538 /* Derivative.cpp in Sources */,
 				7DF94AEA1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
-				7DD0C4451AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF94A401AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949B81AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943BE1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
@@ -6095,7 +6027,6 @@
 				7DD8C71A1B1BC4AB00866538 /* Derivative.cpp in Sources */,
 				7D405EC61B1BCC81003A2172 /* DecisionTree.cpp in Sources */,
 				7DF94AEB1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
-				7DD0C4461AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D405EC31B1BCC4C003A2172 /* Tree.cpp in Sources */,
 				7DF94A411AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949B91AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
@@ -6157,7 +6088,6 @@
 				7DF949541AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DD8C71B1B1BC4AB00866538 /* Derivative.cpp in Sources */,
 				7DF94AEC1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
-				7DD0C4471AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7DF94A421AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949BA1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943C01AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
@@ -6275,7 +6205,6 @@
 				7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */,
 				7DF9454C1AC84F4700C6BFA7 /* KMeansFeatures.cpp in Sources */,
 				7DF9443C1AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DD0C43B1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D61B1081875F661000FD114 /* ml_logreg.cpp in Sources */,
 				7DF93F521AC84F4700C6BFA7 /* ContinuousHiddenMarkovModel.cpp in Sources */,
 				7DF942C61AC84F4700C6BFA7 /* Context.cpp in Sources */,
@@ -6409,7 +6338,6 @@
 				7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */,
 				7DF9455D1AC84F4700C6BFA7 /* KMeansFeatures.cpp in Sources */,
 				7DF9444D1AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DD0C44C1AA221C300A4E510 /* ml_names.cpp in Sources */,
 				7D61B1091875F661000FD114 /* ml_logreg.cpp in Sources */,
 				7DF93F631AC84F4700C6BFA7 /* ContinuousHiddenMarkovModel.cpp in Sources */,
 				7DF942D71AC84F4700C6BFA7 /* Context.cpp in Sources */,

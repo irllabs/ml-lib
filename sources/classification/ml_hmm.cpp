@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    const ml_doc::name object_name = ml_doc::name::hmm;
+    const std::string object_name = NAME_PREFIX "hmm";
     
     class hmm : classification
     {
@@ -46,16 +46,14 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "delta", set_delta);
             FLEXT_CADDATTR_SET(c, "max_num_iterations", set_max_num_iterations);
             FLEXT_CADDATTR_SET(c, "num_random_training_iterations", set_num_random_training_iterations);
-//            FLEXT_CADDATTR_SET(c, "min_improvement", set_min_improvement);
 
             FLEXT_CADDATTR_GET(c, "num_states", get_num_states);
             FLEXT_CADDATTR_GET(c, "num_symbols", get_num_symbols);
             FLEXT_CADDATTR_GET(c, "num_symbols", get_model_type);
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
-//            FLEXT_CADDATTR_GET(c, "min_improvement", get_min_improvement);
             
-            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
@@ -65,7 +63,6 @@ namespace ml
         void set_delta(int delta);
         void set_max_num_iterations(int max_num_iterations);
         void set_num_random_training_iterations(int num_random_training_iterations);
-//        void set_min_improvement(float min_improvement);
         
         // Flext attribute getters
         void get_num_states(int &num_states) const;
@@ -74,7 +71,6 @@ namespace ml
         void get_delta(int &delta) const;
         void get_max_num_iterations(int &max_num_iterations) const;
         void get_num_random_training_iterations(int &num_random_training_iterations) const;
-//        void get_min_improvement(float &min_improvement) const;
         
         // Implement pure virtual methods
         GRT::Classifier &get_Classifier_instance();
@@ -90,15 +86,12 @@ namespace ml
         FLEXT_CALLVAR_I(get_delta, set_delta);
         FLEXT_CALLVAR_I(get_max_num_iterations, set_max_num_iterations);
         FLEXT_CALLVAR_I(get_num_random_training_iterations, set_num_random_training_iterations);
-//        FLEXT_CALLVAR_F(get_min_improvement, set_min_improvement);
         
         // Virtual method override
-        virtual const ml_doc::name get_object_name(void) const { return object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         // Instance variables
         GRT::HMM classifier;
-        
-        static const std::string attribute_help;
     };
     
     // Flext attribute setters
@@ -162,16 +155,6 @@ namespace ml
         }
     }
     
-//    void hmm::set_min_improvement(float min_improvement)
-//    {
-//        bool success = classifier.setMinImprovement(min_improvement);
-//        
-//        if (!success)
-//        {
-//            error("unable to set min improvement");
-//        }
-//    }
-    
     // Flext attribute getters
     void hmm::get_num_states(int &num_states) const
     {
@@ -203,10 +186,6 @@ namespace ml
         num_random_training_iterations = classifier.getNumRandomTrainingIterations();
     }
     
-//    void hmm::get_min_improvement(float &min_improvement) const
-//    {
-//        min_improvement = classifier.getMinImprovement();
-//    }
     
     // Implement pure virtual methods
     GRT::Classifier &hmm::get_Classifier_instance()
@@ -240,9 +219,9 @@ namespace ml
     typedef class hmm ml0x2ehmm;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), hmm);
+    FLEXT_LIB(object_name.c_str(), hmm);
 #else
-    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2ehmm);
+    FLEXT_NEW(object_name.c_str(), ml0x2ehmm);
 #endif
     
 } //namespace ml

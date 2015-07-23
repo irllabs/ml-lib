@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    const ml_doc::name object_name = ml_doc::name::dtw;
+    const std::string object_name = NAME_PREFIX "dtw";
     
     class dtw : classification
     {
@@ -54,7 +54,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "enable_z_normalization", get_enable_z_normalization);
             FLEXT_CADDATTR_GET(c, "enable_trim_training_data", get_enable_trim_training_data);
             
-            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
+            DefineHelp(c, object_name.c_str());
         }
                 
         // Flext attribute setters
@@ -91,11 +91,9 @@ namespace ml
         
         
         // Virtual method override
-        virtual const ml_doc::name get_object_name(void) const { return object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::DTW classifier;
-        
-        static const std::string attribute_help;
     };
     
     // Flext attribute setters
@@ -230,9 +228,9 @@ namespace ml
     typedef class dtw ml0x2edtw;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), dtw);
+    FLEXT_LIB(object_name.c_str(), dtw);
 #else
-    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2edtw);
+    FLEXT_NEW(object_name.c_str(), ml0x2edtw);
 #endif
     
 } //namespace ml

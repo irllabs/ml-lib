@@ -24,7 +24,7 @@
 
 namespace ml
 {
-    const ml_doc::name object_name = ml_doc::name::minmax;
+    const std::string object_name = NAME_PREFIX "minmax";
     const t_symbol *s_min  = flext::MakeSymbol("min");
     const t_symbol *s_max  = flext::MakeSymbol("max");
     
@@ -49,7 +49,7 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "delta", set_delta);
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
                         
-            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         void input(int argc, t_atom *argv);
@@ -70,7 +70,7 @@ namespace ml
         FLEXT_CALLVAR_F(get_delta, set_delta);
         
         // Virtual method override
-        virtual const ml_doc::name get_object_name(void) const { return object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         double delta;
         
@@ -86,8 +86,6 @@ namespace ml
                                 const std::vector<uint32_t> &locations,
                                 AtomList &atomList
                                 );
-        
-        static const std::string attribute_help;
     };
     
     void minmax::set_delta(float delta)
@@ -229,9 +227,9 @@ namespace ml
     typedef class minmax ml0x2eminmax;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), minmax);
+    FLEXT_LIB(object_name.c_str(), minmax);
 #else
-    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2eminmax);
+    FLEXT_NEW(object_name.c_str(), ml0x2eminmax);
 #endif
     
     

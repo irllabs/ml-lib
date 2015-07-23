@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const ml_doc::name object_name = ml_doc::name::adaboost;
+    const std::string object_name = "ml.adaboost";
     
     enum weak_classifiers_
     {
@@ -61,7 +61,7 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "add_weak_classifier", add_weak_classifier);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
@@ -82,11 +82,9 @@ namespace ml
         FLEXT_CALLSET_I(add_weak_classifier);
 
         // Virtual method override
-        virtual const ml_doc::name get_object_name(void) const { return object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
                 
         GRT::AdaBoost grt_adaboost;
-        
-        static const std::string attribute_help;
     };
     
     // Flext attribute setters
@@ -168,9 +166,9 @@ namespace ml
     typedef class adaboost ml0x2eadaboost;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), adaboost);
+    FLEXT_LIB(object_name.c_str(), adaboost);
 #else
-    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2eadaboost);
+    FLEXT_NEW(object_name.c_str(), ml0x2eadaboost);
 #endif
     
 } //namespace ml

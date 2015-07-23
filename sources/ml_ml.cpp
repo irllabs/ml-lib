@@ -381,7 +381,7 @@ namespace ml
     
     void ml::usage() const
     {
-        this->post(help.full_message());
+        this->post(get_help_string());
     }
     
     void ml::setup(t_classid c)

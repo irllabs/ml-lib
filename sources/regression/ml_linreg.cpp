@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    static const ml_doc::name object_name = ml_doc::name::linreg;
+    static const std::string object_name = NAME_PREFIX "linreg";
     
     class linreg : regression
     {
@@ -36,7 +36,7 @@ namespace ml
     protected:
         static void setup(t_classid c)
         {
-            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Implement pure virtual methods
@@ -45,7 +45,7 @@ namespace ml
 
     private:
         // Virtual method override
-        virtual const ml_doc::name get_object_name(void) const { return object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::LinearRegression regressifier;
         
@@ -65,9 +65,9 @@ namespace ml
     typedef class linreg ml0x2elinreg;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), linreg);
+    FLEXT_LIB(object_name.c_str(), linreg);
 #else
-    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2elinreg);
+    FLEXT_NEW(object_name.c_str(), ml0x2elinreg);
 #endif
     
 } //namespace ml

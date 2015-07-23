@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    static const ml_doc::name object_name = ml_doc::name::knn;
+    static const std::string object_name = NAME_PREFIX "knn";
     
     class knn : classification
     {
@@ -50,7 +50,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "best_k_value_search", get_best_k_value_search);
             
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
@@ -77,11 +77,9 @@ namespace ml
         FLEXT_CALLVAR_B(get_best_k_value_search, set_best_k_value_search);
         
         // Virtual method override
-        virtual const ml_doc::name get_object_name(void) const { return object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::KNN grt_knn;
-        
-        static const std::string attribute_help;
     };
     
     // Flext attribute setters
@@ -145,9 +143,9 @@ namespace ml
     typedef class knn ml0x2eknn;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), knn);
+    FLEXT_LIB(object_name.c_str(), knn);
 #else
-    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2eknn);
+    FLEXT_NEW(object_name.c_str(), ml0x2eknn);
 #endif
     
 } //namespace ml

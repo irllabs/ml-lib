@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    static const ml_doc::name object_name = ml_doc::name::zerox;
+    static const std::string object_name = NAME_PREFIX "zerox";
     
     class zerox : feature_extraction
     {
@@ -45,7 +45,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "dead_zone_threshold", get_dead_zone_threshold);
 
             // Associate this Flext class with a certain help file prefix
-            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
@@ -66,7 +66,7 @@ namespace ml
         FLEXT_CALLVAR_I(get_dead_zone_threshold, set_dead_zone_threshold);
         
         // Virtual method override
-        virtual const ml_doc::name get_object_name(void) const { return object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::ZeroCrossingCounter grt_zerox;
         
@@ -111,9 +111,9 @@ namespace ml
     typedef class zerox ml0x2ezerox;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), zerox);
+    FLEXT_LIB(object_name.c_str(), zerox);
 #else
-    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2ezerox);
+    FLEXT_NEW(object_name.c_str(), ml0x2ezerox);
 #endif
     
 } //namespace ml

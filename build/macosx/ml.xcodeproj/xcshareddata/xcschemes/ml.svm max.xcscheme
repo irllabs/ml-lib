@@ -77,6 +77,7 @@
       </PostActions>
       <PathRunnable
          runnableDebuggingMode = "0"
+         BundleIdentifier = "com.cycling74.MaxRuntime"
          FilePath = "/Applications/Max 6.1 Runtime/Max Runtime.app">
       </PathRunnable>
       <MacroExpansion>
@@ -90,7 +91,7 @@
       </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "~/Documents/ml-lib/ml.svm/ml.svm.maxhelp"
+            argument = "${BUILT_PRODUCTS_DIR}/ml.svm.maxhelp"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

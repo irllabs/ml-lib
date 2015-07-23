@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const ml_doc::name object_name = ml_doc::name::peak;
+    const std::string object_name = NAME_PREFIX "peak";
     
     class peak : base
     {
@@ -43,13 +43,11 @@ namespace ml
         static void setup(t_classid c)
         {
             FLEXT_CADDATTR_SET(c, "search_window_size", set_search_window_size);
-//            FLEXT_CADDATTR_SET(c, "low_pass_filter_size", set_low_pass_filter_size);
             
             FLEXT_CADDMETHOD_(c, 0, "reset", reset);
             FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
-//            FLEXT_CADDMETHOD_(c, 0, "peaks", peaks);
             
-            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         // Methods
@@ -60,7 +58,6 @@ namespace ml
         void usage();
   
         // Flext attribute setters
-//        void set_low_pass_filter_size(int low_pass_filter_size);
         void set_search_window_size(int search_window_size);
 
         
@@ -75,29 +72,13 @@ namespace ml
         FLEXT_CALLBACK(timeout);
         
         // Flext attribute wrappers
-//        FLEXT_CALLSET_I(set_low_pass_filter_size);
         FLEXT_CALLSET_I(set_search_window_size);
 
         // Virtual method override
-        virtual const ml_doc::name get_object_name(void) const { return object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::PeakDetection peakDetection;
-        
-        static const std::string attribute_help;
-        static const std::string method_help;
-
     };
-    
-    // Flext attribute setters
-//    void peak::set_low_pass_filter_size(int low_pass_filter_size)
-//    {
-//        bool success = peakDetection.setLowPassFilterSize(low_pass_filter_size);
-//        
-//        if (!success)
-//        {
-//            error("unable to set low pass filter size");
-//        }
-//    }
     
     void peak::set_search_window_size(int search_window_size)
     {
@@ -212,9 +193,9 @@ namespace ml
     typedef class peak ml0x2epeak;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), peak);
+    FLEXT_LIB(object_name.c_str(), peak);
 #else
-    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2epeak);
+    FLEXT_NEW(object_name.c_str(), ml0x2epeak);
 #endif
     
 } //namespace ml

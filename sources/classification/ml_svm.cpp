@@ -28,7 +28,7 @@
 
 namespace ml
 {
-    const ml_doc::name object_name = ml_doc::name::svm;
+    const std::string object_name = NAME_PREFIX "svm";
     
     // Utility functions
     GRT::SVM::SVMTypes svm_type_from_type_string(std::string type_string)
@@ -142,7 +142,7 @@ namespace ml
             
             FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
             
-            DefineHelp(c, ml_doc::name_lookup[object_name].c_str());
+            DefineHelp(c, object_name.c_str());
         }
         
         void cross_validation();
@@ -203,12 +203,9 @@ namespace ml
         FLEXT_CALLSET_B(set_enable_cross_validation);
         
         // Virtual method override
-        virtual const ml_doc::name get_object_name(void) const { return object_name; };
+        virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::SVM grt_svm;
-        
-        static const std::string attribute_help;
-        static const std::string method_help;
     };
     
     // Flext attribute setters
@@ -423,9 +420,9 @@ namespace ml
     typedef class svm ml0x2esvm;
 
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(ml_doc::name_lookup[object_name].c_str(), svm);
+    FLEXT_LIB(object_name.c_str(), svm);
 #else
-    FLEXT_NEW(ml_doc::name_lookup[object_name].c_str(), ml0x2esvm);
+    FLEXT_NEW(object_name.c_str(), ml0x2esvm);
 #endif
     
     
