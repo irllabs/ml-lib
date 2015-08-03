@@ -71,8 +71,10 @@ namespace ml_doc
     template <typename T>
     class valued_message_descriptor : public message_descriptor
     {
-
     public:
+        valued_message_descriptor(std::string name)
+        : message_descriptor(name) {};
+        
         virtual std::string print(const generic_formatter &formatter) const
         {
             return formatter.format(*this);
@@ -102,8 +104,10 @@ namespace ml_doc
     class ranged_message_descriptor :
     public valued_message_descriptor<T>
     {
-
     public:
+        ranged_message_descriptor(std::string name)
+        : valued_message_descriptor<T> (name) {};
+        
         virtual std::string print(const generic_formatter &formatter) const
         {
             return formatter.format(*this);
