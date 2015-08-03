@@ -136,9 +136,16 @@ namespace ml_doc
         class_descriptor(std::string name, const class_descriptor *parent) : name(name), parent(parent) {};
 
         template <typename T>
-        void add_message_descriptor(T &message_descriptor)
+        void add_message_descriptor(const T &message_descriptor)
         {
             message_descriptors.push_back(message_descriptor);
+        }
+        
+        template <typename U, typename... T>
+        void add_message_descriptor(const U &head, const T &...tail)
+        {
+            message_descriptors.push_back(head);
+            add_message_descriptor(tail...);
         }
         
         std::string print(const generic_formatter &formatter) const;
