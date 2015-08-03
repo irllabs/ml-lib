@@ -24,22 +24,42 @@ namespace ml_doc
     std::string max_formatter::format(const formattable_message_descriptor &f) const
     {
         std::string formatted = f.name_string() + ": " + f.desc_string() + ". ";
+        std::string descriptors = "";
         std::vector<std::string> allowed_values = f.allowed_values_strings();
         
         if (allowed_values.size())
         {
-            formatted += "(allowed values: [";
+            descriptors += "allowed values: [";
             for (std::string value : allowed_values)
             {
-                formatted += value;
-                formatted += " ";
+                descriptors += value;
+                descriptors += " ";
             }
-            formatted += "]) ";
+            descriptors += "] ";
         }
         
-        formatted += "(default: " + f.def_string() + ") ";
-        formatted += "(min: " + f.min_string() + " max: " + f.max_string() + ") ";
+        if (!f.def_string().empty())
+        {
+            descriptors += "default: " + f.def_string() + " ";
+        }
+        
+        if (!f.min_string().empty())
+        {
+            descriptors += "min: " + f.min_string();
+        }
+        
+        if (!f.max_string().empty())
+        {
+            descriptors += " max: " + f.max_string() + ") ";
+        }
+        
+        if (!descriptors.empty())
+        {
+            formatted += "(" + descriptors + ")";
+        }
+        
         formatted += "\n";
+        
         
         return formatted;
     }
