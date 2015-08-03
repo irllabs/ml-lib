@@ -30,7 +30,6 @@
 
 namespace ml_doc
 {
-
     enum class name;
     
     class message_descriptor : public formattable_message_descriptor
@@ -40,12 +39,13 @@ namespace ml_doc
         : is_method(false) {};
         
         message_descriptor(std::string name)
-        : name(name), is_method(false) {};
+        : name(name),
+        is_method(false) {};
         
         virtual std::string print(const generic_formatter &formatter) const;
 
         const std::string name;
-        const std::string desc;
+        std::string desc;
         
         // ml_formattable.h pure virtual methods
         virtual std::string desc_string(void) const;
@@ -140,7 +140,7 @@ namespace ml_doc
         std::string print(const generic_formatter &formatter) const;
         
         const std::string name;
-        const std::string desc;
+        std::string desc;
         const class_descriptor *parent;
         
         // ml_formattable.h pure virtual methods
