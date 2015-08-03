@@ -71,9 +71,9 @@ namespace ml_doc
         
         while (true)
         {
-            for (const message_descriptor &formattable : current_descriptor->message_descriptors)
+            for (auto &formattable : current_descriptor->message_descriptors)
             {
-                std::unique_ptr<formattable_message_descriptor> desc_ptr(new message_descriptor(formattable));
+                std::unique_ptr<formattable_message_descriptor> desc_ptr(formattable->clone());
                 formattables.push_back(std::move(desc_ptr));
             }
             
@@ -111,7 +111,7 @@ namespace ml_doc
     void doc_manager::add_class_descriptor(std::string name)
     {
         class_descriptor descriptor(name);
-        descriptors.emplace(name, descriptor);
+        descriptors.emplace(name, std::move(descriptor));
     }
     
     void doc_manager::add_class_descriptor(std::string name, std::string parent)
@@ -125,7 +125,7 @@ namespace ml_doc
         }
         
         class_descriptor descriptor(name, &it->second);
-        descriptors.emplace(name, descriptor);
+        descriptors.emplace(name, std::move(descriptor));
     }
 
     void doc_manager::populate(void)
@@ -146,6 +146,10 @@ namespace ml_doc
 //        "probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet\n";
 //
         
+        add_class_descriptor("ml.base");
+        add_class_descriptor("ml.mlp", "ml.base");
+        
+        
         method_descriptor add("add");
         method_descriptor write("write");
         method_descriptor read("read");
@@ -155,11 +159,24 @@ namespace ml_doc
         method_descriptor help("help");
 
         
-        add_class_descriptor("ml.base");
-        add_class_descriptor("ml.mlp", "ml.base");
+        valued_message_descriptor<float> foo("sdadad");
+        foo.allowed_values = {1,2,3};
+        foo.def = 3;
+        
+        ranged_message_descriptor<int> bar("blam");
+        bar.min = 2.5;
+        bar.max = 4;
+        bar.def = 3;
+        bar.desc = "fsdfsfd";
+        
+        add.desc = "blah balh blah";
+        
         
         descriptors["ml.base"].add_message_descriptor(add);
         descriptors["ml.base"].add_message_descriptor(write);
+        descriptors["ml.base"].add_message_descriptor(foo, bar);
+        
+        
 
         
         

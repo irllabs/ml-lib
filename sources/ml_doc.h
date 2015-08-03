@@ -43,7 +43,8 @@ namespace ml_doc
         is_method(false) {};
         
         virtual std::string print(const generic_formatter &formatter) const;
-
+        virtual message_descriptor* clone() const=0;
+        
         const std::string name;
         std::string desc;
         
@@ -66,6 +67,11 @@ namespace ml_doc
     public:
         method_descriptor(std::string name)
         : message_descriptor(true, name) {};
+        
+        virtual method_descriptor *clone() const
+        {
+            return new method_descriptor(*this);
+        }        
     };
 
     template <typename T>
@@ -74,6 +80,11 @@ namespace ml_doc
     public:
         valued_message_descriptor(std::string name)
         : message_descriptor(name) {};
+        
+        virtual valued_message_descriptor<T> *clone() const
+        {
+            return new valued_message_descriptor<T>(*this);
+        }
         
         virtual std::string print(const generic_formatter &formatter) const
         {
@@ -108,6 +119,11 @@ namespace ml_doc
         ranged_message_descriptor(std::string name)
         : valued_message_descriptor<T> (name) {};
         
+        virtual ranged_message_descriptor<T> *clone() const
+        {
+            return new ranged_message_descriptor<T>(*this);
+        }
+        
         virtual std::string print(const generic_formatter &formatter) const
         {
             return formatter.format(*this);
@@ -138,13 +154,13 @@ namespace ml_doc
         template <typename T>
         void add_message_descriptor(const T &message_descriptor)
         {
-            message_descriptors.push_back(message_descriptor);
+            message_descriptors.emplace_back(message_descriptor.clone());
         }
         
         template <typename U, typename... T>
         void add_message_descriptor(const U &head, const T &...tail)
         {
-            message_descriptors.push_back(head);
+            message_descriptors.emplace_back(head.clone());
             add_message_descriptor(tail...);
         }
         
@@ -160,7 +176,7 @@ namespace ml_doc
         virtual std::vector<std::unique_ptr<formattable_message_descriptor>> get_formattable_message_descriptors(void) const;
         
     private:
-        std::vector<message_descriptor> message_descriptors;
+        std::vector<std::unique_ptr<message_descriptor>> message_descriptors;
     };
 
     class doc_manager
