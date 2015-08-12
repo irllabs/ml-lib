@@ -42,15 +42,6 @@ namespace ml
         
     protected:
         
-        enum data_type
-        {
-            LABELLED_CLASSIFICATION,
-            LABELLED_REGRESSION,
-            LABELLED_TIME_SERIES_CLASSIFICATION,
-            UNLABELLED_CLASSIFICATION,
-            NUM_DATA_TYPES
-        };
-        
         static void setup(t_classid c);
         
         virtual void add(int argc, const t_atom *argv);
@@ -96,9 +87,7 @@ namespace ml
         static const t_symbol *s_write;
         static const t_symbol *s_probs;
         static const t_symbol *s_error;
-        
-        const data_type default_data_type = LABELLED_CLASSIFICATION;
-        
+                
     private:
         
         void record_(bool state);
@@ -125,9 +114,6 @@ namespace ml
         static const std::string attribute_help;
     };
 
-    const bool default_scaling = true;
-    const GRT::UINT default_num_input_dimensions = 2;
-    const GRT::UINT default_num_output_dimensions = 1;
 }
 
 

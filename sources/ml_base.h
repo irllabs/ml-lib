@@ -22,6 +22,7 @@
 
 #include "flext.h"
 #include "ml_doc.h"
+#include "ml_types.h"
 
 #include <string>
 
