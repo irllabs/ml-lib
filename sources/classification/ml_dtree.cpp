@@ -30,8 +30,7 @@ namespace ml
         dtree()
         {
             post("Decision Tree learning algorithm based on the GRT library version %s" + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
-            help.append_attributes(attribute_help);
+            set_scaling(defaults::scaling);
         }
         
     protected:
@@ -62,7 +61,6 @@ namespace ml
         void set_min_samples_per_node(int min_samples_per_node);
         void set_max_depth(int max_depth);
         void set_remove_features_at_each_split(bool remove_features_at_each_split);
-
         
         // Flext attribute getters
         void get_training_mode(int &training_mode) const;
@@ -70,7 +68,6 @@ namespace ml
         void get_min_samples_per_node(int &min_samples_per_node) const;
         void get_max_depth(int &get_max_depth) const;
         void get_remove_features_at_each_split(bool &remove_features_at_each_split) const;
-
         
         // Pure virtual method implementations
         GRT::Classifier &get_Classifier_instance();
@@ -157,14 +154,6 @@ namespace ml
     {
         return grt_dtree;
     }
-    
-    const std::string dtree::attribute_help =
-    "training_mode:\tinteger (0 = BEST_ITERATIVE_SPILT, 1=BEST_RANDOM_SPLIT) sets the training mode (default 0)\n"
-    "num_splitting_steps:\tinteger (n > 0) Sets the number of steps that will be used to search for the best spliting value for each node (default 100)\n"
-    "min_samples_per_node:\tinteger (n > 0) sets the minimum number of samples that are allowed per node, if the number of samples at a node is below this value then the node will automatically become a leaf node (default 5)\n"
-    "max_depth:\tinteger (n > 0) sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node (default 10)\n"
-    "remove_features_at_each_split:\tbool (0 or 1) sets if a feature is removed at each spilt so it can not be used again (default 0)\n";
-
     
     typedef class dtree ml0x2edtree;
     

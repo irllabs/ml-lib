@@ -30,7 +30,7 @@ namespace ml
         softmax()
         {
             post("Softmax algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
+            set_scaling(defaults::scaling);
         }
         
     protected:

@@ -21,11 +21,6 @@
 namespace ml
 {
     const std::string object_name = NAME_PREFIX "randforest";
-    const std::string k_attribute_help =
-    "num_random_splits:\tinteger (n > 0) sets the number of steps that will be used to search for the best spliting value for each node. (default 100)\n"
-    "min_samples_per_node:\tinteger (n > 0) Sets the minimum number of samples that are allowed per node (default 5)\n"
-    "max_depth:\tinteger (n > 0) Sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node. (default 10)\n";
-    
     
     // Class declaration
     class randforest : classification
@@ -36,8 +31,7 @@ namespace ml
         randforest()
         {
             post("Random Forests algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
-            help.append_attributes(k_attribute_help);
+            set_scaling(defaults::scaling);
         }
         
         ~randforest()
@@ -134,12 +128,7 @@ namespace ml
         return grt_randforest;
     }
     
-    const std::string randforest::attribute_help =
-    "num_random_splits:\tinteger (n > 0) sets the number of steps that will be used to search for the best spliting value for each node. (default 100)\n"
-    "min_samples_per_node:\tinteger (n > 0) Sets the minimum number of samples that are allowed per node (default 5)\n"
-    "max_depth:\tinteger (n > 0) Sets the maximum depth of the tree, any node that reaches this depth will automatically become a leaf node. (default 10)\n";
-    
-    typedef class randforest ml0x2erandforest;
+      typedef class randforest ml0x2erandforest;
     
 #ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(object_name.c_str(), randforest);

@@ -69,8 +69,6 @@ namespace ml
         virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::ZeroCrossingCounter grt_zerox;
-        
-        static const std::string attribute_help;
     };
     
     // Flext attribute setters
@@ -105,9 +103,7 @@ namespace ml
     {
         return grt_zerox;
     }
-    
-    const std::string zerox::attribute_help =  "";
-    
+        
     typedef class zerox ml0x2ezerox;
     
 #ifdef BUILD_AS_LIBRARY

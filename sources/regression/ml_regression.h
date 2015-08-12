@@ -63,7 +63,6 @@ namespace ml
         FLEXT_CALLVAR_F(get_min_change, set_min_change);
         FLEXT_CALLVAR_F(get_training_rate, set_training_rate);
         
-        static const std::string attribute_help;
     };
 }
 

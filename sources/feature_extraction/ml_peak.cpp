@@ -182,15 +182,7 @@ namespace ml
         }
     }
 
-    const std::string peak::attribute_help =
-    "search_window_size: an integer setting the search window size in values (default: 5)\n";
-    const std::string peak::method_help =
-    "float:\ta floating point value to the inlet updates the current value of the peak detector\n"
-    "reset:\treset the peak detector\n"
-    "timeout:\t (see GRT documentation)\n"
-    "help:\tpost this usage statement to the console\n";
-    
-    typedef class peak ml0x2epeak;
+       typedef class peak ml0x2epeak;
     
 #ifdef BUILD_AS_LIBRARY
     FLEXT_LIB(object_name.c_str(), peak);

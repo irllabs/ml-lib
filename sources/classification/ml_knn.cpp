@@ -30,8 +30,7 @@ namespace ml
         knn()
         {
             post("Support Vector Machines based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
-            help.append_attributes(attribute_help);
+            set_scaling(defaults::scaling);
         }
         
     protected:
@@ -134,12 +133,7 @@ namespace ml
     {
         return grt_knn;
     }
-    
-    const std::string knn::attribute_help =  "k:\tinteger (k > 1) Sets the K nearest neighbours that will be searched for by the algorithm during prediction.(default 10)\n"
-    "min_k_search_value:\tinteger (n > 0) sets the minimum K value to use when searching for the best K value. (default 1)\n"
-    "max_k_search_value:\tinteger (n > 0) sets the maximum K value to use when searching for the best K value. (default 10)\n"
-    "best_k_value_search:\tbool (0 or 1) set whether k value search is enabled or not (default 0)\n";
-    
+   
     typedef class knn ml0x2eknn;
     
 #ifdef BUILD_AS_LIBRARY

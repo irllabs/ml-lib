@@ -30,9 +30,8 @@ namespace ml
         hmm()
         {
             post("Hidden Markov Model based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
+            set_scaling(defaults::scaling);
             set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
-            help.append_attributes(attribute_help);
         }
         
     protected:
@@ -207,14 +206,6 @@ namespace ml
     {
         return time_series_classification_data.saveDatasetToFile(path);
     }
-    
-    const std::string hmm::attribute_help =  "num_states:\tinteger ( > 0) sets the number of states in the model (default 5)\n"
-    "num_symbols:\tinteger ( > 0) sets the number of symbols in the model (default 10)\n"
-    "model_type:\tinteger (0 = ERGODIC, 1 = LEFTRIGHT) sets the model type used for the HMM (default LEFTRIGHT)\n"
-    "delta:\tinteger ( > 0) controls how many states a model can transition to if the LEFTRIGHT model type is used (default 1)\n"
-    "max_num_iterations:\tinteger ( > 0) set the maximum number of training iterations (default 100)\n"
-    "num_random_training_iterations:\tinteger setting the number of random training iterations (default 10)\n"
-    "min_improvement:\tfloat sets the minimum improvement parameter which controls when the HMM training algorithm should stop (default 1.0e-2)\n";
     
     typedef class hmm ml0x2ehmm;
     

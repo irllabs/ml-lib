@@ -100,12 +100,10 @@ namespace ml
     public:
         svm()
         {
-            help.append_attributes(attribute_help);
-            help.append_methods(method_help);
             std::stringstream ss;
             ss << "Support Vector Machines based on the GRT library version " << GRT::GRTBase::getGRTVersion().c_str();
             post(ss.str());
-            set_scaling(default_scaling);
+            set_scaling(defaults::scaling);
         }
         
     protected:
@@ -390,32 +388,6 @@ namespace ml
     {
         return grt_svm;
     }
-    
-    const std::string svm::attribute_help =
-    "type:\tset type of SVM (default 0)\n"
-    "	0 -- C-SVC		(multi-class classification)\n"
-    "	1 -- nu-SVC		(multi-class classification)\n"
-    "	2 -- one-class SVM\n"
-    "	3 -- epsilon-SVR	(regression)\n"
-    "	4 -- nu-SVR		(regression)\n"
-    "kernel:\tset type of kernel function (default 2)\n"
-    "	0 -- linear: u'*v\n"
-    "	1 -- polynomial: (gamma*u'*v + coef0)^degree\n"
-    "	2 -- radial basis function: exp(-gamma*|u-v|^2)\n"
-    "	3 -- sigmoid: tanh(gamma*u'*v + coef0)\n"
-    "	4 -- precomputed kernel (kernel values in training_set_file)\n"
-    "degree:\tset degree in kernel function (default 3)\n"
-    "gamma:\tset gamma in kernel function (default 1/num_features)\n"
-    "coef0:\tset coef0 in kernel function (default 0)\n"
-    "cost:\tset the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)\n"
-    "nu:\tset the parameter nu of nu-SVC, one-class SVM, and nu-SVR (default 0.5)\n"
-    "epsilon:\tset the epsilon in loss function of epsilon-SVR (default 0.1)\n"
-    "cachesize:\tset cache memory size in MB (default 100)\n"
-    "epsilon:\tset tolerance of termination criterion (default 0.001)\n"
-    "shrinking:\twhether to use the shrinking heuristics, 0 or 1 (default 1)\n";
-    
-    const std::string svm::method_help =
-    "cross_validation:\t\tperform cross-validation\n";
     
     typedef class svm ml0x2esvm;
 

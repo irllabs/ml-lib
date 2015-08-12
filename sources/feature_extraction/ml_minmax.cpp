@@ -38,14 +38,12 @@ namespace ml
         {
             post("Peak / valley detection based on Eli Billauer's peakdet");
             FLEXT_ADDMETHOD(0, input);
-            help.append_attributes(attribute_help);
         }
         
     protected:
         
         static void setup(t_classid c)
         {
-            
             FLEXT_CADDATTR_SET(c, "delta", set_delta);
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
                         
@@ -221,8 +219,6 @@ namespace ml
             atomList.Append(value_a);
         }
     }
-    
-    const std::string minmax::attribute_help = "delta: a float setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value. (default: 1e-6)";
     
     typedef class minmax ml0x2eminmax;
     

@@ -20,32 +20,12 @@
 
 #include <sstream>
 
-#define POST_SEPARATOR ": "
-#define LINE_SEPARATOR "---------------------------------------\n"
 
 namespace ml
 {
     // Utility function declarations
     void post_prefixed_message(const std::string object_name, const std::string &message, void(*post_function)(const char *,...));
 
-    // help implementation
-    std::string help::full_message(void) const
-    {
-        std::string full_message;
-        
-        full_message.append(LINE_SEPARATOR);
-        full_message.append("Attributes:\n");
-        full_message.append(LINE_SEPARATOR);
-        full_message.append(attributes.c_str());
-        full_message.append(LINE_SEPARATOR);
-        full_message.append("Methods:\n");
-        full_message.append(LINE_SEPARATOR);
-        full_message.append(methods.c_str());
-        full_message.append(LINE_SEPARATOR);
-        
-        return full_message;
-    }
-    
     // base implementation
     void base::post(const std::string &message) const
     {
@@ -74,7 +54,7 @@ namespace ml
     // Utility function definitions
     void post_prefixed_message(const std::string object_name, const std::string &message, void(*post_function)(const char *,...))
     {
-        std::string full_message = object_name + POST_SEPARATOR + message;
+        std::string full_message = object_name + ": " + message;
         post_function(full_message.c_str());
     }
 }

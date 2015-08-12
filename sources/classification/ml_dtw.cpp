@@ -30,9 +30,8 @@ namespace ml
         dtw()
         {
             post("Dynamic Time Warping based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
+            set_scaling(defaults::scaling);
             set_data_type(LABELLED_TIME_SERIES_CLASSIFICATION);
-            help.append_attributes(attribute_help);
         }
         
     protected:
@@ -216,14 +215,6 @@ namespace ml
     {
         return time_series_classification_data.saveDatasetToFile(path);
     }
-    
-    const std::string dtw::attribute_help =
-    "rejection_mode:\tinteger sets the method used for null rejection. (0 = TEMPLATE_THRESHOLDS, 1 = CLASS_LIKELIHOODS, 2 = THRESHOLDS_AND_LIKELIHOODS, default 0)\n"
-    "warping_radius:\tfloat (0..1)  sets the radius of the warping path, which is used if the constrain_warping_path is set to 1. (default 0.2)\n"
-    "offset_time_series:\tinteger (0 or 1) sets if each timeseries should be offset by the first sample in the timeseries (default 0)\n"
-    "constrain_warping_path:\tinteger (0 or 1) sets the warping path should be constrained to within a specific radius from the main diagonal of the cost matrix (default 1)\n"
-    "enable_z_normalization:\tinteger (0 or 1) turning z-normalization on or off for training and prediction (default 0)\n"
-    "enable_trim_training_data:\tinteger (0 or 1) enabling data trimming prior to training (default 0)\n";
     
     typedef class dtw ml0x2edtw;
     

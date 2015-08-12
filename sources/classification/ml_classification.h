@@ -68,7 +68,6 @@ namespace ml
         FLEXT_CALLVAR_B(get_null_rejection, set_null_rejection);
         FLEXT_CALLVAR_F(get_null_rejection_coeff, set_null_rejection_coeff);
         
-        static const std::string attribute_help;
     };
 }
 

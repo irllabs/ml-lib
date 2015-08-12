@@ -38,17 +38,7 @@ namespace ml
         adaboost()
         {
             post("Adaboost classifier based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
-            std::stringstream post_stream;
-            post_stream << "prediction_method:\tinteger (" << GRT::AdaBoost::MAX_VALUE << ":MAX_VALUE or " <<  GRT::AdaBoost::MAX_POSITIVE_VALUE << ":MAX_POSITIVE_VALUE) sets the Adaboost prediction method (default " << GRT::AdaBoost::MAX_VALUE << ")";
-            help.append_attributes(post_stream.str());
-            post_stream.clear();
-            post_stream << "set_weak_classifier:\tinteger (" << DECISION_STUMP << ":DECISION_STUMP or " << RADIAL_BASIS_FUNCTION << ":RADIAL_BASIS_FUNCTION) sets the weak classifier to be used by Adaboost, (default: " << DECISION_STUMP << ")";
-            help.append_attributes(post_stream.str());
-            post_stream.clear();
-            post_stream << "add_weak_classifier:\tinteger (" << DECISION_STUMP << ":DECISION_STUMP or " << RADIAL_BASIS_FUNCTION << ":RADIAL_BASIS_FUNCTION) adds the weak classifier to the list of classifiers used by Adaboost)";
-            help.append_attributes(post_stream.str());
-            help.append_attributes(attribute_help);
+            set_scaling(defaults::scaling);
         }
         
     protected:
@@ -161,7 +151,6 @@ namespace ml
         return grt_adaboost;
     }
 
-    const std::string adaboost::attribute_help = "num_boosting_iterations:\tinteger (>0) sets the number of boosting iterations that should be used when training the model (default 20)\n";
     
     typedef class adaboost ml0x2eadaboost;
     

@@ -24,7 +24,6 @@ namespace ml
 {
     classification::classification()
     {
-        help.append_attributes(attribute_help);
         set_data_type(LABELLED_CLASSIFICATION);
     }
     
@@ -273,11 +272,5 @@ namespace ml
     {
         return classification_data.saveDatasetToFile(path);
     }
-    
-    const std::string classification::attribute_help =
-    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)\n"
-    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n";
-    
-
     
 }

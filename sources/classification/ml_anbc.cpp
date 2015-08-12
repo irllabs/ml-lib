@@ -32,8 +32,7 @@ namespace ml
         anbc()
         {
             post("Adaptive Naive Bayes classifier based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
-            help.append_attributes(attribute_help);
+            set_scaling(defaults::scaling);
         }
     
     protected:
@@ -62,8 +61,6 @@ namespace ml
         
         // Instance variables
         GRT::ANBC grt_anbc;
-        
-        static const std::string attribute_help;
     };
     
     // Flext attribute setters
@@ -102,8 +99,6 @@ namespace ml
     {
         return grt_anbc;
     }
-    
-    const std::string anbc::attribute_help = "weights:\tvector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights";
     
     typedef class anbc ml0x2eanbc;
     

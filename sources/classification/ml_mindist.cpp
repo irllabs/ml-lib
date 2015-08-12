@@ -30,8 +30,7 @@ namespace ml
         mindist()
         {
             post("MinDist classifier algorithm based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
-            help.append_attributes(attribute_help);
+            set_scaling(defaults::scaling);
         }
         
     protected:
@@ -65,8 +64,6 @@ namespace ml
         virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::MinDist grt_mindist;
-        
-        static const std::string attribute_help;
     };
     
     
@@ -92,8 +89,6 @@ namespace ml
     {
         return grt_mindist;
     }
-    
-    const std::string mindist::attribute_help = "num_clusters:\tinteger (n > 0) sets how many clusters each model will try to find during the training phase (default 10)";
     
     typedef class mindist ml0x2emindist;
     

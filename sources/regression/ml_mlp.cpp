@@ -17,10 +17,10 @@
  */
 
 #include "ml_ml.h"
+#include "ml_defaults.h"
 
 namespace ml
 {
-    const GRT::UINT default_num_hidden_neurons = 2;
     const std::string object_name = NAME_PREFIX "mlp";
         
     typedef enum mlp_layer_
@@ -39,25 +39,18 @@ namespace ml
     public:
         mlp()
         :
-        num_hidden_neurons(default_num_hidden_neurons),
+        num_hidden_neurons(defaults::num_hidden_neurons),
         input_activation_function((GRT::Neuron::ActivationFunctions)grt_mlp.getInputLayerActivationFunction()),
         hidden_activation_function((GRT::Neuron::ActivationFunctions)grt_mlp.getHiddenLayerActivationFunction()),
         output_activation_function((GRT::Neuron::ActivationFunctions)grt_mlp.getOutputLayerActivationFunction())
         {
             post("Multilayer Perceptron based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             
-            regression_data.setInputAndTargetDimensions(default_num_input_dimensions, default_num_output_dimensions);
-            classification_data.setNumDimensions(default_num_input_dimensions);
+            regression_data.setInputAndTargetDimensions(defaults::num_input_dimensions, defaults::num_output_dimensions);
+            classification_data.setNumDimensions(defaults::num_input_dimensions);
             
             grt_mlp.setMinChange(1.0e-2);
-            set_scaling(default_scaling);
-            
-            std::stringstream post_stream;
-            
-            post_stream << "mode:\tinteger setting mode of the MLP, " << LABELLED_REGRESSION << " for regression and " <<LABELLED_CLASSIFICATION << " for classification (default " << default_data_type << ")\n";
-            help.append_attributes(attribute_help);
-            help.append_methods(method_help);
-            help.append_attributes(post_stream.str());
+            set_scaling(defaults::scaling);
         }
         
     protected:
@@ -191,8 +184,6 @@ namespace ml
         GRT::Neuron::ActivationFunctions hidden_activation_function;
         GRT::Neuron::ActivationFunctions output_activation_function;
         
-        static const std::string method_help;
-        static const std::string attribute_help;
     };
     
     // Flext attribute setters
@@ -423,7 +414,7 @@ namespace ml
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            num_outputs = default_num_output_dimensions;
+            num_outputs = defaults::num_output_dimensions;
         }
         else if (data_type == LABELLED_REGRESSION)
         {
@@ -736,35 +727,7 @@ namespace ml
         
         return false;
     }
-    
-    const std::string mlp::method_help =
-    "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode, where N is determined by the num_outputs attribute\n"
-    "write:\twrite training examples, first argument gives path to write location\n"
-    "read:\tread training examples, first argument gives path to the read location\n"
-    "train:\ttrain the MLP based on vectors added with 'add'\n"
-    "clear:\tclear the stored training data and model\n"
-    "map:\tgive the class of the input feature vector provided as a list in classification mode or the regression outputs in regression mode\n"
-    "help:\tpost this usage statement to the console\n";
-    const std::string mlp::attribute_help =
-    "num_outputs:\tinteger setting number of neurons in the output layer of the MLP (default " + std::to_string( default_num_output_dimensions) + ")\n"
-    "num_hidden:\tinteger setting number of neurons in the hidden layer of the MLP (default " + std::to_string( default_num_hidden_neurons) + ")\n"
-    "min_epochs:\tinteger setting the minimum number of training iterations (default 10)\n"
-    "max_epochs:\tinteger setting the maximum number of training iterations (default 100)\n"
-    "min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)\n"
-    "training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)\n"
-    "momentum:\tfloating point value setting the momentum of the MLP (default 0.5)\n"
-    "gamma:\tfloating point value setting the gamma of the MLP (default 2.0)\n"
-    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded (default 1)\n"
-    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n"
-    "input_activation_function:\tinteger determining the activation function for the input layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
-    "hidden_activation_function:\tinteger determining the activation function for the hidden layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
-    "output_activation_function:\tinteger determining the activation function for the output layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID (default LINEAR)\n"
-    "rand_training_iterations:\tinteger setting the number of random training iterations (default 10)\n"
-    "use_validation_set:\tinteger (0 or 1) sets whether to use a validation training set (default 1)\n"
-    "validation_set_size:\tinteger integer determining the size of the validation set (default 20)\n"
-    "randomize_training_order:\tinteger (0 or 1) sets whether to randomize the training order (default 0)\n"
-    "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n";
-    
+        
     typedef class mlp ml0x2emlp;
     
 #ifdef BUILD_AS_LIBRARY

@@ -30,7 +30,7 @@ namespace ml
         logreg()
         {
             post("Logistic Regression based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
+            set_scaling(defaults::scaling);
         }
         
     protected:

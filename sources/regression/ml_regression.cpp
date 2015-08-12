@@ -63,7 +63,6 @@ namespace ml
     {
         regression_data.setInputAndTargetDimensions(default_num_input_dimensions, default_num_output_dimensions);
         set_data_type(LABELLED_REGRESSION);
-        help.append_attributes(attribute_help);
     }
     
     void regression::train()
@@ -172,10 +171,4 @@ namespace ml
     {
         return regression_data.saveDatasetToFile(path);
     }
-    
-    const std::string regression::attribute_help =
-    "training_rate:\tfloating point value used to update the weights at each step of the stochastic gradient descent (default 0.1)\n"
-    "max_iterations:\tinteger setting the maximum number of training iterations (default 100)\n"
-    "min_change:\tfloating point value setting the minimum change that must be achieved between two training epochs for the training to continue (default 1.0e-5)\n";
-
 }

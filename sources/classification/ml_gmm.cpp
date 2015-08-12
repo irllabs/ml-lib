@@ -30,8 +30,7 @@ namespace ml
         gmm()
         {
             post("Gaussian Mixture Models based on the GRT library version " + GRT::GRTBase::getGRTVersion());
-            set_scaling(default_scaling);
-            help.append_attributes(attribute_help);
+            set_scaling(defaults::scaling);
         }
         
     protected:
@@ -65,8 +64,6 @@ namespace ml
         virtual const std::string get_object_name(void) const { return object_name; };
         
         GRT::GMM grt_gmm;
-        
-        static const std::string attribute_help;
     };
     
     // Flext attribute setters
@@ -93,9 +90,6 @@ namespace ml
         return grt_gmm;
     }
     
-    const std::string gmm::attribute_help =
-    "num_mixture_models:\tinteger (n > 0) sets the number of mixture models used for class (default 2)\n";
-        
     typedef class gmm ml0x2egmm;
     
 #ifdef BUILD_AS_LIBRARY
