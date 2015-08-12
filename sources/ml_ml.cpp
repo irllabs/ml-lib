@@ -17,6 +17,7 @@
  */
 
 #include "ml_ml.h"
+#include "ml_defaults.h"
 
 #include <string>
 
@@ -33,10 +34,8 @@ namespace ml
     ml::ml()
     : current_label(0), probs(false), recording(false)
     {
-        help.append_attributes(attribute_help);
-        help.append_methods(method_help);
-        set_data_type(default_data_type);
-        set_num_inputs(default_num_input_dimensions);
+        set_data_type(defaults::data_type);
+        set_num_inputs(defaults::num_input_dimensions);
         AddOutAnything("general purpose outlet");
     }
     
@@ -413,7 +412,7 @@ namespace ml
         this->data_type_ = type;
     }
     
-    ml::data_type ml::get_data_type() const
+    data_type ml::get_data_type() const
     {
         return data_type_;
     }
@@ -513,19 +512,6 @@ namespace ml
     const t_symbol *ml::s_write = flext::MakeSymbol("write");
     const t_symbol *ml::s_probs = flext::MakeSymbol("probs");
     const t_symbol *ml::s_error = flext::MakeSymbol("error");
-    
-    const std::string ml::method_help =
-    "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc"
-    "write:\twrite training examples, first argument gives path to write file\n"
-    "read:\tread training examples, first argument gives path to the read location\n"
-    "train:\ttrain the MLP based on vectors added with 'add'\n"
-    "clear:\tclear the stored training data and model\n"
-    "map:\tgive the regression value for the input feature vector\n"
-    "help:\tpost this usage statement to the console\n";
-    
-    const std::string ml::attribute_help =
-    "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n"
-    "probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet\n";
     
 } // namespace ml
 

@@ -20,6 +20,8 @@
 #ifndef ml_base_h__
 #define ml_base_h__
 
+// TODO: merge ml_ml.h into ml_base.h
+
 #include "flext.h"
 #include "ml_doc.h"
 #include "ml_types.h"
@@ -32,20 +34,6 @@
 
 namespace ml
 {
-    class help
-    {
-    public:        
-        void append_methods(const std::string &methods) { this->methods.append(methods); }
-        void append_attributes(const std::string &attributes) { this->attributes.append(attributes); }
-        
-        std::string full_message(void) const;
-        
-    private:
-        std::string methods;
-        std::string attributes;
-    };
-    
-    
     class base:
     public flext_base
     {
@@ -54,7 +42,6 @@ namespace ml
         void error(const std::string &message) const;
  
     protected:
-        ml::help help;
         const std::string get_help_string(void) const;
         virtual const std::string get_object_name(void) const = 0;
     };

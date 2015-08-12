@@ -110,8 +110,6 @@ namespace ml
         
         data_type data_type_;
         
-        static const std::string method_help;
-        static const std::string attribute_help;
     };
 
 }
