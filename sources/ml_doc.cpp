@@ -62,20 +62,19 @@ namespace ml_doc
         return name;
     }
     
+    
     // formattable_message_descriptors includes all ancestor's descriptors
     std::vector<std::unique_ptr<formattable_message_descriptor> > class_descriptor::get_formattable_message_descriptors(void) const
     {
         std::vector<std::unique_ptr<formattable_message_descriptor> > formattables;
         
         const class_descriptor *current_descriptor = this;
+        std::vector<const class_descriptor *> class_descriptors;
+        std::vector<std::string> names;
         
         while (true)
         {
-            for (auto &formattable : current_descriptor->message_descriptors)
-            {
-                std::unique_ptr<formattable_message_descriptor> desc_ptr(formattable->clone());
-                formattables.push_back(std::move(desc_ptr));
-            }
+            class_descriptors.push_back(current_descriptor);
             
             if (current_descriptor->parent == nullptr)
             {
@@ -83,7 +82,34 @@ namespace ml_doc
             }
             
             current_descriptor = current_descriptor->parent;
-           
+        }
+        
+        std::reverse(class_descriptors.begin(), class_descriptors.end());
+        
+        for (auto &class_descriptor : class_descriptors)
+        {
+            for (auto &formattable : class_descriptor->message_descriptors)
+            {
+                std::unique_ptr<formattable_message_descriptor> desc_ptr(formattable->clone());
+                std::string name = desc_ptr->name_string();
+                if (std::find(names.begin(), names.end(), name) != names.end())
+                {
+                    // Don't add duplicate upstream names, but move downstream name to upstream position
+                    for (auto it = formattables.begin(); it != formattables.end(); ++it)
+                    {
+                        if ((*it)->name_string() == name)
+                        {
+                            it = formattables.erase(it);
+                            formattables.insert(it, std::move(desc_ptr));
+                            break;
+                        }
+                    }
+                    continue;
+                }
+                names.push_back(desc_ptr->name_string());
+                formattables.push_back(std::move(desc_ptr));
+            }
+            
         }
         
         return formattables;
