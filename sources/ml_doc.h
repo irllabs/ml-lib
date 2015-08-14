@@ -35,15 +35,17 @@ namespace ml_doc
     class message_descriptor : public formattable_message_descriptor
     {
     public:
-        message_descriptor()
-        : is_method(false) {};
-        
-        message_descriptor(std::string name)
+        message_descriptor() = delete;
+        message_descriptor(std::string name, std::string desc)
         : name(name),
-        is_method(false) {};
+        desc(desc) {};
         
         virtual std::string print(const generic_formatter &formatter) const;
-        virtual message_descriptor* clone() const=0;
+        
+        virtual message_descriptor* clone() const
+        {
+            return new message_descriptor(*this);
+        };
         
         const std::string name;
         std::string desc;
@@ -51,35 +53,20 @@ namespace ml_doc
         // ml_formattable.h pure virtual methods
         virtual std::string desc_string(void) const;
         virtual std::string name_string(void) const;
-     
-    protected:
-        message_descriptor(bool is_method)
-        : is_method(is_method) {};
-        message_descriptor(bool is_method, std::string name)
-        : name(name), is_method(is_method) {};
-        
-    private:
-        const bool is_method;
     };
     
-    class method_descriptor : public message_descriptor
-    {
-    public:
-        method_descriptor(std::string name)
-        : message_descriptor(true, name) {};
-        
-        virtual method_descriptor *clone() const
-        {
-            return new method_descriptor(*this);
-        }        
-    };
-
     template <typename T>
     class valued_message_descriptor : public message_descriptor
     {
     public:
-        valued_message_descriptor(std::string name)
-        : message_descriptor(name) {};
+        valued_message_descriptor(std::string name, std::string desc, T def)
+        : message_descriptor(name, desc),
+        def(def) {};
+        
+        valued_message_descriptor(std::string name, std::string desc, std::initializer_list<T> allowed_values, T def)
+        : message_descriptor(name, desc),
+        allowed_values(allowed_values),
+        def(def) {};
         
         virtual valued_message_descriptor<T> *clone() const
         {
@@ -116,8 +103,10 @@ namespace ml_doc
     public valued_message_descriptor<T>
     {
     public:
-        ranged_message_descriptor(std::string name)
-        : valued_message_descriptor<T> (name) {};
+        ranged_message_descriptor(std::string name, std::string desc, T min, T max, T def)
+        : valued_message_descriptor<T> (name, desc, def),
+        min(min),
+        max(max) {};
         
         virtual ranged_message_descriptor<T> *clone() const
         {
@@ -188,6 +177,7 @@ namespace ml_doc
     private:
         void add_class_descriptor(std::string name);
         void add_class_descriptor(std::string name, std::string parent);
+        void add_class_descriptors(std::string parent, std::initializer_list<std::string> names);
  
         doc_manager(generic_formatter &formatter) : formatter(formatter) { populate(); };
         doc_manager(doc_manager const&) = delete;

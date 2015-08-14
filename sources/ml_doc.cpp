@@ -127,77 +127,87 @@ namespace ml_doc
         class_descriptor descriptor(name, &it->second);
         descriptors.emplace(name, std::move(descriptor));
     }
-
-    void doc_manager::populate(void)
-    {
-//        init_class_descriptors();
-        
-//        const std::string ml::method_help =
-//        "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc"
-//        "write:\twrite training examples, first argument gives path to write file\n"
-//        "read:\tread training examples, first argument gives path to the read location\n"
-//        "train:\ttrain the MLP based on vectors added with 'add'\n"
-//        "clear:\tclear the stored training data and model\n"
-//        "map:\tgive the regression value for the input feature vector\n"
-//        "help:\tpost this usage statement to the console\n";
-//        
-//        const std::string ml::attribute_help =
-//        "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n"
-//        "probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet\n";
-//
-        
-        add_class_descriptor("ml.base");
-        add_class_descriptor("ml.mlp", "ml.base");
-        
-        
-        method_descriptor add("add");
-        method_descriptor write("write");
-        method_descriptor read("read");
-        method_descriptor train("train");
-        method_descriptor clear("clear");
-        method_descriptor map("map");
-        method_descriptor help("help");
-
-        
-        valued_message_descriptor<float> foo("sdadad");
-        foo.allowed_values = {1,2,3};
-        foo.def = 3;
-        
-        ranged_message_descriptor<int> bar("blam");
-        bar.min = 2.5;
-        bar.max = 4;
-        bar.def = 3;
-        bar.desc = "fsdfsfd";
-        
-        add.desc = "blah balh blah";
-        
-        
-        descriptors["ml.base"].add_message_descriptor(add);
-        descriptors["ml.base"].add_message_descriptor(write);
-        descriptors["ml.base"].add_message_descriptor(foo, bar);
-        
-        
-
-        
-        
-        
-//        descriptors[ml_doc::name::ml]->add_message_descriptor(add);
-        
-        
     
-        
-        
-//        ranged_message_descriptor<int> min_epochs;
-//        
-//        min_epochs.name = "min_epochs";
-//        min_epochs.desc = "the minimum number of training iterations";
-//        min_epochs.min = 0;
-//        min_epochs.max = 100;
-//        min_epochs.def = 10;
-//        min_epochs.allowed_values = {1, 2, 3, 4, 5};
-        
-//        descriptors[ml_doc::name::mlp]->add_message_descriptor(min_epochs);
-       
+    void doc_manager::add_class_descriptors(std::string parent, std::initializer_list<std::string> names)
+    {
+        for(auto name : names)
+        {
+            add_class_descriptor(name, parent);
+        }
     }
+
+    
+
+//    void doc_manager::populate(void)
+//    {
+////        init_class_descriptors();
+//        
+////        const std::string ml::method_help =
+////        "add:\tlist comprising a class id followed by n features; <class> <feature 1> <feature 2> etc"
+////        "write:\twrite training examples, first argument gives path to write file\n"
+////        "read:\tread training examples, first argument gives path to the read location\n"
+////        "train:\ttrain the MLP based on vectors added with 'add'\n"
+////        "clear:\tclear the stored training data and model\n"
+////        "map:\tgive the regression value for the input feature vector\n"
+////        "help:\tpost this usage statement to the console\n";
+////        
+////        const std::string ml::attribute_help =
+////        "scaling:\tinteger (0 or 1) sets whether values are automatically scaled (default 1)\n"
+////        "probs:\tinteger (0 or 1) determing whether probabilities are sent from the right outlet\n";
+////
+//        
+//        add_class_descriptor("ml.base");
+//        add_class_descriptor("ml.mlp", "ml.base");
+//        
+//        
+//        method_descriptor add("add");
+//        method_descriptor write("write");
+//        method_descriptor read("read");
+//        method_descriptor train("train");
+//        method_descriptor clear("clear");
+//        method_descriptor map("map");
+//        method_descriptor help("help");
+//
+//        
+//        valued_message_descriptor<float> foo("sdadad");
+//        foo.allowed_values = {1,2,3};
+//        foo.def = 3;
+//        
+//        ranged_message_descriptor<int> bar("blam");
+//        bar.min = 2.5;
+//        bar.max = 4;
+//        bar.def = 3;
+//        bar.desc = "fsdfsfd";
+//        
+//        add.desc = "blah balh blah";
+//        
+//        
+//        descriptors["ml.base"].add_message_descriptor(add);
+//        descriptors["ml.base"].add_message_descriptor(write);
+//        descriptors["ml.base"].add_message_descriptor(foo, bar);
+//        
+//        
+//
+//        
+//        
+//        
+////        descriptors[ml_doc::name::ml]->add_message_descriptor(add);
+//        
+//        
+//    
+//        
+//        
+////        ranged_message_descriptor<int> min_epochs;
+////        
+////        min_epochs.name = "min_epochs";
+////        min_epochs.desc = "the minimum number of training iterations";
+////        min_epochs.min = 0;
+////        min_epochs.max = 100;
+////        min_epochs.def = 10;
+////        min_epochs.allowed_values = {1, 2, 3, 4, 5};
+//        
+////        descriptors[ml_doc::name::mlp]->add_message_descriptor(min_epochs);
+//       
+//    }
     
 }

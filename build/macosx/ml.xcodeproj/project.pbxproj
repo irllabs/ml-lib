@@ -490,38 +490,72 @@
 		7DD8C7121B1BC49F00866538 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF41AC84F4600C6BFA7 /* DeadZone.cpp */; };
 		7DD8C7131B1BC4A000866538 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF41AC84F4600C6BFA7 /* DeadZone.cpp */; };
 		7DD8C7141B1BC4A100866538 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF41AC84F4600C6BFA7 /* DeadZone.cpp */; };
+		7DD8C7141B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7151B1BC4A100866538 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF41AC84F4600C6BFA7 /* DeadZone.cpp */; };
+		7DD8C7151B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7161B1BC4A200866538 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF41AC84F4600C6BFA7 /* DeadZone.cpp */; };
+		7DD8C7161B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7171B1BC4A300866538 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF41AC84F4600C6BFA7 /* DeadZone.cpp */; };
+		7DD8C7171B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7181B1BC4A900866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7181B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7191B1BC4AA00866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7191B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C71A1B1BC4AB00866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C71A1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C71B1B1BC4AB00866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C71B1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C71C1B1BC4AC00866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C71C1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C71D1B1BC4AD00866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C71D1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C71E1B1BC4AE00866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C71E1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C71F1B1BC4AE00866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C71F1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7201B1BC4B100866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7201B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7211B1BC4B300866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7211B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7221B1BC4B400866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7221B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7231B1BC4B500866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7231B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7241B1BC4B500866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7241B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7251B1BC4B600866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7251B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7261B1BC4B700866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7261B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7271B1BC4B700866538 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF61AC84F4600C6BFA7 /* Derivative.cpp */; };
+		7DD8C7271B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
+		7DD8C7281B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7291B1BC4BE00866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C7291B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C72A1B1BC4BE00866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C72A1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C72B1B1BC4BF00866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C72B1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C72C1B1BC4C000866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C72C1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C72D1B1BC4C100866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C72D1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C72E1B1BC4C200866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C72E1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C72F1B1BC4C300866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C72F1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7301B1BC4C300866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C7301B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7311B1BC4C500866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C7311B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7321B1BC4C500866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C7321B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7331B1BC4C700866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C7331B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7341B1BC4C800866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C7341B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7351B1BC4C900866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
+		7DD8C7351B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7361B1BC4CA00866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
 		7DD8C7371B1BC4CA00866538 /* DoubleMovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF81AC84F4600C6BFA7 /* DoubleMovingAverageFilter.cpp */; };
 		7DD8C7381B1BC4D200866538 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D041AC84F4600C6BFA7 /* MovingAverageFilter.cpp */; };
@@ -543,40 +577,6 @@
 		7DD8C7481B1BCA5500866538 /* MinDist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C591AC84F4600C6BFA7 /* MinDist.cpp */; };
 		7DD8C7491B1BCA6100866538 /* MinDistModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C5B1AC84F4600C6BFA7 /* MinDistModel.cpp */; };
 		7DD8C74A1B1BCA6300866538 /* MinDistModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C5B1AC84F4600C6BFA7 /* MinDistModel.cpp */; };
-		7DDDA7B81B6FA54E00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7B91B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7BA1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7BB1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7BC1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7BD1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7BE1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7BF1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C01B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C11B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C21B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C31B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C41B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C51B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C61B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C71B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C81B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7C91B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7CA1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7CB1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7CC1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7CD1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7CE1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7CF1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D01B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D11B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D21B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D31B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D41B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D51B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D61B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D71B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D81B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
-		7DDDA7D91B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */; };
 		7DEE4F5818BD3AA5001A1294 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7DEE4F5B18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
 		7DEE4F5C18BD3EFD001A1294 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
@@ -2310,8 +2310,9 @@
 		7DACBF4E192B82F900F0E7D7 /* ml_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_base.h; path = ../../sources/ml_base.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DACBF4F192B869600F0E7D7 /* ml_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_base.cpp; path = ../../sources/ml_base.cpp; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml_ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_ml.h; path = ../../sources/ml_ml.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ml_doc_populate.cpp; sourceTree = "<group>"; };
+		7DD8C7361B7BADE3006D71AD /* ml_names.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_names.h; path = ../../sources/ml_names.h; sourceTree = "<group>"; };
 		7DD99CD818F4088700BE0A1A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_doc_populate.cpp; path = ../../sources/ml_doc_populate.cpp; sourceTree = "<group>"; };
 		7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ml_classification.cpp; path = ../../sources/classification/ml_classification.cpp; sourceTree = "<group>"; };
 		7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_regression.cpp; path = ../../sources/regression/ml_regression.cpp; sourceTree = "<group>"; };
 		7DEE4F5D18BD3F28001A1294 /* ml_regression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_regression.h; path = ../../sources/regression/ml_regression.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -2957,6 +2958,7 @@
 				7DACBF4C192B791400F0E7D7 /* Classification */,
 				7DACBF4B192B78E000F0E7D7 /* Regression */,
 				7D7E78951B738ACA00EE2BD8 /* ml_types.h */,
+				7DD8C7361B7BADE3006D71AD /* ml_names.h */,
 				7D7E3E3F1B73B15A0051D2FC /* ml_defaults.h */,
 				7DACBF4E192B82F900F0E7D7 /* ml_base.h */,
 				7DACBF4F192B869600F0E7D7 /* ml_base.cpp */,
@@ -2988,9 +2990,9 @@
 		7D71CBCC1AADB9E80099CD5B /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */,
 				7D2AEA6D1A95270E009F75BE /* ml_doc.h */,
 				7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */,
-				7DDDA7B71B6FA54E00EB0020 /* ml_doc_populate.cpp */,
 				7D71CBCA1AADB9D20099CD5B /* ml_formattable.h */,
 				7D71CBCB1AADB9D20099CD5B /* ml_formatter.h */,
 				7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */,
@@ -4464,7 +4466,6 @@
 				7D551A6C190FE523008FF361 /* ml_classification.cpp in Sources */,
 				7DF94B0F1AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DD8C71C1B1BC4AC00866538 /* Derivative.cpp in Sources */,
-				7DDDA7C51B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF943391AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF944051AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DF949DD1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
@@ -4477,6 +4478,7 @@
 				7DF949551AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF94AED1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DD8C70C1B1BC49900866538 /* DeadZone.cpp in Sources */,
+				7DD8C7211B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A431AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949BB1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943C11AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
@@ -4515,6 +4517,7 @@
 				7DF942901AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF943181AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF93F3E1AC84F4700C6BFA7 /* GMM.cpp in Sources */,
+				7DD8C7221B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7D551A7B190FE530008FF361 /* ml_classification.cpp in Sources */,
 				7DF94B101AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DF9433A1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
@@ -4532,7 +4535,6 @@
 				7DF949561AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF94AEE1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DD8C70D1B1BC49900866538 /* DeadZone.cpp in Sources */,
-				7DDDA7C61B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94A441AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949BC1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943C21AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
@@ -4560,7 +4562,6 @@
 				7D2AEA7D1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF9435D1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF944291AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
-				7DDDA7C71B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94A011AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF94AAB1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF94B331AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
@@ -4575,6 +4576,7 @@
 				7DD8C70E1B1BC49A00866538 /* DeadZone.cpp in Sources */,
 				7DF9433B1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF944071AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
+				7DD8C7231B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF949DF1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D551A8A190FE53B008FF361 /* ml_classification.cpp in Sources */,
 				7DD8C72E1B1BC4C200866538 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -4614,7 +4616,6 @@
 				7DF949C91AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D551A9C190FE9CE008FF361 /* ml_ml.cpp in Sources */,
 				7DF94A731AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DDDA7D31B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF9449B1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B3F1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AB71AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
@@ -4629,6 +4630,7 @@
 				7DF944BD1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DACBF77192BAC6300F0E7D7 /* ml_softmax.cpp in Sources */,
 				7D2AEA891A95270E009F75BE /* ml_doc.cpp in Sources */,
+				7DD8C72F1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942BF1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF949631AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF943031AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
@@ -4671,6 +4673,7 @@
 				7D551AAC190FE9F1008FF361 /* ml_ml.cpp in Sources */,
 				7DF94A741AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF9449C1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
+				7DD8C7301B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94B401AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AB81AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943AE1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -4680,7 +4683,6 @@
 				7DF94A961AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DF9429E1AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF944361AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
-				7DDDA7D41B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF944141AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DF944BE1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DACBF6C192B869600F0E7D7 /* ml_base.cpp in Sources */,
@@ -4739,7 +4741,6 @@
 				7DF94A971AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DF9429F1AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF944371AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
-				7DDDA7D51B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF944151AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DF944BF1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DACBF6D192B869600F0E7D7 /* ml_base.cpp in Sources */,
@@ -4755,6 +4756,7 @@
 				7DF949431AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF949871AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF949211AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
+				7DD8C7311B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF9436B1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A311AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF943491AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
@@ -4785,7 +4787,6 @@
 				7DF94A761AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF9449E1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B421AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
-				7DDDA7D61B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF93FD61AC84F4700C6BFA7 /* KNN.cpp in Sources */,
 				7DF94ABA1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943B01AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -4800,6 +4801,7 @@
 				7DD8C7141B1BC4A100866538 /* DeadZone.cpp in Sources */,
 				7D2AEA8C1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF942C21AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
+				7DD8C7321B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF949661AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF943061AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DD8C7341B1BC4C800866538 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -4854,7 +4856,6 @@
 				7D551AEC190FEA66008FF361 /* ml_ml.cpp in Sources */,
 				7D2AEA8D1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DD8C7251B1BC4B600866538 /* Derivative.cpp in Sources */,
-				7DDDA7D71B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF942C31AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF949671AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF943071AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
@@ -4867,6 +4868,7 @@
 				7DF9414D1AC84F4700C6BFA7 /* GaussianMixtureModels.cpp in Sources */,
 				7DF9436D1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DD8C7151B1BC4A100866538 /* DeadZone.cpp in Sources */,
+				7DD8C7331B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A331AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF9434B1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943F51AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
@@ -4915,10 +4917,10 @@
 				7DF949AC1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF9445C1AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
 				7DD8C73D1B1BC4D600866538 /* MovingAverageFilter.cpp in Sources */,
-				7DDDA7D81B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF9436E1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A781AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944181AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
+				7DD8C7341B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94B441AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF949241AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF944A01AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
@@ -4946,6 +4948,7 @@
 				7DF949BE1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D65FFD41992C18C00C82004 /* ml_base.cpp in Sources */,
 				7DF94A681AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
+				7DD8C7241B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF944901AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B341AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AAC1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
@@ -4971,7 +4974,6 @@
 				7DF949141AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF9435E1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A241AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
-				7DDDA7C81B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF9433C1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943E61AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944D41AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
@@ -5020,10 +5022,10 @@
 				7DD8C7171B1BC4A300866538 /* DeadZone.cpp in Sources */,
 				7DF949471AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF9498B1AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
-				7DDDA7D91B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DD8C73E1B1BC4D600866538 /* MovingAverageFilter.cpp in Sources */,
 				7DF949251AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF9436F1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
+				7DD8C7351B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A351AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF9434D1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943F71AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
@@ -5066,7 +5068,6 @@
 				7D7DA00C18F69A4600F417F6 /* ml_svm.cpp in Sources */,
 				7D2AEA801A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DD8C7201B1BC4B100866538 /* Derivative.cpp in Sources */,
-				7DDDA7CA1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF942B61AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF9495A1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF942FA1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
@@ -5079,6 +5080,7 @@
 				7DF940DA1AC84F4700C6BFA7 /* SVM.cpp in Sources */,
 				7DF943601AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DD8C7101B1BC49D00866538 /* DeadZone.cpp in Sources */,
+				7DD8C7261B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A261AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF9433E1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943E81AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
@@ -5117,7 +5119,6 @@
 				7DF942951AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF9442D1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DF9440B1AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
-				7DDDA7CB1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF93D671AC84F4700C6BFA7 /* AdaBoost.cpp in Sources */,
 				7DF944B51AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7D9F2B441B1B95D900B4BA08 /* DecisionStump.cpp in Sources */,
@@ -5133,6 +5134,7 @@
 				7DF949391AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF9497D1AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF949171AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
+				7DD8C7271B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF943611AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A271AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF9433F1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
@@ -5163,7 +5165,6 @@
 				7DF94A6C1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944941AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B381AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
-				7DDDA7CC1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94AB01AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943A61AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7D71CBBC1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
@@ -5178,6 +5179,7 @@
 				7D9F2B4E1B1B9EB700B4BA08 /* DeadZone.cpp in Sources */,
 				7D2AEA821A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF942B81AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
+				7DD8C7281B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF9495C1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF942FC1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7D9F2B521B1B9EC900B4BA08 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -5217,7 +5219,6 @@
 				7DF94A6D1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944951AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B391AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
-				7DDDA7CD1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94AB11AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943A71AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7D71CBBD1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
@@ -5232,6 +5233,7 @@
 				7DD8C6EB1B1BB3A200866538 /* DeadZone.cpp in Sources */,
 				7D2AEA831A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF942B91AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
+				7DD8C7291B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF9495D1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF942FD1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DD8C6EF1B1BB3B600866538 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -5271,7 +5273,6 @@
 				7DF94AD41AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF942981AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF949E61AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
-				7DDDA7CE1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7D2AEA841A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943A81AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7DF94B181AC84F4800C6BFA7 /* Util.cpp in Sources */,
@@ -5286,6 +5287,7 @@
 				7DF942BA1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF942DC1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF94A081AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
+				7DD8C72A1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DACBF66192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DD8C6FF1B1BBEBB00866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DCCEC881B1B8D6B00DEFCF1 /* Neuron.cpp in Sources */,
@@ -5325,7 +5327,6 @@
 				7D7DA05818F69B2A00F417F6 /* ml_classification.cpp in Sources */,
 				7DF94A6F1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944971AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
-				7DDDA7CF1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94B3B1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AB31AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943A91AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5340,6 +5341,7 @@
 				7DF944B91AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7D7DA0B818F69CAB00F417F6 /* ml_dtw.cpp in Sources */,
 				7D2AEA851A95270E009F75BE /* ml_doc.cpp in Sources */,
+				7DD8C72B1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942BB1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF9495F1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF942FF1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
@@ -5390,6 +5392,7 @@
 				7DF944BA1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7D7DA0B918F69CAF00F417F6 /* ml_hmm.cpp in Sources */,
 				7D2AEA861A95270E009F75BE /* ml_doc.cpp in Sources */,
+				7DD8C72C1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942BC1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DCCEC901B1B8ECA00DEFCF1 /* Derivative.cpp in Sources */,
 				7DF949601AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
@@ -5407,7 +5410,6 @@
 				7DF943661AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A2C1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF943441AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
-				7DDDA7D01B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF943EE1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944DC1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF68192B869600F0E7D7 /* ml_base.cpp in Sources */,
@@ -5456,10 +5458,10 @@
 				7DF943EF1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF949A51AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF944551AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DDDA7D11B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF943671AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A711AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944111AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
+				7DD8C72D1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94B3D1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF9491D1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DD8C7041B1BC11D00866538 /* Derivative.cpp in Sources */,
@@ -5508,10 +5510,10 @@
 				7DF949A61AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF944561AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
 				7DF943681AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
-				7DDDA7D21B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94A721AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DD8C6F81B1BBA8800866538 /* DeadZone.cpp in Sources */,
 				7DF944121AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
+				7DD8C72E1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94B3E1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF9491E1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DD8C6F71B1BBA8100866538 /* Derivative.cpp in Sources */,
@@ -5530,9 +5532,9 @@
 				7DCCEC581B1B82EC00DEFCF1 /* ml_svm.cpp in Sources */,
 				7DCCEC5C1B1B835D00DEFCF1 /* ml_classification.cpp in Sources */,
 				7DCCEC5D1B1B836100DEFCF1 /* ml_base.cpp in Sources */,
-				7DDDA7B91B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DCCEC5E1B1B836400DEFCF1 /* ml_ml.cpp in Sources */,
 				7DD8C7181B1BC4A900866538 /* Derivative.cpp in Sources */,
+				7DD8C7151B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DCCEC6C1B1B859E00DEFCF1 /* ErrorLog.cpp in Sources */,
 				7DCCEC6A1B1B857200DEFCF1 /* InfoLog.cpp in Sources */,
 				7DCCEC6B1B1B858700DEFCF1 /* DebugLog.cpp in Sources */,
@@ -5567,6 +5569,7 @@
 				7DF942C81AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF9498E1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF944A41AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
+				7DD8C7161B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7D7DA0F218F7DC5600F417F6 /* ml_classification.cpp in Sources */,
 				7DF942A61AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7D9F2B411B1B95D400B4BA08 /* DecisionStump.cpp in Sources */,
@@ -5603,7 +5606,6 @@
 				7DF9494A1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7D9F2B3F1B1B95BA00B4BA08 /* Derivative.cpp in Sources */,
 				7DF94AE21AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
-				7DDDA7BA1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94A381AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949B01AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF205FE1B1BB21B00BB0AA4 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -5634,7 +5636,6 @@
 				7DF94A5B1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944831AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B271AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
-				7DDDA7BB1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94A9F1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943951AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7D71CBAB1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
@@ -5649,6 +5650,7 @@
 				7D9F2B4D1B1B9EB400B4BA08 /* DeadZone.cpp in Sources */,
 				7D2AEA711A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF942A71AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
+				7DD8C7171B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF9494B1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF942EB1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7D9F2B511B1B9EC800B4BA08 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -5688,7 +5690,6 @@
 				7DF94A5C1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944841AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B281AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
-				7DDDA7BC1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94AA01AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943961AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7D71CBAC1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
@@ -5703,6 +5704,7 @@
 				7DD8C6EA1B1BB39F00866538 /* DeadZone.cpp in Sources */,
 				7DF942A81AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF9494C1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
+				7DD8C7181B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942EC1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7D7DA11218F7DCA600F417F6 /* ml_ml.cpp in Sources */,
 				7DD8C6EE1B1BB3B400866538 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -5757,7 +5759,6 @@
 				7DACBF7F192BAD2F00F0E7D7 /* ml_mlp.cpp in Sources */,
 				7D2AEA731A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DD8C6FC1B1BBEAF00866538 /* Derivative.cpp in Sources */,
-				7DDDA7BD1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF942A91AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF9494D1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DCCEC861B1B8D6000DEFCF1 /* MLP.cpp in Sources */,
@@ -5770,6 +5771,7 @@
 				7DF949091AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF943531AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DD8C6FA1B1BBEA900866538 /* DeadZone.cpp in Sources */,
+				7DD8C7191B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A191AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF943311AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943DB1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
@@ -5812,7 +5814,6 @@
 				7DF943321AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943FE1AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DF949D61AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
-				7DDDA7BE1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DACBF75192BAC5600F0E7D7 /* ml_dtw.cpp in Sources */,
 				7D7DA13018F7DCD600F417F6 /* ml_ml.cpp in Sources */,
 				7D818CC51B1B92C200043BB9 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -5825,6 +5826,7 @@
 				7D818CC31B1B92B800043BB9 /* Derivative.cpp in Sources */,
 				7DF94AE61AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF94A3C1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DD8C71A1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF949B41AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943BA1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF943761AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
@@ -5863,6 +5865,7 @@
 				7DF943DD1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF94A1B1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF942891AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
+				7DD8C71B1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF943111AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7D7DA13E18F7DCEC00F417F6 /* ml_regression.cpp in Sources */,
 				7DF94B091AC84F4800C6BFA7 /* Util.cpp in Sources */,
@@ -5880,7 +5883,6 @@
 				7DF9494F1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF94AE71AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF94A3D1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
-				7DDDA7BF1B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF949B51AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943BB1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF943771AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
@@ -5908,6 +5910,7 @@
 				7D7DA14D18F7DD0600F417F6 /* ml_regression.cpp in Sources */,
 				7DF94A601AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944881AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
+				7DD8C71C1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94B2C1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AA41AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF9439A1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5933,7 +5936,6 @@
 				7DF9490C1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DD8C7051B1BC11F00866538 /* Derivative.cpp in Sources */,
 				7DF943561AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
-				7DDDA7C01B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94A1C1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF943341AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943DE1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
@@ -5961,7 +5963,6 @@
 				7D7DA15C18F7DD1C00F417F6 /* ml_regression.cpp in Sources */,
 				7DF94A611AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944891AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
-				7DDDA7C11B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94B2D1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AA51AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF9439B1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5976,6 +5977,7 @@
 				7D2AEA771A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF942AD1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF949511AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
+				7DD8C71D1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942F11AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DACBF59192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF94AE91AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
@@ -6015,7 +6017,6 @@
 				7D2AEA781A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943581AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF944241AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
-				7DDDA7C21B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF949FC1AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF94AA61AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF94B2E1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
@@ -6030,6 +6031,7 @@
 				7DD8C7091B1BC49600866538 /* DeadZone.cpp in Sources */,
 				7DF943361AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF944021AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
+				7DD8C71E1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF949DA1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D551A93190FE60D008FF361 /* ml_softmax.cpp in Sources */,
 				7DD8C72A1B1BC4BE00866538 /* DoubleMovingAverageFilter.cpp in Sources */,
@@ -6072,7 +6074,6 @@
 				7DF949FD1AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF94AA71AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF94B2F1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
-				7DDDA7C31B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF942F31AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DF949751AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF943E11AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
@@ -6105,6 +6106,7 @@
 				7D405EBE1B1BCB4E003A2172 /* RandomForests.cpp in Sources */,
 				7DF9437B1AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DD8C7451B1BC4DE00866538 /* MovingAverageFilter.cpp in Sources */,
+				7DD8C71F1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A851AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DA1F154190FE40E00F491FB /* ml_ml.cpp in Sources */,
 				7DF944CF1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
@@ -6121,6 +6123,7 @@
 				7DF942D21AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949981AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF944AE1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
+				7DD8C7201B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DACBF5C192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DD8C7471B1BCA5000866538 /* MinDist.cpp in Sources */,
 				7DF942B01AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
@@ -6157,7 +6160,6 @@
 				7DF94A641AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7D71CBB41AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DF949541AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
-				7DDDA7C41B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DD8C71B1B1BC4AB00866538 /* Derivative.cpp in Sources */,
 				7DF94AEC1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF94A421AC84F4800C6BFA7 /* SVD.cpp in Sources */,
@@ -6235,6 +6237,7 @@
 				7DF940C81AC84F4700C6BFA7 /* SVM.cpp in Sources */,
 				7DF943F81AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DF947281AC84F4800C6BFA7 /* DoubleMovingAverageFilter.cpp in Sources */,
+				7DD8C7141B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7D61B1131876F334000FD114 /* ml_dtw.cpp in Sources */,
 				7DF945901AC84F4800C6BFA7 /* MovementIndex.cpp in Sources */,
 				7DF9441A1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
@@ -6286,7 +6289,6 @@
 				7D16A26E1B1C002F0076C05F /* DecisionTree.cpp in Sources */,
 				7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */,
 				7DF93F741AC84F4700C6BFA7 /* DiscreteHiddenMarkovModel.cpp in Sources */,
-				7DDDA7B81B6FA54E00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF94A361AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF946181AC84F4800C6BFA7 /* TimeDomainFeatures.cpp in Sources */,
 				7DF9452A1AC84F4700C6BFA7 /* FFTFeatures.cpp in Sources */,
@@ -6369,6 +6371,7 @@
 				7DF947391AC84F4800C6BFA7 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7D61B1141876F334000FD114 /* ml_dtw.cpp in Sources */,
 				7DF945A11AC84F4800C6BFA7 /* MovementIndex.cpp in Sources */,
+				7DD8C7251B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF9442B1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7D65FFCA199259B400C82004 /* ml_feature_extraction.cpp in Sources */,
 				7DF9433D1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
@@ -6420,7 +6423,6 @@
 				7D16A26F1B1C00310076C05F /* DecisionTree.cpp in Sources */,
 				7DA1F13C190FDC6D00F491FB /* ml_softmax.cpp in Sources */,
 				7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */,
-				7DDDA7C91B6FA54F00EB0020 /* ml_doc_populate.cpp in Sources */,
 				7DF93F851AC84F4700C6BFA7 /* DiscreteHiddenMarkovModel.cpp in Sources */,
 				7DF94A471AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF946291AC84F4800C6BFA7 /* TimeDomainFeatures.cpp in Sources */,

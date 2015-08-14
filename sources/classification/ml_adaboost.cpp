@@ -23,12 +23,6 @@
 namespace ml
 {
     const std::string object_name = "ml.adaboost";
-    
-    enum weak_classifiers_
-    {
-        DECISION_STUMP,
-        RADIAL_BASIS_FUNCTION
-    };
   
     class adaboost : classification
     {

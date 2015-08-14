@@ -18,6 +18,12 @@ namespace ml {
         UNLABELLED_CLASSIFICATION,
         NUM_DATA_TYPES
     };
+    
+    enum weak_classifiers
+    {
+        DECISION_STUMP,
+        RADIAL_BASIS_FUNCTION
+    };
 }
 
 
