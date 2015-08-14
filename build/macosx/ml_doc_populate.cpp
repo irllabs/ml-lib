@@ -696,7 +696,7 @@ namespace ml_doc
 
         descriptors[ml::k_peak].add_message_descriptor(peak, reset, timeout, peak_help);
         
-        //---- ml.minmaxr        
+        //---- ml.minmax        
         ranged_message_descriptor<float> minmax_delta(
                                                       "delta",
                                                       "setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value",
