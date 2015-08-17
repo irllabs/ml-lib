@@ -41,6 +41,14 @@ namespace ml_doc
         virtual std::string format(const formattable_class_descriptor &descriptor) const;
     };
     
+    class html_table_formatter : public generic_formatter
+    {
+    public:
+        virtual std::string format(const formattable_message_descriptor &descriptor) const;
+        virtual std::string format(const formattable_class_descriptor &descriptor) const;
+
+    };
+    
 }
 
 

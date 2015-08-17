@@ -21,6 +21,9 @@
 
 namespace ml_doc
 {
+    
+    // max_formatter
+    
     std::string max_formatter::format(const formattable_message_descriptor &f) const
     {
         std::string formatted = f.name_string() + ": " + f.desc_string() + ". ";
@@ -78,6 +81,71 @@ namespace ml_doc
         return formatted;
     }
 
-
+    // html_table_formatter
+    
+    std::string html_table_formatter::format(const formattable_message_descriptor &f) const
+    {
+        std::string formatted = "<tr><td>" + f.name_string() + "</td><td>" + f.desc_string() + "</td>";
+        std::vector<std::string> allowed_values = f.allowed_values_strings();
+        
+        formatted += "<td>";
+        
+        if (allowed_values.size())
+        {
+            for (auto it = allowed_values.begin(); it != allowed_values.end();  ++it )
+            {
+                formatted += *it;
+                if (std::next(it) != allowed_values.end())
+                {
+                    formatted += ", ";
+                }
+            }
+        }
+        
+        formatted += "</td><td>";
+        
+        if (!f.min_string().empty())
+        {
+            formatted += f.min_string();
+        }
+        
+        formatted += "</td><td>";
+        
+        if (!f.max_string().empty())
+        {
+            formatted += f.max_string();
+        }
+        
+        formatted += "</td><td>";
+        
+        if (!f.def_string().empty())
+        {
+            formatted += f.def_string();
+        }
+        
+        formatted += "</td></tr>\n";
+        
+        return formatted;
+    }
+    
+    std::string html_table_formatter::format(const formattable_class_descriptor &f) const
+    {
+        std::string formatted = "<h2>" + f.name_string() + "</h2>" + "\n" + "<p>" + f.desc_string() + "</p>\n";
+        
+        formatted += "<table>\n<thead>\n<tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>\n</thead></tr>\n";
+        
+        std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
+        
+        for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
+        {
+            formatted += this->format(*formattable);
+        }
+        
+        formatted += "</table>";
+        
+        return formatted;
+    }
+    
+    
     
 }
