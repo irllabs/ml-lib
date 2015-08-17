@@ -148,8 +148,8 @@ namespace ml_doc
     {
     public:
         class_descriptor() : parent(nullptr) {};
-        class_descriptor(std::string name) : name(name), parent(nullptr) {};
-        class_descriptor(std::string name, const class_descriptor *parent) : name(name), parent(parent) {};
+        class_descriptor(std::string name) : name_(name), parent(nullptr) {};
+        class_descriptor(std::string name, const class_descriptor *parent) : name_(name), parent(parent) {};
 
         template <typename T>
         void add_message_descriptor(const T &message_descriptor)
@@ -164,19 +164,35 @@ namespace ml_doc
             add_message_descriptor(tail...);
         }
         
-        std::string print(const generic_formatter &formatter) const;
+        class_descriptor &desc(std::string description)
+        {
+            desc_ = description;
+            return *this;
+        }
         
-        const std::string name;
-        std::string desc;
-        const class_descriptor *parent;
+        class_descriptor &url(std::string url)
+        {
+            url_ = url;
+            return *this;
+        }
+        
+        std::string print(const generic_formatter &formatter) const;
+   
         
         // ml_formattable.h pure virtual methods
         virtual std::string desc_string(void) const;
         virtual std::string name_string(void) const;
+        virtual std::string url_string(void) const;
         virtual std::vector<std::unique_ptr<formattable_message_descriptor>> get_formattable_message_descriptors(void) const;
         
     private:
         std::vector<std::unique_ptr<message_descriptor>> message_descriptors;
+        const std::string name_;
+        std::string desc_;
+        std::string url_;
+        const class_descriptor *parent;
+
+
     };
 
     class doc_manager

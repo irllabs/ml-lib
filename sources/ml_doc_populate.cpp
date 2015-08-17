@@ -57,24 +57,24 @@ namespace ml_doc
             ml::k_zerox
         });
         
-        descriptors[ml::k_mlp].desc = "Multilayer Perceptron";
-        descriptors[ml::k_linreg].desc = "Linear Regression";
-        descriptors[ml::k_logreg].desc = "Logistic Regression";
-        descriptors[ml::k_peak].desc = "Peak Detection";
-        descriptors[ml::k_minmax].desc = "Minimum / Maximum Detection";
-        descriptors[ml::k_zerox].desc = "Zero Crossings Detection";
-        descriptors[ml::k_svm].desc = "Support Vector Machine";
-        descriptors[ml::k_adaboost].desc = "Adaptive Boosting";
-        descriptors[ml::k_anbc].desc = "Adaptive Naive Bayes Classifier";
-        descriptors[ml::k_dtw].desc = "Dynamic Time Warping";
-        descriptors[ml::k_hmm].desc = "Hidden Markov Model";
-        descriptors[ml::k_softmax].desc = "Softmax Classifier";
-        descriptors[ml::k_randforest].desc = "Random Forests";
-        descriptors[ml::k_mindist].desc = "Minimum Distance";
-        descriptors[ml::k_lda].desc = "Linear Discriminant Analysis";
-        descriptors[ml::k_knn].desc = "K Nearest Neighbour";
-        descriptors[ml::k_gmm].desc = "Gaussian Mixture Model";
-        descriptors[ml::k_dtree].desc = "Decision Trees";
+        descriptors[ml::k_mlp].desc("Multilayer Perceptron").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP");
+        descriptors[ml::k_linreg].desc("Linear Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression");
+        descriptors[ml::k_logreg].desc("Logistic Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LogisticRegression");
+        descriptors[ml::k_peak].desc("Peak Detection").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/PeakDetection");
+        descriptors[ml::k_minmax].desc("Minimum / Maximum Detection").url("");
+        descriptors[ml::k_zerox].desc("Zero Crossings Detection").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/ZeroCrossingCounter");
+        descriptors[ml::k_svm].desc("Support Vector Machine").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/SVM");
+        descriptors[ml::k_adaboost].desc("Adaptive Boosting").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/AdaBoost");
+        descriptors[ml::k_anbc].desc("Adaptive Naive Bayes Classifier").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/ANBC");
+        descriptors[ml::k_dtw].desc("Dynamic Time Warping").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/DTW");
+        descriptors[ml::k_hmm].desc("Hidden Markov Model").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM");
+        descriptors[ml::k_softmax].desc("Softmax Classifier").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/Softmax");
+        descriptors[ml::k_randforest].desc("Random Forests").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/RandomForests");
+        descriptors[ml::k_mindist].desc("Minimum Distance").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/MinDist");
+        descriptors[ml::k_lda].desc("Linear Discriminant Analysis").url("");
+        descriptors[ml::k_knn].desc("K Nearest Neighbour").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/KNN");
+        descriptors[ml::k_gmm].desc("Gaussian Mixture Model").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/GMMClassifier");
+        descriptors[ml::k_dtree].desc("Decision Trees").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/DecisionTree");
 
         // base descriptor
         message_descriptor add(

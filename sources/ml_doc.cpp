@@ -54,14 +54,18 @@ namespace ml_doc
     // ml_formattable.h pure virtual methods
     std::string class_descriptor::desc_string(void) const
     {
-        return desc;
+        return desc_;
     }
     
     std::string class_descriptor::name_string(void) const
     {
-        return name;
+        return name_;
     }
     
+    std::string class_descriptor::url_string(void) const
+    {
+        return url_;
+    }
     
     // formattable_message_descriptors includes all ancestor's descriptors
     std::vector<std::unique_ptr<formattable_message_descriptor> > class_descriptor::get_formattable_message_descriptors(void) const
