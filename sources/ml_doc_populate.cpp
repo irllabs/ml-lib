@@ -68,11 +68,13 @@ namespace ml_doc
         descriptors[ml::k_anbc].desc = "Adaptive Naive Bayes Classifier";
         descriptors[ml::k_dtw].desc = "Dynamic Time Warping";
         descriptors[ml::k_hmm].desc = "Hidden Markov Model";
-        descriptors[ml::k_softmax].desc = "??";
+        descriptors[ml::k_softmax].desc = "Softmax Classifier";
         descriptors[ml::k_randforest].desc = "Random Forests";
         descriptors[ml::k_mindist].desc = "Minimum Distance";
         descriptors[ml::k_lda].desc = "Linear Discriminant Analysis";
         descriptors[ml::k_knn].desc = "K Nearest Neighbour";
+        descriptors[ml::k_gmm].desc = "Gaussian Mixture Model";
+        descriptors[ml::k_dtree].desc = "Decision Trees";
 
         // base descriptor
         message_descriptor add(
