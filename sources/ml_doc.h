@@ -27,10 +27,21 @@
 #include <utility>
 #include <memory>
 #include <map>
+#include <sstream>
+#include <iomanip>
 
 namespace ml_doc
 {
     enum class name;
+    
+    // Free standing helper function
+    template <typename T>
+    std::string to_string_with_precision(const T value, const int n = 6)
+    {
+        std::ostringstream out;
+        out << std::setprecision(n) << value;
+        return out.str();
+    }
     
     class message_descriptor : public formattable_message_descriptor
     {
@@ -94,7 +105,7 @@ namespace ml_doc
         
         virtual std::string def_string(void) const
         {
-            return std::to_string(def);
+            return to_string_with_precision(def, 2);
         }
     };
 
@@ -124,12 +135,12 @@ namespace ml_doc
         // ml_formattable.h pure virtual methods
         virtual std::string min_string(void) const
         {
-            return std::to_string(min);
+            return to_string_with_precision(min, 2);
         }
         
         virtual std::string max_string(void) const
         {
-            return std::to_string(max);
+            return to_string_with_precision(max, 2);
         }
     };
 
