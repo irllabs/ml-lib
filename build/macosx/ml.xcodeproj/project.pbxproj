@@ -2239,7 +2239,7 @@
 		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ../../sources/regression/ml_mlp.cpp; sourceTree = "<group>"; };
 		7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = ../../sources/classification/ml_adaboost.cpp; sourceTree = "<group>"; };
 		7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_doc.cpp; path = ../../sources/ml_doc.cpp; sourceTree = "<group>"; };
-		7D2AEA6D1A95270E009F75BE /* ml_doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_doc.h; path = ../../sources/ml_doc.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7D2AEA6D1A95270E009F75BE /* ml_doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_doc.h; path = ../../sources/ml_doc.h; sourceTree = "<group>"; };
 		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ../../sources/classification/ml_hmm.cpp; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D551A74190FE523008FF361 /* ml.knn.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.knn.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2930,8 +2930,7 @@
 		0867D691FE84028FC02AAC07 /* xsample */ = {
 			isa = PBXGroup;
 			children = (
-				7DFC38B11AFA2F2B0068E111 /* Flext */,
-				7DF93C1E1AC84F4600C6BFA7 /* GRT */,
+				7DE90B551B81EE6800B66D9D /* Vendor */,
 				7DF077FA1847589B00C55E3C /* Resources */,
 				08FB77ACFE841707C02AAC07 /* Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -3043,6 +3042,15 @@
 				7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */,
 			);
 			name = "Feature Extraction";
+			sourceTree = "<group>";
+		};
+		7DE90B551B81EE6800B66D9D /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC38B11AFA2F2B0068E111 /* Flext */,
+				7DF93C1E1AC84F4600C6BFA7 /* GRT */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 		7DF077FA1847589B00C55E3C /* Resources */ = {
