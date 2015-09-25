@@ -33,6 +33,10 @@ Bugs should be reported via the [issues page](https://github.com/cmuartfab/ml-li
 
 **ml-lib** objects follow the naming convention `ml.*` where “*” is an abbreviated form of the algorithm implemented by the object. 
 
+A full list of all objects and their parameters can be found [here](http://cmuartfab.github.io/ml-lib/).
+
+For more detailed descriptions of the underlying algorithms, see links below.
+
 Objects fall into one of five categories:
 
 - **Pre-processing**: pre-process data prior to used as input to a classification or regression object
