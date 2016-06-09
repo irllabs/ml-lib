@@ -2237,7 +2237,7 @@
 
 /* Begin PBXFileReference section */
 		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ../../sources/regression/ml_mlp.cpp; sourceTree = "<group>"; };
-		7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = ../../sources/classification/ml_adaboost.cpp; sourceTree = "<group>"; };
+		7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = ../../../../sources/classification/ml_adaboost.cpp; sourceTree = "<group>"; };
 		7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_doc.cpp; path = ../../sources/ml_doc.cpp; sourceTree = "<group>"; };
 		7D2AEA6D1A95270E009F75BE /* ml_doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_doc.h; path = ../../sources/ml_doc.h; sourceTree = "<group>"; };
 		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ../../sources/classification/ml_hmm.cpp; sourceTree = "<group>"; };
@@ -3017,7 +3017,6 @@
 				7DEE4F5E18BD3F38001A1294 /* ml_classification.h */,
 				7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */,
 				7DF077F71847577100C55E3C /* ml_svm.cpp */,
-				7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */,
 				7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */,
 				7D61B1111876F334000FD114 /* ml_dtw.cpp */,
 				7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */,
@@ -3490,6 +3489,7 @@
 		7DF93CB61AC84F4600C6BFA7 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */,
 				7DF93CB71AC84F4600C6BFA7 /* ClassificationData.cpp */,
 				7DF93CB81AC84F4600C6BFA7 /* ClassificationData.h */,
 				7DF93CB91AC84F4600C6BFA7 /* ClassificationSample.cpp */,
