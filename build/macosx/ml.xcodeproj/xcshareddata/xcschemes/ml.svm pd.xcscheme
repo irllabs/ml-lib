@@ -42,7 +42,7 @@
       allowLocationSimulation = "NO">
       <PathRunnable
          runnableDebuggingMode = "0"
-         FilePath = "/Applications/Pd-extended.app/Contents/Resources/bin/pd">
+         FilePath = "/Applications/Pure Data.app/Contents/Resources/bin/pd">
       </PathRunnable>
       <MacroExpansion>
          <BuildableReference
