@@ -39,7 +39,7 @@ namespace ml
         AddOutAnything("general purpose outlet");
     }
     
-    void ml::set_num_inputs(uint8_t num_inputs)
+    void ml::set_num_inputs(uint16_t num_inputs)
     {
         if (num_inputs < 0)
         {

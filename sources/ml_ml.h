@@ -91,7 +91,7 @@ namespace ml
     private:
         
         void record_(bool state);
-        void set_num_inputs(uint8_t num_inputs);
+        void set_num_inputs(uint16_t num_inputs);
         
         // Flext method wrappers
         FLEXT_CALLBACK_A(any);
