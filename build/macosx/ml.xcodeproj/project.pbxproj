@@ -144,6 +144,9 @@
 		7D551AFF190FEA80008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
 		7D551B00190FEA80008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551B01190FEA80008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
+		7D5802DF1D103D370023D607 /* PreProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CB21AC84F4600C6BFA7 /* PreProcessing.cpp */; };
+		7D5802E01D103D880023D607 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D041AC84F4600C6BFA7 /* MovingAverageFilter.cpp */; };
+		7D5802E11D103D8A0023D607 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D041AC84F4600C6BFA7 /* MovingAverageFilter.cpp */; };
 		7D61B1031875CAF9000FD114 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7D61B1041875CAF9000FD114 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7D61B1081875F661000FD114 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
@@ -5543,6 +5546,7 @@
 				7DCCEC5E1B1B836400DEFCF1 /* ml_ml.cpp in Sources */,
 				7DD8C7181B1BC4A900866538 /* Derivative.cpp in Sources */,
 				7DD8C7151B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
+				7D5802DF1D103D370023D607 /* PreProcessing.cpp in Sources */,
 				7DCCEC6C1B1B859E00DEFCF1 /* ErrorLog.cpp in Sources */,
 				7DCCEC6A1B1B857200DEFCF1 /* InfoLog.cpp in Sources */,
 				7DCCEC6B1B1B858700DEFCF1 /* DebugLog.cpp in Sources */,
@@ -5561,6 +5565,7 @@
 				7DCCEC621B1B838C00DEFCF1 /* SVM.cpp in Sources */,
 				7DCCEC631B1B839200DEFCF1 /* libsvm.cpp in Sources */,
 				7DCCEC641B1B843200DEFCF1 /* Classifier.cpp in Sources */,
+				7D5802E01D103D880023D607 /* MovingAverageFilter.cpp in Sources */,
 				7DCCEC651B1B843700DEFCF1 /* GRTBase.cpp in Sources */,
 				7DCCEC681B1B854300DEFCF1 /* WarningLog.cpp in Sources */,
 				7DCCEC6E1B1B862900DEFCF1 /* MatrixDouble.cpp in Sources */,
@@ -5853,6 +5858,7 @@
 				7DF93F9D1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF942CD1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949931AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
+				7D5802E11D103D8A0023D607 /* MovingAverageFilter.cpp in Sources */,
 				7DF944A91AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7D7DA13D18F7DCEC00F417F6 /* ml_classification.cpp in Sources */,
 				7DF942AB1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
