@@ -67,8 +67,17 @@ GRT_INCLUDE = $(VENDOR_BASE)/grt/GRT
 PD_INCLUDE = $(VENDOR_BASE)/pd
 ML_INCLUDE = $(ML_PATH)
 
+UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Linux)
+        REMOVE_DEAD = -Wl,--gc-sections
+    endif
+    ifeq ($(UNAME_S),Darwin)
+        REMOVE_DEAD = -dead_strip
+    endif
+
+
 CPPFLAGS = -fdata-sections -ffunction-sections -O2 -std=c++11 -I$(FLEXT_INCLUDE) -I$(GRT_INCLUDE) -I$(PD_INCLUDE) -I$(ML_INCLUDE)
-LDFLAGS = -Wl,--gc-sections
+LDFLAGS = $(REMOVE_DEAD)
 FLEXT_CPPFLAGS = -DFLEXT_SYS=2 -DFLEXT_INLINE -DFLEXT_USE_CMEM -DFLEXT_ATTRIBUTES=1 -DFLEXT_USE_HEX_SETUP_NAME
 
 .PHONY: install
