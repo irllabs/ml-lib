@@ -18,6 +18,8 @@
 
 #include "ml_regression.h"
 
+#include "ml_defaults.h"
+
 namespace ml
 {
     static const std::string object_name = NAME_PREFIX "logreg";

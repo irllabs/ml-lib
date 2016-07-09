@@ -18,6 +18,8 @@
 
 #include "ml_classification.h"
 
+#include "ml_defaults.h"
+
 namespace ml
 {
     const std::string object_name = NAME_PREFIX "dtree";

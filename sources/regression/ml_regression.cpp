@@ -7,6 +7,7 @@
 //
 
 #include "ml_regression.h"
+#include "ml_defaults.h"
 
 namespace ml
 {
@@ -61,7 +62,7 @@ namespace ml
     // Methods
     regression::regression()
     {
-        regression_data.setInputAndTargetDimensions(default_num_input_dimensions, default_num_output_dimensions);
+        regression_data.setInputAndTargetDimensions(defaults::num_input_dimensions, defaults::num_output_dimensions);
         set_data_type(LABELLED_REGRESSION);
     }
     

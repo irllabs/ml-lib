@@ -18,6 +18,8 @@
 
 #include "ml_classification.h"
 
+#include "ml_defaults.h"
+
 #include <vector>
 
 namespace ml
