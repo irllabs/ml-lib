@@ -34,9 +34,6 @@ namespace ml
             post("Peak Detection based on the GRT library version " + GRT::GRTBase::getGRTRevison());
             FLEXT_ADDMETHOD(0, update);
             FLEXT_ADDMETHOD(0, peaks);
-            
-            help.append_attributes(attribute_help);
-            help.append_attributes(method_help);
         }
         
     protected:

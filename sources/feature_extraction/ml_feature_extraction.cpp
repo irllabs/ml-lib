@@ -20,13 +20,10 @@
 
 #include <sstream>
 
-// TODO: we need to override the method help becase feature_extraction subclasses don't support most of the standard ml methods
-
 namespace ml
 {
     feature_extraction::feature_extraction()
     {
-        help.append_attributes(attribute_help);
     }
     
     // Flext attribute getters
@@ -103,9 +100,4 @@ namespace ml
     {
         return get_FeatureExtraction_instance();
     }
-    
-    const std::string feature_extraction::attribute_help =
-    "null_rejection:\tinteger (0 or 1) toggling NULL rejection off or on, when 'on' feature_extraction results below the NULL-rejection threshold will be discarded (default 1)\n"
-    "null_rejection_coeff:\tfloating point value setting a multiplier for the NULL-rejection threshold (default 0.9)\n";
-    
 }

@@ -146,6 +146,9 @@ namespace ml_doc
         
         descriptors[ml::k_classification].add_message_descriptor(null_rejection_coeff, null_rejection);
         
+        // generic feature extraction descriptor
+        descriptors[ml::k_feature_extraction].add_message_descriptor(null_rejection_coeff, null_rejection);
+
         // generic regression descriptor
         ranged_message_descriptor<float> training_rate(
                                                        "training_rate",
