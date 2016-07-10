@@ -22,6 +22,7 @@
 #include <iostream>
 #include <cassert>
 #include <memory>
+#include <algorithm>
 
 
 namespace ml_doc
