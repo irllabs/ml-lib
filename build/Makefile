@@ -15,8 +15,8 @@ ML_INSTALL_DIR = ./build
 
 ML_BASE_SRC = 	ml_base.cpp \
 		ml_formatter.cpp \
-		ml_names.cpp \
 		ml_doc.cpp \
+		ml_doc_populate.cpp \
 		ml_ml.cpp
 
 ML_CLASSIFICATION_SRC = $(ML_CLASSIFICATION_PATH)/ml_classification.cpp
