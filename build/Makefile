@@ -76,7 +76,7 @@ UNAME_S := $(shell uname -s)
     endif
 
 
-CPPFLAGS = -fdata-sections -ffunction-sections -O2 -std=c++11 -I$(FLEXT_INCLUDE) -I$(GRT_INCLUDE) -I$(PD_INCLUDE) -I$(ML_INCLUDE)
+CPPFLAGS = -fPIC -fdata-sections -ffunction-sections -O2 -std=c++11 -I$(FLEXT_INCLUDE) -I$(GRT_INCLUDE) -I$(PD_INCLUDE) -I$(ML_INCLUDE)
 LDFLAGS = $(REMOVE_DEAD)
 FLEXT_CPPFLAGS = -DFLEXT_SYS=2 -DFLEXT_INLINE -DFLEXT_USE_CMEM -DFLEXT_ATTRIBUTES=1 -DFLEXT_USE_HEX_SETUP_NAME
 
