@@ -43,20 +43,19 @@ namespace ml_doc
     
     class pd_help_formatter : public generic_formatter
     {
+        static const uint16_t init_message_x = 200;
+        static const uint16_t init_message_y = 50;
+        static const uint16_t ml_obj_x = 30;
+        static const uint16_t ml_obj_y = 580;
+        static const uint16_t message_comment_distance = 200;
+        
     public:
         virtual std::string format(const formattable_class_descriptor &descriptor) const;
+        // It's not meaningful to return "one line" of a Pd patch
+        virtual std::string format(const formattable_message_descriptor &descriptor) const { return ""; };
+
     private:
-        // Make pd_help_formatter::format(const formattable_message_descriptor) private
-        // It's never going to be useful to externally print one line of a Pd patch file
-        virtual std::string format(const formattable_message_descriptor &descriptor) const;
-        
-        // TODO: I'm slightly uneasy about using mutable here,
-        // but... _public_ logical constness is perserved because
-        // format(const formattable_class_descriptor &descriptor) initialises these on every call
-        // and format(const formattable_message_descriptor &descriptor) is private
-        mutable uint16_t message_x;
-        mutable uint16_t message_y;
-        mutable uint16_t object_count;
+        std::string format(const formattable_message_descriptor &f, const uint16_t message_x, const uint16_t message_y, uint16_t &objects_added) const;
     };
     
     class html_table_formatter : public generic_formatter

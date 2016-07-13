@@ -82,34 +82,39 @@ namespace ml_doc
     }
 
     // pd_help_formatter
-    // TODO: pass x/y to format() !
-    std::string pd_help_formatter::format(const formattable_message_descriptor &f) const
+    std::string pd_help_formatter::format(const formattable_message_descriptor &f,
+                                          const uint16_t message_x,
+                                          const uint16_t message_y,
+                                          uint16_t &objects_added) const
     {
-        
-        std::string formatted = "#X msg " + std::to_string(message_x) + " " + std::to_string(message_y) + " " + f.name_string() + ";\n";
-        formatted += "#X text " + std::to_string(message_x + 150) + " " + std::to_string(message_y) + " " + f.desc_string() + ";\n";
-        message_y += 30;
+        std::string formatted = "#X msg " +
+                                std::to_string(message_x) +  " " +
+                                std::to_string(message_y) +  " " +
+                                f.name_string() + " " + f.def_string() + " " + ";\n";
+        formatted += "#X text " + std::to_string(message_x + message_comment_distance) + " " + std::to_string(message_y) + " " + f.desc_string() + ";\n";
         
         return formatted;
     }
     
     std::string pd_help_formatter::format(const formattable_class_descriptor &f) const
     {
-        std::string formatted = "#N canvas 606 140 700 700 10;\n";
-        message_x = 200;
-        message_y = 50;
-        object_count = 0;
-        
-        formatted += "#X obj 30 580 " + f.name_string() + ";\n";
+        std::string formatted = "#N canvas 600 140 700 700 10;\n";
+        uint16_t message_x = init_message_x;
+        uint16_t message_y = init_message_y;
+        uint16_t object_count = 0;
+
+        formatted += "#X obj " + std::to_string(ml_obj_x) + " " + std::to_string(ml_obj_y) + " " + f.name_string() + ";\n";
         ++object_count;
         
         std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
         
         for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
         {
-            formatted += this->format(*formattable);
+            uint16_t objects_added = 0;
+            formatted += this->format(*formattable, message_x, message_y, objects_added);
             formatted += "#X connect " + std::to_string(object_count) + " 0 0 0;";
-            object_count += 2; // 1 message, 1 comment
+            object_count += objects_added;
+            message_y += 30;
         }
         
         return formatted;
