@@ -41,6 +41,24 @@ namespace ml_doc
         virtual std::string format(const formattable_class_descriptor &descriptor) const;
     };
     
+    class pd_help_formatter : public generic_formatter
+    {
+    public:
+        virtual std::string format(const formattable_class_descriptor &descriptor) const;
+    private:
+        // Make pd_help_formatter::format(const formattable_message_descriptor) private
+        // It's never going to be useful to externally print one line of a Pd patch file
+        virtual std::string format(const formattable_message_descriptor &descriptor) const;
+        
+        // TODO: I'm slightly uneasy about using mutable here,
+        // but... _public_ logical constness is perserved because
+        // format(const formattable_class_descriptor &descriptor) initialises these on every call
+        // and format(const formattable_message_descriptor &descriptor) is private
+        mutable uint16_t message_x;
+        mutable uint16_t message_y;
+        mutable uint16_t object_count;
+    };
+    
     class html_table_formatter : public generic_formatter
     {
     public:

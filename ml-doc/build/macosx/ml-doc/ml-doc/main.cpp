@@ -10,22 +10,43 @@
 #include "ml_names.h"
 
 #include <iostream>
+#include <fstream>
 #include <string>
 
+bool arg_exists(const char **begin, const char **end, const std::string &option)
+{
+    return std::find(begin, end, option) != end;
+}
 
 int main(int argc, const char * argv[]) {
-
-    ml_doc::html_table_formatter html_table_formatter;
-    ml_doc::doc_manager &doc_manager = ml_doc::doc_manager::shared_instance(html_table_formatter);
-    std::string doc = "<h1>Class Reference</h1>\n";
     
-    
-    for (auto class_name : ml::k_classes)
+    if (arg_exists(argv, argv+argc, "-html"))
     {
-        doc += doc_manager.doc_for_class(class_name);
+        ml_doc::html_table_formatter html_table_formatter;
+        ml_doc::doc_manager &doc_manager = ml_doc::doc_manager::shared_instance(html_table_formatter);
+        std::string doc = "";
+        doc = "<h1>Class Reference</h1>\n";
+        
+        for (auto class_name : ml::k_classes)
+        {
+            doc += doc_manager.doc_for_class(class_name);
+        }
+        std::cout << doc;
     }
-    
-    std::cout << doc;
+    else if (arg_exists(argv, argv+argc, "-pd"))
+    {
+        ml_doc::pd_help_formatter pd_help_formatter;
+        ml_doc::doc_manager &doc_manager = ml_doc::doc_manager::shared_instance(pd_help_formatter);
+        std::string doc = "";
+        for (auto class_name : ml::k_classes)
+        {
+            doc = doc_manager.doc_for_class(class_name);
+            std::ofstream file;
+            file.open(class_name + "-help.pd");
+            file << doc;
+            file.close();
+        }
+    }
     
     return 0;
 }

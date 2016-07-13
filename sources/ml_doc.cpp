@@ -116,7 +116,6 @@ namespace ml_doc
             }
             
         }
-        
         return formattables;
     }
 
