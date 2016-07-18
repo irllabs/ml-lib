@@ -44,9 +44,11 @@ namespace ml_doc
     class pd_help_formatter : public generic_formatter
     {
         static const uint16_t init_message_x = 200;
-        static const uint16_t init_message_y = 50;
+        static const uint16_t init_message_y = 100;
         static const uint16_t ml_obj_x = 30;
-        static const uint16_t ml_obj_y = 580;
+        static const uint16_t ml_obj_y = 700;
+        static const uint16_t heading_x = 30;
+        static const uint16_t heading_y = 40;
         static const uint16_t message_comment_distance = 200;
         
     public:

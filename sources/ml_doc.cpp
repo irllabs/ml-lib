@@ -45,6 +45,10 @@ namespace ml_doc
         return name;
     }
     
+    std::string message_descriptor::example_string(void) const
+    {
+        return example;
+    }
 
     // class_descriptor implementation
     std::string class_descriptor::print(const generic_formatter &formatter) const

@@ -39,6 +39,7 @@ namespace ml_doc
         virtual std::vector<std::string> allowed_values_strings(void) const { std::vector<std::string> empty; return empty;};
         virtual std::string min_string(void) const { return ""; };
         virtual std::string max_string(void) const { return ""; };
+        virtual std::string example_string(void) const = 0;
     };
     
     class formattable_class_descriptor : virtual public formattable_descriptor

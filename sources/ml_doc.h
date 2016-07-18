@@ -47,10 +47,11 @@ namespace ml_doc
     {
     public:
         message_descriptor() = delete;
-        message_descriptor(std::string name, std::string desc)
+        message_descriptor(std::string name, std::string desc, std::string example = "")
         : name(name),
-        desc(desc) {};
-        
+        desc(desc),
+        example(example) {};
+                
         virtual std::string print(const generic_formatter &formatter) const;
         
         virtual message_descriptor* clone() const
@@ -60,10 +61,12 @@ namespace ml_doc
         
         const std::string name;
         std::string desc;
+        std::string example;
         
         // ml_formattable.h pure virtual methods
         virtual std::string desc_string(void) const;
         virtual std::string name_string(void) const;
+        virtual std::string example_string(void) const;
     };
     
     template <typename T>
@@ -177,7 +180,6 @@ namespace ml_doc
         }
         
         std::string print(const generic_formatter &formatter) const;
-   
         
         // ml_formattable.h pure virtual methods
         virtual std::string desc_string(void) const;

@@ -19,6 +19,8 @@
 #include "ml_formatter.h"
 #include "ml_formattable.h"
 
+#include <regex>
+
 namespace ml_doc
 {
     
@@ -87,24 +89,37 @@ namespace ml_doc
                                           const uint16_t message_y,
                                           uint16_t &objects_added) const
     {
+        using std::to_string;
+        
+        std::string arguments = f.example_string() != "" ? f.example_string() : f.def_string();
         std::string formatted = "#X msg " +
-                                std::to_string(message_x) +  " " +
-                                std::to_string(message_y) +  " " +
-                                f.name_string() + " " + f.def_string() + " " + ";\n";
-        formatted += "#X text " + std::to_string(message_x + message_comment_distance) + " " + std::to_string(message_y) + " " + f.desc_string() + ";\n";
+                                to_string(message_x) +  " " +
+                                to_string(message_y) +  " " +
+                                f.name_string() + " " + arguments + " " + ";\n";
+        formatted += "#X text " + to_string(message_x + message_comment_distance) + " " + to_string(message_y) + " " + f.desc_string() + ";\n";
+        objects_added = 2;
         
         return formatted;
     }
     
     std::string pd_help_formatter::format(const formattable_class_descriptor &f) const
     {
-        std::string formatted = "#N canvas 600 140 700 700 10;\n";
+        
+        using std::to_string;
+        
+        std::string formatted = "#N canvas 600 140 900 900 10;\n";
         uint16_t message_x = init_message_x;
         uint16_t message_y = init_message_y;
         uint16_t object_count = 0;
 
-        formatted += "#X obj " + std::to_string(ml_obj_x) + " " + std::to_string(ml_obj_y) + " " + f.name_string() + ";\n";
+        formatted += "#X obj " + to_string(ml_obj_x) + " " + to_string(ml_obj_y) + " " + f.name_string() + ";\n";
         ++object_count;
+        
+        formatted += "#X text " + to_string(heading_x) + " " + to_string(heading_y) + " " + f.desc_string() + ";\n";
+        formatted += "#X text " + to_string(heading_x) + " " + to_string(heading_y + 20) +
+        " For more information on the technique used, see: " + f.url_string() + ";\n";
+        
+        object_count += 2;
         
         std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
         
@@ -112,10 +127,13 @@ namespace ml_doc
         {
             uint16_t objects_added = 0;
             formatted += this->format(*formattable, message_x, message_y, objects_added);
-            formatted += "#X connect " + std::to_string(object_count) + " 0 0 0;";
+            formatted += "#X connect " + to_string(object_count) + " 0 0 0;\n";
             object_count += objects_added;
             message_y += 30;
         }
+        
+        std::regex e(",");
+        formatted = std::regex_replace(formatted, e, " \\,");
         
         return formatted;
     }

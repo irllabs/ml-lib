@@ -79,37 +79,42 @@ namespace ml_doc
         // base descriptor
         message_descriptor add(
                               "add",
-                              "list comprising a class id followed by n features; <class> <feature 1> <feature 2> etc"
+                              "list comprising a class id followed by n features; <class> <feature 1> <feature 2> etc",
+                               "1 0.2 0.7 0.3 0.1"
                               );
 
-        message_descriptor write(
-                                "write",
-                                "write training data and / or model, first argument gives path to write file"
-                                );
-        
-        message_descriptor read(
-                               "read",
-                               "read training data and / or model, first argument gives path to the read file"
-                               );
         
         message_descriptor train(
                                 "train",
                                 "train the model based on vectors added with 'add'"
                                 );
         
-        message_descriptor clear(
-                                "clear",
-                                "clear the stored training data and model"
-                                );
-        
         message_descriptor map(
                               "map",
-                              "generate the output value(s) for the input feature vector"
+                              "generate the output value(s) for the input feature vector",
+                               "0.2 0.7 0.3 0.1"
                               );
+        
+        message_descriptor write(
+                                 "write",
+                                 "write training data and / or model, first argument gives path to write file",
+                                 "my_ml-lib_data"
+                                 );
+        
+        message_descriptor read(
+                                "read",
+                                "read training data and / or model, first argument gives path to the read file",
+                                "my_ml-lib_data"
+                                );
+        
+        message_descriptor clear(
+                                 "clear",
+                                 "clear the stored training data and model"
+                                 );
         
         message_descriptor help(
                                "help",
-                               "post this usage statement to the console"
+                               "post usage statement to the console"
                                );
         
         valued_message_descriptor<int> scaling(
