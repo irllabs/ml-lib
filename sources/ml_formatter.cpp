@@ -132,6 +132,14 @@ namespace ml_doc
             message_y += 30;
         }
         
+        // TODO: abstract this into an add_object helper method
+        formatted += "#X obj " + to_string(ml_obj_x) + " " + to_string(ml_obj_y + 80) + " print left;\n";
+        formatted += "#X connect 0 0 " + to_string(object_count) + " 0;\n";
+        ++object_count;
+        
+        formatted += "#X obj " + to_string(ml_obj_x + 80) + " " + to_string(ml_obj_y + 80) + " print right;\n";
+        formatted += "#X connect 0 1 " + to_string(object_count) + " 0;\n";
+        
         std::regex e(",");
         formatted = std::regex_replace(formatted, e, " \\,");
         
