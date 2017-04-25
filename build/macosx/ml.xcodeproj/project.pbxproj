@@ -89,6 +89,42 @@
 		7D2AEA8F1A95270E009F75BE /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
 		7D2C59AF189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
 		7D2C59B0189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
+		7D400AD91EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400ADA1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400ADB1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400ADC1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400ADD1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400ADE1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400ADF1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE01EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE11EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE21EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE31EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE41EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE51EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE61EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE71EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE81EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AE91EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AEA1EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
+		7D400AEC1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AED1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AEE1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AEF1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF01EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF11EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF21EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF31EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF41EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF51EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF61EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF71EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF81EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AF91EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AFA1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AFB1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AFC1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D400AFD1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
 		7D405EBE1B1BCB4E003A2172 /* RandomForests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C621AC84F4600C6BFA7 /* RandomForests.cpp */; };
 		7D405EBF1B1BCB52003A2172 /* RandomForests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C621AC84F4600C6BFA7 /* RandomForests.cpp */; };
 		7D405EC01B1BCBAB003A2172 /* KMeansFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CD11AC84F4600C6BFA7 /* KMeansFeatures.cpp */; };
@@ -121,28 +157,16 @@
 		7D551A98190FE622008FF361 /* ml_gmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */; };
 		7D551A99190FE626008FF361 /* ml_dtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F128190FDAC100F491FB /* ml_dtree.cpp */; };
 		7D551A9C190FE9CE008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D551A9F190FE9CE008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D551AA0190FE9CE008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AA1190FE9CE008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551AAC190FE9F1008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D551AAF190FE9F1008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D551AB0190FE9F1008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AB1190FE9F1008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551ABC190FEA0F008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D551ABF190FEA0F008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D551AC0190FEA0F008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AC1190FEA0F008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551ADC190FEA37008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D551ADF190FEA37008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D551AE0190FEA37008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AE1190FEA37008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551AEC190FEA66008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D551AEF190FEA66008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D551AF0190FEA66008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551AF1190FEA66008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551AFC190FEA80008FF361 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D551AFF190FEA80008FF361 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D551B00190FEA80008FF361 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D551B01190FEA80008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D5802DF1D103D370023D607 /* PreProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CB21AC84F4600C6BFA7 /* PreProcessing.cpp */; };
 		7D5802E01D103D880023D607 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D041AC84F4600C6BFA7 /* MovingAverageFilter.cpp */; };
@@ -172,8 +196,6 @@
 		7D65FFE31992C1FF00C82004 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7D65FFE41992C1FF00C82004 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
 		7D65FFE51992C1FF00C82004 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
-		7D65FFE81992C1FF00C82004 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D65FFE91992C1FF00C82004 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D65FFEA1992C1FF00C82004 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D71CBA81AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
 		7D71CBAA1AADB9980099CD5B /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
@@ -212,46 +234,28 @@
 		7D7CE6B91B1BFCD9006C1939 /* KMeans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C7D1AC84F4600C6BFA7 /* KMeans.cpp */; };
 		7D7D9FD418F6948E00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7D9FDB18F6948E00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D7D9FDF18F6948E00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D7D9FE018F6948E00F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7D9FE118F6948E00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7D9FF218F6971F00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7D9FF618F699D800F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7D9FF718F699D800F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D7D9FF918F699D800F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D7D9FFA18F699D800F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7D9FFB18F699D800F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA00B18F69A3800F417F6 /* ml_adaboost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */; };
 		7D7DA00C18F69A4600F417F6 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		7D7DA01118F69AD400F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D7DA01318F69AD400F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D7DA01418F69AD400F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA01518F69AD400F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA02918F69AF600F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D7DA02B18F69AF600F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D7DA02C18F69AF600F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA02D18F69AF600F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA04118F69B0F00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D7DA04318F69B0F00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D7DA04418F69B0F00F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA04518F69B0F00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA05818F69B2A00F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA05918F69B2A00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D7DA05B18F69B2A00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D7DA05C18F69B2A00F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA05D18F69B2A00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA07018F69B4300F417F6 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
 		7D7DA07118F69B4300F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D7DA07318F69B4300F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D7DA07418F69B4300F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA07518F69B4300F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA08918F69B5A00F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D7DA08B18F69B5A00F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D7DA08C18F69B5A00F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA08D18F69B5A00F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA0A118F69B7100F417F6 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D7DA0A318F69B7100F417F6 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D7DA0A418F69B7100F417F6 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D7DA0A518F69B7100F417F6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D7DA0B518F69C8200F417F6 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7D7DA0B618F69CA200F417F6 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
@@ -301,8 +305,6 @@
 		7D818CC71B1B92CE00043BB9 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D041AC84F4600C6BFA7 /* MovingAverageFilter.cpp */; };
 		7D818CC81B1B92D100043BB9 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D041AC84F4600C6BFA7 /* MovingAverageFilter.cpp */; };
 		7D818CC91B1B92E100043BB9 /* MovingAverageFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D041AC84F4600C6BFA7 /* MovingAverageFilter.cpp */; };
-		7D88176018EEF5EE002426FB /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88175F18EEF5EE002426FB /* MaxAPI.framework */; };
-		7D88176218EEF5FF002426FB /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */; };
 		7D88176418EEF6A2002426FB /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D88176518EEF6A2002426FB /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
 		7D9F2B3D1B1B956600B4BA08 /* DeadZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CF41AC84F4600C6BFA7 /* DeadZone.cpp */; };
@@ -2244,6 +2246,8 @@
 		7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_doc.cpp; path = ../../sources/ml_doc.cpp; sourceTree = "<group>"; };
 		7D2AEA6D1A95270E009F75BE /* ml_doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_doc.h; path = ../../sources/ml_doc.h; sourceTree = "<group>"; };
 		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ../../sources/classification/ml_hmm.cpp; sourceTree = "<group>"; };
+		7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../../../Library/Frameworks/Max/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
+		7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../../../Library/Frameworks/Max/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D551A74190FE523008FF361 /* ml.knn.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.knn.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D551A83190FE530008FF361 /* ml.gmm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.gmm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2297,8 +2301,6 @@
 		7D7DA16318F7DD1C00F417F6 /* ml.minmax.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.minmax.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7E3E3F1B73B15A0051D2FC /* ml_defaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_defaults.h; path = ../../sources/ml_defaults.h; sourceTree = "<group>"; };
 		7D7E78951B738ACA00EE2BD8 /* ml_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_types.h; path = ../../sources/ml_types.h; sourceTree = "<group>"; };
-		7D88175F18EEF5EE002426FB /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../../../Library/Frameworks/Max5/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
-		7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../../../Library/Frameworks/Max5/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7D88176318EEF6A2002426FB /* ml_minmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_minmax.cpp; path = ../../sources/feature_extraction/ml_minmax.cpp; sourceTree = "<group>"; };
 		7DA1F128190FDAC100F491FB /* ml_dtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtree.cpp; path = ../../sources/classification/ml_dtree.cpp; sourceTree = "<group>"; };
 		7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_gmm.cpp; path = ../../sources/classification/ml_gmm.cpp; sourceTree = "<group>"; };
@@ -2608,8 +2610,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551A9F190FE9CE008FF361 /* MaxAPI.framework in Frameworks */,
-				7D551AA0190FE9CE008FF361 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF71EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE41EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D551AA1190FE9CE008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2618,8 +2620,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551AAF190FE9F1008FF361 /* MaxAPI.framework in Frameworks */,
-				7D551AB0190FE9F1008FF361 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF81EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE51EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D551AB1190FE9F1008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2628,8 +2630,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551ABF190FEA0F008FF361 /* MaxAPI.framework in Frameworks */,
-				7D551AC0190FEA0F008FF361 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF91EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE61EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D551AC1190FEA0F008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2638,8 +2640,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551ADF190FEA37008FF361 /* MaxAPI.framework in Frameworks */,
-				7D551AE0190FEA37008FF361 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AFA1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE71EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D551AE1190FEA37008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2648,8 +2650,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551AEF190FEA66008FF361 /* MaxAPI.framework in Frameworks */,
-				7D551AF0190FEA66008FF361 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AFB1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE81EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D551AF1190FEA66008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2658,8 +2660,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D551AFF190FEA80008FF361 /* MaxAPI.framework in Frameworks */,
-				7D551B00190FEA80008FF361 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AFC1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE91EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D551B01190FEA80008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2676,8 +2678,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D65FFE81992C1FF00C82004 /* MaxAPI.framework in Frameworks */,
-				7D65FFE91992C1FF00C82004 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AFD1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AEA1EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D65FFEA1992C1FF00C82004 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2686,8 +2688,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7D9FDF18F6948E00F417F6 /* MaxAPI.framework in Frameworks */,
-				7D7D9FE018F6948E00F417F6 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AEE1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400ADB1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D7D9FE118F6948E00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2696,8 +2698,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7D9FF918F699D800F417F6 /* MaxAPI.framework in Frameworks */,
-				7D7D9FFA18F699D800F417F6 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AEF1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400ADC1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D7D9FFB18F699D800F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2706,8 +2708,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA01318F69AD400F417F6 /* MaxAPI.framework in Frameworks */,
-				7D7DA01418F69AD400F417F6 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF01EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400ADD1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D7DA01518F69AD400F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2716,8 +2718,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA02B18F69AF600F417F6 /* MaxAPI.framework in Frameworks */,
-				7D7DA02C18F69AF600F417F6 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF11EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400ADE1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D7DA02D18F69AF600F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2726,8 +2728,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA04318F69B0F00F417F6 /* MaxAPI.framework in Frameworks */,
-				7D7DA04418F69B0F00F417F6 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF21EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400ADF1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D7DA04518F69B0F00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2736,8 +2738,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA05B18F69B2A00F417F6 /* MaxAPI.framework in Frameworks */,
-				7D7DA05C18F69B2A00F417F6 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF31EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE01EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D7DA05D18F69B2A00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2746,8 +2748,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA07318F69B4300F417F6 /* MaxAPI.framework in Frameworks */,
-				7D7DA07418F69B4300F417F6 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF41EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE11EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D7DA07518F69B4300F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2756,8 +2758,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA08B18F69B5A00F417F6 /* MaxAPI.framework in Frameworks */,
-				7D7DA08C18F69B5A00F417F6 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF51EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE21EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D7DA08D18F69B5A00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2766,8 +2768,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7DA0A318F69B7100F417F6 /* MaxAPI.framework in Frameworks */,
-				7D7DA0A418F69B7100F417F6 /* MaxAudioAPI.framework in Frameworks */,
+				7D400AF61EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AE31EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D7DA0A518F69B7100F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2872,6 +2874,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D400AEC1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400AD91EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2880,8 +2884,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D88176018EEF5EE002426FB /* MaxAPI.framework in Frameworks */,
-				7D88176218EEF5FF002426FB /* MaxAudioAPI.framework in Frameworks */,
+				7D400AED1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
+				7D400ADA1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D6512D718F4428B0050C9C8 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2945,8 +2949,8 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7D88176118EEF5FF002426FB /* MaxAudioAPI.framework */,
-				7D88175F18EEF5EE002426FB /* MaxAPI.framework */,
+				7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */,
+				7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */,
 				7D4EAF0018343011005B8615 /* Accelerate.framework */,
 				7DD99CD818F4088700BE0A1A /* CoreFoundation.framework */,
 			);
@@ -6790,6 +6794,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -6840,6 +6848,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -6889,6 +6901,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -6936,6 +6952,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -6986,6 +7006,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7035,6 +7059,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7082,6 +7110,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7132,6 +7164,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7181,6 +7217,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7228,6 +7268,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7278,6 +7322,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7327,6 +7375,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7374,6 +7426,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7424,6 +7480,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7473,6 +7533,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7520,6 +7584,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7570,6 +7638,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7619,6 +7691,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7772,6 +7848,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7822,6 +7902,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7871,6 +7955,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7916,6 +8004,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7964,6 +8056,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8011,6 +8107,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8060,6 +8160,10 @@
 					"$(maxsdk)/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8112,6 +8216,10 @@
 					"$(maxsdk)/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8163,6 +8271,10 @@
 					"$(maxsdk)/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8210,6 +8322,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8260,6 +8376,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8309,6 +8429,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8356,6 +8480,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8406,6 +8534,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8455,6 +8587,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8502,6 +8638,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8552,6 +8692,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8601,6 +8745,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8648,6 +8796,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8698,6 +8850,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8747,6 +8903,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8794,6 +8954,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8844,6 +9008,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8893,6 +9061,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8940,6 +9112,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8990,6 +9166,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9039,6 +9219,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -9086,6 +9270,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9136,6 +9324,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9185,6 +9377,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -10546,7 +10742,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -10581,7 +10781,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FLEXT_SYS=2",
@@ -10617,7 +10821,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -10657,6 +10865,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -10707,6 +10919,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -10756,6 +10972,10 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
+					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
