@@ -9,7 +9,7 @@ buildAction () {
     echo "Building..."
 
     # You might want to call your clean action first, if it makes sense.
-    cleanAction
+    # cleanAction
 
     # Now do build steps.
 
@@ -18,7 +18,10 @@ buildAction () {
 cleanAction () {
     echo "Cleaning..."
 
-    # Do your clean steps here.
+    echo "Removing Max SDK ${MAX_SDK_VER}"
+    rm -rf ${MAX_SDK_VER}
+    rm -f ${MAX_SDK_VER}.zip
+    rm -f c74support
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

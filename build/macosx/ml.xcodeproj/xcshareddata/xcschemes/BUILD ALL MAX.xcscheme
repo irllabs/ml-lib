@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "echo &quot;running pre-action...&quot;&#10;echo ${MAX_SDK_VER}&#10;if ! [ -d &quot;${PROJECT_DIR}/${MAX_SDK_VER}&quot; ]; then&#10;/usr/bin/curl -L &quot;http://cycling74.com/download/${MAX_SDK_VER}.zip&quot; &gt; &quot;${PROJECT_DIR}/${MAX_SDK_VER}.zip&quot;&#10;cd &quot;${PROJECT_DIR}&quot; &amp;&amp; unzip -o ${MAX_SDK_VER}.zip &amp;&amp; ln -s ${MAX_SDK_VER}/c74support c74support &amp;&amp; rm ${MAX_SDK_VER}.zip&#10;fi&#10;echo &quot;done pre-action&quot;&#10;">
+               scriptText = "echo &quot;Running build pre-action...&quot;&#10;echo ${ACTION}&#10;build = &quot;&quot;&#10;&#10;if [ &quot;$build&quot; == &quot;${ACTION}&quot; ]; then&#10;if ! [ -L &quot;${PROJECT_DIR}/c74support&quot; ]; then&#10;echo &quot;Downloading Max SDK&quot;&#10;echo ${MAX_SDK_VER}&#10;if ! [ -d &quot;${PROJECT_DIR}/${MAX_SDK_VER}&quot; ]; then&#10;/usr/bin/curl -L &quot;https://cycling74.s3.amazonaws.com/download/${MAX_SDK_VER}.zip&quot; &gt; &quot;${PROJECT_DIR}/${MAX_SDK_VER}.zip&quot;&#10;cd &quot;${PROJECT_DIR}&quot; &amp;&amp; unzip -o ${MAX_SDK_VER}.zip &amp;&amp; ln -s ${MAX_SDK_VER}/source/c74support c74support &amp;&amp; rm ${MAX_SDK_VER}.zip&#10;fi&#10;fi&#10;fi&#10;echo &quot;done pre-action&quot;&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
@@ -279,10 +279,10 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Development"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Development">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <MacroExpansion>
@@ -294,15 +294,18 @@
             ReferencedContainer = "container:ml.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Development"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Development"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
       <MacroExpansion>
          <BuildableReference
@@ -317,10 +320,10 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Deployment"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Deployment"
       debugDocumentVersioning = "YES">
       <MacroExpansion>
          <BuildableReference

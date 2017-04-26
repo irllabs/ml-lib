@@ -13,6 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				7D2D780B1EB0B1820009D37B /* PBXTargetDependency */,
 			);
 			name = "BUILD ALL MAX";
 			productName = BUILD_ALL;
@@ -89,42 +90,40 @@
 		7D2AEA8F1A95270E009F75BE /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
 		7D2C59AF189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
 		7D2C59B0189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
-		7D400AD91EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400ADA1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400ADB1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400ADC1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400ADD1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400ADE1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400ADF1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE01EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE11EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE21EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE31EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE41EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE51EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE61EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE71EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE81EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AE91EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AEA1EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */; };
-		7D400AEC1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AED1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AEE1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AEF1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF01EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF11EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF21EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF31EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF41EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF51EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF61EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF71EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF81EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AF91EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AFA1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AFB1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AFC1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
-		7D400AFD1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */; };
+		7D33CD2B1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD2C1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD2D1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD2E1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD2F1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD301EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD311EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD321EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD331EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD341EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD351EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD361EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD371EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD381EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD391EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD3A1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD3B1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
+		7D33CD3D1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD3E1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD3F1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD401EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD411EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD421EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD431EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD441EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD451EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD461EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD471EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD481EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD491EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD4A1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD4B1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD4C1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D33CD4D1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
 		7D405EBE1B1BCB4E003A2172 /* RandomForests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C621AC84F4600C6BFA7 /* RandomForests.cpp */; };
 		7D405EBF1B1BCB52003A2172 /* RandomForests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C621AC84F4600C6BFA7 /* RandomForests.cpp */; };
 		7D405EC01B1BCBAB003A2172 /* KMeansFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CD11AC84F4600C6BFA7 /* KMeansFeatures.cpp */; };
@@ -1894,6 +1893,16 @@
 		E98573580D9E52D300682171 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7D2D780A1EB0B1820009D37B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D2D78051EB0B14E0009D37B;
+			remoteInfo = CleanScript;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		7D551A6F190FE523008FF361 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -2246,8 +2255,8 @@
 		7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_doc.cpp; path = ../../sources/ml_doc.cpp; sourceTree = "<group>"; };
 		7D2AEA6D1A95270E009F75BE /* ml_doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_doc.h; path = ../../sources/ml_doc.h; sourceTree = "<group>"; };
 		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ../../sources/classification/ml_hmm.cpp; sourceTree = "<group>"; };
-		7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../../../Library/Frameworks/Max/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
-		7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../../../Library/Frameworks/Max/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
+		7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "max-sdk-7.1.0/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
+		7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "max-sdk-7.1.0/source/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D551A74190FE523008FF361 /* ml.knn.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.knn.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D551A83190FE530008FF361 /* ml.gmm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.gmm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2610,8 +2619,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF71EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE41EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD471EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD351EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D551AA1190FE9CE008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2620,8 +2629,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF81EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE51EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD481EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD361EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D551AB1190FE9F1008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2630,8 +2639,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF91EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE61EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD491EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD371EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D551AC1190FEA0F008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2640,8 +2649,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AFA1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE71EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD4A1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD381EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D551AE1190FEA37008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2650,8 +2659,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AFB1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE81EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD4B1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD391EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D551AF1190FEA66008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2660,8 +2669,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AFC1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE91EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD4C1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD3A1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D551B01190FEA80008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2678,8 +2687,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AFD1EAF5CF400F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AEA1EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD4D1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD3B1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D65FFEA1992C1FF00C82004 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2688,8 +2697,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AEE1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400ADB1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD3E1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD2C1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D7D9FE118F6948E00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2698,8 +2707,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AEF1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400ADC1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD3F1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD2D1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D7D9FFB18F699D800F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2708,8 +2717,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF01EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400ADD1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD401EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD2E1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D7DA01518F69AD400F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2718,8 +2727,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF11EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400ADE1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD411EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD2F1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D7DA02D18F69AF600F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2728,8 +2737,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF21EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400ADF1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD421EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD301EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D7DA04518F69B0F00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2738,8 +2747,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF31EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE01EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD431EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD311EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D7DA05D18F69B2A00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2748,8 +2757,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF41EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE11EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD441EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD321EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D7DA07518F69B4300F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2758,8 +2767,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF51EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE21EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD451EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD331EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D7DA08D18F69B5A00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2768,8 +2777,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AF61EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AE31EAF5CE400F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD461EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD341EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D7DA0A518F69B7100F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2874,8 +2883,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AEC1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400AD91EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
 				7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2884,8 +2891,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D400AED1EAF5CF300F7F0CA /* MaxAudioAPI.framework in Frameworks */,
-				7D400ADA1EAF5CE300F7F0CA /* MaxAPI.framework in Frameworks */,
+				7D33CD3D1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
+				7D33CD2B1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D6512D718F4428B0050C9C8 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2949,8 +2956,8 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7D400AEB1EAF5CF300F7F0CA /* MaxAudioAPI.framework */,
-				7D400AD81EAF5CE300F7F0CA /* MaxAPI.framework */,
+				7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */,
+				7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */,
 				7D4EAF0018343011005B8615 /* Accelerate.framework */,
 				7DD99CD818F4088700BE0A1A /* CoreFoundation.framework */,
 			);
@@ -3810,6 +3817,23 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		7D2D78051EB0B14E0009D37B /* CleanScript */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "${PROJECT_DIR}/clean-max-sdk.sh $(ACTION)";
+			buildConfigurationList = 7D2D78091EB0B14E0009D37B /* Build configuration list for PBXLegacyTarget "CleanScript" */;
+			buildPhases = (
+			);
+			buildToolPath = /bin/sh;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = CleanScript;
+			passBuildSettingsInEnvironment = 1;
+			productName = CleanScript;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		7D551A66190FE523008FF361 /* ml.knn pd */ = {
 			isa = PBXNativeTarget;
@@ -4396,6 +4420,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0630;
+				TargetAttributes = {
+					7D2D78051EB0B14E0009D37B = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 4AXPHKXE7V;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = E9A5BC920A33819900AD9F03 /* Build configuration list for PBXProject "ml" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -4445,6 +4476,7 @@
 				7D65FFE11992C1FF00C82004 /* ml.zerox max */,
 				7D7DA0BE18F6A04100F417F6 /* BUILD ALL MAX */,
 				7D7DA16418F7DD4700F417F6 /* BUILD ALL PD */,
+				7D2D78051EB0B14E0009D37B /* CleanScript */,
 			);
 		};
 /* End PBXProject section */
@@ -6462,7 +6494,153 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7D2D780B1EB0B1820009D37B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D2D78051EB0B14E0009D37B /* CleanScript */;
+			targetProxy = 7D2D780A1EB0B1820009D37B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		7D2D78061EB0B14E0009D37B /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MAX_SDK_VER = "max-sdk-7.1.0";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Development;
+		};
+		7D2D78071EB0B14E0009D37B /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MAX_SDK_VER = "max-sdk-7.1.0";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Deployment;
+		};
+		7D2D78081EB0B14E0009D37B /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MAX_SDK_VER = "max-sdk-7.1.0";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Default;
+		};
 		7D551A71190FE523008FF361 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -6487,6 +6665,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6523,6 +6702,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6559,6 +6739,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6593,6 +6774,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6629,6 +6811,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6665,6 +6848,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6699,6 +6883,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6735,6 +6920,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6771,6 +6957,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6798,6 +6985,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -6818,6 +7007,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
@@ -6852,6 +7042,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -6872,6 +7064,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
@@ -6905,6 +7098,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -6922,6 +7117,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -6956,6 +7152,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -6976,6 +7174,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
@@ -7010,6 +7209,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7030,6 +7231,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
@@ -7063,6 +7265,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7080,6 +7284,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -7114,6 +7319,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7134,6 +7341,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
@@ -7168,6 +7376,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7188,6 +7398,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
@@ -7221,6 +7432,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7238,6 +7451,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -7272,6 +7486,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7292,6 +7508,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
@@ -7326,6 +7543,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7346,6 +7565,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
@@ -7379,6 +7599,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7396,6 +7618,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -7430,6 +7653,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7450,6 +7675,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
@@ -7484,6 +7710,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7504,6 +7732,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
@@ -7537,6 +7766,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7554,6 +7785,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -7588,6 +7820,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7608,6 +7842,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
@@ -7642,6 +7877,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7662,6 +7899,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
@@ -7695,6 +7933,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7712,6 +7952,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -7753,6 +7994,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7789,6 +8031,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7825,6 +8068,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -7852,6 +8096,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7872,6 +8118,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
@@ -7906,6 +8153,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7926,6 +8175,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
@@ -7959,6 +8209,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7976,6 +8228,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -8008,6 +8261,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8028,6 +8283,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
@@ -8060,6 +8316,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8080,6 +8338,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
@@ -8111,6 +8370,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8128,6 +8389,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -8164,6 +8426,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8184,6 +8448,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
@@ -8220,6 +8485,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8240,6 +8507,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
@@ -8275,6 +8543,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8292,6 +8562,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -8326,6 +8597,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8346,6 +8619,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
@@ -8380,6 +8654,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8400,6 +8676,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
@@ -8433,6 +8710,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8450,6 +8729,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -8484,6 +8764,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8504,6 +8786,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
@@ -8538,6 +8821,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8558,6 +8843,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
@@ -8591,6 +8877,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8608,6 +8896,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -8642,6 +8931,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8662,6 +8953,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
@@ -8696,6 +8988,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8716,6 +9010,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mlp;
@@ -8749,6 +9044,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8766,6 +9063,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -8800,6 +9098,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8820,6 +9120,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
@@ -8854,6 +9155,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8874,6 +9177,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
@@ -8907,6 +9211,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8924,6 +9230,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -8958,6 +9265,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8978,6 +9287,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
@@ -9012,6 +9322,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9032,6 +9344,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.hmm;
@@ -9065,6 +9378,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -9082,6 +9397,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -9116,6 +9432,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9136,6 +9454,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
@@ -9170,6 +9489,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9190,6 +9511,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.peak;
@@ -9223,6 +9545,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -9240,6 +9564,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -9274,6 +9599,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9294,6 +9621,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
@@ -9328,6 +9656,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9348,6 +9678,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
@@ -9381,6 +9712,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -9398,6 +9731,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -9418,6 +9752,7 @@
 		7D7DA0C018F6A04100F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MAX_SDK_VER = "max-sdk-7.1.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				maxsdk = "$(maxsdk)";
 			};
@@ -9426,6 +9761,7 @@
 		7D7DA0C118F6A04100F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MAX_SDK_VER = "max-sdk-7.1.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				maxsdk = "$(maxsdk)";
 			};
@@ -9434,6 +9770,7 @@
 		7D7DA0C218F6A04100F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MAX_SDK_VER = "max-sdk-7.1.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				maxsdk = "$(maxsdk)";
 			};
@@ -9463,6 +9800,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9499,6 +9837,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9535,6 +9874,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -9569,6 +9909,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9605,6 +9946,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9641,6 +9983,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -9675,6 +10018,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9711,6 +10055,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9747,6 +10092,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -9781,6 +10127,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9817,6 +10164,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9853,6 +10201,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -9887,6 +10236,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9923,6 +10273,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -9959,6 +10310,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -9993,6 +10345,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10029,6 +10382,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10065,6 +10419,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -10099,6 +10454,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10135,6 +10491,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10171,6 +10528,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -10205,6 +10563,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10241,6 +10600,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10277,6 +10637,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -10311,6 +10672,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10347,6 +10709,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10383,6 +10746,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -10396,6 +10760,7 @@
 		7D7DA16618F7DD4800F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MAX_SDK_VER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Development;
@@ -10403,6 +10768,7 @@
 		7D7DA16718F7DD4800F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MAX_SDK_VER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Deployment;
@@ -10410,6 +10776,7 @@
 		7D7DA16818F7DD4800F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MAX_SDK_VER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Default;
@@ -10438,6 +10805,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10474,6 +10842,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10510,6 +10879,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -10544,6 +10914,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10580,6 +10951,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10616,6 +10988,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -10650,6 +11023,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10686,6 +11060,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10722,6 +11097,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -10760,6 +11136,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10801,6 +11178,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -10842,6 +11220,7 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -10869,6 +11248,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -10890,6 +11271,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
@@ -10923,6 +11305,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -10944,6 +11328,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
@@ -10976,6 +11361,8 @@
 					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
 					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
+					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -10994,6 +11381,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MAX_SDK_VER = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -11143,6 +11531,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7D2D78091EB0B14E0009D37B /* Build configuration list for PBXLegacyTarget "CleanScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D2D78061EB0B14E0009D37B /* Development */,
+				7D2D78071EB0B14E0009D37B /* Deployment */,
+				7D2D78081EB0B14E0009D37B /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7D551A70190FE523008FF361 /* Build configuration list for PBXNativeTarget "ml.knn pd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
