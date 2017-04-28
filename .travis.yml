@@ -1,4 +1,4 @@
 language: objective-c
 script: 
-  - xcodebuild -project build/macosx/ml.xcodeproj -scheme "BUILD ALL MAX" -configuration Deployment | grep -A 5 "error:"
-  - xcodebuild -project build/macosx/ml.xcodeproj -scheme "BUILD ALL PD" -configuration Deployment | grep -A 5 "error:"
+  - xcodebuild -project build/macosx/ml.xcodeproj -scheme "BUILD ALL MAX" -configuration Deployment
+  - xcodebuild -project build/macosx/ml.xcodeproj -scheme "BUILD ALL PD" -configuration Deployment
