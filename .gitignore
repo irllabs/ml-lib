@@ -33,3 +33,4 @@ DerivedData
 
 
 *.zip
+/build/macosx/max-sdk-7.1.0
