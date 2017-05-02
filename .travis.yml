@@ -2,6 +2,6 @@ language: objective-c
 osx_image: xcode8.3
 script: 
   - set -o pipefail
-  - xcodebuild -project build/macosx/ml.xcodeproj -scheme "BUILD ALL MAX" -configuration Deployment | xcpretty;
-  - xcodebuild -project build/macosx/ml.xcodeproj -scheme "BUILD ALL PD" -configuration Deployment | xcpretty;
+  - xcodebuild -project build/macosx/ml.xcodeproj -scheme "BUILD ALL MAX" -configuration Deployment -parallelizeTargets | xcpretty;
+  - xcodebuild -project build/macosx/ml.xcodeproj -scheme "BUILD ALL PD" -configuration Deployment -parallelizeTargets | xcpretty;
 
