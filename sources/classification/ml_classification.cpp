@@ -196,7 +196,7 @@ namespace ml
             
             if (data_type == LABELLED_CLASSIFICATION || data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
             {
-                GRT::vector<GRT::UINT> labels;
+                GRT::Vector<GRT::UINT> labels;
                 
                 if (data_type == LABELLED_CLASSIFICATION)
                 {
@@ -205,7 +205,7 @@ namespace ml
                 else if (data_type == LABELLED_TIME_SERIES_CLASSIFICATION)
                 {
                     // For some reason getClassLabels() isn't implemented for TimeSeriesClassificationData so we do this manually
-                    vector<GRT::ClassTracker> classTracker = time_series_classification_data.getClassTracker();
+                    std::vector<GRT::ClassTracker> classTracker = time_series_classification_data.getClassTracker();
                     for (uint16_t index = 0; index < classTracker.size(); ++index)
                     {
                         labels.push_back(classTracker[index].classLabel);

@@ -24,6 +24,16 @@ namespace ml
 {
     const std::string object_name = NAME_PREFIX "dtree";
     
+    GRT::Tree::TrainingMode get_grt_training_mode(int type)
+    {
+        if (type >= GRT::Tree::TrainingMode::NUM_TRAINING_MODES)
+        {
+            throw grt_type_exception();
+        }
+        return static_cast<GRT::Tree::TrainingMode>(type);
+    }
+
+    
     class dtree : classification
     {
         FLEXT_HEADER_S(dtree, classification, setup);
@@ -92,11 +102,24 @@ namespace ml
     // Flext attribute setters
     void dtree::set_training_mode(int training_mode)
     {
-        bool success = grt_dtree.setTrainingMode(training_mode);
+        GRT::Tree::TrainingMode training_mode_ = GRT::Tree::TrainingMode::BEST_ITERATIVE_SPILT;
+        
+        try
+        {
+            training_mode_ = get_grt_training_mode(training_mode);
+
+        }
+        catch (std::exception& e)
+        {
+            error("unable to set training_mode, hint: must be a value between 0 and " + std::to_string(GRT::Tree::NUM_TRAINING_MODES));
+            return;
+        }
+        
+        bool success = grt_dtree.setTrainingMode(training_mode_);
         
         if (success == false)
         {
-            error("unable to set training_mode, hint: must be a value between 0 and " + std::to_string(GRT::DecisionTree::NUM_TRAINING_MODES));
+            error("unable to set training mode");
         }
     }
     
@@ -143,7 +166,7 @@ namespace ml
     
     void dtree::get_remove_features_at_each_split(bool &remove_features_at_each_split) const
     {
-        remove_features_at_each_split = grt_dtree.getRemoveFeaturesAtEachSpilt();
+        remove_features_at_each_split = grt_dtree.getRemoveFeaturesAtEachSplit();
     }
 
     // Implement pure virtual methods

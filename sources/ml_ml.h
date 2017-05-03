@@ -31,6 +31,13 @@
 
 namespace ml
 {
+    struct grt_type_exception : public std::exception
+    {
+        const char* what() const noexcept
+        {
+            return "Invalid GRT type";
+        }
+    };
     
     class ml:
     public base

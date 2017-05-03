@@ -436,7 +436,6 @@ namespace ml
         FLEXT_SETUP(softmax);
         FLEXT_SETUP(randforest);
         FLEXT_SETUP(mindist);
-//        FLEXT_SETUP(lda);
         FLEXT_SETUP(knn);
         FLEXT_SETUP(gmm);
         FLEXT_SETUP(dtree);

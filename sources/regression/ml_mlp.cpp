@@ -32,6 +32,16 @@ namespace ml
     }
     mlp_layer;
     
+    GRT::Neuron::Type get_grt_neuron_type(int type)
+    {
+        if (type >= GRT::Neuron::Type::NUMBER_OF_ACTIVATION_FUNCTIONS)
+        {
+            throw grt_type_exception();
+        }
+        return static_cast<GRT::Neuron::Type>(type);
+    }
+    
+    
     class mlp : ml
     {
         FLEXT_HEADER_S(mlp, ml, setup);
@@ -40,9 +50,9 @@ namespace ml
         mlp()
         :
         num_hidden_neurons(defaults::num_hidden_neurons),
-        input_activation_function((GRT::Neuron::ActivationFunctions)grt_mlp.getInputLayerActivationFunction()),
-        hidden_activation_function((GRT::Neuron::ActivationFunctions)grt_mlp.getHiddenLayerActivationFunction()),
-        output_activation_function((GRT::Neuron::ActivationFunctions)grt_mlp.getOutputLayerActivationFunction())
+        input_activation_function((GRT::Neuron::Type)grt_mlp.getInputLayerActivationFunction()),
+        hidden_activation_function((GRT::Neuron::Type)grt_mlp.getHiddenLayerActivationFunction()),
+        output_activation_function((GRT::Neuron::Type)grt_mlp.getOutputLayerActivationFunction())
         {
             post("Multilayer Perceptron based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             
@@ -180,9 +190,9 @@ namespace ml
         
         GRT::MLP grt_mlp;
         GRT::UINT num_hidden_neurons;
-        GRT::Neuron::ActivationFunctions input_activation_function;
-        GRT::Neuron::ActivationFunctions hidden_activation_function;
-        GRT::Neuron::ActivationFunctions output_activation_function;
+        GRT::Neuron::Type input_activation_function;
+        GRT::Neuron::Type hidden_activation_function;
+        GRT::Neuron::Type output_activation_function;
         
     };
     
@@ -321,13 +331,23 @@ namespace ml
     
     void mlp::set_activation_function(int activation_function, mlp_layer layer)
     {
-        if (grt_mlp.validateActivationFunction(activation_function) == false)
+        GRT::Neuron::Type activation_function_ = GRT::Neuron::Type::LINEAR;
+        
+        try
+        {
+            activation_function_ = get_grt_neuron_type(activation_function);
+        }
+        catch (std::exception& e)
+        {
+            flext::error(e.what());
+            return;
+        }
+        
+        if (grt_mlp.validateActivationFunction(activation_function_) == false)
         {
             flext::error("activation function %d is invalid, hint should be between 0-%d", activation_function, GRT::Neuron::NUMBER_OF_ACTIVATION_FUNCTIONS - 1);
             return;
         }
-        
-        GRT::Neuron::ActivationFunctions activation_function_ = (GRT::Neuron::ActivationFunctions)activation_function;
         
         switch (layer)
         {
@@ -604,7 +624,7 @@ namespace ml
         if (grt_mlp.getClassificationModeActive())
         {
             GRT::VectorDouble likelihoods = grt_mlp.getClassLikelihoods();
-            GRT::vector<GRT::UINT> labels = classification_data.getClassLabels();
+            GRT::Vector<GRT::UINT> labels = classification_data.getClassLabels();
             GRT::UINT classification = grt_mlp.getPredictedClassLabel();
             
             if (likelihoods.size() != labels.size())

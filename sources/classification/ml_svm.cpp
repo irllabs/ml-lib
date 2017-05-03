@@ -33,7 +33,25 @@ namespace ml
     const std::string object_name = NAME_PREFIX "svm";
     
     // Utility functions
-    GRT::SVM::SVMTypes svm_type_from_type_string(std::string type_string)
+    GRT::SVM::SVMType get_grt_svm_type(int type)
+    {
+        if (type >= GRT::SVM::SVMType::NUM_SVM_TYPES)
+        {
+            throw grt_type_exception();
+        }
+        return static_cast<GRT::SVM::SVMType>(type);
+    }
+    
+    GRT::SVM::KernelType get_grt_svm_kernel_type(int type)
+    {
+        if (type >= GRT::SVM::KernelType::NUM_KERNEL_TYPES)
+        {
+            throw grt_type_exception();
+        }
+        return static_cast<GRT::SVM::KernelType>(type);
+    }
+    
+    GRT::SVM::SVMType svm_type_from_type_string(std::string type_string)
     {
         if (type_string == "C_SVC")
         {
@@ -64,7 +82,7 @@ namespace ml
         return GRT::SVM::C_SVC;
     }
     
-    GRT::SVM::SVMKernelTypes svm_kernel_type_from_kernel_string(std::string kernel_string)
+    GRT::SVM::KernelType svm_kernel_type_from_kernel_string(std::string kernel_string)
     {
         if (kernel_string == "LINEAR_KERNEL")
         {
@@ -211,38 +229,36 @@ namespace ml
     // Flext attribute setters
     void svm::set_type(int type)
     {
-        switch (type)
+        GRT::SVM::SVMType type_ = GRT::SVM::SVMType::C_SVC;
+        
+        try
         {
-            case GRT::C_SVC:
-            case GRT::NU_SVC:
-            case GRT::ONE_CLASS:
-            case GRT::EPSILON_SVR:
-            case GRT::NU_SVR:
-                grt_svm.setSVMType(type);
-                break;
-                
-            default:
-                post("invalid SVM type, send a 'help' message to the first inlet for available types");
-                break;
+            type_ = get_grt_svm_type(type);
         }
+        catch (std::exception& e)
+        {
+            post("invalid SVM type, send a 'help' message to the first inlet for available types");
+            return;
+        }
+        
+        grt_svm.setSVMType(type_);
     }
     
     void svm::set_kernel(int kernel)
     {
-        switch (kernel)
+        GRT::SVM::KernelType kernel_ = GRT::SVM::KernelType::LINEAR_KERNEL;
+
+        try
         {
-            case GRT::LINEAR:
-            case GRT::POLY:
-            case GRT::RBF:
-            case GRT::SIGMOID:
-            case GRT::PRECOMPUTED:
-                grt_svm.setKernelType(kernel);
-                break;
-                
-            default:
-                post("invalid kernel type, send a 'help' message to the first inlet for available types");
-                break;
+            kernel_ = get_grt_svm_kernel_type(kernel);
         }
+        catch (std::exception& e)
+        {
+            post("invalid kernel type, send a 'help' message to the first inlet for available types");
+            return;
+        }
+        
+        grt_svm.setKernelType(kernel_);
     }
     
     void svm::set_degree(int degree)

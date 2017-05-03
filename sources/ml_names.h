@@ -28,7 +28,6 @@ namespace ml
     const std::string k_softmax = "ml.softmax";
     const std::string k_randforest = "ml.randforest";
     const std::string k_mindist = "ml.mindist";
-    const std::string k_lda = "ml.lda";
     const std::string k_knn = "ml.knn";
     const std::string k_gmm = "ml.gmm";
     const std::string k_dtree = "ml.dtree";
@@ -49,7 +48,6 @@ namespace ml
         k_softmax,
         k_randforest,
         k_mindist,
-        k_lda,
         k_knn,
         k_gmm,
         k_dtree,

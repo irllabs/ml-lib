@@ -70,7 +70,7 @@ namespace ml
     {
         // weights are per vector element per class so each class has a weight vector of length N where N is the input vector size
         GRT::ClassificationData weightsClassificationData;
-        std::vector<double> weightsVector;
+        GRT::VectorFloat weightsVector;
         
         if (weights.Count() == 0)
         {

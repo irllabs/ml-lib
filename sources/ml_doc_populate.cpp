@@ -45,7 +45,6 @@ namespace ml_doc
             ml::k_softmax,
             ml::k_randforest,
             ml::k_mindist,
-            ml::k_lda,
             ml::k_knn,
             ml::k_gmm,
             ml::k_dtree
@@ -71,7 +70,6 @@ namespace ml_doc
         descriptors[ml::k_softmax].desc("Softmax Classifier").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/Softmax");
         descriptors[ml::k_randforest].desc("Random Forests").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/RandomForests");
         descriptors[ml::k_mindist].desc("Minimum Distance").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/MinDist");
-        descriptors[ml::k_lda].desc("Linear Discriminant Analysis").url("");
         descriptors[ml::k_knn].desc("K Nearest Neighbour").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/KNN");
         descriptors[ml::k_gmm].desc("Gaussian Mixture Model").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/GMMClassifier");
         descriptors[ml::k_dtree].desc("Decision Trees").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/DecisionTree");
@@ -505,8 +503,8 @@ namespace ml_doc
         valued_message_descriptor<int> model_type(
                                                   "model_type",
                                                   "set the model type used",
-                                                  {GRT::HMM_ERGODIC, GRT::HMM_LEFTRIGHT},
-                                                  GRT::HMM_LEFTRIGHT
+                                                  {HMM_ERGODIC, HMM_LEFTRIGHT},
+                                                  HMM_LEFTRIGHT
                                                   );
         
         ranged_message_descriptor<int> delta(
@@ -582,9 +580,7 @@ namespace ml_doc
                                                     );
 
         descriptors[ml::k_mindist].add_message_descriptor(num_clusters);
-        
-        //---- ml.lda
-        
+                
         //---- ml.knn
 //        "best_k_value_search:\tbool (0 or 1) set whether k value search is enabled or not (default 0)\n";
 
@@ -636,8 +632,8 @@ namespace ml_doc
         valued_message_descriptor<bool> training_mode(
                                                       "training_mode",
                                                       "set the training mode",
-                                                      {GRT::ClusterTree::BEST_ITERATIVE_SPILT, GRT::ClusterTree::BEST_RANDOM_SPLIT},
-                                                      GRT::ClusterTree::BEST_ITERATIVE_SPILT
+                                                      {GRT::Tree::BEST_ITERATIVE_SPILT, GRT::Tree::BEST_RANDOM_SPLIT},
+                                                      GRT::Tree::BEST_ITERATIVE_SPILT
                                                       );
         
         ranged_message_descriptor<int> num_splitting_steps(
