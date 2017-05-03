@@ -402,12 +402,180 @@
 		7DACBF7D192BAD2500F0E7D7 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
 		7DACBF7E192BAD2900F0E7D7 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
 		7DACBF7F192BAD2F00F0E7D7 /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
+		7DC7EED11EB9C34E000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EED21EB9C34F000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EED31EB9C350000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EED41EB9C351000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EED51EB9C351000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EED61EB9C352000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EED71EB9C353000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EED81EB9C354000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EED91EB9C355000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEDA1EB9C355000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEDB1EB9C356000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEDC1EB9C357000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEDD1EB9C357000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEDE1EB9C358000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEDF1EB9C359000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE01EB9C35A000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE11EB9C35D000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE21EB9C35D000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE31EB9C35E000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE41EB9C35F000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE51EB9C360000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE61EB9C360000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE71EB9C361000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE81EB9C362000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEE91EB9C362000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEEA1EB9C363000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEEB1EB9C364000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEEC1EB9C364000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEED1EB9C365000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEEE1EB9C366000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEEF1EB9C367000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEF01EB9C368000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEF11EB9C36A000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEF21EB9C36B000DB2DF /* ClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */; };
+		7DC7EEF61EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EEF71EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EEF81EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EEF91EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EEFA1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EEFB1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EEFC1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EEFD1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EEFE1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EEFF1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF001EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF011EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF021EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF031EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF041EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF051EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF061EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF071EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF081EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF091EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF0A1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF0B1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF0C1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF0D1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF0E1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF0F1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF101EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF111EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF121EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF131EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF141EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF151EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF161EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF171EB9C501000DB2DF /* MatrixFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */; };
+		7DC7EF1B1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF1C1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF1D1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF1E1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF1F1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF201EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF211EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF221EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF231EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF241EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF251EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF261EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF271EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF281EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF291EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF2A1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF2B1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF2C1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF2D1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF2E1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF2F1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF301EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF311EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF321EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF331EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF341EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF351EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF361EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF371EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF381EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF391EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF3A1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF3B1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF3C1EB9C635000DB2DF /* VectorFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */; };
+		7DC7EF3F1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF401EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF411EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF421EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF431EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF441EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF451EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF461EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF471EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF481EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF491EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF4A1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF4B1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF4C1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF4D1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF4E1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF4F1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF501EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF511EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF521EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF531EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF541EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF551EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF561EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF571EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF581EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF591EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF5A1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF5B1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF5C1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF5D1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF5E1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF5F1EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF601EB9C752000DB2DF /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF3D1EB9C752000DB2DF /* Random.cpp */; };
+		7DC7EF631EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF641EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF651EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF661EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF671EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF681EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF691EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF6A1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF6B1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF6C1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF6D1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF6E1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF6F1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF701EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF711EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF721EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF731EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF741EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF751EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF761EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF771EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF781EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF791EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF7A1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF7B1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF7C1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF7D1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF7E1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF7F1EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF801EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF811EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF821EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF831EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
+		7DC7EF841EB9C7C7000DB2DF /* Metrics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */; };
 		7DCCEC481B1B7A9D00DEFCF1 /* AdaBoost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C211AC84F4600C6BFA7 /* AdaBoost.cpp */; };
 		7DCCEC4B1B1B7F0D00DEFCF1 /* DTW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C3F1AC84F4600C6BFA7 /* DTW.cpp */; };
 		7DCCEC4C1B1B7FC300DEFCF1 /* ContinuousHiddenMarkovModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C4B1AC84F4600C6BFA7 /* ContinuousHiddenMarkovModel.cpp */; };
 		7DCCEC4D1B1B7FDC00DEFCF1 /* DiscreteHiddenMarkovModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C4D1AC84F4600C6BFA7 /* DiscreteHiddenMarkovModel.cpp */; };
-		7DCCEC4F1B1B804900DEFCF1 /* LDA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C561AC84F4600C6BFA7 /* LDA.cpp */; };
-		7DCCEC501B1B805E00DEFCF1 /* LDA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C561AC84F4600C6BFA7 /* LDA.cpp */; };
 		7DCCEC511B1B807500DEFCF1 /* MinDist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C591AC84F4600C6BFA7 /* MinDist.cpp */; };
 		7DCCEC581B1B82EC00DEFCF1 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
 		7DCCEC5C1B1B835D00DEFCF1 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
@@ -427,13 +595,11 @@
 		7DCCEC6B1B1B858700DEFCF1 /* DebugLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D231AC84F4600C6BFA7 /* DebugLog.cpp */; };
 		7DCCEC6C1B1B859E00DEFCF1 /* ErrorLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D271AC84F4600C6BFA7 /* ErrorLog.cpp */; };
 		7DCCEC6D1B1B85CD00DEFCF1 /* ClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CB71AC84F4600C6BFA7 /* ClassificationData.cpp */; };
-		7DCCEC6E1B1B862900DEFCF1 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
 		7DCCEC6F1B1B865600DEFCF1 /* RegressionData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CBB1AC84F4600C6BFA7 /* RegressionData.cpp */; };
 		7DCCEC701B1B866F00DEFCF1 /* UnlabelledData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC61AC84F4600C6BFA7 /* UnlabelledData.cpp */; };
 		7DCCEC711B1B868800DEFCF1 /* RegressionSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CBD1AC84F4600C6BFA7 /* RegressionSample.cpp */; };
 		7DCCEC721B1B868B00DEFCF1 /* ClassificationSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CB91AC84F4600C6BFA7 /* ClassificationSample.cpp */; };
 		7DCCEC731B1B86B600DEFCF1 /* TimeSeriesClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CBF1AC84F4600C6BFA7 /* TimeSeriesClassificationData.cpp */; };
-		7DCCEC741B1B86B600DEFCF1 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
 		7DCCEC751B1B86B600DEFCF1 /* TimeSeriesClassificationSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC31AC84F4600C6BFA7 /* TimeSeriesClassificationSample.cpp */; };
 		7DCCEC761B1B86EB00DEFCF1 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D501AC84F4600C6BFA7 /* Util.cpp */; };
 		7DCCEC771B1B877C00DEFCF1 /* ClusterTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93C731AC84F4600C6BFA7 /* ClusterTree.cpp */; };
@@ -1147,39 +1313,6 @@
 		7DF9447D1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CBF1AC84F4600C6BFA7 /* TimeSeriesClassificationData.cpp */; };
 		7DF9447E1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CBF1AC84F4600C6BFA7 /* TimeSeriesClassificationData.cpp */; };
 		7DF9447F1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CBF1AC84F4600C6BFA7 /* TimeSeriesClassificationData.cpp */; };
-		7DF944801AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944821AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944831AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944841AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944851AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944861AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944871AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944881AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944891AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9448A1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9448B1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9448C1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9448D1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9448E1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9448F1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944901AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944911AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944921AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944931AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944941AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944951AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944961AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944971AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944981AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944991AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9449A1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9449B1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9449C1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9449D1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9449E1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF9449F1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944A01AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
-		7DF944A11AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */; };
 		7DF944A21AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC31AC84F4600C6BFA7 /* TimeSeriesClassificationSample.cpp */; };
 		7DF944A41AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC31AC84F4600C6BFA7 /* TimeSeriesClassificationSample.cpp */; };
 		7DF944A51AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93CC31AC84F4600C6BFA7 /* TimeSeriesClassificationSample.cpp */; };
@@ -1508,39 +1641,6 @@
 		7DF949CD1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D321AC84F4600C6BFA7 /* LUDecomposition.cpp */; };
 		7DF949CE1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D321AC84F4600C6BFA7 /* LUDecomposition.cpp */; };
 		7DF949CF1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D321AC84F4600C6BFA7 /* LUDecomposition.cpp */; };
-		7DF949D01AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949D21AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949D31AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949D41AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949D51AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949D61AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949D71AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949D81AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949D91AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949DA1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949DB1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949DC1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949DD1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949DE1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949DF1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E01AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E11AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E21AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E31AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E41AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E51AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E61AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E71AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E81AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949E91AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949EA1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949EB1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949EC1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949ED1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949EE1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949EF1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949F01AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
-		7DF949F11AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */; };
 		7DF949F21AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D3A1AC84F4600C6BFA7 /* PeakDetection.cpp */; };
 		7DF949F41AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D3A1AC84F4600C6BFA7 /* PeakDetection.cpp */; };
 		7DF949F51AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF93D3A1AC84F4600C6BFA7 /* PeakDetection.cpp */; };
@@ -2314,7 +2414,6 @@
 		7DA1F128190FDAC100F491FB /* ml_dtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtree.cpp; path = ../../sources/classification/ml_dtree.cpp; sourceTree = "<group>"; };
 		7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_gmm.cpp; path = ../../sources/classification/ml_gmm.cpp; sourceTree = "<group>"; };
 		7DA1F12E190FDC2500F491FB /* ml_knn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_knn.cpp; path = ../../sources/classification/ml_knn.cpp; sourceTree = "<group>"; };
-		7DA1F131190FDC3300F491FB /* ml_lda.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_lda.cpp; path = ../../sources/classification/ml_lda.cpp; sourceTree = "<group>"; };
 		7DA1F134190FDC4800F491FB /* ml_mindist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mindist.cpp; path = ../../sources/classification/ml_mindist.cpp; sourceTree = "<group>"; };
 		7DA1F137190FDC6100F491FB /* ml_randforest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_randforest.cpp; path = ../../sources/classification/ml_randforest.cpp; sourceTree = "<group>"; };
 		7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_softmax.cpp; path = ../../sources/classification/ml_softmax.cpp; sourceTree = "<group>"; };
@@ -2324,6 +2423,18 @@
 		7DACBF4E192B82F900F0E7D7 /* ml_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_base.h; path = ../../sources/ml_base.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DACBF4F192B869600F0E7D7 /* ml_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_base.cpp; path = ../../sources/ml_base.cpp; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml_ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_ml.h; path = ../../sources/ml_ml.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClassificationDataStream.cpp; sourceTree = "<group>"; };
+		7DC7EED01EB9C346000DB2DF /* ClassificationDataStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassificationDataStream.h; sourceTree = "<group>"; };
+		7DC7EEF31EB9C501000DB2DF /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatrixFloat.cpp; sourceTree = "<group>"; };
+		7DC7EEF51EB9C501000DB2DF /* MatrixFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixFloat.h; sourceTree = "<group>"; };
+		7DC7EF181EB9C635000DB2DF /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorFloat.cpp; sourceTree = "<group>"; };
+		7DC7EF1A1EB9C635000DB2DF /* VectorFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorFloat.h; sourceTree = "<group>"; };
+		7DC7EF3D1EB9C752000DB2DF /* Random.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Random.cpp; sourceTree = "<group>"; };
+		7DC7EF3E1EB9C752000DB2DF /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
+		7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Metrics.cpp; sourceTree = "<group>"; };
+		7DC7EF621EB9C7C7000DB2DF /* Metrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Metrics.h; sourceTree = "<group>"; };
 		7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_doc_populate.cpp; path = ../../sources/ml_doc_populate.cpp; sourceTree = "<group>"; };
 		7DD8C7361B7BADE3006D71AD /* ml_names.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_names.h; path = ../../sources/ml_names.h; sourceTree = "<group>"; };
 		7DD99CD818F4088700BE0A1A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -2376,8 +2487,6 @@
 		7DF93C511AC84F4600C6BFA7 /* HMMEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMEnums.h; sourceTree = "<group>"; };
 		7DF93C531AC84F4600C6BFA7 /* KNN.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KNN.cpp; sourceTree = "<group>"; };
 		7DF93C541AC84F4600C6BFA7 /* KNN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNN.h; sourceTree = "<group>"; };
-		7DF93C561AC84F4600C6BFA7 /* LDA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LDA.cpp; sourceTree = "<group>"; };
-		7DF93C571AC84F4600C6BFA7 /* LDA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDA.h; sourceTree = "<group>"; };
 		7DF93C591AC84F4600C6BFA7 /* MinDist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinDist.cpp; sourceTree = "<group>"; };
 		7DF93C5A1AC84F4600C6BFA7 /* MinDist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinDist.h; sourceTree = "<group>"; };
 		7DF93C5B1AC84F4600C6BFA7 /* MinDistModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinDistModel.cpp; sourceTree = "<group>"; };
@@ -2457,8 +2566,6 @@
 		7DF93CBE1AC84F4600C6BFA7 /* RegressionSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegressionSample.h; sourceTree = "<group>"; };
 		7DF93CBF1AC84F4600C6BFA7 /* TimeSeriesClassificationData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeSeriesClassificationData.cpp; sourceTree = "<group>"; };
 		7DF93CC01AC84F4600C6BFA7 /* TimeSeriesClassificationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSeriesClassificationData.h; sourceTree = "<group>"; };
-		7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeSeriesClassificationDataStream.cpp; sourceTree = "<group>"; };
-		7DF93CC21AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSeriesClassificationDataStream.h; sourceTree = "<group>"; };
 		7DF93CC31AC84F4600C6BFA7 /* TimeSeriesClassificationSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeSeriesClassificationSample.cpp; sourceTree = "<group>"; };
 		7DF93CC41AC84F4600C6BFA7 /* TimeSeriesClassificationSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSeriesClassificationSample.h; sourceTree = "<group>"; };
 		7DF93CC51AC84F4600C6BFA7 /* TimeSeriesPositionTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSeriesPositionTracker.h; sourceTree = "<group>"; };
@@ -2551,15 +2658,11 @@
 		7DF93D311AC84F4600C6BFA7 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
 		7DF93D321AC84F4600C6BFA7 /* LUDecomposition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LUDecomposition.cpp; sourceTree = "<group>"; };
 		7DF93D331AC84F4600C6BFA7 /* LUDecomposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUDecomposition.h; sourceTree = "<group>"; };
-		7DF93D341AC84F4600C6BFA7 /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
-		7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatrixDouble.cpp; sourceTree = "<group>"; };
-		7DF93D361AC84F4600C6BFA7 /* MatrixDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixDouble.h; sourceTree = "<group>"; };
 		7DF93D371AC84F4600C6BFA7 /* MinMax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinMax.h; sourceTree = "<group>"; };
 		7DF93D381AC84F4600C6BFA7 /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
 		7DF93D391AC84F4600C6BFA7 /* ObserverManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObserverManager.h; sourceTree = "<group>"; };
 		7DF93D3A1AC84F4600C6BFA7 /* PeakDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeakDetection.cpp; sourceTree = "<group>"; };
 		7DF93D3B1AC84F4600C6BFA7 /* PeakDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeakDetection.h; sourceTree = "<group>"; };
-		7DF93D3C1AC84F4600C6BFA7 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
 		7DF93D3D1AC84F4600C6BFA7 /* RangeTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeTracker.cpp; sourceTree = "<group>"; };
 		7DF93D3E1AC84F4600C6BFA7 /* RangeTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeTracker.h; sourceTree = "<group>"; };
 		7DF93D3F1AC84F4600C6BFA7 /* SVD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SVD.cpp; sourceTree = "<group>"; };
@@ -3037,7 +3140,6 @@
 				7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */,
 				7DA1F137190FDC6100F491FB /* ml_randforest.cpp */,
 				7DA1F134190FDC4800F491FB /* ml_mindist.cpp */,
-				7DA1F131190FDC3300F491FB /* ml_lda.cpp */,
 				7DA1F12E190FDC2500F491FB /* ml_knn.cpp */,
 				7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */,
 				7DA1F128190FDAC100F491FB /* ml_dtree.cpp */,
@@ -3107,7 +3209,6 @@
 				7DF93C461AC84F4600C6BFA7 /* GMM */,
 				7DF93C4A1AC84F4600C6BFA7 /* HMM */,
 				7DF93C521AC84F4600C6BFA7 /* KNN */,
-				7DF93C551AC84F4600C6BFA7 /* LDA */,
 				7DF93C581AC84F4600C6BFA7 /* MinDist */,
 				7DF93C5D1AC84F4600C6BFA7 /* ParticleClassifier */,
 				7DF93C611AC84F4600C6BFA7 /* RandomForests */,
@@ -3230,15 +3331,6 @@
 				7DF93C541AC84F4600C6BFA7 /* KNN.h */,
 			);
 			path = KNN;
-			sourceTree = "<group>";
-		};
-		7DF93C551AC84F4600C6BFA7 /* LDA */ = {
-			isa = PBXGroup;
-			children = (
-				7DF93C561AC84F4600C6BFA7 /* LDA.cpp */,
-				7DF93C571AC84F4600C6BFA7 /* LDA.h */,
-			);
-			path = LDA;
 			sourceTree = "<group>";
 		};
 		7DF93C581AC84F4600C6BFA7 /* MinDist */ = {
@@ -3503,6 +3595,12 @@
 		7DF93CB61AC84F4600C6BFA7 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				7DC7EF181EB9C635000DB2DF /* Vector.h */,
+				7DC7EF191EB9C635000DB2DF /* VectorFloat.cpp */,
+				7DC7EF1A1EB9C635000DB2DF /* VectorFloat.h */,
+				7DC7EEF31EB9C501000DB2DF /* Matrix.h */,
+				7DC7EEF41EB9C501000DB2DF /* MatrixFloat.cpp */,
+				7DC7EEF51EB9C501000DB2DF /* MatrixFloat.h */,
 				7D23B9D618C9EE1700735880 /* ml_adaboost.cpp */,
 				7DF93CB71AC84F4600C6BFA7 /* ClassificationData.cpp */,
 				7DF93CB81AC84F4600C6BFA7 /* ClassificationData.h */,
@@ -3512,10 +3610,10 @@
 				7DF93CBC1AC84F4600C6BFA7 /* RegressionData.h */,
 				7DF93CBD1AC84F4600C6BFA7 /* RegressionSample.cpp */,
 				7DF93CBE1AC84F4600C6BFA7 /* RegressionSample.h */,
+				7DC7EECF1EB9C346000DB2DF /* ClassificationDataStream.cpp */,
+				7DC7EED01EB9C346000DB2DF /* ClassificationDataStream.h */,
 				7DF93CBF1AC84F4600C6BFA7 /* TimeSeriesClassificationData.cpp */,
 				7DF93CC01AC84F4600C6BFA7 /* TimeSeriesClassificationData.h */,
-				7DF93CC11AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.cpp */,
-				7DF93CC21AC84F4600C6BFA7 /* TimeSeriesClassificationDataStream.h */,
 				7DF93CC31AC84F4600C6BFA7 /* TimeSeriesClassificationSample.cpp */,
 				7DF93CC41AC84F4600C6BFA7 /* TimeSeriesClassificationSample.h */,
 				7DF93CC51AC84F4600C6BFA7 /* TimeSeriesPositionTracker.h */,
@@ -3768,17 +3866,17 @@
 				7DF93D2F1AC84F4600C6BFA7 /* InfoLog.cpp */,
 				7DF93D301AC84F4600C6BFA7 /* InfoLog.h */,
 				7DF93D311AC84F4600C6BFA7 /* Log.h */,
+				7DC7EF611EB9C7C7000DB2DF /* Metrics.cpp */,
+				7DC7EF621EB9C7C7000DB2DF /* Metrics.h */,
 				7DF93D321AC84F4600C6BFA7 /* LUDecomposition.cpp */,
 				7DF93D331AC84F4600C6BFA7 /* LUDecomposition.h */,
-				7DF93D341AC84F4600C6BFA7 /* Matrix.h */,
-				7DF93D351AC84F4600C6BFA7 /* MatrixDouble.cpp */,
-				7DF93D361AC84F4600C6BFA7 /* MatrixDouble.h */,
 				7DF93D371AC84F4600C6BFA7 /* MinMax.h */,
 				7DF93D381AC84F4600C6BFA7 /* Observer.h */,
 				7DF93D391AC84F4600C6BFA7 /* ObserverManager.h */,
 				7DF93D3A1AC84F4600C6BFA7 /* PeakDetection.cpp */,
 				7DF93D3B1AC84F4600C6BFA7 /* PeakDetection.h */,
-				7DF93D3C1AC84F4600C6BFA7 /* Random.h */,
+				7DC7EF3D1EB9C752000DB2DF /* Random.cpp */,
+				7DC7EF3E1EB9C752000DB2DF /* Random.h */,
 				7DF93D3D1AC84F4600C6BFA7 /* RangeTracker.cpp */,
 				7DF93D3E1AC84F4600C6BFA7 /* RangeTracker.h */,
 				7DF93D3F1AC84F4600C6BFA7 /* SVD.cpp */,
@@ -4494,10 +4592,10 @@
 				7DF94ACB1AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF949111AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF944491AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DF9448D1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DD8C7431B1BC4DC00866538 /* MovingAverageFilter.cpp in Sources */,
 				7D2AEA7B1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF9435B1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
+				7DC7EF031EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944271AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DF949FF1AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF94AA91AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
@@ -4506,6 +4604,7 @@
 				7DF942F51AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DF949771AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF943E31AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
+				7DC7EF701EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF94A211AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DD8C72C1B1BC4C000866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF9428F1AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
@@ -4515,21 +4614,23 @@
 				7DD8C71C1B1BC4AC00866538 /* Derivative.cpp in Sources */,
 				7DF943391AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF944051AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
-				7DF949DD1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D551A97190FE61E008FF361 /* ml_knn.cpp in Sources */,
 				7D551A6D190FE523008FF361 /* ml_regression.cpp in Sources */,
+				7DC7EEDE1EB9C358000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF9446B1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF9439F1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7DF94A651AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7D71CBB51AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DF949551AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF94AED1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
+				7DC7EF4C1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DD8C70C1B1BC49900866538 /* DeadZone.cpp in Sources */,
 				7DD8C7211B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A431AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949BB1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943C11AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF9437D1AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
+				7DC7EF281EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF94A871AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7D551A6E190FE523008FF361 /* ml_ml.cpp in Sources */,
 				7DF944D11AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
@@ -4549,11 +4650,11 @@
 				7DF94ACC1AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF949121AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF9444A1AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DF9448E1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DD8C71D1B1BC4AD00866538 /* Derivative.cpp in Sources */,
 				7D2AEA7C1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF9435C1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF944281AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
+				7DC7EF4D1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF94A001AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF94AAA1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF94B321AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
@@ -4564,14 +4665,17 @@
 				7DF942901AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF943181AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF93F3E1AC84F4700C6BFA7 /* GMM.cpp in Sources */,
+				7DC7EF711EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DD8C7221B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7D551A7B190FE530008FF361 /* ml_classification.cpp in Sources */,
+				7DC7EEDF1EB9C359000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF94B101AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DF9433A1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF041EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DD8C72D1B1BC4C100866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF944061AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
-				7DF949DE1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9413C1AC84F4700C6BFA7 /* GaussianMixtureModels.cpp in Sources */,
+				7DC7EF291EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7D551A98190FE622008FF361 /* ml_gmm.cpp in Sources */,
 				7D551A7C190FE530008FF361 /* ml_regression.cpp in Sources */,
 				7DF9446C1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
@@ -4599,13 +4703,13 @@
 			files = (
 				7DF942D51AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF9499B1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
+				7DC7EF051EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944B11AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DACBF60192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF942B31AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF94ACD1AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF949131AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF9444B1AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DF9448F1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7D2AEA7D1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF9435D1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF944291AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
@@ -4622,10 +4726,11 @@
 				7DF94B111AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DD8C70E1B1BC49A00866538 /* DeadZone.cpp in Sources */,
 				7DF9433B1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF2A1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF944071AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DD8C7231B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
-				7DF949DF1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D551A8A190FE53B008FF361 /* ml_classification.cpp in Sources */,
+				7DC7EEE01EB9C35A000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DD8C72E1B1BC4C200866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7D551A8B190FE53B008FF361 /* ml_regression.cpp in Sources */,
 				7DF9446D1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
@@ -4637,7 +4742,9 @@
 				7DF94AEF1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF94A451AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949BD1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
+				7DC7EF4E1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943C31AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
+				7DC7EF721EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF9437F1AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DD8C7411B1BC4DB00866538 /* MovingAverageFilter.cpp in Sources */,
 				7DF94A891AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
@@ -4653,6 +4760,7 @@
 			files = (
 				7DF94AD91AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A511AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EF111EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944791AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943CF1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF94A0D1AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
@@ -4663,7 +4771,6 @@
 				7DF949C91AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D551A9C190FE9CE008FF361 /* ml_ml.cpp in Sources */,
 				7DF94A731AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF9449B1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B3F1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AB71AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943AD1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -4676,10 +4783,12 @@
 				7DF944131AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DF944BD1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DACBF77192BAC6300F0E7D7 /* ml_softmax.cpp in Sources */,
+				7DC7EF361EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7D2AEA891A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DD8C72F1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942BF1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF949631AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
+				7DC7EEEC1EB9C364000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF943031AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DA0B697192F7687001F56DA /* ml_classification.cpp in Sources */,
 				7DF94AFB1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
@@ -4690,13 +4799,14 @@
 				7DF943691AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A2F1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF943471AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF5A1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943F11AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
+				7DC7EF7E1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF944DF1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DD8C7211B1BC4B300866538 /* Derivative.cpp in Sources */,
 				7DACBF6B192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7D16A26C1B1BFF830076C05F /* Softmax.cpp in Sources */,
 				7DF942E11AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949EB1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A71AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4710,18 +4820,21 @@
 				7DF9447A1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943D01AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF94A0E1AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
+				7DC7EF121EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7D405EC81B1BCC89003A2172 /* DecisionTreeClusterNode.cpp in Sources */,
+				7DC7EF371EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF944581AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
 				7DF9438C1AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DD8C7391B1BC4D300866538 /* MovingAverageFilter.cpp in Sources */,
+				7DC7EF7F1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DD8C7131B1BC4A000866538 /* DeadZone.cpp in Sources */,
 				7D405EC21B1BCC47003A2172 /* Tree.cpp in Sources */,
 				7DF949CA1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D551AAC190FE9F1008FF361 /* ml_ml.cpp in Sources */,
 				7DF94A741AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF9449C1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DD8C7301B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94B401AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
+				7DC7EF5B1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF94AB81AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943AE1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7D71CBC41AADB9980099CD5B /* ml_formatter.cpp in Sources */,
@@ -4741,6 +4854,7 @@
 				7DF94AFC1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF943261AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7D16A2691B1BFD8F0076C05F /* KMeans.cpp in Sources */,
+				7DC7EEED1EB9C365000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7D405EBF1B1BCB52003A2172 /* RandomForests.cpp in Sources */,
 				7DF949421AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF949861AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
@@ -4754,7 +4868,6 @@
 				7D405EC51B1BCC54003A2172 /* Node.cpp in Sources */,
 				7DACBF78192BAC6C00F0E7D7 /* ml_randforest.cpp in Sources */,
 				7DF942E21AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949EC1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D405EC71B1BCC84003A2172 /* DecisionTree.cpp in Sources */,
 				7DF949A81AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7D16A26B1B1BFE0A0076C05F /* DecisionTreeNode.cpp in Sources */,
@@ -4766,6 +4879,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DD8C7481B1BCA5500866538 /* MinDist.cpp in Sources */,
+				7DC7EF381EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF94ADB1AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A531AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF9447B1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
@@ -4778,7 +4892,6 @@
 				7DF949CB1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D551ABC190FEA0F008FF361 /* ml_ml.cpp in Sources */,
 				7DF94A751AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF9449D1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B411AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AB91AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943AF1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -4799,20 +4912,23 @@
 				7DF943051AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DA0B699192F7689001F56DA /* ml_classification.cpp in Sources */,
 				7DF94AFD1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
+				7DC7EF131EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF943271AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
+				7DC7EF5C1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF949431AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF949871AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF949211AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
+				7DC7EF801EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DD8C7311B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF9436B1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A311AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF943491AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943F31AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944E11AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
+				7DC7EEEE1EB9C366000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DD8C7231B1BC4B500866538 /* Derivative.cpp in Sources */,
 				7DACBF79192BAC7400F0E7D7 /* ml_mindist.cpp in Sources */,
 				7DF942E31AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949ED1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A91AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7D405EC11B1BCBAF003A2172 /* KMeansFeatures.cpp in Sources */,
 			);
@@ -4824,6 +4940,7 @@
 			files = (
 				7DF94ADC1AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A541AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EF141EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF9447C1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943D21AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF94A101AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
@@ -4832,7 +4949,6 @@
 				7DF949CC1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D551ADC190FEA37008FF361 /* ml_ml.cpp in Sources */,
 				7DF94A761AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF9449E1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B421AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF93FD61AC84F4700C6BFA7 /* KNN.cpp in Sources */,
 				7DF94ABA1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
@@ -4847,10 +4963,12 @@
 				7DACBF6F192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DD8C7141B1BC4A100866538 /* DeadZone.cpp in Sources */,
 				7D2AEA8C1A95270E009F75BE /* ml_doc.cpp in Sources */,
+				7DC7EF391EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF942C21AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DD8C7321B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF949661AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF943061AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
+				7DC7EEEF1EB9C367000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DD8C7341B1BC4C800866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DA0B69B192F768B001F56DA /* ml_classification.cpp in Sources */,
 				7DF94AFE1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
@@ -4861,13 +4979,14 @@
 				7DD8C7241B1BC4B500866538 /* Derivative.cpp in Sources */,
 				7DF9436C1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A321AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
+				7DC7EF5D1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF9434A1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF811EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF943F41AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944E21AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF7B192BACFB00F0E7D7 /* ml_knn.cpp in Sources */,
 				7DD8C73B1B1BC4D400866538 /* MovingAverageFilter.cpp in Sources */,
 				7DF942E41AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949EE1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949AA1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4887,8 +5006,8 @@
 				7DACBF7C192BAD0900F0E7D7 /* ml_gmm.cpp in Sources */,
 				7DD8C73C1B1BC4D500866538 /* MovingAverageFilter.cpp in Sources */,
 				7DF93F4F1AC84F4700C6BFA7 /* GMM.cpp in Sources */,
+				7DC7EF151EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF94A771AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF9449F1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B431AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94ABB1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943B11AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -4896,6 +5015,7 @@
 				7DF94B211AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DF94A991AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DF942A11AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
+				7DC7EF821EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF944391AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DD8C7351B1BC4C900866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF944171AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
@@ -4908,21 +5028,23 @@
 				7DF943071AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DA0B69C192F768C001F56DA /* ml_classification.cpp in Sources */,
 				7DF94AFF1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
+				7DC7EEF01EB9C368000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF943291AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF949451AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF949891AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF949231AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF9414D1AC84F4700C6BFA7 /* GaussianMixtureModels.cpp in Sources */,
+				7DC7EF5E1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF9436D1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DD8C7151B1BC4A100866538 /* DeadZone.cpp in Sources */,
 				7DD8C7331B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A331AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF9434B1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943F51AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
+				7DC7EF3A1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF944E31AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF70192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF942E51AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949EF1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949AB1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4933,17 +5055,18 @@
 			files = (
 				7D551AFC190FEA80008FF361 /* ml_ml.cpp in Sources */,
 				7DF949461AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
+				7DC7EF5F1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF9432A1AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF943901AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DF949681AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF949CE1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF944C21AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DD8C7261B1BC4B700866538 /* Derivative.cpp in Sources */,
+				7DC7EF161EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF94A341AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF944E41AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DF94ADE1AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF942A21AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
-				7DF949F01AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D2AEA8E1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943B21AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7DF94B221AC84F4800C6BFA7 /* Util.cpp in Sources */,
@@ -4952,6 +5075,7 @@
 				7DF94A561AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF9443A1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DF9434C1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF3B1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF9447E1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF942C41AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF942E61AC84F4700C6BFA7 /* Context.cpp in Sources */,
@@ -4964,17 +5088,18 @@
 				7DF949AC1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF9445C1AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
 				7DD8C73D1B1BC4D600866538 /* MovingAverageFilter.cpp in Sources */,
+				7DC7EF831EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF9436E1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A781AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944181AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DD8C7341B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94B441AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF949241AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
-				7DF944A01AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DA0B69D192F768E001F56DA /* ml_classification.cpp in Sources */,
 				7DF9498A1AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7D71CBC81AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DD8C7361B1BC4CA00866538 /* DoubleMovingAverageFilter.cpp in Sources */,
+				7DC7EEF11EB9C36A000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF943D41AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4990,13 +5115,15 @@
 				7DF94A021AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF9444C1AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
 				7DF943801AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
+				7DC7EF061EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DD8C7401B1BC4DA00866538 /* MovingAverageFilter.cpp in Sources */,
 				7DD8C70F1B1BC49B00866538 /* DeadZone.cpp in Sources */,
 				7DF949BE1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
+				7DC7EF731EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7D65FFD41992C18C00C82004 /* ml_base.cpp in Sources */,
+				7DC7EF4F1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF94A681AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DD8C7241B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
-				7DF944901AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B341AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AAC1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943A21AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5005,6 +5132,7 @@
 				7DD8C72F1B1BC4C300866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF94A8A1AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DF942921AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
+				7DC7EEE11EB9C35D000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF9442A1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DF944081AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DF944B21AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
@@ -5022,12 +5150,12 @@
 				7DF9435E1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A241AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF9433C1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF2B1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF943E61AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944D41AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DD8C71F1B1BC4AE00866538 /* Derivative.cpp in Sources */,
 				7D65FFE01992C1BA00C82004 /* ml_zerox.cpp in Sources */,
 				7DF942D61AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949E01AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9499C1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5038,16 +5166,17 @@
 			files = (
 				7DF94ADF1AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A571AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EF601EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF9447F1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943D51AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF94A131AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF9445D1AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
 				7DF943911AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DF949CF1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
+				7DC7EF171EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DD8C7271B1BC4B700866538 /* Derivative.cpp in Sources */,
 				7D65FFE31992C1FF00C82004 /* ml_ml.cpp in Sources */,
 				7DF94A791AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944A11AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B451AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94ABD1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943B31AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5057,6 +5186,7 @@
 				7DF942A31AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF9443B1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DF944191AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
+				7DC7EF3C1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF944C31AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7D65FFE41992C1FF00C82004 /* ml_base.cpp in Sources */,
 				7D2AEA8F1A95270E009F75BE /* ml_doc.cpp in Sources */,
@@ -5069,6 +5199,7 @@
 				7DD8C7171B1BC4A300866538 /* DeadZone.cpp in Sources */,
 				7DF949471AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF9498B1AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
+				7DC7EF841EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DD8C73E1B1BC4D600866538 /* MovingAverageFilter.cpp in Sources */,
 				7DF949251AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF9436F1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
@@ -5078,8 +5209,8 @@
 				7DF943F71AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944E51AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DF942E71AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949F11AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949AD1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
+				7DC7EEF21EB9C36B000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DD8C7371B1BC4CA00866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5099,8 +5230,8 @@
 				7DF949C01AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DD8C73F1B1BC4D900866538 /* MovingAverageFilter.cpp in Sources */,
 				7D7D9FD418F6948E00F417F6 /* ml_classification.cpp in Sources */,
+				7DC7EF081EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF94A6A1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944921AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B361AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AAE1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943A41AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5108,6 +5239,7 @@
 				7DF94B141AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DF94A8C1AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DF942941AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
+				7DC7EF751EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF9442C1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DD8C7301B1BC4C300866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF9440A1AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
@@ -5120,21 +5252,23 @@
 				7DF942FA1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7D7D9FDB18F6948E00F417F6 /* ml_ml.cpp in Sources */,
 				7DF94AF21AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
+				7DC7EEE31EB9C35E000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF9431C1AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF949381AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF9497C1AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF949161AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF940DA1AC84F4700C6BFA7 /* SVM.cpp in Sources */,
+				7DC7EF511EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943601AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DD8C7101B1BC49D00866538 /* DeadZone.cpp in Sources */,
 				7DD8C7261B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A261AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF9433E1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943E81AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
+				7DC7EF2D1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF944D61AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF62192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF942D81AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949E21AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9499E1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5144,6 +5278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DF94AD11AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
+				7DC7EF2E1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF94A491AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7D9F2B4C1B1B95ED00B4BA08 /* WeakClassifier.cpp in Sources */,
 				7DF944711AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
@@ -5155,7 +5290,6 @@
 				7DF205FD1B1BA07800BB0AA4 /* MovingAverageFilter.cpp in Sources */,
 				7D7DA00B18F69A3800F417F6 /* ml_adaboost.cpp in Sources */,
 				7DF94A6B1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944931AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B371AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AAF1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF206001B1BB22400BB0AA4 /* DeadZone.cpp in Sources */,
@@ -5177,20 +5311,23 @@
 				7D7D9FF718F699D800F417F6 /* ml_ml.cpp in Sources */,
 				7D9F2B481B1B95E400B4BA08 /* RadialBasisFunction.cpp in Sources */,
 				7DF94AF31AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
+				7DC7EF091EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF9431D1AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
+				7DC7EF521EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF949391AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF9497D1AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF949171AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
+				7DC7EF761EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DD8C7271B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF943611AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A271AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF9433F1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943E91AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944D71AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
+				7DC7EEE41EB9C35F000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7D9F2B401B1B95BD00B4BA08 /* Derivative.cpp in Sources */,
 				7DACBF63192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF942D91AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949E31AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9499F1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF205FF1B1BB21D00BB0AA4 /* DoubleMovingAverageFilter.cpp in Sources */,
 			);
@@ -5202,6 +5339,7 @@
 			files = (
 				7DF94AD21AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A4A1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EF0A1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944721AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943C81AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF94A061AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
@@ -5210,7 +5348,6 @@
 				7DF949C21AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D7DA01118F69AD400F417F6 /* ml_ml.cpp in Sources */,
 				7DF94A6C1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944941AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B381AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AB01AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943A61AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5225,10 +5362,12 @@
 				7D7DA0B518F69C8200F417F6 /* ml_linreg.cpp in Sources */,
 				7D9F2B4E1B1B9EB700B4BA08 /* DeadZone.cpp in Sources */,
 				7D2AEA821A95270E009F75BE /* ml_doc.cpp in Sources */,
+				7DC7EF2F1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF942B81AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DD8C7281B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF9495C1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF942FC1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
+				7DC7EEE51EB9C360000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7D9F2B521B1B9EC900B4BA08 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7D7DA0BC18F69EB700F417F6 /* ml_regression.cpp in Sources */,
 				7DF94AF41AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
@@ -5239,13 +5378,14 @@
 				7D9F2B501B1B9EC000B4BA08 /* Derivative.cpp in Sources */,
 				7DF943621AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A281AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
+				7DC7EF531EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943401AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF771EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF943EA1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944D81AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF64192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF205FB1B1BA05A00BB0AA4 /* MovingAverageFilter.cpp in Sources */,
 				7DF942DA1AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949E41AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A01AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5256,6 +5396,7 @@
 			files = (
 				7DF94AD31AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A4B1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EF0B1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944731AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943C91AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF94A071AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
@@ -5264,7 +5405,6 @@
 				7DF949C31AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D7DA02918F69AF600F417F6 /* ml_ml.cpp in Sources */,
 				7DF94A6D1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944951AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B391AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AB11AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943A71AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5279,10 +5419,12 @@
 				7DCCEC8A1B1B8DAC00DEFCF1 /* LogisticRegression.cpp in Sources */,
 				7DD8C6EB1B1BB3A200866538 /* DeadZone.cpp in Sources */,
 				7D2AEA831A95270E009F75BE /* ml_doc.cpp in Sources */,
+				7DC7EF301EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF942B91AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DD8C7291B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF9495D1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF942FD1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
+				7DC7EEE61EB9C360000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DD8C6EF1B1BB3B600866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7D7DA0BD18F69EB800F417F6 /* ml_regression.cpp in Sources */,
 				7DF94AF51AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
@@ -5293,13 +5435,14 @@
 				7DD8C6ED1B1BB3AF00866538 /* Derivative.cpp in Sources */,
 				7DF943631AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A291AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
+				7DC7EF541EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943411AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF781EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF943EB1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944D91AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF65192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DD8C6F11B1BB3C200866538 /* MovingAverageFilter.cpp in Sources */,
 				7DF942DB1AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949E51AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A11AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5310,6 +5453,7 @@
 			files = (
 				7D7DA0B718F69CA700F417F6 /* ml_mlp.cpp in Sources */,
 				7DF9493C1AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
+				7DC7EF0C1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF943201AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF943861AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DF9495E1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
@@ -5319,7 +5463,6 @@
 				7DF944DA1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DF94AD41AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF942981AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
-				7DF949E61AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D2AEA841A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943A81AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7DF94B181AC84F4800C6BFA7 /* Util.cpp in Sources */,
@@ -5333,9 +5476,11 @@
 				7DD8C6FB1B1BBEAA00866538 /* DeadZone.cpp in Sources */,
 				7DF942BA1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF942DC1AC84F4700C6BFA7 /* Context.cpp in Sources */,
+				7DC7EF311EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF94A081AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DD8C72A1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DACBF66192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DC7EEE71EB9C361000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DD8C6FF1B1BBEBB00866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DCCEC881B1B8D6B00DEFCF1 /* Neuron.cpp in Sources */,
 				7DF94A901AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
@@ -5347,9 +5492,10 @@
 				7DF943641AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A6E1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF9440E1AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
+				7DC7EF551EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF94B3A1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
+				7DC7EF791EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF9491A1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
-				7DF944961AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DD8C7011B1BBEC700866538 /* MovingAverageFilter.cpp in Sources */,
 				7D7DA04118F69B0F00F417F6 /* ml_ml.cpp in Sources */,
 				7DF949801AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
@@ -5364,6 +5510,7 @@
 			files = (
 				7DF94AD51AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A4D1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EF0D1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944751AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943CB1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF94A091AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
@@ -5373,7 +5520,6 @@
 				7DF949C51AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D7DA05818F69B2A00F417F6 /* ml_classification.cpp in Sources */,
 				7DF94A6F1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944971AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B3B1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AB31AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943A91AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5387,10 +5533,12 @@
 				7DF9440F1AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DF944B91AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7D7DA0B818F69CAB00F417F6 /* ml_dtw.cpp in Sources */,
+				7DC7EF321EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7D2AEA851A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DD8C72B1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942BB1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF9495F1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
+				7DC7EEE81EB9C362000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF942FF1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7D7DA05918F69B2A00F417F6 /* ml_ml.cpp in Sources */,
 				7DF94AF71AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
@@ -5401,13 +5549,14 @@
 				7DF943651AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A2B1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF943431AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF561EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943ED1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
+				7DC7EF7A1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF944DB1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7D818CC41B1B92BC00043BB9 /* Derivative.cpp in Sources */,
 				7DACBF67192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF942DD1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7D9F2B3E1B1B956800B4BA08 /* DeadZone.cpp in Sources */,
-				7DF949E71AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949A31AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5426,9 +5575,9 @@
 				7DF949C61AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D7DA07018F69B4300F417F6 /* ml_classification.cpp in Sources */,
 				7DF94A701AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944981AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B3C1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AB41AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
+				7DC7EF571EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943AA1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7D71CBC01AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DF94B1A1AC84F4800C6BFA7 /* Util.cpp in Sources */,
@@ -5439,13 +5588,17 @@
 				7DF944BA1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7D7DA0B918F69CAF00F417F6 /* ml_hmm.cpp in Sources */,
 				7D2AEA861A95270E009F75BE /* ml_doc.cpp in Sources */,
+				7DC7EF7B1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DD8C72C1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942BC1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
+				7DC7EEE91EB9C362000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DCCEC901B1B8ECA00DEFCF1 /* Derivative.cpp in Sources */,
 				7DF949601AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
+				7DC7EF0E1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7D6479921B1B904500E8EC48 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF943001AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DCCEC4C1B1B7FC300DEFCF1 /* ContinuousHiddenMarkovModel.cpp in Sources */,
+				7DC7EF331EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7D818CC21B1B913B00043BB9 /* DeadZone.cpp in Sources */,
 				7DF93F8C1AC84F4700C6BFA7 /* DiscreteHiddenMarkovModel.cpp in Sources */,
 				7D7DA07118F69B4300F417F6 /* ml_ml.cpp in Sources */,
@@ -5462,7 +5615,6 @@
 				7DACBF68192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF942DE1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DCCEC911B1B8F0000DEFCF1 /* MovingAverageFilter.cpp in Sources */,
-				7DF949E81AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF93FAE1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
 				7DF949A41AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
@@ -5474,17 +5626,18 @@
 			files = (
 				7D7DA08918F69B5A00F417F6 /* ml_ml.cpp in Sources */,
 				7DF9493F1AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
+				7DC7EF581EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943231AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF943891AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DF949611AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF949C71AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DD8C7031B1BC11700866538 /* DeadZone.cpp in Sources */,
 				7DF944BB1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
+				7DC7EF0F1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF94A2D1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF944DD1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DF94AD71AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF9429B1AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
-				7DF949E91AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D2AEA871A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943AB1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7DF94B1B1AC84F4800C6BFA7 /* Util.cpp in Sources */,
@@ -5493,6 +5646,7 @@
 				7DF943011AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DF94A4F1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF944331AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
+				7DC7EF341EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF943451AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF944771AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF942BD1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
@@ -5505,6 +5659,7 @@
 				7DF943EF1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF949A51AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF944551AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
+				7DC7EF7C1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF943671AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A711AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF944111AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
@@ -5512,10 +5667,10 @@
 				7DF94B3D1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF9491D1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DD8C7041B1BC11D00866538 /* Derivative.cpp in Sources */,
-				7DF944991AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7D7DA0BA18F69CB300F417F6 /* ml_peak.cpp in Sources */,
 				7DF949831AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7D71CBC11AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DC7EEEA1EB9C363000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF943CD1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5526,16 +5681,17 @@
 			files = (
 				7D7DA0A118F69B7100F417F6 /* ml_ml.cpp in Sources */,
 				7DF949401AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
+				7DC7EF591EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943241AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF9438A1AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DF949621AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF949C81AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF944BC1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DF94A2E1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
+				7DC7EF101EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944DE1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DF94AD81AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF9429C1AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
-				7DF949EA1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D2AEA881A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DD8C6F41B1BBA7000866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF943AC1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5545,6 +5701,7 @@
 				7DF94A501AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF944341AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DF943461AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF351EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF944781AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF942BE1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF942E01AC84F4700C6BFA7 /* Context.cpp in Sources */,
@@ -5557,6 +5714,7 @@
 				7DF949A61AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF944561AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
 				7DF943681AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
+				7DC7EF7D1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF94A721AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DD8C6F81B1BBA8800866538 /* DeadZone.cpp in Sources */,
 				7DF944121AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
@@ -5564,10 +5722,10 @@
 				7DF94B3E1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF9491E1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DD8C6F71B1BBA8100866538 /* Derivative.cpp in Sources */,
-				7DF9449A1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7D7DA0BB18F69CB800F417F6 /* ml_minmax.cpp in Sources */,
 				7DF949841AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7D71CBC21AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DC7EEEB1EB9C364000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF943CE1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5577,6 +5735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCCEC581B1B82EC00DEFCF1 /* ml_svm.cpp in Sources */,
+				7DC7EF1C1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DCCEC5C1B1B835D00DEFCF1 /* ml_classification.cpp in Sources */,
 				7DCCEC5D1B1B836100DEFCF1 /* ml_base.cpp in Sources */,
 				7DCCEC5E1B1B836400DEFCF1 /* ml_ml.cpp in Sources */,
@@ -5587,12 +5746,14 @@
 				7DCCEC6A1B1B857200DEFCF1 /* InfoLog.cpp in Sources */,
 				7DCCEC6B1B1B858700DEFCF1 /* DebugLog.cpp in Sources */,
 				7DCCEC6D1B1B85CD00DEFCF1 /* ClassificationData.cpp in Sources */,
+				7DC7EF401EB9C752000DB2DF /* Random.cpp in Sources */,
+				7DC7EEF71EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DCCEC721B1B868B00DEFCF1 /* ClassificationSample.cpp in Sources */,
 				7DCCEC6F1B1B865600DEFCF1 /* RegressionData.cpp in Sources */,
 				7DCCEC711B1B868800DEFCF1 /* RegressionSample.cpp in Sources */,
 				7DCCEC761B1B86EB00DEFCF1 /* Util.cpp in Sources */,
+				7DC7EF641EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DCCEC731B1B86B600DEFCF1 /* TimeSeriesClassificationData.cpp in Sources */,
-				7DCCEC741B1B86B600DEFCF1 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DCCEC751B1B86B600DEFCF1 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DCCEC701B1B866F00DEFCF1 /* UnlabelledData.cpp in Sources */,
 				7DCCEC601B1B837200DEFCF1 /* ml_formatter.cpp in Sources */,
@@ -5604,10 +5765,10 @@
 				7D5802E01D103D880023D607 /* MovingAverageFilter.cpp in Sources */,
 				7DCCEC651B1B843700DEFCF1 /* GRTBase.cpp in Sources */,
 				7DCCEC681B1B854300DEFCF1 /* WarningLog.cpp in Sources */,
-				7DCCEC6E1B1B862900DEFCF1 /* MatrixDouble.cpp in Sources */,
 				7DCCEC691B1B855800DEFCF1 /* TrainingLog.cpp in Sources */,
 				7DCCEC661B1B843B00DEFCF1 /* MLBase.cpp in Sources */,
 				7DCCEC671B1B852300DEFCF1 /* TestingLog.cpp in Sources */,
+				7DC7EED21EB9C34F000DB2DF /* ClassificationDataStream.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5625,7 +5786,6 @@
 				7DF94AC01AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF949061AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF9443E1AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DF944821AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7D2AEA701A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943501AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF9441C1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
@@ -5639,13 +5799,14 @@
 				7DF94A161AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF942841AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF9430C1AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
+				7DC7EF651EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7D7DA0F318F7DC5600F417F6 /* ml_regression.cpp in Sources */,
 				7DF94B041AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DF9432E1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943FA1AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
-				7DF949D21AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF93D561AC84F4700C6BFA7 /* AdaBoost.cpp in Sources */,
 				7D7DA0F418F7DC5600F417F6 /* ml_ml.cpp in Sources */,
+				7DC7EEF81EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DACBF52192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF944601AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943941AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5657,11 +5818,14 @@
 				7DF94AE21AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF94A381AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949B01AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
+				7DC7EF1D1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF205FE1B1BB21B00BB0AA4 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF943B61AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF943721AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DF94A7C1AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
+				7DC7EF411EB9C752000DB2DF /* Random.cpp in Sources */,
 				7D9F2B461B1B95E000B4BA08 /* RadialBasisFunction.cpp in Sources */,
+				7DC7EED31EB9C350000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DACBF74192BAC4100F0E7D7 /* ml_adaboost.cpp in Sources */,
 				7DF944C61AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DF949281AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
@@ -5675,6 +5839,7 @@
 			files = (
 				7DF94AC11AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A391AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EEF91EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944611AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943B71AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF949F51AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
@@ -5683,7 +5848,6 @@
 				7DF949B11AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D7DA10218F7DC8900F417F6 /* ml_regression.cpp in Sources */,
 				7DF94A5B1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944831AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B271AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94A9F1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943951AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5698,10 +5862,12 @@
 				7D7DA10318F7DC8900F417F6 /* ml_ml.cpp in Sources */,
 				7D9F2B4D1B1B9EB400B4BA08 /* DeadZone.cpp in Sources */,
 				7D2AEA711A95270E009F75BE /* ml_doc.cpp in Sources */,
+				7DC7EF1E1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF942A71AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DD8C7171B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF9494B1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF942EB1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
+				7DC7EED41EB9C351000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7D9F2B511B1B9EC800B4BA08 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DACBF7D192BAD2500F0E7D7 /* ml_linreg.cpp in Sources */,
 				7DF94AE31AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
@@ -5712,13 +5878,14 @@
 				7D9F2B4F1B1B9EBE00B4BA08 /* Derivative.cpp in Sources */,
 				7DF943511AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A171AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
+				7DC7EF421EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF9432F1AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF661EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF943D91AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944C71AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF53192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF205FA1B1BA05700BB0AA4 /* MovingAverageFilter.cpp in Sources */,
 				7DF942C91AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949D31AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9498F1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5729,6 +5896,7 @@
 			files = (
 				7DF94AC21AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A3A1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EEFA1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944621AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943B81AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF949F61AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
@@ -5737,7 +5905,6 @@
 				7DF949B21AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D7DA11118F7DCA600F417F6 /* ml_regression.cpp in Sources */,
 				7DF94A5C1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944841AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B281AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AA01AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943961AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5752,10 +5919,12 @@
 				7D2AEA721A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DD8C6EA1B1BB39F00866538 /* DeadZone.cpp in Sources */,
 				7DF942A81AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
+				7DC7EF1F1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF9494C1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DD8C7181B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942EC1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7D7DA11218F7DCA600F417F6 /* ml_ml.cpp in Sources */,
+				7DC7EED51EB9C351000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DD8C6EE1B1BB3B400866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF94AE41AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF948A21AC84F4800C6BFA7 /* LogisticRegression.cpp in Sources */,
@@ -5766,13 +5935,14 @@
 				7DD8C6EC1B1BB3AD00866538 /* Derivative.cpp in Sources */,
 				7DF943521AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A181AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
+				7DC7EF431EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943301AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF671EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF943DA1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944C81AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF54192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DD8C6F01B1BB3C000866538 /* MovingAverageFilter.cpp in Sources */,
 				7DF942CA1AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949D41AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949901AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5792,8 +5962,8 @@
 				7DF949B31AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DD8C7001B1BBEC500866538 /* MovingAverageFilter.cpp in Sources */,
 				7D7DA12018F7DCBD00F417F6 /* ml_regression.cpp in Sources */,
+				7DC7EEFB1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF94A5D1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944851AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B291AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AA11AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF943971AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -5801,6 +5971,7 @@
 				7DF94B071AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DF94A7F1AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DF942871AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
+				7DC7EF681EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF9441F1AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DD8C6FE1B1BBEB800866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF943FD1AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
@@ -5813,21 +5984,23 @@
 				7DCCEC861B1B8D6000DEFCF1 /* MLP.cpp in Sources */,
 				7DF942ED1AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7D7DA12118F7DCBD00F417F6 /* ml_ml.cpp in Sources */,
+				7DC7EED61EB9C352000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF94AE51AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF9430F1AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF9492B1AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DF9496F1AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF949091AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
+				7DC7EF441EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943531AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DD8C6FA1B1BBEA900866538 /* DeadZone.cpp in Sources */,
 				7DD8C7191B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94A191AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF943311AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943DB1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
+				7DC7EF201EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF944C91AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF55192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF942CB1AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949D51AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949911AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5844,10 +6017,10 @@
 				7DF94AC41AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF9490A1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF944421AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DF944861AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7D2AEA741A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943541AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF944201AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
+				7DC7EEFC1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF949F81AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF94AA21AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF94B2A1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
@@ -5856,30 +6029,33 @@
 				7DF943DC1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF94A1A1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF942881AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
+				7DC7EF691EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF943101AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7D7DA12F18F7DCD600F417F6 /* ml_regression.cpp in Sources */,
 				7DF94B081AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7D9F2B3D1B1B956600B4BA08 /* DeadZone.cpp in Sources */,
 				7DF943321AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943FE1AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
-				7DF949D61AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DACBF75192BAC5600F0E7D7 /* ml_dtw.cpp in Sources */,
 				7D7DA13018F7DCD600F417F6 /* ml_ml.cpp in Sources */,
 				7D818CC51B1B92C200043BB9 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DF944641AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943981AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
+				7DC7EED71EB9C353000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF94A5E1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7DF93EF21AC84F4700C6BFA7 /* DTW.cpp in Sources */,
 				7D71CBAE1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DF9494E1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7D818CC31B1B92B800043BB9 /* Derivative.cpp in Sources */,
 				7DF94AE61AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
+				7DC7EF451EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF94A3C1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DD8C71A1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF949B41AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943BA1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF943761AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7D818CC71B1B92CE00043BB9 /* MovingAverageFilter.cpp in Sources */,
+				7DC7EF211EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF94A801AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DACBF56192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF944CA1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
@@ -5892,6 +6068,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DF93F9D1AC84F4700C6BFA7 /* HMM.cpp in Sources */,
+				7DC7EF221EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF942CD1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949931AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7D5802E11D103D8A0023D607 /* MovingAverageFilter.cpp in Sources */,
@@ -5902,7 +6079,6 @@
 				7DF9490B1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF944431AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
 				7DCCEC8F1B1B8EC900DEFCF1 /* Derivative.cpp in Sources */,
-				7DF944871AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7D2AEA751A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943551AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF944211AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
@@ -5923,18 +6099,21 @@
 				7DF943331AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943FF1AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7D818CC11B1B913800043BB9 /* DeadZone.cpp in Sources */,
-				7DF949D71AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DACBF76192BAC5D00F0E7D7 /* ml_hmm.cpp in Sources */,
 				7D7DA13F18F7DCEC00F417F6 /* ml_ml.cpp in Sources */,
+				7DC7EEFD1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944651AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
+				7DC7EF461EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943991AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
 				7DF94A5F1AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
 				7D71CBAF1AADB9980099CD5B /* ml_formatter.cpp in Sources */,
+				7DC7EF6A1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF9494F1AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DF94AE71AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF94A3D1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949B51AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943BB1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
+				7DC7EED81EB9C354000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF943771AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DF94A811AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DACBF57192B869600F0E7D7 /* ml_base.cpp in Sources */,
@@ -5955,11 +6134,13 @@
 				7DF949FA1AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DCCEC921B1B8F0300DEFCF1 /* MovingAverageFilter.cpp in Sources */,
 				7DF944441AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
+				7DC7EEFE1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF943781AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DF949B61AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D7DA14D18F7DD0600F417F6 /* ml_regression.cpp in Sources */,
+				7DC7EF6B1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF94A601AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944881AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
+				7DC7EF471EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DD8C71C1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF94B2C1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AA41AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
@@ -5970,6 +6151,7 @@
 				7DF9428A1AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF944221AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
 				7DF944001AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
+				7DC7EED91EB9C355000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF944AA1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DACBF72192BAC3500F0E7D7 /* ml_peak.cpp in Sources */,
 				7DD8C7021B1BC11300866538 /* DeadZone.cpp in Sources */,
@@ -5987,12 +6169,12 @@
 				7DD8C7051B1BC11F00866538 /* Derivative.cpp in Sources */,
 				7DF943561AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF94A1C1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
+				7DC7EF231EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF943341AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF943DE1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
 				7DF944CC1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF58192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF942CE1AC84F4700C6BFA7 /* Context.cpp in Sources */,
-				7DF949D81AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949941AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6003,6 +6185,7 @@
 			files = (
 				7DF94AC71AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF94A3F1AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EEFF1EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944671AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF943BD1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF949FB1AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
@@ -6012,7 +6195,6 @@
 				7DF949B71AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7D7DA15C18F7DD1C00F417F6 /* ml_regression.cpp in Sources */,
 				7DF94A611AC84F4800C6BFA7 /* TestingLog.cpp in Sources */,
-				7DF944891AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF94B2D1AC84F4800C6BFA7 /* WarningLog.cpp in Sources */,
 				7DF94AA51AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF9439B1AC84F4700C6BFA7 /* PreProcessing.cpp in Sources */,
@@ -6026,10 +6208,12 @@
 				7D7DA15D18F7DD1C00F417F6 /* ml_ml.cpp in Sources */,
 				7D2AEA771A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF942AD1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
+				7DC7EF241EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF949511AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DD8C71D1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DF942F11AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DACBF59192B869600F0E7D7 /* ml_base.cpp in Sources */,
+				7DC7EEDA1EB9C355000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF94AE91AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF943131AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7DF9492F1AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
@@ -6040,12 +6224,13 @@
 				7DF94A1D1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF943351AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DD8C6F91B1BBA8B00866538 /* DeadZone.cpp in Sources */,
+				7DC7EF481EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943DF1AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
+				7DC7EF6C1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF944CD1AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DACBF73192BAC3900F0E7D7 /* ml_minmax.cpp in Sources */,
 				7DF942CF1AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7D16A26D1B1BFF870076C05F /* Softmax.cpp in Sources */,
-				7DF949D91AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF949951AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DD8C6F51B1BBA7400866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 			);
@@ -6057,13 +6242,13 @@
 			files = (
 				7DF942D01AC84F4700C6BFA7 /* Context.cpp in Sources */,
 				7DF949961AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
+				7DC7EF001EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DF944AC1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DACBF5A192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DF942AE1AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
 				7DF94AC81AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF9490E1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF944461AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DF9448A1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7D2AEA781A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943581AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF944241AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
@@ -6080,10 +6265,11 @@
 				7DF94B0C1AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DD8C7091B1BC49600866538 /* DeadZone.cpp in Sources */,
 				7DF943361AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EF251EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF944021AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
 				7DD8C71E1B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
-				7DF949DA1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7D551A93190FE60D008FF361 /* ml_softmax.cpp in Sources */,
+				7DC7EEDB1EB9C356000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DD8C72A1B1BC4BE00866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7DA1F144190FE3F900F491FB /* ml_regression.cpp in Sources */,
 				7DF944681AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
@@ -6095,7 +6281,9 @@
 				7DF94AEA1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7DF94A401AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949B81AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
+				7DC7EF491EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF943BE1AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
+				7DC7EF6D1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF9437A1AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
 				7DD8C7461B1BC4DF00866538 /* MovingAverageFilter.cpp in Sources */,
 				7DF94A841AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
@@ -6110,6 +6298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DF942D11AC84F4700C6BFA7 /* Context.cpp in Sources */,
+				7DC7EF261EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF949971AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
 				7DF944AD1AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DACBF5B192B869600F0E7D7 /* ml_base.cpp in Sources */,
@@ -6117,7 +6306,6 @@
 				7DF94AC91AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF9490F1AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF944471AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DF9448B1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7D2AEA791A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF943591AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF944251AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
@@ -6127,7 +6315,9 @@
 				7DF942F31AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DF949751AC84F4800C6BFA7 /* ErrorLog.cpp in Sources */,
 				7DF943E11AC84F4700C6BFA7 /* ClassificationData.cpp in Sources */,
+				7DC7EF011EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7D405EC91B1BCC8C003A2172 /* DecisionTreeClusterNode.cpp in Sources */,
+				7DC7EF4A1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF94A1F1AC84F4800C6BFA7 /* RangeTracker.cpp in Sources */,
 				7DF9428D1AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF943151AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
@@ -6135,8 +6325,8 @@
 				7DF94B0D1AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DD8C70A1B1BC49700866538 /* DeadZone.cpp in Sources */,
 				7DF943371AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
+				7DC7EEDC1EB9C357000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF944031AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
-				7DF949DB1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DA1F153190FE40E00F491FB /* ml_regression.cpp in Sources */,
 				7DD8C7291B1BC4BE00866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7D551A94190FE612008FF361 /* ml_randforest.cpp in Sources */,
@@ -6148,6 +6338,7 @@
 				7DF949531AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DD8C71A1B1BC4AB00866538 /* Derivative.cpp in Sources */,
 				7D405EC61B1BCC81003A2172 /* DecisionTree.cpp in Sources */,
+				7DC7EF6E1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF94AEB1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
 				7D405EC31B1BCC4C003A2172 /* Tree.cpp in Sources */,
 				7DF94A411AC84F4800C6BFA7 /* SVD.cpp in Sources */,
@@ -6180,7 +6371,6 @@
 				7DF94ACA1AC84F4800C6BFA7 /* TrainingDataRecordingTimer.cpp in Sources */,
 				7DF949101AC84F4800C6BFA7 /* Cholesky.cpp in Sources */,
 				7DF944481AC84F4700C6BFA7 /* RegressionSample.cpp in Sources */,
-				7DF9448C1AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7D2AEA7A1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DF9435A1AC84F4700C6BFA7 /* MLBase.cpp in Sources */,
 				7DF944261AC84F4700C6BFA7 /* RegressionData.cpp in Sources */,
@@ -6194,13 +6384,14 @@
 				7DF9428E1AC84F4700C6BFA7 /* Classifier.cpp in Sources */,
 				7DF943161AC84F4700C6BFA7 /* GestureRecognitionPipeline.cpp in Sources */,
 				7D551A95190FE616008FF361 /* ml_mindist.cpp in Sources */,
+				7DC7EF6F1EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF94B0E1AC84F4800C6BFA7 /* Util.cpp in Sources */,
 				7DD8C70B1B1BC49800866538 /* DeadZone.cpp in Sources */,
 				7DF943381AC84F4700C6BFA7 /* GRTBase.cpp in Sources */,
 				7DF944041AC84F4700C6BFA7 /* ClassificationSample.cpp in Sources */,
-				7DF949DC1AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DD8C7491B1BCA6100866538 /* MinDistModel.cpp in Sources */,
 				7DA1F161190FE41A00F491FB /* ml_classification.cpp in Sources */,
+				7DC7EF021EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
 				7DD8C72B1B1BC4BF00866538 /* DoubleMovingAverageFilter.cpp in Sources */,
 				7D7CE6B81B1BFCD6006C1939 /* KMeans.cpp in Sources */,
 				7D405EC01B1BCBAB003A2172 /* KMeansFeatures.cpp in Sources */,
@@ -6212,11 +6403,14 @@
 				7DF949541AC84F4800C6BFA7 /* EigenvalueDecomposition.cpp in Sources */,
 				7DD8C71B1B1BC4AB00866538 /* Derivative.cpp in Sources */,
 				7DF94AEC1AC84F4800C6BFA7 /* TrainingLog.cpp in Sources */,
+				7DC7EF271EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DF94A421AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF949BA1AC84F4800C6BFA7 /* LUDecomposition.cpp in Sources */,
 				7DF943C01AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF9437C1AC84F4700C6BFA7 /* PostProcessing.cpp in Sources */,
+				7DC7EF4B1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DD8C7441B1BC4DD00866538 /* MovingAverageFilter.cpp in Sources */,
+				7DC7EEDD1EB9C357000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF94A861AC84F4800C6BFA7 /* ThresholdCrossingDetector.cpp in Sources */,
 				7DA1F163190FE41A00F491FB /* ml_ml.cpp in Sources */,
 				7DF944D01AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
@@ -6233,7 +6427,6 @@
 				7DF940401AC84F4700C6BFA7 /* ParticleClassifier.cpp in Sources */,
 				7DF941501AC84F4700C6BFA7 /* HierarchicalClustering.cpp in Sources */,
 				7DF9476C1AC84F4800C6BFA7 /* HighPassFilter.cpp in Sources */,
-				7DF944801AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF941FA1AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF94A9C1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF942A41AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
@@ -6252,6 +6445,7 @@
 				7DF947061AC84F4800C6BFA7 /* Derivative.cpp in Sources */,
 				7DF949261AC84F4800C6BFA7 /* DebugLog.cpp in Sources */,
 				7DA1F129190FDAC100F491FB /* ml_dtree.cpp in Sources */,
+				7DC7EF631EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7DF944A21AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DF9485A1AC84F4800C6BFA7 /* Neuron.cpp in Sources */,
 				7D61B11818788BD6000FD114 /* ml_peak.cpp in Sources */,
@@ -6260,10 +6454,8 @@
 				7DF93FB81AC84F4700C6BFA7 /* KNN.cpp in Sources */,
 				7DF949F21AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF948E21AC84F4800C6BFA7 /* RegressionTree.cpp in Sources */,
-				7DCCEC4F1B1B804900DEFCF1 /* LDA.cpp in Sources */,
 				7DF943B41AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
 				7DF941D81AC84F4700C6BFA7 /* BernoulliRBM.cpp in Sources */,
-				7DF949D01AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9421C1AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
 				7DF942E81AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DF9489E1AC84F4800C6BFA7 /* LogisticRegression.cpp in Sources */,
@@ -6303,6 +6495,7 @@
 				7DF9445E1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF944C41AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DF94B021AC84F4800C6BFA7 /* Util.cpp in Sources */,
+				7DC7EED11EB9C34E000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF9465C1AC84F4800C6BFA7 /* ZeroCrossingCounter.cpp in Sources */,
 				7DF9423E1AC84F4700C6BFA7 /* Node.cpp in Sources */,
 				7DF940621AC84F4700C6BFA7 /* RandomForests.cpp in Sources */,
@@ -6333,6 +6526,8 @@
 				7D61B1081875F661000FD114 /* ml_logreg.cpp in Sources */,
 				7DF93F521AC84F4700C6BFA7 /* ContinuousHiddenMarkovModel.cpp in Sources */,
 				7DF942C61AC84F4700C6BFA7 /* Context.cpp in Sources */,
+				7DC7EEF61EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
+				7DC7EF1B1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				E98573570D9E52D300682171 /* ml_ml.cpp in Sources */,
 				7DF9487C1AC84F4800C6BFA7 /* LinearRegression.cpp in Sources */,
 				7DA1F13B190FDC6D00F491FB /* ml_softmax.cpp in Sources */,
@@ -6341,6 +6536,7 @@
 				7DF93F741AC84F4700C6BFA7 /* DiscreteHiddenMarkovModel.cpp in Sources */,
 				7DF94A361AC84F4800C6BFA7 /* SVD.cpp in Sources */,
 				7DF946181AC84F4800C6BFA7 /* TimeDomainFeatures.cpp in Sources */,
+				7DC7EF3F1EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF9452A1AC84F4700C6BFA7 /* FFTFeatures.cpp in Sources */,
 				7DF9456E1AC84F4700C6BFA7 /* KMeansQuantizer.cpp in Sources */,
 				7DACBF50192B869600F0E7D7 /* ml_base.cpp in Sources */,
@@ -6366,7 +6562,6 @@
 				7DF947C11AC84F4800C6BFA7 /* LowPassFilter.cpp in Sources */,
 				7DF940511AC84F4700C6BFA7 /* ParticleClassifier.cpp in Sources */,
 				7DF9477D1AC84F4800C6BFA7 /* HighPassFilter.cpp in Sources */,
-				7DF944911AC84F4700C6BFA7 /* TimeSeriesClassificationDataStream.cpp in Sources */,
 				7DF9420B1AC84F4700C6BFA7 /* MovementDetector.cpp in Sources */,
 				7DF94AAD1AC84F4800C6BFA7 /* TimeSeriesClassificationSampleTrimmer.cpp in Sources */,
 				7DF942B51AC84F4700C6BFA7 /* Clusterer.cpp in Sources */,
@@ -6386,6 +6581,7 @@
 				7DA1F12A190FDAC100F491FB /* ml_dtree.cpp in Sources */,
 				7DF944B31AC84F4700C6BFA7 /* TimeSeriesClassificationSample.cpp in Sources */,
 				7DF9486B1AC84F4800C6BFA7 /* Neuron.cpp in Sources */,
+				7DC7EF741EB9C7C7000DB2DF /* Metrics.cpp in Sources */,
 				7D61B11918788BD6000FD114 /* ml_peak.cpp in Sources */,
 				7DF9400D1AC84F4700C6BFA7 /* MinDist.cpp in Sources */,
 				7DF9499D1AC84F4800C6BFA7 /* InfoLog.cpp in Sources */,
@@ -6393,9 +6589,7 @@
 				7DF93FC91AC84F4700C6BFA7 /* KNN.cpp in Sources */,
 				7DF94A031AC84F4800C6BFA7 /* PeakDetection.cpp in Sources */,
 				7DF948F31AC84F4800C6BFA7 /* RegressionTree.cpp in Sources */,
-				7DCCEC501B1B805E00DEFCF1 /* LDA.cpp in Sources */,
 				7DF943C51AC84F4700C6BFA7 /* Regressifier.cpp in Sources */,
-				7DF949E11AC84F4800C6BFA7 /* MatrixDouble.cpp in Sources */,
 				7DF9422D1AC84F4700C6BFA7 /* PrincipalComponentAnalysis.cpp in Sources */,
 				7DF942F91AC84F4700C6BFA7 /* FeatureExtraction.cpp in Sources */,
 				7DF948AF1AC84F4800C6BFA7 /* LogisticRegression.cpp in Sources */,
@@ -6437,6 +6631,7 @@
 				7DF9446F1AC84F4700C6BFA7 /* TimeSeriesClassificationData.cpp in Sources */,
 				7DF944D51AC84F4700C6BFA7 /* UnlabelledData.cpp in Sources */,
 				7DF94B131AC84F4800C6BFA7 /* Util.cpp in Sources */,
+				7DC7EEE21EB9C35D000DB2DF /* ClassificationDataStream.cpp in Sources */,
 				7DF9466D1AC84F4800C6BFA7 /* ZeroCrossingCounter.cpp in Sources */,
 				7DF9424F1AC84F4700C6BFA7 /* Node.cpp in Sources */,
 				7DF940731AC84F4700C6BFA7 /* RandomForests.cpp in Sources */,
@@ -6467,6 +6662,8 @@
 				7D61B1091875F661000FD114 /* ml_logreg.cpp in Sources */,
 				7DF93F631AC84F4700C6BFA7 /* ContinuousHiddenMarkovModel.cpp in Sources */,
 				7DF942D71AC84F4700C6BFA7 /* Context.cpp in Sources */,
+				7DC7EF071EB9C501000DB2DF /* MatrixFloat.cpp in Sources */,
+				7DC7EF2C1EB9C635000DB2DF /* VectorFloat.cpp in Sources */,
 				7DCCEC7B1B1B894A00DEFCF1 /* Tree.cpp in Sources */,
 				E98573580D9E52D300682171 /* ml_ml.cpp in Sources */,
 				7DF9488D1AC84F4800C6BFA7 /* LinearRegression.cpp in Sources */,
@@ -6475,6 +6672,7 @@
 				7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */,
 				7DF93F851AC84F4700C6BFA7 /* DiscreteHiddenMarkovModel.cpp in Sources */,
 				7DF94A471AC84F4800C6BFA7 /* SVD.cpp in Sources */,
+				7DC7EF501EB9C752000DB2DF /* Random.cpp in Sources */,
 				7DF946291AC84F4800C6BFA7 /* TimeDomainFeatures.cpp in Sources */,
 				7DF9453B1AC84F4700C6BFA7 /* FFTFeatures.cpp in Sources */,
 				7DF9457F1AC84F4800C6BFA7 /* KMeansQuantizer.cpp in Sources */,
@@ -6981,12 +7179,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7018,6 +7210,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -7038,12 +7231,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7076,6 +7263,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -7094,12 +7282,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7129,6 +7311,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -7148,12 +7331,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7185,6 +7362,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -7205,12 +7383,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7243,6 +7415,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -7261,12 +7434,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7296,6 +7463,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -7315,12 +7483,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7352,6 +7514,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -7372,12 +7535,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7410,6 +7567,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -7428,12 +7586,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7463,6 +7615,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -7482,12 +7635,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7519,6 +7666,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -7539,12 +7687,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7577,6 +7719,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -7595,12 +7738,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7630,6 +7767,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -7649,12 +7787,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7686,6 +7818,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -7706,12 +7839,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7744,6 +7871,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -7762,12 +7890,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7797,6 +7919,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -7816,12 +7939,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7853,6 +7970,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -7873,12 +7991,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -7911,6 +8023,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -7929,12 +8042,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -7964,6 +8071,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -8092,12 +8200,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8129,6 +8231,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -8149,12 +8252,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8187,6 +8284,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -8205,12 +8303,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8240,6 +8332,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -8257,12 +8350,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8294,6 +8383,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -8312,12 +8402,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8350,6 +8436,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -8366,12 +8453,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
+					"$(maxsdk)/max-includes",
+					"$(maxsdk)/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8401,6 +8484,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -8420,14 +8504,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8459,6 +8535,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -8479,14 +8556,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8519,6 +8588,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -8537,14 +8607,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max5/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8574,6 +8636,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -8593,12 +8656,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8630,6 +8687,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -8650,12 +8708,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8688,6 +8740,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -8706,12 +8759,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8741,6 +8788,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -8760,12 +8808,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8797,6 +8839,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -8817,12 +8860,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -8855,6 +8892,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -8873,12 +8911,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -8908,6 +8940,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -8927,12 +8960,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -8964,6 +8991,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -8984,12 +9012,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9022,6 +9044,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -9040,12 +9063,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -9075,6 +9092,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -9094,12 +9112,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9131,6 +9143,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -9151,12 +9164,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9189,6 +9196,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -9207,12 +9215,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -9242,6 +9244,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -9261,12 +9264,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9298,6 +9295,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -9318,12 +9316,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9356,6 +9348,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -9374,12 +9367,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -9409,6 +9396,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -9428,12 +9416,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9465,6 +9447,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -9485,12 +9468,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9523,6 +9500,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -9541,12 +9519,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -9576,6 +9548,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -9595,12 +9568,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9632,6 +9599,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -9652,12 +9620,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -9690,6 +9652,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -9708,12 +9671,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -9743,6 +9700,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -9754,6 +9712,12 @@
 			buildSettings = {
 				MAX_SDK_VER = "max-sdk-7.1.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Wextra",
+					"-Wall",
+					"-Wno-unused-parameter",
+					"-Wno-deprecated-declarations",
+				);
 				maxsdk = "$(maxsdk)";
 			};
 			name = Development;
@@ -9763,6 +9727,12 @@
 			buildSettings = {
 				MAX_SDK_VER = "max-sdk-7.1.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Wextra",
+					"-Wall",
+					"-Wno-unused-parameter",
+					"-Wno-deprecated-declarations",
+				);
 				maxsdk = "$(maxsdk)";
 			};
 			name = Deployment;
@@ -9772,6 +9742,12 @@
 			buildSettings = {
 				MAX_SDK_VER = "max-sdk-7.1.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Wextra",
+					"-Wall",
+					"-Wno-unused-parameter",
+					"-Wno-deprecated-declarations",
+				);
 				maxsdk = "$(maxsdk)";
 			};
 			name = Default;
@@ -11244,12 +11220,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -11282,6 +11252,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
@@ -11301,12 +11272,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -11340,6 +11305,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
@@ -11357,12 +11323,6 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 					"$(maxsdk)/max-includes",
 					"$(maxsdk)/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max7/c74support/msp-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/max-includes",
-					"$(USER_LIBRARY_DIR)/Frameworks/Max/c74support/msp-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/max-includes",
-					"$(PROJECT_DIR)/max-sdk-7.1.0/source/c74support/msp-includes",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"FLEXT_SYS=1",
@@ -11393,6 +11353,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-Wno-deprecated-declarations",
 				);
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
@@ -11539,6 +11500,7 @@
 				7D2D78081EB0B14E0009D37B /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
 		};
 		7D551A70190FE523008FF361 /* Build configuration list for PBXNativeTarget "ml.knn pd" */ = {
 			isa = XCConfigurationList;
