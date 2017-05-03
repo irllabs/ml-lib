@@ -1,6 +1,3 @@
-[submodule "vendor/grt"]
-	path = vendor/grt
-	url = https://jamiebullock@github.com/nickgillian/grt.git
 [submodule "vendor/flext"]
 	path = vendor/flext
 	url = https://github.com/jamiebullock/flext.git
