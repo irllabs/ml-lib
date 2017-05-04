@@ -793,7 +793,7 @@
 		7D133C6E185FAB0F0020213F /* ml_mlp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_mlp.cpp; path = ../../sources/regression/ml_mlp.cpp; sourceTree = "<group>"; };
 		7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_doc.cpp; path = ../../sources/ml_doc.cpp; sourceTree = "<group>"; };
 		7D2AEA6D1A95270E009F75BE /* ml_doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_doc.h; path = ../../sources/ml_doc.h; sourceTree = "<group>"; };
-		7D2B5BF71EBA192F0088E7E2 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = "/Users/jamie/Documents/ml-lib/vendor/grt/GRT/DataStructures/../../../../sources/classification/ml_adaboost.cpp"; sourceTree = "<absolute>"; };
+		7D2B5BF71EBA192F0088E7E2 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = ../../sources/classification/ml_adaboost.cpp; sourceTree = "<group>"; };
 		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ../../sources/classification/ml_hmm.cpp; sourceTree = "<group>"; };
 		7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "max-sdk-7.1.0/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "max-sdk-7.1.0/source/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
@@ -3150,12 +3150,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -3206,12 +3201,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -3257,12 +3247,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -3311,12 +3296,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -3367,12 +3347,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -3418,12 +3393,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -3472,12 +3442,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -3528,12 +3493,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -3579,12 +3539,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -3633,12 +3588,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -3689,12 +3639,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -3740,12 +3685,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -3794,12 +3734,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -3850,12 +3785,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -3901,12 +3831,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -3956,12 +3881,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -4013,12 +3933,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -4062,12 +3977,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -4226,12 +4136,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -4283,12 +4188,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -4332,12 +4232,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -4386,12 +4281,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -4442,12 +4332,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -4493,12 +4378,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -4547,12 +4427,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -4603,12 +4478,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -4654,12 +4524,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -4708,12 +4573,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -4764,12 +4624,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -4815,12 +4670,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -4869,12 +4719,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -4925,12 +4770,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -4976,12 +4816,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -5030,12 +4865,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -5086,12 +4916,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -5137,12 +4962,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -5191,12 +5011,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -5247,12 +5062,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -5298,12 +5108,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -5352,12 +5157,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -5408,12 +5208,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -5459,12 +5254,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -5513,12 +5303,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -5569,12 +5354,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -5620,12 +5400,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -5674,12 +5449,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -5730,12 +5500,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -5781,12 +5546,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -7324,12 +7084,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = YES;
 				maxsdk = "$(maxsdk)";
@@ -7380,12 +7135,7 @@
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				ZERO_LINK = NO;
 				maxsdk = "$(maxsdk)";
@@ -7431,12 +7181,7 @@
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-deprecated-declarations",
-				);
+				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
 			};
@@ -7481,9 +7226,6 @@
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
-					"-Wno-unused-parameter",
-					"-Wno-deprecated-declarations",
-					"-Wno-unused-variable",
 				);
 				maxsdk = "$(PROJECT_DIR)/c74support";
 			};
