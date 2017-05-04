@@ -1271,8 +1271,8 @@
 				7D2B5AF61EBA16DC0088E7E2 /* Util */,
 			);
 			name = GRT;
-			path = "/Users/jamie/Documents/ml-lib/build/macosx/../../vendor/grt/GRT";
-			sourceTree = "<absolute>";
+			path = ../../../vendor/grt/GRT;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
