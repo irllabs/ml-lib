@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A024F786C1426F084F847E1869743A7566C72537",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A024F786C1426F084F847E1869743A7566C72537" : 9223372036854775807,
+    "CC182281C6D964B9331E36C0CD377F4A30240DEA" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7E99955E-7C7A-4F50-8BCB-B3A5E840D93C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A024F786C1426F084F847E1869743A7566C72537" : "ml-lib\/",
+    "CC182281C6D964B9331E36C0CD377F4A30240DEA" : "ml-lib\/vendor\/grt\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GRT",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "build\/macosx\/GRT\/GRT.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cmuartfab\/ml-lib",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A024F786C1426F084F847E1869743A7566C72537"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jamiebullock\/grt.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CC182281C6D964B9331E36C0CD377F4A30240DEA"
+    }
+  ]
+}
