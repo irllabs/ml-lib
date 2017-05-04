@@ -7274,6 +7274,7 @@
 					"-Wno-unused-parameter",
 					"-Wno-deprecated-declarations",
 					"-Wno-unused-variable",
+					"-Wno-unknown-pragmas",
 				);
 				maxsdk = "$(PROJECT_DIR)/c74support";
 			};
