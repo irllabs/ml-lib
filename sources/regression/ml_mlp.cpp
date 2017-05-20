@@ -635,7 +635,7 @@ namespace ml
             {
                 AtomList probs;
 
-                for (uid_t count = 0; count < labels.size(); ++count)
+                for (unsigned count = 0; count < labels.size(); ++count)
                 {
                     t_atom label_a;
                     t_atom likelihood_a;
