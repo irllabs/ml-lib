@@ -33,7 +33,7 @@
 namespace ml_doc
 {
     enum class name;
-    
+
     // Free standing helper function
     template <typename T>
     std::string to_string_with_precision(const T value, const int n = 6)

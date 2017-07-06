@@ -121,9 +121,10 @@ namespace ml
         svm()
         {
             std::stringstream ss;
-            ss << "Support Vector Machines based on the GRT library version " << GRT::GRTBase::getGRTVersion().c_str();
+			ss << "Support Vector Machines based on the GRT library version " << GRT::GRTBase::getGRTVersion();
             post(ss.str());
             set_scaling(defaults::scaling);
+			//std::string test(GRT::GRTBase::getGRTVersion());
         }
         
     protected:

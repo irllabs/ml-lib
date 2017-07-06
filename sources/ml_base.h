@@ -22,6 +22,11 @@
 
 // TODO: merge ml_ml.h into ml_base.h
 
+#ifdef __MINGW32__
+//#define snprintf _snprintf
+#define strdup _strdup
+#endif
+
 #include "flext.h"
 #include "ml_doc.h"
 #include "ml_types.h"
@@ -32,6 +37,10 @@
 #define NAME "ml-lib"
 #define NAME_PREFIX "ml."
 
+namespace GRT
+{
+	typedef unsigned int UINT;
+}
 namespace ml
 {
     class base:

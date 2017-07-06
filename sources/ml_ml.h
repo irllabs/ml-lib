@@ -22,7 +22,7 @@
 
 #include "ml_base.h"
 
-#include "GRT.h"
+#include <GRT.h>
 
 #include <vector>
 #include <map>
@@ -83,7 +83,7 @@ namespace ml
         GRT::TimeSeriesClassificationData time_series_classification_data;
         GRT::RegressionData regression_data;
         GRT::MatrixDouble time_series_data;
-        GRT::UINT current_label;
+        UINT current_label;
         
         bool probs;
         bool recording;
