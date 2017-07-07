@@ -28,6 +28,4 @@ DerivedData
 *.pd_darwin
 *.zip
 /build/macosx/max-sdk-7.1.0
-ml_base.obj
-*.obj
-build/win32/max-sdk
+
