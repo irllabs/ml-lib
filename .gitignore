@@ -28,4 +28,4 @@ DerivedData
 *.pd_darwin
 *.zip
 /build/macosx/max-sdk-7.1.0
-
+/build/.vs/test/v14/.suo
