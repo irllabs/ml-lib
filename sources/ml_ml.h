@@ -83,7 +83,7 @@ namespace ml
         GRT::TimeSeriesClassificationData time_series_classification_data;
         GRT::RegressionData regression_data;
         GRT::MatrixDouble time_series_data;
-        UINT current_label;
+        GRT::UINT current_label;
         
         bool probs;
         bool recording;
