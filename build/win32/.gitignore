@@ -261,5 +261,5 @@ Release
 PD Debug
 Max Debug
 Max Release
-
+!/lib/**
 
