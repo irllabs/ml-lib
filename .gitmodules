@@ -7,3 +7,6 @@
 [submodule "vendor/grt"]
 	path = vendor/grt
 	url = https://github.com/jamiebullock/grt.git
+[submodule "vendor/libpd"]
+	path = vendor/libpd
+	url = https://jamiebullock@github.com/libpd/libpd.git
