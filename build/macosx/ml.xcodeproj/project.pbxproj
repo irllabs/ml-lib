@@ -171,7 +171,7 @@
 		7D62C95F1F5E8E5D00425D2F /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7D62C9601F5E8E5D00425D2F /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
 		7D62C9611F5E8E5D00425D2F /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
-		7D62C9621F5E8E7900425D2F /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D6430D11F668E9D00913E47 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6430D01F668E9D00913E47 /* libgrt.a */; };
 		7D6512D718F4428B0050C9C8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D65FDDD1991760200C82004 /* ml.mlp.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */; };
 		7D65FDDE19917D1A00C82004 /* ml.svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D7DA0EB18F7CFD200F417F6 /* ml.svm-help.pd */; };
@@ -834,6 +834,7 @@
 		7D62C9401F5E8D4500425D2F /* libml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D62C9421F5E8D4500425D2F /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		7D62C9431F5E8D4500425D2F /* ml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ml.cpp; sourceTree = "<group>"; };
+		7D6430D01F668E9D00913E47 /* libgrt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrt.a; path = "../../../../Library/Developer/Xcode/DerivedData/ml-geogiqsrhxzuybclwwdpkdbzqmbz/Build/Products/Development-iphonesimulator/libgrt.a"; sourceTree = "<group>"; };
 		7D65FFC7199253D400C82004 /* ml_feature_extraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_feature_extraction.h; path = ../../sources/feature_extraction/ml_feature_extraction.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_feature_extraction.cpp; path = ../../sources/feature_extraction/ml_feature_extraction.cpp; sourceTree = "<group>"; };
 		7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_zerox.cpp; path = ../../sources/feature_extraction/ml_zerox.cpp; sourceTree = "<group>"; };
@@ -998,7 +999,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D62C9621F5E8E7900425D2F /* libGRT.a in Frameworks */,
+				7D6430D11F668E9D00913E47 /* libgrt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1296,6 +1297,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D6430D01F668E9D00913E47 /* libgrt.a */,
 				7D77E0361EBB3052007F0D75 /* libGRT.a */,
 				7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */,
 				7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */,
@@ -4057,10 +4059,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"$(inherited)",
+					FLEXT_INLINE,
 					"FLEX_SYS=FLEXT_SYS_PD",
 					PD,
-					"FLEXT_OS=FLEXT_OS_MAC",
+					FLEXT_USE_CMEM,
+					"FLEXT_ATTRIBUTES=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -4114,7 +4117,7 @@
 					FLEXT_USE_CMEM,
 					"FLEXT_SYS=FLEXT_SYS_PD",
 					PD,
-					"FLEXT_OS=FLEXT_OS_MAC",
+					"FLEXT_ATTRIBUTES=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -7623,6 +7626,7 @@
 				7D62C9491F5E8D4500425D2F /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
 		};
 		7D65FFDA1992C18C00C82004 /* Build configuration list for PBXNativeTarget "ml.zerox pd" */ = {
 			isa = XCConfigurationList;

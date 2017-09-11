@@ -261,7 +261,22 @@
 		7D2B5BF41EBA16DC0088E7E2 /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D2B5AF31EBA16DC0088E7E2 /* Util.h */; };
 		7D2B5BF51EBA16DC0088E7E2 /* WarningLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2B5AF41EBA16DC0088E7E2 /* WarningLog.cpp */; };
 		7D2B5BF61EBA16DC0088E7E2 /* WarningLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D2B5AF51EBA16DC0088E7E2 /* WarningLog.h */; };
+		7D6430CB1F66886400913E47 /* grt.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6430CA1F66886400913E47 /* grt.m */; };
+		7D6430CC1F66886400913E47 /* grt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D6430C91F66886400913E47 /* grt.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D6430C51F66886400913E47 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7D6430CC1F66886400913E47 /* grt.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D2B59AA1EBA16A50088E7E2 /* libGRT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGRT.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -519,10 +534,20 @@
 		7D2B5AF31EBA16DC0088E7E2 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		7D2B5AF41EBA16DC0088E7E2 /* WarningLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WarningLog.cpp; sourceTree = "<group>"; };
 		7D2B5AF51EBA16DC0088E7E2 /* WarningLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningLog.h; sourceTree = "<group>"; };
+		7D6430C71F66886400913E47 /* libgrt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgrt.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D6430C91F66886400913E47 /* grt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grt.h; sourceTree = "<group>"; };
+		7D6430CA1F66886400913E47 /* grt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = grt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7D2B59A71EBA16A50088E7E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D6430C41F66886400913E47 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -536,6 +561,7 @@
 			isa = PBXGroup;
 			children = (
 				7D2B5AF71EBA16DC0088E7E2 /* GRT */,
+				7D6430C81F66886400913E47 /* grt */,
 				7D2B59AB1EBA16A50088E7E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -544,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				7D2B59AA1EBA16A50088E7E2 /* libGRT.a */,
+				7D6430C71F66886400913E47 /* libgrt.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1274,6 +1301,15 @@
 			path = ../../../vendor/grt/GRT;
 			sourceTree = SOURCE_ROOT;
 		};
+		7D6430C81F66886400913E47 /* grt */ = {
+			isa = PBXGroup;
+			children = (
+				7D6430C91F66886400913E47 /* grt.h */,
+				7D6430CA1F66886400913E47 /* grt.m */,
+			);
+			path = grt;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1451,6 +1487,23 @@
 			productReference = 7D2B59AA1EBA16A50088E7E2 /* libGRT.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		7D6430C61F66886400913E47 /* grt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D6430CF1F66886400913E47 /* Build configuration list for PBXNativeTarget "grt" */;
+			buildPhases = (
+				7D6430C31F66886400913E47 /* Sources */,
+				7D6430C41F66886400913E47 /* Frameworks */,
+				7D6430C51F66886400913E47 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = grt;
+			productName = grt;
+			productReference = 7D6430C71F66886400913E47 /* libgrt.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1462,6 +1515,11 @@
 				TargetAttributes = {
 					7D2B59A91EBA16A50088E7E2 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 4AXPHKXE7V;
+						ProvisioningStyle = Automatic;
+					};
+					7D6430C61F66886400913E47 = {
+						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 4AXPHKXE7V;
 						ProvisioningStyle = Automatic;
 					};
@@ -1480,6 +1538,7 @@
 			projectRoot = "";
 			targets = (
 				7D2B59A91EBA16A50088E7E2 /* GRT */,
+				7D6430C61F66886400913E47 /* grt */,
 			);
 		};
 /* End PBXProject section */
@@ -1599,9 +1658,115 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D6430C31F66886400913E47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D6430CB1F66886400913E47 /* grt.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		7D6430CD1F66886400913E47 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Development;
+		};
+		7D6430CE1F66886400913E47 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Deployment;
+		};
 		7D77E0321EBB2D74007F0D75 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1739,6 +1904,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Deployment;
+		};
+		7D6430CF1F66886400913E47 /* Build configuration list for PBXNativeTarget "grt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D6430CD1F66886400913E47 /* Development */,
+				7D6430CE1F66886400913E47 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
