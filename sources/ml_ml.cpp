@@ -30,6 +30,16 @@ namespace ml
     void get_data_file_paths(const std::string &supplied_path, std::string &data_path, std::string &model_path);
     bool check_empty_with_error(std::string &string);
 
+    void init_global_symbols()
+    {
+        s_train = flext::MakeSymbol("train");
+        s_clear = flext::MakeSymbol("clear");
+        s_read = flext::MakeSymbol("read");
+        s_write = flext::MakeSymbol("write");
+        s_probs = flext::MakeSymbol("probs");
+        s_error = flext::MakeSymbol("error");
+    }
+    
     ml::ml()
     : current_label(0), probs(false), recording(false)
     {
@@ -384,6 +394,8 @@ namespace ml
     
     void ml::setup(t_classid c)
     {
+        init_global_symbols();
+
         FLEXT_CADDATTR_SET(c, "scaling", set_scaling);
         FLEXT_CADDATTR_SET(c, "probs", set_probs);
         
@@ -504,12 +516,9 @@ namespace ml
         return false;
     }
     
-    const t_symbol *ml::s_train = flext::MakeSymbol("train");
-    const t_symbol *ml::s_clear = flext::MakeSymbol("clear");
-    const t_symbol *ml::s_read = flext::MakeSymbol("read");
-    const t_symbol *ml::s_write = flext::MakeSymbol("write");
-    const t_symbol *ml::s_probs = flext::MakeSymbol("probs");
-    const t_symbol *ml::s_error = flext::MakeSymbol("error");
+    
+    
+    
     
 } // namespace ml
 
