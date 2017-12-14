@@ -1912,6 +1912,7 @@
 				7D6430CE1F66886400913E47 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
 		};
 /* End XCConfigurationList section */
 	};
