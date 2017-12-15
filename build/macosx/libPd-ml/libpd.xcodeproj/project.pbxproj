@@ -74,7 +74,7 @@
 		0E82A09812EEFE060053280E /* x_libpdreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A09112EEFE050053280E /* x_libpdreceive.c */; };
 		0E82A09C12EEFE060053280E /* z_libpd.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A09512EEFE050053280E /* z_libpd.c */; };
 		0E82A0AE12EEFE5E0053280E /* PdBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E82A0AA12EEFE5E0053280E /* PdBase.h */; };
-		0E82A0AF12EEFE5E0053280E /* PdBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A0AB12EEFE5E0053280E /* PdBase.mm */; };
+		0E82A0AF12EEFE5E0053280E /* PdBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A0AB12EEFE5E0053280E /* PdBase.m */; };
 		0E8C8DCA1312007F000B9D7A /* PdFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E8C8DC81312007F000B9D7A /* PdFile.h */; };
 		0E8C8DCB1312007F000B9D7A /* PdFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C8DC91312007F000B9D7A /* PdFile.m */; };
 		110E6DD4147B838F00282ABC /* AudioHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 110E6DCE147B838E00282ABC /* AudioHelpers.h */; };
@@ -152,7 +152,7 @@
 		1190139B1486450C00086F19 /* s_libpdmidi.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A09012EEFE050053280E /* s_libpdmidi.c */; };
 		1190139C1486450C00086F19 /* x_libpdreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A09112EEFE050053280E /* x_libpdreceive.c */; };
 		1190139D1486450C00086F19 /* z_libpd.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A09512EEFE050053280E /* z_libpd.c */; };
-		1190139F1486450C00086F19 /* PdBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A0AB12EEFE5E0053280E /* PdBase.mm */; };
+		1190139F1486450C00086F19 /* PdBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A0AB12EEFE5E0053280E /* PdBase.m */; };
 		119013A01486450C00086F19 /* PdFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C8DC91312007F000B9D7A /* PdFile.m */; };
 		119013A11486450C00086F19 /* PdDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5828C8B41409C8C600F8B9AC /* PdDispatcher.m */; };
 		119013A71486450C00086F19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
@@ -275,7 +275,7 @@
 		30C3D2E71FAA1FCC00C67F08 /* d_fft_fftsg.c in Sources */ = {isa = PBXBuildFile; fileRef = 30DDEC321A69B0DF00532EE8 /* d_fft_fftsg.c */; };
 		30C3D2E81FAA1FCC00C67F08 /* z_libpd.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A09512EEFE050053280E /* z_libpd.c */; };
 		30C3D2E91FAA1FCC00C67F08 /* x_text.c in Sources */ = {isa = PBXBuildFile; fileRef = 30377F441866680A0026ED3E /* x_text.c */; };
-		30C3D2EA1FAA1FCC00C67F08 /* PdBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A0AB12EEFE5E0053280E /* PdBase.mm */; };
+		30C3D2EA1FAA1FCC00C67F08 /* PdBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A0AB12EEFE5E0053280E /* PdBase.m */; };
 		30C3D2EB1FAA1FCC00C67F08 /* x_scalar.c in Sources */ = {isa = PBXBuildFile; fileRef = 30377F431866680A0026ED3E /* x_scalar.c */; };
 		30C3D2EC1FAA1FCC00C67F08 /* PdFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C8DC91312007F000B9D7A /* PdFile.m */; };
 		30C3D2ED1FAA1FCC00C67F08 /* PdDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5828C8B41409C8C600F8B9AC /* PdDispatcher.m */; };
@@ -382,7 +382,7 @@
 		30C3D35A1FAA200100C67F08 /* d_fft_fftsg.c in Sources */ = {isa = PBXBuildFile; fileRef = 30DDEC321A69B0DF00532EE8 /* d_fft_fftsg.c */; };
 		30C3D35B1FAA200100C67F08 /* x_libpdreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A09112EEFE050053280E /* x_libpdreceive.c */; };
 		30C3D35C1FAA200100C67F08 /* z_libpd.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A09512EEFE050053280E /* z_libpd.c */; };
-		30C3D35D1FAA200100C67F08 /* PdBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A0AB12EEFE5E0053280E /* PdBase.mm */; };
+		30C3D35D1FAA200100C67F08 /* PdBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E82A0AB12EEFE5E0053280E /* PdBase.m */; };
 		30C3D35E1FAA200100C67F08 /* x_scalar.c in Sources */ = {isa = PBXBuildFile; fileRef = 30377F431866680A0026ED3E /* x_scalar.c */; };
 		30C3D35F1FAA200100C67F08 /* PdFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C8DC91312007F000B9D7A /* PdFile.m */; };
 		30C3D3601FAA200100C67F08 /* PdDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5828C8B41409C8C600F8B9AC /* PdDispatcher.m */; };
@@ -503,7 +503,7 @@
 		0E82A09512EEFE050053280E /* z_libpd.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.c; path = z_libpd.c; sourceTree = "<group>"; tabWidth = 2; };
 		0E82A09612EEFE050053280E /* z_libpd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = z_libpd.h; sourceTree = "<group>"; };
 		0E82A0AA12EEFE5E0053280E /* PdBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PdBase.h; path = ../../../vendor/libpd/objc/PdBase.h; sourceTree = "<group>"; };
-		0E82A0AB12EEFE5E0053280E /* PdBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.objcpp; path = PdBase.mm; sourceTree = "<group>"; tabWidth = 2; };
+		0E82A0AB12EEFE5E0053280E /* PdBase.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = PdBase.m; sourceTree = "<group>"; tabWidth = 2; };
 		0E8C8DC81312007F000B9D7A /* PdFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PdFile.h; path = ../../../vendor/libpd/objc/PdFile.h; sourceTree = "<group>"; };
 		0E8C8DC91312007F000B9D7A /* PdFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PdFile.m; path = ../../../vendor/libpd/objc/PdFile.m; sourceTree = "<group>"; };
 		110E6DCE147B838E00282ABC /* AudioHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioHelpers.h; path = ../../../vendor/libpd/objc/AudioHelpers.h; sourceTree = "<group>"; };
@@ -658,7 +658,7 @@
 				110E6DCC147B833B00282ABC /* audio */,
 				113A449E138139E1004C88F9 /* utils */,
 				0E82A0AA12EEFE5E0053280E /* PdBase.h */,
-				0E82A0AB12EEFE5E0053280E /* PdBase.mm */,
+				0E82A0AB12EEFE5E0053280E /* PdBase.m */,
 			);
 			name = objc;
 			path = ../../../vendor/libpd/objc;
@@ -1136,7 +1136,7 @@
 				30DDEC341A69B0DF00532EE8 /* d_fft_fftsg.c in Sources */,
 				1190139D1486450C00086F19 /* z_libpd.c in Sources */,
 				30377F4A1866680A0026ED3E /* x_text.c in Sources */,
-				1190139F1486450C00086F19 /* PdBase.mm in Sources */,
+				1190139F1486450C00086F19 /* PdBase.m in Sources */,
 				30377F481866680A0026ED3E /* x_scalar.c in Sources */,
 				119013A01486450C00086F19 /* PdFile.m in Sources */,
 				119013A11486450C00086F19 /* PdDispatcher.m in Sources */,
@@ -1234,7 +1234,7 @@
 				30C3D2E71FAA1FCC00C67F08 /* d_fft_fftsg.c in Sources */,
 				30C3D2E81FAA1FCC00C67F08 /* z_libpd.c in Sources */,
 				30C3D2E91FAA1FCC00C67F08 /* x_text.c in Sources */,
-				30C3D2EA1FAA1FCC00C67F08 /* PdBase.mm in Sources */,
+				30C3D2EA1FAA1FCC00C67F08 /* PdBase.m in Sources */,
 				30C3D2EB1FAA1FCC00C67F08 /* x_scalar.c in Sources */,
 				30C3D2EC1FAA1FCC00C67F08 /* PdFile.m in Sources */,
 				30C3D2ED1FAA1FCC00C67F08 /* PdDispatcher.m in Sources */,
@@ -1335,7 +1335,7 @@
 				30C3D35A1FAA200100C67F08 /* d_fft_fftsg.c in Sources */,
 				30C3D35B1FAA200100C67F08 /* x_libpdreceive.c in Sources */,
 				30C3D35C1FAA200100C67F08 /* z_libpd.c in Sources */,
-				30C3D35D1FAA200100C67F08 /* PdBase.mm in Sources */,
+				30C3D35D1FAA200100C67F08 /* PdBase.m in Sources */,
 				30C3D35E1FAA200100C67F08 /* x_scalar.c in Sources */,
 				30C3D35F1FAA200100C67F08 /* PdFile.m in Sources */,
 				30C3D3601FAA200100C67F08 /* PdDispatcher.m in Sources */,
@@ -1436,7 +1436,7 @@
 				30DDEC331A69B0DF00532EE8 /* d_fft_fftsg.c in Sources */,
 				0E82A09812EEFE060053280E /* x_libpdreceive.c in Sources */,
 				0E82A09C12EEFE060053280E /* z_libpd.c in Sources */,
-				0E82A0AF12EEFE5E0053280E /* PdBase.mm in Sources */,
+				0E82A0AF12EEFE5E0053280E /* PdBase.m in Sources */,
 				30377F471866680A0026ED3E /* x_scalar.c in Sources */,
 				0E8C8DCB1312007F000B9D7A /* PdFile.m in Sources */,
 				5828C8B61409C8C600F8B9AC /* PdDispatcher.m in Sources */,

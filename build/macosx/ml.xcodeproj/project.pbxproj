@@ -72,6 +72,7 @@
 		7D2B5BFB1EBA192F0088E7E2 /* ml_adaboost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2B5BF71EBA192F0088E7E2 /* ml_adaboost.cpp */; };
 		7D2C59AF189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
 		7D2C59B0189AF5EA001A78C9 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
+		7D2E3EF01FE3E6D400EA1563 /* ml_setup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2E3EEF1FE3E6D400EA1563 /* ml_setup.cpp */; };
 		7D33CD2B1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
 		7D33CD2C1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
 		7D33CD2D1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */; };
@@ -827,6 +828,8 @@
 		7D2AEA6D1A95270E009F75BE /* ml_doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_doc.h; path = ../../sources/ml_doc.h; sourceTree = "<group>"; };
 		7D2B5BF71EBA192F0088E7E2 /* ml_adaboost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_adaboost.cpp; path = ../../sources/classification/ml_adaboost.cpp; sourceTree = "<group>"; };
 		7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmm.cpp; path = ../../sources/classification/ml_hmm.cpp; sourceTree = "<group>"; };
+		7D2E3EEE1FE3E4DD00EA1563 /* ml_setup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_setup.h; path = ../../sources/ml_setup.h; sourceTree = "<group>"; };
+		7D2E3EEF1FE3E6D400EA1563 /* ml_setup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ml_setup.cpp; path = ../../sources/ml_setup.cpp; sourceTree = "<group>"; };
 		7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "max-sdk-7.1.0/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
 		7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "max-sdk-7.1.0/source/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -1338,6 +1341,8 @@
 				7DACBF4E192B82F900F0E7D7 /* ml_base.h */,
 				7DACBF4F192B869600F0E7D7 /* ml_base.cpp */,
 				7DBFDE6318439E09009ED61E /* ml_ml.h */,
+				7D2E3EEE1FE3E4DD00EA1563 /* ml_setup.h */,
+				7D2E3EEF1FE3E6D400EA1563 /* ml_setup.cpp */,
 				E98573560D9E52D300682171 /* ml_ml.cpp */,
 				7D71CBCC1AADB9E80099CD5B /* Documentation */,
 			);
@@ -2609,6 +2614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2E3EF01FE3E6D400EA1563 /* ml_setup.cpp in Sources */,
 				7DD590B31FE2D9DD00850133 /* ml_peak.cpp in Sources */,
 				7DD590B41FE2D9DD00850133 /* ml_minmax.cpp in Sources */,
 				7DD590B51FE2D9DD00850133 /* ml_feature_extraction.h in Sources */,

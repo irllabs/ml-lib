@@ -12,7 +12,7 @@
 #import "PdAudioController.h"
 #import "PdFile.h"
 
-extern "C" void ml0x2eknn_setup();
+#include "../../../../sources/ml_setup.h"
 
 @interface ViewController() {}
 
@@ -81,7 +81,7 @@ extern "C" void ml0x2eknn_setup();
 	// add search path
 	[PdBase addToSearchPath:[NSString stringWithFormat:@"%@/pd/abs", [NSBundle mainBundle].bundlePath]];
 
-    ml0x2eknn_setup();
+    ml::setup_all();
     
 	// turn on dsp
 	self.audioController.active = YES;
@@ -109,107 +109,107 @@ extern "C" void ml0x2eknn_setup();
 	NSLog(@"-- FINISH Patch Test");
 
 
-	NSLog(@"-- BEGIN Message Test");
-
-	// test basic atoms
-	[PdBase sendBangToReceiver:@"toPd"];
-	[PdBase sendFloat:100 toReceiver:@"toPD"];
-	[PdBase sendSymbol:@"test string" toReceiver:@"toPD" ];
-
-	// send a list
-	NSArray *list = @[@1.23f, @"a symbol"];
-	[PdBase sendList:list toReceiver:@"toPd"];
-
-	// send a list to the $0 receiver ie $0-toOF
-	[PdBase sendList:list toReceiver:[NSString stringWithFormat:@"%d-toPd", self.patch.dollarZero]];
-
-	// send a message
-	[PdBase sendMessage:@"msg" withArguments:list toReceiver:@"toPD"];
-
-
-	NSLog(@"-- FINISH Message Test");
-
-
-	NSLog(@"-- BEGIN MIDI Test");
-
-	// send functions
-	[PdBase sendNoteOn:midiChan pitch:60 velocity:64];
-	[PdBase sendControlChange:midiChan controller:0 value:64];
-	[PdBase sendProgramChange:midiChan value:100];
-	[PdBase sendPitchBend:midiChan value:2000];
-
-	[PdBase sendAftertouch:midiChan value:100];
-	[PdBase sendPolyAftertouch:midiChan pitch:64 value:100];
-	[PdBase sendMidiByte:0 byte:239];
-	[PdBase sendSysex:0 byte:239];
-	[PdBase sendSysRealTime:0 byte:239];
-
-	NSLog(@"-- FINISH MIDI Test");
-
-
-	NSLog(@"-- BEGIN Array Test");
-
-	// array check length
-	int array1Len = [PdBase arraySizeForArrayNamed:@"array1"];
-	NSLog(@"array1 len: %d", array1Len);
-
-	// read array
-	float array1[array1Len];
-	[PdBase copyArrayNamed:@"array1" withOffset:0 toArray:array1 count:array1Len];
-	NSMutableString *array1String = [[NSMutableString alloc] init];
-	for(int i = 0; i < array1Len; ++i)
-		[array1String appendString:[NSString stringWithFormat:@"%f ", array1[i]]];
-	NSLog(@"%@", array1String);
-
-	// clear array
-	for(int i = 0; i < array1Len; ++i)
-		array1[i] = 0;
-	[PdBase copyArray:array1 toArrayNamed:@"array1" withOffset:0 count:array1Len];
-
-	// read array
-	[array1String setString:@""];
-	[PdBase copyArrayNamed:@"array1" withOffset:0 toArray:array1 count:array1Len];
-	for(int i = 0; i < array1Len; ++i)
-		[array1String appendString:[NSString stringWithFormat:@"%f ", array1[i]]];
-	NSLog(@"%@", array1String);
-
-	// write array
-	for(int i = 0; i < array1Len; ++i)
-		array1[i] = i;
-	[PdBase copyArray:array1 toArrayNamed:@"array1" withOffset:0 count:array1Len];
-
-	// read array
-	[array1String setString:@""];
-	[PdBase copyArrayNamed:@"array1" withOffset:0 toArray:array1 count:array1Len];
-	for(int i = 0; i < array1Len; ++i)
-		[array1String appendString:[NSString stringWithFormat:@"%f ", array1[i]]];
-	NSLog(@"%@", array1String);
-
-	NSLog(@"-- FINISH Array Test");
-
-
-	NSLog(@"-- BEGIN PD Test");
-
-	[PdBase sendSymbol:@"test" toReceiver:@"toPD"];
-
-	NSLog(@"-- FINISH PD Test");
-
-
-	NSLog(@"-- BEGIN Polling Test");
-
-	// set delegates again, but disable polling
-	[PdBase setDelegate:nil]; // clear delegate & stop polling timer
-	[PdBase setMidiDelegate:nil];
-	[PdBase setDelegate:self pollingEnabled:NO];
-	[PdBase setMidiDelegate:self pollingEnabled:NO];
-
-	[PdBase sendSymbol:@"test" toReceiver:@"toPD"];
-
-	// process messages manually
-	[PdBase receiveMessages];
-	[PdBase receiveMidi];
-
-	NSLog(@"-- FINISH Polling Test");
+//    NSLog(@"-- BEGIN Message Test");
+//
+//    // test basic atoms
+//    [PdBase sendBangToReceiver:@"toPd"];
+//    [PdBase sendFloat:100 toReceiver:@"toPD"];
+//    [PdBase sendSymbol:@"test string" toReceiver:@"toPD" ];
+//
+//    // send a list
+//    NSArray *list = @[@1.23f, @"a symbol"];
+//    [PdBase sendList:list toReceiver:@"toPd"];
+//
+//    // send a list to the $0 receiver ie $0-toOF
+//    [PdBase sendList:list toReceiver:[NSString stringWithFormat:@"%d-toPd", self.patch.dollarZero]];
+//
+//    // send a message
+//    [PdBase sendMessage:@"msg" withArguments:list toReceiver:@"toPD"];
+//
+//
+//    NSLog(@"-- FINISH Message Test");
+//
+//
+//    NSLog(@"-- BEGIN MIDI Test");
+//
+//    // send functions
+//    [PdBase sendNoteOn:midiChan pitch:60 velocity:64];
+//    [PdBase sendControlChange:midiChan controller:0 value:64];
+//    [PdBase sendProgramChange:midiChan value:100];
+//    [PdBase sendPitchBend:midiChan value:2000];
+//
+//    [PdBase sendAftertouch:midiChan value:100];
+//    [PdBase sendPolyAftertouch:midiChan pitch:64 value:100];
+//    [PdBase sendMidiByte:0 byte:239];
+//    [PdBase sendSysex:0 byte:239];
+//    [PdBase sendSysRealTime:0 byte:239];
+//
+//    NSLog(@"-- FINISH MIDI Test");
+//
+//
+//    NSLog(@"-- BEGIN Array Test");
+//
+//    // array check length
+//    int array1Len = [PdBase arraySizeForArrayNamed:@"array1"];
+//    NSLog(@"array1 len: %d", array1Len);
+//
+//    // read array
+//    float array1[array1Len];
+//    [PdBase copyArrayNamed:@"array1" withOffset:0 toArray:array1 count:array1Len];
+//    NSMutableString *array1String = [[NSMutableString alloc] init];
+//    for(int i = 0; i < array1Len; ++i)
+//        [array1String appendString:[NSString stringWithFormat:@"%f ", array1[i]]];
+//    NSLog(@"%@", array1String);
+//
+//    // clear array
+//    for(int i = 0; i < array1Len; ++i)
+//        array1[i] = 0;
+//    [PdBase copyArray:array1 toArrayNamed:@"array1" withOffset:0 count:array1Len];
+//
+//    // read array
+//    [array1String setString:@""];
+//    [PdBase copyArrayNamed:@"array1" withOffset:0 toArray:array1 count:array1Len];
+//    for(int i = 0; i < array1Len; ++i)
+//        [array1String appendString:[NSString stringWithFormat:@"%f ", array1[i]]];
+//    NSLog(@"%@", array1String);
+//
+//    // write array
+//    for(int i = 0; i < array1Len; ++i)
+//        array1[i] = i;
+//    [PdBase copyArray:array1 toArrayNamed:@"array1" withOffset:0 count:array1Len];
+//
+//    // read array
+//    [array1String setString:@""];
+//    [PdBase copyArrayNamed:@"array1" withOffset:0 toArray:array1 count:array1Len];
+//    for(int i = 0; i < array1Len; ++i)
+//        [array1String appendString:[NSString stringWithFormat:@"%f ", array1[i]]];
+//    NSLog(@"%@", array1String);
+//
+//    NSLog(@"-- FINISH Array Test");
+//
+//
+//    NSLog(@"-- BEGIN PD Test");
+//
+//    [PdBase sendSymbol:@"test" toReceiver:@"toPD"];
+//
+//    NSLog(@"-- FINISH PD Test");
+//
+//
+//    NSLog(@"-- BEGIN Polling Test");
+//
+//    // set delegates again, but disable polling
+//    [PdBase setDelegate:nil]; // clear delegate & stop polling timer
+//    [PdBase setMidiDelegate:nil];
+//    [PdBase setDelegate:self pollingEnabled:NO];
+//    [PdBase setMidiDelegate:self pollingEnabled:NO];
+//
+//    [PdBase sendSymbol:@"test" toReceiver:@"toPD"];
+//
+//    // process messages manually
+//    [PdBase receiveMessages];
+//    [PdBase receiveMidi];
+//
+//    NSLog(@"-- FINISH Polling Test");
 
 	// reenable delegates
 	[PdBase setDelegate:self];
