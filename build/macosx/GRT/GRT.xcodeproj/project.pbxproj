@@ -1779,7 +1779,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7D2B59A51EBA16A50088E7E2 /* Build configuration list for PBXProject "GRT-ios" */;
+			buildConfigurationList = 7D2B59A51EBA16A50088E7E2 /* Build configuration list for PBXProject "GRT" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2395,7 +2395,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7D2B59A51EBA16A50088E7E2 /* Build configuration list for PBXProject "GRT-ios" */ = {
+		7D2B59A51EBA16A50088E7E2 /* Build configuration list for PBXProject "GRT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7D77E0321EBB2D74007F0D75 /* Development */,

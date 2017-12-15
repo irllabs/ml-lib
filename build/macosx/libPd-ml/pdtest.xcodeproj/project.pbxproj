@@ -13,14 +13,16 @@
 		3011358016A6F3E0005421C7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3011357F16A6F3E0005421C7 /* AVFoundation.framework */; };
 		3011358216A6F3E4005421C7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3011358116A6F3E4005421C7 /* AudioToolbox.framework */; };
 		301135B316A79729005421C7 /* pd in Resources */ = {isa = PBXBuildFile; fileRef = 301135B216A79729005421C7 /* pd */; };
-		302110D41AE7093900DFFAF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 302110D11AE7093900DFFAF8 /* AppDelegate.m */; };
-		302110D51AE7093900DFFAF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302110D31AE7093900DFFAF8 /* ViewController.m */; };
+		302110D41AE7093900DFFAF8 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 302110D11AE7093900DFFAF8 /* AppDelegate.mm */; };
+		302110D51AE7093900DFFAF8 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 302110D31AE7093900DFFAF8 /* ViewController.mm */; };
 		302110E11AE7095200DFFAF8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 302110D61AE7095200DFFAF8 /* Default-568h@2x.png */; };
 		302110E21AE7095200DFFAF8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 302110D71AE7095200DFFAF8 /* Default.png */; };
 		302110E31AE7095200DFFAF8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 302110D81AE7095200DFFAF8 /* Default@2x.png */; };
 		302110E41AE7095200DFFAF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 302110DA1AE7095200DFFAF8 /* InfoPlist.strings */; };
-		302110E71AE7095200DFFAF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 302110E01AE7095200DFFAF8 /* main.m */; };
-		7D0C30E71FE2C0FB00FC29B4 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0C30DE1FE2BADF00FC29B4 /* libpd-ios.a */; };
+		302110E71AE7095200DFFAF8 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 302110E01AE7095200DFFAF8 /* main.mm */; };
+		7DD590DE1FE2E28000850133 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0C30DE1FE2BADF00FC29B4 /* libpd-ios.a */; };
+		7DD590DF1FE2E66600850133 /* libml-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD590E01FE2E66600850133 /* libml-ios.a */; };
+		7DD590E11FE2E66D00850133 /* libGRT-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD590E21FE2E66D00850133 /* libGRT-ios.a */; };
 		F41438CC1F72684400E7BCAE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41438CA1F72684400E7BCAE /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -53,13 +55,6 @@
 			remoteGlobalIDString = 30C3D2FA1FAA1FCC00C67F08;
 			remoteInfo = "libpd-osx-multi";
 		};
-		7D0C30E51FE2C0E500FC29B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7D0C30D61FE2BADE00FC29B4 /* libpd.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = "libpd-ios";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -69,19 +64,21 @@
 		3011355316A6ECD1005421C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3011357F16A6F3E0005421C7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3011358116A6F3E4005421C7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		301135B216A79729005421C7 /* pd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pd; path = ../../../vendor/libpd/samples/objc/ios/pdtest/pd; sourceTree = SOURCE_ROOT; };
+		301135B216A79729005421C7 /* pd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pd; path = ../../../testing/libpd/ios/pd; sourceTree = SOURCE_ROOT; };
 		302110D01AE7093900DFFAF8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		302110D11AE7093900DFFAF8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		302110D11AE7093900DFFAF8 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		302110D21AE7093900DFFAF8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		302110D31AE7093900DFFAF8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		302110D31AE7093900DFFAF8 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		302110D61AE7095200DFFAF8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		302110D71AE7095200DFFAF8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		302110D81AE7095200DFFAF8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		302110DB1AE7095200DFFAF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		302110DE1AE7095200DFFAF8 /* pdtest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "pdtest-Info.plist"; sourceTree = "<group>"; };
 		302110DF1AE7095200DFFAF8 /* pdtest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "pdtest-Prefix.pch"; path = "../../../vendor/libpd/samples/objc/ios/pdtest/pdtest/pdtest-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		302110E01AE7095200DFFAF8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		302110E01AE7095200DFFAF8 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		7D0C30D61FE2BADE00FC29B4 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = "/Users/jamie/Documents/ml-lib/build/macosx/libPd-ml/libpd.xcodeproj"; sourceTree = "<absolute>"; };
+		7DD590E01FE2E66600850133 /* libml-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libml-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD590E21FE2E66D00850133 /* libGRT-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libGRT-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41438CB1F72684400E7BCAE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,12 +87,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DD590DE1FE2E28000850133 /* libpd-ios.a in Frameworks */,
+				7DD590DF1FE2E66600850133 /* libml-ios.a in Frameworks */,
+				7DD590E11FE2E66D00850133 /* libGRT-ios.a in Frameworks */,
 				3011358216A6F3E4005421C7 /* AudioToolbox.framework in Frameworks */,
 				3011358016A6F3E0005421C7 /* AVFoundation.framework in Frameworks */,
 				3011355016A6ECD1005421C7 /* UIKit.framework in Frameworks */,
 				3011355216A6ECD1005421C7 /* Foundation.framework in Frameworks */,
 				3011355416A6ECD1005421C7 /* CoreGraphics.framework in Frameworks */,
-				7D0C30E71FE2C0FB00FC29B4 /* libpd-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				3011358116A6F3E4005421C7 /* AudioToolbox.framework */,
+				7DD590E01FE2E66600850133 /* libml-ios.a */,
+				7DD590E21FE2E66D00850133 /* libGRT-ios.a */,
 				3011357F16A6F3E0005421C7 /* AVFoundation.framework */,
 				3011354F16A6ECD1005421C7 /* UIKit.framework */,
 				3011355116A6ECD1005421C7 /* Foundation.framework */,
@@ -137,13 +138,13 @@
 			isa = PBXGroup;
 			children = (
 				302110D01AE7093900DFFAF8 /* AppDelegate.h */,
-				302110D11AE7093900DFFAF8 /* AppDelegate.m */,
+				302110D11AE7093900DFFAF8 /* AppDelegate.mm */,
 				302110D21AE7093900DFFAF8 /* ViewController.h */,
-				302110D31AE7093900DFFAF8 /* ViewController.m */,
+				302110D31AE7093900DFFAF8 /* ViewController.mm */,
 				3011355616A6ECD1005421C7 /* Supporting Files */,
 			);
 			name = pdtest;
-			path = ../../../vendor/libpd/samples/objc/ios/pdtest/pdtest;
+			path = ../../../testing/libpd/ios/pdtest;
 			sourceTree = "<group>";
 		};
 		3011355616A6ECD1005421C7 /* Supporting Files */ = {
@@ -155,7 +156,7 @@
 				302110D91AE7095200DFFAF8 /* en.lproj */,
 				302110DE1AE7095200DFFAF8 /* pdtest-Info.plist */,
 				302110DF1AE7095200DFFAF8 /* pdtest-Prefix.pch */,
-				302110E01AE7095200DFFAF8 /* main.m */,
+				302110E01AE7095200DFFAF8 /* main.mm */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -194,7 +195,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7D0C30E61FE2C0E500FC29B4 /* PBXTargetDependency */,
 			);
 			name = pdtest;
 			productName = iOSTest;
@@ -290,21 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				302110D51AE7093900DFFAF8 /* ViewController.m in Sources */,
-				302110D41AE7093900DFFAF8 /* AppDelegate.m in Sources */,
-				302110E71AE7095200DFFAF8 /* main.m in Sources */,
+				302110D51AE7093900DFFAF8 /* ViewController.mm in Sources */,
+				302110D41AE7093900DFFAF8 /* AppDelegate.mm in Sources */,
+				302110E71AE7095200DFFAF8 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7D0C30E61FE2C0E500FC29B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "libpd-ios";
-			targetProxy = 7D0C30E51FE2C0E500FC29B4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		302110DA1AE7095200DFFAF8 /* InfoPlist.strings */ = {
@@ -326,7 +318,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3011356D16A6ECD1005421C7 /* Debug */ = {
+		3011356D16A6ECD1005421C7 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -372,9 +364,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
-			name = Debug;
+			name = Development;
 		};
-		3011356E16A6ECD1005421C7 /* Release */ = {
+		3011356E16A6ECD1005421C7 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -413,9 +405,9 @@
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Deployment;
 		};
-		3011357016A6ECD1005421C7 /* Debug */ = {
+		3011357016A6ECD1005421C7 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4AXPHKXE7V;
@@ -431,9 +423,9 @@
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
-			name = Debug;
+			name = Development;
 		};
-		3011357116A6ECD1005421C7 /* Release */ = {
+		3011357116A6ECD1005421C7 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4AXPHKXE7V;
@@ -449,7 +441,7 @@
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
-			name = Release;
+			name = Deployment;
 		};
 /* End XCBuildConfiguration section */
 
@@ -457,20 +449,20 @@
 		3011354516A6ECD1005421C7 /* Build configuration list for PBXProject "pdtest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3011356D16A6ECD1005421C7 /* Debug */,
-				3011356E16A6ECD1005421C7 /* Release */,
+				3011356D16A6ECD1005421C7 /* Development */,
+				3011356E16A6ECD1005421C7 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Deployment;
 		};
 		3011356F16A6ECD1005421C7 /* Build configuration list for PBXNativeTarget "pdtest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3011357016A6ECD1005421C7 /* Debug */,
-				3011357116A6ECD1005421C7 /* Release */,
+				3011357016A6ECD1005421C7 /* Development */,
+				3011357116A6ECD1005421C7 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Deployment;
 		};
 /* End XCConfigurationList section */
 	};

@@ -6,8 +6,9 @@
 //  Copyright © 2017 Jamie Bullock. All rights reserved.
 //
 
-#import "grt.h"
+//#import "grt.h"
+//
+//@implementation grt
+//
+//@end
 
-@implementation grt
-
-@end

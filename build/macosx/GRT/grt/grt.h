@@ -6,8 +6,9 @@
 //  Copyright © 2017 Jamie Bullock. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+//#import <Foundation/Foundation.h>
+//
+//@interface grt : NSObject
+//
+//@end
 
-@interface grt : NSObject
-
-@end

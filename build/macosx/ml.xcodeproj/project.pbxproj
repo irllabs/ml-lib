@@ -145,33 +145,6 @@
 		7D61B1141876F334000FD114 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
 		7D61B11818788BD6000FD114 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
 		7D61B11918788BD6000FD114 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
-		7D62C9441F5E8D4500425D2F /* ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D62C9431F5E8D4500425D2F /* ml.cpp */; };
-		7D62C9451F5E8D4500425D2F /* ml.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D62C9421F5E8D4500425D2F /* ml.h */; };
-		7D62C94A1F5E8E2D00425D2F /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
-		7D62C94B1F5E8E5D00425D2F /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
-		7D62C94C1F5E8E5D00425D2F /* ml_feature_extraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */; };
-		7D62C94D1F5E8E5D00425D2F /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
-		7D62C94E1F5E8E5D00425D2F /* ml_adaboost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2B5BF71EBA192F0088E7E2 /* ml_adaboost.cpp */; };
-		7D62C94F1F5E8E5D00425D2F /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
-		7D62C9501F5E8E5D00425D2F /* ml_anbc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */; };
-		7D62C9511F5E8E5D00425D2F /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
-		7D62C9521F5E8E5D00425D2F /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
-		7D62C9531F5E8E5D00425D2F /* ml_softmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */; };
-		7D62C9541F5E8E5D00425D2F /* ml_randforest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F137190FDC6100F491FB /* ml_randforest.cpp */; };
-		7D62C9551F5E8E5D00425D2F /* ml_mindist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F134190FDC4800F491FB /* ml_mindist.cpp */; };
-		7D62C9561F5E8E5D00425D2F /* ml_knn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12E190FDC2500F491FB /* ml_knn.cpp */; };
-		7D62C9571F5E8E5D00425D2F /* ml_gmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */; };
-		7D62C9581F5E8E5D00425D2F /* ml_dtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F128190FDAC100F491FB /* ml_dtree.cpp */; };
-		7D62C9591F5E8E5D00425D2F /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
-		7D62C95A1F5E8E5D00425D2F /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
-		7D62C95B1F5E8E5D00425D2F /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
-		7D62C95C1F5E8E5D00425D2F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
-		7D62C95D1F5E8E5D00425D2F /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
-		7D62C95E1F5E8E5D00425D2F /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
-		7D62C95F1F5E8E5D00425D2F /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
-		7D62C9601F5E8E5D00425D2F /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
-		7D62C9611F5E8E5D00425D2F /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
-		7D6430D11F668E9D00913E47 /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6430D01F668E9D00913E47 /* libgrt.a */; };
 		7D6512D718F4428B0050C9C8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D65FDDD1991760200C82004 /* ml.mlp.maxhelp in Copy Files */ = {isa = PBXBuildFile; fileRef = 7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */; };
 		7D65FDDE19917D1A00C82004 /* ml.svm-help.pd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D7DA0EB18F7CFD200F417F6 /* ml.svm-help.pd */; };
@@ -382,6 +355,45 @@
 		7DCCEC5E1B1B836400DEFCF1 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 		7DCCEC601B1B837200DEFCF1 /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
 		7DCCEC611B1B837500DEFCF1 /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
+		7DD58F391FE2D66400850133 /* ml_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD58F381FE2D66400850133 /* ml_ios.m */; };
+		7DD58F3A1FE2D66400850133 /* ml_ios.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DD58F371FE2D66400850133 /* ml_ios.h */; };
+		7DD590B31FE2D9DD00850133 /* ml_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B11618788BD6000FD114 /* ml_peak.cpp */; };
+		7DD590B41FE2D9DD00850133 /* ml_minmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D88176318EEF6A2002426FB /* ml_minmax.cpp */; };
+		7DD590B51FE2D9DD00850133 /* ml_feature_extraction.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFC7199253D400C82004 /* ml_feature_extraction.h */; };
+		7DD590B61FE2D9DD00850133 /* ml_feature_extraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */; };
+		7DD590B71FE2D9DD00850133 /* ml_zerox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */; };
+		7DD590B81FE2D9DD00850133 /* ml_classification.h in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5E18BD3F38001A1294 /* ml_classification.h */; };
+		7DD590B91FE2D9DD00850133 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
+		7DD590BA1FE2D9DD00850133 /* ml_adaboost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2B5BF71EBA192F0088E7E2 /* ml_adaboost.cpp */; };
+		7DD590BB1FE2D9DD00850133 /* ml_svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF077F71847577100C55E3C /* ml_svm.cpp */; };
+		7DD590BC1FE2D9DD00850133 /* ml_anbc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */; };
+		7DD590BD1FE2D9DD00850133 /* ml_dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1111876F334000FD114 /* ml_dtw.cpp */; };
+		7DD590BE1FE2D9DD00850133 /* ml_hmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C59AD189AF5EA001A78C9 /* ml_hmm.cpp */; };
+		7DD590BF1FE2D9DD00850133 /* ml_softmax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F13A190FDC6D00F491FB /* ml_softmax.cpp */; };
+		7DD590C01FE2D9DD00850133 /* ml_randforest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F137190FDC6100F491FB /* ml_randforest.cpp */; };
+		7DD590C11FE2D9DD00850133 /* ml_mindist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F134190FDC4800F491FB /* ml_mindist.cpp */; };
+		7DD590C21FE2D9DD00850133 /* ml_knn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12E190FDC2500F491FB /* ml_knn.cpp */; };
+		7DD590C31FE2D9DD00850133 /* ml_gmm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F12B190FDC0600F491FB /* ml_gmm.cpp */; };
+		7DD590C41FE2D9DD00850133 /* ml_dtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F128190FDAC100F491FB /* ml_dtree.cpp */; };
+		7DD590C51FE2D9DD00850133 /* ml_regression.h in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5D18BD3F28001A1294 /* ml_regression.h */; };
+		7DD590C61FE2D9DD00850133 /* ml_regression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5918BD3EFD001A1294 /* ml_regression.cpp */; };
+		7DD590C71FE2D9DD00850133 /* ml_linreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1011875CAF9000FD114 /* ml_linreg.cpp */; };
+		7DD590C81FE2D9DE00850133 /* ml_logreg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B1061875F661000FD114 /* ml_logreg.cpp */; };
+		7DD590C91FE2D9DE00850133 /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
+		7DD590CA1FE2D9DE00850133 /* ml_types.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D7E78951B738ACA00EE2BD8 /* ml_types.h */; };
+		7DD590CB1FE2D9DE00850133 /* ml_names.h in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7361B7BADE3006D71AD /* ml_names.h */; };
+		7DD590CC1FE2D9DE00850133 /* ml_defaults.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D7E3E3F1B73B15A0051D2FC /* ml_defaults.h */; };
+		7DD590CD1FE2D9DE00850133 /* ml_base.h in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4E192B82F900F0E7D7 /* ml_base.h */; };
+		7DD590CE1FE2D9DE00850133 /* ml_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DACBF4F192B869600F0E7D7 /* ml_base.cpp */; };
+		7DD590CF1FE2D9DE00850133 /* ml_ml.h in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFDE6318439E09009ED61E /* ml_ml.h */; };
+		7DD590D01FE2D9DE00850133 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
+		7DD590D11FE2D9DE00850133 /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
+		7DD590D21FE2D9DE00850133 /* ml_doc.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6D1A95270E009F75BE /* ml_doc.h */; };
+		7DD590D31FE2D9DE00850133 /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
+		7DD590D41FE2D9DE00850133 /* ml_formattable.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBCA1AADB9D20099CD5B /* ml_formattable.h */; };
+		7DD590D51FE2D9DE00850133 /* ml_formatter.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBCB1AADB9D20099CD5B /* ml_formatter.h */; };
+		7DD590D61FE2D9DE00850133 /* ml_formatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D71CBA71AADB9980099CD5B /* ml_formatter.cpp */; };
+		7DD590D71FE2DD5C00850133 /* libGRT-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD590D81FE2DD5C00850133 /* libGRT-ios.a */; };
 		7DD8C7141B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7151B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
 		7DD8C7161B7BA989006D71AD /* ml_doc_populate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */; };
@@ -539,16 +551,6 @@
 			files = (
 			);
 			name = "Copy Files";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7D62C93E1F5E8D4500425D2F /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				7D62C9451F5E8D4500425D2F /* ml.h in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7D65FFD91992C18C00C82004 /* CopyFiles */ = {
@@ -788,6 +790,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DD58F331FE2D66400850133 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7DD58F3A1FE2D66400850133 /* ml_ios.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E9974EC207708C9300206F68 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -831,7 +843,6 @@
 		7D61B1061875F661000FD114 /* ml_logreg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_logreg.cpp; path = ../../sources/regression/ml_logreg.cpp; sourceTree = "<group>"; };
 		7D61B1111876F334000FD114 /* ml_dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_dtw.cpp; path = ../../sources/classification/ml_dtw.cpp; sourceTree = "<group>"; };
 		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ../../sources/feature_extraction/ml_peak.cpp; sourceTree = "<group>"; };
-		7D62C9401F5E8D4500425D2F /* libml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D62C9421F5E8D4500425D2F /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		7D62C9431F5E8D4500425D2F /* ml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ml.cpp; sourceTree = "<group>"; };
 		7D6430D01F668E9D00913E47 /* libgrt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrt.a; path = "../../../../Library/Developer/Xcode/DerivedData/ml-geogiqsrhxzuybclwwdpkdbzqmbz/Build/Products/Development-iphonesimulator/libgrt.a"; sourceTree = "<group>"; };
@@ -888,6 +899,11 @@
 		7DACBF4E192B82F900F0E7D7 /* ml_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_base.h; path = ../../sources/ml_base.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7DACBF4F192B869600F0E7D7 /* ml_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_base.cpp; path = ../../sources/ml_base.cpp; sourceTree = "<group>"; };
 		7DBFDE6318439E09009ED61E /* ml_ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_ml.h; path = ../../sources/ml_ml.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7DD58F351FE2D66400850133 /* libml-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libml-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD58F371FE2D66400850133 /* ml_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml_ios.h; sourceTree = "<group>"; };
+		7DD58F381FE2D66400850133 /* ml_ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ml_ios.m; sourceTree = "<group>"; };
+		7DD590B21FE2D9B500850133 /* libGRT-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libGRT-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD590D81FE2DD5C00850133 /* libGRT-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libGRT-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD8C7131B7BA989006D71AD /* ml_doc_populate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_doc_populate.cpp; path = ../../sources/ml_doc_populate.cpp; sourceTree = "<group>"; };
 		7DD8C7361B7BADE3006D71AD /* ml_names.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_names.h; path = ../../sources/ml_names.h; sourceTree = "<group>"; };
 		7DD99CD818F4088700BE0A1A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -992,14 +1008,6 @@
 				7D33CD4C1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */,
 				7D33CD3A1EB08D6D0008FB1C /* MaxAPI.framework in Frameworks */,
 				7D551B01190FEA80008FF361 /* Accelerate.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7D62C93D1F5E8D4500425D2F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7D6430D11F668E9D00913E47 /* libgrt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,6 +1225,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DD58F321FE2D66400850133 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD590D71FE2DD5C00850133 /* libGRT-ios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC09B05546B4700DB518D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1276,7 +1292,7 @@
 				7D551B08190FEA80008FF361 /* ml.dtree.mxo */,
 				7D65FFDE1992C18C00C82004 /* ml.zerox.pd_darwin */,
 				7D65FFF11992C1FF00C82004 /* ml.zerox.mxo */,
-				7D62C9401F5E8D4500425D2F /* libml.a */,
+				7DD58F351FE2D66400850133 /* libml-ios.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1288,6 +1304,7 @@
 				7DF077FA1847589B00C55E3C /* Resources */,
 				08FB77ACFE841707C02AAC07 /* Sources */,
 				7D62C9411F5E8D4500425D2F /* ml */,
+				7DD58F361FE2D66400850133 /* ml-ios */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DDFF38A45A11DB9C8B /* Products */,
 			);
@@ -1297,6 +1314,8 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DD590D81FE2DD5C00850133 /* libGRT-ios.a */,
+				7DD590B21FE2D9B500850133 /* libGRT-ios.a */,
 				7D6430D01F668E9D00913E47 /* libgrt.a */,
 				7D77E0361EBB3052007F0D75 /* libGRT.a */,
 				7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */,
@@ -1407,6 +1426,15 @@
 				7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */,
 			);
 			name = "Feature Extraction";
+			sourceTree = "<group>";
+		};
+		7DD58F361FE2D66400850133 /* ml-ios */ = {
+			isa = PBXGroup;
+			children = (
+				7DD58F371FE2D66400850133 /* ml_ios.h */,
+				7DD58F381FE2D66400850133 /* ml_ios.m */,
+			);
+			path = "ml-ios";
 			sourceTree = "<group>";
 		};
 		7DE90B551B81EE6800B66D9D /* Vendor */ = {
@@ -1607,23 +1635,6 @@
 			productName = "Max xsample static";
 			productReference = 7D551B08190FEA80008FF361 /* ml.dtree.mxo */;
 			productType = "com.apple.product-type.bundle";
-		};
-		7D62C93F1F5E8D4500425D2F /* ml */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7D62C9461F5E8D4500425D2F /* Build configuration list for PBXNativeTarget "ml" */;
-			buildPhases = (
-				7D62C93C1F5E8D4500425D2F /* Sources */,
-				7D62C93D1F5E8D4500425D2F /* Frameworks */,
-				7D62C93E1F5E8D4500425D2F /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ml;
-			productName = ml;
-			productReference = 7D62C9401F5E8D4500425D2F /* libml.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 		7D65FFCF1992C18C00C82004 /* ml.zerox pd */ = {
 			isa = PBXNativeTarget;
@@ -2016,6 +2027,23 @@
 			productReference = 7DA1F169190FE41A00F491FB /* ml.mindist.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
+		7DD58F341FE2D66400850133 /* ml-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DD58F3B1FE2D66400850133 /* Build configuration list for PBXNativeTarget "ml-ios" */;
+			buildPhases = (
+				7DD58F311FE2D66400850133 /* Sources */,
+				7DD58F321FE2D66400850133 /* Frameworks */,
+				7DD58F331FE2D66400850133 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ml-ios";
+			productName = "ml-ios";
+			productReference = 7DD58F351FE2D66400850133 /* libml-ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		D2AAC09C05546B4700DB518D /* ml pd */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9A5BC8A0A33819900AD9F03 /* Build configuration list for PBXNativeTarget "ml pd" */;
@@ -2063,8 +2091,8 @@
 						DevelopmentTeam = 4AXPHKXE7V;
 						ProvisioningStyle = Automatic;
 					};
-					7D62C93F1F5E8D4500425D2F = {
-						CreatedOnToolsVersion = 8.3.3;
+					7DD58F341FE2D66400850133 = {
+						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = 4AXPHKXE7V;
 						ProvisioningStyle = Automatic;
 					};
@@ -2119,7 +2147,7 @@
 				7D7DA0BE18F6A04100F417F6 /* BUILD ALL MAX */,
 				7D7DA16418F7DD4700F417F6 /* BUILD ALL PD */,
 				7D2D78051EB0B14E0009D37B /* CleanScript */,
-				7D62C93F1F5E8D4500425D2F /* ml */,
+				7DD58F341FE2D66400850133 /* ml-ios */,
 			);
 		};
 /* End PBXProject section */
@@ -2250,38 +2278,6 @@
 				7DD8C7341B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 				7DA0B69D192F768E001F56DA /* ml_classification.cpp in Sources */,
 				7D71CBC81AADB9980099CD5B /* ml_formatter.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7D62C93C1F5E8D4500425D2F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7D62C94B1F5E8E5D00425D2F /* ml_minmax.cpp in Sources */,
-				7D62C94C1F5E8E5D00425D2F /* ml_feature_extraction.cpp in Sources */,
-				7D62C94D1F5E8E5D00425D2F /* ml_classification.cpp in Sources */,
-				7D62C94E1F5E8E5D00425D2F /* ml_adaboost.cpp in Sources */,
-				7D62C94F1F5E8E5D00425D2F /* ml_svm.cpp in Sources */,
-				7D62C9501F5E8E5D00425D2F /* ml_anbc.cpp in Sources */,
-				7D62C9511F5E8E5D00425D2F /* ml_dtw.cpp in Sources */,
-				7D62C9521F5E8E5D00425D2F /* ml_hmm.cpp in Sources */,
-				7D62C9531F5E8E5D00425D2F /* ml_softmax.cpp in Sources */,
-				7D62C9541F5E8E5D00425D2F /* ml_randforest.cpp in Sources */,
-				7D62C9551F5E8E5D00425D2F /* ml_mindist.cpp in Sources */,
-				7D62C9561F5E8E5D00425D2F /* ml_knn.cpp in Sources */,
-				7D62C9571F5E8E5D00425D2F /* ml_gmm.cpp in Sources */,
-				7D62C9581F5E8E5D00425D2F /* ml_dtree.cpp in Sources */,
-				7D62C9591F5E8E5D00425D2F /* ml_regression.cpp in Sources */,
-				7D62C95A1F5E8E5D00425D2F /* ml_linreg.cpp in Sources */,
-				7D62C95B1F5E8E5D00425D2F /* ml_logreg.cpp in Sources */,
-				7D62C95C1F5E8E5D00425D2F /* ml_mlp.cpp in Sources */,
-				7D62C95D1F5E8E5D00425D2F /* ml_base.cpp in Sources */,
-				7D62C95E1F5E8E5D00425D2F /* ml_ml.cpp in Sources */,
-				7D62C95F1F5E8E5D00425D2F /* ml_doc_populate.cpp in Sources */,
-				7D62C9601F5E8E5D00425D2F /* ml_doc.cpp in Sources */,
-				7D62C9611F5E8E5D00425D2F /* ml_formatter.cpp in Sources */,
-				7D62C9441F5E8D4500425D2F /* ml.cpp in Sources */,
-				7D62C94A1F5E8E2D00425D2F /* ml_peak.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2606,6 +2602,50 @@
 				7DA1F162190FE41A00F491FB /* ml_regression.cpp in Sources */,
 				7D71CBB41AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7DA1F163190FE41A00F491FB /* ml_ml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD58F311FE2D66400850133 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD590B31FE2D9DD00850133 /* ml_peak.cpp in Sources */,
+				7DD590B41FE2D9DD00850133 /* ml_minmax.cpp in Sources */,
+				7DD590B51FE2D9DD00850133 /* ml_feature_extraction.h in Sources */,
+				7DD590B61FE2D9DD00850133 /* ml_feature_extraction.cpp in Sources */,
+				7DD590B71FE2D9DD00850133 /* ml_zerox.cpp in Sources */,
+				7DD590B81FE2D9DD00850133 /* ml_classification.h in Sources */,
+				7DD590B91FE2D9DD00850133 /* ml_classification.cpp in Sources */,
+				7DD590BA1FE2D9DD00850133 /* ml_adaboost.cpp in Sources */,
+				7DD590BB1FE2D9DD00850133 /* ml_svm.cpp in Sources */,
+				7DD590BC1FE2D9DD00850133 /* ml_anbc.cpp in Sources */,
+				7DD590BD1FE2D9DD00850133 /* ml_dtw.cpp in Sources */,
+				7DD590BE1FE2D9DD00850133 /* ml_hmm.cpp in Sources */,
+				7DD590BF1FE2D9DD00850133 /* ml_softmax.cpp in Sources */,
+				7DD590C01FE2D9DD00850133 /* ml_randforest.cpp in Sources */,
+				7DD590C11FE2D9DD00850133 /* ml_mindist.cpp in Sources */,
+				7DD590C21FE2D9DD00850133 /* ml_knn.cpp in Sources */,
+				7DD590C31FE2D9DD00850133 /* ml_gmm.cpp in Sources */,
+				7DD590C41FE2D9DD00850133 /* ml_dtree.cpp in Sources */,
+				7DD590C51FE2D9DD00850133 /* ml_regression.h in Sources */,
+				7DD590C61FE2D9DD00850133 /* ml_regression.cpp in Sources */,
+				7DD590C71FE2D9DD00850133 /* ml_linreg.cpp in Sources */,
+				7DD590C81FE2D9DE00850133 /* ml_logreg.cpp in Sources */,
+				7DD590C91FE2D9DE00850133 /* ml_mlp.cpp in Sources */,
+				7DD590CA1FE2D9DE00850133 /* ml_types.h in Sources */,
+				7DD590CB1FE2D9DE00850133 /* ml_names.h in Sources */,
+				7DD590CC1FE2D9DE00850133 /* ml_defaults.h in Sources */,
+				7DD590CD1FE2D9DE00850133 /* ml_base.h in Sources */,
+				7DD590CE1FE2D9DE00850133 /* ml_base.cpp in Sources */,
+				7DD590CF1FE2D9DE00850133 /* ml_ml.h in Sources */,
+				7DD590D01FE2D9DE00850133 /* ml_ml.cpp in Sources */,
+				7DD590D11FE2D9DE00850133 /* ml_doc_populate.cpp in Sources */,
+				7DD590D21FE2D9DE00850133 /* ml_doc.h in Sources */,
+				7DD590D31FE2D9DE00850133 /* ml_doc.cpp in Sources */,
+				7DD590D41FE2D9DE00850133 /* ml_formattable.h in Sources */,
+				7DD590D51FE2D9DE00850133 /* ml_formatter.h in Sources */,
+				7DD590D61FE2D9DE00850133 /* ml_formatter.cpp in Sources */,
+				7DD58F391FE2D66400850133 /* ml_ios.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4022,162 +4062,6 @@
 				WARNING_CFLAGS = "$(inherited)";
 				WRAPPER_EXTENSION = mxo;
 				maxsdk = "$(maxsdk)";
-			};
-			name = Default;
-		};
-		7D62C9471F5E8D4500425D2F /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 4AXPHKXE7V;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					FLEXT_INLINE,
-					"FLEX_SYS=FLEXT_SYS_PD",
-					PD,
-					FLEXT_USE_CMEM,
-					"FLEXT_ATTRIBUTES=1",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Development;
-		};
-		7D62C9481F5E8D4500425D2F /* Deployment */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 4AXPHKXE7V;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					NDEBUG,
-					FLEXT_INLINE,
-					FLEXT_USE_CMEM,
-					"FLEXT_SYS=FLEXT_SYS_PD",
-					PD,
-					"FLEXT_ATTRIBUTES=1",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Deployment;
-		};
-		7D62C9491F5E8D4500425D2F /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 4AXPHKXE7V;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Default;
 		};
@@ -7127,6 +7011,193 @@
 			};
 			name = Default;
 		};
+		7DD58F3C1FE2D66400850133 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"FLEXT_SYS=2",
+					"FLEXT_ATTRIBUTES=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Development;
+		};
+		7DD58F3D1FE2D66400850133 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NDEBUG,
+					FLEXT_USESIMD,
+					FLEXT_INLINE,
+					FLEXT_USE_CMEM,
+					"FLEXT_ATTRIBUTES=1",
+					"FLEXT_SYS=2",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Deployment;
+		};
+		7DD58F3E1FE2D66400850133 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Default;
+		};
 		E9A5BC8B0A33819900AD9F03 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -7406,6 +7477,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MAX_SDK_VER = "MaxSDK-6.1.4";
@@ -7451,6 +7523,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MAX_SDK_VER = "MaxSDK-6.1.4";
@@ -7490,6 +7563,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MAX_SDK_VER = "MaxSDK-6.1.4";
@@ -7614,16 +7688,6 @@
 				7D551B05190FEA80008FF361 /* Development */,
 				7D551B06190FEA80008FF361 /* Deployment */,
 				7D551B07190FEA80008FF361 /* Default */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
-		};
-		7D62C9461F5E8D4500425D2F /* Build configuration list for PBXNativeTarget "ml" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7D62C9471F5E8D4500425D2F /* Development */,
-				7D62C9481F5E8D4500425D2F /* Deployment */,
-				7D62C9491F5E8D4500425D2F /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Deployment;
@@ -7874,6 +7938,16 @@
 				7DA1F166190FE41A00F491FB /* Development */,
 				7DA1F167190FE41A00F491FB /* Deployment */,
 				7DA1F168190FE41A00F491FB /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		7DD58F3B1FE2D66400850133 /* Build configuration list for PBXNativeTarget "ml-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DD58F3C1FE2D66400850133 /* Development */,
+				7DD58F3D1FE2D66400850133 /* Deployment */,
+				7DD58F3E1FE2D66400850133 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Deployment;
