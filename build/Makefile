@@ -11,7 +11,7 @@ ML_PATH =  ../sources
 ML_CLASSIFICATION_PATH = $(ML_PATH)/classification
 ML_REGRESSION_PATH = $(ML_PATH)/regression
 ML_FEATURE_EXTRACTION_PATH = $(ML_PATH)/feature_extraction
-ML_INSTALL_DIR = ./build
+ML_INSTALL_DIR ?= ./build
 
 ML_BASE_SRC = 	ml_base.cpp \
 		ml_formatter.cpp \
@@ -76,12 +76,12 @@ ifeq ($(OS),Windows_NT)
     FLEXT_INLINE=
     GRT_OBJ=
     MINGW_LDFLAGS=-Wl,--enable-auto-import $(PD_BIN)/pd.dll -Lwin32/lib
-    POST_LDFLAGS= -lgrt -lflext-pd_s.0.6.0 -lpd 
+    POST_LDFLAGS= -lgrt -lflext-pd_s.0.6.0 
 else
     UNAME_S := $(shell uname -s)
     FPIC=-fPIC
     MINGW_LDFLAGS=
-    POST_LDFLAGS = -lpd
+    POST_LDFLAGS =
     FLEXT_INLINE=-DFLEXT_INLINE
     FUNCTION_SECTIONS=-fdata-sections -ffunction-sections 
     ifeq ($(UNAME_S),Linux)
