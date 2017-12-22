@@ -83,9 +83,9 @@ else
     MINGW_LDFLAGS=
     POST_LDFLAGS =
     FLEXT_INLINE=-DFLEXT_INLINE
-    FUNCTION_SECTIONS=#-fdata-sections -ffunction-sections 
+    FUNCTION_SECTIONS=-fdata-sections -ffunction-sections 
     ifeq ($(UNAME_S),Linux)
-        REMOVE_DEAD = #-Wl,--gc-sections
+        REMOVE_DEAD = -Wl,--gc-sections
     endif
     ifeq ($(UNAME_S),Darwin)
         REMOVE_DEAD = -dead_strip
@@ -115,7 +115,7 @@ ml_lib: $(ML_LIB_OBJ)
 
 %.pd_linux: %.o ml_lib grt
 	$(CXX) -shared $(MINGW_LDFLAGS) $(GRT_OBJ) $(ML_BASE_OBJ) $(ML_CLASSIFICATION_OBJ) $(ML_REGRESSION_OBJ) $(ML_FEATURE_EXTRACTION_OBJ) $(LDFLAGS) $< $(POST_LDFLAGS) -o $@
-	#strip --strip-unneeded $@
+	strip --strip-unneeded $@
 	
 install: $(ML_LIB_EXT_PD)
 	install -d $(ML_INSTALL_DIR)
@@ -126,7 +126,8 @@ grt-clean:
 	rm -f $(GRT_OBJ)
 
 pd-clean:
-	rm -f $(ML_CLASSIFICATION_EXT_PD)
-	rm -f $(ML_CLASSIFICATION_EXT_OBJ)
+	rm -f $(ML_LIB_OBJ)
+	rm -f $(ML_LIB_EXT_OBJ)
+	rm -f $(ML_LIB_EXT_PD)
 
 clean: grt-clean pd-clean
