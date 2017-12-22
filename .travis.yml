@@ -1,8 +1,8 @@
 language: objective-c
-osx_image: xcode8.3
+osx_image: xcode9.2
 script: 
   - set -o pipefail
-  - xcodebuild -workspace build/macosx/ml.xcworkspace -scheme "grt" -configuration Deployment -parallelizeTargets | xcpretty;
+  - xcodebuild -workspace build/macosx/ml.xcworkspace -scheme grt -configuration Deployment -parallelizeTargets | xcpretty;
   - xcodebuild -workspace build/macosx/ml.xcworkspace -scheme "BUILD ALL MAX" -configuration Deployment -parallelizeTargets | xcpretty;
   - xcodebuild -workspace build/macosx/ml.xcworkspace -scheme "BUILD ALL PD" -configuration Deployment -parallelizeTargets | xcpretty;
 
