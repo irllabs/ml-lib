@@ -30,16 +30,53 @@ namespace ml
     void get_data_file_paths(const std::string &supplied_path, std::string &data_path, std::string &model_path);
     bool check_empty_with_error(std::string &string);
 
+    const t_symbol *get_s_train()
+    { 		
+    	static const t_symbol *s_train = flext::MakeSymbol("train");
+		return s_train;
+	}
+
+	const t_symbol *get_s_clear()
+    { 		
+    	static const t_symbol *s_clear = flext::MakeSymbol("clear");
+		return s_clear;
+	}
+
+	const t_symbol *get_s_read()
+    { 		
+    	static const t_symbol *s_read = flext::MakeSymbol("read");
+		return s_read;
+	}
+	
+	const t_symbol *get_s_write()
+    { 		
+    	static const t_symbol *s_write = flext::MakeSymbol("write");
+		return s_write;
+	}
+	
+	const t_symbol *get_s_probs()
+    { 		
+    	static const t_symbol *s_probs = flext::MakeSymbol("probs");
+		return s_probs;
+	}
+
+	const t_symbol *get_s_error()
+    { 		
+    	static const t_symbol *s_error = flext::MakeSymbol("error");
+		return s_error;
+	}
+
+
     void init_global_symbols()
     {
-        s_train = flext::MakeSymbol("train");
-        s_clear = flext::MakeSymbol("clear");
-        s_read = flext::MakeSymbol("read");
-        s_write = flext::MakeSymbol("write");
-        s_probs = flext::MakeSymbol("probs");
-        s_error = flext::MakeSymbol("error");
+	get_s_train();
+	get_s_clear();
+	get_s_read();
+	get_s_write();
+	get_s_probs();
+	get_s_error();
     }
-    
+   
     ml::ml()
     : current_label(0), probs(false), recording(false)
     {
@@ -268,7 +305,7 @@ namespace ml
             )
         {
             error("no observations added, use 'add' to add training data");
-            ToOutAnything(1, s_write, 1, &a_success);
+            ToOutAnything(1, get_s_write(), 1, &a_success);
             return;
         }
         
@@ -310,7 +347,7 @@ namespace ml
         }
        
         SetInt(a_success, success);
-        ToOutAnything(1, s_write, 1, &a_success);
+        ToOutAnything(1, get_s_write(), 1, &a_success);
     }
     
     void ml::read(const t_symbol *path)
@@ -353,7 +390,7 @@ namespace ml
         }
         
         SetInt(a_success, success);
-        ToOutAnything(1, s_read, 1, &a_success);
+        ToOutAnything(1, get_s_read(), 1, &a_success);
     }
     
     void ml::clear()
@@ -369,7 +406,7 @@ namespace ml
         unlabelled_data.clear();
         
         SetBool(status, true);
-        ToOutAnything(1, s_clear, 1, &status);
+        ToOutAnything(1, get_s_clear(), 1, &status);
     }
     
     void ml::train()
@@ -515,11 +552,7 @@ namespace ml
         }
         return false;
     }
-    
-    
-    
-    
-    
+   
 } // namespace ml
 
 
