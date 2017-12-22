@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/cmuartfab/ml-lib.svg?branch=develop)](https://travis-ci.org/cmuartfab/ml-lib)
 
 **ml-lib** is a library of machine learning externals for Max and Pure Data.
-**ml-lib** is primarily based on the [Gesture Recognition Toolkit](http://www.nickgillian.com/software/grt) by Nick Gillian
+**ml-lib** is primarily based on the [Gesture Recognition Toolkit](https://github.com/nickgillian/grt) by Nick Gillian
 **ml-lib** is designed to work on a variety of platforms including OS X, Windows, Linux, on Intel and ARM architectures.
 
 The goal of ml-lib is to provide a simple, consistent interface to a wide range of machine learning techniques in Max and Pure Data. The canonical NIME 2015 paper on ml-lib can be found [here](https://nime2015.lsu.edu/proceedings/201/0201-paper.pdf).
@@ -28,6 +28,10 @@ Bugs should be reported via the [issues page](https://github.com/cmuartfab/ml-li
 - Download the latest release from the [GitHub releases page](https://github.com/cmuartfab/ml-lib/releases)
 - For Max, add the `ml.*.mxo` externals and the ml-lib helpfiles to your Max Search Path
 - For Pd, add  `ml.*.pd_*` to your Pd search path and add the "ml" library to your startup flags by opening up the application Preferences and adding "-lib ml" to the Startup Flags
+
+## Compiling from source
+
+Instructions for compiling ml-lib from source can be found [here](BUILD.md)
 
 ##  Library structure
 
