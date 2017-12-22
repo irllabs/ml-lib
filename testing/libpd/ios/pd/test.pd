@@ -1,0 +1,18 @@
+#N canvas 673 60 635 500 10;
+#X obj 44 334 ml.knn;
+#X obj 44 35 ml.svm;
+#X obj 44 58 ml.adaboost;
+#X obj 44 81 ml.dtw;
+#X obj 44 104 ml.hmm;
+#X obj 44 127 ml.mlp;
+#X obj 44 150 ml.linreg;
+#X obj 44 173 ml.logreg;
+#X obj 44 196 ml.peak;
+#X obj 44 219 ml.minmax;
+#X obj 44 242 ml.anbc;
+#X obj 44 265 ml.softmax;
+#X obj 44 288 ml.randforest;
+#X obj 44 311 ml.mindist;
+#X obj 44 357 ml.gmm;
+#X obj 44 380 ml.dtree;
+#X obj 45 407 ml.zerox;

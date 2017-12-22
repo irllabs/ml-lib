@@ -571,7 +571,7 @@ namespace ml
         t_atom a_success;
         
         SetInt(a_success, success);
-        ToOutAnything(1, s_train, 1, &a_success);
+        ToOutAnything(1, get_s_train(), 1, &a_success);
     }
     
     void mlp::clear()
@@ -647,7 +647,7 @@ namespace ml
                     probs.Append(label_a);
                     probs.Append(likelihood_a);
                 }
-                ToOutAnything(1, s_probs, probs);
+                ToOutAnything(1, get_s_probs(), probs);
             }
                  
             ToOutInt(0, classification);
@@ -692,7 +692,7 @@ namespace ml
         
         SetFloat(error_a, error_f);
         
-        ToOutAnything(0, s_error, 1, &error_a);
+        ToOutAnything(0, get_s_error(), 1, &error_a);
                       
     }
     

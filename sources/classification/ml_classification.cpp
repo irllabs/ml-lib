@@ -122,7 +122,7 @@ namespace ml
         t_atom a_success;
         
         SetInt(a_success, success);
-        ToOutAnything(1, s_train, 1, &a_success);
+        ToOutAnything(1, get_s_train(), 1, &a_success);
     }
     
     void classification::map(int argc, const t_atom *argv)
@@ -245,7 +245,7 @@ namespace ml
                 }
             }
             
-            ToOutAnything(1, s_probs, probs_l);
+            ToOutAnything(1, get_s_probs(), probs_l);
         }
         
         GRT::UINT classification = classifier.getPredictedClassLabel();

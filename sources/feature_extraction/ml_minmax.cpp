@@ -25,8 +25,8 @@
 namespace ml
 {
     const std::string object_name = NAME_PREFIX "minmax";
-    const t_symbol *s_min  = flext::MakeSymbol("min");
-    const t_symbol *s_max  = flext::MakeSymbol("max");
+    static const t_symbol *s_min;
+    static const t_symbol *s_max;
     
     class minmax : base
     {
@@ -44,6 +44,9 @@ namespace ml
         
         static void setup(t_classid c)
         {
+            s_min  = flext::MakeSymbol("min");
+            s_max  = flext::MakeSymbol("max");
+            
             FLEXT_CADDATTR_SET(c, "delta", set_delta);
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
                         

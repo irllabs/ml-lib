@@ -88,7 +88,7 @@ namespace ml
         t_atom a_success;
         
         SetInt(a_success, success);
-        ToOutAnything(1, s_train, 1, &a_success);
+        ToOutAnything(1, get_s_train(), 1, &a_success);
     }
 
     void regression::map(int argc, const t_atom *argv)
