@@ -83,9 +83,9 @@ else
     MINGW_LDFLAGS=
     POST_LDFLAGS =
     FLEXT_INLINE=-DFLEXT_INLINE
-    FUNCTION_SECTIONS=-fdata-sections -ffunction-sections 
+    FUNCTION_SECTIONS=#-fdata-sections -ffunction-sections 
     ifeq ($(UNAME_S),Linux)
-        REMOVE_DEAD = -Wl,--gc-sections
+        REMOVE_DEAD = #-Wl,--gc-sections
     endif
     ifeq ($(UNAME_S),Darwin)
         REMOVE_DEAD = -dead_strip
@@ -94,9 +94,9 @@ endif
 
 
 CPPFLAGS = -Wno-error $(FPIC) -O2 -std=c++11 $(FUNCTION_SECTIONS) -I$(FLEXT_INCLUDE) -I$(GRT_INCLUDE) -I$(PD_INCLUDE) -I$(ML_INCLUDE)
-LDFLAGS = $(REMOVE_DEAD) -L$(PD_BIN) 
+LDFLAGS = $(REMOVE_DEAD) 
 
-FLEXT_CPPFLAGS = $(FLEXT_INLINE) -DFLEXT_SYS=2 -DFLEXT_USE_CMEM -DFLEXT_ATTRIBUTES=1 -DFLEXT_USE_HEX_SETUP_NAME -DPD
+FLEXT_CPPFLAGS = $(FLEXT_INLINE) -DFLEXT_SYS_PD -DFLEXT_USE_CMEM -DFLEXT_ATTRIBUTES=1 -DFLEXT_USE_HEX_SETUP_NAME -DPD
 
 .PHONY: install
 
@@ -115,11 +115,13 @@ ml_lib: $(ML_LIB_OBJ)
 
 %.pd_linux: %.o ml_lib grt
 	$(CXX) -shared $(MINGW_LDFLAGS) $(GRT_OBJ) $(ML_BASE_OBJ) $(ML_CLASSIFICATION_OBJ) $(ML_REGRESSION_OBJ) $(ML_FEATURE_EXTRACTION_OBJ) $(LDFLAGS) $< $(POST_LDFLAGS) -o $@
-	strip --strip-unneeded $@
+	#strip --strip-unneeded $@
 	
 install: $(ML_LIB_EXT_PD)
 	install -d $(ML_INSTALL_DIR)
 	install -m 644 $(ML_LIB_EXT_PD) $(ML_INSTALL_DIR)
+	for file in $(ML_INSTALL_DIR)/*; do rename -f 's/ml_/ml./g' $$file; done
+
 grt-clean:
 	rm -f $(GRT_OBJ)
 

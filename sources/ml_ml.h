@@ -31,13 +31,13 @@
 
 namespace ml
 {
-    static const t_symbol *s_train;
-    static const t_symbol *s_clear;
-    static const t_symbol *s_read;
-    static const t_symbol *s_write;
-    static const t_symbol *s_probs;
-    static const t_symbol *s_error;
-    
+    const t_symbol *get_s_train();
+    const t_symbol *get_s_clear();
+    const t_symbol *get_s_read();
+    const t_symbol *get_s_write();
+    const t_symbol *get_s_probs();
+    const t_symbol *get_s_error();
+
     void init_global_symbols();
     
     struct grt_type_exception : public std::exception
