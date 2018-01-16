@@ -10,9 +10,9 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5622B416-C3D9-4149-97F6-5208048DC64E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "A024F786C1426F084F847E1869743A7566C72537" : "ml-lib",
-    "598617878EF09E707BFEFDBE06FF9BC0AC6F46C4" : "ml-libvendor\/flext",
-    "CC182281C6D964B9331E36C0CD377F4A30240DEA" : "ml-libvendor\/grt"
+    "A024F786C1426F084F847E1869743A7566C72537" : "ml-lib\/",
+    "598617878EF09E707BFEFDBE06FF9BC0AC6F46C4" : "ml-lib\/vendor\/flext\/",
+    "CC182281C6D964B9331E36C0CD377F4A30240DEA" : "ml-lib\/vendor\/grt\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ml",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
