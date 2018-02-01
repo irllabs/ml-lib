@@ -11,6 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 7D7DA0BF18F6A04100F417F6 /* Build configuration list for PBXAggregateTarget "BUILD ALL MAX" */;
 			buildPhases = (
+				7DDF7775201B98D7006849F4 /* ShellScript */,
 			);
 			dependencies = (
 				7D2D780B1EB0B1820009D37B /* PBXTargetDependency */,
@@ -2156,6 +2157,22 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7DDF7775201B98D7006849F4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Running pre-build script...\"\n\nif ! [ -L \"${PROJECT_DIR}/c74support\" ]; then\necho \"Downloading Max SDK\"\necho ${MAX_SDK_VER}\nif ! [ -d \"${PROJECT_DIR}/${MAX_SDK_VER}\" ]; then\n/usr/bin/curl -L \"https://cycling74.s3.amazonaws.com/download/${MAX_SDK_VER}.zip\" > \"${PROJECT_DIR}/${MAX_SDK_VER}.zip\"\ncd \"${PROJECT_DIR}\" && unzip -o ${MAX_SDK_VER}.zip && ln -s ${MAX_SDK_VER}/source/c74support c74support && rm ${MAX_SDK_VER}.zip\nfi\nfi\n\necho \"done pre-action\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D551A6A190FE523008FF361 /* Sources */ = {
