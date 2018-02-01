@@ -223,8 +223,7 @@ namespace ml
                         t_atom label_a;
                         t_atom likelihood_a;
                         
-                        // Need to call SetDouble() first or label_a gets corrupted. Bug in Flext?
-                        SetDouble(&likelihood_a, likelihoods[count]);
+                        SetFloat(likelihood_a, static_cast<float>(likelihoods[count]));
                         SetInt(label_a, labels[count]);
                         
                         probs_l.Append(label_a);
@@ -240,7 +239,7 @@ namespace ml
                 {
                     t_atom likelihood_a;
                     
-                    SetDouble(&likelihood_a, likelihoods[count]);
+                    SetFloat(likelihood_a, static_cast<float>(likelihoods[count]));
                     probs_l.Append(likelihood_a);
                 }
             }

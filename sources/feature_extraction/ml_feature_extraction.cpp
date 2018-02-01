@@ -83,7 +83,7 @@ namespace ml
         {
             t_atom feature_a;
             
-            SetDouble(&feature_a, *iterator);
+            SetFloat(feature_a, static_cast<float>(*iterator));
             features_l.Append(feature_a);
         }
 
