@@ -34,7 +34,7 @@ namespace ml
         
         while(std::getline(message_lines, line, '\n'))
         {
-            post_prefixed_message(get_object_name(), line, flext::post);
+            post_prefixed_message(get_object_name() + " " + ML_VERSION, line, flext::post);
         }
     }
     

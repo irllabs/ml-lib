@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const std::string object_name = NAME_PREFIX "peak";
+    const std::string object_name = ML_NAME_PREFIX "peak";
     
     class peak : base
     {

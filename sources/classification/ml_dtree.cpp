@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const std::string object_name = NAME_PREFIX "dtree";
+    const std::string object_name = ML_NAME_PREFIX "dtree";
     
     GRT::Tree::TrainingMode get_grt_training_mode(int type)
     {

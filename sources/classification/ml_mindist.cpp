@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const std::string object_name = NAME_PREFIX "mindist";
+    const std::string object_name = ML_NAME_PREFIX "mindist";
     
     class mindist : classification
     {

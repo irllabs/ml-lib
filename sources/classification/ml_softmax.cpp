@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    static const std::string object_name = NAME_PREFIX "softmax";
+    static const std::string object_name = ML_NAME_PREFIX "softmax";
     
     class softmax : classification
     {

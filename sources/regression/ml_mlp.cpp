@@ -21,7 +21,7 @@
 
 namespace ml
 {
-    const std::string object_name = NAME_PREFIX "mlp";
+    const std::string object_name = ML_NAME_PREFIX "mlp";
         
     typedef enum mlp_layer_
     {

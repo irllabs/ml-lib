@@ -30,7 +30,7 @@
 
 namespace ml
 {
-    const std::string object_name = NAME_PREFIX "svm";
+    const std::string object_name = ML_NAME_PREFIX "svm";
     
     // Utility functions
     GRT::SVM::SVMType get_grt_svm_type(int type)

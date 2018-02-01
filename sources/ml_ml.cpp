@@ -470,7 +470,7 @@ namespace ml
     static void main()
     {
         flext::post("%s - machine learning library for Max and Pure Data", NAME);
-        flext::post("version " VERSION " (c) 2013 Carnegie Mellon University");
+        flext::post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
         
         FLEXT_SETUP(svm);
         FLEXT_SETUP(adaboost);

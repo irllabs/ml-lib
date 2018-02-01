@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    static const std::string object_name = NAME_PREFIX "knn";
+    static const std::string object_name = ML_NAME_PREFIX "knn";
     
     class knn : classification
     {

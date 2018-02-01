@@ -33,9 +33,9 @@
 
 #include <string>
 
-#define VERSION "0.17.0"
-#define NAME "ml-lib"
-#define NAME_PREFIX "ml."
+#define ML_VERSION "0.18.0"
+#define ML_NAME "ml-lib"
+#define ML_NAME_PREFIX "ml."
 
 namespace GRT
 {

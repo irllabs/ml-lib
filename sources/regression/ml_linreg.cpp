@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    static const std::string object_name = NAME_PREFIX "linreg";
+    static const std::string object_name = ML_NAME_PREFIX "linreg";
     
     class linreg : regression
     {

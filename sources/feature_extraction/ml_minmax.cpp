@@ -24,7 +24,7 @@
 
 namespace ml
 {
-    const std::string object_name = NAME_PREFIX "minmax";
+    const std::string object_name = ML_NAME_PREFIX "minmax";
     static const t_symbol *s_min;
     static const t_symbol *s_max;
     

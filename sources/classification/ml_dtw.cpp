@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const std::string object_name = NAME_PREFIX "dtw";
+    const std::string object_name = ML_NAME_PREFIX "dtw";
     
     class dtw : classification
     {

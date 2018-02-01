@@ -20,7 +20,7 @@
 
 namespace ml
 {
-    static const std::string object_name = NAME_PREFIX "zerox";
+    static const std::string object_name = ML_NAME_PREFIX "zerox";
     
     class zerox : feature_extraction
     {

@@ -22,7 +22,7 @@
 
 namespace ml
 {
-    const std::string object_name = NAME_PREFIX "randforest";
+    const std::string object_name = ML_NAME_PREFIX "randforest";
     
     // Class declaration
     class randforest : classification
