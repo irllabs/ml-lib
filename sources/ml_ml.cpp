@@ -469,7 +469,7 @@ namespace ml
 #ifdef BUILD_AS_LIBRARY
     static void main()
     {
-        flext::post("%s - machine learning library for Max and Pure Data", NAME);
+        flext::post("%s - machine learning library for Max and Pure Data", ML_NAME);
         flext::post("version " ML_VERSION " (c) 2013 Carnegie Mellon University");
         
         FLEXT_SETUP(svm);
