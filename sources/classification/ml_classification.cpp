@@ -131,21 +131,15 @@ namespace ml
         GRT::Classifier &classifier = get_Classifier_instance();
         const data_type data_type = get_data_type();
         
-        if (numSamples == 0)
-        {
-            error("no observations added, use 'add' to add training data");
-            return;
-        }
-        
         if (classifier.getTrained() == false)
         {
-            error("data_typel has not been trained, use 'train' to train the data_typel");
+            error("model has not been trained, use 'train' to train the model");
             return;
         }
         
         if (classifier.getNumClasses() == 0)
         {
-            error("no classes in the trained data_typel, use 'add' to add more training data");
+            error("no classes in the trained model, use 'add' to add more training data");
             return;
         }
         

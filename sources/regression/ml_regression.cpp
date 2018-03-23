@@ -96,15 +96,9 @@ namespace ml
         GRT::UINT numSamples = regression_data.getNumSamples();
         GRT::Regressifier &regressifier = get_Regressifier_instance();
         
-        if (numSamples == 0)
-        {
-            error("no observations added, use 'add' to add training data");
-            return;
-        }
-        
         if (regressifier.getTrained() == false)
         {
-            error("data_typel has not been trained, use 'train' to train the data_typel");
+            error("model has not been trained, use 'train' to train the model");
             return;
         }
         
