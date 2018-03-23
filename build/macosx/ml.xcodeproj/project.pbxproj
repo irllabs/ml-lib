@@ -108,6 +108,23 @@
 		7D33CD4B1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
 		7D33CD4C1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
 		7D33CD4D1EB08D7A0008FB1C /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */; };
+		7D39DCA4205AB6BB003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCA5205AB6C1003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCA6205AB6C8003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCA7205AB6D0003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCA8205AB6D7003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCA9205AB6DC003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCAA205AB6E2003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCAB205AB6E8003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCAC205AB6EE003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCAD205AB6F3003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCAE205AB6F7003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCAF205AB6FC003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCB0205AB701003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCB1205AB705003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCB2205AB709003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCB3205AB70D003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
+		7D39DCB4205AB712003A3B50 /* libGRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77E0361EBB3052007F0D75 /* libGRT.a */; };
 		7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551A68190FE523008FF361 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4EAF0018343011005B8615 /* Accelerate.framework */; };
 		7D551A6C190FE523008FF361 /* ml_classification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4F5618BD1ACC001A1294 /* ml_classification.cpp */; };
@@ -849,7 +866,6 @@
 		7D61B11618788BD6000FD114 /* ml_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_peak.cpp; path = ../../sources/feature_extraction/ml_peak.cpp; sourceTree = "<group>"; };
 		7D62C9421F5E8D4500425D2F /* ml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		7D62C9431F5E8D4500425D2F /* ml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ml.cpp; sourceTree = "<group>"; };
-		7D6430D01F668E9D00913E47 /* libgrt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgrt.a; path = "../../../../Library/Developer/Xcode/DerivedData/ml-geogiqsrhxzuybclwwdpkdbzqmbz/Build/Products/Development-iphonesimulator/libgrt.a"; sourceTree = "<group>"; };
 		7D65FFC7199253D400C82004 /* ml_feature_extraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ml_feature_extraction.h; path = ../../sources/feature_extraction/ml_feature_extraction.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_feature_extraction.cpp; path = ../../sources/feature_extraction/ml_feature_extraction.cpp; sourceTree = "<group>"; };
 		7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_zerox.cpp; path = ../../sources/feature_extraction/ml_zerox.cpp; sourceTree = "<group>"; };
@@ -929,6 +945,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCA7205AB6D0003A3B50 /* libGRT.a in Frameworks */,
 				7D551A68190FE523008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -937,6 +954,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCA6205AB6C8003A3B50 /* libGRT.a in Frameworks */,
 				7D551A77190FE530008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -945,6 +963,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCA5205AB6C1003A3B50 /* libGRT.a in Frameworks */,
 				7D551A86190FE53B008FF361 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1019,6 +1038,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCA4205AB6BB003A3B50 /* libGRT.a in Frameworks */,
 				7D65FFD11992C18C00C82004 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1137,6 +1157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCB3205AB70D003A3B50 /* libGRT.a in Frameworks */,
 				7D7DA0C518F6A63E00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1145,6 +1166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCB2205AB709003A3B50 /* libGRT.a in Frameworks */,
 				7D7DA0EE18F7DC5600F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1153,6 +1175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCB1205AB705003A3B50 /* libGRT.a in Frameworks */,
 				7D7DA0FD18F7DC8900F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1161,6 +1184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCB0205AB701003A3B50 /* libGRT.a in Frameworks */,
 				7D7DA10C18F7DCA600F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1169,6 +1193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCAF205AB6FC003A3B50 /* libGRT.a in Frameworks */,
 				7D7DA11B18F7DCBD00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1177,6 +1202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCAE205AB6F7003A3B50 /* libGRT.a in Frameworks */,
 				7D7DA12A18F7DCD600F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1185,6 +1211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCAD205AB6F3003A3B50 /* libGRT.a in Frameworks */,
 				7D7DA13918F7DCEC00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1193,6 +1220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCAC205AB6EE003A3B50 /* libGRT.a in Frameworks */,
 				7D7DA14818F7DD0600F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1201,6 +1229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCAB205AB6E8003A3B50 /* libGRT.a in Frameworks */,
 				7D7DA15718F7DD1C00F417F6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1209,6 +1238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCAA205AB6E2003A3B50 /* libGRT.a in Frameworks */,
 				7DA1F13F190FE3F900F491FB /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1217,6 +1247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCA9205AB6DC003A3B50 /* libGRT.a in Frameworks */,
 				7DA1F14E190FE40E00F491FB /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1225,6 +1256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCA8205AB6D7003A3B50 /* libGRT.a in Frameworks */,
 				7DA1F15D190FE41A00F491FB /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1241,6 +1273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D39DCB4205AB712003A3B50 /* libGRT.a in Frameworks */,
 				7D4EAF0118343011005B8615 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1320,7 +1353,6 @@
 			children = (
 				7DD590D81FE2DD5C00850133 /* libGRT-ios.a */,
 				7DD590B21FE2D9B500850133 /* libGRT-ios.a */,
-				7D6430D01F668E9D00913E47 /* libgrt.a */,
 				7D77E0361EBB3052007F0D75 /* libGRT.a */,
 				7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */,
 				7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */,
