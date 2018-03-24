@@ -127,7 +127,6 @@ namespace ml
     
     void classification::map(int argc, const t_atom *argv)
     {
-        GRT::UINT numSamples = get_num_samples();
         GRT::Classifier &classifier = get_Classifier_instance();
         const data_type data_type = get_data_type();
         

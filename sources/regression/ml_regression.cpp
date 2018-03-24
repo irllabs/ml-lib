@@ -93,7 +93,6 @@ namespace ml
 
     void regression::map(int argc, const t_atom *argv)
     {
-        GRT::UINT numSamples = regression_data.getNumSamples();
         GRT::Regressifier &regressifier = get_Regressifier_instance();
         
         if (regressifier.getTrained() == false)
