@@ -84,6 +84,12 @@ namespace ml_doc
     }
 
     // pd_help_formatter
+    std::string pd_escaped(const std::string& s)
+    {
+        return std::regex_replace(s, std::regex("(,|;)"), " \\$1");
+    }
+    
+    
     std::string pd_help_formatter::format(const formattable_message_descriptor &f,
                                           const uint16_t message_x,
                                           const uint16_t message_y,
@@ -96,7 +102,7 @@ namespace ml_doc
                                 to_string(message_x) +  " " +
                                 to_string(message_y) +  " " +
                                 f.name_string() + " " + arguments + " " + ";\n";
-        formatted += "#X text " + to_string(message_x + message_comment_distance) + " " + to_string(message_y) + " " + f.desc_string() + ";\n";
+        formatted += "#X text " + to_string(message_x + message_comment_distance) + " " + to_string(message_y) + " " + pd_escaped(f.desc_string()) + ";\n";
         objects_added = 2;
         
         return formatted;
@@ -115,7 +121,7 @@ namespace ml_doc
         formatted += "#X obj " + to_string(ml_obj_x) + " " + to_string(ml_obj_y) + " " + f.name_string() + ";\n";
         ++object_count;
         
-        formatted += "#X text " + to_string(heading_x) + " " + to_string(heading_y) + " " + f.desc_string() + ";\n";
+        formatted += "#X text " + to_string(heading_x) + " " + to_string(heading_y) + " " + pd_escaped(f.desc_string()) + ";\n";
         formatted += "#X text " + to_string(heading_x) + " " + to_string(heading_y + 20) +
         " For more information on the technique used, see: " + f.url_string() + ";\n";
         
@@ -139,9 +145,6 @@ namespace ml_doc
         
         formatted += "#X obj " + to_string(ml_obj_x + 80) + " " + to_string(ml_obj_y + 80) + " print right;\n";
         formatted += "#X connect 0 1 " + to_string(object_count) + " 0;\n";
-        
-        std::regex e(",");
-        formatted = std::regex_replace(formatted, e, " \\,");
         
         return formatted;
     }
