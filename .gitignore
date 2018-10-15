@@ -29,3 +29,5 @@ DerivedData
 *.zip
 /build/macosx/max-sdk-7.1.0
 /build/.vs/test/v14/.suo
+ml-doc/build/macosx/ml-doc/ml-doc.xcodeproj/project.xcworkspace/xcshareddata
+build/macosx/ml.xcworkspace/xcshareddata
