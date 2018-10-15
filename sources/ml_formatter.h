@@ -30,6 +30,7 @@ namespace ml_doc
     class generic_formatter
     {
     public:
+        virtual ~generic_formatter() {}
         virtual std::string format(const formattable_message_descriptor &descriptor) const = 0;
         virtual std::string format(const formattable_class_descriptor &descriptor) const = 0;
     };

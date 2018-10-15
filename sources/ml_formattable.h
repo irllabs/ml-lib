@@ -28,6 +28,7 @@ namespace ml_doc
     class formattable_descriptor
     {
     public:
+        virtual ~formattable_descriptor() {}
         virtual std::string name_string(void) const = 0;
         virtual std::string desc_string(void) const = 0;
     };
