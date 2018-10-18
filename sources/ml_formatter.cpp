@@ -24,6 +24,12 @@
 namespace ml_doc
 {
     
+    namespace k
+    {
+        static const std::string url_preamble = "For more information on the technique used, see: ";
+    }
+    
+    
     // max_formatter
     
     std::string max_formatter::format(const formattable_message_descriptor &f) const
@@ -123,7 +129,7 @@ namespace ml_doc
         
         formatted += "#X text " + to_string(heading_x) + " " + to_string(heading_y) + " " + pd_escaped(f.desc_string()) + ";\n";
         formatted += "#X text " + to_string(heading_x) + " " + to_string(heading_y + 20) +
-        " For more information on the technique used, see: " + f.url_string() + ";\n";
+        " " + pd_escaped(k::url_preamble + f.url_string()) + ";\n";
         
         object_count += 2;
         
