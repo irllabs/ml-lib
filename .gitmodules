@@ -10,3 +10,6 @@
 [submodule "vendor/libpd"]
 	path = vendor/libpd
 	url = https://jamiebullock@github.com/libpd/libpd.git
+[submodule "vendor/json"]
+	path = vendor/json
+	url = https://jamiebullock@github.com/nlohmann/json.git
