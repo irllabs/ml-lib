@@ -37,6 +37,11 @@ int main(int argc, const char * argv[])
         formatter = std::make_unique<ml_doc::pd_help_formatter>();
         file_ext = "-help.pd";
     }
+    else if (arg_exists(argv, argv+argc, "-max"))
+    {
+        formatter = std::make_unique<ml_doc::max_formatter>();
+        file_ext = ".maxhelp";
+    }
     
     ml_doc::doc_manager &doc_manager = ml_doc::doc_manager::shared_instance(*formatter.get());
 
