@@ -2326,7 +2326,7 @@
 		7D77E0331EBB2D74007F0D75 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				DEVELOPMENT_TEAM = 4AXPHKXE7V;
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
@@ -2334,6 +2334,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = build;
+				VALID_ARCHS = x86_64;
 			};
 			name = Development;
 		};
@@ -2381,7 +2382,7 @@
 		7D77E0351EBB2D99007F0D75 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = 4AXPHKXE7V;
 				EXECUTABLE_PREFIX = lib;
@@ -2389,6 +2390,7 @@
 				GCC_ENABLE_CPP_RTTI = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = build;
+				VALID_ARCHS = x86_64;
 			};
 			name = Deployment;
 		};
