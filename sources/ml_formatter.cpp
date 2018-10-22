@@ -19,6 +19,8 @@
 #include "ml_formatter.h"
 #include "ml_formattable.h"
 
+#include "../vendor/json/single_include/nlohmann/json.hpp"
+
 #include <regex>
 
 namespace ml_doc
@@ -27,6 +29,7 @@ namespace ml_doc
     namespace k
     {
         static const std::string url_preamble = "For more information on the technique used, see: ";
+        static const std::string main_obj_id = "obj-1";
     }
     
     
@@ -34,6 +37,12 @@ namespace ml_doc
     
     std::string max_formatter::format(const formattable_message_descriptor &f) const
     {
+        using namespace nlohmann;
+        
+        json patch;
+        
+        // Add messages JSON and connect to k::main_obj_id
+        
         std::string formatted = f.name_string() + ": " + f.desc_string() + ". ";
         std::string descriptors = "";
         std::vector<std::string> allowed_values = f.allowed_values_strings();
@@ -77,16 +86,56 @@ namespace ml_doc
     
     std::string max_formatter::format(const formattable_class_descriptor &f) const
     {
-        std::string formatted = f.name_string() + ": " + f.desc_string() + "\n";
-    
+        using namespace nlohmann;
+        
+        json patch;
+        
+        patch["patcher"] = {{"autosave", 0}};
+        patch["patcher"]["boxes"] = {
+            {{
+                "box", {
+                    {"id", "obj-3"},
+                    {"maxclass", "comment"},
+                    {"numinlets", 1},
+                    {"numoutlets", 0},
+                    {"patching_rect", { 40.0, 30.0, 150.0, 20.0 }},
+                    {"text", f.desc_string()}
+                }
+            }},
+            {{
+                "box", {
+                    {"id", "obj-2"},
+                    {"maxclass", "comment"},
+                    {"numinlets", 1},
+                    {"numoutlets", 0},
+                    {"patching_rect", { 40.0, 61.0, 150.0, 20.0 }},
+                    {"text", k::url_preamble + f.url_string()}
+                }
+            }},
+            {{
+                "box", {
+                    {"id", k::main_obj_id},
+                    {"maxclass", "newobj"},
+                    {"numinlets", 1},
+                    {"numoutlets", 2},
+                    {"outlettype", { "", "" }},
+                    {"patching_rect", { 40.0, 390.0, 29.0, 22.0 }},
+                    {"text", f.name_string()}
+                }
+            }}
+        };
+        
+
         std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
+
+        std::string formatted;
         
         for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
         {
             formatted += this->format(*formattable);
         }
         
-        return formatted;
+        return patch.dump(4);
     }
 
     // pd_help_formatter

@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D2E1F4C217DC6250081D7ED /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = json.hpp; path = ../../../../vendor/json/single_include/nlohmann/json.hpp; sourceTree = "<group>"; };
 		7DE90B3C1B81EC4900B66D9D /* ml-doc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ml-doc"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE90B3F1B81EC4900B66D9D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "ml-doc/main.cpp"; sourceTree = "<group>"; };
 		7DE90B471B81ED2900B66D9D /* ml_defaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ml_defaults.h; path = ../../../../sources/ml_defaults.h; sourceTree = "<group>"; };
@@ -51,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D2E1F4B217DC5EB0081D7ED /* json */ = {
+			isa = PBXGroup;
+			children = (
+				7D2E1F4C217DC6250081D7ED /* json.hpp */,
+			);
+			name = json;
+			sourceTree = "<group>";
+		};
 		7DE90B331B81EC4900B66D9D = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +96,7 @@
 		7DE90B561B81EE8700B66D9D /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				7D2E1F4B217DC5EB0081D7ED /* json */,
 				7DE90B571B81EEA800B66D9D /* ml-lib */,
 				7DE90B531B81ED9400B66D9D /* GRT */,
 			);
