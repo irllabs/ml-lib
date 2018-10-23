@@ -37,7 +37,7 @@ Instructions for compiling ml-lib from source can be found [here](BUILD.md)
 
 **ml-lib** objects follow the naming convention `ml.*` where “*” is an abbreviated form of the algorithm implemented by the object. 
 
-A full list of all objects and their parameters can be found [here](http://cmuartfab.github.io/ml-lib/).
+A full list of all objects and their parameters can be found [here](http://irllabs.github.io/ml-lib/).
 
 For more detailed descriptions of the underlying algorithms, see links below.
 
