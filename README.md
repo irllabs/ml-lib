@@ -11,7 +11,7 @@ The goal of ml-lib is to provide a simple, consistent interface to a wide range 
 ## Bug Reports and Discussion
 Please use the [GitHub Issue Tracker](https://github.com/cmuartfab/ml-lib/issues) for all bug reports and feature requests.
 
-Please use the [ArtFab Discussion form (under Software > ml.lib)](http://discuss.artfab.art.cmu.edu/c/software/ml-lib) for all general conversations, questions, discussions and project sharing.  
+<!-- Please use the [ArtFab Discussion form (under Software > ml.lib)](http://discuss.artfab.art.cmu.edu/c/software/ml-lib) for all general conversations, questions, discussions and project sharing.  -->
 
 ## Development Status
 
