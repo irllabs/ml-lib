@@ -22,66 +22,110 @@
 #include "../vendor/json/single_include/nlohmann/json.hpp"
 
 #include <regex>
+#include <sstream>
 
 namespace ml_doc
 {
-    
     namespace k
     {
         static const std::string url_preamble = "For more information on the technique used, see: ";
         static const std::string main_obj_id = "obj-1";
+        static const uint16_t init_message_x = 200;
+        static const uint16_t init_message_y = 120;
+        static const uint16_t ml_obj_x = 30;
+        static const uint16_t ml_obj_y = 700;
+        static const uint16_t heading_x = 30;
+        static const uint16_t heading_y = 40;
+        static const uint16_t heading_spacing = 20;
+        static const uint16_t message_spacing = 30;
+        static const uint16_t message_comment_distance = 200;
     }
-    
     
     // max_formatter
     
-    std::string max_formatter::format(const formattable_message_descriptor &f) const
+    std::string max_formatter::format(const formattable_message_descriptor &f, const uint16_t message_y, const uint16_t obj_id) const
     {
         using namespace nlohmann;
         
         json patch;
+        patch["boxes"] = json::array();
+                
+        std::string arguments = f.example_string() != "" ? f.example_string() : f.def_string();
+        std::stringstream s("obj-");
+        s << obj_id;
         
-        // Add messages JSON and connect to k::main_obj_id
-        
-        std::string formatted = f.name_string() + ": " + f.desc_string() + ". ";
-        std::string descriptors = "";
-        std::vector<std::string> allowed_values = f.allowed_values_strings();
-        
-        if (allowed_values.size())
-        {
-            descriptors += "allowed values: [";
-            for (std::string value : allowed_values)
-            {
-                descriptors += value;
-                descriptors += " ";
+        patch["boxes"].push_back(
+        {{
+            "box", {
+                {"id", s.str()},
+                {"maxclass", "message"},
+                {"numinlets", 2},
+                {"numoutlets", 1},
+                {"outlettype", {""}},
+                {"patching_rect", { k::init_message_x, message_y, 0, 20.0 }},
+                {"text", f.name_string() + " " + arguments}
             }
-            descriptors += "] ";
-        }
+        }});
         
-        if (!f.def_string().empty())
-        {
-            descriptors += "default: " + f.def_string() + " ";
-        }
+        patch["boxes"].push_back({{
+            "box", {
+                {"id", s.str() + "c"},
+                {"maxclass", "comment"},
+                {"numinlets", 1},
+                {"numoutlets", 0},
+                {"patching_rect", { k::init_message_x + k::message_comment_distance, message_y, 0, 20.0 }},
+                {"text", f.desc_string() + " " + arguments}
+            }
+        }});
         
-        if (!f.min_string().empty())
-        {
-            descriptors += "min: " + f.min_string();
-        }
+        patch["lines"] = {
+            {{
+                "patchline", {
+                    {"destination", json::array({k::main_obj_id, 0})},
+                    {"source", json::array({s.str(), 0})}
+                }
+            }}
+        };
         
-        if (!f.max_string().empty())
-        {
-            descriptors += " max: " + f.max_string() + ") ";
-        }
+//        std::vector<std::string> allowed_values = f.allowed_values_strings();
+//
+//        if (allowed_values.size())
+//        {
+//            descriptors += "allowed values: [";
+//            for (std::string value : allowed_values)
+//            {
+//                descriptors += value;
+//                descriptors += " ";
+//            }
+//            descriptors += "] ";
+//        }
+//
+//        if (!f.def_string().empty())
+//        {
+//            descriptors += "default: " + f.def_string() + " ";
+//        }
+//
+//        if (!f.min_string().empty())
+//        {
+//            descriptors += "min: " + f.min_string();
+//        }
+//
+//        if (!f.max_string().empty())
+//        {
+//            descriptors += " max: " + f.max_string() + ") ";
+//        }
+//
+//        if (!descriptors.empty())
+//        {
+//            formatted += "(" + descriptors + ")";
+//        }
+//
+//        formatted += "\n";
+//
+//
+//        return formatted;
         
-        if (!descriptors.empty())
-        {
-            formatted += "(" + descriptors + ")";
-        }
-        
-        formatted += "\n";
-        
-        
-        return formatted;
+        return patch.dump();
     }
     
     std::string max_formatter::format(const formattable_class_descriptor &f) const
@@ -90,7 +134,7 @@ namespace ml_doc
         
         json patch;
         
-        patch["patcher"] = {{"autosave", 0}};
+        patch["patcher"] = {{"autosave", 0}, {"rect", {80, 80, 1200, 600}}};
         patch["patcher"]["boxes"] = {
             {{
                 "box", {
@@ -98,7 +142,7 @@ namespace ml_doc
                     {"maxclass", "comment"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
-                    {"patching_rect", { 40.0, 30.0, 150.0, 20.0 }},
+                    {"patching_rect", { k::heading_x, k::heading_y, 0, 20.0 }},
                     {"text", f.desc_string()}
                 }
             }},
@@ -108,7 +152,7 @@ namespace ml_doc
                     {"maxclass", "comment"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
-                    {"patching_rect", { 40.0, 61.0, 150.0, 20.0 }},
+                    {"patching_rect", { k::heading_x, k::heading_y + k::heading_spacing, 0, 20.0 }},
                     {"text", k::url_preamble + f.url_string()}
                 }
             }},
@@ -119,20 +163,27 @@ namespace ml_doc
                     {"numinlets", 1},
                     {"numoutlets", 2},
                     {"outlettype", { "", "" }},
-                    {"patching_rect", { 40.0, 390.0, 29.0, 22.0 }},
+                    {"patching_rect", {k::ml_obj_x, k::ml_obj_y, 0, 22.0 }},
                     {"text", f.name_string()}
                 }
             }}
         };
-        
+        patch["patcher"]["lines"] = json::array();
 
         std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
+        uint16_t message_y = k::init_message_y;
+        uint16_t obj_id = 10;
 
-        std::string formatted;
-        
         for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
         {
-            formatted += this->format(*formattable);
+            std::string formatted = this->format(*formattable, message_y, obj_id++);
+            json messages = json::parse(formatted);
+            json& boxes = patch["patcher"]["boxes"];
+            json& lines = patch["patcher"]["lines"];
+
+            boxes.insert(boxes.end(), messages["boxes"].begin(), messages["boxes"].end());
+            lines.insert(lines.end(), messages["lines"].begin(), messages["lines"].end());
+            message_y += k::message_spacing;
         }
         
         return patch.dump(4);
@@ -157,7 +208,7 @@ namespace ml_doc
                                 to_string(message_x) +  " " +
                                 to_string(message_y) +  " " +
                                 f.name_string() + " " + arguments + " " + ";\n";
-        formatted += "#X text " + to_string(message_x + message_comment_distance) + " " + to_string(message_y) + " " + pd_escaped(f.desc_string()) + ";\n";
+        formatted += "#X text " + to_string(message_x + k::message_comment_distance) + " " + to_string(message_y) + " " + pd_escaped(f.desc_string()) + ";\n";
         objects_added = 2;
         
         return formatted;
@@ -169,15 +220,15 @@ namespace ml_doc
         using std::to_string;
         
         std::string formatted = "#N canvas 600 140 900 900 10;\n";
-        uint16_t message_x = init_message_x;
-        uint16_t message_y = init_message_y;
+        uint16_t message_x = k::init_message_x;
+        uint16_t message_y = k::init_message_y;
         uint16_t object_count = 0;
 
-        formatted += "#X obj " + to_string(ml_obj_x) + " " + to_string(ml_obj_y) + " " + f.name_string() + ";\n";
+        formatted += "#X obj " + to_string(k::ml_obj_x) + " " + to_string(k::ml_obj_y) + " " + f.name_string() + ";\n";
         ++object_count;
         
-        formatted += "#X text " + to_string(heading_x) + " " + to_string(heading_y) + " " + pd_escaped(f.desc_string()) + ";\n";
-        formatted += "#X text " + to_string(heading_x) + " " + to_string(heading_y + 20) +
+        formatted += "#X text " + to_string(k::heading_x) + " " + to_string(k::heading_y) + " " + pd_escaped(f.desc_string()) + ";\n";
+        formatted += "#X text " + to_string(k::heading_x) + " " + to_string(k::heading_y + k::heading_spacing) +
         " " + pd_escaped(k::url_preamble + f.url_string()) + ";\n";
         
         object_count += 2;
@@ -190,15 +241,15 @@ namespace ml_doc
             formatted += this->format(*formattable, message_x, message_y, objects_added);
             formatted += "#X connect " + to_string(object_count) + " 0 0 0;\n";
             object_count += objects_added;
-            message_y += 30;
+            message_y += k::message_spacing;
         }
         
         // TODO: abstract this into an add_object helper method
-        formatted += "#X obj " + to_string(ml_obj_x) + " " + to_string(ml_obj_y + 80) + " print left;\n";
+        formatted += "#X obj " + to_string(k::ml_obj_x) + " " + to_string(k::ml_obj_y + 80) + " print left;\n";
         formatted += "#X connect 0 0 " + to_string(object_count) + " 0;\n";
         ++object_count;
         
-        formatted += "#X obj " + to_string(ml_obj_x + 80) + " " + to_string(ml_obj_y + 80) + " print right;\n";
+        formatted += "#X obj " + to_string(k::ml_obj_x + 80) + " " + to_string(k::ml_obj_y + 80) + " print right;\n";
         formatted += "#X connect 0 1 " + to_string(object_count) + " 0;\n";
         
         return formatted;

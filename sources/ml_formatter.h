@@ -38,24 +38,19 @@ namespace ml_doc
     class max_formatter : public generic_formatter
     {
     public:
-        virtual std::string format(const formattable_message_descriptor &descriptor) const;
         virtual std::string format(const formattable_class_descriptor &descriptor) const;
+        virtual std::string format(const formattable_message_descriptor &descriptor) const { return ""; }
+        
+    private:
+        virtual std::string format(const formattable_message_descriptor &descriptor, const uint16_t message_y, const uint16_t obj_id) const;
+
     };
     
     class pd_help_formatter : public generic_formatter
     {
-        static const uint16_t init_message_x = 200;
-        static const uint16_t init_message_y = 120;
-        static const uint16_t ml_obj_x = 30;
-        static const uint16_t ml_obj_y = 700;
-        static const uint16_t heading_x = 30;
-        static const uint16_t heading_y = 40;
-        static const uint16_t message_comment_distance = 200;
-        
     public:
         virtual std::string format(const formattable_class_descriptor &descriptor) const;
-        // It's not meaningful to return "one line" of a Pd patch
-        virtual std::string format(const formattable_message_descriptor &descriptor) const { return ""; };
+        virtual std::string format(const formattable_message_descriptor &descriptor) const { return ""; }; // It's not meaningful to return "one line" of a Pd patch
 
     private:
         std::string format(const formattable_message_descriptor &f, const uint16_t message_x, const uint16_t message_y, uint16_t &objects_added) const;
