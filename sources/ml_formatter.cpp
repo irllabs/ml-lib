@@ -43,7 +43,66 @@ namespace ml_doc
     
     // max_formatter
     
-    std::string max_formatter::format(const formattable_message_descriptor &f, const uint16_t message_y, const uint16_t obj_id) const
+    std::string max_formatter::format(const formattable_message_descriptor &f) const
+    {
+        std::string formatted = f.name_string() + ": " + f.desc_string() + ". ";
+        std::string descriptors = "";
+        std::vector<std::string> allowed_values = f.allowed_values_strings();
+        
+        if (allowed_values.size())
+        {
+            descriptors += "allowed values: [";
+            for (std::string value : allowed_values)
+            {
+                descriptors += value;
+                descriptors += " ";
+            }
+            descriptors += "] ";
+        }
+        
+        if (!f.def_string().empty())
+        {
+            descriptors += "default: " + f.def_string() + " ";
+        }
+        
+        if (!f.min_string().empty())
+        {
+            descriptors += "min: " + f.min_string();
+        }
+        
+        if (!f.max_string().empty())
+        {
+            descriptors += " max: " + f.max_string() + ") ";
+        }
+        
+        if (!descriptors.empty())
+        {
+            formatted += "(" + descriptors + ")";
+        }
+        
+        formatted += "\n";
+        
+        
+        return formatted;
+    }
+    
+    std::string max_formatter::format(const formattable_class_descriptor &f) const
+    {
+        std::string formatted = f.name_string() + ": " + f.desc_string() + "\n";
+        
+        std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
+        
+        for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
+        {
+            formatted += this->format(*formattable);
+        }
+        
+        return formatted;
+    }
+    
+    // max_help_formatter
+    
+    std::string max_help_formatter::format(const formattable_message_descriptor &f, const uint16_t message_y, const uint16_t obj_id) const
     {
         using namespace nlohmann;
         
@@ -87,48 +146,10 @@ namespace ml_doc
             }}
         };
         
-//        std::vector<std::string> allowed_values = f.allowed_values_strings();
-//
-//        if (allowed_values.size())
-//        {
-//            descriptors += "allowed values: [";
-//            for (std::string value : allowed_values)
-//            {
-//                descriptors += value;
-//                descriptors += " ";
-//            }
-//            descriptors += "] ";
-//        }
-//
-//        if (!f.def_string().empty())
-//        {
-//            descriptors += "default: " + f.def_string() + " ";
-//        }
-//
-//        if (!f.min_string().empty())
-//        {
-//            descriptors += "min: " + f.min_string();
-//        }
-//
-//        if (!f.max_string().empty())
-//        {
-//            descriptors += " max: " + f.max_string() + ") ";
-//        }
-//
-//        if (!descriptors.empty())
-//        {
-//            formatted += "(" + descriptors + ")";
-//        }
-//
-//        formatted += "\n";
-//
-//
-//        return formatted;
-        
         return patch.dump();
     }
     
-    std::string max_formatter::format(const formattable_class_descriptor &f) const
+    std::string max_help_formatter::format(const formattable_class_descriptor &f) const
     {
         using namespace nlohmann;
         

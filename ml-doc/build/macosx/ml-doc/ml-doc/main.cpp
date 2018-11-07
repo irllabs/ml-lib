@@ -39,7 +39,7 @@ int main(int argc, const char * argv[])
     }
     else if (arg_exists(argv, argv+argc, "-max"))
     {
-        formatter = std::make_unique<ml_doc::max_formatter>();
+        formatter = std::make_unique<ml_doc::max_help_formatter>();
         file_ext = ".maxhelp";
     }
     
