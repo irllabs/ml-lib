@@ -34,6 +34,9 @@
 /* Begin PBXBuildFile section */
 		7D133C70185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
 		7D133C71185FAB0F0020213F /* ml_mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D133C6E185FAB0F0020213F /* ml_mlp.cpp */; };
+		7D1C403C21935F1900A5BF06 /* ml_zerox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFCB1992BCC500C82004 /* ml_zerox.cpp */; };
+		7D1C403D21935F3500A5BF06 /* ml_dtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1F128190FDAC100F491FB /* ml_dtree.cpp */; };
+		7D1C403E2193600A00A5BF06 /* ml_feature_extraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D65FFC8199259B400C82004 /* ml_feature_extraction.cpp */; };
 		7D2AEA6E1A95270E009F75BE /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
 		7D2AEA701A95270E009F75BE /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
 		7D2AEA711A95270E009F75BE /* ml_doc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D2AEA6C1A95270E009F75BE /* ml_doc.cpp */; };
@@ -2327,6 +2330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D551AFC190FEA80008FF361 /* ml_ml.cpp in Sources */,
+				7D1C403D21935F3500A5BF06 /* ml_dtree.cpp in Sources */,
 				7D2AEA8E1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7DACBF71192B869600F0E7D7 /* ml_base.cpp in Sources */,
 				7DD8C7341B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
@@ -2354,10 +2358,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D65FFE31992C1FF00C82004 /* ml_ml.cpp in Sources */,
+				7D1C403C21935F1900A5BF06 /* ml_zerox.cpp in Sources */,
 				7D71CBC91AADB9980099CD5B /* ml_formatter.cpp in Sources */,
 				7D65FFE41992C1FF00C82004 /* ml_base.cpp in Sources */,
 				7D2AEA8F1A95270E009F75BE /* ml_doc.cpp in Sources */,
 				7D65FFE51992C1FF00C82004 /* ml_classification.cpp in Sources */,
+				7D1C403E2193600A00A5BF06 /* ml_feature_extraction.cpp in Sources */,
 				7DD8C7351B7BA989006D71AD /* ml_doc_populate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
