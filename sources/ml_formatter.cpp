@@ -41,23 +41,32 @@ namespace ml_doc
         static const uint16_t message_comment_distance = 200;
     }
     
-    // max_formatter
+    // free standing functions
     
-    std::string max_formatter::format(const formattable_message_descriptor &f) const
+    std::string get_generic_desc(const formattable_message_descriptor &f)
     {
-        std::string formatted = f.name_string() + ": " + f.desc_string() + ". ";
+        std::string formatted = f.desc_string() + ". ";
         std::string descriptors = "";
         std::vector<std::string> allowed_values = f.allowed_values_strings();
-        
-        if (allowed_values.size())
+        std::size_t num_allowed_values = allowed_values.size();
+       
+        for (int i = 0; i < num_allowed_values; ++i)
         {
-            descriptors += "allowed values: [";
-            for (std::string value : allowed_values)
+            if (i == 0)
             {
-                descriptors += value;
+                descriptors += "allowed values: [";
+            }
+            else
+            {
                 descriptors += " ";
             }
-            descriptors += "] ";
+           
+            descriptors += allowed_values[i];
+            
+            if (i == num_allowed_values - 1)
+            {
+                descriptors += "] ";
+            }
         }
         
         if (!f.def_string().empty())
@@ -67,22 +76,30 @@ namespace ml_doc
         
         if (!f.min_string().empty())
         {
-            descriptors += "min: " + f.min_string();
+            descriptors += "min: " + f.min_string() + " ";
         }
         
         if (!f.max_string().empty())
         {
-            descriptors += " max: " + f.max_string() + ") ";
+            descriptors += "max: " + f.max_string();
         }
+        
+        descriptors = std::regex_replace(descriptors, std::regex(" +$"), "");
         
         if (!descriptors.empty())
         {
             formatted += "(" + descriptors + ")";
         }
         
-        formatted += "\n";
-        
-        
+        return formatted;
+    }
+    
+    
+    // max_formatter
+    
+    std::string max_formatter::format(const formattable_message_descriptor &f) const
+    {
+        std::string formatted = f.name_string() + ": " + get_generic_desc(f) + "\n";
         return formatted;
     }
     
@@ -133,7 +150,7 @@ namespace ml_doc
                 {"numinlets", 1},
                 {"numoutlets", 0},
                 {"patching_rect", { k::init_message_x + k::message_comment_distance, message_y, 0, 20.0 }},
-                {"text", f.desc_string() + " " + arguments}
+                {"text", get_generic_desc(f)}
             }
         }});
         
