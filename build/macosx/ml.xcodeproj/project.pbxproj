@@ -2132,6 +2132,9 @@
 						DevelopmentTeam = 4AXPHKXE7V;
 						ProvisioningStyle = Automatic;
 					};
+					7D551A66190FE523008FF361 = {
+						DevelopmentTeam = 4AXPHKXE7V;
+					};
 					7DD58F341FE2D66400850133 = {
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = 4AXPHKXE7V;
@@ -2927,9 +2930,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
@@ -2963,8 +2968,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 4AXPHKXE7V;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pd_darwin;
