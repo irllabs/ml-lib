@@ -96,13 +96,13 @@ namespace ml_doc
         message_descriptor write(
                                  "write",
                                  "write training data and / or model, first argument gives path to write file",
-                                 "my_ml-lib_data"
+                                 "/path/to/my_ml-lib_data"
                                  );
         
         message_descriptor read(
                                 "read",
                                 "read training data and / or model, first argument gives path to the read file",
-                                "my_ml-lib_data"
+                                "/path/to/my_ml-lib_data"
                                 );
         
         message_descriptor clear(
