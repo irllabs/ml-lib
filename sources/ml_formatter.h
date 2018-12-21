@@ -27,6 +27,9 @@ namespace ml_doc
     class formattable_message_descriptor;
     class formattable_class_descriptor;
 
+    /**
+     Generic interface for formatting descriptors
+     */
     class generic_formatter
     {
     public:
@@ -35,6 +38,9 @@ namespace ml_doc
         virtual std::string format(const formattable_class_descriptor &descriptor) const = 0;
     };
     
+    /**
+     Formatter for formatting doc text that appears in the Max console when requested
+     */
     class max_formatter : public generic_formatter
     {
     public:
@@ -42,6 +48,9 @@ namespace ml_doc
         virtual std::string format(const formattable_class_descriptor &descriptor) const;
     };
     
+    /**
+     Formatter for formatting doc text for Max help files
+     */
     class max_help_formatter : public generic_formatter
     {
     public:
@@ -53,6 +62,9 @@ namespace ml_doc
 
     };
     
+    /**
+     Formatter for formatting doc text that appears in the Pd console when requested
+     */
     class pd_help_formatter : public generic_formatter
     {
     public:
@@ -63,6 +75,9 @@ namespace ml_doc
         std::string format(const formattable_message_descriptor &f, const uint16_t message_x, const uint16_t message_y, uint16_t &objects_added) const;
     };
     
+    /**
+     Formatter for formatting HTML documentation
+     */
     class html_table_formatter : public generic_formatter
     {
     public:

@@ -43,6 +43,9 @@ namespace ml_doc
         return out.str();
     }
     
+    /*
+     Descriptor for a message comprising a selector and an abitrary list of symbols or floats
+     */
     class message_descriptor : public formattable_message_descriptor
     {
     public:
@@ -69,6 +72,9 @@ namespace ml_doc
         virtual std::string example_string(void) const;
     };
     
+    /*
+     Descriptor for a message comprising a selector and a value from a finite set of allowed values
+     */
     template <typename T>
     class valued_message_descriptor : public message_descriptor
     {
@@ -112,6 +118,9 @@ namespace ml_doc
         }
     };
 
+    /*
+     Descriptor for a message comprising a selector and a value within a given range
+     */
     template <typename T>
     class ranged_message_descriptor :
     public valued_message_descriptor<T>
@@ -147,6 +156,10 @@ namespace ml_doc
         }
     };
 
+    /**
+     Descriptor for a Max / Pd object class
+     Also encapsulates the message descriptors for that class
+     */
     class class_descriptor : public formattable_class_descriptor
     {
     public:
@@ -197,6 +210,9 @@ namespace ml_doc
 
     };
 
+    /**
+     Documentation manage to manage the lifetime and access to a set of class descriptors
+     */
     class doc_manager
     {
     public:
