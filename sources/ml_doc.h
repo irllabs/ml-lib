@@ -65,6 +65,7 @@ namespace ml_doc
         const std::string name;
         std::string desc;
         std::string example;
+        std::string insert_before;
         
         // ml_formattable.h pure virtual methods
         virtual std::string desc_string(void) const;
@@ -167,12 +168,27 @@ namespace ml_doc
         class_descriptor(std::string name) : name_(name), parent(nullptr) {};
         class_descriptor(std::string name, const class_descriptor *parent) : name_(name), parent(parent) {};
 
+        /**
+         Insert a message descriptor at the beginning the list of message descriptors
+         */
+        template <typename T>
+        void insert_message_descriptor(const T &message_descriptor)
+        {
+            message_descriptors.emplace(std::begin(message_descriptors), message_descriptor.clone());
+        }
+        
+        /**
+         Add a message descriptor to the list of message descriptors
+         */
         template <typename T>
         void add_message_descriptor(const T &message_descriptor)
         {
             message_descriptors.emplace_back(message_descriptor.clone());
         }
         
+        /**
+         Add a comma separated list of message descriptors to the list of message descriptors
+         */
         template <typename U, typename... T>
         void add_message_descriptor(const U &head, const T &...tail)
         {

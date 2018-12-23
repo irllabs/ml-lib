@@ -101,6 +101,8 @@ namespace ml_doc
             {
                 std::unique_ptr<formattable_message_descriptor> desc_ptr(formattable->clone());
                 std::string name = desc_ptr->name_string();
+                std::string insert_before = formattable->insert_before;
+                
                 if (std::find(names.begin(), names.end(), name) != names.end())
                 {
                     // Don't add duplicate upstream names, but move downstream name to upstream position
@@ -115,8 +117,22 @@ namespace ml_doc
                     }
                     continue;
                 }
-                names.push_back(desc_ptr->name_string());
-                formattables.push_back(std::move(desc_ptr));
+                
+                if (std::find(names.begin(), names.end(), insert_before) != names.end())
+                {
+                    auto formattable_it = std::find_if(formattables.begin(), formattables.end(), [insert_before](const auto& item) -> bool { return item->name_string() == insert_before; }  );
+                    
+                    if (formattable_it != formattables.end())
+                    {
+                        formattables.insert(formattable_it, std::move(desc_ptr));
+                    }
+                }
+                else
+                {
+                    formattables.push_back(std::move(desc_ptr));
+                }
+                
+                names.push_back(name);
             }
             
         }

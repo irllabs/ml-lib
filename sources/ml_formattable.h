@@ -35,7 +35,7 @@ namespace ml_doc
     
     class formattable_message_descriptor : virtual public formattable_descriptor
     {
-    public:
+    public:        
         virtual std::string def_string(void) const { return ""; };
         virtual std::vector<std::string> allowed_values_strings(void) const { std::vector<std::string> empty; return empty;};
         virtual std::string min_string(void) const { return ""; };
