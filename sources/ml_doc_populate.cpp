@@ -136,6 +136,8 @@ namespace ml_doc
                                               0
                                               );
         
+        record.insert_before = "add";
+        
         descriptors[ml::k_base].add_message_descriptor(add, write, read, train, clear, map, help, scaling, probs);
 
         // generic classification descriptor
@@ -488,7 +490,8 @@ namespace ml_doc
                                                                false
                                                                );
   
-        descriptors[ml::k_dtw].add_message_descriptor(record, rejection_mode, warping_radius, offset_time_series, constrain_warping_path, enable_z_normalization, enable_trim_training_data);
+        descriptors[ml::k_dtw].insert_message_descriptor(record);
+        descriptors[ml::k_dtw].add_message_descriptor(rejection_mode, warping_radius, offset_time_series, constrain_warping_path, enable_z_normalization, enable_trim_training_data);
         
         //---- ml.hmm
         ranged_message_descriptor<int> num_states(
@@ -546,7 +549,8 @@ namespace ml_doc
                                                          1.0e-2
                                                          );
         
-        descriptors[ml::k_hmm].add_message_descriptor(record, num_states, num_symbols, model_type, delta, max_num_iterations, num_random_training_iterations, min_improvement);
+        descriptors[ml::k_hmm].insert_message_descriptor(record);
+        descriptors[ml::k_hmm].add_message_descriptor(num_states, num_symbols, model_type, delta, max_num_iterations, num_random_training_iterations, min_improvement);
         
         //---- ml.softmax
         
