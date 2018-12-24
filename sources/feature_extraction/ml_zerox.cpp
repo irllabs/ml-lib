@@ -50,11 +50,11 @@ namespace ml
         
         // Flext attribute setters
         void set_search_window_size(int search_window_size);
-        void set_dead_zone_threshold(int dead_zone_threshold);
+        void set_dead_zone_threshold(float dead_zone_threshold);
         
         // Flext attribute getters
         void get_search_window_size(int &search_window_size) const;
-        void get_dead_zone_threshold(int &dead_zone_threshold) const;
+        void get_dead_zone_threshold(float &dead_zone_threshold) const;
         
         // Pure virtual method implementations
         GRT::FeatureExtraction &get_FeatureExtraction_instance();
@@ -63,7 +63,7 @@ namespace ml
     private:
         // Flext attribute wrappers
         FLEXT_CALLVAR_I(get_search_window_size, set_search_window_size);
-        FLEXT_CALLVAR_I(get_dead_zone_threshold, set_dead_zone_threshold);
+        FLEXT_CALLVAR_F(get_dead_zone_threshold, set_dead_zone_threshold);
         
         // Virtual method override
         virtual const std::string get_object_name(void) const { return object_name; };
@@ -77,7 +77,7 @@ namespace ml
         grt_zerox.setSearchWindowSize(search_window_size);
     }
     
-    void zerox::set_dead_zone_threshold(int dead_zone_threshold)
+    void zerox::set_dead_zone_threshold(float dead_zone_threshold)
     {
         grt_zerox.setDeadZoneThreshold(dead_zone_threshold);
     }
@@ -85,12 +85,12 @@ namespace ml
     // Flext attribute getters
     void zerox::get_search_window_size(int &search_window_size) const
     {
-       // search_window_size = zerox.getSearchWindowSize();
+        search_window_size = grt_zerox.getSearchWindowSize();
     }
     
-    void zerox::get_dead_zone_threshold(int &dead_zone_threshold) const
+    void zerox::get_dead_zone_threshold(float &dead_zone_threshold) const
     {
-       // dead_zone_threshold = zerox.getDeadZoneThreshold();
+       dead_zone_threshold = grt_zerox.getDeadZoneThreshold();
     }
     
     // Implement pure virtual methods
