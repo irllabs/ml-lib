@@ -166,15 +166,15 @@ namespace ml_doc
     
     void doc_manager::add_class_descriptor(std::string name, std::string parent)
     {
+        class_descriptor *parent_obj = nullptr;
         auto it = descriptors.find(parent);
         
-        if (it == descriptors.end())
+        if (it != descriptors.end())
         {
-            assert(false); // add_class_descriptor() is private and we expect a valid parent from our own code
-            return;
+            parent_obj = &it->second;
         }
         
-        class_descriptor descriptor(name, &it->second);
+        class_descriptor descriptor(name, parent_obj);
         descriptors.emplace(name, std::move(descriptor));
     }
     

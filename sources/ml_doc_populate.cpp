@@ -26,7 +26,6 @@ namespace ml_doc
         
         add_class_descriptors(ml::k_base, {
             ml::k_classification,
-            ml::k_feature_extraction,
             ml::k_regression
         });
         
@@ -690,10 +689,12 @@ namespace ml_doc
                                                           5
                                                           );
         
-        message_descriptor peak(
-                                "<float>",
-                                "a floating point value to the inlet updates the current value of the peak detector"
-                                );
+        ranged_message_descriptor<float> peak(
+                                              "float",
+                                              "a floating point value to the inlet updates the current value of the peak detector",
+                                              INFINITY * -1.f, INFINITY,
+                                              1
+                                              );
         
         message_descriptor reset(
                                 "reset",
@@ -711,9 +712,16 @@ namespace ml_doc
                                  );
 
 
-        descriptors[ml::k_peak].add_message_descriptor(peak, reset, timeout, peak_help);
+        descriptors[ml::k_peak].add_message_descriptor(peak, reset, search_window_size, timeout, peak_help);
         
-        //---- ml.minmax        
+        //---- ml.minmax
+        
+        message_descriptor input(
+                                 "list",
+                                 "list of float values in which to find minima and maxima",
+                                 "0.1 0.5 -0.3 0.1 0.2 -0.1 0.7 0.1 0.3"
+                                 );
+        
         ranged_message_descriptor<float> minmax_delta(
                                                       "delta",
                                                       "setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value",
@@ -722,12 +730,32 @@ namespace ml_doc
                                                       1e-6
                                                       );
         
-        descriptors[ml::k_minmax].add_message_descriptor(minmax_delta);
+        descriptors[ml::k_minmax].add_message_descriptor(input, minmax_delta);
         
         //---- ml.zerox
         
+        valued_message_descriptor<float> zerox_map(
+                                                   "map",
+                                                   "a stream of input values in which to detect zero crossings",
+                                                   0.5
+                                                   );
         
+        ranged_message_descriptor<float> dead_zone_threshold(
+                                                             "dead_zone_threshold",
+                                                             "set the dead zone threshold",
+                                                             0.f,
+                                                             1.f,
+                                                             0.01f
+                                                             );
         
-
+        ranged_message_descriptor<int> zerox_search_window_size(
+                                                          "search_window_size",
+                                                          "set the search window size in values",
+                                                          1,
+                                                          500,
+                                                          20
+                                                          );
+        
+        descriptors[ml::k_zerox].add_message_descriptor(dead_zone_threshold, zerox_search_window_size);
     }
 }
