@@ -65,7 +65,7 @@ namespace ml_doc
         descriptors[ml::k_adaboost].desc("Adaptive Boosting").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/AdaBoost");
         descriptors[ml::k_anbc].desc("Adaptive Naive Bayes Classifier").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/ANBC");
         descriptors[ml::k_dtw].desc("Dynamic Time Warping").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/DTW");
-        descriptors[ml::k_hmm].desc("Hidden Markov Model").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM");
+        descriptors[ml::k_hmm].desc("Continuous Hidden Markov Model").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM");
         descriptors[ml::k_softmax].desc("Softmax Classifier").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/Softmax");
         descriptors[ml::k_randforest].desc("Random Forests").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/RandomForests");
         descriptors[ml::k_mindist].desc("Minimum Distance").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/MinDist");
@@ -312,7 +312,13 @@ namespace ml_doc
         //---- ml.svm
         ranged_message_descriptor<int> type(
                                             "type",
-                                            "set SVM type",
+                                            "set SVM type,"
+                                            " 0:C-SVC (multi-class),"
+                                            " 1:nu-SVC (multi-class),"
+                                            " 2:one-class SVM,"
+                                            " 3:epsilon-SVR (regression),"
+                                            " 4:nu-SVR (regression)"
+                                            ,
                                             0,
                                             4,
                                             0
@@ -326,7 +332,12 @@ namespace ml_doc
         
         ranged_message_descriptor<int> kernel(
                                               "kernel",
-                                              "set type of kernel function",
+                                              "set type of kernel function,"
+                                              "0:linear (u'*v),"
+                                              "1:polynomial (gamma*u'*v + coef0)^degree,"
+                                              "2:radial basis function: exp(-gamma*|u-v|^2),"
+                                              "3:sigmoid tanh(gamma*u'*v + coef0),"
+                                              "4:precomputed kernel (kernel values in training_set_file)",
                                               0,
                                               4,
                                               0
@@ -416,7 +427,7 @@ namespace ml_doc
         
         valued_message_descriptor<int> prediction_method(
                                                         "prediction_method",
-                                                         "set the Adaboost prediction method",
+                                                         "set the Adaboost prediction method, 0:MAX_VALUE, 1:MAX_POSITIVE_VALUE",
                                                          {GRT::AdaBoost::MAX_VALUE, GRT::AdaBoost::MAX_POSITIVE_VALUE},
                                                          GRT::AdaBoost::MAX_VALUE
                                                          
@@ -424,7 +435,7 @@ namespace ml_doc
         
         valued_message_descriptor<int> set_weak_classifier(
                                                            "set_weak_classifier",
-                                                           "sets the weak classifier to be used by Adaboost",
+                                                           "sets the weak classifier to be used by Adaboost, 0:DECISION_STUMP, 1:RADIAL_BASIS_FUNCTION",
                                                            {ml::weak_classifiers::DECISION_STUMP, ml::weak_classifiers::RADIAL_BASIS_FUNCTION},
                                                            ml::weak_classifiers::DECISION_STUMP
                                                            );
@@ -448,7 +459,7 @@ namespace ml_doc
         //---- ml.dtw
         valued_message_descriptor<int> rejection_mode(
                                                       "rejection_mode",
-                                                      "sets the method used for null rejection",
+                                                      "sets the method used for null rejection, 0:TEMPLATE_THRESHOLDS, 1:CLASS_LIKELIHOODS, 2:THRESHOLDS_AND_LIKELIHOODS",
                                                       {GRT::DTW::TEMPLATE_THRESHOLDS, GRT::DTW::CLASS_LIKELIHOODS, GRT::DTW::THRESHOLDS_AND_LIKELIHOODS},
                                                       GRT::DTW::TEMPLATE_THRESHOLDS
                                                       );
@@ -511,7 +522,7 @@ namespace ml_doc
         
         valued_message_descriptor<int> model_type(
                                                   "model_type",
-                                                  "set the model type used",
+                                                  "set the model type used, 0:ERGODIC, 1:LEFTRIGHT",
                                                   {HMM_ERGODIC, HMM_LEFTRIGHT},
                                                   HMM_LEFTRIGHT
                                                   );
@@ -534,7 +545,7 @@ namespace ml_doc
         
         ranged_message_descriptor<int> num_random_training_iterations(
                                                                       "num_random_training_iterations",
-                                                                      "setting the number of random training iterations",
+                                                                      "set the number of random training iterations",
                                                                       0,
                                                                       1000,
                                                                       10
@@ -548,8 +559,24 @@ namespace ml_doc
                                                          1.0e-2
                                                          );
         
+        ranged_message_descriptor<int> committee_size(
+                                                      "committee_size",
+                                                      "set the committee size for the number of votes combined to make a prediction",
+                                                      1,
+                                                      1000,
+                                                      5
+                                                      );
+        
+        ranged_message_descriptor<int> downsample_factor(
+                                                      "downsample_facor",
+                                                         "set the downsample factor for the resampling of each training time series. A factor of 5 will result in each time series being resized (smaller) by a factor of 5",
+                                                      1,
+                                                      1000,
+                                                      5
+                                                      );
+        
         descriptors[ml::k_hmm].insert_message_descriptor(record);
-        descriptors[ml::k_hmm].add_message_descriptor(num_states, num_symbols, model_type, delta, max_num_iterations, num_random_training_iterations, min_improvement);
+        descriptors[ml::k_hmm].add_message_descriptor(num_states, num_symbols, model_type, delta, max_num_iterations, num_random_training_iterations, min_improvement, committee_size, downsample_factor);
         
         //---- ml.softmax
         

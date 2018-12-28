@@ -47,12 +47,14 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "delta", set_delta);
             FLEXT_CADDATTR_SET(c, "max_num_iterations", set_max_num_iterations);
             FLEXT_CADDATTR_SET(c, "num_random_training_iterations", set_num_random_training_iterations);
+            FLEXT_CADDATTR_SET(c, "committee_size", set_committee_size);
 
             FLEXT_CADDATTR_GET(c, "num_states", get_num_states);
             FLEXT_CADDATTR_GET(c, "num_symbols", get_num_symbols);
             FLEXT_CADDATTR_GET(c, "num_symbols", get_model_type);
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
+            FLEXT_CADDATTR_GET(c, "committee_size", get_committee_size);
             
             DefineHelp(c, object_name.c_str());
         }
@@ -64,6 +66,8 @@ namespace ml
         void set_delta(int delta);
         void set_max_num_iterations(int max_num_iterations);
         void set_num_random_training_iterations(int num_random_training_iterations);
+        void set_committee_size(int committee_size);
+        void set_downsample_factor(int downsample_factor);
         
         // Flext attribute getters
         void get_num_states(int &num_states) const;
@@ -72,6 +76,8 @@ namespace ml
         void get_delta(int &delta) const;
         void get_max_num_iterations(int &max_num_iterations) const;
         void get_num_random_training_iterations(int &num_random_training_iterations) const;
+        void get_committee_size(int &committee_size) const;
+        void get_downsample_factor(int &downsample_factor) const;
         
         // Implement pure virtual methods
         GRT::Classifier &get_Classifier_instance();
@@ -87,12 +93,17 @@ namespace ml
         FLEXT_CALLVAR_I(get_delta, set_delta);
         FLEXT_CALLVAR_I(get_max_num_iterations, set_max_num_iterations);
         FLEXT_CALLVAR_I(get_num_random_training_iterations, set_num_random_training_iterations);
+        FLEXT_CALLVAR_I(get_committee_size, set_committee_size);
+        FLEXT_CALLVAR_I(get_downsample_factor, set_downsample_factor);
         
         // Virtual method override
         virtual const std::string get_object_name(void) const { return object_name; };
         
         // Instance variables
         GRT::HMM classifier;
+        
+        int committee_size_cache = 5;
+        int downsample_factor_cache = 5;
     };
     
     // Flext attribute setters
@@ -156,6 +167,31 @@ namespace ml
         }
     }
     
+    void hmm::set_committee_size(int committee_size)
+    {
+        bool success = classifier.setCommitteeSize(committee_size);
+        
+        if (!success)
+        {
+            error("unable to set committee size");
+            return;
+        }
+        
+        committee_size_cache = committee_size;
+    }
+    
+    void hmm::set_downsample_factor(int downsample_factor)
+    {
+        bool success = classifier.setDownsampleFactor(downsample_factor);
+        
+        if (!success)
+        {
+            error("unable to set downsample factor");
+            return;
+        }
+        downsample_factor_cache = downsample_factor;
+    }
+    
     // Flext attribute getters
     void hmm::get_num_states(int &num_states) const
     {
@@ -187,6 +223,15 @@ namespace ml
         num_random_training_iterations = classifier.getNumRandomTrainingIterations();
     }
     
+    void hmm::get_committee_size(int &committee_size) const
+    {
+        committee_size = committee_size_cache;
+    }
+    
+    void hmm::get_downsample_factor(int &downsample_factor) const
+    {
+        downsample_factor = downsample_factor_cache;
+    }
     
     // Implement pure virtual methods
     GRT::Classifier &hmm::get_Classifier_instance()
