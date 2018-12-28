@@ -120,7 +120,7 @@ namespace ml_doc
                 
                 if (std::find(names.begin(), names.end(), insert_before) != names.end())
                 {
-                    auto formattable_it = std::find_if(formattables.begin(), formattables.end(), [insert_before](const auto& item) -> bool { return item->name_string() == insert_before; }  );
+                    auto formattable_it = std::find_if(formattables.begin(), formattables.end(), [insert_before](const std::unique_ptr<formattable_message_descriptor>& item) -> bool { return item->name_string() == insert_before; }  );
                     
                     if (formattable_it != formattables.end())
                     {
