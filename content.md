@@ -11,14 +11,14 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
 <tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>num_boosting_iterations</td><td>set the number of boosting iterations that should be used when training the model</td><td></td><td>0</td><td>200</td><td>20</td></tr>
-<tr><td>prediction_method</td><td>set the Adaboost prediction method</td><td>1, 0</td><td></td><td></td><td>1</td></tr>
-<tr><td>set_weak_classifier</td><td>sets the weak classifier to be used by Adaboost</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
+<tr><td>prediction_method</td><td>set the Adaboost prediction method, 0:MAX_VALUE, 1:MAX_POSITIVE_VALUE</td><td>1, 0</td><td></td><td></td><td>1</td></tr>
+<tr><td>set_weak_classifier</td><td>sets the weak classifier to be used by Adaboost, 0:DECISION_STUMP, 1:RADIAL_BASIS_FUNCTION</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>add_weak_classifier</td><td>add a weak classifier to the list of classifiers used by Adaboost</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 </table><h2>ml.anbc</h2>
 <p>Adaptive Naive Bayes Classifier<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/ANBC">http://www.nickgillian.com/wiki/pmwiki.php/GRT/ANBC</a></p>
@@ -32,7 +32,7 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
@@ -50,7 +50,7 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
@@ -66,18 +66,19 @@
 <thead>
 <tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>
 </thead></tr>
+<tr><td>record</td><td>start or stop time series recording for a single example of a given class</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>add</td><td>list comprising a class id followed by n features; <class> <feature 1> <feature 2> etc</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>write</td><td>write training data and / or model, first argument gives path to write file</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>read</td><td>read training data and / or model, first argument gives path to the read file</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
 <tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
-<tr><td>rejection_mode</td><td>sets the method used for null rejection</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
+<tr><td>rejection_mode</td><td>sets the method used for null rejection, 0:TEMPLATE_THRESHOLDS, 1:CLASS_LIKELIHOODS, 2:THRESHOLDS_AND_LIKELIHOODS</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
 <tr><td>warping_radius</td><td>sets the radius of the warping path, which is used if the constrain_warping_path is set to 1</td><td></td><td>0</td><td>1</td><td>0.2</td></tr>
 <tr><td>offset_time_series</td><td>set if each timeseries should be offset by the first sample in the time series</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>constrain_warping_path</td><td>sets the warping path should be constrained to within a specific radius from the main diagonal of the cost matrix</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
@@ -95,36 +96,39 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
 <tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>num_mixture_models</td><td>sets the number of mixture models used for class</td><td></td><td>1</td><td>20</td><td>2</td></tr>
 </table><h2>ml.hmm</h2>
-<p>Hidden Markov Model<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM">http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM</a></p>
+<p>Continuous Hidden Markov Model<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM">http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM</a></p>
 <table>
 <thead>
 <tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>
 </thead></tr>
+<tr><td>record</td><td>start or stop time series recording for a single example of a given class</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>add</td><td>list comprising a class id followed by n features; <class> <feature 1> <feature 2> etc</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>write</td><td>write training data and / or model, first argument gives path to write file</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>read</td><td>read training data and / or model, first argument gives path to the read file</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
 <tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>num_states</td><td>sets the number of states in the model</td><td></td><td>0</td><td>100</td><td>5</td></tr>
 <tr><td>num_symbols</td><td>sets the number of symbols in the model</td><td></td><td>0</td><td>100</td><td>10</td></tr>
-<tr><td>model_type</td><td>set the model type used</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
+<tr><td>model_type</td><td>set the model type used, 0:ERGODIC, 1:LEFTRIGHT</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>delta</td><td>control how many states a model can transition to if the LEFTRIGHT model type is used</td><td></td><td>0</td><td>100</td><td>11</td></tr>
 <tr><td>max_num_iterations</td><td>set the maximum number of training iterations</td><td></td><td>1</td><td>1000</td><td>100</td></tr>
-<tr><td>num_random_training_iterations</td><td>setting the number of random training iterations</td><td></td><td>0</td><td>1000</td><td>10</td></tr>
+<tr><td>num_random_training_iterations</td><td>set the number of random training iterations</td><td></td><td>0</td><td>1000</td><td>10</td></tr>
 <tr><td>min_improvement</td><td>set the minimum improvement parameter which controls when the HMM training algorithm should stop</td><td></td><td>0</td><td>1</td><td>0.01</td></tr>
+<tr><td>committee_size</td><td>set the committee size for the number of votes combined to make a prediction</td><td></td><td>1</td><td>1000</td><td>5</td></tr>
+<tr><td>downsample_facor</td><td>set the downsample factor for the resampling of each training time series. A factor of 5 will result in each time series being resized (smaller) by a factor of 5</td><td></td><td>1</td><td>1000</td><td>5</td></tr>
 </table><h2>ml.knn</h2>
 <p>K Nearest Neighbour<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/KNN">http://www.nickgillian.com/wiki/pmwiki.php/GRT/KNN</a></p>
 <table>
@@ -137,7 +141,7 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
@@ -146,23 +150,6 @@
 <tr><td>min_k_search_value</td><td>set the minimum K value to use when searching for the best K value</td><td></td><td>1</td><td>500</td><td>1</td></tr>
 <tr><td>max_k_search_value</td><td>set the maximum K value to use when searching for the best K value</td><td></td><td>1</td><td>500</td><td>10</td></tr>
 <tr><td>best_k_value_search</td><td>set whether k value search is enabled or not</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
-</table><h2>ml.lda</h2>
-<p>Linear Discriminant Analysis<br/>URL: <a href=""></a></p>
-<table>
-<thead>
-<tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>
-</thead></tr>
-<tr><td>add</td><td>list comprising a class id followed by n features; <class> <feature 1> <feature 2> etc</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>write</td><td>write training data and / or model, first argument gives path to write file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>read</td><td>read training data and / or model, first argument gives path to the read file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
-<tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
-<tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
-<tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 </table><h2>ml.linreg</h2>
 <p>Linear Regression<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression">http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression</a></p>
 <table>
@@ -175,7 +162,7 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>training_rate</td><td>update the weights at each step of the stochastic gradient descent</td><td></td><td>0</td><td>1</td><td>0.1</td></tr>
@@ -193,7 +180,7 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>training_rate</td><td>update the weights at each step of the stochastic gradient descent</td><td></td><td>0</td><td>1</td><td>0.1</td></tr>
@@ -211,7 +198,7 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
@@ -223,15 +210,7 @@
 <thead>
 <tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>
 </thead></tr>
-<tr><td>add</td><td>list comprising a class id followed by n features; <class> <feature 1> <feature 2> etc</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>write</td><td>write training data and / or model, first argument gives path to write file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>read</td><td>read training data and / or model, first argument gives path to the read file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
-<tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
+<tr><td>list</td><td>list of float values in which to find minima and maxima</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>delta</td><td>setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value</td><td></td><td>0</td><td>1</td><td>1e-06</td></tr>
 </table><h2>ml.mlp</h2>
 <p>Multilayer Perceptron<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP">http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP</a></p>
@@ -245,7 +224,7 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>training_rate</td><td>update the weights at each step of the stochastic gradient descent</td><td></td><td>0</td><td>1</td><td>0.1</td></tr>
@@ -272,18 +251,11 @@
 <thead>
 <tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>
 </thead></tr>
-<tr><td>add</td><td>list comprising a class id followed by n features; <class> <feature 1> <feature 2> etc</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>write</td><td>write training data and / or model, first argument gives path to write file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>read</td><td>read training data and / or model, first argument gives path to the read file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
-<tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
-<tr><td><float></td><td>a floating point value to the inlet updates the current value of the peak detector</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>float</td><td>a floating point value to the inlet updates the current value of the peak detector</td><td></td><td>-inf</td><td>inf</td><td>1</td></tr>
 <tr><td>reset</td><td>reset the peak detector</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>search_window_size</td><td>set the search window size in values</td><td></td><td>1</td><td>500</td><td>5</td></tr>
 <tr><td>timeout</td><td>(see GRT documentation)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 </table><h2>ml.randforest</h2>
 <p>Random Forests<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/RandomForests">http://www.nickgillian.com/wiki/pmwiki.php/GRT/RandomForests</a></p>
 <table>
@@ -296,7 +268,7 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
@@ -316,7 +288,7 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
@@ -333,14 +305,14 @@
 <tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0</td><td>1</td><td>0.9</td></tr>
 <tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>cross_validation</td><td>perform cross validation</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>type</td><td>set SVM type</td><td></td><td>0</td><td>4</td><td>0</td></tr>
-<tr><td>kernel</td><td>set type of kernel function</td><td></td><td>0</td><td>4</td><td>0</td></tr>
+<tr><td>type</td><td>set SVM type, 0:C-SVC (multi-class), 1:nu-SVC (multi-class), 2:one-class SVM, 3:epsilon-SVR (regression), 4:nu-SVR (regression)</td><td></td><td>0</td><td>4</td><td>0</td></tr>
+<tr><td>kernel</td><td>set type of kernel function,0:linear (u'*v),1:polynomial (gamma*u'*v + coef0)^degree,2:radial basis function: exp(-gamma*|u-v|^2),3:sigmoid tanh(gamma*u'*v + coef0),4:precomputed kernel (kernel values in training_set_file)</td><td></td><td>0</td><td>4</td><td>0</td></tr>
 <tr><td>degree</td><td>set degree in kernel function</td><td></td><td>0</td><td>20</td><td>3</td></tr>
 <tr><td>gamma</td><td>set gamma in kernel function</td><td></td><td>0</td><td>1</td><td>0.5</td></tr>
 <tr><td>coef0</td><td>coef0 in kernel function</td><td></td><td></td><td></td><td>0</td></tr>
@@ -356,13 +328,6 @@
 <thead>
 <tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>
 </thead></tr>
-<tr><td>add</td><td>list comprising a class id followed by n features; <class> <feature 1> <feature 2> etc</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>write</td><td>write training data and / or model, first argument gives path to write file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>read</td><td>read training data and / or model, first argument gives path to the read file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post this usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
-<tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
+<tr><td>dead_zone_threshold</td><td>set the dead zone threshold</td><td></td><td>0</td><td>1</td><td>0.01</td></tr>
+<tr><td>search_window_size</td><td>set the search window size in values</td><td></td><td>1</td><td>500</td><td>20</td></tr>
 </table>
