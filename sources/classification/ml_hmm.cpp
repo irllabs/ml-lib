@@ -43,7 +43,7 @@ namespace ml
             
             FLEXT_CADDATTR_SET(c, "num_states", set_num_states);
             FLEXT_CADDATTR_SET(c, "num_symbols", set_num_symbols);
-            FLEXT_CADDATTR_SET(c, "num_model_type", set_model_type);
+            FLEXT_CADDATTR_SET(c, "model_type", set_model_type);
             FLEXT_CADDATTR_SET(c, "delta", set_delta);
             FLEXT_CADDATTR_SET(c, "max_num_iterations", set_max_num_iterations);
             FLEXT_CADDATTR_SET(c, "num_random_training_iterations", set_num_random_training_iterations);
@@ -51,7 +51,7 @@ namespace ml
 
             FLEXT_CADDATTR_GET(c, "num_states", get_num_states);
             FLEXT_CADDATTR_GET(c, "num_symbols", get_num_symbols);
-            FLEXT_CADDATTR_GET(c, "num_symbols", get_model_type);
+            FLEXT_CADDATTR_GET(c, "model_type", get_model_type);
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
             FLEXT_CADDATTR_GET(c, "committee_size", get_committee_size);
