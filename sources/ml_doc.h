@@ -208,22 +208,28 @@ namespace ml_doc
             return *this;
         }
         
+        class_descriptor &notes(std::string notes)
+        {
+            notes_ = notes;
+            return *this;
+        }
+        
         std::string print(const generic_formatter &formatter) const;
         
-        // ml_formattable.h pure virtual methods
+        // ml_formattable.h virtual methods
         virtual std::string desc_string(void) const;
         virtual std::string name_string(void) const;
         virtual std::string url_string(void) const;
+        virtual std::string notes_string(void) const;
         virtual std::vector<std::unique_ptr<formattable_message_descriptor>> get_formattable_message_descriptors(void) const;
         
     private:
         std::vector<std::unique_ptr<message_descriptor>> message_descriptors;
         const std::string name_;
         std::string desc_;
+        std::string notes_;
         std::string url_;
         const class_descriptor *parent;
-
-
     };
 
     /**

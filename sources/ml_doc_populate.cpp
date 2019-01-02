@@ -72,7 +72,14 @@ namespace ml_doc
         descriptors[ml::k_knn].desc("K Nearest Neighbour").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/KNN");
         descriptors[ml::k_gmm].desc("Gaussian Mixture Model").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/GMMClassifier");
         descriptors[ml::k_dtree].desc("Decision Trees").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/DecisionTree");
-
+        
+        for (auto& desc : {&descriptors[ml::k_hmm], &descriptors[ml::k_dtw]})
+        {
+            desc->notes(
+                        "add and map messages for time series should be delimited with record messages, e.g. record 1, add 1 40 50, add 1 41 50, record 0"
+            );
+        }
+        
         // base descriptor
         message_descriptor add(
                               "add",

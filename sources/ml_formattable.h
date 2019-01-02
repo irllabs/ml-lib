@@ -31,6 +31,7 @@ namespace ml_doc
         virtual ~formattable_descriptor() {}
         virtual std::string name_string(void) const = 0;
         virtual std::string desc_string(void) const = 0;
+        virtual std::string notes_string(void) const { return ""; };
     };
     
     class formattable_message_descriptor : virtual public formattable_descriptor

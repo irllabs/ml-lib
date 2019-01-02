@@ -29,7 +29,8 @@ namespace ml_doc
     namespace k
     {
         static const std::string url_preamble = "For more information on the technique used, see: ";
-        static const std::string main_obj_id = "obj-1";
+        static const std::string notes_preamble = "NOTES: ";
+        static const std::string main_obj_id = "obj-10000";
         static const uint16_t init_message_x = 200;
         static const uint16_t init_message_y = 120;
         static const uint16_t ml_obj_x = 30;
@@ -40,6 +41,19 @@ namespace ml_doc
         static const uint16_t message_spacing = 30;
         static const uint16_t message_comment_distance = 200;
     }
+    
+    class obj_id
+    {
+    public:
+        static std::string get()
+        {
+            return std::to_string(++current_id);
+        };
+        
+        static int current_id;
+    };
+    
+    int obj_id::current_id = 0;
     
     // free standing functions
     
@@ -119,7 +133,7 @@ namespace ml_doc
     
     // max_help_formatter
     
-    std::string max_help_formatter::format(const formattable_message_descriptor &f, const uint16_t message_y, const uint16_t obj_id) const
+    std::string max_help_formatter::format(const formattable_message_descriptor &f, const uint16_t message_y, const std::string& obj_id) const
     {
         using namespace nlohmann;
         
@@ -127,13 +141,11 @@ namespace ml_doc
         patch["boxes"] = json::array();
                 
         std::string arguments = f.example_string() != "" ? f.example_string() : f.def_string();
-        std::stringstream s("obj-");
-        s << obj_id;
         
         patch["boxes"].push_back(
         {{
             "box", {
-                {"id", s.str()},
+                {"id", obj_id},
                 {"maxclass", "message"},
                 {"numinlets", 2},
                 {"numoutlets", 1},
@@ -145,7 +157,7 @@ namespace ml_doc
         
         patch["boxes"].push_back({{
             "box", {
-                {"id", s.str() + "c"},
+                {"id", obj_id + "c"},
                 {"maxclass", "comment"},
                 {"numinlets", 1},
                 {"numoutlets", 0},
@@ -158,7 +170,7 @@ namespace ml_doc
             {{
                 "patchline", {
                     {"destination", json::array({k::main_obj_id, 0})},
-                    {"source", json::array({s.str(), 0})}
+                    {"source", json::array({obj_id, 0})}
                 }
             }}
         };
@@ -176,7 +188,7 @@ namespace ml_doc
         patch["patcher"]["boxes"] = {
             {{
                 "box", {
-                    {"id", "obj-3"},
+                    {"id", obj_id::get()},
                     {"maxclass", "comment"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
@@ -186,7 +198,7 @@ namespace ml_doc
             }},
             {{
                 "box", {
-                    {"id", "obj-2"},
+                    {"id", obj_id::get()},
                     {"maxclass", "comment"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
@@ -206,15 +218,31 @@ namespace ml_doc
                 }
             }}
         };
+        
+        std::string notes = f.notes_string();
+        if (!notes.empty())
+        {
+            patch["patcher"]["boxes"] +=
+            {{
+                "box", {
+                    {"id", obj_id::get()},
+                    {"maxclass", "comment"},
+                    {"numinlets", 1},
+                    {"numoutlets", 0},
+                    {"patching_rect", { k::heading_x, k::heading_y + k::heading_spacing * 2, 0, 20.0 }},
+                    {"text", k::notes_preamble + notes}
+                }
+            }};
+        }
+        
         patch["patcher"]["lines"] = json::array();
 
         std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
         uint16_t message_y = k::init_message_y;
-        uint16_t obj_id = 10;
 
         for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
         {
-            std::string formatted = this->format(*formattable, message_y, obj_id++);
+            std::string formatted = this->format(*formattable, message_y, obj_id::get());
             json messages = json::parse(formatted);
             json& boxes = patch["patcher"]["boxes"];
             json& lines = patch["patcher"]["lines"];
@@ -269,7 +297,14 @@ namespace ml_doc
         formatted += "#X text " + to_string(k::heading_x) + " " + to_string(k::heading_y + k::heading_spacing) +
         " " + pd_escaped(k::url_preamble + f.url_string()) + ";\n";
         
-        object_count += 2;
+        std::string notes = f.notes_string();
+        if (!notes.empty())
+        {
+            formatted += "#X text " + to_string(450) + " " + to_string(k::heading_y) +
+        " " + pd_escaped(k::notes_preamble + notes) + ";\n";
+        }
+        
+        object_count += 3;
         
         std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
         
@@ -342,7 +377,7 @@ namespace ml_doc
     
     std::string html_table_formatter::format(const formattable_class_descriptor &f) const
     {
-        std::string formatted = "<h2>" + f.name_string() + "</h2>" + "\n" + "<p>" + f.desc_string() + "<br/>URL: <a href=\"" + f.url_string() + "\">" + f.url_string() + "</a></p>\n";
+        std::string formatted = "<h2>" + f.name_string() + "</h2>" + "\n" + "<p>" + f.desc_string() + "<br/>URL: <a href=\"" + f.url_string() + "\">" + f.url_string() + "</a><br/>" + k::notes_preamble + f.notes_string() + "</p>\n";
         
         formatted += "<table>\n<thead>\n<tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>\n</thead></tr>\n";
         

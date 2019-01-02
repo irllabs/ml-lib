@@ -58,7 +58,7 @@ namespace ml_doc
         virtual std::string format(const formattable_message_descriptor &descriptor) const { return ""; }
         
     private:
-        virtual std::string format(const formattable_message_descriptor &descriptor, const uint16_t message_y, const uint16_t obj_id) const;
+        virtual std::string format(const formattable_message_descriptor &descriptor, const uint16_t message_y, const std::string& obj_id) const;
 
     };
     

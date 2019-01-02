@@ -72,6 +72,11 @@ namespace ml_doc
         return url_;
     }
     
+    std::string class_descriptor::notes_string(void) const
+    {
+        return notes_;
+    }
+    
     // formattable_message_descriptors includes all ancestor's descriptors
     std::vector<std::unique_ptr<formattable_message_descriptor> > class_descriptor::get_formattable_message_descriptors(void) const
     {
