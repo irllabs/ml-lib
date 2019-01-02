@@ -393,6 +393,66 @@ namespace ml_doc
         return formatted;
     }
     
+    // maxref xml formatter
+    std::string xml_escaped(const std::string& s)
+    {
+        auto escaped = std::regex_replace(s, std::regex("(<)"), "&lt;");
+        return std::regex_replace(escaped, std::regex("(>)"), "&gt;");
+    }
     
+    std::string maxref_xml_formatter::format(const formattable_message_descriptor &f) const
+    {
+        std::string formatted = "<method name=\"" + f.name_string() + "\">" + "<arglist/>";
+        
+        formatted += "<digest>" + xml_escaped(get_generic_desc(f)) + "</digest>";
+        formatted += "<description></description>";
+        formatted += "</method>";
+        
+        return formatted;
+    }
+    
+    std::string maxref_xml_formatter::format(const formattable_class_descriptor &f) const
+    {
+        std::string formatted = "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?> \
+        <?xml-stylesheet href=\"./_c74_ref.xsl\" type=\"text/xsl\"?> \
+        <c74object name=\"" + f.name_string() +  "\">";
+        
+        formatted += "<digest>" + f.desc_string() + "</digest>" +
+        "<description>" + k::url_preamble + f.url_string() + "</description>" +
+        "<metadatalist> \
+        <metadata name=\"author\">IRL Labs</metadata> \
+        <metadata name=\"tag\">ml.lib</metadata> \
+        <metadata name=\"tag\">Machine Learning</metadata> \
+        <metadata name=\"tag\">64-bit</metadata> \
+        </metadatalist> \
+        <inletlist> \
+        <inlet id=\"0\" type=\"list\"> \
+        <digest>Message inlet: typically add / train / map</digest> \
+        </inlet> \
+        </inletlist> \
+        <outletlist> \
+        <outlet id=\"0\" type=\"int\"> \
+        <digest>Class ID: the output class ID of the classifier</digest> \
+        </outlet> \
+        <outlet id=\"1\" type=\"list\"> \
+        <digest>Message outlet: used for message feedback and class probabilities</digest> \
+        </outlet> \
+        </outletlist>";
+        
+        formatted += "<methodlist>";
+        
+        std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
+        
+        for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
+        {
+            formatted += this->format(*formattable);
+        }
+        
+        formatted += "</methodlist>";
+        formatted += "</c74object>";
+        
+        
+        return formatted;
+    }
     
 }

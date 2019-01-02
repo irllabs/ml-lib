@@ -42,6 +42,15 @@ int main(int argc, const char * argv[])
         formatter = std::make_unique<ml_doc::max_help_formatter>();
         file_ext = ".maxhelp";
     }
+    else if (arg_exists(argv, argv+argc, "-maxref"))
+    {
+        formatter = std::make_unique<ml_doc::maxref_xml_formatter>();
+        file_ext = ".maxref.xml";
+    }
+    else
+    {
+        EXIT_FAILURE;
+    }
     
     ml_doc::doc_manager &doc_manager = ml_doc::doc_manager::shared_instance(*formatter.get());
 

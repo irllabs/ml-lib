@@ -86,6 +86,16 @@ namespace ml_doc
 
     };
     
+    /**
+     Formatter for Max "maxref" XML
+     */
+    class maxref_xml_formatter : public generic_formatter
+    {
+    public:
+        virtual std::string format(const formattable_message_descriptor &descriptor) const;
+        virtual std::string format(const formattable_class_descriptor &descriptor) const;
+    };
+    
 }
 
 
