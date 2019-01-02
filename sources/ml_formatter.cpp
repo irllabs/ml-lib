@@ -192,6 +192,8 @@ namespace ml_doc
                     {"maxclass", "comment"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
+                    {"fontface", 1},
+                    {"fontsize", 16.0},
                     {"patching_rect", { k::heading_x, k::heading_y, 0, 20.0 }},
                     {"text", f.desc_string()}
                 }
