@@ -158,6 +158,7 @@ namespace ml_doc
         patch["boxes"].push_back({{
             "box", {
                 {"id", obj_id + "c"},
+                {"bubble", 1},
                 {"maxclass", "comment"},
                 {"numinlets", 1},
                 {"numoutlets", 0},
@@ -170,6 +171,7 @@ namespace ml_doc
             {{
                 "patchline", {
                     {"destination", json::array({k::main_obj_id, 0})},
+//                    {"hidden", 1},
                     {"source", json::array({obj_id, 0})}
                 }
             }}
@@ -182,9 +184,13 @@ namespace ml_doc
     {
         using namespace nlohmann;
         
+        std::vector<std::unique_ptr<formattable_message_descriptor>> formattable_message_descriptors = f.get_formattable_message_descriptors();
+        
+        const int height = formattable_message_descriptors.size() < 5 ? 300 : 600;
+        
         json patch;
         
-        patch["patcher"] = {{"autosave", 0}, {"rect", {80, 80, 1200, 600}}};
+        patch["patcher"] = {{"autosave", 0}, {"rect", {80, 80, 1200, height}}};
         patch["patcher"]["boxes"] = {
             {{
                 "box", {
@@ -215,7 +221,7 @@ namespace ml_doc
                     {"numinlets", 1},
                     {"numoutlets", 2},
                     {"outlettype", { "", "" }},
-                    {"patching_rect", {k::ml_obj_x, k::ml_obj_y, 0, 22.0 }},
+                    {"patching_rect", {k::ml_obj_x, height - 22, 0, 22.0 }},
                     {"text", f.name_string()}
                 }
             }}
@@ -239,7 +245,6 @@ namespace ml_doc
         
         patch["patcher"]["lines"] = json::array();
 
-        std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
         uint16_t message_y = k::init_message_y;
 
         for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
