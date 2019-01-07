@@ -1,8 +1,0 @@
-#N canvas 300 22 1098 739 10;
-#X obj 159 -348 ml.zerox;
-#X obj 159 -302 print out_vector;
-#X msg 240 -534 help;
-#X msg 178 -658 map 0 0 0 0 1 -1 0 0 0 0;
-#X connect 0 0 1 0;
-#X connect 2 0 0 0;
-#X connect 3 0 0 0;
