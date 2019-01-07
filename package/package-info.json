@@ -1,0 +1,96 @@
+{
+	"author" : "IRL Labs",
+	"authors" : ["Jamie Bullock", "Ali Momeni"  ],
+	"description" : "A library of machine learning externals and feature extraction externals for Max and Pure Data. ml-lib is primarily based on the Gesture Recognition Toolkit by Nick Gillian",
+	"displayname" : "",
+	"extends" : "",
+	"extensible" : 0,
+	"homepatcher" : "ml.lib.maxpat",
+	"max_version_max" : "none",
+	"max_version_min" : "none",
+	"name" : "ml.lib",
+	"os" : 	{
+		"macintosh" : 		{
+			"platform" : [ "x64" ],
+			"min_version" : "none"
+		}
+,
+		"windows" : 		{
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "none"
+		}
+
+	}
+,
+	"package_extra" : 	{
+		"reverse_domain" : "studio.irl",
+		"copyright" : "Copyright © 2019, IRL Labs. All rights reserved."
+	}
+,
+	"tags" : [ "machine learning", "feature extraction" ],
+	"version" : "0.19.0",
+	"website" : "http://irl.studio",
+	"filelist" : 	{
+		"externals" : [ 
+                        "ml.adaboost.mxo",
+                        "ml.dtree.mxo",
+                        "ml.dtw.mxo",
+                        "ml.gmm.mxo",
+                        "ml.hmm.mxo",
+                        "ml.knn.mxo",
+                        "ml.linreg.mxo",
+                        "ml.logreg.mxo",
+                        "ml.mindist.mxo",
+                        "ml.minmax.mxo",
+                        "ml.mlp.mxo",
+                        "ml.peak.mxo",
+                        "ml.randforest.mxo",
+                        "ml.softmax.mxo",
+                        "ml.svm.mxo",
+                        "ml.zerox.mxo"
+                ],
+		"patchers" : [  ],
+		"help" : [ 
+                        "ml.adaboost.maxhelp",
+                        "ml.dtree.maxhelp",
+                        "ml.dtw.maxhelp",
+                        "ml.gmm.maxhelp",
+                        "ml.hmm.maxhelp",
+                        "ml.knn.maxhelp",
+                        "ml.linreg.maxhelp",
+                        "ml.logreg.maxhelp",
+                        "ml.mindist.maxhelp",
+                        "ml.minmax.maxhelp",
+                        "ml.mlp.maxhelp",
+                        "ml.peak.maxhelp",
+                        "ml.randforest.maxhelp",
+                        "ml.softmax.maxhelp",
+                        "ml.svm.maxhelp",
+                        "ml.zerox.maxhelp"
+                ],
+		"media" : [  ],
+		"docs" : [ 
+                        "ml.adaboost.maxref.xml",
+                        "ml.dtree.maxref.xml",
+                        "ml.dtw.maxref.xml",
+                        "ml.gmm.maxref.xml",
+                        "ml.hmm.maxref.xml",
+                        "ml.knn.maxref.xml",
+                        "ml.linreg.maxref.xml",
+                        "ml.logreg.maxref.xml",
+                        "ml.mindist.maxref.xml",
+                        "ml.minmax.maxref.xml",
+                        "ml.mlp.maxref.xml",
+                        "ml.peak.maxref.xml",
+                        "ml.randforest.maxref.xml",
+                        "ml.softmax.maxref.xml",
+                        "ml.svm.maxref.xml",
+                        "ml.zerox.maxref.xml"
+                ],
+		"javascript" : [ ],
+		"extras" : [  ]
+	}
+,
+	"c74install" : 1,
+	"installdate" : 3624515361
+}
