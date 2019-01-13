@@ -8,6 +8,6 @@
       location = "group:ml.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/jamie/Documents/ml-lib/build/macosx/GRT/GRT.xcodeproj">
+      location = "group:GRT/GRT.xcodeproj">
    </FileRef>
 </Workspace>
