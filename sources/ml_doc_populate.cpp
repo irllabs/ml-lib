@@ -575,7 +575,7 @@ namespace ml_doc
                                                       );
         
         ranged_message_descriptor<int> downsample_factor(
-                                                      "downsample_facor",
+                                                      "downsample_factor",
                                                          "set the downsample factor for the resampling of each training time series. A factor of 5 will result in each time series being resized (smaller) by a factor of 5",
                                                       1,
                                                       1000,
