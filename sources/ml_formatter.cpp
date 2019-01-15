@@ -36,8 +36,8 @@ namespace ml_doc
         static const uint16_t ml_obj_x = 30;
         static const uint16_t ml_obj_y = 700;
         static const uint16_t heading_x = 30;
-        static const uint16_t heading_y = 40;
-        static const uint16_t heading_spacing = 20;
+        static const uint16_t heading_y = 35;
+        static const uint16_t heading_spacing = 30;
         static const uint16_t message_spacing = 30;
         static const uint16_t message_comment_distance = 200;
     }
@@ -186,7 +186,7 @@ namespace ml_doc
         
         std::vector<std::unique_ptr<formattable_message_descriptor>> formattable_message_descriptors = f.get_formattable_message_descriptors();
         
-        const int height = formattable_message_descriptors.size() < 5 ? 300 : 600;
+        const int height = formattable_message_descriptors.size() < 5 ? 300 : 650;
         
         json patch;
         
@@ -221,7 +221,7 @@ namespace ml_doc
                     {"numinlets", 1},
                     {"numoutlets", 2},
                     {"outlettype", { "", "" }},
-                    {"patching_rect", {k::ml_obj_x, height - 22, 0, 22.0 }},
+                    {"patching_rect", {k::ml_obj_x, height - 40, 0, 22.0 }},
                     {"text", f.name_string()}
                 }
             }}
