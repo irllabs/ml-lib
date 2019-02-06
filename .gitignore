@@ -31,3 +31,4 @@ DerivedData
 /build/.vs/test/v14/.suo
 ml-doc/build/macosx/ml-doc/ml-doc.xcodeproj/project.xcworkspace/xcshareddata
 build/macosx/ml.xcworkspace/xcshareddata
+/help
