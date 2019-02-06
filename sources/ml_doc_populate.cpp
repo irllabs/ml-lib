@@ -157,7 +157,7 @@ namespace ml_doc
         ranged_message_descriptor<float> null_rejection_coeff(
                                                               "null_rejection_coeff",
                                                               "set a multiplier for the NULL-rejection threshold ",
-                                                              0.0,
+                                                              0.1,
                                                               1.0,
                                                               0.9
                                                               );
