@@ -301,18 +301,22 @@ namespace ml_doc
         ++object_count;
         
         formatted += "#X text " + to_string(k::heading_x) + " " + to_string(k::heading_y) + " " + pd_escaped(f.desc_string()) + ";\n";
+        ++object_count;
+
+        
         formatted += "#X text " + to_string(k::heading_x) + " " + to_string(k::heading_y + k::heading_spacing) +
         " " + pd_escaped(k::url_preamble + f.url_string()) + ";\n";
+        ++object_count;
+
         
         std::string notes = f.notes_string();
         if (!notes.empty())
         {
             formatted += "#X text " + to_string(450) + " " + to_string(k::heading_y) +
         " " + pd_escaped(k::notes_preamble + notes) + ";\n";
+            ++object_count;
         }
-        
-        object_count += 3;
-        
+                
         std::vector<std::unique_ptr<formattable_message_descriptor> > formattable_message_descriptors = f.get_formattable_message_descriptors();
         
         for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
