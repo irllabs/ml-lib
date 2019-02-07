@@ -31,14 +31,18 @@ namespace ml_doc
         static const std::string url_preamble = "For more information on the technique used, see: ";
         static const std::string notes_preamble = "NOTES: ";
         static const std::string main_obj_id = "obj-10000";
-        static const uint16_t init_message_x = 200;
-        static const uint16_t init_message_y = 120;
+        static const std::string printl_obj_id = "obj-10001";
+        static const std::string printr_obj_id = "obj-10002";
+        static const uint16_t init_message_x = 180;
+        static const uint16_t init_message_y = 100;
         static const uint16_t ml_obj_x = 30;
         static const uint16_t ml_obj_y = 700;
         static const uint16_t heading_x = 30;
-        static const uint16_t heading_y = 35;
+        static const uint16_t heading_y = 15;
         static const uint16_t heading_spacing = 30;
         static const uint16_t message_spacing = 30;
+        static const uint16_t tall_patching_height = 650;
+        static const uint16_t short_patching_height = 300;
         static const uint16_t message_comment_distance = 200;
     }
     
@@ -141,19 +145,39 @@ namespace ml_doc
         patch["boxes"] = json::array();
                 
         std::string arguments = f.example_string() != "" ? f.example_string() : f.def_string();
+        std::string name = f.name_string();
+        std::string comparator = "float";
         
-        patch["boxes"].push_back(
-        {{
-            "box", {
-                {"id", obj_id},
-                {"maxclass", "message"},
-                {"numinlets", 2},
-                {"numoutlets", 1},
-                {"outlettype", {""}},
-                {"patching_rect", { k::init_message_x, message_y, 0, 20.0 }},
-                {"text", f.name_string() + " " + arguments}
-            }
-        }});
+        if (name.compare(0, comparator.length(), comparator) == 0)
+        {
+            patch["boxes"].push_back(
+                                     {{
+                "box", {
+                    {"id", obj_id},
+                    {"maxclass", "flonum"},
+                    {"numinlets", 1},
+                    {"numoutlets", 2},
+                    {"outlettype", {"", "bang"}},
+                    {"parameter_enable", 0},
+                    {"patching_rect", { k::init_message_x, message_y, 50, 20.0 }}
+                }
+            }});
+        }
+        else
+        {
+            patch["boxes"].push_back(
+            {{
+                "box", {
+                    {"id", obj_id},
+                    {"maxclass", "message"},
+                    {"numinlets", 2},
+                    {"numoutlets", 1},
+                    {"outlettype", {""}},
+                    {"patching_rect", { k::init_message_x, message_y, 0, 22.0 }},
+                    {"text", f.name_string() + " " + arguments}
+                }
+            }});
+        }
         
         patch["boxes"].push_back({{
             "box", {
@@ -186,13 +210,14 @@ namespace ml_doc
         
         std::vector<std::unique_ptr<formattable_message_descriptor>> formattable_message_descriptors = f.get_formattable_message_descriptors();
         
-        const int height = formattable_message_descriptors.size() < 5 ? 300 : 650;
+        const int height = formattable_message_descriptors.size() < 5 ? k::short_patching_height : k::tall_patching_height;
         
         json patch;
         
         patch["patcher"] = {{"autosave", 0}, {"rect", {80, 80, 1200, height}}};
         patch["patcher"]["boxes"] = {
             {{
+                // Main heading
                 "box", {
                     {"id", obj_id::get()},
                     {"maxclass", "comment"},
@@ -205,6 +230,7 @@ namespace ml_doc
                 }
             }},
             {{
+                // URL
                 "box", {
                     {"id", obj_id::get()},
                     {"maxclass", "comment"},
@@ -215,6 +241,7 @@ namespace ml_doc
                 }
             }},
             {{
+                // The actual ml. object
                 "box", {
                     {"id", k::main_obj_id},
                     {"maxclass", "newobj"},
@@ -223,6 +250,26 @@ namespace ml_doc
                     {"outlettype", { "", "" }},
                     {"patching_rect", {k::ml_obj_x, height - 40, 0, 22.0 }},
                     {"text", f.name_string()}
+                }
+            }},
+            {{
+                "box", {
+                    {"id", k::printl_obj_id},
+                    {"maxclass", "newobj"},
+                    {"numinlets", 1},
+                    {"numoutlets", 0},
+                    {"patching_rect", {k::ml_obj_x, height, 0, 22.0 }},
+                    {"text", "print left"}
+                }
+            }},
+            {{
+                "box", {
+                    {"id", k::printr_obj_id},
+                    {"maxclass", "newobj"},
+                    {"numinlets", 1},
+                    {"numoutlets", 0},
+                    {"patching_rect", {k::ml_obj_x + 130.0, height, 0, 22.0 }},
+                    {"text", "print right"}
                 }
             }}
         };
@@ -246,18 +293,32 @@ namespace ml_doc
         patch["patcher"]["lines"] = json::array();
 
         uint16_t message_y = k::init_message_y;
-
+        json& boxes = patch["patcher"]["boxes"];
+        json& lines = patch["patcher"]["lines"];
+        
         for (std::unique_ptr<formattable_message_descriptor> &formattable : formattable_message_descriptors)
         {
             std::string formatted = this->format(*formattable, message_y, obj_id::get());
             json messages = json::parse(formatted);
-            json& boxes = patch["patcher"]["boxes"];
-            json& lines = patch["patcher"]["lines"];
+            
 
             boxes.insert(boxes.end(), messages["boxes"].begin(), messages["boxes"].end());
             lines.insert(lines.end(), messages["lines"].begin(), messages["lines"].end());
             message_y += k::message_spacing;
         }
+        
+        lines += {{
+            "patchline", {
+                {"destination", json::array({k::printl_obj_id, 0})},
+                {"source", json::array({k::main_obj_id, 0})}
+            }
+        }};
+        lines += {{
+            "patchline", {
+                {"destination", json::array({k::printr_obj_id, 0})},
+                {"source", json::array({k::main_obj_id, 1})}
+            }
+        }};
         
         return patch.dump(4);
     }
@@ -275,12 +336,18 @@ namespace ml_doc
                                           uint16_t &objects_added) const
     {
         using std::to_string;
-        
+        std::string name = f.name_string();
+        std::string comparator = "float";
+        std::string coords = to_string(message_x) +  " " + to_string(message_y);
         std::string arguments = f.example_string() != "" ? f.example_string() : f.def_string();
-        std::string formatted = "#X msg " +
-                                to_string(message_x) +  " " +
-                                to_string(message_y) +  " " +
-                                f.name_string() + " " + arguments + " " + ";\n";
+        std::string formatted = name.compare(0, comparator.length(), comparator) == 0 ?
+                                "#X floatatom " +
+                                coords + " 5 0 0 0 - - -;\n"
+                                :
+                                "#X msg " +
+                                coords +  " " +
+                                name + " " + arguments + " " + ";\n"
+                                ;
         formatted += "#X text " + to_string(message_x + k::message_comment_distance) + " " + to_string(message_y) + " " + pd_escaped(f.desc_string()) + ";\n";
         objects_added = 2;
         

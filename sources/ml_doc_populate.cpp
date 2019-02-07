@@ -165,7 +165,7 @@ namespace ml_doc
         descriptors[ml::k_classification].add_message_descriptor(null_rejection_coeff, null_rejection);
         
         // generic feature extraction descriptor
-        descriptors[ml::k_feature_extraction].add_message_descriptor(null_rejection_coeff, null_rejection);
+//        descriptors[ml::k_feature_extraction].add_message_descriptor(null_rejection_coeff, null_rejection);
 
         // generic regression descriptor
         ranged_message_descriptor<float> training_rate(
@@ -725,7 +725,7 @@ namespace ml_doc
         
         ranged_message_descriptor<float> peak(
                                               "float",
-                                              "a floating point value to the inlet updates the current value of the peak detector",
+                                              "set the current value of the peak detector, a bang will be output when a peak is detected",
                                               INFINITY * -1.f, INFINITY,
                                               1
                                               );
@@ -735,18 +735,13 @@ namespace ml_doc
                                 "reset the peak detector"
                                 );
         
-        message_descriptor timeout(
-                                 "timeout",
-                                 "(see GRT documentation)" // TODO: add documentation!
-                                 );
-        
         message_descriptor peak_help(
                                  "help",
                                  "post usage statement to the console"
                                  );
 
 
-        descriptors[ml::k_peak].add_message_descriptor(peak, reset, search_window_size, timeout, peak_help);
+        descriptors[ml::k_peak].add_message_descriptor(peak, reset, search_window_size, peak_help);
         
         //---- ml.minmax
         
