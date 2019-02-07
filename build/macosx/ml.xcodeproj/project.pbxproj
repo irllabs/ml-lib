@@ -849,16 +849,6 @@
 		7D7DA0B318F69B7100F417F6 /* ml.minmax.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ml.minmax.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA0DA18F6A63E00F417F6 /* ml.svm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.svm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA0DC18F6C34C00F417F6 /* ml_anbc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_anbc.cpp; path = ../../sources/classification/ml_anbc.cpp; sourceTree = "<group>"; };
-		7D7DA0E018F7CF3700F417F6 /* ml.adaboost.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.adaboost.maxhelp; path = ../../documentation/help/max/ml.adaboost.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E218F7CFA300F417F6 /* ml.dtw.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.dtw.maxhelp; path = ../../documentation/help/max/ml.dtw.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E318F7CFA300F417F6 /* ml.hmm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.hmm.maxhelp; path = ../../documentation/help/max/ml.hmm.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E418F7CFA300F417F6 /* ml.linreg.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.linreg.maxhelp; path = ../../documentation/help/max/ml.linreg.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E518F7CFA300F417F6 /* ml.logreg.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.logreg.maxhelp; path = ../../documentation/help/max/ml.logreg.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E618F7CFA300F417F6 /* ml.minmax.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.minmax.maxhelp; path = ../../documentation/help/max/ml.minmax.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.mlp.maxhelp; path = ../../documentation/help/max/ml.mlp.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E818F7CFA300F417F6 /* ml.peak.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.peak.maxhelp; path = ../../documentation/help/max/ml.peak.maxhelp; sourceTree = "<group>"; };
-		7D7DA0E918F7CFA300F417F6 /* ml.svm.maxhelp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ml.svm.maxhelp; path = ../../documentation/help/max/ml.svm.maxhelp; sourceTree = "<group>"; };
-		7D7DA0EB18F7CFD200F417F6 /* ml.svm-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ml.svm-help.pd"; path = "../../documentation/help/pd/ml.svm-help.pd"; sourceTree = "<group>"; };
 		7D7DA0FA18F7DC5600F417F6 /* ml.adaboost.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.adaboost.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA10918F7DC8900F417F6 /* ml.linreg.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.linreg.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA11818F7DCA600F417F6 /* ml.logreg.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.logreg.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -896,7 +886,6 @@
 		7DEE4F5E18BD3F38001A1294 /* ml_classification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_classification.h; path = ../../sources/classification/ml_classification.h; sourceTree = "<group>"; };
 		7DF077F71847577100C55E3C /* ml_svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_svm.cpp; path = ../../sources/classification/ml_svm.cpp; sourceTree = "<group>"; };
 		7DF077FB184758C300C55E3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DFA31B61994CC3E005A77C1 /* ml.zerox-help.pd */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ml.zerox-help.pd"; path = "../../documentation/help/pd/ml.zerox-help.pd"; sourceTree = "<group>"; };
 		7DFC38B21AFA2F9A0068E111 /* flext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = flext.h; path = ../../flext/source/flext.h; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* ml.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98573560D9E52D300682171 /* ml_ml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_ml.cpp; path = ../../sources/ml_ml.cpp; sourceTree = "<group>"; };
@@ -1348,17 +1337,6 @@
 		7D580B7B18A4F6AE004ADEFF /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				7D7DA0EB18F7CFD200F417F6 /* ml.svm-help.pd */,
-				7D7DA0E218F7CFA300F417F6 /* ml.dtw.maxhelp */,
-				7D7DA0E318F7CFA300F417F6 /* ml.hmm.maxhelp */,
-				7D7DA0E418F7CFA300F417F6 /* ml.linreg.maxhelp */,
-				7D7DA0E518F7CFA300F417F6 /* ml.logreg.maxhelp */,
-				7DFA31B61994CC3E005A77C1 /* ml.zerox-help.pd */,
-				7D7DA0E618F7CFA300F417F6 /* ml.minmax.maxhelp */,
-				7D7DA0E718F7CFA300F417F6 /* ml.mlp.maxhelp */,
-				7D7DA0E818F7CFA300F417F6 /* ml.peak.maxhelp */,
-				7D7DA0E918F7CFA300F417F6 /* ml.svm.maxhelp */,
-				7D7DA0E018F7CF3700F417F6 /* ml.adaboost.maxhelp */,
 			);
 			name = Help;
 			sourceTree = "<group>";
