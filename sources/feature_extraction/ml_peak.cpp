@@ -33,7 +33,6 @@ namespace ml
         {
             post("Peak Detection based on the GRT library version " + GRT::GRTBase::getGRTRevison());
             FLEXT_ADDMETHOD(0, update);
-            FLEXT_ADDMETHOD(0, peaks);
         }
         
     protected:
@@ -42,32 +41,28 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "search_window_size", set_search_window_size);
             
             FLEXT_CADDMETHOD_(c, 0, "reset", reset);
-            FLEXT_CADDMETHOD_(c, 0, "timeout", timeout);
-            
+            FLEXT_CADDMETHOD_(c, 0, "help", usage);
+
             DefineHelp(c, object_name.c_str());
         }
         
         // Methods
         void update(float f);
-        void peaks(int argc, t_atom *argv);
         void reset();
-        void timeout();
-        void usage();
+        void usage() const;
   
         // Flext attribute setters
         void set_search_window_size(int search_window_size);
 
-        
         // Flext attribute getters
         
     private:
         
         // Flext method wrappers
         FLEXT_CALLBACK_F(update);
-        FLEXT_CALLBACK_V(peaks);
         FLEXT_CALLBACK(reset);
-        FLEXT_CALLBACK(timeout);
-        
+        FLEXT_CALLBACK(usage);
+
         // Flext attribute wrappers
         FLEXT_CALLSET_I(set_search_window_size);
 
@@ -86,67 +81,10 @@ namespace ml
             error("unable to set search window size");
         }
     }
-
-    
-    // Flext attribute getters
-    
-    // Methods
-    void peak::peaks(int argc, t_atom *argv)
-    {
-        AtomList peaks;
-        bool peakFound = false;
-        
-        
-        // TODO: update this when we the GRT code is complete
-        error("peak detection currently not fully implemented in GRT");
-        return;
-        
-        
-        for (uint32_t index = 0; index < (unsigned)argc; ++index)
-        {
-            float value = GetAFloat(argv[index]);
-        
-            peakFound = peakDetection.update(value);
-
-            if (peakFound)
-            {
-                t_atom location_a;
-                t_atom value_a;
-                
-                uint32_t rel_index = 0; // peakDetection.getPeakLocation();
-                uint32_t abs_index = index - rel_index;
-                
-                if (rel_index > index)
-                {
-                    error("peak reported is in previous block");
-                    continue;
-                }
-                
-                SetInt(location_a, abs_index);
-                SetFloat(value_a, GetAFloat(argv[abs_index]));
-                
-                peaks.Append(location_a);
-                peaks.Append(value_a);
-            }
-        }
-        
-        if (peakFound)
-        {
-            ToOutList(0, peaks);
-        }
-    }
     
     void peak::update(float f)
     {
-        // TODO: update this when we the GRT code is complete
-//        error("peak detection currently not fully implemented in GRT");
-//        return;
-//        
-        
         bool peakFound = peakDetection.update(f);
-//        float derivative = peakDetection.getDerivative();
-
-//        ToOutFloat(1, derivative);
         
         if (peakFound)
         {
@@ -164,19 +102,9 @@ namespace ml
         }
     }
     
-    void peak::timeout()
+    void peak::usage() const
     {
-        // TODO: update this when we the GRT code is complete
-        error("peak detection currently not fully implemented in GRT");
-        return;
-
-        
-        bool success = true;// peakDetection.triggerGateTimeout();
-        
-        if (!success)
-        {
-            error("unable to trigger gate timeout");
-        }
+        post(get_help_string());
     }
 
        typedef class peak ml0x2epeak;
