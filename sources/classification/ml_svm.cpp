@@ -124,6 +124,7 @@ namespace ml
 			ss << "Support Vector Machines based on the GRT library version " << GRT::GRTBase::getGRTVersion();
             post(ss.str());
             set_scaling(defaults::scaling);
+            set_probs(defaults::probabilities);
 			//std::string test(GRT::GRTBase::getGRTVersion());
         }
         

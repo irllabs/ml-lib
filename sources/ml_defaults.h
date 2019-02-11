@@ -17,6 +17,7 @@ namespace ml
     {
         
         const bool scaling = true;
+        const bool probabilities = false;
         const unsigned int num_input_dimensions = 2;
         const unsigned int num_output_dimensions = 1;
         const unsigned int num_hidden_neurons = 2;
