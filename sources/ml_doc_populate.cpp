@@ -371,27 +371,31 @@ namespace ml_doc
                                               0.5
                                               );
         
-        valued_message_descriptor<float> coef0(
+        ranged_message_descriptor<float> coef0(
                                                "coef0",
                                                "coef0 in kernel function",
+                                               INFINITY * -1.f, INFINITY,
                                                0.0
                                                );
         
-        valued_message_descriptor<float> cost(
+        ranged_message_descriptor<float> cost(
                                                "cost",
                                                "set the parameter C of C-SVC, epsilon-SVR, and nu-SVR",
+                                               INFINITY * -1.f, INFINITY,
                                                1.0
                                                );
         
-        valued_message_descriptor<float> nu(
+        ranged_message_descriptor<float> nu(
                                               "nu",
                                               "set the parameter nu of nu-SVC, one-class SVM, and nu-SVR",
+                                              INFINITY * -1.f, INFINITY,
                                               0.5
                                               );
         
-        valued_message_descriptor<float> epsilon(
+        ranged_message_descriptor<float> epsilon(
                                             "epsilon",
                                             "set the epsilon in loss function of epsilon-SVR",
+                                            INFINITY * -1.f, INFINITY,
                                             0.1
                                             );
         
