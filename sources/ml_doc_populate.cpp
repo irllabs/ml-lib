@@ -785,6 +785,6 @@ namespace ml_doc
                                                           20
                                                           );
         
-        descriptors[ml::k_zerox].add_message_descriptor(dead_zone_threshold, zerox_search_window_size);
+        descriptors[ml::k_zerox].add_message_descriptor(zerox_map, dead_zone_threshold, zerox_search_window_size);
     }
 }
