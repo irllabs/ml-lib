@@ -34,7 +34,7 @@ namespace ml
         
     public:
         minmax()
-        : delta(1e-6)
+        : delta(0.1)
         {
             post("Peak / valley detection based on Eli Billauer's peakdet");
             FLEXT_ADDMETHOD(0, input);

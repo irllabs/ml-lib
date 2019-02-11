@@ -756,7 +756,7 @@ namespace ml_doc
                                                       "setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value",
                                                       0,
                                                       1,
-                                                      1e-6
+                                                      0.1
                                                       );
         
         descriptors[ml::k_minmax].add_message_descriptor(input, minmax_delta);
