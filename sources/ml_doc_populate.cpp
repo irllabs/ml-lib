@@ -339,11 +339,11 @@ namespace ml_doc
         
         ranged_message_descriptor<int> kernel(
                                               "kernel",
-                                              "set type of kernel function,"
-                                              "0:linear (u'*v),"
-                                              "1:polynomial (gamma*u'*v + coef0)^degree,"
-                                              "2:radial basis function: exp(-gamma*|u-v|^2),"
-                                              "3:sigmoid tanh(gamma*u'*v + coef0),"
+                                              "set type of kernel function, "
+                                              "0:linear, " // (u'*v),"
+                                              "1:polynomial, " // (gamma*u'*v + coef0)^degree,"
+                                              "2:radial basis function, " //: exp(-gamma*|u-v|^2),"
+                                              "3:sigmoid, " //  tanh(gamma*u'*v + coef0),"
                                               "4:precomputed kernel (kernel values in training_set_file)",
                                               0,
                                               4,
