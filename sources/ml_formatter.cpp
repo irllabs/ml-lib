@@ -209,6 +209,7 @@ namespace ml_doc
         using namespace nlohmann;
         
         std::vector<std::unique_ptr<formattable_message_descriptor>> formattable_message_descriptors = f.get_formattable_message_descriptors();
+        auto url_text = f.url_string().empty() ? "" : k::url_preamble + f.url_string();
         
         const int height = formattable_message_descriptors.size() < 5 ? k::short_patching_height : k::tall_patching_height;
         
@@ -237,7 +238,7 @@ namespace ml_doc
                     {"numinlets", 1},
                     {"numoutlets", 0},
                     {"patching_rect", { k::heading_x, k::heading_y + k::heading_spacing, 0, 20.0 }},
-                    {"text", k::url_preamble + f.url_string()}
+                    {"text", url_text}
                 }
             }},
             {{
@@ -248,7 +249,7 @@ namespace ml_doc
                     {"numinlets", 1},
                     {"numoutlets", 2},
                     {"outlettype", { "", "" }},
-                    {"patching_rect", {k::ml_obj_x, height - 40, 0, 22.0 }},
+                    {"patching_rect", {k::ml_obj_x, height - 50, 0, 22.0 }},
                     {"text", f.name_string()}
                 }
             }},
