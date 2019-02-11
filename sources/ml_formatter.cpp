@@ -269,7 +269,7 @@ namespace ml_doc
                     {"maxclass", "newobj"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
-                    {"patching_rect", {k::ml_obj_x + 27, height, 0, 22.0 }},
+                    {"patching_rect", {k::ml_obj_x + 27, height + 80, 0, 22.0 }},
                     {"text", "print right"}
                 }
             }}
