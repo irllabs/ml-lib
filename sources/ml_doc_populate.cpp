@@ -596,8 +596,8 @@ namespace ml_doc
                                                          100
                                                          );
         
-        ranged_message_descriptor<int> num_samples_per_node(
-                                                            "num_samples_per_node",
+        ranged_message_descriptor<int> min_samples_per_node2(
+                                                            "min_samples_per_node",
                                                             "set the minimum number of samples that are allowed per node",
                                                             1,
                                                             100,
@@ -612,7 +612,7 @@ namespace ml_doc
                                                  10
                                                  );
 
-        descriptors[ml::k_randforest].add_message_descriptor(num_random_splits, num_samples_per_node, max_depth);
+        descriptors[ml::k_randforest].add_message_descriptor(num_random_splits, min_samples_per_node2, max_depth);
         
         //----ml.mindist
         ranged_message_descriptor<int> num_clusters(
