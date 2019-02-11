@@ -407,9 +407,10 @@ namespace ml_doc
                                                  100
                                                  );
         
-        valued_message_descriptor<float> tolerance(
+        ranged_message_descriptor<float> tolerance(
                                                    "tolerance",
                                                    "set tolerance of termination criterion",
+                                                   INFINITY * -1.f, INFINITY,
                                                    0.001
                                                    );
 
