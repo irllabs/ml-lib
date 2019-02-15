@@ -42,7 +42,6 @@ namespace ml
             classification::setup(c);
             
             FLEXT_CADDATTR_SET(c, "num_states", set_num_states);
-            FLEXT_CADDATTR_SET(c, "num_symbols", set_num_symbols);
             FLEXT_CADDATTR_SET(c, "model_type", set_model_type);
             FLEXT_CADDATTR_SET(c, "delta", set_delta);
             FLEXT_CADDATTR_SET(c, "max_num_iterations", set_max_num_iterations);
@@ -50,7 +49,6 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "committee_size", set_committee_size);
 
             FLEXT_CADDATTR_GET(c, "num_states", get_num_states);
-            FLEXT_CADDATTR_GET(c, "num_symbols", get_num_symbols);
             FLEXT_CADDATTR_GET(c, "model_type", get_model_type);
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
@@ -61,7 +59,6 @@ namespace ml
         
         // Flext attribute setters
         void set_num_states(int num_states);
-        void set_num_symbols(int num_symbols);
         void set_model_type(int model_type);
         void set_delta(int delta);
         void set_max_num_iterations(int max_num_iterations);
@@ -71,7 +68,6 @@ namespace ml
         
         // Flext attribute getters
         void get_num_states(int &num_states) const;
-        void get_num_symbols(int &num_symbols) const;
         void get_model_type(int &model_type) const;
         void get_delta(int &delta) const;
         void get_max_num_iterations(int &max_num_iterations) const;
@@ -88,7 +84,6 @@ namespace ml
     private:
         // Flext attribute wrappers
         FLEXT_CALLVAR_I(get_num_states, set_num_states);
-        FLEXT_CALLVAR_I(get_num_symbols, set_num_symbols);
         FLEXT_CALLVAR_I(get_model_type, set_model_type);
         FLEXT_CALLVAR_I(get_delta, set_delta);
         FLEXT_CALLVAR_I(get_max_num_iterations, set_max_num_iterations);
@@ -114,16 +109,6 @@ namespace ml
         if (!success)
         {
             error("unable to set number of states");
-        }
-    }
-    
-    void hmm::set_num_symbols(int num_symbols)
-    {
-        bool success = classifier.setNumSymbols(num_symbols);
-        
-        if (!success)
-        {
-            error("unable to set number of symbols");
         }
     }
     
