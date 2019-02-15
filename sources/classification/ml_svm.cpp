@@ -139,7 +139,7 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "cost", set_cost);
             FLEXT_CADDATTR_SET(c, "nu", set_nu);
             FLEXT_CADDATTR_SET(c, "probs", set_probs);
-            FLEXT_CADDATTR_SET(c, "mode", set_kfold_value);
+            FLEXT_CADDATTR_SET(c, "num_folds", set_kfold_value);
             FLEXT_CADDATTR_SET(c, "enable_cross_validation", set_enable_cross_validation);
             
             FLEXT_CADDATTR_GET(c, "type", get_type);
@@ -150,7 +150,7 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "cost", get_cost);
             FLEXT_CADDATTR_GET(c, "nu", get_nu);
             FLEXT_CADDATTR_GET(c, "probs", get_probs);
-            FLEXT_CADDATTR_GET(c, "mode", get_kfold_value);
+            FLEXT_CADDATTR_GET(c, "num_folds", get_kfold_value);
             
             FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
             
@@ -295,6 +295,11 @@ namespace ml
         std::string kernel_s = grt_svm.getKernelType();
         kernel = svm_kernel_type_from_kernel_string(kernel_s);
         
+    }
+    
+    void svm::get_kfold_value(int &mode) const
+    {
+        mode = grt_svm.getKFoldCrossValidationValue();
     }
     
     void svm::get_degree(int &degree) const

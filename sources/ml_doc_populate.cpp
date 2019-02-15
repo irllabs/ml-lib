@@ -392,41 +392,19 @@ namespace ml_doc
                                               0.5
                                               );
         
-        ranged_message_descriptor<float> epsilon(
-                                            "epsilon",
-                                            "set the epsilon in loss function of epsilon-SVR",
-                                            INFINITY * -1.f, INFINITY,
-                                            0.1
-                                            );
-        
-        ranged_message_descriptor<int> cachesize(
-                                                 "cachesize",
-                                                 "set cache memory size in MB",
-                                                 8,
-                                                 1024,
-                                                 100
-                                                 );
-        
-        ranged_message_descriptor<float> tolerance(
-                                                   "tolerance",
-                                                   "set tolerance of termination criterion",
-                                                   INFINITY * -1.f, INFINITY,
-                                                   0.001
-                                                   );
-
-        valued_message_descriptor<bool> shrinking(
-                                                   "shrinking",
-                                                   "whether to use the shrinking heuristics",
-                                                  {0, 1},
-                                                  1
-                                                   );
-        
         message_descriptor cross_validation(
                                             "cross_validation",
                                             "perform cross validation"
                                             );
         
-        descriptors[ml::k_svm].add_message_descriptor(cross_validation, type, kernel, degree, svm_gamma, coef0, cost, nu, epsilon, cachesize, tolerance, shrinking);
+        ranged_message_descriptor<int> num_folds(
+                                                 "num_folds",
+                                                 "set the number of folds used for cross validation",
+                                                 1, 100,
+                                                 10
+                                                 );
+        
+        descriptors[ml::k_svm].add_message_descriptor(cross_validation, num_folds, type, kernel, degree, svm_gamma, coef0, cost, nu);
         
         //---- ml.adaboost        
         ranged_message_descriptor<int> num_boosting_iterations(
@@ -524,14 +502,6 @@ namespace ml_doc
                                                   5
                                                   );
         
-        ranged_message_descriptor<int> num_symbols(
-                                                  "num_symbols",
-                                                  "sets the number of symbols in the model",
-                                                  0,
-                                                  100,
-                                                  10
-                                                  );
-        
         valued_message_descriptor<int> model_type(
                                                   "model_type",
                                                   "set the model type used, 0:ERGODIC, 1:LEFTRIGHT",
@@ -588,7 +558,7 @@ namespace ml_doc
                                                       );
         
         descriptors[ml::k_hmm].insert_message_descriptor(record);
-        descriptors[ml::k_hmm].add_message_descriptor(num_states, num_symbols, model_type, delta, max_num_iterations, num_random_training_iterations, min_improvement, committee_size, downsample_factor);
+        descriptors[ml::k_hmm].add_message_descriptor(num_states, model_type, delta, max_num_iterations, num_random_training_iterations, min_improvement, committee_size, downsample_factor);
         
         //---- ml.softmax
         
