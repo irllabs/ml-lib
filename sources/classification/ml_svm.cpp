@@ -139,7 +139,6 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "cost", set_cost);
             FLEXT_CADDATTR_SET(c, "nu", set_nu);
             FLEXT_CADDATTR_SET(c, "probs", set_probs);
-            FLEXT_CADDATTR_SET(c, "weights", set_weights);
             FLEXT_CADDATTR_SET(c, "mode", set_kfold_value);
             FLEXT_CADDATTR_SET(c, "enable_cross_validation", set_enable_cross_validation);
             
@@ -151,7 +150,6 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "cost", get_cost);
             FLEXT_CADDATTR_GET(c, "nu", get_nu);
             FLEXT_CADDATTR_GET(c, "probs", get_probs);
-            FLEXT_CADDATTR_GET(c, "weights", get_weights);
             FLEXT_CADDATTR_GET(c, "mode", get_kfold_value);
             
             FLEXT_CADDMETHOD_(c, 0, "cross_validation", cross_validation);
@@ -170,7 +168,6 @@ namespace ml
         void set_cost(float cost);
         void set_nu(float nu);
         void set_probs(bool probs);
-        void set_weights(const AtomList &weights);
         void set_kfold_value(int mode);
         void set_enable_cross_validation(bool enable_cross_validation);
         
@@ -183,7 +180,6 @@ namespace ml
         void get_cost(float &cost) const;
         void get_nu(float &nu) const;
         void get_probs(bool &probs) const;
-        void get_weights(AtomList &weights) const;
         void get_kfold_value(int &mode) const;
         
         // Pure virtual method implementations
@@ -203,7 +199,6 @@ namespace ml
         FLEXT_CALLVAR_F(get_cost, set_cost);
         FLEXT_CALLVAR_F(get_nu, set_nu);
         FLEXT_CALLVAR_B(get_probs, set_probs);
-        FLEXT_CALLVAR_V(get_weights, set_weights);
         FLEXT_CALLVAR_I(get_kfold_value, set_kfold_value);
         FLEXT_CALLSET_B(set_enable_cross_validation);
         
