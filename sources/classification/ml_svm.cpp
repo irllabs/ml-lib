@@ -138,9 +138,6 @@ namespace ml
             FLEXT_CADDATTR_SET(c, "coef0", set_coef0);
             FLEXT_CADDATTR_SET(c, "cost", set_cost);
             FLEXT_CADDATTR_SET(c, "nu", set_nu);
-            FLEXT_CADDATTR_SET(c, "epsilon", set_epsilon);
-            FLEXT_CADDATTR_SET(c, "cachesize", set_cachesize);
-            FLEXT_CADDATTR_SET(c, "shrinking", set_shrinking);
             FLEXT_CADDATTR_SET(c, "probs", set_probs);
             FLEXT_CADDATTR_SET(c, "weights", set_weights);
             FLEXT_CADDATTR_SET(c, "mode", set_kfold_value);
@@ -153,9 +150,6 @@ namespace ml
             FLEXT_CADDATTR_GET(c, "coef0", get_coef0);
             FLEXT_CADDATTR_GET(c, "cost", get_cost);
             FLEXT_CADDATTR_GET(c, "nu", get_nu);
-            FLEXT_CADDATTR_GET(c, "epsilon", get_epsilon);
-            FLEXT_CADDATTR_GET(c, "cachesize", get_cachesize);
-            FLEXT_CADDATTR_GET(c, "shrinking", get_shrinking);
             FLEXT_CADDATTR_GET(c, "probs", get_probs);
             FLEXT_CADDATTR_GET(c, "weights", get_weights);
             FLEXT_CADDATTR_GET(c, "mode", get_kfold_value);
@@ -175,9 +169,6 @@ namespace ml
         void set_coef0(float coef0);
         void set_cost(float cost);
         void set_nu(float nu);
-        void set_epsilon(float epsilon);
-        void set_cachesize(int cachesize);
-        void set_shrinking(int shrinking);
         void set_probs(bool probs);
         void set_weights(const AtomList &weights);
         void set_kfold_value(int mode);
@@ -191,9 +182,6 @@ namespace ml
         void get_coef0(float &coef0) const;
         void get_cost(float &cost) const;
         void get_nu(float &nu) const;
-        void get_epsilon(float &epsilon) const;
-        void get_cachesize(int &cachesize) const;
-        void get_shrinking(int &shrinking) const;
         void get_probs(bool &probs) const;
         void get_weights(AtomList &weights) const;
         void get_kfold_value(int &mode) const;
@@ -214,9 +202,6 @@ namespace ml
         FLEXT_CALLVAR_F(get_coef0, set_coef0);
         FLEXT_CALLVAR_F(get_cost, set_cost);
         FLEXT_CALLVAR_F(get_nu, set_nu);
-        FLEXT_CALLVAR_F(get_epsilon, set_epsilon);
-        FLEXT_CALLVAR_I(get_cachesize, set_cachesize);
-        FLEXT_CALLVAR_I(get_shrinking, set_shrinking);
         FLEXT_CALLVAR_B(get_probs, set_probs);
         FLEXT_CALLVAR_V(get_weights, set_weights);
         FLEXT_CALLVAR_I(get_kfold_value, set_kfold_value);
@@ -288,29 +273,9 @@ namespace ml
         grt_svm.setNu(nu);
     }
     
-    void svm::set_epsilon(float epsilon)
-    {
-        error("function not implemented");
-    }
-    
-    void svm::set_cachesize(int cachesize)
-    {
-        error("function not implemented");
-    }
-    
-    void svm::set_shrinking(int shrinking)
-    {
-        error("function not implemented");
-    }
-    
     void svm::set_probs(bool probs)
     {
         this->probs = probs;
-    }
-    
-    void svm::set_weights(const AtomList &weights)
-    {
-        error("function not implemented");
     }
     
     void svm::set_kfold_value(int mode)
@@ -362,34 +327,9 @@ namespace ml
         nu = grt_svm.getNu();
     }
     
-    void svm::get_epsilon(float &epsilon) const
-    {
-        error("function not implemented");
-    }
-    
-    void svm::get_cachesize(int &cachesize) const
-    {
-        error("function not implemented");
-    }
-    
-    void svm::get_shrinking(int &shrinking) const
-    {
-        error("function not implemented");
-    }
-    
     void svm::get_probs(bool &probs) const
     {
         probs = this->probs;
-    }
-    
-    void svm::get_weights(AtomList &weights) const
-    {
-        error("function not implemented");
-    }
-    
-    void svm::get_kfold_value(int &mode) const
-    {
-        error("function not implemented");
     }
     
     void svm::cross_validation()
