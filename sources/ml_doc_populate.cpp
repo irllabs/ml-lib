@@ -494,14 +494,6 @@ namespace ml_doc
         descriptors[ml::k_dtw].add_message_descriptor(rejection_mode, warping_radius, offset_time_series, constrain_warping_path, enable_z_normalization, enable_trim_training_data);
         
         //---- ml.hmm
-        ranged_message_descriptor<int> num_states(
-                                                  "num_states",
-                                                  "sets the number of states in the model",
-                                                  0,
-                                                  100,
-                                                  5
-                                                  );
-        
         valued_message_descriptor<int> model_type(
                                                   "model_type",
                                                   "set the model type used, 0:ERGODIC, 1:LEFTRIGHT",
@@ -512,7 +504,7 @@ namespace ml_doc
         ranged_message_descriptor<int> delta(
                                              "delta",
                                              "control how many states a model can transition to if the LEFTRIGHT model type is used",
-                                             0,
+                                             1,
                                              100,
                                              11
                                              );
@@ -524,22 +516,6 @@ namespace ml_doc
                                                           1000,
                                                           100
                                                           );
-        
-        ranged_message_descriptor<int> num_random_training_iterations(
-                                                                      "num_random_training_iterations",
-                                                                      "set the number of random training iterations",
-                                                                      0,
-                                                                      1000,
-                                                                      10
-                                                                      );
-        
-        ranged_message_descriptor<float> min_improvement(
-                                                         "min_improvement",
-                                                         "set the minimum improvement parameter which controls when the HMM training algorithm should stop",
-                                                         0,
-                                                         1,
-                                                         1.0e-2
-                                                         );
         
         ranged_message_descriptor<int> committee_size(
                                                       "committee_size",
@@ -558,7 +534,7 @@ namespace ml_doc
                                                       );
         
         descriptors[ml::k_hmm].insert_message_descriptor(record);
-        descriptors[ml::k_hmm].add_message_descriptor(num_states, model_type, delta, max_num_iterations, num_random_training_iterations, min_improvement, committee_size, downsample_factor);
+        descriptors[ml::k_hmm].add_message_descriptor(model_type, delta, max_num_iterations, committee_size, downsample_factor);
         
         //---- ml.softmax
         

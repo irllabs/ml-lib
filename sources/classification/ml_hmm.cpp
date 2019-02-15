@@ -41,37 +41,33 @@ namespace ml
         {
             classification::setup(c);
             
-            FLEXT_CADDATTR_SET(c, "num_states", set_num_states);
             FLEXT_CADDATTR_SET(c, "model_type", set_model_type);
             FLEXT_CADDATTR_SET(c, "delta", set_delta);
             FLEXT_CADDATTR_SET(c, "max_num_iterations", set_max_num_iterations);
-            FLEXT_CADDATTR_SET(c, "num_random_training_iterations", set_num_random_training_iterations);
             FLEXT_CADDATTR_SET(c, "committee_size", set_committee_size);
+            FLEXT_CADDATTR_SET(c, "downsample_factor", set_downsample_factor);
 
-            FLEXT_CADDATTR_GET(c, "num_states", get_num_states);
+
             FLEXT_CADDATTR_GET(c, "model_type", get_model_type);
             FLEXT_CADDATTR_GET(c, "delta", get_delta);
             FLEXT_CADDATTR_GET(c, "max_num_iterations", get_max_num_iterations);
             FLEXT_CADDATTR_GET(c, "committee_size", get_committee_size);
+            FLEXT_CADDATTR_GET(c, "downsample_factor", get_downsample_factor);
             
             DefineHelp(c, object_name.c_str());
         }
         
         // Flext attribute setters
-        void set_num_states(int num_states);
         void set_model_type(int model_type);
         void set_delta(int delta);
         void set_max_num_iterations(int max_num_iterations);
-        void set_num_random_training_iterations(int num_random_training_iterations);
         void set_committee_size(int committee_size);
         void set_downsample_factor(int downsample_factor);
         
         // Flext attribute getters
-        void get_num_states(int &num_states) const;
         void get_model_type(int &model_type) const;
         void get_delta(int &delta) const;
         void get_max_num_iterations(int &max_num_iterations) const;
-        void get_num_random_training_iterations(int &num_random_training_iterations) const;
         void get_committee_size(int &committee_size) const;
         void get_downsample_factor(int &downsample_factor) const;
         
@@ -83,11 +79,9 @@ namespace ml
         
     private:
         // Flext attribute wrappers
-        FLEXT_CALLVAR_I(get_num_states, set_num_states);
         FLEXT_CALLVAR_I(get_model_type, set_model_type);
         FLEXT_CALLVAR_I(get_delta, set_delta);
         FLEXT_CALLVAR_I(get_max_num_iterations, set_max_num_iterations);
-        FLEXT_CALLVAR_I(get_num_random_training_iterations, set_num_random_training_iterations);
         FLEXT_CALLVAR_I(get_committee_size, set_committee_size);
         FLEXT_CALLVAR_I(get_downsample_factor, set_downsample_factor);
         
@@ -102,15 +96,6 @@ namespace ml
     };
     
     // Flext attribute setters
-    void hmm::set_num_states(int num_states)
-    {
-        bool success = classifier.setNumStates(num_states);
-
-        if (!success)
-        {
-            error("unable to set number of states");
-        }
-    }
     
     void hmm::set_model_type(int model_type)
     {
@@ -142,16 +127,6 @@ namespace ml
         }
     }
     
-    void hmm::set_num_random_training_iterations(int num_random_training_iterations)
-    {
-        bool success = classifier.setNumRandomTrainingIterations(num_random_training_iterations);
-        
-        if (!success)
-        {
-            error("unable to set number of random training iterations");
-        }
-    }
-    
     void hmm::set_committee_size(int committee_size)
     {
         bool success = classifier.setCommitteeSize(committee_size);
@@ -178,16 +153,6 @@ namespace ml
     }
     
     // Flext attribute getters
-    void hmm::get_num_states(int &num_states) const
-    {
-        num_states = classifier.getNumStates();
-    }
-    
-    void hmm::get_num_symbols(int &num_symbols) const
-    {
-        num_symbols = classifier.getNumSymbols();
-    }
-    
     void hmm::get_model_type(int &model_type) const
     {
         model_type = classifier.getModelType();
@@ -201,11 +166,6 @@ namespace ml
     void hmm::get_max_num_iterations(int &max_num_iterations) const
     {
         max_num_iterations = classifier.getMaxNumEpochs();
-    }
-    
-    void hmm::get_num_random_training_iterations(int &num_random_training_iterations) const
-    {
-        num_random_training_iterations = classifier.getNumRandomTrainingIterations();
     }
     
     void hmm::get_committee_size(int &committee_size) const
