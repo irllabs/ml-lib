@@ -35,9 +35,12 @@ namespace ml
         {
             FLEXT_CADDATTR_SET(c, "null_rejection", set_null_rejection);
             FLEXT_CADDATTR_SET(c, "null_rejection_coeff", set_null_rejection_coeff);
-            
+            FLEXT_CADDATTR_SET(c, "probs", set_probs);
+
             FLEXT_CADDATTR_GET(c, "null_rejection", get_null_rejection);
             FLEXT_CADDATTR_GET(c, "null_rejection_coeff", get_null_rejection_coeff);
+            FLEXT_CADDATTR_GET(c, "probs", get_probs);
+
         }
         
         // Methods
@@ -47,11 +50,13 @@ namespace ml
         // Flext attribute setters
         void set_null_rejection(bool null_rejection);
         void set_null_rejection_coeff(float null_rejection_coeff);
-        
+        void set_probs(bool probs);
+
         // Flext attribute getters
         void get_null_rejection(bool &null_rejection) const;
         void get_null_rejection_coeff(float &null_rejection_coeff) const;
-        
+        void get_probs(bool &probs) const;
+
         virtual GRT::MLBase &get_MLBase_instance(); // TODO: should be "final" but g++ 4.6.2 doesn't support it
         virtual const GRT::MLBase &get_MLBase_instance() const; // TODO: should be "final" but g++ 4.6.2 doesn't support it
         
@@ -61,13 +66,16 @@ namespace ml
         bool read_specialised_dataset(std::string &path);
         bool write_specialised_dataset(std::string &path) const;
         
+        bool probs;
+
     private:
         bool get_num_samples() const;
         
         // Flext attribute wrappers
         FLEXT_CALLVAR_B(get_null_rejection, set_null_rejection);
         FLEXT_CALLVAR_F(get_null_rejection_coeff, set_null_rejection_coeff);
-        
+        FLEXT_CALLVAR_B(get_probs, set_probs);
+
     };
 }
 

@@ -23,6 +23,7 @@
 namespace ml
 {
     classification::classification()
+    : probs(false)
     {
         set_data_type(LABELLED_CLASSIFICATION);
     }
@@ -37,6 +38,11 @@ namespace ml
         {
             error("unable to enable NULL rejection");
         }
+    }
+    
+    void classification::set_probs(bool probs)
+    {
+        this->probs = probs;
     }
     
     void classification::set_null_rejection_coeff(float null_rejection_coeff)
@@ -54,6 +60,11 @@ namespace ml
     void classification::get_null_rejection(bool &null_rejection) const
     {
         error("function not implemented");
+    }
+    
+    void classification::get_probs(bool &probs) const
+    {
+        probs = this->probs;
     }
     
     void classification::get_null_rejection_coeff(float &null_rejection_coeff) const

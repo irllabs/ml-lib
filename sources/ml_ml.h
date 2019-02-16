@@ -81,11 +81,9 @@ namespace ml
                 
         // Flext attribute setters
         void set_scaling(bool scaling);
-        void set_probs(bool probs);
         
         // Flext attribute getters
         void get_scaling(bool &scaling) const;
-        void get_probs(bool &probs) const;
         
         GRT::UnlabelledData unlabelled_data;
         GRT::ClassificationData classification_data;
@@ -94,7 +92,6 @@ namespace ml
         GRT::MatrixDouble time_series_data;
         GRT::UINT current_label;
         
-        bool probs;
         bool recording;
                 
     private:
@@ -115,7 +112,6 @@ namespace ml
         
         // Flext attribute wrappers
         FLEXT_CALLVAR_B(get_scaling, set_scaling);
-        FLEXT_CALLVAR_B(get_probs, set_probs);
         
         data_type data_type_;
         

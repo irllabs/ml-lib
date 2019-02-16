@@ -128,13 +128,6 @@ namespace ml_doc
                                                1
                                                );
         
-        valued_message_descriptor<int> probs(
-                                             "probs",
-                                             "determines whether probabilities are sent from the right outlet",
-                                             {0, 1},
-                                             0
-                                             );
-        
         valued_message_descriptor<int> record(
                                               "record",
                                               "start or stop time series recording for a single example of a given class",
@@ -144,7 +137,7 @@ namespace ml_doc
         
         record.insert_before = "add";
         
-        descriptors[ml::k_base].add_message_descriptor(add, write, read, train, clear, map, help, scaling, probs);
+        descriptors[ml::k_base].add_message_descriptor(add, write, read, train, clear, map, help, scaling);
 
         // generic classification descriptor
         valued_message_descriptor<bool> null_rejection(
@@ -162,7 +155,14 @@ namespace ml_doc
                                                               0.9
                                                               );
         
-        descriptors[ml::k_classification].add_message_descriptor(null_rejection_coeff, null_rejection);
+        valued_message_descriptor<int> probs(
+                                             "probs",
+                                             "determines whether probabilities are sent from the right outlet",
+                                             {0, 1},
+                                             0
+                                             );
+        
+        descriptors[ml::k_classification].add_message_descriptor(null_rejection_coeff, probs, null_rejection);
         
         // generic feature extraction descriptor
 //        descriptors[ml::k_feature_extraction].add_message_descriptor(null_rejection_coeff, null_rejection);
@@ -208,6 +208,13 @@ namespace ml_doc
                               "add",
                               "class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)"
                               );
+        
+//        valued_message_descriptor<int> probs(
+//                                             "probs",
+//                                             "determines whether probabilities are sent from the right outlet",
+//                                             {0, 1},
+//                                             0
+//                                             );
       
         ranged_message_descriptor<int> num_outputs(
                                                    "num_outputs",
@@ -312,7 +319,7 @@ namespace ml_doc
                                                            );
         
         
-        descriptors[ml::k_mlp].add_message_descriptor(add_mlp, null_rejection, null_rejection_coeff, num_outputs, num_hidden, min_epochs, max_epochs, momentum, gamma, input_activation_function, hidden_activation_function, output_activation_function, rand_training_iterations, use_validation_set, validation_set_size, randomize_training_order);
+        descriptors[ml::k_mlp].add_message_descriptor(add_mlp, probs, null_rejection, null_rejection_coeff, num_outputs, num_hidden, min_epochs, max_epochs, momentum, gamma, input_activation_function, hidden_activation_function, output_activation_function, rand_training_iterations, use_validation_set, validation_set_size, randomize_training_order);
         
         
         //-- Classifiers

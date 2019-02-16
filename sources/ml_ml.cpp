@@ -78,7 +78,7 @@ namespace ml
     }
    
     ml::ml()
-    : current_label(0), probs(false), recording(false)
+    : current_label(0), recording(false)
     {
         set_data_type(defaults::data_type);
         set_num_inputs(defaults::num_input_dimensions);
@@ -138,16 +138,7 @@ namespace ml
         
         scaling = mlBase.getScalingEnabled();
     }
-    
-    void ml::set_probs(bool probs)
-    {
-        this->probs = probs;
-    }
-    
-    void ml::get_probs(bool &probs) const
-    {
-        probs = this->probs;
-    }
+
     
     void ml::add(int argc, const t_atom *argv)
     {
@@ -434,10 +425,8 @@ namespace ml
         init_global_symbols();
 
         FLEXT_CADDATTR_SET(c, "scaling", set_scaling);
-        FLEXT_CADDATTR_SET(c, "probs", set_probs);
         
         FLEXT_CADDATTR_GET(c, "scaling", get_scaling);
-        FLEXT_CADDATTR_GET(c, "probs", get_probs);
         
         FLEXT_CADDMETHOD(c, 0, any);
         FLEXT_CADDMETHOD_(c, 0, "add", add);
