@@ -206,7 +206,9 @@ namespace ml_doc
         
         message_descriptor add_mlp(
                               "add",
-                              "class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)"
+                              "class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)",
+                                   "1 0.2 0.7 0.3 0.1"
+
                               );
         
 //        valued_message_descriptor<int> probs(
