@@ -36,7 +36,7 @@ namespace ml
         
         if (success == false)
         {
-            error("unable to set training_rate, hint: should be between 0-1");
+            error("unable to set training_rate, hint: should be between 0.01-1");
         }
     }
     

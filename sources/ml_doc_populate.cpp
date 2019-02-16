@@ -171,7 +171,7 @@ namespace ml_doc
         ranged_message_descriptor<float> training_rate(
                                                        "training_rate",
                                                        "update the weights at each step of the stochastic gradient descent",
-                                                       0.0,
+                                                       0.01,
                                                        1.0,
                                                        0.1
                                                        );
