@@ -135,9 +135,32 @@ namespace ml_doc
                                               0
                                               );
         
-        record.insert_before = "add";
+        ranged_message_descriptor<float> training_rate(
+                                                       "training_rate",
+                                                       "set the learning rate, used to update the weights at each step of learning algorithms such as stochastic gradient descent.",
+                                                       0.01,
+                                                       1.0,
+                                                       0.1
+                                                       );
         
-        descriptors[ml::k_base].add_message_descriptor(add, write, read, train, clear, map, help, scaling);
+        ranged_message_descriptor<float> min_change(
+                                                    "min_change",
+                                                    "set the minimum change that must be achieved between two training epochs for the training to continue",
+                                                    0.0,
+                                                    1.0,
+                                                    1.0e-5
+                                                    );
+        
+        ranged_message_descriptor<int> max_iterations(
+                                                      "max_iterations",
+                                                      "set the maximum number of training iterations",
+                                                      0,
+                                                      1000,
+                                                      100
+                                                      );
+        
+        record.insert_before = "add";
+        descriptors[ml::k_base].add_message_descriptor(add, write, read, train, clear, map, help, scaling, training_rate, min_change, max_iterations);
 
         // generic classification descriptor
         valued_message_descriptor<bool> null_rejection(
@@ -168,31 +191,9 @@ namespace ml_doc
 //        descriptors[ml::k_feature_extraction].add_message_descriptor(null_rejection_coeff, null_rejection);
 
         // generic regression descriptor
-        ranged_message_descriptor<float> training_rate(
-                                                       "training_rate",
-                                                       "update the weights at each step of the stochastic gradient descent",
-                                                       0.01,
-                                                       1.0,
-                                                       0.1
-                                                       );
+       
         
-        ranged_message_descriptor<float> min_change(
-                                                    "min_change",
-                                                    "set the minimum change that must be achieved between two training epochs for the training to continue",
-                                                    0.0,
-                                                    1.0,
-                                                    1.0e-5
-                                                    );
-        
-        ranged_message_descriptor<int> max_iterations(
-                                                      "max_iterations",
-                                                      "set the maximum number of training iterations",
-                                                      0,
-                                                      1000,
-                                                      100
-                                                      );
-        
-        descriptors[ml::k_regression].add_message_descriptor(training_rate, min_change, max_iterations);
+//        descriptors[ml::k_regression].add_message_descriptor(training_rate, min_change, max_iterations);
         
         // Object-specific descriptors
         //-- Regressifiers
@@ -210,13 +211,6 @@ namespace ml_doc
                                    "1 0.2 0.7 0.3 0.1"
 
                               );
-        
-//        valued_message_descriptor<int> probs(
-//                                             "probs",
-//                                             "determines whether probabilities are sent from the right outlet",
-//                                             {0, 1},
-//                                             0
-//                                             );
       
         ranged_message_descriptor<int> num_outputs(
                                                    "num_outputs",
@@ -309,7 +303,7 @@ namespace ml_doc
                                                            "validation_set_size",
                                                            "set the size of the validation set",
                                                            1,
-                                                           200,
+                                                           100,
                                                            20
                                                            );
         

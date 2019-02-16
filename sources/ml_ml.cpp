@@ -132,6 +132,34 @@ namespace ml
         }
     }
     
+    void ml::set_max_iterations(int max_iterations)
+    {
+        GRT::MLBase &mlBase = get_MLBase_instance();
+        mlBase.setMaxNumEpochs(max_iterations);
+    }
+    
+    void ml::set_min_change(float min_change)
+    {
+        GRT::MLBase &mlBase = get_MLBase_instance();
+        bool success = mlBase.setMinChange(min_change);
+        
+        if (success == false)
+        {
+            error("unable to set min_change, hint: should be greater than 0");
+        }
+    }
+    
+    void ml::set_training_rate(float training_rate)
+    {
+        GRT::MLBase &mlBase = get_MLBase_instance();
+        bool success = mlBase.setLearningRate(training_rate);
+        
+        if (success == false)
+        {
+            error("unable to set training_rate, hint: should be between 0.01-1");
+        }
+    }
+    
     void ml::get_scaling(bool &scaling) const
     {
         const GRT::MLBase &mlBase = get_MLBase_instance();
@@ -139,6 +167,23 @@ namespace ml
         scaling = mlBase.getScalingEnabled();
     }
 
+    void ml::get_max_iterations(int &max_iterations) const
+    {
+        const GRT::MLBase &mlBase = get_MLBase_instance();
+        max_iterations = mlBase.getMaxNumEpochs();
+    }
+    
+    void ml::get_min_change(float &min_change) const
+    {
+        const GRT::MLBase &mlBase = get_MLBase_instance();
+        min_change = mlBase.getMinChange();
+    }
+    
+    void ml::get_training_rate(float &training_rate) const
+    {
+        const GRT::MLBase &mlBase = get_MLBase_instance();
+        training_rate = mlBase.getLearningRate();
+    }
     
     void ml::add(int argc, const t_atom *argv)
     {
@@ -425,8 +470,14 @@ namespace ml
         init_global_symbols();
 
         FLEXT_CADDATTR_SET(c, "scaling", set_scaling);
+        FLEXT_CADDATTR_SET(c, "max_iterations", set_max_iterations);
+        FLEXT_CADDATTR_SET(c, "min_change", set_min_change);
+        FLEXT_CADDATTR_SET(c, "training_rate", set_training_rate);
         
         FLEXT_CADDATTR_GET(c, "scaling", get_scaling);
+        FLEXT_CADDATTR_GET(c, "max_iterations", get_max_iterations);
+        FLEXT_CADDATTR_GET(c, "min_change", get_min_change);
+        FLEXT_CADDATTR_GET(c, "training_rate", get_training_rate);
         
         FLEXT_CADDMETHOD(c, 0, any);
         FLEXT_CADDMETHOD_(c, 0, "add", add);

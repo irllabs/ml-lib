@@ -81,9 +81,15 @@ namespace ml
                 
         // Flext attribute setters
         void set_scaling(bool scaling);
+        void set_max_iterations(int max_iterations);
+        void set_min_change(float min_change);
+        void set_training_rate(float training_rate);
         
         // Flext attribute getters
         void get_scaling(bool &scaling) const;
+        void get_max_iterations(int &max_iterations) const;
+        void get_min_change(float &min_change) const;
+        void get_training_rate(float &training_rate) const;
         
         GRT::UnlabelledData unlabelled_data;
         GRT::ClassificationData classification_data;
@@ -112,6 +118,9 @@ namespace ml
         
         // Flext attribute wrappers
         FLEXT_CALLVAR_B(get_scaling, set_scaling);
+        FLEXT_CALLVAR_I(get_max_iterations, set_max_iterations);
+        FLEXT_CALLVAR_F(get_min_change, set_min_change);
+        FLEXT_CALLVAR_F(get_training_rate, set_training_rate);
         
         data_type data_type_;
         

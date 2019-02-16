@@ -12,52 +12,10 @@
 namespace ml
 {
     // Flext attribute setters
-    void regression::set_max_iterations(int max_iterations)
-    {
-        GRT::Regressifier &regressifier = get_Regressifier_instance();
-        regressifier.setMaxNumEpochs(max_iterations);
-    }
     
-    void regression::set_min_change(float min_change)
-    {
-        GRT::Regressifier &regressifier = get_Regressifier_instance();
-        bool success = regressifier.setMinChange(min_change);
-        
-        if (success == false)
-        {
-            error("unable to set min_change, hint: should be greater than 0");
-        }
-    }
-    
-    void regression::set_training_rate(float training_rate)
-    {
-        GRT::Regressifier &regressifier = get_Regressifier_instance();
-        bool success = regressifier.setLearningRate(training_rate);
-        
-        if (success == false)
-        {
-            error("unable to set training_rate, hint: should be between 0.01-1");
-        }
-    }
     
     // Flext attribute getters
-    void regression::get_max_iterations(int &max_iterations) const
-    {
-        const GRT::Regressifier &regressifier = get_Regressifier_instance();
-        max_iterations = regressifier.getMaxNumEpochs();
-    }
     
-    void regression::get_min_change(float &min_change) const
-    {
-        error("function not implemented");
-        //        min_change = regressifier->getMinChange();
-    }
-    
-    void regression::get_training_rate(float &training_rate) const
-    {
-        const GRT::Regressifier &regressifier = get_Regressifier_instance();
-        training_rate = regressifier.getLearningRate();
-    }
     
     // Methods
     regression::regression()

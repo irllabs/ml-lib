@@ -52,7 +52,8 @@ namespace ml
         num_hidden_neurons(defaults::num_hidden_neurons),
         input_activation_function((GRT::Neuron::Type)grt_mlp.getInputLayerActivationFunction()),
         hidden_activation_function((GRT::Neuron::Type)grt_mlp.getHiddenLayerActivationFunction()),
-        output_activation_function((GRT::Neuron::Type)grt_mlp.getOutputLayerActivationFunction())
+        output_activation_function((GRT::Neuron::Type)grt_mlp.getOutputLayerActivationFunction()),
+        probs(false)
         {
             post("Multilayer Perceptron based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             
@@ -470,7 +471,7 @@ namespace ml
 
     void mlp::get_min_change(float &min_change) const
     {
-        flext::error("function not implemented");
+        min_change = grt_mlp.getMinChange();
     }
     
     void mlp::get_training_rate(float &training_rate) const
@@ -520,7 +521,7 @@ namespace ml
 
     void mlp::get_use_validation_set(bool &use_validation_set) const
     {
-        flext::error("function not implemented");
+        use_validation_set = grt_mlp.getUseValidationSet();
     }
     
     void mlp::get_validation_set_size(int &validation_set_size) const
@@ -530,7 +531,9 @@ namespace ml
     
     void mlp::get_randomise_training_order(bool &randomise_training_order) const
     {
-        flext::error("function not implemented");
+        randomise_training_order = grt_mlp.getRandomiseTrainingOrder();
+    }
+    
     void mlp::get_probs(bool &probs) const
     {
         probs = this->probs;
