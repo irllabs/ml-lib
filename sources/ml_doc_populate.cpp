@@ -83,7 +83,7 @@ namespace ml_doc
         // base descriptor
         message_descriptor add(
                               "add",
-                              "list comprising a class id followed by n features; <class> <feature 1> <feature 2> etc",
+                              "list comprising a class id followed by n features, <class> <feature 1> <feature 2> etc",
                                "1 0.2 0.7 0.3 0.1"
                               );
 
@@ -199,7 +199,7 @@ namespace ml_doc
         //-- Regressifiers
         //---- mlp
         valued_message_descriptor<ml::data_type> mode("mode",
-                                                      "set the mode of the MLP" + std::to_string(ml::LABELLED_CLASSIFICATION) + "for classification " + std::to_string(ml::LABELLED_REGRESSION) + "for regression",
+                                                      "set the mode of the MLP, " + std::to_string(ml::LABELLED_CLASSIFICATION) + " for classification, " + std::to_string(ml::LABELLED_REGRESSION) + " for regression",
                                                       {ml::LABELLED_CLASSIFICATION, ml::LABELLED_REGRESSION, ml::LABELLED_TIME_SERIES_CLASSIFICATION},
                                                       ml::defaults::data_type
                                                       );
@@ -207,7 +207,7 @@ namespace ml_doc
         
         message_descriptor add_mlp(
                               "add",
-                              "class id followed by n features; <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)",
+                              "class id followed by n features, <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)",
                                    "1 0.2 0.7 0.3 0.1"
 
                               );
@@ -315,7 +315,7 @@ namespace ml_doc
                                                            );
         
         
-        descriptors[ml::k_mlp].add_message_descriptor(add_mlp, probs, null_rejection, null_rejection_coeff, num_outputs, num_hidden, min_epochs, max_epochs, momentum, gamma, input_activation_function, hidden_activation_function, output_activation_function, rand_training_iterations, use_validation_set, validation_set_size, randomize_training_order);
+        descriptors[ml::k_mlp].add_message_descriptor(add_mlp, probs, mode, null_rejection, null_rejection_coeff, num_outputs, num_hidden, min_epochs, max_epochs, momentum, gamma, input_activation_function, hidden_activation_function, output_activation_function, rand_training_iterations, use_validation_set, validation_set_size, randomize_training_order);
         
         
         //-- Classifiers
