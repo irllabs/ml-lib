@@ -212,6 +212,7 @@ namespace ml
     void svm::set_type(int type)
     {
         GRT::SVM::SVMType type_ = GRT::SVM::SVMType::C_SVC;
+        const std::string error_msg = "invalid SVM type, send a 'help' message to the first inlet for available types";
         
         try
         {
@@ -219,7 +220,14 @@ namespace ml
         }
         catch (std::exception& e)
         {
-            post("invalid SVM type, send a 'help' message to the first inlet for available types");
+            post(error_msg);
+            return;
+        }
+        
+        // TODO: implement SVM regression
+        if (type_ == GRT::SVM::SVMType::EPSILON_SVR ||  GRT::SVM::SVMType::NU_SVR)
+        {
+            post(error_msg);
             return;
         }
         

@@ -326,11 +326,11 @@ namespace ml_doc
                                             " 0:C-SVC (multi-class),"
                                             " 1:nu-SVC (multi-class),"
                                             " 2:one-class SVM,"
-                                            " 3:epsilon-SVR (regression),"
-                                            " 4:nu-SVR (regression)"
+                                           // " 3:epsilon-SVR (regression),"
+                                           // " 4:nu-SVR (regression)"
                                             ,
                                             0,
-                                            4,
+                                            2,
                                             0
                                             //        "	0 -- C-SVC		(multi-class classification)\n"
                                             //        "	1 -- nu-SVC		(multi-class classification)\n"
