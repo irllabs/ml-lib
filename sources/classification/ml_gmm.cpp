@@ -64,9 +64,21 @@ namespace ml
         
         // Virtual method override
         virtual const std::string get_object_name(void) const { return object_name; };
+        void train() override;
+        
         
         GRT::GMM grt_gmm;
     };
+    
+    void gmm::train()
+    {
+        if (grt_gmm.getNumMixtureModels() > classification_data.getNumSamples())
+        {
+            flext::error("num added examples must be greater than num_mixture_models, add more examples to train");
+            return;
+        }
+        classification::train();
+    }
     
     // Flext attribute setters
     void gmm::set_num_mixture_models(int num_mixture_models)
@@ -78,7 +90,7 @@ namespace ml
     // Flext attribute getters
     void gmm::get_num_mixture_models(int &num_mixture_models) const
     {
-        flext::error("function not implemented");
+        num_mixture_models = grt_gmm.getNumMixtureModels();
     }
     
     // Implement pure virtual methods
