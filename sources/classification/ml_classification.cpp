@@ -180,7 +180,12 @@ namespace ml
         
         if (recording)
         {
-            time_series_data.push_back(query);
+            success = time_series_data.push_back(query);
+            if (!success)
+            {
+                flext::error("unable to add time series, buffer may be full");
+                return;
+            }
             success = classifier.predict(time_series_data);
         }
         else
