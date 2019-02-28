@@ -167,6 +167,7 @@ namespace ml
             std::stringstream ss;
             ss << "invalid input length, expected " << numInputFeatures << ", got " << argc;
             error(ss.str());
+            return;
         }
         
         for (uint32_t index = 0; index < (uint32_t)argc; ++index)
