@@ -73,6 +73,7 @@ namespace ml
         
         data_type get_data_type() const;
         void set_data_type(data_type type);
+        void set_num_inputs(uint16_t num_inputs);
         
         virtual GRT::MLBase &get_MLBase_instance() = 0;
         virtual const GRT::MLBase &get_MLBase_instance() const = 0;
@@ -103,7 +104,6 @@ namespace ml
     private:
         
         void record_(bool state);
-        void set_num_inputs(uint16_t num_inputs);
         
         // Flext method wrappers
         FLEXT_CALLBACK_A(any);
