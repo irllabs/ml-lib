@@ -34,13 +34,13 @@ namespace ml_doc
         static const std::string printl_obj_id = "obj-10001";
         static const std::string printr_obj_id = "obj-10002";
         static const uint16_t init_message_x = 180;
-        static const uint16_t init_message_y = 100;
+        static const uint16_t init_message_y = 80;
         static const uint16_t ml_obj_x = 30;
         static const uint16_t ml_obj_y = 700;
         static const uint16_t heading_x = 30;
         static const uint16_t heading_y = 15;
         static const uint16_t heading_spacing = 30;
-        static const uint16_t message_spacing = 30;
+        static const uint16_t message_spacing = 35;
         static const uint16_t tall_patching_height = 650;
         static const uint16_t short_patching_height = 300;
         static const uint16_t message_comment_distance = 200;
@@ -154,6 +154,7 @@ namespace ml_doc
                                      {{
                 "box", {
                     {"id", obj_id},
+                    {"fixwidth", 1},
                     {"maxclass", "flonum"},
                     {"numinlets", 1},
                     {"numoutlets", 2},
@@ -169,6 +170,7 @@ namespace ml_doc
             {{
                 "box", {
                     {"id", obj_id},
+                    {"fixwidth", 1},
                     {"maxclass", "message"},
                     {"numinlets", 2},
                     {"numoutlets", 1},
@@ -182,6 +184,7 @@ namespace ml_doc
         patch["boxes"].push_back({{
             "box", {
                 {"id", obj_id + "c"},
+                {"fixwidth", 1},
                 {"bubble", 1},
                 {"maxclass", "comment"},
                 {"numinlets", 1},
@@ -221,6 +224,7 @@ namespace ml_doc
                 // Main heading
                 "box", {
                     {"id", obj_id::get()},
+                    {"fixwidth", 1},
                     {"maxclass", "comment"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
@@ -234,6 +238,7 @@ namespace ml_doc
                 // URL
                 "box", {
                     {"id", obj_id::get()},
+                    {"fixwidth", 1},
                     {"maxclass", "comment"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
@@ -245,6 +250,7 @@ namespace ml_doc
                 // The actual ml. object
                 "box", {
                     {"id", k::main_obj_id},
+                    {"fixwidth", 1},
                     {"maxclass", "newobj"},
                     {"numinlets", 1},
                     {"numoutlets", 2},
@@ -256,6 +262,7 @@ namespace ml_doc
             {{
                 "box", {
                     {"id", k::printl_obj_id},
+                    {"fixwidth", 1},
                     {"maxclass", "newobj"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
@@ -266,6 +273,7 @@ namespace ml_doc
             {{
                 "box", {
                     {"id", k::printr_obj_id},
+                    {"fixwidth", 1},
                     {"maxclass", "newobj"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
@@ -282,6 +290,7 @@ namespace ml_doc
             {{
                 "box", {
                     {"id", obj_id::get()},
+                    {"fixwidth", 1},
                     {"maxclass", "comment"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
