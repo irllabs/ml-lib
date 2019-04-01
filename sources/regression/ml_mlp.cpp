@@ -23,16 +23,16 @@
 
 namespace ml
 {
-    const std::string object_name = ML_NAME_PREFIX "mlp";
+    const std::string object_name = ML_NAME_PREFIX "ann";
         
-    typedef enum mlp_layer_
+    typedef enum ann_layer_
     {
         LAYER_INPUT,
         LAYER_HIDDEN,
         LAYER_OUTPUT,
-        MLP_NUM_LAYERS
+        ANN_NUM_LAYERS
     }
-    mlp_layer;
+    ann_layer;
     
     GRT::Neuron::Type get_grt_neuron_type(int type)
     {
@@ -44,25 +44,25 @@ namespace ml
     }
     
     
-    class mlp : ml
+    class ann : ml
     {
-        FLEXT_HEADER_S(mlp, ml, setup);
+        FLEXT_HEADER_S(ann, ml, setup);
         
     public:
-        mlp()
+        ann()
         :
         num_hidden_neurons(defaults::num_hidden_neurons),
-        input_activation_function((GRT::Neuron::Type)grt_mlp.getInputLayerActivationFunction()),
-        hidden_activation_function((GRT::Neuron::Type)grt_mlp.getHiddenLayerActivationFunction()),
-        output_activation_function((GRT::Neuron::Type)grt_mlp.getOutputLayerActivationFunction()),
+        input_activation_function((GRT::Neuron::Type)grt_ann.getInputLayerActivationFunction()),
+        hidden_activation_function((GRT::Neuron::Type)grt_ann.getHiddenLayerActivationFunction()),
+        output_activation_function((GRT::Neuron::Type)grt_ann.getOutputLayerActivationFunction()),
         probs(false)
         {
-            post("Multilayer Perceptron based on the GRT library version " + GRT::GRTBase::getGRTVersion());
+            post("Artificial Neural Network (MLP) based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             
             regression_data.setInputAndTargetDimensions(defaults::num_input_dimensions, defaults::num_output_dimensions);
             classification_data.setNumDimensions(defaults::num_input_dimensions);
             
-            grt_mlp.setMinChange(1.0e-2);
+            grt_ann.setMinChange(1.0e-2);
             set_scaling(defaults::scaling);
         }
         
@@ -168,7 +168,7 @@ namespace ml
         bool write_specialised_dataset(std::string &path) const;
         
     private:
-        void set_activation_function(int activation_function, mlp_layer layer);
+        void set_activation_function(int activation_function, ann_layer layer);
         int get_index_for_class(int classID);
         int get_class_id_for_index(int index);
         void clear_index_maps();
@@ -200,7 +200,7 @@ namespace ml
         // Virtual method override
         virtual const std::string get_object_name(void) const { return object_name; };
         
-        GRT::MLP grt_mlp;
+        GRT::MLP grt_ann;
         GRT::UINT num_hidden_neurons;
         GRT::Neuron::Type input_activation_function;
         GRT::Neuron::Type hidden_activation_function;
@@ -212,7 +212,7 @@ namespace ml
     };
     
     // Flext attribute setters
-    void mlp::set_mode(int mode)
+    void ann::set_mode(int mode)
     {
         if (mode > NUM_DATA_TYPES)
         {
@@ -228,7 +228,7 @@ namespace ml
         set_data_type((data_type)mode);
     }
     
-    void mlp::set_num_outputs(int num_outputs)
+    void ann::set_num_outputs(int num_outputs)
     {
         int curr_num_outputs = 0;
         
@@ -264,14 +264,14 @@ namespace ml
         }
     }
     
-    void mlp::set_num_hidden(int num_hidden)
+    void ann::set_num_hidden(int num_hidden)
     {
         this->num_hidden_neurons = num_hidden;
     }
     
-    void mlp::set_min_epochs(int min_epochs)
+    void ann::set_min_epochs(int min_epochs)
     {
-        bool success = grt_mlp.setMinNumEpochs(min_epochs);
+        bool success = grt_ann.setMinNumEpochs(min_epochs);
         
         if (success == false)
         {
@@ -279,14 +279,14 @@ namespace ml
         }
     }
 
-    void mlp::set_max_epochs(int max_epochs)
+    void ann::set_max_epochs(int max_epochs)
     {
-        grt_mlp.setMaxNumEpochs(max_epochs);
+        grt_ann.setMaxNumEpochs(max_epochs);
     }
     
-    void mlp::set_min_change(float min_change)
+    void ann::set_min_change(float min_change)
     {
-        bool success = grt_mlp.setMinChange(min_change);
+        bool success = grt_ann.setMinChange(min_change);
         
         if (success == false)
         {
@@ -294,9 +294,9 @@ namespace ml
         }
     }
     
-    void mlp::set_training_rate(float training_rate)
+    void ann::set_training_rate(float training_rate)
     {
-        bool success = grt_mlp.setTrainingRate(training_rate);
+        bool success = grt_ann.setTrainingRate(training_rate);
         
         if (success == false)
         {
@@ -304,9 +304,9 @@ namespace ml
         }
     }
     
-    void mlp::set_momentum(float momentum)
+    void ann::set_momentum(float momentum)
     {
-        bool success = grt_mlp.setMomentum(momentum);
+        bool success = grt_ann.setMomentum(momentum);
         
         if (success == false)
         {
@@ -314,9 +314,9 @@ namespace ml
         }
     }
     
-    void mlp::set_gamma(float gamma)
+    void ann::set_gamma(float gamma)
     {
-        bool success = grt_mlp.setGamma(gamma);
+        bool success = grt_ann.setGamma(gamma);
         
         if (success == false)
         {
@@ -324,9 +324,9 @@ namespace ml
         }
     }
 
-    void mlp::set_null_rejection(bool null_rejection)
+    void ann::set_null_rejection(bool null_rejection)
     {
-        bool success = grt_mlp.setNullRejection(null_rejection);
+        bool success = grt_ann.setNullRejection(null_rejection);
         
         if (success == false)
         {
@@ -334,9 +334,9 @@ namespace ml
         }
     }
 
-    void mlp::set_null_rejection_coeff(float null_rejection_coeff)
+    void ann::set_null_rejection_coeff(float null_rejection_coeff)
     {
-        bool success = grt_mlp.setNullRejectionCoeff(null_rejection_coeff);
+        bool success = grt_ann.setNullRejectionCoeff(null_rejection_coeff);
         
         if (success == false)
         {
@@ -344,7 +344,7 @@ namespace ml
         }
     }
     
-    void mlp::set_activation_function(int activation_function, mlp_layer layer)
+    void ann::set_activation_function(int activation_function, ann_layer layer)
     {
         GRT::Neuron::Type activation_function_ = GRT::Neuron::Type::LINEAR;
         
@@ -358,7 +358,7 @@ namespace ml
             return;
         }
         
-        if (grt_mlp.validateActivationFunction(activation_function_) == false)
+        if (grt_ann.validateActivationFunction(activation_function_) == false)
         {
             flext::error("activation function %d is invalid, hint should be between 0-%d", activation_function, GRT::Neuron::NUMBER_OF_ACTIVATION_FUNCTIONS - 1);
             return;
@@ -379,11 +379,11 @@ namespace ml
                 ml::error("no activation function for layer: " + std::to_string(layer));
                 return;
         }
-        post("activation function set to " + grt_mlp.activationFunctionToString(activation_function_));
+        post("activation function set to " + grt_ann.activationFunctionToString(activation_function_));
     }
     
     // adds index if it doesn't exist
-    int mlp::get_index_for_class(int classLabel)
+    int ann::get_index_for_class(int classLabel)
     {
         const int count = classLabelToIndex.count(classLabel);
         
@@ -404,7 +404,7 @@ namespace ml
     }
     
     // assumes index exists and returns -1 as a failsafe
-    int mlp::get_class_id_for_index(int index)
+    int ann::get_class_id_for_index(int index)
     {
         const int count = indexToClassLabel.count(index);
 
@@ -417,30 +417,30 @@ namespace ml
         return indexToClassLabel.at(index);
     }
     
-    void mlp::clear_index_maps()
+    void ann::clear_index_maps()
     {
         indexToClassLabel.clear();
         classLabelToIndex.clear();
     }
     
-    void mlp::set_input_activation_function(int activation_function)
+    void ann::set_input_activation_function(int activation_function)
     {
         set_activation_function(activation_function, LAYER_INPUT);
     }
     
-    void mlp::set_hidden_activation_function(int activation_function)
+    void ann::set_hidden_activation_function(int activation_function)
     {
         set_activation_function(activation_function, LAYER_HIDDEN);
     }
     
-    void mlp::set_output_activation_function(int activation_function)
+    void ann::set_output_activation_function(int activation_function)
     {
         set_activation_function(activation_function, LAYER_OUTPUT);
     }
     
-    void mlp::set_rand_training_iterations(int rand_training_iterations)
+    void ann::set_rand_training_iterations(int rand_training_iterations)
     {
-        bool success = grt_mlp.setNumRandomTrainingIterations(rand_training_iterations);
+        bool success = grt_ann.setNumRandomTrainingIterations(rand_training_iterations);
         
         if (success == false)
         {
@@ -448,9 +448,9 @@ namespace ml
         }
     }
     
-    void mlp::set_use_validation_set(bool use_validation_set)
+    void ann::set_use_validation_set(bool use_validation_set)
     {
-        bool success = grt_mlp.setUseValidationSet(use_validation_set);
+        bool success = grt_ann.setUseValidationSet(use_validation_set);
         
         if (success == false)
         {
@@ -458,9 +458,9 @@ namespace ml
         }
     }
     
-    void mlp::set_validation_set_size(int validation_set_size)
+    void ann::set_validation_set_size(int validation_set_size)
     {
-        bool success = grt_mlp.setValidationSetSize(validation_set_size);
+        bool success = grt_ann.setValidationSetSize(validation_set_size);
         
         if (success == false)
         {
@@ -468,9 +468,9 @@ namespace ml
         }
     }
 
-    void mlp::set_randomise_training_order(bool randomise_training_order)
+    void ann::set_randomise_training_order(bool randomise_training_order)
     {
-        bool success = grt_mlp.setRandomiseTrainingOrder(randomise_training_order);
+        bool success = grt_ann.setRandomiseTrainingOrder(randomise_training_order);
         
         if (success == false)
         {
@@ -478,18 +478,18 @@ namespace ml
         }
     }
     
-    void mlp::set_probs(bool probs)
+    void ann::set_probs(bool probs)
     {
         this->probs = probs;
     }
     
     // Flext attribute getters
-    void mlp::get_mode(int &mode) const
+    void ann::get_mode(int &mode) const
     {
         mode = get_data_type();
     }
     
-    void mlp::get_num_outputs(int &num_outputs) const
+    void ann::get_num_outputs(int &num_outputs) const
     {
         const data_type data_type = get_data_type();
         
@@ -503,94 +503,94 @@ namespace ml
         }
     }
     
-    void mlp::get_num_hidden(int &num_hidden) const
+    void ann::get_num_hidden(int &num_hidden) const
     {
         num_hidden = this->num_hidden_neurons;
     }
     
-    void mlp::get_min_epochs(int &min_epochs) const
+    void ann::get_min_epochs(int &min_epochs) const
     {
-        min_epochs = grt_mlp.getMaxNumEpochs();
+        min_epochs = grt_ann.getMaxNumEpochs();
     }
     
-    void mlp::get_max_epochs(int &max_epochs) const
+    void ann::get_max_epochs(int &max_epochs) const
     {
-        max_epochs = grt_mlp.getMaxNumEpochs();
+        max_epochs = grt_ann.getMaxNumEpochs();
     }
 
-    void mlp::get_min_change(float &min_change) const
+    void ann::get_min_change(float &min_change) const
     {
-        min_change = grt_mlp.getMinChange();
+        min_change = grt_ann.getMinChange();
     }
     
-    void mlp::get_training_rate(float &training_rate) const
+    void ann::get_training_rate(float &training_rate) const
     {
-        training_rate = grt_mlp.getTrainingRate();
+        training_rate = grt_ann.getTrainingRate();
     }
     
-    void mlp::get_momentum(float &momentum) const
+    void ann::get_momentum(float &momentum) const
     {
-        momentum = grt_mlp.getMomentum();
+        momentum = grt_ann.getMomentum();
     }
     
-    void mlp::get_gamma(float &gamma) const
+    void ann::get_gamma(float &gamma) const
     {
-        gamma = grt_mlp.getGamma();
+        gamma = grt_ann.getGamma();
     }
     
-    void mlp::get_null_rejection(bool &null_rejection) const
+    void ann::get_null_rejection(bool &null_rejection) const
     {
-        null_rejection = grt_mlp.getNullRejectionEnabled();
+        null_rejection = grt_ann.getNullRejectionEnabled();
     }
     
-    void mlp::get_null_rejection_coeff(float &null_rejection_coeff) const
+    void ann::get_null_rejection_coeff(float &null_rejection_coeff) const
     {
-        null_rejection_coeff = grt_mlp.getNullRejectionCoeff();
+        null_rejection_coeff = grt_ann.getNullRejectionCoeff();
     }
     
-    void mlp::get_input_activation_function(int &activation_function) const
+    void ann::get_input_activation_function(int &activation_function) const
     {
         activation_function = input_activation_function;
     }
     
-    void mlp::get_hidden_activation_function(int &activation_function) const
+    void ann::get_hidden_activation_function(int &activation_function) const
     {
         activation_function = hidden_activation_function;
     }
     
-    void mlp::get_output_activation_function(int &activation_function) const
+    void ann::get_output_activation_function(int &activation_function) const
     {
         activation_function = output_activation_function;
     }
     
-    void mlp::get_rand_training_iterations(int &rand_training_iterations) const
+    void ann::get_rand_training_iterations(int &rand_training_iterations) const
     {
-        rand_training_iterations = grt_mlp.getNumRandomTrainingIterations();
+        rand_training_iterations = grt_ann.getNumRandomTrainingIterations();
     }
 
-    void mlp::get_use_validation_set(bool &use_validation_set) const
+    void ann::get_use_validation_set(bool &use_validation_set) const
     {
-        use_validation_set = grt_mlp.getUseValidationSet();
+        use_validation_set = grt_ann.getUseValidationSet();
     }
     
-    void mlp::get_validation_set_size(int &validation_set_size) const
+    void ann::get_validation_set_size(int &validation_set_size) const
     {
-        validation_set_size = grt_mlp.getValidationSetSize();
+        validation_set_size = grt_ann.getValidationSetSize();
     }
     
-    void mlp::get_randomise_training_order(bool &randomise_training_order) const
+    void ann::get_randomise_training_order(bool &randomise_training_order) const
     {
-        randomise_training_order = grt_mlp.getRandomiseTrainingOrder();
+        randomise_training_order = grt_ann.getRandomiseTrainingOrder();
     }
     
-    void mlp::get_probs(bool &probs) const
+    void ann::get_probs(bool &probs) const
     {
         probs = this->probs;
     }
     
     // Methods
-    // NOTE: MLP is special since it supports both regression and classification, we therefore override these methods
-    void mlp::train()
+    // NOTE: ANN is special since it supports both regression and classification, we therefore override these methods
+    void ann::train()
     {
         const data_type data_type = get_data_type();
         
@@ -606,7 +606,7 @@ namespace ml
         
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            grt_mlp.init(
+            grt_ann.init(
                      classification_data.getNumDimensions(),
                      num_hidden_neurons,
                      classification_data.getNumClasses(),
@@ -614,11 +614,11 @@ namespace ml
                      hidden_activation_function,
                      output_activation_function
                      );
-            success = grt_mlp.train(classification_data);
+            success = grt_ann.train(classification_data);
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            grt_mlp.init(
+            grt_ann.init(
                      regression_data.getNumInputDimensions(),
                      num_hidden_neurons,
                      regression_data.getNumTargetDimensions(),
@@ -626,7 +626,7 @@ namespace ml
                      hidden_activation_function,
                      output_activation_function
                      );
-            success = grt_mlp.train(regression_data);
+            success = grt_ann.train(regression_data);
         }
 
         if (!success)
@@ -640,7 +640,7 @@ namespace ml
         ToOutAnything(1, get_s_train(), 1, &a_success);
     }
     
-    void mlp::add(int argc, const t_atom *argv)
+    void ann::add(int argc, const t_atom *argv)
     {
         if (get_data_type() != data_type::LABELLED_CLASSIFICATION)
         {
@@ -708,14 +708,14 @@ namespace ml
         classification_data.addSample(label, inputVector);
     }
 
-    void mlp::clear()
+    void ann::clear()
     {
-        grt_mlp.clear();
+        grt_ann.clear();
         ml::clear();
         clear_index_maps();
     }
         
-    void mlp::map(int argc, const t_atom *argv)
+    void ann::map(int argc, const t_atom *argv)
     {
         const data_type data_type = get_data_type();
 
@@ -727,13 +727,13 @@ namespace ml
             return;
         }
 
-        if (grt_mlp.getTrained() == false)
+        if (grt_ann.getTrained() == false)
         {
             flext::error("model has not been trained, use 'train' to train the model");
             return;
         }
         
-        GRT::UINT numInputNeurons = grt_mlp.getNumInputNeurons();
+        GRT::UINT numInputNeurons = grt_ann.getNumInputNeurons();
         GRT::VectorDouble query(numInputNeurons);
         
         if (argc < 0 || (unsigned)argc != numInputNeurons)
@@ -747,7 +747,7 @@ namespace ml
             query[index] = value;
         }
         
-        bool success = grt_mlp.predict(query);
+        bool success = grt_ann.predict(query);
         
         if (success == false)
         {
@@ -755,11 +755,11 @@ namespace ml
             return;
         }
         
-        if (grt_mlp.getClassificationModeActive())
+        if (grt_ann.getClassificationModeActive())
         {
-            const GRT::VectorDouble likelihoods = grt_mlp.getClassLikelihoods();
+            const GRT::VectorDouble likelihoods = grt_ann.getClassLikelihoods();
             const GRT::Vector<GRT::UINT> labels = classification_data.getClassLabels();
-            const GRT::UINT predicted = grt_mlp.getPredictedClassLabel();
+            const GRT::UINT predicted = grt_ann.getPredictedClassLabel();
             const GRT::UINT classification = predicted == 0 ? 0 : get_class_id_for_index(predicted);
             
             if (likelihoods.size() != labels.size())
@@ -786,12 +786,12 @@ namespace ml
                  
             ToOutInt(0, classification);
         }
-        else if (grt_mlp.getRegressionModeActive())
+        else if (grt_ann.getRegressionModeActive())
         {
-            GRT::VectorDouble regression_data = grt_mlp.getRegressionData();
+            GRT::VectorDouble regression_data = grt_ann.getRegressionData();
             GRT::VectorDouble::size_type numOutputDimensions = regression_data.size();
             
-            if (numOutputDimensions != grt_mlp.getNumOutputNeurons())
+            if (numOutputDimensions != grt_ann.getNumOutputNeurons())
             {
                 flext::error("invalid output dimensions: %d", numOutputDimensions);
                 return;
@@ -813,15 +813,15 @@ namespace ml
     
     // Methods
     
-    void mlp::error()
+    void ann::error()
     {
-        if (!grt_mlp.getTrained())
+        if (!grt_ann.getTrained())
         {
             flext::error("model not yet trained, send the \"train\" message to train");
             return;
         }
                 
-        float error_f = grt_mlp.getTrainingError();
+        float error_f = grt_ann.getTrainingError();
         t_atom error_a;
         
         SetFloat(error_a, error_f);
@@ -831,17 +831,17 @@ namespace ml
     }
     
     // Implement pure virtual methods
-    GRT::MLBase &mlp::get_MLBase_instance()
+    GRT::MLBase &ann::get_MLBase_instance()
     {
-        return grt_mlp;
+        return grt_ann;
     }
     
-    const GRT::MLBase &mlp::get_MLBase_instance() const
+    const GRT::MLBase &ann::get_MLBase_instance() const
     {
-        return grt_mlp;
+        return grt_ann;
     }
     
-    bool mlp::read_specialised_dataset(std::string &path)
+    bool ann::read_specialised_dataset(std::string &path)
     {
         bool success = false;
         
@@ -864,7 +864,7 @@ namespace ml
         
     }
     
-    bool mlp::write_specialised_dataset(std::string &path) const
+    bool ann::write_specialised_dataset(std::string &path) const
     {
         const data_type data_type = get_data_type();
 
@@ -882,12 +882,12 @@ namespace ml
         return false;
     }
         
-    typedef class mlp ml0x2emlp;
+    typedef class ann ml0x2eann;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), mlp);
+    FLEXT_LIB(object_name.c_str(), ann);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2emlp);
+    FLEXT_NEW(object_name.c_str(), ml0x2eann);
 #endif
     
 } //namespace ml

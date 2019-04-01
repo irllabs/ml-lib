@@ -33,7 +33,7 @@
 
 #include <string>
 
-#define ML_VERSION "0.20.2"
+#define ML_VERSION "0.20.3"
 #define ML_NAME "ml-lib"
 #define ML_NAME_PREFIX "ml."
 

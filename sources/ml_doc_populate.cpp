@@ -30,7 +30,7 @@ namespace ml_doc
         });
         
         add_class_descriptors(ml::k_regression, {
-            ml::k_mlp,
+            ml::k_ann,
             ml::k_linreg,
             ml::k_logreg
         });
@@ -55,7 +55,7 @@ namespace ml_doc
             ml::k_zerox
         });
         
-        descriptors[ml::k_mlp].desc("Multilayer Perceptron").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP");
+        descriptors[ml::k_ann].desc("Artificial Neural Network").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP");
         descriptors[ml::k_linreg].desc("Linear Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression");
         descriptors[ml::k_logreg].desc("Logistic Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LogisticRegression");
         descriptors[ml::k_peak].desc("Peak Detection").url("");
@@ -197,15 +197,15 @@ namespace ml_doc
         
         // Object-specific descriptors
         //-- Regressifiers
-        //---- mlp
+        //---- ann
         valued_message_descriptor<ml::data_type> mode("mode",
-                                                      "set the mode of the MLP, " + std::to_string(ml::LABELLED_CLASSIFICATION) + " for classification, " + std::to_string(ml::LABELLED_REGRESSION) + " for regression",
+                                                      "set the mode of the ANN, " + std::to_string(ml::LABELLED_CLASSIFICATION) + " for classification, " + std::to_string(ml::LABELLED_REGRESSION) + " for regression",
                                                       {ml::LABELLED_CLASSIFICATION, ml::LABELLED_REGRESSION, ml::LABELLED_TIME_SERIES_CLASSIFICATION},
                                                       ml::defaults::data_type
                                                       );
         
         
-        message_descriptor add_mlp(
+        message_descriptor add_ann(
                               "add",
                               "class id followed by n features, <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)",
                                    "1 0.2 0.7 0.3 0.1"
@@ -315,7 +315,7 @@ namespace ml_doc
                                                            );
         
         
-        descriptors[ml::k_mlp].add_message_descriptor(add_mlp, probs, mode, null_rejection, null_rejection_coeff, num_outputs, num_hidden, min_epochs, max_epochs, momentum, gamma, input_activation_function, hidden_activation_function, output_activation_function, rand_training_iterations, use_validation_set, validation_set_size, randomize_training_order);
+        descriptors[ml::k_ann].add_message_descriptor(add_ann, probs, mode, null_rejection, null_rejection_coeff, num_outputs, num_hidden, min_epochs, max_epochs, momentum, gamma, input_activation_function, hidden_activation_function, output_activation_function, rand_training_iterations, use_validation_set, validation_set_size, randomize_training_order);
         
         
         //-- Classifiers
