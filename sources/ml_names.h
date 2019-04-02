@@ -24,7 +24,7 @@ namespace ml
     const std::string k_adaboost = "ml.adaboost";
     const std::string k_anbc = "ml.anbc";
     const std::string k_dtw = "ml.dtw";
-    const std::string k_hmm = "ml.hmm";
+    const std::string k_hmmc = "ml.hmmc";
     const std::string k_softmax = "ml.softmax";
     const std::string k_randforest = "ml.randforest";
     const std::string k_mindist = "ml.mindist";
@@ -44,7 +44,7 @@ namespace ml
         k_adaboost,
         k_anbc,
         k_dtw,
-        k_hmm,
+        k_hmmc,
         k_softmax,
         k_randforest,
         k_mindist,

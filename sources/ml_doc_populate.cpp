@@ -40,7 +40,7 @@ namespace ml_doc
             ml::k_adaboost,
             ml::k_anbc,
             ml::k_dtw,
-            ml::k_hmm,
+            ml::k_hmmc,
             ml::k_softmax,
             ml::k_randforest,
             ml::k_mindist,
@@ -65,7 +65,7 @@ namespace ml_doc
         descriptors[ml::k_adaboost].desc("Adaptive Boosting").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/AdaBoost");
         descriptors[ml::k_anbc].desc("Adaptive Naive Bayes Classifier").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/ANBC");
         descriptors[ml::k_dtw].desc("Dynamic Time Warping").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/DTW");
-        descriptors[ml::k_hmm].desc("Continuous Hidden Markov Model").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM");
+        descriptors[ml::k_hmmc].desc("Continuous Hidden Markov Model").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM");
         descriptors[ml::k_softmax].desc("Softmax Classifier").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/Softmax");
         descriptors[ml::k_randforest].desc("Random Forests").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/RandomForests");
         descriptors[ml::k_mindist].desc("Minimum Distance").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/MinDist");
@@ -73,7 +73,7 @@ namespace ml_doc
         descriptors[ml::k_gmm].desc("Gaussian Mixture Model").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/GMMClassifier");
         descriptors[ml::k_dtree].desc("Decision Trees").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/DecisionTree");
         
-        for (auto& desc : {&descriptors[ml::k_hmm], &descriptors[ml::k_dtw]})
+        for (auto& desc : {&descriptors[ml::k_hmmc], &descriptors[ml::k_dtw]})
         {
             desc->notes(
                         "add and map messages for time series should be delimited with record messages, e.g. record 1, add 1 40 50, add 1 41 50, record 0"
@@ -496,7 +496,7 @@ namespace ml_doc
         descriptors[ml::k_dtw].insert_message_descriptor(record);
         descriptors[ml::k_dtw].add_message_descriptor(rejection_mode, warping_radius, offset_time_series, constrain_warping_path, enable_z_normalization, enable_trim_training_data);
         
-        //---- ml.hmm
+        //---- ml.hmmc
         valued_message_descriptor<int> model_type(
                                                   "model_type",
                                                   "set the model type used, 0:ERGODIC, 1:LEFTRIGHT",
@@ -536,8 +536,8 @@ namespace ml_doc
                                                       5
                                                       );
         
-        descriptors[ml::k_hmm].insert_message_descriptor(record);
-        descriptors[ml::k_hmm].add_message_descriptor(model_type, delta, max_num_iterations, committee_size, downsample_factor);
+        descriptors[ml::k_hmmc].insert_message_descriptor(record);
+        descriptors[ml::k_hmmc].add_message_descriptor(model_type, delta, max_num_iterations, committee_size, downsample_factor);
         
         //---- ml.softmax
         

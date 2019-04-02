@@ -515,7 +515,7 @@ namespace ml
         FLEXT_SETUP(svm);
         FLEXT_SETUP(adaboost);
         FLEXT_SETUP(dtw);
-        FLEXT_SETUP(hmm);
+        FLEXT_SETUP(hmmc);
         FLEXT_SETUP(ann);
         FLEXT_SETUP(linreg);
         FLEXT_SETUP(logreg);
