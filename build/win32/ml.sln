@@ -10,7 +10,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml.svm", "myext.vcxproj", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml-core", "ml-core.vcxproj", "{D04441D0-3849-4E06-827C-F4E99EA385ED}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml.mlp", "ml.mlp.vcxproj", "{3E34FE40-EAB3-45C3-AFC3-0D5AD3009EA8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml.ann", "ml.ann.vcxproj", "{3E34FE40-EAB3-45C3-AFC3-0D5AD3009EA8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml.linreg", "ml.linreg.vcxproj", "{89300141-AB09-490F-AF48-7E06FBD2DBF7}"
 EndProject
@@ -26,7 +26,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml.dtw", "ml.dtw.vcxproj", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml.gmm", "ml.gmm.vcxproj", "{F615C09B-5B3C-4DCB-8C23-9C63C847DD38}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml.hmm", "ml.hmm.vcxproj", "{D475D001-E206-453E-AC4F-48DCD20690C4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml.hmmc", "ml.hmmc.vcxproj", "{D475D001-E206-453E-AC4F-48DCD20690C4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ml.knn", "ml.knn.vcxproj", "{61F8479D-8588-4291-BFC3-C0BE2A0EEE28}"
 EndProject

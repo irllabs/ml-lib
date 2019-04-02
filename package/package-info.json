@@ -28,7 +28,7 @@
 	}
 ,
 	"tags" : [ "machine learning", "feature extraction" ],
-	"version" : "0.19.0",
+	"version" : "0.20.3",
 	"website" : "http://irl.studio",
 	"filelist" : 	{
 		"externals" : [ 

@@ -25,7 +25,7 @@ ML_FEATURE_EXTRACTION_SRC = $(ML_FEATURE_EXTRACTION_PATH)/ml_feature_extraction.
 
 ML_CLASSIFICATION_EXT = ml_adaboost.cpp \
 			ml_dtw.cpp \
-			ml_hmm.cpp \
+			ml_hmmc.cpp \
 			ml_randforest.cpp \
 			ml_svm.cpp \
 			ml_anbc.cpp \
@@ -37,7 +37,7 @@ ML_CLASSIFICATION_EXT = ml_adaboost.cpp \
 
 ML_REGRESSION_EXT = ml_linreg.cpp \
 		    ml_logreg.cpp \
-		    ml_mlp.cpp
+		    ml_ann.cpp
 
 ML_FEATURE_EXTRACTION_EXT = ml_minmax.cpp \
 			    ml_peak.cpp \

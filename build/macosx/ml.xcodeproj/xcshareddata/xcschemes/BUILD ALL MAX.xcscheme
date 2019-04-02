@@ -58,7 +58,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA06D18F69B4300F417F6"
                BuildableName = "ml.hmm.mxo"
-               BlueprintName = "ml.hmm max"
+               BlueprintName = "ml.hmmc max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -113,8 +113,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA03D18F69B0F00F417F6"
-               BuildableName = "ml.mlp.mxo"
-               BlueprintName = "ml.mlp max"
+               BuildableName = "ml.ann.mxo"
+               BlueprintName = "ml.ann max"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -264,7 +264,6 @@
       buildConfiguration = "Development"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -284,7 +283,6 @@
       buildConfiguration = "Development"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"

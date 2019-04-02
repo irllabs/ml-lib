@@ -58,7 +58,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA13718F7DCEC00F417F6"
                BuildableName = "ml.hmm.pd_darwin"
-               BlueprintName = "ml.hmm pd"
+               BlueprintName = "ml.hmmc pd"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -113,8 +113,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7DA11918F7DCBD00F417F6"
-               BuildableName = "ml.mlp.pd_darwin"
-               BlueprintName = "ml.mlp pd"
+               BuildableName = "ml.ann.pd_darwin"
+               BlueprintName = "ml.ann pd"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
