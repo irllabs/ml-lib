@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D7DA13718F7DCEC00F417F6"
-               BuildableName = "ml.hmm.pd_darwin"
-               BlueprintName = "ml.hmm pd"
+               BlueprintIdentifier = "7D2B59A91EBA16A50088E7E2"
+               BuildableName = "libGRT.a"
+               BlueprintName = "GRT"
+               ReferencedContainer = "container:GRT/GRT.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7D7DA11918F7DCBD00F417F6"
+               BuildableName = "ml.ann.pd_darwin"
+               BlueprintName = "ml.ann pd"
                ReferencedContainer = "container:ml.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,6 +43,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7D7DA11918F7DCBD00F417F6"
+            BuildableName = "ml.ann.pd_darwin"
+            BlueprintName = "ml.ann pd"
+            ReferencedContainer = "container:ml.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +65,29 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <PathRunnable
+         runnableDebuggingMode = "0"
+         FilePath = "/Applications/Pure Data.app/Contents/Resources/bin/pd">
+      </PathRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7D7DA13718F7DCEC00F417F6"
-            BuildableName = "ml.hmm.pd_darwin"
-            BlueprintName = "ml.hmm pd"
+            BlueprintIdentifier = "7D7DA11918F7DCBD00F417F6"
+            BuildableName = "ml.ann.pd_darwin"
+            BlueprintName = "ml.ann pd"
             ReferencedContainer = "container:ml.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-path ${BUILT_PRODUCTS_DIR}"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "~/Documents/ml-lib/help/pd/ml.ann-help.pd"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -63,9 +100,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7D7DA13718F7DCEC00F417F6"
-            BuildableName = "ml.hmm.pd_darwin"
-            BlueprintName = "ml.hmm pd"
+            BlueprintIdentifier = "7D7DA11918F7DCBD00F417F6"
+            BuildableName = "ml.ann.pd_darwin"
+            BlueprintName = "ml.ann pd"
             ReferencedContainer = "container:ml.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

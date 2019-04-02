@@ -22,14 +22,14 @@
 
 namespace ml
 {
-    const std::string object_name = ML_NAME_PREFIX "hmm";
+    const std::string object_name = ML_NAME_PREFIX "hmmc";
     
-    class hmm : classification
+    class hmmc : classification
     {
-        FLEXT_HEADER_S(hmm, classification, setup);
+        FLEXT_HEADER_S(hmmc, classification, setup);
         
     public:
-        hmm()
+        hmmc()
         {
             post("Hidden Markov Model based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(defaults::scaling);
@@ -97,7 +97,7 @@ namespace ml
     
     // Flext attribute setters
     
-    void hmm::set_model_type(int model_type)
+    void hmmc::set_model_type(int model_type)
     {
         bool success = classifier.setModelType(model_type);
         
@@ -107,7 +107,7 @@ namespace ml
         }
     }
     
-    void hmm::set_delta(int delta)
+    void hmmc::set_delta(int delta)
     {
         bool success = classifier.setDelta(delta);
         
@@ -117,7 +117,7 @@ namespace ml
         }
     }
     
-    void hmm::set_max_num_iterations(int max_num_iterations)
+    void hmmc::set_max_num_iterations(int max_num_iterations)
     {
         bool success = classifier.setMaxNumEpochs(max_num_iterations);
         
@@ -127,7 +127,7 @@ namespace ml
         }
     }
     
-    void hmm::set_committee_size(int committee_size)
+    void hmmc::set_committee_size(int committee_size)
     {
         bool success = classifier.setCommitteeSize(committee_size);
         
@@ -140,7 +140,7 @@ namespace ml
         committee_size_cache = committee_size;
     }
     
-    void hmm::set_downsample_factor(int downsample_factor)
+    void hmmc::set_downsample_factor(int downsample_factor)
     {
         bool success = classifier.setDownsampleFactor(downsample_factor);
         
@@ -153,58 +153,58 @@ namespace ml
     }
     
     // Flext attribute getters
-    void hmm::get_model_type(int &model_type) const
+    void hmmc::get_model_type(int &model_type) const
     {
         model_type = classifier.getModelType();
     }
     
-    void hmm::get_delta(int &delta) const
+    void hmmc::get_delta(int &delta) const
     {
         delta = classifier.getDelta();
     }
     
-    void hmm::get_max_num_iterations(int &max_num_iterations) const
+    void hmmc::get_max_num_iterations(int &max_num_iterations) const
     {
         max_num_iterations = classifier.getMaxNumEpochs();
     }
     
-    void hmm::get_committee_size(int &committee_size) const
+    void hmmc::get_committee_size(int &committee_size) const
     {
         committee_size = committee_size_cache;
     }
     
-    void hmm::get_downsample_factor(int &downsample_factor) const
+    void hmmc::get_downsample_factor(int &downsample_factor) const
     {
         downsample_factor = downsample_factor_cache;
     }
     
     // Implement pure virtual methods
-    GRT::Classifier &hmm::get_Classifier_instance()
+    GRT::Classifier &hmmc::get_Classifier_instance()
     {
         return classifier;
     }
     
-    const GRT::Classifier &hmm::get_Classifier_instance() const
+    const GRT::Classifier &hmmc::get_Classifier_instance() const
     {
         return classifier;
     }
     
-    bool hmm::read_specialised_dataset(std::string &path)
+    bool hmmc::read_specialised_dataset(std::string &path)
     {
         return time_series_classification_data.loadDatasetFromFile(path);
     }
 
-    bool hmm::write_specialised_dataset(std::string &path) const
+    bool hmmc::write_specialised_dataset(std::string &path) const
     {
         return time_series_classification_data.saveDatasetToFile(path);
     }
     
-    typedef class hmm ml0x2ehmm;
+    typedef class hmmc ml0x2ehmmc;
     
 #ifdef BUILD_AS_LIBRARY
-    FLEXT_LIB(object_name.c_str(), hmm);
+    FLEXT_LIB(object_name.c_str(), hmmc);
 #else
-    FLEXT_NEW(object_name.c_str(), ml0x2ehmm);
+    FLEXT_NEW(object_name.c_str(), ml0x2ehmmc);
 #endif
     
 } //namespace ml

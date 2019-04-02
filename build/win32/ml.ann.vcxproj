@@ -40,7 +40,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\sources\regression\ml_mlp.cpp" />
+    <ClCompile Include="..\..\sources\regression\ml_ann.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <SccProjectName>
@@ -48,7 +48,7 @@
     <SccLocalPath>
     </SccLocalPath>
     <ProjectGuid>{3e34fe40-eab3-45c3-afc3-0d5ad3009ea8}</ProjectGuid>
-    <ProjectName>ml.mlp</ProjectName>
+    <ProjectName>ml.ann</ProjectName>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

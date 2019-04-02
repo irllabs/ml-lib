@@ -40,7 +40,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\sources\classification\ml_hmm.cpp" />
+    <ClCompile Include="..\..\sources\classification\ml_hmmc.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <SccProjectName>
@@ -48,7 +48,7 @@
     <SccLocalPath>
     </SccLocalPath>
     <ProjectGuid>{D475D001-E206-453E-AC4F-48DCD20690C4}</ProjectGuid>
-    <ProjectName>ml.hmm</ProjectName>
+    <ProjectName>ml.hmmc</ProjectName>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
