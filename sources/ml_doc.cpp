@@ -72,6 +72,11 @@ namespace ml_doc
         return url_;
     }
     
+    unsigned int class_descriptor::num_outlets(void) const
+    {
+        return num_outlets_;
+    }
+
     std::string class_descriptor::notes_string(void) const
     {
         return notes_;

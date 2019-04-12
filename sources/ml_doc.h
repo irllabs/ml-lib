@@ -214,12 +214,19 @@ namespace ml_doc
             return *this;
         }
         
+        class_descriptor &num_outlets(int num_outlets)
+        {
+            num_outlets_ = num_outlets;
+            return *this;
+        }
+        
         std::string print(const generic_formatter &formatter) const;
         
         // ml_formattable.h virtual methods
         virtual std::string desc_string(void) const;
         virtual std::string name_string(void) const;
         virtual std::string url_string(void) const;
+        virtual unsigned int num_outlets(void) const;
         virtual std::string notes_string(void) const;
         virtual std::vector<std::unique_ptr<formattable_message_descriptor>> get_formattable_message_descriptors(void) const;
         
@@ -229,6 +236,7 @@ namespace ml_doc
         std::string desc_;
         std::string notes_;
         std::string url_;
+        unsigned int num_outlets_;
         const class_descriptor *parent;
     };
 

@@ -40,7 +40,7 @@ namespace ml_doc
         static const uint16_t heading_x = 30;
         static const uint16_t heading_y = 15;
         static const uint16_t heading_spacing = 30;
-        static const uint16_t message_spacing = 35;
+        static const uint16_t message_spacing = 40;
         static const uint16_t tall_patching_height = 650;
         static const uint16_t short_patching_height = 300;
         static const uint16_t message_comment_distance = 200;
@@ -212,7 +212,6 @@ namespace ml_doc
         
         std::vector<std::unique_ptr<formattable_message_descriptor>> formattable_message_descriptors = f.get_formattable_message_descriptors();
         auto url_text = f.url_string().empty() ? "" : k::url_preamble + f.url_string();
-        
         const int height = formattable_message_descriptors.size() < 5 ? k::short_patching_height : k::tall_patching_height;
         
         json patch;
@@ -268,7 +267,13 @@ namespace ml_doc
                     {"patching_rect", {k::ml_obj_x, height, 0, 22.0 }},
                     {"text", "print left"}
                 }
-            }},
+            }}
+        };
+        
+        const auto num_outlets = f.num_outlets();
+        if (num_outlets == 2)
+        {
+            patch["patcher"]["boxes"] +=
             {{
                 "box", {
                     {"id", k::printr_obj_id},
@@ -279,8 +284,8 @@ namespace ml_doc
                     {"patching_rect", {k::ml_obj_x + 27, height + 80, 0, 22.0 }},
                     {"text", "print right"}
                 }
-            }}
-        };
+            }};
+        }
         
         std::string notes = f.notes_string();
         if (!notes.empty())
@@ -322,12 +327,16 @@ namespace ml_doc
                 {"source", json::array({k::main_obj_id, 0})}
             }
         }};
-        lines += {{
-            "patchline", {
-                {"destination", json::array({k::printr_obj_id, 0})},
-                {"source", json::array({k::main_obj_id, 1})}
-            }
-        }};
+        
+        if (num_outlets == 2)
+        {
+            lines += {{
+                "patchline", {
+                    {"destination", json::array({k::printr_obj_id, 0})},
+                    {"source", json::array({k::main_obj_id, 1})}
+                }
+            }};
+        }
         
         return patch.dump(4);
     }
