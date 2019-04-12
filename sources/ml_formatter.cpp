@@ -154,7 +154,6 @@ namespace ml_doc
                                      {{
                 "box", {
                     {"id", obj_id},
-                    {"fixwidth", 1},
                     {"maxclass", "flonum"},
                     {"numinlets", 1},
                     {"numoutlets", 2},
