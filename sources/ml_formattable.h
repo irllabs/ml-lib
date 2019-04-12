@@ -31,7 +31,7 @@ namespace ml_doc
         virtual ~formattable_descriptor() {}
         virtual std::string name_string(void) const = 0;
         virtual std::string desc_string(void) const = 0;
-        virtual unsigned int num_outlets(void) const { return 2; };
+        virtual unsigned int num_outlets(void) const { return 0; };
         virtual std::string notes_string(void) const { return ""; };
     };
     

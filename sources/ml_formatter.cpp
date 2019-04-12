@@ -34,7 +34,7 @@ namespace ml_doc
         static const std::string printl_obj_id = "obj-10001";
         static const std::string printr_obj_id = "obj-10002";
         static const uint16_t init_message_x = 180;
-        static const uint16_t init_message_y = 80;
+        static const uint16_t init_message_y = 105;
         static const uint16_t ml_obj_x = 30;
         static const uint16_t ml_obj_y = 700;
         static const uint16_t heading_x = 30;
@@ -43,7 +43,7 @@ namespace ml_doc
         static const uint16_t message_spacing = 40;
         static const uint16_t tall_patching_height = 650;
         static const uint16_t short_patching_height = 300;
-        static const uint16_t message_comment_distance = 200;
+        static const uint16_t message_comment_distance = 220;
     }
     
     class obj_id
@@ -295,10 +295,11 @@ namespace ml_doc
                 "box", {
                     {"id", obj_id::get()},
                     {"fixwidth", 1},
+                    {"bgcolor", {0.811764705882353, 0.811764705882353, 0.811764705882353, 1.0}},
                     {"maxclass", "comment"},
                     {"numinlets", 1},
                     {"numoutlets", 0},
-                    {"patching_rect", { k::heading_x, k::heading_y + k::heading_spacing * 2, 0, 20.0 }},
+                    {"patching_rect", { k::heading_x, k::heading_y + k::heading_spacing * 1.6, 0, 20.0 }},
                     {"text", k::notes_preamble + notes}
                 }
             }};

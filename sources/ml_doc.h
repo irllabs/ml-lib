@@ -236,7 +236,7 @@ namespace ml_doc
         std::string desc_;
         std::string notes_;
         std::string url_;
-        unsigned int num_outlets_;
+        unsigned int num_outlets_ = 2;
         const class_descriptor *parent;
     };
 
