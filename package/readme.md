@@ -17,11 +17,7 @@ Please use the [GitHub Issue Tracker](https://github.com/cmuartfab/ml-lib/issues
 
 ## Development Status
 
-**ML-LIB IS CURRENTLY IN OPEN BETA** 
-
-This means the software is considered feature complete, but has not been extensively tested and should not be used in production environments.
-
-The library has currently been tested on Mac OS X with Max 5.x and 6.x and on Mac OS X and Linux on i386 and armv6 architectures using Pure Data. 
+The library has currently been tested on Mac OS X with Max 7 and 8 and on Mac OS X and Linux on i386 and armv6 architectures using Pure Data. 
 
 Bugs should be reported via the [issues page](https://github.com/cmuartfab/ml-lib/issues).
 
@@ -93,11 +89,11 @@ The [Gesture Recognition Toolkit](http://www.nickgillian.com/software/grt) is de
 
 **ml-lib** is supported by [Art Fab](http://cmu-artfab.org), the [College of Fine Arts](http://cfa.cmu.edu) and [The Frank-Ratchye STUDIO for Creative Inquiry](http://studioforcreativeinquiry.org/) at [Carnegie Mellon University](http://cmu.edu)
 
+Special thanks to [Niccolò Granieri](http://niccologranieri.com) for testing and assistance.
 
 ## License
 
 ml-lib is copyright (c) 2014 Carnegie Mellon University.
 
 ml-lib is distributed under the GNU General Public License version 2. A copy of this is available in the accompanying [LICENSE](LICENSE) file. See also [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
-
 
