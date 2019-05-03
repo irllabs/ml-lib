@@ -85,10 +85,12 @@ Global
 		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Debug|x64.Deploy.0 = PD Release|Win32
 		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Debug|x86.ActiveCfg = PD Debug|Win32
 		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Debug|x86.Build.0 = PD Debug|Win32
-		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Debug|x64.ActiveCfg = Max Debug|Win32
+		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Debug|x64.ActiveCfg = Max Debug|x64
+		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Debug|x64.Build.0 = Max Debug|x64
 		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Debug|x86.ActiveCfg = Max Debug|Win32
 		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Debug|x86.Build.0 = Max Debug|Win32
-		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Release|x64.ActiveCfg = Max Release|Win32
+		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Release|x64.ActiveCfg = Max Release|x64
+		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Release|x64.Build.0 = Max Release|x64
 		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Release|x86.ActiveCfg = Max Release|Win32
 		{D04441D0-3849-4E06-827C-F4E99EA385ED}.Max Release|x86.Build.0 = Max Release|Win32
 		{D04441D0-3849-4E06-827C-F4E99EA385ED}.PD Debug|x64.ActiveCfg = PD Debug|Win32
@@ -465,5 +467,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC2B60FA-EFB1-4070-99FC-0648CD545B78}
 	EndGlobalSection
 EndGlobal
