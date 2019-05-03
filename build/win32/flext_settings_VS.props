@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <FLEXTPATH>..\..\vendor\flext</FLEXTPATH>
-    <MAXSDKPATH>C:\maxmspsdk\c74support</MAXSDKPATH>
+    <MAXSDKPATH>C:\maxmspsdk\source\c74support</MAXSDKPATH>
     <PDPATH>C:\_pd_</PDPATH>
     <STK_INC>%HOMEDRIVE%\%HOMEPATH%\stk\include</STK_INC>
     <STK_LIB />
