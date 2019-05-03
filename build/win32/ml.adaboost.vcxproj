@@ -145,16 +145,18 @@
     <LibraryPath>.\lib\Debug;.\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Max Release|Win32'">
-    <OutDir>.\max-msvc\s\</OutDir>
-    <IntDir>.\max-msvc\s\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <LibraryPath>$(ProjectDir)\max-sdk\source\c74support\msp-includes;$(ProjectDir)\max-sdk\source\c74support\max-includes;.\lib\Release;$(LibraryPath)</LibraryPath>
-    <TargetExt>.mxe</TargetExt>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Max Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <LibraryPath>$(ProjectDir)\max-sdk\source\c74support\msp-includes;$(ProjectDir)\max-sdk\source\c74support\max-includes;.\lib;$(LibraryPath)</LibraryPath>
-    <TargetExt>.mxe</TargetExt>
+    <TargetExt>.dll</TargetExt>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">
     <OutDir>.\pd-msvc\sd\</OutDir>
@@ -167,14 +169,16 @@
     <LibraryPath>.\lib\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Max Debug|Win32'">
-    <OutDir>.\max-msvc\sd\</OutDir>
-    <IntDir>.\max-msvc\sd\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>$(ProjectDir)\max-sdk\source\c74support\msp-includes;$(ProjectDir)\max-sdk\source\c74support\max-includes;.\lib\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Max Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>C:\Users\Jamie Bullock\Documents\ml-lib\vendor\grt\build\dynamic\Debug;$(ProjectDir)\max-sdk\source\c74support\msp-includes;$(ProjectDir)\max-sdk\source\c74support\max-includes;.\lib\Debug;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PD Release|Win32'">
     <ClCompile>
@@ -266,7 +270,7 @@
       <Optimization>Full</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>GRT_STATIC_LIB;NDEBUG;MAXAPI_USE_MSCRT;_WIN32_WINNT=0x501;_USRDLL;FLEXT_SYS_MAX;FLEXT_USE_SIMD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;GRT_STATIC_LIB;MAXAPI_USE_MSCRT;_WIN32_WINNT=0x501;_USRDLL;FLEXT_SYS_MAX;FLEXT_USE_SIMD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\max-msvc\s\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\max-msvc\s\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\max-msvc\s\</ObjectFileName>
@@ -307,12 +311,12 @@
       <Optimization>Full</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NDEBUG;MAXAPI_USE_MSCRT;_WIN32_WINNT=0x501;_USRDLL;FLEXT_SYS_MAX;FLEXT_USE_SIMD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GRT_STATIC_LIB;NDEBUG;MAXAPI_USE_MSCRT;_WIN32_WINNT=0x501;_USRDLL;FLEXT_SYS_MAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\max-msvc\s\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\max-msvc\s\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\max-msvc\s\</ObjectFileName>
       <ProgramDataBaseFileName>.\max-msvc\s\</ProgramDataBaseFileName>
-      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -332,10 +336,10 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkDLL>true</LinkDLL>
       <SubSystem>Console</SubSystem>
-      <OutputFile>.\max-msvc\s\$(TargetName).mxe</OutputFile>
+      <OutputFile>.\max-msvc\s\$(Platform)\$(TargetName).mxe64</OutputFile>
       <ImportLibrary>.\max-msvc\s\$(TargetName).lib</ImportLibrary>
-      <AdditionalLibraryDirectories>$(FLEXTPATH)\max-msvc;$(MAXSDKPATH)\max-includes;$(MAXSDKPATH)\msp-includes;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>grt.lib;flext-max_s.lib;maxapi.lib;maxaudio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(FLEXTPATH)\max-msvc\x64;$(MAXSDKPATH)\max-includes\x64;$(MAXSDKPATH)\msp-includes\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>MaxAPI.lib;MaxAudio.lib;flext-max_s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PD Debug|Win32'">
@@ -480,14 +484,14 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <PreprocessorDefinitions>GRT_STATIC_LIB;_DEBUG;FLEXT_SYS_MAX;FLEXT_USE_SIMD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GRT_STATIC_LIB;_DEBUG;FLEXT_SYS_MAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\max-msvc\sd\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
       <PrecompiledHeaderOutputFile>.\max-msvc\sd\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\max-msvc\sd\</ObjectFileName>
       <ProgramDataBaseFileName>.\max-msvc\sd\</ProgramDataBaseFileName>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -508,10 +512,10 @@
       <LinkDLL>true</LinkDLL>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <OutputFile>.\max-msvc\sd\$(TargetName).mxe</OutputFile>
+      <OutputFile>.\max-msvc\sd\$(TargetName).mxe64</OutputFile>
       <ImportLibrary>.\max-msvc\sd\$(TargetName).lib</ImportLibrary>
-      <AdditionalLibraryDirectories>$(FLEXTPATH)\max-msvc;$(MAXSDKPATH)\max-includes;$(MAXSDKPATH)\msp-includes;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>flext-max_sd.lib;maxapi.lib;maxaudio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(FLEXTPATH)\max-msvc\x64;$(MAXSDKPATH)\max-includes\x64;$(MAXSDKPATH)\msp-includes\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>MaxAPI.lib;MaxAudio.lib;flext-max_sd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
