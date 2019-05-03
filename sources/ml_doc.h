@@ -127,10 +127,10 @@ namespace ml_doc
     public valued_message_descriptor<T>
     {
     public:
-        ranged_message_descriptor(std::string name, std::string desc, T min, T max, T def)
+        ranged_message_descriptor(std::string name, std::string desc, T minimum, T maximum, T def)
         : valued_message_descriptor<T> (name, desc, def),
-        min(min),
-        max(max) {};
+        minimum(minimum),
+        maximum(maximum) {};
         
         virtual ranged_message_descriptor<T> *clone() const
         {
@@ -142,18 +142,18 @@ namespace ml_doc
             return formatter.format(*this);
         }
 
-        T min;
-        T max;
+        T minimum;
+        T maximum;
         
         // ml_formattable.h pure virtual methods
         virtual std::string min_string(void) const
         {
-            return to_string_with_precision(min, 2);
+            return to_string_with_precision(minimum, 2);
         }
         
         virtual std::string max_string(void) const
         {
-            return to_string_with_precision(max, 2);
+            return to_string_with_precision(maximum, 2);
         }
     };
 
