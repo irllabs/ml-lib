@@ -15,7 +15,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <ClCompile>
-      <PreprocessorDefinitions>NOMINMAX;_CRT_SECURE_NO_WARNINGS;FLEXT_USE_HEX_SETUP_NAME;FLEXT_ATTRIBUTES=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;FLEXT_USE_HEX_SETUP_NAME;FLEXT_ATTRIBUTES=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)\max-sdk\source\c74support\max-includes;$(ProjectDir)\max-sdk\source\c74support\msp-includes;..\..\vendor\flext\source;..\..\vendor\pd;..\..\vendor\grt\GRT;..\..\sources\classification;..\..\sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <SDLCheck>false</SDLCheck>
