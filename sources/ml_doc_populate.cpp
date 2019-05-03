@@ -59,7 +59,7 @@ namespace ml_doc
         descriptors[ml::k_linreg].desc("Linear Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression");
         descriptors[ml::k_logreg].desc("Logistic Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LogisticRegression");
         descriptors[ml::k_peak].desc("Peak Detection").url("").num_outlets(1);
-        descriptors[ml::k_minmax].desc("Minimum / Maximum Detection").url("");
+        descriptors[ml::k_minmax].desc("Minimum / Maximum Detection").url("").num_outlets(1);
         descriptors[ml::k_zerox].desc("Zero Crossings Detection").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/ZeroCrossingCounter");
         descriptors[ml::k_svm].desc("Support Vector Machine").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/SVM");
         descriptors[ml::k_adaboost].desc("Adaptive Boosting").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/AdaBoost");
