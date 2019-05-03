@@ -67,7 +67,7 @@ Objects fall into one of five categories:
 - `ml.adaboost`:  [Adaptive Boosting](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.AdaBoost)
 - `ml.dtw`: [Dynamic Time Warping](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.DTW)
 - `ml.gmm`: [Gaussian Mixture Model](http://www.nickgillian.com/wiki/pmwiki.php/GRT/GMMClassifier)
-- `ml.hmm`: [Hidden Markov Models](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.HMM)
+- `ml.hmmc`: [Hidden Markov Models](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.HMM)
 - `ml.knn`: [k’s Nearest Neighbour](http://www.nickgillian.com/wiki/pmwiki.php/GRT/KNN)
 - `ml.mindist`:[Minimum Distance](http://www.nickgillian.com/wiki/pmwiki.php/GRT/MinDist)
 - `ml.randforest`: [Random Decision Forest](http://www.nickgillian.com/wiki/pmwiki.php/GRT/RandomForests)
@@ -78,7 +78,7 @@ Objects fall into one of five categories:
 
 - `ml.linreg`: [Linear Regression](http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression)
 - `ml.logreg`: [Logistic Regression](http://www.nickgillian.com/wiki/pmwiki.php/GRT/LogisticRegression)
-- `ml.mlp`: [Multi-layer Perceptron](http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP) Artificial Neural Networks (ANN)
+- `ml.ann`: [Multi-layer Perceptron](http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP) Artificial Neural Networks (ANN)
 
 See the help file for each component for further details about operation and usage.
 
