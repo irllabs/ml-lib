@@ -105,7 +105,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 520.0, 453.0, 46.0, 22.0 ],
-					"text" : "ml.mlp"
+					"text" : "ml.ann"
 				}
 
 			}
@@ -188,7 +188,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 519.0, 268.9791259765625, 61.0, 22.0 ],
-					"text" : "ml.hmm"
+					"text" : "ml.hmmc"
 				}
 
 			}
