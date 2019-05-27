@@ -1,3 +1,4 @@
+<h1>Class Reference</h1>
 <h2>ml.adaboost</h2>
 <p>Adaptive Boosting<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/AdaBoost">http://www.nickgillian.com/wiki/pmwiki.php/GRT/AdaBoost</a><br/>NOTES: </p>
 <table>
