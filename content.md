@@ -44,6 +44,40 @@
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>weights</td><td>vector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights</td><td></td><td></td><td></td><td></td></tr>
+</table><h2>ml.ann</h2>
+<p>Artificial Neural Network<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP">http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP</a><br/>NOTES: </p>
+<table>
+<thead>
+<tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>
+</thead></tr>
+<tr><td>add</td><td>class id followed by n features, <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>write</td><td>write training data and / or model, first argument gives path to write file</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>read</td><td>read training data and / or model, first argument gives path to the read file</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
+<tr><td>training_rate</td><td>set the learning rate, used to update the weights at each step of learning algorithms such as stochastic gradient descent.</td><td></td><td>0.01</td><td>1</td><td>0.1</td></tr>
+<tr><td>min_change</td><td>set the minimum change that must be achieved between two training epochs for the training to continue</td><td></td><td>0</td><td>1</td><td>1e-05</td></tr>
+<tr><td>max_iterations</td><td>set the maximum number of training iterations</td><td></td><td>0</td><td>1000</td><td>100</td></tr>
+<tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
+<tr><td>mode</td><td>set the mode of the ANN, 0 for classification, 1 for regression</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
+<tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
+<tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0.1</td><td>1</td><td>0.9</td></tr>
+<tr><td>num_outputs</td><td>set the number of neurons in the output layer</td><td></td><td>1</td><td>1000</td><td>1</td></tr>
+<tr><td>num_hidden</td><td>set the number of neurons in the hidden layer</td><td></td><td>1</td><td>1000</td><td>2</td></tr>
+<tr><td>min_epochs</td><td>setting the minimum number of training iterations</td><td></td><td>1</td><td>1000</td><td>10</td></tr>
+<tr><td>max_epochs</td><td>setting the maximum number of training iterations</td><td></td><td>1</td><td>10000</td><td>100</td></tr>
+<tr><td>momentum</td><td>set the momentum</td><td></td><td>0</td><td>1</td><td>0.5</td></tr>
+<tr><td>gamma</td><td>set the gamma</td><td></td><td>0</td><td>10</td><td>2</td></tr>
+<tr><td>input_activation_function</td><td>set the activation function for the input layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
+<tr><td>hidden_activation_function</td><td>set the activation function for the hidden layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
+<tr><td>output_activation_function</td><td>set the activation function for the output layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
+<tr><td>rand_training_iterations</td><td>set the number of random training iterations</td><td></td><td>0</td><td>1000</td><td>10</td></tr>
+<tr><td>use_validation_set</td><td>set whether to use a validation training set</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
+<tr><td>validation_set_size</td><td>set the size of the validation set</td><td></td><td>1</td><td>100</td><td>20</td></tr>
+<tr><td>randomize_training_order</td><td>sets whether to randomize the training order</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 </table><h2>ml.dtree</h2>
 <p>Decision Trees<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/DecisionTree">http://www.nickgillian.com/wiki/pmwiki.php/GRT/DecisionTree</a><br/>NOTES: </p>
 <table>
@@ -117,7 +151,8 @@
 <tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
 <tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>num_mixture_models</td><td>sets the number of mixture models used for class</td><td></td><td>1</td><td>20</td><td>2</td></tr>
-</table><h2>ml.hmm</h2>
+</table><h2>ml.hmmc</h2>
+
 <p>Continuous Hidden Markov Model<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM">http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM</a><br/>NOTES: add and map messages for time series should be delimited with record messages, e.g. record 1, add 1 40 50, add 1 41 50, record 0</p>
 <table>
 <thead>
@@ -230,40 +265,7 @@
 </thead></tr>
 <tr><td>list</td><td>list of float values in which to find minima and maxima</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>delta</td><td>setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value</td><td></td><td>0</td><td>1</td><td>0.1</td></tr>
-</table><h2>ml.mlp</h2>
-<p>Multilayer Perceptron<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP">http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP</a><br/>NOTES: </p>
-<table>
-<thead>
-<tr><th>Message Selector</th><th>Description</th><th>Allowed Values</th><th>Minimum</th><th>Maximum</th><th>Default</th>
-</thead></tr>
-<tr><td>add</td><td>class id followed by n features, <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>write</td><td>write training data and / or model, first argument gives path to write file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>read</td><td>read training data and / or model, first argument gives path to the read file</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>train</td><td>train the model based on vectors added with 'add'</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>clear</td><td>clear the stored training data and model</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>map</td><td>generate the output value(s) for the input feature vector</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>help</td><td>post usage statement to the console</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>scaling</td><td>sets whether values are automatically scaled</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
-<tr><td>training_rate</td><td>set the learning rate, used to update the weights at each step of learning algorithms such as stochastic gradient descent.</td><td></td><td>0.01</td><td>1</td><td>0.1</td></tr>
-<tr><td>min_change</td><td>set the minimum change that must be achieved between two training epochs for the training to continue</td><td></td><td>0</td><td>1</td><td>1e-05</td></tr>
-<tr><td>max_iterations</td><td>set the maximum number of training iterations</td><td></td><td>0</td><td>1000</td><td>100</td></tr>
-<tr><td>probs</td><td>determines whether probabilities are sent from the right outlet</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
-<tr><td>mode</td><td>set the mode of the MLP, 0 for classification, 1 for regression</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
-<tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
-<tr><td>null_rejection_coeff</td><td>set a multiplier for the NULL-rejection threshold </td><td></td><td>0.1</td><td>1</td><td>0.9</td></tr>
-<tr><td>num_outputs</td><td>set the number of neurons in the output layer</td><td></td><td>1</td><td>1000</td><td>1</td></tr>
-<tr><td>num_hidden</td><td>set the number of neurons in the hidden layer</td><td></td><td>1</td><td>1000</td><td>2</td></tr>
-<tr><td>min_epochs</td><td>setting the minimum number of training iterations</td><td></td><td>1</td><td>1000</td><td>10</td></tr>
-<tr><td>max_epochs</td><td>setting the maximum number of training iterations</td><td></td><td>1</td><td>10000</td><td>100</td></tr>
-<tr><td>momentum</td><td>set the momentum</td><td></td><td>0</td><td>1</td><td>0.5</td></tr>
-<tr><td>gamma</td><td>set the gamma</td><td></td><td>0</td><td>10</td><td>2</td></tr>
-<tr><td>input_activation_function</td><td>set the activation function for the input layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
-<tr><td>hidden_activation_function</td><td>set the activation function for the hidden layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
-<tr><td>output_activation_function</td><td>set the activation function for the output layer, 0:LINEAR, 1:SIGMOID, 2:BIPOLAR_SIGMOID</td><td>0, 1, 2</td><td></td><td></td><td>0</td></tr>
-<tr><td>rand_training_iterations</td><td>set the number of random training iterations</td><td></td><td>0</td><td>1000</td><td>10</td></tr>
-<tr><td>use_validation_set</td><td>set whether to use a validation training set</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
-<tr><td>validation_set_size</td><td>set the size of the validation set</td><td></td><td>1</td><td>100</td><td>20</td></tr>
-<tr><td>randomize_training_order</td><td>sets whether to randomize the training order</td><td>0, 1</td><td></td><td></td><td>0</td></tr>
+
 </table><h2>ml.peak</h2>
 <p>Peak Detection<br/>URL: <a href=""></a><br/>NOTES: </p>
 <table>
@@ -339,7 +341,8 @@
 <tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>cross_validation</td><td>perform cross validation</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>num_folds</td><td>set the number of folds used for cross validation</td><td></td><td>1</td><td>100</td><td>10</td></tr>
-<tr><td>type</td><td>set SVM type, 0:C-SVC (multi-class), 1:nu-SVC (multi-class), 2:one-class SVM, 3:epsilon-SVR (regression), 4:nu-SVR (regression)</td><td></td><td>0</td><td>4</td><td>0</td></tr>
+<tr><td>type</td><td>set SVM type, 0:C-SVC (multi-class), 1:nu-SVC (multi-class), 2:one-class SVM,</td><td></td><td>0</td><td>2</td><td>0</td></tr>
+
 <tr><td>kernel</td><td>set type of kernel function, 0:linear, 1:polynomial, 2:radial basis function, 3:sigmoid, 4:precomputed kernel (kernel values in training_set_file)</td><td></td><td>0</td><td>4</td><td>0</td></tr>
 <tr><td>degree</td><td>set degree in kernel function</td><td></td><td>0</td><td>20</td><td>3</td></tr>
 <tr><td>gamma</td><td>set gamma in kernel function</td><td></td><td>0</td><td>1</td><td>0.5</td></tr>
