@@ -152,6 +152,7 @@
 <tr><td>null_rejection</td><td>toggle NULL rejection off or on, when 'on' classification results below the NULL-rejection threshold will be discarded</td><td>0, 1</td><td></td><td></td><td>1</td></tr>
 <tr><td>num_mixture_models</td><td>sets the number of mixture models used for class</td><td></td><td>1</td><td>20</td><td>2</td></tr>
 </table><h2>ml.hmmc</h2>
+
 <p>Continuous Hidden Markov Model<br/>URL: <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM">http://www.nickgillian.com/wiki/pmwiki.php/GRT/HMM</a><br/>NOTES: add and map messages for time series should be delimited with record messages, e.g. record 1, add 1 40 50, add 1 41 50, record 0</p>
 <table>
 <thead>
@@ -264,6 +265,7 @@
 </thead></tr>
 <tr><td>list</td><td>list of float values in which to find minima and maxima</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>delta</td><td>setting the minmax delta. Input values will be considered to be peaks if they are greater than the previous and next value by at least the delta value</td><td></td><td>0</td><td>1</td><td>0.1</td></tr>
+
 </table><h2>ml.peak</h2>
 <p>Peak Detection<br/>URL: <a href=""></a><br/>NOTES: </p>
 <table>
@@ -340,6 +342,7 @@
 <tr><td>cross_validation</td><td>perform cross validation</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>num_folds</td><td>set the number of folds used for cross validation</td><td></td><td>1</td><td>100</td><td>10</td></tr>
 <tr><td>type</td><td>set SVM type, 0:C-SVC (multi-class), 1:nu-SVC (multi-class), 2:one-class SVM,</td><td></td><td>0</td><td>2</td><td>0</td></tr>
+
 <tr><td>kernel</td><td>set type of kernel function, 0:linear, 1:polynomial, 2:radial basis function, 3:sigmoid, 4:precomputed kernel (kernel values in training_set_file)</td><td></td><td>0</td><td>4</td><td>0</td></tr>
 <tr><td>degree</td><td>set degree in kernel function</td><td></td><td>0</td><td>20</td><td>3</td></tr>
 <tr><td>gamma</td><td>set gamma in kernel function</td><td></td><td>0</td><td>1</td><td>0.5</td></tr>
