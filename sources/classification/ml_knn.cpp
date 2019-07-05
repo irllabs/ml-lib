@@ -31,7 +31,7 @@ namespace ml
     public:
         knn()
         {
-            post("Support Vector Machines based on the GRT library version " + GRT::GRTBase::getGRTVersion());
+            post("k-Nearest Neighbours based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(defaults::scaling);
         }
         
