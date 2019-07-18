@@ -230,7 +230,7 @@
       <Optimization>Full</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NDEBUG;_WIN32_WINNT=0x501;_USRDLL;FLEXT_SYS_PD;FLEXT_USE_SIMD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GRT_STATIC_LIB;NDEBUG;_WIN32_WINNT=0x501;_USRDLL;FLEXT_SYS_PD;FLEXT_USE_SIMD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\pd-msvc\s\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\pd-msvc\s\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\pd-msvc\s\</ObjectFileName>
@@ -255,10 +255,10 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkDLL>true</LinkDLL>
       <SubSystem>Console</SubSystem>
-      <OutputFile>.\pd-msvc\s\$(TargetName).dll</OutputFile>
+      <OutputFile>.\pd-msvc\s\$(Platform)\$(TargetName).dll</OutputFile>
       <ImportLibrary>.\pd-msvc\s\$(TargetName).lib</ImportLibrary>
-      <AdditionalLibraryDirectories>$(PDPATH)\bin;$(FLEXTPATH)\pd-msvc;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>pd.lib;flext-pd_s.lib;grt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(PDPATH)\$(Platform)\bin;$(FLEXTPATH)\pd-msvc\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>pd.lib;flext-pd_s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Max Release|Win32'">
