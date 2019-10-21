@@ -5,6 +5,7 @@ In order to build ml.lib, a C++11 standard compliant compiler is required. This 
 ## Mac OS X
 - Open build/macosx/ml.xcworkspace
 - Select the scheme "BUILD ALL MAX" or "BUILD ALL PD"
+- Change the build system to "Legacy Build System" from File → Workspace Settings... → Build System
 - Type cmd-B to build
 
 ## Linux
