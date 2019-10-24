@@ -207,7 +207,7 @@ namespace ml_doc
         
         message_descriptor add_ann(
                               "add",
-                              "class id followed by n features, <class> <feature 1> <feature 2> etc when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)",
+                              "class id followed by n features, <class> <f1> <f2> when in classification mode or N output values followed by M input values when in regression mode (N = num_outputs)",
                                    "1 0.2 0.7 0.3 0.1"
 
                               );
@@ -444,7 +444,7 @@ namespace ml_doc
         
         //---- ml.anbc
         message_descriptor weights("weights",
-                                   "vector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. Sending weights with a vector size of zero clears all weights"
+                                   "vector of 1 integer and N floating point values where the integer is a class label and the floats are the weights for that class. A vector with size zero clears all weights"
                                    );
         
         descriptors[ml::k_anbc].add_message_descriptor(weights);
