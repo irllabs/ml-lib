@@ -150,6 +150,12 @@ namespace ml_doc
     }
 
     // doc_manager implementation
+    doc_manager::doc_manager(generic_formatter &formatter)
+    : formatter(formatter)
+    {
+        populate();
+    }
+
     doc_manager& doc_manager::shared_instance(generic_formatter &formatter)
     {
         static doc_manager instance(formatter);

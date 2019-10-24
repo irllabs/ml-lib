@@ -247,6 +247,8 @@ namespace ml_doc
     {
     public:
         static doc_manager& shared_instance(generic_formatter &formatter);
+        doc_manager(generic_formatter &formatter);
+        
         std::string doc_for_class(std::string class_name) const;
         
     private:
@@ -254,7 +256,6 @@ namespace ml_doc
         void add_class_descriptor(std::string name, std::string parent);
         void add_class_descriptors(std::string parent, std::initializer_list<std::string> names);
  
-        doc_manager(generic_formatter &formatter) : formatter(formatter) { populate(); };
         doc_manager(doc_manager const&) = delete;
         void operator=(doc_manager const&) = delete;
 
