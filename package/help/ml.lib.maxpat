@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 2,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -435,7 +435,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 90.0, 227.0, 367.0, 20.0 ],
-					"text" : "Output detected peaks from a continues stream of input values"
+					"text" : "Output detected peaks from a continuous stream of input values"
 				}
 
 			}
@@ -686,14 +686,7 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "icon.png",
-				"bootpath" : "~/Documents/Max 8/Packages/ml.lib",
-				"patcherrelativepath" : "..",
-				"type" : "PNG",
-				"implicit" : 1
-			}
- ],
+		"dependency_cache" : [  ],
 		"autosave" : 0
 	}
 
