@@ -50,7 +50,6 @@ namespace ml_doc
         });
         
         add_class_descriptors(ml::k_feature_extraction, {
-            ml::k_peak,
             ml::k_minmax,
             ml::k_zerox
         });
@@ -58,7 +57,6 @@ namespace ml_doc
         descriptors[ml::k_ann].desc("Artificial Neural Network").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP");
         descriptors[ml::k_linreg].desc("Linear Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression");
         descriptors[ml::k_logreg].desc("Logistic Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LogisticRegression");
-        descriptors[ml::k_peak].desc("Peak Detection").url("").num_outlets(1);
         descriptors[ml::k_minmax].desc("Minimum / Maximum Detection").url("").num_outlets(1).notes("The output of minmax will consist in 2 lists of float values, min and max peaks, preceded by their position in the input list");
         descriptors[ml::k_zerox].desc("Zero Crossings Detection").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/ZeroCrossingCounter");
         descriptors[ml::k_svm].desc("Support Vector Machine").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/SVM");
@@ -667,35 +665,6 @@ namespace ml_doc
         descriptors[ml::k_dtree].add_message_descriptor(training_mode, num_splitting_steps, min_samples_per_node, dtree_max_depth, remove_features_at_each_split);
 
         //-- Feature extraction
-        
-        //---- ml.peak
-        ranged_message_descriptor<int> search_window_size(
-                                                          "search_window_size",
-                                                          "set the search window size in values",
-                                                          1,
-                                                          500,
-                                                          5
-                                                          );
-        
-        ranged_message_descriptor<float> peak(
-                                              "float",
-                                              "set the current value of the peak detector, a bang will be output when a peak is detected",
-                                              INFINITY * -1.f, INFINITY,
-                                              1
-                                              );
-        
-        message_descriptor reset(
-                                "reset",
-                                "reset the peak detector"
-                                );
-        
-        message_descriptor peak_help(
-                                 "help",
-                                 "post usage statement to the console"
-                                 );
-
-
-        descriptors[ml::k_peak].add_message_descriptor(peak, reset, search_window_size, peak_help);
         
         //---- ml.minmax
         

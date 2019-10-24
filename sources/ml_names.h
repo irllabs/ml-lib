@@ -17,7 +17,6 @@ namespace ml
     const std::string k_classification = "ml.classification";
     const std::string k_regression = "ml.regression";
     const std::string k_feature_extraction = "ml.feature_extraction";
-    const std::string k_peak = "ml.peak";
     const std::string k_minmax = "ml.minmax";
     const std::string k_zerox = "ml.zerox";
     const std::string k_svm = "ml.svm";
@@ -37,7 +36,6 @@ namespace ml
     
     const std::set<std::string> k_classes =
     {
-        k_peak,
         k_minmax,
         k_zerox,
         k_svm,
