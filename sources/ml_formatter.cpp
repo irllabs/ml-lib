@@ -419,9 +419,12 @@ namespace ml_doc
         formatted += "#X connect 0 0 " + to_string(object_count) + " 0;\n";
         ++object_count;
         
-        formatted += "#X obj " + to_string(k::ml_obj_x + 80) + " " + to_string(k::ml_obj_y + 80) + " print right;\n";
-        formatted += "#X connect 0 1 " + to_string(object_count) + " 0;\n";
-        
+        const auto num_outlets = f.num_outlets();
+        if (num_outlets == 2)
+        {
+            formatted += "#X obj " + to_string(k::ml_obj_x + 80) + " " + to_string(k::ml_obj_y + 80) + " print right;\n";
+            formatted += "#X connect 0 1 " + to_string(object_count) + " 0;\n";
+        }
         return formatted;
     }
     
