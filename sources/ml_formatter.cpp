@@ -40,10 +40,12 @@ namespace ml_doc
         static const uint16_t heading_x = 30;
         static const uint16_t heading_y = 15;
         static const uint16_t heading_spacing = 30;
-        static const uint16_t message_spacing = 40;
+        static const uint16_t max_message_spacing = 40;
+        static const uint16_t pd_message_spacing = 50;
         static const uint16_t tall_patching_height = 650;
         static const uint16_t short_patching_height = 300;
-        static const uint16_t message_comment_distance = 280;
+        static const uint16_t max_message_comment_distance = 220;
+        static const uint16_t pd_message_comment_distance = 310;
     }
     
     class obj_id
@@ -188,7 +190,7 @@ namespace ml_doc
                 {"maxclass", "comment"},
                 {"numinlets", 1},
                 {"numoutlets", 0},
-                {"patching_rect", { k::init_message_x + k::message_comment_distance, message_y, 0, 20.0 }},
+                {"patching_rect", { k::init_message_x + k::max_message_comment_distance, message_y, 0, 20.0 }},
                 {"text", get_generic_desc(f)}
             }
         }});
@@ -319,7 +321,7 @@ namespace ml_doc
 
             boxes.insert(boxes.end(), messages["boxes"].begin(), messages["boxes"].end());
             lines.insert(lines.end(), messages["lines"].begin(), messages["lines"].end());
-            message_y += k::message_spacing;
+            message_y += k::max_message_spacing;
         }
         
         lines += {{
@@ -367,7 +369,7 @@ namespace ml_doc
                                 coords +  " " +
                                 name + " " + arguments + " " + ";\n"
                                 ;
-        formatted += "#X text " + to_string(message_x + k::message_comment_distance) + " " + to_string(message_y) + " " + pd_escaped(f.desc_string()) + ";\n";
+        formatted += "#X text " + to_string(message_x + k::pd_message_comment_distance) + " " + to_string(message_y) + " " + pd_escaped(f.desc_string()) + ";\n";
         objects_added = 2;
         
         return formatted;
@@ -413,7 +415,7 @@ namespace ml_doc
             formatted += this->format(*formattable, message_x, message_y, objects_added);
             formatted += "#X connect " + to_string(object_count) + " 0 0 0;\n";
             object_count += objects_added;
-            message_y += k::message_spacing;
+            message_y += k::pd_message_spacing;
         }
         
         // TODO: abstract this into an add_object helper method
