@@ -377,8 +377,8 @@ namespace ml_doc
     {
         
         using std::to_string;
-        
-        std::string formatted = "#N canvas 600 140 900 900 10;\n";
+
+        std::string formatted = "#N canvas 600 140 900 900 12;\n";
         uint16_t message_x = k::init_message_x;
         uint16_t message_y = k::init_message_y;
         uint16_t object_count = 0;
