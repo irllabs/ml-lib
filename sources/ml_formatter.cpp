@@ -43,7 +43,7 @@ namespace ml_doc
         static const uint16_t message_spacing = 40;
         static const uint16_t tall_patching_height = 650;
         static const uint16_t short_patching_height = 300;
-        static const uint16_t message_comment_distance = 220;
+        static const uint16_t message_comment_distance = 280;
     }
     
     class obj_id
