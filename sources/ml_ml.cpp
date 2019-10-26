@@ -517,6 +517,7 @@ namespace ml
         FLEXT_SETUP(dtw);
         FLEXT_SETUP(hmmc);
         FLEXT_SETUP(ann);
+        FLEXT_SETUP(mulreg);
         FLEXT_SETUP(linreg);
         FLEXT_SETUP(logreg);
         FLEXT_SETUP(peak);

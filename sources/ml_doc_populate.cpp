@@ -32,7 +32,8 @@ namespace ml_doc
         add_class_descriptors(ml::k_regression, {
             ml::k_ann,
             ml::k_linreg,
-            ml::k_logreg
+            ml::k_logreg,
+            ml::k_mulreg
         });
         
         add_class_descriptors(ml::k_classification, {
@@ -56,6 +57,7 @@ namespace ml_doc
         
         descriptors[ml::k_ann].desc("Artificial Neural Network").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP");
         descriptors[ml::k_linreg].desc("Linear Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression");
+        descriptors[ml::k_mulreg].desc("Multiple Regression");
         descriptors[ml::k_logreg].desc("Logistic Regression").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/LogisticRegression");
         descriptors[ml::k_minmax].desc("Minimum / Maximum Detection").url("").num_outlets(1).notes("The output of minmax will consist in 2 lists of float values, min and max peaks, preceded by their position in the input list");
         descriptors[ml::k_zerox].desc("Zero Crossings Detection").url("http://www.nickgillian.com/wiki/pmwiki.php/GRT/ZeroCrossingCounter");

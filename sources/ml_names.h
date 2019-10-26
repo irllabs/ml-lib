@@ -31,6 +31,7 @@ namespace ml
     const std::string k_gmm = "ml.gmm";
     const std::string k_dtree = "ml.dtree";
     const std::string k_linreg = "ml.linreg";
+    const std::string k_mulreg = "ml.mulreg";
     const std::string k_logreg = "ml.logreg";
     const std::string k_ann = "ml.ann";
     

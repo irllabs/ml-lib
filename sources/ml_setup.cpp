@@ -30,6 +30,7 @@ extern "C" {
     void ml0x2eann_setup();
     void ml0x2elinreg_setup();
     void ml0x2elogreg_setup();
+    void ml0x2emulreg_setup();
     void ml0x2epeak_setup();
     void ml0x2eminmax_setup();
     void ml0x2eanbc_setup();
@@ -58,6 +59,7 @@ void ml::setup_all()
     ml0x2eann_setup();
     ml0x2elinreg_setup();
     ml0x2elogreg_setup();
+    ml0x2emulreg_setup();
     ml0x2epeak_setup();
     ml0x2eminmax_setup();
     ml0x2eanbc_setup();
