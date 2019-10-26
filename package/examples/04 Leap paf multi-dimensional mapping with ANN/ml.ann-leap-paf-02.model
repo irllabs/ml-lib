@@ -1,0 +1,191 @@
+GRT_MLP_FILE_V2.0
+Trained: 1
+UseScaling: 1
+NumInputDimensions: 15
+NumOutputDimensions: 6
+NumTrainingIterationsToConverge: 0
+MinNumEpochs: 150
+MaxNumEpochs: 200
+ValidationSetSize: 20
+LearningRate: 0.05
+MinChange: 1e-05
+UseValidationSet: 1
+RandomiseTrainingOrder: 0
+InputVectorRanges: 
+-66.4097	-11.4426
+152.601	236.195
+18.2742	57.0111
+-44.0192	23.0205
+167.625	288.937
+-18.4594	32.2973
+-30.8023	29.4559
+151.506	291.993
+-24.4015	26.0558
+-1.09401	58.0694
+154.967	287.005
+-27.194	19.3424
+19.7709	95.1625
+161.483	262.724
+-29.8982	28.7248
+OutputVectorRanges: 
+11	60
+0.16	0.5
+3	493
+1.8	96
+0	170
+0	66
+NumInputNeurons: 15
+NumHiddenNeurons: 2
+NumOutputNeurons: 6
+InputLayerActivationFunction: SIGMOID
+HiddenLayerActivationFunction: SIGMOID
+OutputLayerActivationFunction: SIGMOID
+NumRandomTrainingIterations: 10
+Momentum: 0.5
+Gamma: 2
+ClassificationMode: 0
+UseNullRejection: 1
+RejectionThreshold: 0
+InputLayer: 
+InputNeuron: 1
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 2
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 3
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 4
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 5
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 6
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 7
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 8
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 9
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 10
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 11
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 12
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 13
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 14
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+InputNeuron: 15
+NumInputs: 1
+Bias: 0
+Gamma: 2
+Weights: 
+1	
+
+HiddenLayer: 
+HiddenNeuron: 1
+NumInputs: 15
+Bias: 0.815508
+Gamma: 2
+Weights: 
+4.13837	13.4816	1.76042	6.89855	3.43616	2.61209	3.94398	0.512714	-6.28565	-2.21801	-4.27589	-14.2537	-0.722576	1.93366	-11.9729	
+HiddenNeuron: 2
+NumInputs: 15
+Bias: 0.806218
+Gamma: 2
+Weights: 
+13.5121	-4.7318	-14.323	5.74719	3.28806	-7.32516	13.0734	-5.36735	-5.03891	10.0224	-5.35981	0.331443	-2.14839	-9.50059	6.99308	
+
+OutputLayer: 
+OutputNeuron: 1
+NumInputs: 2
+Bias: -8.13304
+Gamma: 2
+Weights: 
+12.1795	8.71866	
+OutputNeuron: 2
+NumInputs: 2
+Bias: 1.79121
+Gamma: 2
+Weights: 
+-8.26341	34.3624	
+OutputNeuron: 3
+NumInputs: 2
+Bias: -2.92369
+Gamma: 2
+Weights: 
+-9.72164	7.04976	
+OutputNeuron: 4
+NumInputs: 2
+Bias: -0.802383
+Gamma: 2
+Weights: 
+3.51588	-4.94182	
+OutputNeuron: 5
+NumInputs: 2
+Bias: -0.625284
+Gamma: 2
+Weights: 
+-22.0725	4.70071	
+OutputNeuron: 6
+NumInputs: 2
+Bias: 3.28753
+Gamma: 2
+Weights: 
+-27.79	-1.97723	
