@@ -279,7 +279,7 @@ namespace ml
     
     bool classification::write_specialised_dataset(std::string &path) const
     {
-        return classification_data.saveDatasetToFile(path);
+        return classification_data.save(path);
     }
     
 }

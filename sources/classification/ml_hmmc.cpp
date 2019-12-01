@@ -196,7 +196,7 @@ namespace ml
 
     bool hmmc::write_specialised_dataset(std::string &path) const
     {
-        return time_series_classification_data.saveDatasetToFile(path);
+        return time_series_classification_data.save(path);
     }
     
     typedef class hmmc ml0x2ehmmc;

@@ -121,6 +121,6 @@ namespace ml
     
     bool regression::write_specialised_dataset(std::string &path) const
     {
-        return regression_data.saveDatasetToFile(path);
+        return regression_data.save(path);
     }
 }

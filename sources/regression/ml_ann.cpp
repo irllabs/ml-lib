@@ -870,11 +870,11 @@ namespace ml
 
         if (data_type == LABELLED_CLASSIFICATION)
         {
-            return classification_data.saveDatasetToFile(path);
+            return classification_data.save(path);
         }
         else if (data_type == LABELLED_REGRESSION)
         {
-            return regression_data.saveDatasetToFile(path);
+            return regression_data.save(path);
         }
         
         flext::error("unable to write dataset, invalid data type: %d", data_type);
