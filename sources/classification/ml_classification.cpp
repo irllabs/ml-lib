@@ -199,7 +199,7 @@ namespace ml
             return;
         }
         
-        if (probs)
+        if (!recording && probs)
         {
             GRT::VectorDouble likelihoods = classifier.getClassLikelihoods();
             AtomList probs_l;
