@@ -187,6 +187,7 @@ namespace ml
                 return;
             }
             success = classifier.predict(time_series_data);
+            ToOutFloat(1, classifier.getPhase());
         }
         else
         {
