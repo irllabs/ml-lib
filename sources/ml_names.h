@@ -52,6 +52,7 @@ namespace ml
         k_dtree,
         k_linreg,
         k_logreg,
+        k_mulreg,
         k_ann
     };
 }
