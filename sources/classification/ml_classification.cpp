@@ -187,6 +187,7 @@ namespace ml
                 return;
             }
             success = classifier.predict(time_series_data);
+            ToOutFloat(1, classifier.getPhase());
         }
         else
         {
@@ -199,7 +200,7 @@ namespace ml
             return;
         }
         
-        if (probs)
+        if (!recording && probs)
         {
             GRT::VectorDouble likelihoods = classifier.getClassLikelihoods();
             AtomList probs_l;
@@ -279,7 +280,7 @@ namespace ml
     
     bool classification::write_specialised_dataset(std::string &path) const
     {
-        return classification_data.saveDatasetToFile(path);
+        return classification_data.save(path);
     }
     
 }

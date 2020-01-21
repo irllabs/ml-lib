@@ -215,7 +215,7 @@ namespace ml
     
     bool dtw::write_specialised_dataset(std::string &path) const
     {
-        return time_series_classification_data.saveDatasetToFile(path);
+        return time_series_classification_data.save(path);
     }
     
     typedef class dtw ml0x2edtw;

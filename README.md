@@ -23,9 +23,8 @@ Bugs should be reported via the [issues page](https://github.com/cmuartfab/ml-li
 
 ## Installation
 
-- Download the latest release from the [GitHub releases page](https://github.com/cmuartfab/ml-lib/releases)
-- For Max, add the `ml.*.mxo` externals and the ml-lib helpfiles to your Max Search Path
-- For Pd, add  `ml.*.pd_*` to your Pd search path and add the "ml" library to your startup flags by opening up the application Preferences and adding "-lib ml" to the Startup Flags
+- For Max, install by searching for ml.lib in the Max Package Manager that can be found under File -> Show Package Manager.
+- For Pd, install by searching for ml.lib in the Deken externals manager that can be found under Help -> Find Externals. Once installed, add to your Pd search path the exact path to the ml.lib folder inside Pd/externals.
 
 ## Compiling from source
 
