@@ -76,7 +76,7 @@ namespace ml_doc
         for (auto& desc : {&descriptors[ml::k_hmmc], &descriptors[ml::k_dtw]})
         {
             desc->notes(
-                        "add and map messages for time series should be delimited with record messages, e.g. record 1, add 1 40 50, add 1 41 50, record 0"
+                        "add and map messages for time series should be delimited with record messages, e.g. record 1, add 1 40 50, add 1 41 50, record 0. Second outlet gives normalised position within time the series during map"
             );
         }
         
