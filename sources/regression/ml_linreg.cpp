@@ -31,7 +31,7 @@ namespace ml
     public:
         linreg()
         {
-            post("Linear Regression based on the GRT library version" + GRT::GRTBase::getGRTVersion());
+            post("Linear Regression based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(defaults::scaling);
         }
         
