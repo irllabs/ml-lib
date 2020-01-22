@@ -148,7 +148,7 @@ namespace ml_doc
                                                     "set the minimum change that must be achieved between two training epochs for the training to continue",
                                                     0.0,
                                                     1.0,
-                                                    1.0e-5
+                                                    0.00001
                                                     );
         
         ranged_message_descriptor<int> max_iterations(
