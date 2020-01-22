@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 0,
+			"minor" : 0,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,11 +39,35 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 606.0, 488.0, 197.0, 20.0 ],
+					"text" : "Multiple Regression"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 520.0, 488.0, 65.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "ml.mulreg"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 90.0, 307.4791259765625, 367.0, 20.0 ],
+					"patching_rect" : [ 90.0, 275.5, 367.0, 20.0 ],
 					"text" : "Zero crossings count"
 				}
 
@@ -55,7 +79,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 307.4791259765625, 72.0, 22.0 ],
+					"patching_rect" : [ 10.0, 275.5, 72.0, 22.0 ],
 					"text" : "ml.zerox"
 				}
 
@@ -411,7 +435,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 90.0, 263.4791259765625, 367.0, 33.0 ],
+					"patching_rect" : [ 90.0, 231.5, 367.0, 33.0 ],
 					"text" : "Output a vector of minima and maxima locations (peaks) from an input vector"
 				}
 
@@ -423,31 +447,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 263.4791259765625, 72.0, 22.0 ],
+					"patching_rect" : [ 10.0, 231.5, 72.0, 22.0 ],
 					"text" : "ml.minmax"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-15",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 90.0, 227.0, 367.0, 20.0 ],
-					"text" : "Output detected peaks from a continuous stream of input values"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-27",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 226.0, 53.0, 22.0 ],
-					"text" : "ml.peak"
 				}
 
 			}
@@ -561,14 +562,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"hidden" : 1,
-					"source" : [ "obj-27", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"hidden" : 1,
 					"source" : [ "obj-31", 0 ]
 				}
 
@@ -674,6 +667,14 @@
 					"destination" : [ "obj-66", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-65", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-65", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}
