@@ -63,6 +63,18 @@ namespace ml_doc
     
     // free standing functions
     
+    std::string convert_to_non_scientific_float(const std::string& s)
+    {
+        double d;
+        std::stringstream in(s);
+        std::stringstream out;
+        
+        in >> d;
+        out << std::fixed << d;
+
+        return out.str();
+    }
+    
     std::string get_generic_desc(const formattable_message_descriptor &f)
     {
         std::string formatted = f.desc_string() + ". ";
@@ -146,7 +158,7 @@ namespace ml_doc
         json patch;
         patch["boxes"] = json::array();
                 
-        std::string arguments = f.example_string() != "" ? f.example_string() : f.def_string();
+        std::string arguments = f.example_string() != "" ? f.example_string() : convert_to_non_scientific_float(f.def_string());
         std::string name = f.name_string();
         std::string comparator = "float";
         
