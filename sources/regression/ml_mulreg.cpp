@@ -31,7 +31,7 @@ namespace ml
     public:
         mulreg()
         {
-            post("Linear Regression based on the GRT library version " + GRT::GRTBase::getGRTVersion());
+            post("Multiple Regression based on the GRT library version " + GRT::GRTBase::getGRTVersion());
             set_scaling(defaults::scaling);
             set_data_type(LABELLED_REGRESSION);
         }
