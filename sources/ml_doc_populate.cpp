@@ -191,9 +191,13 @@ namespace ml_doc
 //        descriptors[ml::k_feature_extraction].add_message_descriptor(null_rejection_coeff, null_rejection);
 
         // generic regression descriptor
-       
+        message_descriptor add_regression(
+                              "add",
+                              "list comprising an output value followed by n features, <output> <feature 1> <feature 2> etc",
+                               "1 0.2 0.7 0.3 0.1"
+                              );
         
-//        descriptors[ml::k_regression].add_message_descriptor(training_rate, min_change, max_iterations);
+        descriptors[ml::k_regression].add_message_descriptor(add_regression);
         
         // Object-specific descriptors
         //-- Regressifiers
