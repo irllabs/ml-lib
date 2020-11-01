@@ -321,6 +321,23 @@ namespace ml_doc
         
         descriptors[ml::k_ann].add_message_descriptor(add_ann, probs, mode, null_rejection, null_rejection_coeff, num_outputs, num_hidden, min_epochs, max_epochs, momentum, gamma, input_activation_function, hidden_activation_function, output_activation_function, rand_training_iterations, use_validation_set, validation_set_size, randomize_training_order);
         
+        //---- mulreg
+        message_descriptor add_mulreg(
+                              "add",
+                              "N output values followed by M input values (N is given by num_outputs)",
+                                   "1 2 0.2 0.7 0.3 0.1"
+
+                              );
+      
+        ranged_message_descriptor<int> num_outputs_mulreg(
+                                                   "num_outputs",
+                                                   "set the number of output values from the regression",
+                                                   1,
+                                                   1000,
+                                                   ml::defaults::num_output_dimensions
+                                                   );
+        
+        descriptors[ml::k_mulreg].add_message_descriptor(add_mulreg, num_outputs_mulreg);
         
         //-- Classifiers
         //---- ml.svm
