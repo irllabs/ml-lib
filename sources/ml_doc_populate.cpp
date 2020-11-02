@@ -325,7 +325,7 @@ namespace ml_doc
         message_descriptor add_mulreg(
                               "add",
                               "N output values followed by M input values (N is given by num_outputs)",
-                                   "1 2 0.2 0.7 0.3 0.1"
+                                   "1 0.2 0.7 0.3 0.1"
 
                               );
       
