@@ -369,9 +369,7 @@ namespace ml
         {
             if (mlBase.getTrained())
             {
-                auto file = std::fstream(model_file_path);
-                
-                success = mlBase.save(file);
+                success = mlBase.save(model_file_path);
                 
                 if (!success)
                 {
