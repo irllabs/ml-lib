@@ -20,7 +20,6 @@
 #include "ml_formatter.h"
 
 #include <iostream>
-#include <cassert>
 #include <memory>
 #include <algorithm>
 

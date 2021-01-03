@@ -244,6 +244,7 @@ namespace ml
         if (num_outputs < 0)
         {
             flext::error("number of outputs must be greater than zero");
+			return;
         }
         
         if (data_type == LABELLED_CLASSIFICATION && num_outputs > 1)
@@ -391,10 +392,6 @@ namespace ml
         {
             return classLabelToIndex.at(classLabel);
         }
-        else if (count != 0)
-        {
-            assert(false);
-        }
         
         const int index = classLabelToIndex.size() + 1; // GRT labels (i.e. index) must start from 1
         classLabelToIndex[classLabel] = index;
@@ -410,7 +407,6 @@ namespace ml
 
         if (count == 0)
         {
-            assert(false);
             return -1;
         }
         
@@ -690,8 +686,6 @@ namespace ml
         }
         
         GRT::UINT label = get_index_for_class((GRT::UINT)targetVector[0]);
-        
-        assert(label > 0);
         
 //        if ((double)label != targetVector[0])
 //        {
