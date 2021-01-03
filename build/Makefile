@@ -40,7 +40,6 @@ ML_REGRESSION_EXT = ml_linreg.cpp \
 		    ml_ann.cpp
 
 ML_FEATURE_EXTRACTION_EXT = ml_minmax.cpp \
-			    ml_peak.cpp \
 			    ml_zerox.cpp
 
 
