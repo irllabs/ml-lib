@@ -760,7 +760,7 @@ namespace ml
             const GRT::VectorDouble likelihoods = grt_ann.getClassLikelihoods();
             const GRT::Vector<GRT::UINT> labels = classification_data.getClassLabels();
             const GRT::UINT predicted = grt_ann.getPredictedClassLabel();
-            const GRT::UINT classification = predicted == 0 ? 0 : get_class_id_for_index(predicted);
+            const int classification = predicted == 0 ? 0 : get_class_id_for_index(predicted);
             
             if (likelihoods.size() != labels.size())
             {
