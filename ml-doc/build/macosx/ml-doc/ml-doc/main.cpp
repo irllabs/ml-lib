@@ -34,7 +34,12 @@ void generate_doc(ml_doc::generic_formatter& formatter, std::string file_ext, st
 }
 
 int main(int argc, const char * argv[])
-{    
+{
+    if (argc == 1)
+    {
+       std::cout << "Usage: ml-doc [-html] [-pd] [-max] [-maxref]" << std::endl;
+    }
+   
     if (arg_exists(argv, argv+argc, "-html"))
     {
         ml_doc::html_table_formatter formatter;

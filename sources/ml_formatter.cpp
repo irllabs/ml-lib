@@ -149,6 +149,19 @@ namespace ml_doc
         return formatted;
     }
     
+    static std::string get_arguments(const ml_doc::formattable_message_descriptor &f)
+    {
+        if (!f.example_string().empty())
+        {
+            return f.example_string();
+        }
+        else if (!f.def_string().empty())
+        {
+            return convert_to_non_scientific_float(f.def_string());
+        }
+        return {};
+    }
+    
     // max_help_formatter
     
     std::string max_help_formatter::format(const formattable_message_descriptor &f, const uint16_t message_y, const std::string& obj_id) const
@@ -158,7 +171,7 @@ namespace ml_doc
         json patch;
         patch["boxes"] = json::array();
                 
-        std::string arguments = f.example_string() != "" ? f.example_string() : convert_to_non_scientific_float(f.def_string());
+        std::string arguments = get_arguments(f);
         std::string name = f.name_string();
         std::string comparator = "float";
         

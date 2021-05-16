@@ -369,9 +369,7 @@ namespace ml
         {
             if (mlBase.getTrained())
             {
-                auto file = std::fstream(model_file_path);
-                
-                success = mlBase.save(file);
+                success = mlBase.save(model_file_path);
                 
                 if (!success)
                 {
@@ -522,7 +520,6 @@ namespace ml
         FLEXT_SETUP(mulreg);
         FLEXT_SETUP(linreg);
         FLEXT_SETUP(logreg);
-        FLEXT_SETUP(peak);
         FLEXT_SETUP(minmax);
         FLEXT_SETUP(anbc);
         FLEXT_SETUP(softmax);
