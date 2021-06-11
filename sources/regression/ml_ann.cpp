@@ -717,16 +717,6 @@ namespace ml
         
     void ann::map(int argc, const t_atom *argv)
     {
-        const data_type data_type = get_data_type();
-
-        GRT::UINT numSamples = data_type == LABELLED_CLASSIFICATION ? classification_data.getNumSamples() : regression_data.getNumSamples();
-
-        if (numSamples == 0)
-        {
-            flext::error("no observations added, use 'add' to add training data");
-            return;
-        }
-
         if (grt_ann.getTrained() == false)
         {
             flext::error("model has not been trained, use 'train' to train the model");
