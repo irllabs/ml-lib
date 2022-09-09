@@ -13,7 +13,6 @@
 			buildPhases = (
 			);
 			dependencies = (
-				7D2D780B1EB0B1820009D37B /* PBXTargetDependency */,
 			);
 			name = "BUILD ALL MAX";
 			productName = BUILD_ALL;
@@ -476,16 +475,6 @@
 		E98573580D9E52D300682171 /* ml_ml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E98573560D9E52D300682171 /* ml_ml.cpp */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		7D2D780A1EB0B1820009D37B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7D2D78051EB0B14E0009D37B;
-			remoteInfo = CleanScript;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		7D0564C52361E78A0097CBAB /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -852,8 +841,8 @@
 		7D2C59AD189AF5EA001A78C9 /* ml_hmmc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ml_hmmc.cpp; path = ../../sources/classification/ml_hmmc.cpp; sourceTree = "<group>"; };
 		7D2E3EEE1FE3E4DD00EA1563 /* ml_setup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_setup.h; path = ../../sources/ml_setup.h; sourceTree = "<group>"; };
 		7D2E3EEF1FE3E6D400EA1563 /* ml_setup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ml_setup.cpp; path = ../../sources/ml_setup.cpp; sourceTree = "<group>"; };
-		7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "max-sdk-7.1.0/source/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
-		7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "max-sdk-7.1.0/source/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
+		7D33CD2A1EB08D6D0008FB1C /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../vendor/max-sdk-base/c74support/max-includes/MaxAPI.framework"; sourceTree = "<group>"; };
+		7D33CD3C1EB08D7A0008FB1C /* MaxAudioAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAudioAPI.framework; path = "../../vendor/max-sdk-base/c74support/msp-includes/MaxAudioAPI.framework"; sourceTree = "<group>"; };
 		7D4EAF0018343011005B8615 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7D551A74190FE523008FF361 /* ml.knn.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.knn.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D551A83190FE530008FF361 /* ml.gmm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.gmm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1508,23 +1497,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		7D2D78051EB0B14E0009D37B /* CleanScript */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "${PROJECT_DIR}/clean-max-sdk.sh $(ACTION)";
-			buildConfigurationList = 7D2D78091EB0B14E0009D37B /* Build configuration list for PBXLegacyTarget "CleanScript" */;
-			buildPhases = (
-			);
-			buildToolPath = /bin/sh;
-			buildWorkingDirectory = "";
-			dependencies = (
-			);
-			name = CleanScript;
-			passBuildSettingsInEnvironment = 1;
-			productName = CleanScript;
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		7D0564B72361E78A0097CBAB /* ml.anbc max */ = {
 			isa = PBXNativeTarget;
@@ -2163,10 +2135,6 @@
 			attributes = {
 				LastUpgradeCheck = 0630;
 				TargetAttributes = {
-					7D2D78051EB0B14E0009D37B = {
-						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Automatic;
-					};
 					7D551A66190FE523008FF361 = {
 						ProvisioningStyle = Manual;
 					};
@@ -2227,7 +2195,6 @@
 				7D65FFE11992C1FF00C82004 /* ml.zerox max */,
 				7D7DA0BE18F6A04100F417F6 /* BUILD ALL MAX */,
 				7D7DA16418F7DD4700F417F6 /* BUILD ALL PD */,
-				7D2D78051EB0B14E0009D37B /* CleanScript */,
 				7DD58F341FE2D66400850133 /* ml-ios */,
 			);
 		};
@@ -2828,14 +2795,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		7D2D780B1EB0B1820009D37B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7D2D78051EB0B14E0009D37B /* CleanScript */;
-			targetProxy = 7D2D780A1EB0B1820009D37B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		7D0564C72361E78A0097CBAB /* Development */ = {
 			isa = XCBuildConfiguration;
@@ -2873,8 +2832,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.ml.anbc;
@@ -2925,8 +2883,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.ml.anbc;
@@ -2973,8 +2930,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -3013,7 +2969,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -3050,7 +3005,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -3087,7 +3041,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -3095,141 +3048,6 @@
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = ml.anbc;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
-			};
-			name = Default;
-		};
-		7D2D78061EB0B14E0009D37B /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MAX_SDK_VER = "max-sdk-7.1.0";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Development;
-		};
-		7D2D78071EB0B14E0009D37B /* Deployment */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MAX_SDK_VER = "max-sdk-7.1.0";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Deployment;
-		};
-		7D2D78081EB0B14E0009D37B /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MAX_SDK_VER = "max-sdk-7.1.0";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Default;
 		};
@@ -3258,7 +3076,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -3297,7 +3114,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -3336,7 +3152,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -3372,7 +3187,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -3409,7 +3223,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -3446,7 +3259,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -3481,7 +3293,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -3518,7 +3329,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -3555,7 +3365,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -3602,8 +3411,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
@@ -3653,8 +3461,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.softmax;
@@ -3700,8 +3507,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -3751,8 +3557,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
@@ -3802,8 +3607,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.randforest;
@@ -3849,8 +3653,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -3900,8 +3703,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
@@ -3951,8 +3753,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mindist;
@@ -3998,8 +3799,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -4049,8 +3849,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
@@ -4100,8 +3899,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.knn;
@@ -4147,8 +3945,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -4198,8 +3995,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
@@ -4249,8 +4045,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.gmm;
@@ -4296,8 +4091,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -4348,8 +4142,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
@@ -4400,8 +4193,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtree;
@@ -4445,8 +4237,7 @@
 				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -4484,7 +4275,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -4521,7 +4311,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -4558,7 +4347,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -4606,8 +4394,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
@@ -4658,8 +4445,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.zerox;
@@ -4703,8 +4489,7 @@
 				LIBRARY_SEARCH_PATHS = "$(maxsdk)/max-includes";
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -4754,8 +4539,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
@@ -4805,8 +4589,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.svm;
@@ -4852,8 +4635,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -4903,8 +4685,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "max-sdk-7.1.0";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
@@ -4954,8 +4735,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "max-sdk-7.1.0";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.adaboost;
@@ -5001,8 +4781,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "max-sdk-7.1.0";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -5052,8 +4831,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
@@ -5103,8 +4881,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.linreg;
@@ -5150,8 +4927,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -5201,8 +4977,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
@@ -5252,8 +5027,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.logreg;
@@ -5299,8 +5073,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -5350,8 +5123,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.ml.hmmc;
@@ -5402,8 +5174,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.ml.hmmc;
@@ -5450,8 +5221,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -5502,8 +5272,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
@@ -5553,8 +5322,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.dtw;
@@ -5600,8 +5368,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -5651,8 +5418,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.ml.hmmc;
@@ -5703,8 +5469,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cmu.ml.hmmc;
@@ -5751,8 +5516,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -5803,8 +5567,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
@@ -5854,8 +5617,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.minmax;
@@ -5901,8 +5663,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -5919,7 +5680,6 @@
 		7D7DA0C018F6A04100F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MAX_SDK_VER = "max-sdk-7.1.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = (
 					"-Wextra",
@@ -5934,7 +5694,6 @@
 		7D7DA0C118F6A04100F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MAX_SDK_VER = "max-sdk-7.1.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = (
 					"-Wextra",
@@ -5949,7 +5708,6 @@
 		7D7DA0C218F6A04100F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MAX_SDK_VER = "max-sdk-7.1.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = (
 					"-Wextra",
@@ -5985,7 +5743,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6022,7 +5779,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6059,7 +5815,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6094,7 +5849,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6131,7 +5885,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6168,7 +5921,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6203,7 +5955,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6240,7 +5991,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6277,7 +6027,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6312,7 +6061,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6349,7 +6097,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6386,7 +6133,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6421,7 +6167,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6458,7 +6203,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6495,7 +6239,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6530,7 +6273,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6567,7 +6309,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6604,7 +6345,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6639,7 +6379,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6676,7 +6415,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6713,7 +6451,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6748,7 +6485,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6785,7 +6521,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6822,7 +6557,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6836,7 +6570,6 @@
 		7D7DA16618F7DD4800F417F6 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MAX_SDK_VER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Development;
@@ -6844,7 +6577,6 @@
 		7D7DA16718F7DD4800F417F6 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MAX_SDK_VER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Deployment;
@@ -6852,7 +6584,6 @@
 		7D7DA16818F7DD4800F417F6 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MAX_SDK_VER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Default;
@@ -6881,7 +6612,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6918,7 +6648,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -6955,7 +6684,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -6990,7 +6718,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7027,7 +6754,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7064,7 +6790,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -7099,7 +6824,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7136,7 +6860,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7173,7 +6896,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -7208,7 +6930,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7245,7 +6966,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7282,7 +7002,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -7329,8 +7048,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mulreg;
@@ -7380,8 +7098,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml.mulreg;
@@ -7427,8 +7144,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -7647,7 +7363,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7685,7 +7400,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -7723,7 +7437,6 @@
 				LIBRARY_STYLE = BUNDLE;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = "";
-				MAX_SDK_VER = "";
 				OTHER_LDFLAGS = (
 					"-bundle_loader",
 					"$(PDApp)/bin/pd",
@@ -7770,8 +7483,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
@@ -7820,8 +7532,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ml;
@@ -7866,8 +7577,7 @@
 				);
 				LIBRARY_STYLE = DYNAMIC;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -7904,8 +7614,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "MaxSDK-6.1.4";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-I",
@@ -7917,7 +7626,6 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "$(GRT)/GRT";
-				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
@@ -7950,8 +7658,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "MaxSDK-6.1.4";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-I",
@@ -7963,7 +7670,6 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "$(GRT)/GRT";
-				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
@@ -7990,8 +7696,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MAX_SDK_VER = "MaxSDK-6.1.4";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-I",
@@ -8002,7 +7707,6 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "$(GRT)/GRT";
-				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
@@ -8033,16 +7737,6 @@
 				7D0564DB2361F4E80097CBAB /* Development */,
 				7D0564DC2361F4E80097CBAB /* Deployment */,
 				7D0564DD2361F4E80097CBAB /* Default */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
-		};
-		7D2D78091EB0B14E0009D37B /* Build configuration list for PBXLegacyTarget "CleanScript" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7D2D78061EB0B14E0009D37B /* Development */,
-				7D2D78071EB0B14E0009D37B /* Deployment */,
-				7D2D78081EB0B14E0009D37B /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Deployment;

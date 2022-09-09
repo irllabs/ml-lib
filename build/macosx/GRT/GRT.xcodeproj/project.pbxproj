@@ -1784,6 +1784,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7D2B59A11EBA16A50088E7E2;
@@ -2331,10 +2332,10 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = build;
-				VALID_ARCHS = x86_64;
 			};
 			name = Development;
 		};
@@ -2388,9 +2389,9 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = build;
-				VALID_ARCHS = x86_64;
 			};
 			name = Deployment;
 		};
