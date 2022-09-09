@@ -13,3 +13,6 @@
 [submodule "vendor/json"]
 	path = vendor/json
 	url = https://jamiebullock@github.com/nlohmann/json.git
+[submodule "vendor/max-sdk-base"]
+	path = vendor/max-sdk-base
+	url = https://jamiebullock@github.com/Cycling74/max-sdk-base.git
