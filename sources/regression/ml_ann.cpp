@@ -20,11 +20,16 @@
 #include "ml_defaults.h"
 
 #include <unordered_map>
+#include <filesystem>
+#include <fstream>
 
 namespace ml
 {
     const std::string object_name = ML_NAME_PREFIX "ann";
-        
+    const std::string class_to_index_map_name = "class_to_index_map";
+    const std::string index_to_class_map_name = "index_to_class_map";
+
+    
     typedef enum ann_layer_
     {
         LAYER_INPUT,
@@ -33,6 +38,8 @@ namespace ml
         ANN_NUM_LAYERS
     }
     ann_layer;
+    
+    typedef std::unordered_map<int, int> index_map_t;
     
     GRT::Neuron::Type get_grt_neuron_type(int type)
     {
@@ -43,6 +50,16 @@ namespace ml
         return static_cast<GRT::Neuron::Type>(type);
     }
     
+    std::filesystem::path get_directory(const std::string& path)
+    {
+       std::filesystem::path p(path);
+       return p.parent_path();
+    }
+    
+    std::string get_index_map_path(const std::filesystem::path& grtFilePath, const std::string& filename)
+    {
+        return get_directory(grtFilePath).append(filename).string();
+    }
     
     class ann : ml
     {
@@ -172,6 +189,12 @@ namespace ml
         int get_index_for_class(int classID);
         int get_class_id_for_index(int index);
         void clear_index_maps();
+        void write_index_map(const index_map_t &map, const std::string &path) const;
+        void read_index_map(index_map_t &map, const std::string &path);
+        void write_index_maps(const std::string &grtFilePath) const;
+        void read_index_maps(const std::string &grtFilePath);
+        void print_map(const index_map_t &map, const std::string& name) const;
+        void print_maps() const;
         
         // Flext method wrappers
         FLEXT_CALLBACK(error);
@@ -205,8 +228,8 @@ namespace ml
         GRT::Neuron::Type input_activation_function;
         GRT::Neuron::Type hidden_activation_function;
         GRT::Neuron::Type output_activation_function;
-        std::unordered_map<int, int> classLabelToIndex;
-        std::unordered_map<int, int> indexToClassLabel;
+        index_map_t classLabelToIndex;
+        index_map_t indexToClassLabel;
         
         bool probs;
     };
@@ -421,6 +444,76 @@ namespace ml
     {
         indexToClassLabel.clear();
         classLabelToIndex.clear();
+    }
+   
+    void ann::write_index_map(const index_map_t &map, const std::string &path) const
+    {
+        std::ofstream file;
+        file.open(path);
+            
+        if(!file)
+        {
+            ml::error("unable to open file at path: " + path);
+            return;
+        }
+            
+        for ( auto& [key, value] : map )
+        {
+            file << key << " " << value << std::endl;
+        }
+        
+        file.close();
+    }
+    
+    void ann::read_index_map(index_map_t &map, const std::string &path)
+    {
+        std::ifstream file(path);
+        
+        if(!file)
+        {
+            ml::error("unable to open file at path: " + path);
+            return;
+        }
+        
+        int key, value;
+        
+        while ( file >> key >> value )
+        {
+            map[key] = value;
+        }
+        
+        file.close();
+    }
+    
+    void ann::write_index_maps(const std::string &grtFilePath) const
+    {
+        std::cout << "WRITE" << std::endl;
+        write_index_map(indexToClassLabel, get_index_map_path(grtFilePath, index_to_class_map_name));
+        write_index_map(classLabelToIndex, get_index_map_path(grtFilePath, class_to_index_map_name));
+        print_maps();
+    }
+    
+    void ann::read_index_maps(const std::string &grtFilePath)
+    {
+        std::cout << "READ" << std::endl;
+        read_index_map(indexToClassLabel, get_index_map_path(grtFilePath, index_to_class_map_name));
+        read_index_map(classLabelToIndex, get_index_map_path(grtFilePath, class_to_index_map_name));
+        print_maps();
+    }
+    
+    void ann::print_map(const index_map_t &map, const std::string& name) const
+    {
+        std::cout << name << ": " << std::endl;
+        for ( auto& [key, value] : map )
+        {
+            std::cout << key << " " << value << std::endl;
+        }
+    }
+    
+    void ann::print_maps() const
+    {
+        print_map(indexToClassLabel, index_to_class_map_name);
+        print_map(classLabelToIndex, class_to_index_map_name);
     }
     
     void ann::set_input_activation_function(int activation_function)
@@ -752,6 +845,8 @@ namespace ml
             const GRT::UINT predicted = grt_ann.getPredictedClassLabel();
             const int classification = predicted == 0 ? 0 : get_class_id_for_index(predicted);
             
+            std::cout << "PREDICTED: " << predicted << "\tCLASS: " << classification << std::endl;
+            
             if (likelihoods.size() != labels.size())
             {
                 flext::error("labels / likelihoods size mismatch");
@@ -839,6 +934,7 @@ namespace ml
         
         if (success)
         {
+            read_index_maps(path);
             set_data_type(LABELLED_CLASSIFICATION);
             return success;
         }
@@ -860,6 +956,7 @@ namespace ml
 
         if (data_type == LABELLED_CLASSIFICATION)
         {
+            write_index_maps(path);
             return classification_data.save(path);
         }
         else if (data_type == LABELLED_REGRESSION)
