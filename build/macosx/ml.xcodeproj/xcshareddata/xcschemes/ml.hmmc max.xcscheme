@@ -103,7 +103,7 @@
       </PostActions>
       <PathRunnable
          runnableDebuggingMode = "0"
-         FilePath = "/Applications/Max 6.1 Runtime/Max Runtime.app">
+         FilePath = "/Applications/Max.app">
       </PathRunnable>
       <MacroExpansion>
          <BuildableReference
