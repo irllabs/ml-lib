@@ -193,8 +193,7 @@ namespace ml
         void read_index_map(index_map_t &map, const std::string &path);
         void write_index_maps(const std::string &grtFilePath) const;
         void read_index_maps(const std::string &grtFilePath);
-        void print_map(const index_map_t &map, const std::string& name) const;
-        void print_maps() const;
+
         
         // Flext method wrappers
         FLEXT_CALLBACK(error);
@@ -487,33 +486,14 @@ namespace ml
     
     void ann::write_index_maps(const std::string &grtFilePath) const
     {
-        std::cout << "WRITE" << std::endl;
         write_index_map(indexToClassLabel, get_index_map_path(grtFilePath, index_to_class_map_name));
         write_index_map(classLabelToIndex, get_index_map_path(grtFilePath, class_to_index_map_name));
-        print_maps();
     }
     
     void ann::read_index_maps(const std::string &grtFilePath)
     {
-        std::cout << "READ" << std::endl;
         read_index_map(indexToClassLabel, get_index_map_path(grtFilePath, index_to_class_map_name));
         read_index_map(classLabelToIndex, get_index_map_path(grtFilePath, class_to_index_map_name));
-        print_maps();
-    }
-    
-    void ann::print_map(const index_map_t &map, const std::string& name) const
-    {
-        std::cout << name << ": " << std::endl;
-        for ( auto& [key, value] : map )
-        {
-            std::cout << key << " " << value << std::endl;
-        }
-    }
-    
-    void ann::print_maps() const
-    {
-        print_map(indexToClassLabel, index_to_class_map_name);
-        print_map(classLabelToIndex, class_to_index_map_name);
     }
     
     void ann::set_input_activation_function(int activation_function)
@@ -844,9 +824,7 @@ namespace ml
             const GRT::Vector<GRT::UINT> labels = classification_data.getClassLabels();
             const GRT::UINT predicted = grt_ann.getPredictedClassLabel();
             const int classification = predicted == 0 ? 0 : get_class_id_for_index(predicted);
-            
-            std::cout << "PREDICTED: " << predicted << "\tCLASS: " << classification << std::endl;
-            
+                        
             if (likelihoods.size() != labels.size())
             {
                 flext::error("labels / likelihoods size mismatch");
