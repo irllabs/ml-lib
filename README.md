@@ -58,7 +58,6 @@ Objects fall into one of five categories:
 
 ### Feature extraction
 
-- `ml.peak`: output detected peaks from a continues stream of input values
 - `ml.minmax`: output a vector of minima and maxima locations (peaks) from an input vector
 
 ### Classification
