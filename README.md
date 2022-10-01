@@ -77,6 +77,7 @@ Objects fall into one of five categories:
 - `ml.linreg`: [Linear Regression](http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression)
 - `ml.logreg`: [Logistic Regression](http://www.nickgillian.com/wiki/pmwiki.php/GRT/LogisticRegression)
 - `ml.ann`: [Multi-layer Perceptron](http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP) Artificial Neural Networks (ANN)
+- `ml.mulreg`: Multiple Regression
 
 See the help file for each component for further details about operation and usage.
 
