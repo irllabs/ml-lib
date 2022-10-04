@@ -62,21 +62,21 @@ Objects fall into one of five categories:
 
 ### Classification
 
-- `ml.adaboost`:  [Adaptive Boosting](http://nickgillian.com/grt/index.html
-- `ml.dtw`: [Dynamic Time Warping](http://nickgillian.com/grt/index.html
-- `ml.gmm`: [Gaussian Mixture Model](http://nickgillian.com/grt/index.html
-- `ml.hmmc`: [Hidden Markov Models](http://nickgillian.com/grt/index.html
-- `ml.knn`: [k’s Nearest Neighbour](http://nickgillian.com/grt/index.html
-- `ml.mindist`:[Minimum Distance](http://nickgillian.com/grt/index.html
-- `ml.randforest`: [Random Decision Forest](http://nickgillian.com/grt/index.html
-- `ml.softmax`: [Softmax](http://nickgillian.com/grt/index.html
-- `ml.svm`: [Support Vector Machines](http://nickgillian.com/grt/index.html
+- `ml.adaboost`:  [Adaptive Boosting](http://nickgillian.com/grt/index.html)
+- `ml.dtw`: [Dynamic Time Warping](http://nickgillian.com/grt/index.html)
+- `ml.gmm`: [Gaussian Mixture Model](http://nickgillian.com/grt/index.html)
+- `ml.hmmc`: [Hidden Markov Models](http://nickgillian.com/grt/index.html)
+- `ml.knn`: [k’s Nearest Neighbour](http://nickgillian.com/grt/index.html)
+- `ml.mindist`:[Minimum Distance](http://nickgillian.com/grt/index.html)
+- `ml.randforest`: [Random Decision Forest](http://nickgillian.com/grt/index.html)
+- `ml.softmax`: [Softmax](http://nickgillian.com/grt/index.html)
+- `ml.svm`: [Support Vector Machines](http://nickgillian.com/grt/index.html)
 
 ### Regression
 
-- `ml.linreg`: [Linear Regression](http://nickgillian.com/grt/index.html
-- `ml.logreg`: [Logistic Regression](http://nickgillian.com/grt/index.html
-- `ml.ann`: [Multi-layer Perceptron](http://nickgillian.com/grt/index.html
+- `ml.linreg`: [Linear Regression](http://nickgillian.com/grt/index.html)
+- `ml.logreg`: [Logistic Regression](http://nickgillian.com/grt/index.html)
+- `ml.ann`: [Multi-layer Perceptron](http://nickgillian.com/grt/index.html)
 - `ml.mulreg`: Multiple Regression
 
 See the help file for each component for further details about operation and usage.
