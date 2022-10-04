@@ -62,21 +62,21 @@ Objects fall into one of five categories:
 
 ### Classification
 
-- `ml.adaboost`:  [Adaptive Boosting](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.AdaBoost)
-- `ml.dtw`: [Dynamic Time Warping](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.DTW)
-- `ml.gmm`: [Gaussian Mixture Model](http://www.nickgillian.com/wiki/pmwiki.php/GRT/GMMClassifier)
-- `ml.hmmc`: [Hidden Markov Models](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.HMM)
-- `ml.knn`: [k’s Nearest Neighbour](http://www.nickgillian.com/wiki/pmwiki.php/GRT/KNN)
-- `ml.mindist`:[Minimum Distance](http://www.nickgillian.com/wiki/pmwiki.php/GRT/MinDist)
-- `ml.randforest`: [Random Decision Forest](http://www.nickgillian.com/wiki/pmwiki.php/GRT/RandomForests)
-- `ml.softmax`: [Softmax](http://www.nickgillian.com/wiki/pmwiki.php/GRT/Softmax)
-- `ml.svm`: [Support Vector Machines](http://www.nickgillian.com/wiki/pmwiki.php?n=GRT.SVM)
+- `ml.adaboost`:  [Adaptive Boosting](http://nickgillian.com/grt/index.html
+- `ml.dtw`: [Dynamic Time Warping](http://nickgillian.com/grt/index.html
+- `ml.gmm`: [Gaussian Mixture Model](http://nickgillian.com/grt/index.html
+- `ml.hmmc`: [Hidden Markov Models](http://nickgillian.com/grt/index.html
+- `ml.knn`: [k’s Nearest Neighbour](http://nickgillian.com/grt/index.html
+- `ml.mindist`:[Minimum Distance](http://nickgillian.com/grt/index.html
+- `ml.randforest`: [Random Decision Forest](http://nickgillian.com/grt/index.html
+- `ml.softmax`: [Softmax](http://nickgillian.com/grt/index.html
+- `ml.svm`: [Support Vector Machines](http://nickgillian.com/grt/index.html
 
 ### Regression
 
-- `ml.linreg`: [Linear Regression](http://www.nickgillian.com/wiki/pmwiki.php/GRT/LinearRegression)
-- `ml.logreg`: [Logistic Regression](http://www.nickgillian.com/wiki/pmwiki.php/GRT/LogisticRegression)
-- `ml.ann`: [Multi-layer Perceptron](http://www.nickgillian.com/wiki/pmwiki.php/GRT/MLP) Artificial Neural Networks (ANN)
+- `ml.linreg`: [Linear Regression](http://nickgillian.com/grt/index.html
+- `ml.logreg`: [Logistic Regression](http://nickgillian.com/grt/index.html
+- `ml.ann`: [Multi-layer Perceptron](http://nickgillian.com/grt/index.html
 - `ml.mulreg`: Multiple Regression
 
 See the help file for each component for further details about operation and usage.
@@ -84,7 +84,7 @@ See the help file for each component for further details about operation and usa
 ## Credits
 
 This software has been designed and developed by [Ali Momeni](http://alimomeni.net) and [Jamie Bullock](http://jamiebullock.com).
-The [Gesture Recognition Toolkit](http://www.nickgillian.com/software/grt) is developed by Nick Gillian
+The [Gesture Recognition Toolkit](http://nickgillian.com/grt/index.html is developed by Nick Gillian
 
 **ml-lib** is supported by [Art Fab](http://cmu-artfab.org), the [College of Fine Arts](http://cfa.cmu.edu) and [The Frank-Ratchye STUDIO for Creative Inquiry](http://studioforcreativeinquiry.org/) at [Carnegie Mellon University](http://cmu.edu)
 
