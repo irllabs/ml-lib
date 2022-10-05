@@ -13,3 +13,6 @@
 [submodule "vendor/max-sdk-base"]
 	path = vendor/max-sdk-base
 	url = https://jamiebullock@github.com/Cycling74/max-sdk-base.git
+[submodule "vendor/libpd"]
+	path = vendor/libpd
+	url = https://jamiebullock@github.com/libpd/libpd
