@@ -882,7 +882,7 @@
 		7D7DA11818F7DCA600F417F6 /* ml.logreg.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.logreg.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA12718F7DCBD00F417F6 /* ml.ann.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.ann.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA13618F7DCD600F417F6 /* ml.dtw.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.dtw.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D7DA14518F7DCEC00F417F6 /* ml.hmm.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.hmm.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7DA14518F7DCEC00F417F6 /* ml.hmmc.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.hmmc.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7DA16318F7DD1C00F417F6 /* ml.minmax.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ml.minmax.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7E3E3F1B73B15A0051D2FC /* ml_defaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_defaults.h; path = ../../sources/ml_defaults.h; sourceTree = "<group>"; };
 		7D7E78951B738ACA00EE2BD8 /* ml_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ml_types.h; path = ../../sources/ml_types.h; sourceTree = "<group>"; };
@@ -1313,7 +1313,7 @@
 				7D7DA11818F7DCA600F417F6 /* ml.logreg.pd_darwin */,
 				7D7DA12718F7DCBD00F417F6 /* ml.ann.pd_darwin */,
 				7D7DA13618F7DCD600F417F6 /* ml.dtw.pd_darwin */,
-				7D7DA14518F7DCEC00F417F6 /* ml.hmm.pd_darwin */,
+				7D7DA14518F7DCEC00F417F6 /* ml.hmmc.pd_darwin */,
 				7D7DA16318F7DD1C00F417F6 /* ml.minmax.pd_darwin */,
 				7DA1F14B190FE3F900F491FB /* ml.softmax.pd_darwin */,
 				7DA1F15A190FE40E00F491FB /* ml.randforest.pd_darwin */,
@@ -1971,7 +1971,7 @@
 			);
 			name = "ml.hmmc pd";
 			productName = xsample;
-			productReference = 7D7DA14518F7DCEC00F417F6 /* ml.hmm.pd_darwin */;
+			productReference = 7D7DA14518F7DCEC00F417F6 /* ml.hmmc.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		7D7DA15518F7DD1C00F417F6 /* ml.minmax pd */ = {
@@ -6421,7 +6421,7 @@
 					dynamic_lookup,
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = ml.hmm;
+				PRODUCT_NAME = ml.hmmc;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				ZERO_LINK = YES;
 			};
@@ -6458,7 +6458,7 @@
 					dynamic_lookup,
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = ml.hmm;
+				PRODUCT_NAME = ml.hmmc;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				ZERO_LINK = NO;
 			};
@@ -6495,7 +6495,7 @@
 					"$(PDApp)/bin/pd",
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = ml.hmm;
+				PRODUCT_NAME = ml.hmmc;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Default;
