@@ -24,7 +24,7 @@ Bugs should be reported via the [issues page](https://github.com/cmuartfab/ml-li
 ## Installation
 
 - For Max, install by searching for ml.lib in the Max Package Manager that can be found under File -> Show Package Manager.
-- For Pd, and can be found [here](https://github.com/irllabs/ml-lib/releases/). Download, unzip, and move the ml.lib folder in "/Users/yourHomeFolder/Documents/Pd/externals". Once installed, add to your Pd search path the exact path to the ml.lib folder inside Pd/externals.
+- For Pd, the latest build can be found [here](https://github.com/irllabs/ml-lib/releases/). Download, unzip, and move the ml.lib folder in "/Users/yourHomeFolder/Documents/Pd/externals". Once installed, add to your Pd search path the exact path to the ml.lib folder inside Pd/externals. If you encounter issues with macOS quarantine, make sure you right-click -> open (with any app, TextEdit will do just fine) all the .pd_darwin files that can be found inside the ml.lib folder. You will be asked if you "Are you sure you want to open it?", and once opened, Pd should be able to load the externals without issues.
 
 ## Compiling from source
 
