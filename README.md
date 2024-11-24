@@ -1,5 +1,7 @@
 # ml-lib
 
+**⚠️ This project is no longer maintained. We will not be providing fixes or updates, but pull requests for fixes are welcome.**
+
 [![Build Status](https://travis-ci.org/irllabs/ml-lib.svg?branch=develop)](https://travis-ci.org/irllabs/ml-lib)
 
 **ml-lib** is a library of machine learning externals for Max and Pure Data.
